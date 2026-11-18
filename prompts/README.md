@@ -35,6 +35,8 @@ Ouvrir une nouvelle session pour chaque prompt : le contexte reste court et chaq
 | 12 | `12-sauvegarde-finition.md` | 11 | M |
 | 13 | `13-recette.md` | 12 | L |
 
+Exception : le prompt 10 a été exécuté avec le modèle Sonnet 5.5 (`claude --model sonnet`), et non Opus.
+
 02, 03 et 08 sont indépendants entre eux et peuvent tourner en parallèle dans des worktrees séparés si besoin.
 
 Les prompts marqués XL peuvent dépasser une session. Dans ce cas, relancer avec : `Reprends le prompt prompts/09-monde-partie-1.md là où docs/PROGRESS.md indique que tu t'es arrêté.`

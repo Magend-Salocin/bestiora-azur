@@ -356,6 +356,8 @@ Problèmes connus
 
 ### 2026-11-17 : prompt 10, monde partie 2 (arènes 5 à 8)
 
+Modèle : Sonnet 5.5 (les autres prompts utilisent Opus).
+
 Fait
 - Moteur : courants d'air (tuiles `wind_*` animées, drapeau de métatuile `current`, poussée dans `overworld-scene.js`), téléporteurs à symboles (`o a q d`), braseros (sprites `brasero` et `brasero_allume`, champ de carte `lights`, `dark: 'always'`, obscurité redessinée avec des trous), `wild_battle` légendaire (`legendary`, branches `won` et `caught`, musique `battle_final`, fuite impossible), drapeau calculé `bestiary_149` (`COMPUTED_FLAGS` dans `game-state.js`). Validateurs adaptés (drapeaux calculés ou prévus, `lights`, `dark`).
 - Données par zone : `bise`, `marais`, `ombrecourt`, `mer`, `forge`, `givremont`, `centrale` (cartes, dresseurs, textes), plus `texts/reactions.js`. +50 cartes (100 au total), +109 dresseurs (201), +58 espèces capturables, +62 objets au sol.
