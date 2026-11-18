@@ -1,0 +1,37 @@
+export default {
+  id: 'maison_ombrecourt_4',
+  name: 'Maison d’Ombrecourt',
+  tileset: 'indoor',
+  music: 'hometown',
+  layers: {
+    ground: [
+      '#w##w###',
+      '#L....P#',
+      '#L.....#',
+      '#..tt..#',
+      '#..tt..#',
+      '#......#',
+      '#......#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'ombrecourt', toX: 18, toY: 11 }],
+  npcs: [
+    {
+      id: 'scientifique',
+      sprite: 'scientifique',
+      x: 5,
+      y: 3,
+      facing: 'down',
+      movement: 'static',
+      script: [{ cmd: 'say', text: 'maison_ombrecourt_4_scientifique' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

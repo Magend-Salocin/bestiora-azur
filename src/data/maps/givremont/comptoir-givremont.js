@@ -1,0 +1,62 @@
+export default {
+  id: 'comptoir_givremont',
+  name: 'Comptoir de Givremont',
+  tileset: 'indoor',
+  music: 'halte',
+  layers: {
+    ground: [
+      '##w##w##',
+      '#,,,,,L#',
+      '#[-],,L#',
+      '#,,,,,,#',
+      '#,,,,,,#',
+      '#P,,,,P#',
+      '#,,,,,,#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'givremont', toX: 7, toY: 5 }],
+  npcs: [
+    {
+      id: 'vendeur',
+      sprite: 'vendeur',
+      x: 2,
+      y: 1,
+      facing: 'down',
+      movement: 'static',
+      script: [
+        {
+          cmd: 'open_menu',
+          menu: 'shop',
+          params: {
+            stock: [
+              { item: 'hyper_capsule' },
+              { item: 'potion_totale' },
+              { item: 'ranimant_max' },
+              { item: 'panacee' },
+              { item: 'repulsif_max' },
+              { item: 'sel_eveil' },
+              { item: 'degivrant' },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: 'cliente',
+      sprite: 'dresseuse',
+      x: 5,
+      y: 5,
+      facing: 'up',
+      movement: 'look',
+      script: [{ cmd: 'say', text: 'comptoir_givremont_cliente' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

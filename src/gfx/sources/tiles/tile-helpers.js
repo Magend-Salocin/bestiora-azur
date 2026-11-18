@@ -7,7 +7,7 @@ import { spriteToRows } from '../../sprite-utils.js';
 export const METATILE_SIZE = 16;
 
 export const FLAG_NAMES = [
-  'solid', 'grass', 'water', 'ledge', 'cuttable', 'pushable', 'climbable', 'door', 'counter', 'slippery', 'animated',
+  'solid', 'grass', 'water', 'ledge', 'cuttable', 'pushable', 'climbable', 'door', 'counter', 'slippery', 'current', 'animated',
 ];
 
 /** Metatile made of four 8×8 tiles. */

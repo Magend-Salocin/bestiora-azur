@@ -56,6 +56,7 @@ export class OverworldScene {
     this.player = createActor({ id: 'player', sprite: 'joueur', x: start.x, y: start.y, facing: start.facing ?? 'down' });
     this.surfing = false;
     this.sliding = false;
+    this.current = null; // direction of the air current carrying the player
     this.turnFrames = 0;
     this.chaining = false;
     this.bumpCooldown = 0;
@@ -95,6 +96,7 @@ export class OverworldScene {
     Object.assign(this.player, { x, y, facing: facing ?? this.player.facing, movement: null });
     this.surfing = Boolean(this.map.metatileAt(x, y)?.water);
     this.sliding = false;
+    this.current = null;
     this.onMapEntered();
   }
 
@@ -198,6 +200,10 @@ export class OverworldScene {
   handlePlayerInput(input) {
     const { player } = this;
     if (isMoving(player)) return;
+    if (this.current) {
+      this.continueCurrent();
+      return;
+    }
     if (this.sliding) {
       this.continueSlide();
       return;
@@ -256,6 +262,18 @@ export class OverworldScene {
     return false;
   }
 
+  /** Air current (Vent arena): carries the player tile by tile until a tile without current. */
+  continueCurrent() {
+    const { player } = this;
+    player.facing = this.current;
+    if (this.evaluate(player, this.current).type !== 'walk') {
+      this.current = null;
+      return;
+    }
+    startMove(player, this.current, { speed: SLIDE_SPEED });
+    player.movement.slide = true;
+  }
+
   continueSlide() {
     const { player } = this;
     if (this.evaluate(player, player.facing).type !== 'walk') {
@@ -293,7 +311,8 @@ export class OverworldScene {
     const tile = this.map.metatileAt(player.x, player.y);
     if (tile.grass) hooks.playSfx('grass');
     this.sliding = Boolean(tile.slippery) && !this.surfing;
-    if (this.sliding) return;
+    this.current = tile.current ?? null;
+    if (this.sliding || this.current) return;
 
     if (this.updateRepel()) return;
     const spotter = this.findSpottingTrainer();
@@ -478,6 +497,7 @@ export class OverworldScene {
   async trainerEncounter(actor, distance) {
     const trainer = TRAINERS_BY_ID[actor.trainerId];
     this.sliding = false;
+    this.current = null;
     this.emote = actor;
     hooks.playSfx('exclamation');
     hooks.playMusic(ENCOUNTER_MUSIC[TRAINER_CLASSES_BY_ID[trainer.class]?.musicIntro] ?? ENCOUNTER_MUSIC.trainer);
@@ -510,9 +530,9 @@ export class OverworldScene {
     return this.runBattleStub(['Combat contre', `${className} ${trainer.name}`.trim()]);
   }
 
-  async wildBattle(creature, level) {
+  async wildBattle(creature, level, { legendary = false } = {}) {
     const outcome = hooks.startWildBattle
-      ? await hooks.startWildBattle({ creature, level })
+      ? await hooks.startWildBattle({ creature, level, legendary })
       : await this.runBattleStub([`${this.creatureName(creature)} sauvage`, `Niveau ${level}`]);
     if (outcome === 'lose') await this.blackout();
     else hooks.playMusic(this.map.music);
@@ -627,7 +647,7 @@ export class OverworldScene {
         return outcome;
       },
       createCreature: (species, level) => createCreature(species, level, this.rng, { originalTrainer: this.state.player.name }),
-      wildBattle: (creature, level) => this.wildBattle(creature, level),
+      wildBattle: (creature, level, options) => this.wildBattle(creature, level, options),
       blackout: () => this.blackout(),
       warp: (mapId, x, y, facing) => this.doWarp(mapId, x, y, facing),
       setActorVisible: (id, visible) => {
@@ -719,7 +739,9 @@ export class OverworldScene {
       objects: this.objects,
       animationStep: Math.floor(this.animationTime * ANIMATION_RATE),
       emote: this.emote,
-      dark: Boolean(this.map.dark) && this.fieldStatus('flash') !== 'ok',
+      // `dark: 'always'` rooms stay dark even with the Lanterne (Ombre arena); lit braziers open holes.
+      dark: this.map.dark === 'always' || (Boolean(this.map.dark) && this.fieldStatus('flash') !== 'ok'),
+      lights: (this.map.lights ?? []).filter((light) => !light.flag || hasFlag(this.state, light.flag)),
       shake: this.shakeTime > 0 ? (Math.floor(this.animationTime * 30) % 2 === 0 ? 2 : -2) : 0,
     });
   }

@@ -65,6 +65,7 @@ export default {
     { x: 13, y: 11, to: 'labo_morvan', toX: 4, toY: 12 },
   ],
   npcs: [
+    { id: 'reaction_dissous', sprite: 'fillette', x: 3, y: 6, facing: 'down', movement: 'look', showIf: 'syndicat_dissous', script: [{ cmd: 'say', text: 'hameau_syndicat_dissous' }] },
     { id: 'morvan', sprite: 'professeure', x: 9, y: 8, facing: 'up', movement: 'static', showIf: 'hameau_morvan_visible', script: [{ cmd: 'say', text: 'hameau_morvan_danger' }] },
     { id: 'voisine', sprite: 'vieille_dame', x: 15, y: 7, facing: 'down', movement: 'look', script: [{ cmd: 'say', text: 'hameau_voisine' }] },
     { id: 'gamin', sprite: 'gamin', x: 6, y: 14, facing: 'down', movement: 'wander', radius: 2, script: [{ cmd: 'say', text: 'hameau_gamin' }] },

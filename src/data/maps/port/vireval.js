@@ -51,6 +51,7 @@ export default {
     { x: 14, y: 13, to: 'arene_foudre', toX: 5, toY: 13 },
   ],
   npcs: [
+    { id: 'reaction_dissous', sprite: 'ouvrier', x: 3, y: 5, facing: 'down', movement: 'look', showIf: 'syndicat_dissous', script: [{ cmd: 'say', text: 'vireval_syndicat_dissous' }] },
     {
       id: 'ouvrier_panne', sprite: 'ouvrier', x: 14, y: 14, facing: 'down', movement: 'static',
       hideIf: 'usine_opale_cleared', script: [{ cmd: 'say', text: 'vireval_ouvrier_panne' }],

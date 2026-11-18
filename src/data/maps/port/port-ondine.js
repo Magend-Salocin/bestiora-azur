@@ -68,6 +68,7 @@ export default {
     { x: 16, y: 11, to: 'bateau_musee', toX: 5, toY: 8 },
   ],
   npcs: [
+    { id: 'reaction_dissous', sprite: 'marin', x: 3, y: 5, facing: 'down', movement: 'look', showIf: 'syndicat_dissous', script: [{ cmd: 'say', text: 'port_ondine_syndicat_dissous' }] },
     { id: 'marin', sprite: 'marin', x: 7, y: 12, facing: 'down', movement: 'look', script: [{ cmd: 'say', text: 'port_ondine_marin' }] },
     { id: 'gamin', sprite: 'gamin', x: 14, y: 6, facing: 'down', movement: 'wander', radius: 2, script: [{ cmd: 'say', text: 'port_ondine_gamin' }] },
     { id: 'gardien_phare', sprite: 'vieil_homme', x: 21, y: 12, facing: 'left', movement: 'look', script: [{ cmd: 'say', text: 'port_ondine_phare' }] },

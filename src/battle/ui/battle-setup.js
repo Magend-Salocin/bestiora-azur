@@ -10,6 +10,9 @@ import { playEvolution } from '../../ui/evolution-scene.js';
 import { createCreature } from '../logic/creature.js';
 import { BattleScene } from './battle-scene.js';
 
+/** Battle theme of the legendary encounters (no running away). */
+const LEGENDARY_MUSIC = 'battle_final';
+
 /** Battle options for a trainer of src/data/trainers.js. */
 export function trainerBattleConfig(trainer, state = getGameState()) {
   const trainerClass = TRAINER_CLASSES_BY_ID[trainer.class];
@@ -75,10 +78,11 @@ export function installBattleHooks(manager, { getState = getGameState } = {}) {
       music,
       onLose,
     }, { state: getState(), rng }),
-    startWildBattle: ({ creature, level, canRun = true }) => runBattle(manager, {
+    startWildBattle: ({ creature, level, canRun = true, legendary = false }) => runBattle(manager, {
       kind: 'wild',
       enemyParty: [createCreature(creature, level, rng)],
-      canRun,
+      canRun: canRun && !legendary,
+      music: legendary ? LEGENDARY_MUSIC : undefined,
       onLose: 'blackout',
     }, { state: getState(), rng }),
     healParty: () => healParty(getState()),

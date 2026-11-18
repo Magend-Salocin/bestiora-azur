@@ -32,7 +32,7 @@ export default {
   npcs: [],
   trainers: [
     { id: 'mystique_amandine', sprite: 'mystique', x: 1, y: 9, facing: 'right', sight: 5, trainer: 'mystique_amandine' },
-    { id: 'sbire_tour_rufin', sprite: 'sbire_opale', x: 12, y: 6, facing: 'down', sight: 4, trainer: 'sbire_tour_rufin' },
+    { id: 'sbire_tour_rufin', sprite: 'sbire_opale', x: 12, y: 6, facing: 'down', sight: 4, trainer: 'sbire_tour_rufin', hideIf: 'syndicat_dissous' },
   ],
   signs: [],
   items: [{ x: 1, y: 3, item: 'potion_forte', flag: 'item_tour_memoire_2_1' }],

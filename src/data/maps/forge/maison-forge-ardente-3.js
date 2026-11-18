@@ -1,0 +1,37 @@
+export default {
+  id: 'maison_forge_ardente_3',
+  name: 'Maison de Forge-Ardente',
+  tileset: 'indoor',
+  music: 'hometown',
+  layers: {
+    ground: [
+      '##w##w##',
+      '#P..L..#',
+      '#...L..#',
+      '#rr....#',
+      '#rr..tt#',
+      '#....tt#',
+      '#......#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'forge_ardente', toX: 18, toY: 16 }],
+  npcs: [
+    {
+      id: 'pecheur',
+      sprite: 'pecheur',
+      x: 3,
+      y: 3,
+      facing: 'down',
+      movement: 'static',
+      script: [{ cmd: 'say', text: 'maison_forge_3_pecheur' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

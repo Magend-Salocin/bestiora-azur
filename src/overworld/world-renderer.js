@@ -78,35 +78,42 @@ function drawEmote(ctx, actor, camera) {
   drawText(ctx, '!', x + 1, y + 1);
 }
 
-const darknessCache = new Map();
+/** Radius (px) of the light around a lit brazier. */
+export const BRAZIER_RADIUS = 40;
 
-/** Screen-sized darkness with a blocky hole, drawn from a canvas twice the screen size. */
-function darknessCanvas() {
-  const key = getPaletteKey();
-  if (darknessCache.has(key)) return darknessCache.get(key);
-  const width = SCREEN_WIDTH * 2;
-  const height = SCREEN_HEIGHT * 2;
-  const canvas = createCanvas(width, height);
-  const context = canvas.getContext('2d');
-  context.fillStyle = getColor(3);
-  for (let y = 0; y < height; y += DARK_CELL) {
-    for (let x = 0; x < width; x += DARK_CELL) {
-      const dx = x + DARK_CELL / 2 - width / 2;
-      const dy = y + DARK_CELL / 2 - height / 2;
-      if (dx * dx + dy * dy > DARK_RADIUS * DARK_RADIUS) context.fillRect(x, y, DARK_CELL, DARK_CELL);
+let darkLayer = null;
+
+/**
+ * Darkness over the whole screen with blocky holes ({ cx, cy, radius } in screen pixels): one
+ * around the player, one around each lit brazier of the map.
+ */
+function drawDarkness(ctx, holes) {
+  darkLayer ??= createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  const layer = darkLayer.getContext('2d');
+  layer.globalCompositeOperation = 'source-over';
+  layer.fillStyle = getColor(3);
+  layer.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+  layer.globalCompositeOperation = 'destination-out';
+  layer.fillStyle = '#000000';
+  for (const { cx, cy, radius } of holes) {
+    for (let y = -radius; y < radius; y += DARK_CELL) {
+      for (let x = -radius; x < radius; x += DARK_CELL) {
+        const dx = x + DARK_CELL / 2;
+        const dy = y + DARK_CELL / 2;
+        if (dx * dx + dy * dy <= radius * radius) layer.fillRect(Math.round(cx + x), Math.round(cy + y), DARK_CELL, DARK_CELL);
+      }
     }
   }
-  darknessCache.clear();
-  darknessCache.set(key, canvas);
-  return canvas;
+  ctx.drawImage(darkLayer, 0, 0);
 }
 
 /**
- * scene: { world, camera, player, actors, objects, animationStep, emote, dark, shake }
+ * scene: { world, camera, player, actors, objects, animationStep, emote, dark, lights, shake }
+ * `lights`: lit braziers [{ x, y }] (tile coordinates) that open a hole in the darkness.
  * `objects` are { x, y, frame } drawn from the characters atlas (items on the ground).
  */
 export function renderWorld(ctx, scene) {
-  const { world, player, actors, objects, animationStep, emote, dark } = scene;
+  const { world, player, actors, objects, animationStep, emote, dark, lights = [] } = scene;
   const camera = { x: scene.camera.x + (scene.shake ?? 0), y: scene.camera.y };
 
   drawTiles(ctx, world, camera, animationStep);
@@ -120,8 +127,10 @@ export function renderWorld(ctx, scene) {
 
   if (dark) {
     const { px, py } = pixelPosition(player);
-    const centerX = px - camera.x + METATILE / 2;
-    const centerY = py - camera.y + METATILE / 2 + SPRITE_OFFSET_Y;
-    ctx.drawImage(darknessCanvas(), Math.round(centerX - SCREEN_WIDTH), Math.round(centerY - SCREEN_HEIGHT));
+    const toScreen = (tileX, tileY) => ({ cx: tileX * METATILE - camera.x + METATILE / 2, cy: tileY * METATILE - camera.y + METATILE / 2 + SPRITE_OFFSET_Y });
+    drawDarkness(ctx, [
+      { cx: px - camera.x + METATILE / 2, cy: py - camera.y + METATILE / 2 + SPRITE_OFFSET_Y, radius: DARK_RADIUS },
+      ...lights.map((light) => ({ ...toScreen(light.x, light.y), radius: BRAZIER_RADIUS })),
+    ]);
   }
 }

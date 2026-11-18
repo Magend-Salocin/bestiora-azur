@@ -1,0 +1,37 @@
+export default {
+  id: 'maison_givremont_2',
+  name: 'Maison de Givremont',
+  tileset: 'indoor',
+  music: 'hometown',
+  layers: {
+    ground: [
+      '##w##w##',
+      '#P..L..#',
+      '#...L..#',
+      '#rr....#',
+      '#rr..tt#',
+      '#....tt#',
+      '#......#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'givremont', toX: 3, toY: 11 }],
+  npcs: [
+    {
+      id: 'fillette',
+      sprite: 'fillette',
+      x: 3,
+      y: 3,
+      facing: 'down',
+      movement: 'static',
+      script: [{ cmd: 'say', text: 'maison_givremont_2_fillette' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

@@ -13,7 +13,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | 07 Menus et systèmes | fait |
 | 08 Audio | fait |
 | 09 Monde, partie 1 (arènes 1 à 4) | fait |
-| 10 Monde, partie 2 (arènes 5 à 8) | à faire |
+| 10 Monde, partie 2 (arènes 5 à 8) | fait (voir « Reste ») |
 | 11 Ligue, post-jeu, fin | à faire |
 | 12 Sauvegarde, finition, packaging | à faire |
 | 13 Recette complète | à faire |
@@ -354,3 +354,27 @@ Décisions
 Problèmes connus
 - Pour le prompt 10 : ouvrir la Route 7 (ouvrier du bord est de Cendrelune, à cacher par un drapeau) et la Centrale (porte scellée de la cour de la Route 6, à remplacer par un warp).
 
+### 2026-11-17 : prompt 10, monde partie 2 (arènes 5 à 8)
+
+Fait
+- Moteur : courants d'air (tuiles `wind_*` animées, drapeau de métatuile `current`, poussée dans `overworld-scene.js`), téléporteurs à symboles (`o a q d`), braseros (sprites `brasero` et `brasero_allume`, champ de carte `lights`, `dark: 'always'`, obscurité redessinée avec des trous), `wild_battle` légendaire (`legendary`, branches `won` et `caught`, musique `battle_final`, fuite impossible), drapeau calculé `bestiary_149` (`COMPUTED_FLAGS` dans `game-state.js`). Validateurs adaptés (drapeaux calculés ou prévus, `lights`, `dark`).
+- Données par zone : `bise`, `marais`, `ombrecourt`, `mer`, `forge`, `givremont`, `centrale` (cartes, dresseurs, textes), plus `texts/reactions.js`. +50 cartes (100 au total), +109 dresseurs (201), +58 espèces capturables, +62 objets au sol.
+- 4 arènes (Vent, Ombre, Feu, Arcane) avec énigmes, QG Opale sous le casino (3 niveaux de téléporteurs), Corvin deux fois, rivales 4 et 5, Cerf-volant, Bouée, Gants de Force, Cœur de la Forge, Volcarde, Fulgorine, Mirelle, Givremont, téléphérique, Centrale ouverte par un warp, Route 7 ouverte.
+- `balance-check` étendu (rivales 4 et 5, Ysolde, Lazare, Brune, Oswin, Corvin x2) : toutes les moyennes sont dans les cibles (rivale 4 63 %, Ysolde 74 %, rivale 5 69 %, Lazare 70 %, Corvin QG 57 %, Brune 64 %, Corvin Forge 58 %, Oswin 70 %). Comme en partie 1, le résultat dépend fortement du starter.
+- Tests : `tests/world-part2.test.js` (223 tests au total), `npm run validate` sans erreur.
+- Les cartes ont été générées par des scripts hors dépôt qui vérifient l'accessibilité à pied (parcours en largeur avec les vraies règles de collision, graphe des warps pour le QG et l'arène Arcane, tanière de Volcarde inaccessible sans Bouée).
+
+Reste
+- Rien n'a été joué dans Electron pour cette partie : courants d'air, braseros et obscurité, sol de lave, téléporteurs, combats légendaires et cinématiques (Corvin, rivales 4 et 5) ont été vérifiés par les données, les tests et les aperçus de cartes uniquement. Un passage à la main est à faire (prompt 13).
+- Fonderion, Frimastoc, Fangeroi, Azurel, Glacerne : prompt 11 (Col des Échos, Pic, grotte). Les gardes du Col des Échos à Givremont sont à retirer. `ligue_terminee` doit être posé par la Ligue.
+- Les nouveaux dresseurs ont des équipes de 2 à 4 bestioles, sans attaques imposées ; à affiner avec le simulateur si le prompt 13 le demande.
+
+Décisions
+- Géographie : Haute-Bise, Route 8, Marais Gris et Ombrecourt s'enchaînent du nord au sud, puis les routes maritimes vers l'est ; Givremont est atteint par téléphérique (badge Feu), sans connexion de bord.
+- Cœur de la Forge en tileset `cave` (eau pour la Bouée) ; sol de lave de l'arène Feu = tuiles de lave rendues praticables par la couche de collision, avec déclencheurs de retour.
+- Mirelle apparaît si `bestiary_149` ; deux échanges PNJ donnent les starters non choisis pour que les 149 espèces soient atteignables.
+- Les champions ont 4 à 5 bestioles à 2 à 4 niveaux sous le plafond (sinon l'équilibrage face à une équipe de 3 est hors cible).
+- Le « Î » majuscule n'existe pas dans la police : « Ilots » sans accent circonflexe.
+
+Problèmes connus
+- Aucun connu, hors ce qui n'a pas été joué (voir « Reste »).

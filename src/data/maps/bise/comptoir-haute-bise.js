@@ -1,0 +1,63 @@
+export default {
+  id: 'comptoir_haute_bise',
+  name: 'Comptoir de Haute-Bise',
+  tileset: 'indoor',
+  music: 'halte',
+  layers: {
+    ground: [
+      '##w##w##',
+      '#,,,,,L#',
+      '#[-],,L#',
+      '#,,,,,,#',
+      '#,,,,,,#',
+      '#P,,,,P#',
+      '#,,,,,,#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'haute_bise', toX: 9, toY: 5 }],
+  npcs: [
+    {
+      id: 'vendeur',
+      sprite: 'vendeur',
+      x: 2,
+      y: 1,
+      facing: 'down',
+      movement: 'static',
+      script: [
+        {
+          cmd: 'open_menu',
+          menu: 'shop',
+          params: {
+            stock: [
+              { item: 'super_capsule' },
+              { item: 'hyper_capsule' },
+              { item: 'potion_forte' },
+              { item: 'grande_potion' },
+              { item: 'ranimant' },
+              { item: 'panacee' },
+              { item: 'repulsif_fort' },
+              { item: 'sucre_dorge' },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: 'cliente',
+      sprite: 'dresseuse',
+      x: 5,
+      y: 5,
+      facing: 'up',
+      movement: 'look',
+      script: [{ cmd: 'say', text: 'comptoir_haute_bise_cliente' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

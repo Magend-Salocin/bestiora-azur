@@ -26,6 +26,14 @@ export const MATCHUPS = [
   { trainer: 'selene', starterLevel: 25, captures: ['fouisseron:23', 'lapugil:23'] },
   { trainer: 'aubin', starterLevel: 30, captures: ['fumelard:28', 'noctulard:28'] },
   { trainer: 'rival_3', starterLevel: 29, captures: ['fumelard:27', 'noctulard:27'] },
+  { trainer: 'rival_4', starterLevel: 34, captures: ['volplanin:31', 'noctulard:31'] },
+  { trainer: 'ysolde', starterLevel: 36, captures: ['girouette:33', 'nuageot:33'] },
+  { trainer: 'rival_5', starterLevel: 41, captures: ['fumelard:39', 'noctulard:39'] },
+  { trainer: 'lazare', starterLevel: 40, captures: ['sombrecor:37', 'fumelard:37'] },
+  { trainer: 'corvin_qg', starterLevel: 42, captures: ['chafourbe:40', 'lustrombre:40'] },
+  { trainer: 'brune', starterLevel: 44, captures: ['girouette:42', 'sombrecor:42'] },
+  { trainer: 'corvin_forge', starterLevel: 46, captures: ['fusiblard:44', 'lustrombre:44'] },
+  { trainer: 'oswin', starterLevel: 49, captures: ['miroitage:47', 'brumaitre:47'] },
 ];
 
 function parseArgs(argv) {

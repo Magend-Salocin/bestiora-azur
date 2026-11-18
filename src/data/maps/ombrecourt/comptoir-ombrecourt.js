@@ -1,0 +1,62 @@
+export default {
+  id: 'comptoir_ombrecourt',
+  name: 'Comptoir d’Ombrecourt',
+  tileset: 'indoor',
+  music: 'halte',
+  layers: {
+    ground: [
+      '##w##w##',
+      '#,,,,,L#',
+      '#[-],,L#',
+      '#,,,,,,#',
+      '#,,,,,,#',
+      '#P,,,,P#',
+      '#,,,,,,#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'ombrecourt', toX: 7, toY: 5 }],
+  npcs: [
+    {
+      id: 'vendeur',
+      sprite: 'vendeur',
+      x: 2,
+      y: 1,
+      facing: 'down',
+      movement: 'static',
+      script: [
+        {
+          cmd: 'open_menu',
+          menu: 'shop',
+          params: {
+            stock: [
+              { item: 'hyper_capsule' },
+              { item: 'grande_potion' },
+              { item: 'potion_totale', badge: 'ombre' },
+              { item: 'ranimant' },
+              { item: 'panacee' },
+              { item: 'repulsif_max' },
+              { item: 'sel_eveil' },
+            ],
+          },
+        },
+      ],
+    },
+    {
+      id: 'client',
+      sprite: 'vieil_homme',
+      x: 5,
+      y: 5,
+      facing: 'up',
+      movement: 'look',
+      script: [{ cmd: 'say', text: 'comptoir_ombrecourt_client' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

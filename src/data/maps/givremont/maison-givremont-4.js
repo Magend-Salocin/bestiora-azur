@@ -1,0 +1,37 @@
+export default {
+  id: 'maison_givremont_4',
+  name: 'Maison de Givremont',
+  tileset: 'indoor',
+  music: 'hometown',
+  layers: {
+    ground: [
+      '#w##w###',
+      '#L....P#',
+      '#L.....#',
+      '#..tt..#',
+      '#..tt..#',
+      '#......#',
+      '#......#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'givremont', toX: 14, toY: 11 }],
+  npcs: [
+    {
+      id: 'randonneur',
+      sprite: 'randonneur',
+      x: 5,
+      y: 3,
+      facing: 'down',
+      movement: 'static',
+      script: [{ cmd: 'say', text: 'maison_givremont_4_randonneur' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

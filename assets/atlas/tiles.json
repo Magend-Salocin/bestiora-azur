@@ -487,566 +487,662 @@
       "h": 16
     },
     "special/teleporter/0": {
-      "x": 187,
-      "y": 85,
+      "x": 85,
+      "y": 102,
       "w": 16,
       "h": 16
     },
     "special/teleporter/1": {
+      "x": 102,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_circle/0": {
+      "x": 187,
+      "y": 85,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_circle/1": {
       "x": 204,
       "y": 85,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_diamond/0": {
+      "x": 221,
+      "y": 85,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_diamond/1": {
+      "x": 0,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_square/0": {
+      "x": 17,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_square/1": {
+      "x": 34,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_triangle/0": {
+      "x": 51,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/teleporter_triangle/1": {
+      "x": 68,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_down/0": {
+      "x": 119,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_down/1": {
+      "x": 136,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_left/0": {
+      "x": 153,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_left/1": {
+      "x": 170,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_right/0": {
+      "x": 187,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_right/1": {
+      "x": 204,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_up/0": {
+      "x": 221,
+      "y": 102,
+      "w": 16,
+      "h": 16
+    },
+    "special/wind_up/1": {
+      "x": 0,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_door": {
-      "x": 221,
-      "y": 85,
+      "x": 17,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_emblem": {
-      "x": 0,
-      "y": 102,
+      "x": 34,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_l": {
-      "x": 17,
-      "y": 102,
+      "x": 51,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_m": {
-      "x": 34,
-      "y": 102,
+      "x": 68,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_r": {
-      "x": 51,
-      "y": 102,
+      "x": 85,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_top_l": {
-      "x": 68,
-      "y": 102,
+      "x": 102,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_top_m": {
-      "x": 85,
-      "y": 102,
+      "x": 119,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_roof_top_r": {
-      "x": 102,
-      "y": 102,
+      "x": 136,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_wall": {
-      "x": 119,
-      "y": 102,
+      "x": 153,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_wall_l": {
-      "x": 136,
-      "y": 102,
+      "x": 170,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_wall_r": {
-      "x": 153,
-      "y": 102,
+      "x": 187,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/arena_window": {
-      "x": 170,
-      "y": 102,
+      "x": 204,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/comptoir_door": {
-      "x": 187,
-      "y": 102,
+      "x": 221,
+      "y": 119,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_emblem": {
-      "x": 204,
-      "y": 102,
+      "x": 0,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_l": {
-      "x": 221,
-      "y": 102,
+      "x": 17,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_m": {
-      "x": 0,
-      "y": 119,
+      "x": 34,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_r": {
-      "x": 17,
-      "y": 119,
+      "x": 51,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_top_l": {
-      "x": 34,
-      "y": 119,
+      "x": 68,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_top_m": {
-      "x": 51,
-      "y": 119,
+      "x": 85,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_roof_top_r": {
-      "x": 68,
-      "y": 119,
+      "x": 102,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_wall": {
-      "x": 85,
-      "y": 119,
+      "x": 119,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_wall_l": {
-      "x": 102,
-      "y": 119,
+      "x": 136,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_wall_r": {
-      "x": 119,
-      "y": 119,
+      "x": 153,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/comptoir_window": {
-      "x": 136,
-      "y": 119,
+      "x": 170,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/factory_chimney": {
-      "x": 153,
-      "y": 119,
+      "x": 187,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/factory_door": {
-      "x": 170,
-      "y": 119,
+      "x": 204,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/factory_roof": {
-      "x": 187,
-      "y": 119,
+      "x": 221,
+      "y": 136,
       "w": 16,
       "h": 16
     },
     "town/factory_wall": {
-      "x": 204,
-      "y": 119,
+      "x": 0,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/ground": {
-      "x": 221,
-      "y": 119,
+      "x": 17,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_door": {
-      "x": 0,
-      "y": 136,
+      "x": 34,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_emblem": {
-      "x": 17,
-      "y": 136,
+      "x": 51,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_l": {
-      "x": 34,
-      "y": 136,
+      "x": 68,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_m": {
-      "x": 51,
-      "y": 136,
+      "x": 85,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_r": {
-      "x": 68,
-      "y": 136,
+      "x": 102,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_top_l": {
-      "x": 85,
-      "y": 136,
+      "x": 119,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_top_m": {
-      "x": 102,
-      "y": 136,
+      "x": 136,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_roof_top_r": {
-      "x": 119,
-      "y": 136,
+      "x": 153,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_wall": {
-      "x": 136,
-      "y": 136,
+      "x": 170,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_wall_l": {
-      "x": 153,
-      "y": 136,
+      "x": 187,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_wall_r": {
-      "x": 170,
-      "y": 136,
+      "x": 204,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/halte_window": {
-      "x": 187,
-      "y": 136,
+      "x": 221,
+      "y": 153,
       "w": 16,
       "h": 16
     },
     "town/house_a_door": {
-      "x": 204,
-      "y": 136,
+      "x": 0,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_l": {
-      "x": 221,
-      "y": 136,
+      "x": 17,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_m": {
-      "x": 0,
-      "y": 153,
+      "x": 34,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_r": {
-      "x": 17,
-      "y": 153,
+      "x": 51,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_top_l": {
-      "x": 34,
-      "y": 153,
+      "x": 68,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_top_m": {
-      "x": 51,
-      "y": 153,
+      "x": 85,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_roof_top_r": {
-      "x": 68,
-      "y": 153,
+      "x": 102,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_wall": {
-      "x": 85,
-      "y": 153,
+      "x": 119,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_wall_l": {
-      "x": 102,
-      "y": 153,
+      "x": 136,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_wall_r": {
-      "x": 119,
-      "y": 153,
+      "x": 153,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_a_window": {
-      "x": 136,
-      "y": 153,
+      "x": 170,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_b_door": {
-      "x": 153,
-      "y": 153,
+      "x": 187,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_l": {
-      "x": 170,
-      "y": 153,
+      "x": 204,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_m": {
-      "x": 187,
-      "y": 153,
+      "x": 221,
+      "y": 170,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_r": {
-      "x": 204,
-      "y": 153,
+      "x": 0,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_top_l": {
-      "x": 221,
-      "y": 153,
+      "x": 17,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_top_m": {
-      "x": 0,
-      "y": 170,
+      "x": 34,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_roof_top_r": {
-      "x": 17,
-      "y": 170,
+      "x": 51,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_wall": {
-      "x": 34,
-      "y": 170,
+      "x": 68,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_wall_l": {
-      "x": 51,
-      "y": 170,
+      "x": 85,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_wall_r": {
-      "x": 68,
-      "y": 170,
+      "x": 102,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_b_window": {
-      "x": 85,
-      "y": 170,
+      "x": 119,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_door": {
-      "x": 102,
-      "y": 170,
+      "x": 136,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_l": {
-      "x": 119,
-      "y": 170,
+      "x": 153,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_m": {
-      "x": 136,
-      "y": 170,
+      "x": 170,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_r": {
-      "x": 153,
-      "y": 170,
+      "x": 187,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_top_l": {
-      "x": 170,
-      "y": 170,
+      "x": 204,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_top_m": {
-      "x": 187,
-      "y": 170,
+      "x": 221,
+      "y": 187,
       "w": 16,
       "h": 16
     },
     "town/house_c_roof_top_r": {
-      "x": 204,
-      "y": 170,
+      "x": 0,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/house_c_wall": {
-      "x": 221,
-      "y": 170,
+      "x": 17,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/house_c_wall_l": {
-      "x": 0,
-      "y": 187,
+      "x": 34,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/house_c_wall_r": {
-      "x": 17,
-      "y": 187,
+      "x": 51,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/house_c_window": {
-      "x": 34,
-      "y": 187,
+      "x": 68,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_door": {
-      "x": 51,
-      "y": 187,
+      "x": 85,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_emblem": {
-      "x": 68,
-      "y": 187,
+      "x": 102,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_l": {
-      "x": 85,
-      "y": 187,
+      "x": 119,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_m": {
-      "x": 102,
-      "y": 187,
+      "x": 136,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_r": {
-      "x": 119,
-      "y": 187,
+      "x": 153,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_top_l": {
-      "x": 136,
-      "y": 187,
+      "x": 170,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_top_m": {
-      "x": 153,
-      "y": 187,
+      "x": 187,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_roof_top_r": {
-      "x": 170,
-      "y": 187,
+      "x": 204,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_wall": {
-      "x": 187,
-      "y": 187,
+      "x": 221,
+      "y": 204,
       "w": 16,
       "h": 16
     },
     "town/lab_wall_l": {
-      "x": 204,
-      "y": 187,
+      "x": 0,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/lab_wall_r": {
-      "x": 221,
-      "y": 187,
+      "x": 17,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/lab_window": {
-      "x": 0,
-      "y": 204,
+      "x": 34,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/lighthouse_base": {
-      "x": 17,
-      "y": 204,
+      "x": 51,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/lighthouse_mid": {
-      "x": 34,
-      "y": 204,
+      "x": 68,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/lighthouse_top": {
-      "x": 51,
-      "y": 204,
+      "x": 85,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/turbine_mast": {
-      "x": 68,
-      "y": 204,
+      "x": 102,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/turbine_top/0": {
-      "x": 85,
-      "y": 204,
+      "x": 119,
+      "y": 221,
       "w": 16,
       "h": 16
     },
     "town/turbine_top/1": {
-      "x": 102,
-      "y": 204,
+      "x": 136,
+      "y": 221,
       "w": 16,
       "h": 16
     }
@@ -1056,7 +1152,7 @@
     "image": "tiles.png",
     "size": {
       "w": 240,
-      "h": 220
+      "h": 237
     },
     "levels": [
       "#ffffff",
@@ -1064,7 +1160,7 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "8fd8a82adda11ae779660d043323dc2a3ea715d28e602b26d2f7f1e7fdfb6aad",
+    "pngHash": "f791b7e16af17ea5fffcd50413fc51bf5ee98fd176787840110a37f0ba3ce446",
     "tilesets": {
       "outdoor": {
         "extends": null,
@@ -1716,6 +1812,46 @@
           "teleporter": {
             "frames": 2,
             "door": true,
+            "animated": true
+          },
+          "teleporter_circle": {
+            "frames": 2,
+            "door": true,
+            "animated": true
+          },
+          "teleporter_triangle": {
+            "frames": 2,
+            "door": true,
+            "animated": true
+          },
+          "teleporter_square": {
+            "frames": 2,
+            "door": true,
+            "animated": true
+          },
+          "teleporter_diamond": {
+            "frames": 2,
+            "door": true,
+            "animated": true
+          },
+          "wind_up": {
+            "frames": 2,
+            "current": "up",
+            "animated": true
+          },
+          "wind_down": {
+            "frames": 2,
+            "current": "down",
+            "animated": true
+          },
+          "wind_left": {
+            "frames": 2,
+            "current": "left",
+            "animated": true
+          },
+          "wind_right": {
+            "frames": 2,
+            "current": "right",
             "animated": true
           },
           "league_floor": {

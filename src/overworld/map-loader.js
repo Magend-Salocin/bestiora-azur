@@ -21,6 +21,9 @@ export const DEFAULT_LEGENDS = {
   special: {
     '.': 'memory_floor', ',': 'memory_floor_alt', l: 'lab_floor', X: 'teleporter', f: 'league_floor',
     c: 'league_carpet', '~': 'lava', '#': 'crystal_pillar',
+    // Arcane arena teleporters (one symbol each) and air currents of the Vent arena.
+    o: 'teleporter_circle', a: 'teleporter_triangle', q: 'teleporter_square', d: 'teleporter_diamond',
+    '^': 'wind_up', v: 'wind_down', '<': 'wind_left', '>': 'wind_right',
   },
 };
 DEFAULT_LEGENDS.town = { ...DEFAULT_LEGENDS.outdoor, _: 'ground' };

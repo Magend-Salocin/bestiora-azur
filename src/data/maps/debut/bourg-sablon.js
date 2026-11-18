@@ -57,6 +57,7 @@ export default {
     { x: 13, y: 12, to: 'comptoir_bourg_sablon', toX: 3, toY: 7 },
   ],
   npcs: [
+    { id: 'reaction_dissous', sprite: 'vieil_homme', x: 13, y: 5, facing: 'down', movement: 'look', showIf: 'syndicat_dissous', script: [{ cmd: 'say', text: 'bourg_sablon_syndicat_dissous' }] },
     {
       id: 'garde', sprite: 'vieil_homme', x: 17, y: 7, facing: 'down', movement: 'static',
       script: [{ cmd: 'if_flag', flag: 'has_bestiary', then: [{ cmd: 'say', text: 'bourg_sablon_garde_apres' }], else: [{ cmd: 'say', text: 'bourg_sablon_gate' }] }],

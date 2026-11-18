@@ -1,0 +1,37 @@
+export default {
+  id: 'maison_forge_ardente_1',
+  name: 'Maison de Forge-Ardente',
+  tileset: 'indoor',
+  music: 'hometown',
+  layers: {
+    ground: [
+      '#w##w###',
+      '#L....P#',
+      '#L.....#',
+      '#..tt..#',
+      '#..tt..#',
+      '#......#',
+      '#......#',
+      '###m####',
+    ],
+  },
+  encounters: null,
+  warps: [{ x: 3, y: 7, to: 'forge_ardente', toX: 20, toY: 5 }],
+  npcs: [
+    {
+      id: 'vieille',
+      sprite: 'vieille_dame',
+      x: 5,
+      y: 3,
+      facing: 'down',
+      movement: 'static',
+      script: [{ cmd: 'say', text: 'maison_forge_1_vieille' }],
+    },
+  ],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+};

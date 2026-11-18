@@ -8,7 +8,6 @@ export default {
   route_6_gate_badge: 'La Lanterne ne s’utilise qu’avec le badge Foudre. Mieux vaut rebrousser chemin.',
   route_6_guide: 'Le tunnel est plus noir qu’une nuit sans lune.\fÀ Vireval, une ingénieure fabrique des lanternes. Va la voir après l’arène.',
   route_6_guide_lanterne: 'Une Lanterne ! Avec ça, le tunnel n’a plus de secret.\fDe l’autre côté, c’est Cendrelune et ses serres.',
-  route_6_centrale_door: 'La porte est scellée.\fDerrière, quelque chose grésille… On dirait un orage enfermé.',
 
   randonneur_gaspard_intro: 'Tu vas au tunnel ? Montre-moi d’abord tes mollets… euh, tes bestioles !',
   randonneur_gaspard_defeat: 'Mes mollets sont plus solides que mes bestioles.',
@@ -52,10 +51,10 @@ export default {
   // Cendrelune
   sign_cendrelune: 'Cendrelune\fLa ville où la mémoire fleurit.',
   sign_arene_flore: 'Arène de Cendrelune\fChampion : Aubin\fLe jardinier des combats.',
-  sign_cendrelune_est: 'Route 7\fFermée : la falaise s’est effondrée.',
+  sign_cendrelune_est: 'Route 7\fFalaises de Bise et Haute-Bise.\fLa route était fermée : la falaise s’est effondrée.',
   sign_cendrelune_jardin: 'Jardin public\fAttention : bestioles sauvages dans les herbes.',
   cendrelune_jardinier: 'Ces serres sont chauffées par des braises de Fumelard.\fC’est pour ça que la ville s’appelle Cendrelune !',
-  cendrelune_eboulement: 'Des rochers tombés de la falaise bloquent la route de l’est.\fOn déblaie, mais ça va prendre du temps. Repasse plus tard !',
+  cendrelune_eboulement: 'Des rochers tombés de la falaise bloquent la route de l’est.\fOn déblaie, mais ça va prendre du temps. Dès que la Tour sera libérée, on aura du renfort !',
   cendrelune_fillette: 'Aubin parle à ses plantes. Il dit qu’elles lui répondent !',
   cendrelune_vieille_dame: 'Quand une bestiole nous quitte, on grave son nom dans la Tour.\fLà-haut, on dit que leur souvenir veille sur nous.',
   cendrelune_campeuse: 'Dans ce jardin, j’ai vu une Dionavore une seule fois. Elle a mangé mon sandwich.',

@@ -29,7 +29,7 @@ export const SCRIPT_COMMANDS = {
   give_badge: { badge: 'badge' },
   heal_party: {},
   battle: { trainer: 'trainer', onLose: 'any?', won: 'script?', lost: 'script?' },
-  wild_battle: { creature: 'creature', level: 'number' },
+  wild_battle: { creature: 'creature', level: 'number', legendary: 'any?', won: 'script?', caught: 'script?' },
   warp: { map: 'map', x: 'number', y: 'number', facing: 'direction?' },
   show_actor: { actor: 'actor' },
   hide_actor: { actor: 'actor' },
@@ -109,12 +109,16 @@ export function createScriptRunner(ctx) {
       }
       return runList(outcome === 'lose' ? c.lost : c.won);
     },
+    // `legendary`: final battle music, no running away. `won` runs when the creature is knocked
+    // out, `caught` when it is captured (a script uses them to make a legendary one-shot).
     wild_battle: async (c) => {
-      const outcome = await ctx.wildBattle(c.creature, c.level);
+      const outcome = await ctx.wildBattle(c.creature, c.level, { legendary: Boolean(c.legendary) });
       if (outcome === 'lose') {
         await ctx.blackout();
         return STOP;
       }
+      if (outcome === 'win') return runList(c.won);
+      if (outcome === 'caught') return runList(c.caught);
       return undefined;
     },
     warp: (c) => ctx.warp(c.map, c.x, c.y, c.facing),

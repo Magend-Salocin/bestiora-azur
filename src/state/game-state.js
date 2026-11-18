@@ -35,7 +35,15 @@ export function setGameState(state) {
   current = state;
 }
 
-export const hasFlag = (state, flag) => state.flags[flag] === true;
+/**
+ * Flags computed from the state instead of stored: readable by scripts and by showIf / hideIf
+ * like any other flag, never written. `bestiary_149`: every species but the mythical one is caught.
+ */
+export const COMPUTED_FLAGS = {
+  bestiary_149: (state) => Object.values(state.bestiary.caught).filter(Boolean).length >= 149,
+};
+
+export const hasFlag = (state, flag) => (COMPUTED_FLAGS[flag] ? COMPUTED_FLAGS[flag](state) : state.flags[flag] === true);
 export const setFlag = (state, flag) => {
   state.flags[flag] = true;
 };

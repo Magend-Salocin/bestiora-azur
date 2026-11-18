@@ -32,7 +32,7 @@ export default {
   npcs: [],
   trainers: [
     { id: 'mystique_sidonie', sprite: 'mystique', x: 7, y: 10, facing: 'right', sight: 5, trainer: 'mystique_sidonie' },
-    { id: 'sbire_tour_josette', sprite: 'sbire_opale', x: 12, y: 3, facing: 'down', sight: 4, trainer: 'sbire_tour_josette' },
+    { id: 'sbire_tour_josette', sprite: 'sbire_opale', x: 12, y: 3, facing: 'down', sight: 4, trainer: 'sbire_tour_josette', hideIf: 'syndicat_dissous' },
     { id: 'mystique_ernest', sprite: 'mystique', x: 1, y: 6, facing: 'right', sight: 4, trainer: 'mystique_ernest' },
   ],
   signs: [],

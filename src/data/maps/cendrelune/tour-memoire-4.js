@@ -32,7 +32,7 @@ export default {
   npcs: [],
   trainers: [
     { id: 'mystique_berenice', sprite: 'mystique', x: 1, y: 9, facing: 'right', sight: 5, trainer: 'mystique_berenice' },
-    { id: 'sbire_tour_anatole', sprite: 'sbire_opale', x: 6, y: 4, facing: 'down', sight: 3, trainer: 'sbire_tour_anatole' },
+    { id: 'sbire_tour_anatole', sprite: 'sbire_opale', x: 6, y: 4, facing: 'down', sight: 3, trainer: 'sbire_tour_anatole', hideIf: 'syndicat_dissous' },
     { id: 'mystique_honore', sprite: 'mystique', x: 12, y: 4, facing: 'left', sight: 3, trainer: 'mystique_honore' },
   ],
   signs: [],

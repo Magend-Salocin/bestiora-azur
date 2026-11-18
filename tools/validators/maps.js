@@ -83,6 +83,11 @@ function checkEntities(map, data, label) {
   for (const [name, commands] of Object.entries(map.scripts ?? {})) errors.push(...checkScript(commands, data, scope(`script ${name}`)));
 
   if (map.flyPoint && !isStandable(map, map.flyPoint.x, map.flyPoint.y)) errors.push(`${label} : flyPoint bloquant ou hors de la carte`);
+  for (const light of map.lights ?? []) {
+    inside(light, 'lumière');
+    if (!light.flag) errors.push(`${label} : lumière ${at(light)} sans drapeau`);
+  }
+  if (map.dark !== undefined && ![true, false, 'always'].includes(map.dark)) errors.push(`${label} : dark vaut true, false ou 'always'`);
   for (const sign of map.signs ?? []) {
     inside(sign, 'panneau');
     if (data.texts[sign.text] === undefined) errors.push(`${label} : panneau ${at(sign)} texte inconnu « ${sign.text} »`);

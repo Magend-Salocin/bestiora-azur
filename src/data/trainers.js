@@ -4,9 +4,16 @@ import debut from './trainers/debut.js';
 import bois from './trainers/bois.js';
 import port from './trainers/port.js';
 import cendrelune from './trainers/cendrelune.js';
+import bise from './trainers/bise.js';
+import marais from './trainers/marais.js';
+import ombrecourt from './trainers/ombrecourt.js';
+import mer from './trainers/mer.js';
+import forge from './trainers/forge.js';
+import givremont from './trainers/givremont.js';
+import centrale from './trainers/centrale.js';
 import test from './trainers/test.js';
 
-export const TRAINERS = [...debut, ...bois, ...port, ...cendrelune, ...test];
+export const TRAINERS = [...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...test];
 
 export const TRAINERS_BY_ID = Object.fromEntries(TRAINERS.map((trainer) => [trainer.id, trainer]));
 

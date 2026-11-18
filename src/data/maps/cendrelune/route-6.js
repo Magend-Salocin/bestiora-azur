@@ -64,7 +64,7 @@ export default {
       { creature: 'morillard', minLevel: 24, maxLevel: 24, weight: 4 },
     ],
   },
-  warps: [{ x: 9, y: 2, to: 'tunnel_obscur', toX: 3, toY: 19 }],
+  warps: [{ x: 9, y: 2, to: 'tunnel_obscur', toX: 3, toY: 19 }, { x: 15, y: 15, to: 'centrale_abandonnee', toX: 12, toY: 19 }],
   npcs: [
     { id: 'guide_tunnel', sprite: 'montagnard', x: 11, y: 3, facing: 'left', movement: 'static', script: 'guide_tunnel' },
   ],
@@ -93,7 +93,6 @@ export default {
   ],
   triggers: [
     { x: 9, y: 3, w: 1, h: 1, script: [{ cmd: 'call', script: 'gate_tunnel' }] },
-    { x: 15, y: 15, w: 1, h: 1, script: [{ cmd: 'call', script: 'centrale_door' }] },
   ],
   connections: { north: null, south: 'vireval', east: null, west: null },
   scripts: {
@@ -109,9 +108,5 @@ export default {
       then: [{ cmd: 'say', text: 'route_6_guide_lanterne' }],
       else: [{ cmd: 'say', text: 'route_6_guide' }],
     }],
-    centrale_door: [
-      { cmd: 'say', text: 'route_6_centrale_door' },
-      { cmd: 'move', actor: 'player', path: ['down'] },
-    ],
   },
 };

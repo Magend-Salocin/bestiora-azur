@@ -39,9 +39,9 @@ export default {
     { id: 'brisac', sprite: 'sbire_opale', x: 4, y: 1, facing: 'down', movement: 'static', hideIf: 'usine_opale_cleared', script: 'brisac' },
   ],
   trainers: [
-    { id: 'sbire_usine_3', sprite: 'sbire_opale', x: 8, y: 9, facing: 'left', sight: 4, trainer: 'sbire_usine_3' },
+    { id: 'sbire_usine_3', sprite: 'sbire_opale', x: 8, y: 9, facing: 'left', sight: 4, trainer: 'sbire_usine_3', hideIf: 'syndicat_dissous' },
     { id: 'chercheuse_adele', sprite: 'scientifique', x: 14, y: 3, facing: 'left', sight: 4, trainer: 'chercheuse_adele' },
-    { id: 'sbire_usine_4', sprite: 'sbire_opale', x: 7, y: 1, facing: 'down', sight: 4, trainer: 'sbire_usine_4' },
+    { id: 'sbire_usine_4', sprite: 'sbire_opale', x: 7, y: 1, facing: 'down', sight: 4, trainer: 'sbire_usine_4', hideIf: 'syndicat_dissous' },
   ],
   signs: [],
   items: [{ x: 14, y: 1, item: 'seve_vitale', flag: 'item_usine_opale_2_1' }],

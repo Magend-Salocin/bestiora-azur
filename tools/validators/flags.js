@@ -1,6 +1,10 @@
 // Story flags: every flag read by a script or a showIf/hideIf must be set somewhere
 // (catches typos that would block the story forever).
 import { STARTERS } from '../../src/data/trainers/helpers.js';
+import { COMPUTED_FLAGS } from '../../src/state/game-state.js';
+
+/** Flags set by a later prompt (11, Ligue and post-game); reading them now is intended. */
+const PLANNED_FLAGS = ['ligue_terminee'];
 
 /** Calls visit(command) on every command of a script, nested lists included. */
 function walk(commands, visit) {
@@ -23,7 +27,7 @@ function allScripts(data) {
 }
 
 export function checkFlags(data) {
-  const set = new Set(STARTERS.map((starter) => `starter_${starter}`));
+  const set = new Set([...STARTERS.map((starter) => `starter_${starter}`), ...Object.keys(COMPUTED_FLAGS), ...PLANNED_FLAGS]);
   const read = [];
   for (const { where, commands } of allScripts(data)) {
     walk(commands, (command) => {
@@ -35,6 +39,7 @@ export function checkFlags(data) {
     (map.trainers ?? []).forEach((entry) => set.add(`trainer_${entry.trainer}`));
     [...(map.items ?? []), ...(map.hiddenItems ?? [])].forEach((entry) => set.add(entry.flag));
     (map.triggers ?? []).forEach((entry, index) => set.add(entry.flag ?? `trigger_${map.id}_${index}`));
+    for (const light of map.lights ?? []) if (light.flag) read.push({ flag: light.flag, where: `carte ${map.id}, lumière (${light.x},${light.y})` });
     for (const actor of [...(map.npcs ?? []), ...(map.trainers ?? [])]) {
       for (const field of ['showIf', 'hideIf']) if (actor[field]) read.push({ flag: actor[field], where: `carte ${map.id}, ${actor.id}.${field}` });
     }

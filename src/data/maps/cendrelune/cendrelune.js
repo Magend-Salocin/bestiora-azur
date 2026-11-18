@@ -1,5 +1,5 @@
 // Cendrelune: town of greenhouses and gardens. Tunnel Obscur mouth at the bottom left,
-// Tour de la Mémoire at the top (badge Flore), east road reserved for Route 7 (prompt 10).
+// Tour de la Mémoire at the top (badge Flore), east road leads to Route 7 once the Tour is freed.
 export default {
   id: 'cendrelune',
   name: 'Cendrelune',
@@ -68,9 +68,10 @@ export default {
     { x: 11, y: 4, to: 'tour_memoire_1', toX: 6, toY: 11 },
   ],
   npcs: [
+    { id: 'reaction_dissous', sprite: 'mystique', x: 3, y: 9, facing: 'down', movement: 'look', showIf: 'syndicat_dissous', script: [{ cmd: 'say', text: 'cendrelune_syndicat_dissous' }] },
     { id: 'jardinier', sprite: 'vieil_homme', x: 3, y: 3, facing: 'right', movement: 'static', script: [{ cmd: 'say', text: 'cendrelune_jardinier' }] },
     { id: 'apprentie', sprite: 'mystique', x: 12, y: 5, facing: 'left', movement: 'static', script: 'apprentie' },
-    { id: 'ouvrier_eboulement', sprite: 'ouvrier', x: 22, y: 10, facing: 'left', movement: 'static', script: [{ cmd: 'say', text: 'cendrelune_eboulement' }] },
+    { id: 'ouvrier_eboulement', sprite: 'ouvrier', x: 22, y: 10, facing: 'left', movement: 'static', hideIf: 'tour_memoire_liberee', script: [{ cmd: 'say', text: 'cendrelune_eboulement' }] },
     { id: 'fillette', sprite: 'fillette', x: 15, y: 16, facing: 'down', movement: 'wander', radius: 2, script: [{ cmd: 'say', text: 'cendrelune_fillette' }] },
     { id: 'vieille_dame', sprite: 'vieille_dame', x: 13, y: 9, facing: 'down', movement: 'look', script: [{ cmd: 'say', text: 'cendrelune_vieille_dame' }] },
     { id: 'gentleman', sprite: 'gentleman', x: 7, y: 10, facing: 'down', movement: 'look', script: 'gentleman' },
@@ -86,7 +87,7 @@ export default {
   items: [],
   hiddenItems: [{ x: 6, y: 3, item: 'sucre_dorge', flag: 'hidden_cendrelune_1' }],
   triggers: [{ x: 11, y: 5, w: 1, h: 1, script: [{ cmd: 'call', script: 'gate_tour' }] }],
-  connections: {},
+  connections: { east: 'route_7' },
   scripts: {
     gate_tour: [{ cmd: 'if_badge', badge: 'flore', else: [
       { cmd: 'face', actor: 'apprentie', direction: 'left' },
