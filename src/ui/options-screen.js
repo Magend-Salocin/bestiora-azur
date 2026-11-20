@@ -1,4 +1,5 @@
-// Options screen: left/right change a value, A on TOUCHES remaps the keyboard, B saves and closes.
+// Options screen: left/right change a value, A on TOUCHES / MANETTE remaps the keyboard or the
+// gamepad (one press per button, in the order of BUTTONS), B saves and closes.
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
 import { BUTTONS } from '../engine/constants.js';
 import { drawText } from '../gfx/font.js';
@@ -11,9 +12,18 @@ import { hooks } from '../overworld/hooks.js';
 import { PromiseScene, moveCursor } from './menu-cursor.js';
 import { drawWindowFrame } from './window-frame.js';
 
-const TEXT_SPEED_LABELS = { slow: 'LENT', medium: 'MOYEN', fast: 'RAPIDE' };
+const TEXT_SPEED_LABELS = { slow: 'LENT', medium: 'MOYEN', fast: 'RAPIDE', instant: 'INSTANT' };
 const BUTTON_LABELS = { up: 'HAUT', down: 'BAS', left: 'GAUCHE', right: 'DROITE', a: 'A', b: 'B', start: 'START', select: 'SELECT' };
-const ROWS = ['textSpeed', 'battleAnimations', 'battleStyle', 'musicVolume', 'sfxVolume', 'palette', 'windowScale', 'fullscreen', 'keys'];
+const ROWS = [
+  'textSpeed', 'battleAnimations', 'reduceFlashes', 'battleStyle', 'musicVolume', 'sfxVolume', 'palette',
+  'windowScale', 'fullscreen', 'keys', 'gamepad',
+];
+const ROW_LABELS = {
+  textSpeed: 'TEXTE', battleAnimations: 'ANIMATIONS', reduceFlashes: 'FLASHS RÉDUITS', battleStyle: 'STYLE',
+  musicVolume: 'MUSIQUE', sfxVolume: 'EFFETS', palette: 'PALETTE', windowScale: 'TAILLE', fullscreen: 'PLEIN ÉCRAN',
+  keys: 'TOUCHES', gamepad: 'MANETTE',
+};
+const ROW_HEIGHT = 12;
 
 let targets = { input: null };
 
@@ -28,10 +38,12 @@ export function applyOptions(options = getOptions()) {
   hooks.setVolumes(options.musicVolume / 10, options.sfxVolume / 10);
   if (PALETTES.some((palette) => palette.id === options.palette)) setActivePalette(options.palette);
   if (options.keyBindings) targets.input?.setKeyBindings(options.keyBindings);
+  if (options.gamepadBindings) targets.input?.setGamepadBindings(options.gamepadBindings);
   window.bestiora?.setWindowScale?.(options.windowScale);
   window.bestiora?.setFullscreen?.(options.fullscreen);
 }
 
+/** Loads userData/options.json (or browser storage). Resolves true when options were found. */
 export async function loadAndApplyOptions() {
   let saved = null;
   try {
@@ -40,6 +52,7 @@ export async function loadAndApplyOptions() {
     saved = null;
   }
   applyOptions(setOptions(saved ?? {}));
+  return saved !== null;
 }
 
 export function persistOptions(options = getOptions()) {
@@ -50,6 +63,17 @@ export function persistOptions(options = getOptions()) {
   } catch {
     // Options stay in memory and in the next game save.
   }
+}
+
+/** Indexes of the gamepad buttons pressed right now, on every connected gamepad. */
+function pressedPadButtons() {
+  const pressed = new Set();
+  for (const pad of navigator.getGamepads?.() ?? []) {
+    pad?.buttons.forEach((button, index) => {
+      if (button.pressed) pressed.add(index);
+    });
+  }
+  return pressed;
 }
 
 function cycle(list, value, delta) {
@@ -64,14 +88,17 @@ export class OptionsScene extends PromiseScene {
     super();
     this.options = { ...getOptions() };
     this.index = 0;
-    this.remapping = null; // index in BUTTONS while waiting for a key
+    this.remapping = null; // index in BUTTONS while waiting for a key or a gamepad button
+    this.remapDevice = null; // 'keys' | 'gamepad'
     this.onKey = null;
+    this.heldPadButtons = new Set();
   }
 
   change(row, delta) {
     const o = this.options;
     if (row === 'textSpeed') o.textSpeed = cycle(TEXT_SPEED_IDS, o.textSpeed, delta);
     else if (row === 'battleAnimations') o.battleAnimations = !o.battleAnimations;
+    else if (row === 'reduceFlashes') o.reduceFlashes = !o.reduceFlashes;
     else if (row === 'battleStyle') o.battleStyle = cycle(BATTLE_STYLES, o.battleStyle, delta);
     else if (row === 'musicVolume') o.musicVolume = clampStep(o.musicVolume, OPTION_LIMITS.volume, delta);
     else if (row === 'sfxVolume') o.sfxVolume = clampStep(o.sfxVolume, OPTION_LIMITS.volume, delta);
@@ -84,6 +111,7 @@ export class OptionsScene extends PromiseScene {
 
   startRemap() {
     this.remapping = 0;
+    this.remapDevice = 'keys';
     const bindings = targets.input?.getKeyBindings() ?? {};
     this.onKey = (event) => {
       event.preventDefault();
@@ -99,14 +127,44 @@ export class OptionsScene extends PromiseScene {
     window.addEventListener('keydown', this.onKey, true);
   }
 
+  startGamepadRemap() {
+    if (!(navigator.getGamepads?.() ?? []).some(Boolean)) {
+      this.noGamepadTime = 1.5;
+      return;
+    }
+    this.remapping = 0;
+    this.remapDevice = 'gamepad';
+    this.padBindings = {};
+    this.heldPadButtons = pressedPadButtons(); // the A press that opened the remap is ignored
+  }
+
+  /** One newly pressed gamepad button per BUTTONS entry; buttons still held are ignored. */
+  updateGamepadRemap() {
+    const pressed = pressedPadButtons();
+    const fresh = [...pressed].find((index) => !this.heldPadButtons.has(index));
+    this.heldPadButtons = pressed;
+    if (fresh === undefined) return;
+    this.padBindings[BUTTONS[this.remapping]] = [fresh];
+    this.remapping += 1;
+    if (this.remapping < BUTTONS.length) return;
+    this.remapping = null;
+    this.options.gamepadBindings = this.padBindings;
+    applyOptions(setOptions(this.options));
+  }
+
   update(dt, input) {
-    if (this.remapping !== null) return;
+    this.noGamepadTime = Math.max(0, (this.noGamepadTime ?? 0) - dt);
+    if (this.remapping !== null) {
+      if (this.remapDevice === 'gamepad') this.updateGamepadRemap();
+      return;
+    }
     this.index = moveCursor(this.index, ROWS.length, input);
     const row = ROWS[this.index];
     const delta = (input.repeat('right') ? 1 : 0) - (input.repeat('left') ? 1 : 0);
     if (delta) this.change(row, delta);
     if (input.justPressed('a')) {
       if (row === 'keys') this.startRemap();
+      else if (row === 'gamepad') this.startGamepadRemap();
       else this.change(row, 1);
     }
     if (input.justPressed('b')) {
@@ -120,6 +178,7 @@ export class OptionsScene extends PromiseScene {
     switch (row) {
       case 'textSpeed': return TEXT_SPEED_LABELS[o.textSpeed];
       case 'battleAnimations': return o.battleAnimations ? 'OUI' : 'NON';
+      case 'reduceFlashes': return o.reduceFlashes ? 'OUI' : 'NON';
       case 'battleStyle': return o.battleStyle === 'choice' ? 'CHOIX' : 'DÉFINI';
       case 'musicVolume': return String(o.musicVolume);
       case 'sfxVolume': return String(o.sfxVolume);
@@ -134,17 +193,20 @@ export class OptionsScene extends PromiseScene {
     ctx.fillStyle = getColor(0);
     ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     drawWindowFrame(ctx, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    const labels = ['TEXTE', 'ANIMATIONS', 'STYLE', 'MUSIQUE', 'EFFETS', 'PALETTE', 'TAILLE', 'PLEIN ÉCRAN', 'TOUCHES'];
     ROWS.forEach((row, index) => {
-      const y = 8 + index * 14;
+      const y = 8 + index * ROW_HEIGHT;
       if (index === this.index) drawText(ctx, '▶', 8, y);
-      drawText(ctx, labels[index], 16, y);
+      drawText(ctx, ROW_LABELS[row], 16, y);
       const value = this.value(row);
       drawText(ctx, value, 152 - Array.from(value).length * 8, y);
     });
     if (this.remapping !== null) {
       drawWindowFrame(ctx, 0, 104, SCREEN_WIDTH, 40);
-      drawText(ctx, `Touche pour ${BUTTON_LABELS[BUTTONS[this.remapping]]}`, 8, 116);
+      const prompt = this.remapDevice === 'gamepad' ? 'Bouton' : 'Touche';
+      drawText(ctx, `${prompt} pour ${BUTTON_LABELS[BUTTONS[this.remapping]]}`, 8, 116);
+    } else if (this.noGamepadTime > 0) {
+      drawWindowFrame(ctx, 0, 104, SCREEN_WIDTH, 40);
+      drawText(ctx, 'Aucune manette.', 8, 116);
     }
   }
 }

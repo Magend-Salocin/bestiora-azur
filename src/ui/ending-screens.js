@@ -22,7 +22,7 @@ const CREDITS_SPEED = 12; // pixels per second, x4 while A is held
 const CREDITS_LINE_HEIGHT = 12;
 const CREDITS_BAND = { y: 96, height: 48 };
 const PLACE_DURATION = 6; // seconds per place in the background
-const FALLBACK_PLACES = ['hameau_de_lys', 'bourg_sablon', 'port_ondine', 'cendrelune', 'ombrecourt', 'givremont', 'citadelle_azur'];
+export const FALLBACK_PLACES = ['hameau_de_lys', 'bourg_sablon', 'port_ondine', 'cendrelune', 'ombrecourt', 'givremont', 'citadelle_azur'];
 
 const centeredX = (text) => Math.floor((SCREEN_WIDTH - Array.from(text).length * GLYPH_WIDTH) / 2);
 const drawCentered = (ctx, text, y) => drawText(ctx, text, centeredX(text), y);

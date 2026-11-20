@@ -86,9 +86,8 @@ class MessageBox {
     drawWindowFrame(ctx, x, y, width, height);
     let remaining = Math.floor(this.visible);
     this.pages[this.page].forEach((line, index) => {
-      const characters = Array.from(line);
-      drawText(ctx, characters.slice(0, remaining).join(''), 8, 108 + index * 16);
-      remaining = Math.max(0, remaining - characters.length);
+      drawText(ctx, line, 8, 108 + index * 16, undefined, remaining);
+      remaining = Math.max(0, remaining - Array.from(line).length);
     });
     const typed = this.visible >= this.pageLength;
     if (typed && (this.wait || this.page < this.pages.length - 1) && this.idle % 0.6 < 0.3) drawText(ctx, '▼', 152, 124);
@@ -267,9 +266,17 @@ export class BattleScene {
     return this.tween(duration, (t) => { shown.dx = Math.round(from + (to - from) * t); });
   }
 
+  /** Hit feedback: the sprite blinks, or shifts by 2 pixels with the reduced flashes option. */
   async blink(side, count) {
     const shown = this.shown[side];
-    await this.tween(count * 0.12, (t) => { shown.blink = Math.floor(t * count * 2) % 2 === 0 && t < 1; });
+    const phase = (t) => Math.floor(t * count * 2) % 2 === 0 && t < 1;
+    if (getOptions().reduceFlashes) {
+      const restX = shown.dx;
+      await this.tween(count * 0.12, (t) => { shown.dx = restX + (phase(t) ? 2 : 0); });
+      shown.dx = restX;
+      return;
+    }
+    await this.tween(count * 0.12, (t) => { shown.blink = phase(t); });
     shown.blink = false;
   }
 

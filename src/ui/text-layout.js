@@ -37,11 +37,16 @@ function splitLongWord(word, width) {
   return chunks;
 }
 
-/** Greedy word wrap of one paragraph (no '\n' inside). Always returns at least one line. */
-export function wrapParagraph(paragraph, width = DIALOG_LINE_WIDTH) {
-  const words = bindFrenchPunctuation(paragraph.normalize('NFC'))
+/** Units that never wrap: words, with French punctuation bound by a no-break space. */
+export function splitWords(paragraph) {
+  return bindFrenchPunctuation(paragraph.normalize('NFC'))
     .split(' ')
     .filter((word) => word !== '');
+}
+
+/** Greedy word wrap of one paragraph (no '\n' inside). Always returns at least one line. */
+export function wrapParagraph(paragraph, width = DIALOG_LINE_WIDTH) {
+  const words = splitWords(paragraph);
   const lines = [];
   let current = '';
 

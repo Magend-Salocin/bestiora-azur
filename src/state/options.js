@@ -2,7 +2,7 @@
 // (electron: userData/options.json, through window.bestiora.saveOptions / loadOptions).
 
 export const OPTION_LIMITS = { volume: [0, 10], windowScale: [2, 6] };
-export const TEXT_SPEED_IDS = ['slow', 'medium', 'fast'];
+export const TEXT_SPEED_IDS = ['slow', 'medium', 'fast', 'instant'];
 export const BATTLE_STYLES = ['choice', 'set'];
 
 export const DEFAULT_OPTIONS = {
@@ -15,6 +15,8 @@ export const DEFAULT_OPTIONS = {
   windowScale: 4,
   fullscreen: false,
   keyBindings: null, // null = defaults of src/engine/input.js
+  gamepadBindings: null, // { button: [gamepad button index] }, null = defaults
+  reduceFlashes: false, // battle blinks become a small shift, no flashing transition
 };
 
 let current = { ...DEFAULT_OPTIONS };
@@ -35,6 +37,8 @@ export function normalizeOptions(raw = {}) {
   options.windowScale = clamp(raw.windowScale, OPTION_LIMITS.windowScale, DEFAULT_OPTIONS.windowScale);
   if (typeof raw.fullscreen === 'boolean') options.fullscreen = raw.fullscreen;
   if (raw.keyBindings && typeof raw.keyBindings === 'object') options.keyBindings = raw.keyBindings;
+  if (raw.gamepadBindings && typeof raw.gamepadBindings === 'object') options.gamepadBindings = raw.gamepadBindings;
+  if (typeof raw.reduceFlashes === 'boolean') options.reduceFlashes = raw.reduceFlashes;
   return options;
 }
 

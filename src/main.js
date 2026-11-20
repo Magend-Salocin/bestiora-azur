@@ -5,15 +5,17 @@ import { createSceneManager } from './engine/scene-manager.js';
 import { getAtlas, loadAtlases } from './gfx/atlas.js';
 import { cyclePalette } from './gfx/palette.js';
 import { installBattleHooks } from './battle/ui/battle-setup.js';
-import { GAME_START, HOME_RESPAWN, TEST_START, getMapDefinition } from './data/maps/index.js';
-import { DebugMenuScene } from './debug/debug-menu.js';
+import { GAME_START, HOME_RESPAWN, TEST_START } from './data/maps/index.js';
 import { hooks, setHooks } from './overworld/hooks.js';
 import { OverworldScene } from './overworld/overworld-scene.js';
 import { createGameState, getGameState, setGameState } from './state/game-state.js';
+import { setOptions } from './state/options.js';
+import { readGameSave, writeGameSave } from './save/save-system.js';
+import { ErrorScene } from './ui/error-scene.js';
 import { LoadingScene } from './ui/loading-scene.js';
 import { installMenuHooks } from './ui/menu-hooks.js';
 import { createAudioSystem } from './audio/audio-system.js';
-import { loadAndApplyOptions, registerOptionTargets } from './ui/options-screen.js';
+import { applyOptions, loadAndApplyOptions, registerOptionTargets } from './ui/options-screen.js';
 import { TitleScene } from './ui/title-scene.js';
 import { playIntro } from './ui/intro-scene.js';
 
@@ -23,6 +25,8 @@ const scenes = createSceneManager();
 const isDev = Boolean(window.bestiora?.isDev);
 let overworld = null;
 let audio = null;
+let hasOptionsFile = false;
+let titleTime = null; // ms since page load when the title screen appeared (npm run perf)
 
 function isPaletteShortcut() {
   return (
@@ -31,27 +35,61 @@ function isPaletteShortcut() {
   );
 }
 
+// ---- Fatal errors: logged in userData/logs/, then the error screen replaces the game. ----
+
+let errorScene = null;
+
+function logError(error) {
+  const report = error instanceof Error ? (error.stack ?? error.message) : String(error);
+  if (isDev) console.error(error);
+  try {
+    window.bestiora?.logError?.(report);
+  } catch {
+    // Nothing more can be done.
+  }
+}
+
+function handleFatalError(error) {
+  logError(error);
+  if (errorScene) return;
+  try {
+    audio?.stopMusic();
+  } catch {
+    // The audio may be what failed.
+  }
+  errorScene = new ErrorScene(error, {
+    reload: () => (window.bestiora?.reload ? window.bestiora.reload() : window.location.reload()),
+    quit: () => window.close(),
+  });
+}
+
+window.addEventListener('error', (event) => handleFatalError(event.error ?? event.message));
+window.addEventListener('unhandledrejection', (event) => handleFatalError(event.reason));
+
 const loop = createLoop({
   update(dt) {
     input.update(dt);
-    if (isPaletteShortcut()) cyclePalette();
-    if (overworld) getGameState().playTime += dt;
-    scenes.update(dt, input);
+    if (errorScene) {
+      errorScene.update(dt, input);
+      return;
+    }
+    try {
+      if (isPaletteShortcut()) cyclePalette();
+      if (overworld) getGameState().playTime += dt;
+      scenes.update(dt, input);
+    } catch (error) {
+      handleFatalError(error);
+    }
   },
   render() {
-    scenes.render(renderer.ctx);
+    try {
+      (errorScene ?? scenes).render(renderer.ctx);
+    } catch (error) {
+      handleFatalError(error);
+    }
     renderer.present();
   },
 });
-
-/** Interim save read (prompt 12 moves it to the main process). */
-function readSave() {
-  try {
-    return JSON.parse(localStorage.getItem('bestiora-save') ?? 'null');
-  } catch {
-    return null;
-  }
-}
 
 function startGame(state, start, respawn = HOME_RESPAWN) {
   setGameState(state);
@@ -60,15 +98,26 @@ function startGame(state, start, respawn = HOME_RESPAWN) {
   if (isDev) window.debugGame = { scenes, overworld, state, hooks, audio };
 }
 
-function showTitle() {
-  const save = readSave();
+const SAVE_NOTICES = { backup: 'save_loaded_backup', corrupt: 'save_corrupt' };
+
+async function showTitle() {
+  const result = await readGameSave();
+  const save = result.save ?? null;
+  titleTime ??= performance.now();
   scenes.replace(new TitleScene({
     hasSave: Boolean(save),
+    notice: SAVE_NOTICES[result.status] ?? null,
     onChoice: (choice) => {
-      if (choice === 'continue') startGame({ ...createGameState(), ...save }, save.position);
+      if (choice === 'continue') continueGame(save);
       else startNewGame();
     },
   }));
+}
+
+/** The options file wins; the options stored in the save only fill in when it is missing. */
+function continueGame(save) {
+  if (save.options && !hasOptionsFile) applyOptions(setOptions(save.options));
+  startGame(save.state, save.state.position);
 }
 
 async function startNewGame() {
@@ -76,35 +125,20 @@ async function startNewGame() {
   startGame(createGameState(identity), GAME_START);
 }
 
-/** Dev only: teleports to a map, on its fly point or its first warp. */
-function debugWarp(mapId) {
-  const definition = getMapDefinition(mapId);
-  const target = definition.flyPoint ?? definition.warps?.[0] ?? { x: 1, y: 1 };
-  overworld.runBusy(() => overworld.doWarp(mapId, target.x, target.y, 'down'));
-}
-
-/** Dev only: F1 opens the debug menu over the map. */
-function attachDebugMenu() {
-  window.addEventListener('keydown', (event) => {
-    if (event.code !== 'F1' || !overworld || scenes.top !== overworld || overworld.busy) return;
-    event.preventDefault();
-    scenes.push(new DebugMenuScene(getGameState(), { warp: debugWarp }));
-  });
-}
-
 async function boot() {
   const loading = scenes.push(new LoadingScene());
   try {
     registerOptionTargets({ input });
     audio = createAudioSystem();
-    setHooks({ playMusic: audio.playMusic, playSfx: audio.playSfx, setVolumes: audio.setVolumes });
-    await loadAndApplyOptions();
+    setHooks({ playMusic: audio.playMusic, playSfx: audio.playSfx, setVolumes: audio.setVolumes, saveGame: writeGameSave });
+    hasOptionsFile = await loadAndApplyOptions();
     await loadAtlases((loaded, total) => loading.setProgress(loaded, total));
     installBattleHooks(scenes);
     installMenuHooks(scenes);
     if (isDev) {
       window.debugGame = { scenes, hooks, audio };
-      attachDebugMenu();
+      const { attachDebugTools } = await import('./debug/debug-tools.js');
+      attachDebugTools({ scenes, getOverworld: () => overworld, startGame, screen: renderer.ctx.canvas, getTitleTime: () => titleTime });
       if (new URLSearchParams(window.location.search).has('newgame')) showTitle();
       else startGame(getGameState(), TEST_START, TEST_START);
     } else {
@@ -116,6 +150,7 @@ async function boot() {
   }
 }
 
-attachFocusPause(loop);
+// Dev tasks (screenshots, perf) run in a window that may not have the focus.
+if (!(isDev && new URLSearchParams(window.location.search).has('devtask'))) attachFocusPause(loop);
 loop.start();
 boot();

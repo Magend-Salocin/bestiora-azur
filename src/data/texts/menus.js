@@ -4,6 +4,10 @@ export default {
   menu_save_ask: 'Sauvegarder la partie ?',
   menu_saved: '{PLAYER} sauvegarde la partie !',
   menu_save_failed: 'La sauvegarde a échoué.',
+  menu_saving: 'Sauvegarde…\nNe pas éteindre.',
+  menu_save_forbidden: 'Impossible de sauvegarder ici.',
+  save_loaded_backup: 'La sauvegarde était endommagée.\fLa copie de secours a été chargée.',
+  save_corrupt: 'La sauvegarde et sa copie de secours sont illisibles.\fUne nouvelle partie les remplacera.',
 
   bag_use_on_obstacle: 'Utilise-le face à l’obstacle.',
   bag_run_shoes: 'Maintiens B pour courir.',

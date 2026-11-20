@@ -15,7 +15,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | 09 Monde, partie 1 (arènes 1 à 4) | fait |
 | 10 Monde, partie 2 (arènes 5 à 8) | fait (voir « Reste ») |
 | 11 Ligue, post-jeu, fin | fait (voir « Reste ») |
-| 12 Sauvegarde, finition, packaging | à faire |
+| 12 Sauvegarde, finition, packaging | fait |
 | 13 Recette complète | à faire |
 
 ## Journal
@@ -404,3 +404,38 @@ Décisions
 
 Problèmes connus
 - Aucun connu, hors ce qui n'a pas été joué (voir « Reste »).
+
+### 2026-11-20 : prompt 12, sauvegarde robuste, finitions et packaging
+
+Fait
+- Hors prompt, commit précédent : la Pr Morvan donne la Capsule Maîtresse après la Ligue.
+- Sauvegarde : format versionné pur dans `src/save/save-format.js` (`SAVE_VERSION` 2, `migrations`, `parseSave`, `chooseSave`, `summarizeSave`), envoi par IPC (`src/save/save-system.js`), écriture atomique avec `fsync` et copie `save.bak.json` dans `electron/save-store.js`. La version 1 est l'ancienne sauvegarde provisoire de `localStorage`, importée une fois. Copie de secours chargée avec un message sur l'écran titre ; si les deux fichiers sont illisibles, message et nouvelle partie.
+- SAUVER : fenêtre de résumé (joueur, badges, Bestiaire, temps), confirmation, « Sauvegarde… Ne pas éteindre. » affiché au moins 0,8 s, son `save`. Refusé dans les cartes `league: true`. Le menu START s'élargit à 104 px pour un nom de 10 lettres (il débordait de 8 px).
+- Robustesse : exceptions de la boucle, `error` et `unhandledrejection` journalisées dans `userData/logs/` et remplacées par un écran d'erreur sans atlas (RECHARGER via `webContents.reload()`, QUITTER). Mode dev seulement si `--dev` et `!app.isPackaged` ; `src/debug/` est importé dynamiquement et exclu du paquet.
+- Finitions : écran titre avec défilé de bestioles aléatoires (hors légendaires) et Azurel qui révèle ses couleurs toutes les 8 s ; icône générée par `npm run icon` (`build/icon.png`, `.ico`, `.icns`) ; `tools/check-text-fit.js` ajouté à `npm run validate` (dialogues avec la valeur la plus longue de chaque variable, crédits, villes, menu START).
+- Accessibilité : texte INSTANT, palette Contraste, option FLASHS RÉDUITS (clignotement des coups remplacé par un décalage de 2 px, transition de combat et éclair sans flash), remappage de la manette (ligne MANETTE) en plus du clavier.
+- Performances : `npm run perf` (`src/debug/perf-probe.js`) sur Ombrecourt et sur toutes les animations d'attaque. Écran titre prêt en 0,3 s, 0,35 ms de calcul par image (budget 16,7 ms), aucune image au-delà de 20 ms. Allocations par image retirées : clé de palette recalculée seulement au changement, glyphes des textes en cache, texte lettre à lettre sans nouvelle chaîne, pile de scènes réutilisée.
+- Packaging : `npm run dist` (electron-builder) produit sur Windows `Bestiora Azur-Setup-1.0.0.exe` (NSIS) et `Bestiora Azur-1.0.0-portable.exe` ; cibles dmg et AppImage configurées. Version 1.0.0, `appId` `fr.bestiora.azur`.
+- README racine avec captures générées par `npm run screenshots` (`docs/screenshots/`, canvas 160 × 144 agrandi 4 fois).
+- Tests : `tests/save.test.js` (aller-retour complet, migration v1, copie de secours, processus tué par SIGKILL avant le renommage) et `tests/text-fit.test.js` : 249 tests, `npm run validate` sans erreur.
+
+Vérifié dans Electron
+- Sauvegarde puis lecture par l'IPC réel dans un `userData` temporaire ; `save.json` corrompu : la copie est chargée.
+- `--simulate-save-crash` : processus tué pendant l'écriture, `save.json.tmp` reste, la sauvegarde précédente se recharge.
+- Flux SAUVER au clavier (captures des trois étapes), écran d'erreur puis RECHARGER au clavier, journal écrit.
+- Jeu empaqueté lancé avec `--dev` : une seule fenêtre, sans DevTools ; `app.asar` ne contient ni `src/debug/` ni `electron/dev-tasks.js`.
+
+Reste
+- L'installeur NSIS n'a pas été installé puis désinstallé à la main ; seul le jeu empaqueté (`win-unpacked`) a été lancé.
+- dmg et AppImage non construits (à faire sur macOS et Linux). Installeurs non signés.
+- Licence du code à choisir (README : « À définir »). `CREDITS_AUTHOR` contient toujours « Votre nom ici ».
+- Le passage complet manette en main reste au prompt 13.
+
+Décisions
+- Le fichier `options.json` prime sur les options copiées dans la sauvegarde ; celles-ci ne servent que s'il manque.
+- RECHARGER relance la page (écran titre, CONTINUER) plutôt que de recharger la sauvegarde en mémoire : c'est le seul chemin sûr quand l'état du jeu est corrompu.
+- « Nuit en contraste maximal » est une palette à part, Contraste (teintes de Nuit poussées du blanc au noir), pour garder Nuit telle quelle.
+- Le défilé du titre exclut les espèces d'habitat « inconnu » (4 légendaires et le mythique).
+
+Problèmes connus
+- Aucun connu.

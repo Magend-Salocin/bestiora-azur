@@ -17,18 +17,8 @@ const defaults = {
   healParty() {},
   /** Volumes of the options, 0 to 1. */
   setVolumes() {},
-  /**
-   * Saves the game; resolves true on success. Interim: browser storage. Prompt 12 replaces it
-   * with the atomic save file of the main process.
-   */
-  saveGame: async (state) => {
-    try {
-      localStorage.setItem('bestiora-save', JSON.stringify(state));
-      return true;
-    } catch {
-      return false;
-    }
-  },
+  /** Saves the game; resolves true on success. main.js plugs in src/save/save-system.js. */
+  saveGame: async () => false,
 };
 
 export const hooks = { ...defaults };

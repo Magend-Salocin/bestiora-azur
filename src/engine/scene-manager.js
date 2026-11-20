@@ -14,6 +14,7 @@ import { FADE_LEVELS, getFadeLevel, setFadeLevel } from '../gfx/palette.js';
  */
 export function createSceneManager() {
   const stack = [];
+  const updated = []; // reused each step: scenes may push or pop while updating
   let fade = null;
 
   const manager = {
@@ -51,10 +52,11 @@ export function createSceneManager() {
       fade?.update(dt);
       const sceneInput = fade ? IDLE_INPUT : input;
 
-      const snapshot = [...stack];
-      for (let i = snapshot.length - 1; i >= 0; i -= 1) {
-        snapshot[i].update?.(dt, sceneInput);
-        if (snapshot[i].blocksInput !== false) break;
+      updated.length = 0;
+      updated.push(...stack);
+      for (let i = updated.length - 1; i >= 0; i -= 1) {
+        updated[i].update?.(dt, sceneInput);
+        if (updated[i].blocksInput !== false) break;
       }
     },
 

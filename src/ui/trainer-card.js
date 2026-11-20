@@ -4,14 +4,10 @@ import { BADGE_NAMES } from '../data/field-abilities.js';
 import { drawSprite } from '../gfx/draw.js';
 import { drawText } from '../gfx/font.js';
 import { getColor } from '../gfx/palette.js';
+import { formatPlayTime } from '../save/save-format.js';
 import { bestiaryCounts } from './bestiary-screen.js';
 import { PromiseScene } from './menu-cursor.js';
 import { drawWindowFrame } from './window-frame.js';
-
-export function formatPlayTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  return `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, '0')}`;
-}
 
 export class TrainerCardScene extends PromiseScene {
   constructor(state) {

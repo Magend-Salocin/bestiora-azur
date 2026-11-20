@@ -3,8 +3,8 @@ import { drawText } from '../gfx/font.js';
 import { applyVariables, layoutText } from './text-layout.js';
 import { drawWindowFrame } from './window-frame.js';
 
-/** Characters revealed per second. */
-export const TEXT_SPEEDS = { slow: 15, medium: 30, fast: 60 };
+/** Characters revealed per second ('instant' shows each page at once). */
+export const TEXT_SPEEDS = { slow: 15, medium: 30, fast: 60, instant: Infinity };
 
 const BOX = { x: 0, y: 96, width: SCREEN_WIDTH, height: 48 };
 const TEXT_X = BOX.x + TILE;
@@ -40,9 +40,11 @@ export class DialogScene {
   transparent = true;
   blocksInput = true;
 
-  constructor(text, { context = {}, question = false, speed = textSpeed } = {}) {
+  /** hold: the text stays on screen without waiting for A; the caller closes it with close(). */
+  constructor(text, { context = {}, question = false, hold = false, speed = textSpeed } = {}) {
     this.pages = layoutText(applyVariables(text, context));
     this.question = question;
+    this.hold = hold;
     this.charactersPerSecond = TEXT_SPEEDS[speed];
     this.pageIndex = 0;
     this.visibleCharacters = 0;
@@ -80,6 +82,8 @@ export class DialogScene {
 
     if (this.question && this.isLastPage) {
       this.state = 'choosing';
+    } else if (this.hold && this.isLastPage) {
+      this.state = 'holding';
     } else {
       this.state = 'waiting';
       this.blinkTime = 0;
@@ -118,9 +122,8 @@ export class DialogScene {
 
     let remaining = Math.floor(this.visibleCharacters);
     this.page.forEach((line, index) => {
-      const characters = Array.from(line);
-      drawText(ctx, characters.slice(0, remaining).join(''), TEXT_X, LINE_Y[index]);
-      remaining = Math.max(0, remaining - characters.length);
+      drawText(ctx, line, TEXT_X, LINE_Y[index], undefined, remaining);
+      remaining = Math.max(0, remaining - Array.from(line).length);
     });
 
     const arrowVisible = this.blinkTime % ARROW_BLINK_PERIOD < ARROW_BLINK_PERIOD / 2;
@@ -153,4 +156,9 @@ export function askYesNo(manager, text, options = {}) {
   const dialog = new DialogScene(text, { ...options, question: true });
   manager.push(dialog);
   return dialog.promise;
+}
+
+/** Pushes a text that stays on screen until close() (no input). Returns the dialog scene. */
+export function showHeldDialog(manager, text, options = {}) {
+  return manager.push(new DialogScene(text, { ...options, question: false, hold: true }));
 }

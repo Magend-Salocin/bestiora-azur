@@ -3,6 +3,7 @@
 // where from/to are the centers of the attacker and the target sprites.
 import { createCanvas, paintRows } from '../../gfx/bitmap.js';
 import { getColor, getPaletteKey } from '../../gfx/palette.js';
+import { getOptions } from '../../state/options.js';
 
 const PATTERNS = {
   flame: ['...3....', '..323...', '..3213..', '.32113..', '.321123.', '3211113.', '32111123', '.322223.'],
@@ -91,7 +92,7 @@ export const TYPE_ANIMATIONS = {
   foudre: {
     duration: 0.5,
     draw(ctx, t, from, to) {
-      if (Math.floor(t * 12) % 2 === 1) return;
+      if (Math.floor(t * 12) % 2 === 1 && !getOptions().reduceFlashes) return;
       ctx.fillStyle = getColor(3);
       let x = to.x;
       for (let y = to.y - 40; y < to.y + 8; y += 6) {

@@ -698,6 +698,8 @@ export class OverworldScene {
   fieldActions() {
     return {
       save: () => hooks.saveGame(this.state),
+      // Once the League door is passed, the game cannot be saved until the end.
+      canSave: () => !this.map.league,
       canFly: () => this.fieldStatus('fly') === 'ok' && !this.isDungeon() && this.state.visitedTowns.length > 0,
       fly: () => this.chooseFlyDestination(),
       // No Fil d'Ariane inside the League: once the door is passed, there is no way back.

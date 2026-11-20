@@ -2,6 +2,7 @@
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
 import { drawText } from '../gfx/font.js';
 import { getColor } from '../gfx/palette.js';
+import { getOptions } from '../state/options.js';
 import { drawWindowFrame } from '../ui/window-frame.js';
 
 const FLASH_DURATION = 0.36;
@@ -12,6 +13,7 @@ const BANDS_DURATION = 0.6;
 /**
  * Transition: the screen flashes three times, then dark bands slide in alternately from
  * the left and the right, each band starting a little after the previous one.
+ * With the reduced flashes option, the screen stays still instead of flashing.
  */
 export class BattleTransitionScene {
   transparent = true;
@@ -39,7 +41,7 @@ export class BattleTransitionScene {
   render(ctx) {
     if (this.time < FLASH_DURATION) {
       const phase = Math.floor((this.time / FLASH_DURATION) * FLASH_COUNT * 2);
-      if (phase % 2 === 0) {
+      if (phase % 2 === 0 && !getOptions().reduceFlashes) {
         ctx.fillStyle = getColor(3);
         ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
       }

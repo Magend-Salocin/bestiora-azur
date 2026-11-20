@@ -14,8 +14,10 @@
 
 ```
 electron/
-  main.js              Fenêtre, menu, IPC sauvegarde
-  preload.js           API exposée : window.bestiora.save / load / exportAtlas
+  main.js              Fenêtre, menu, IPC sauvegarde, options et journal d'erreurs
+  save-store.js        Fichiers de sauvegarde : écriture atomique, copie de secours
+  dev-tasks.js         Dev uniquement : captures du README, mesure de performance
+  preload.js           API exposée : window.bestiora.save / load / logError / saveOptions…
 src/
   index.html
   main.js              Point d'entrée renderer
@@ -29,10 +31,12 @@ src/
   battle/ui/           Scène de combat, animations, menus de combat
   ui/                  Boîte de dialogue, menus, écrans (équipe, sac, Bestiaire, stockage…)
   audio/               Synthé 4 voies, séquenceur, pistes, effets
-  save/                Sérialisation, migration de version
+  save/                Format versionné, migrations, choix de la copie (pur) ; envoi au processus principal
+  debug/               Dev uniquement (import dynamique, absent du paquet) : menu F1, captures, sonde de perf
   state/               État global du jeu (équipe, sac, drapeaux, position)
 assets/atlas/          PNG + JSON générés (versionnés)
-tools/                 Scripts Node : build-atlas, validate-data, map-preview
+tools/                 Scripts Node : build-atlas, validate-data, check-text-fit, build-icon, map-preview…
+build/                 Icônes de l'application (générées par npm run icon)
 tests/                 Tests node:test
 docs/                  GAME_DESIGN.md, ARCHITECTURE.md, PROGRESS.md
 ```
@@ -109,7 +113,22 @@ Liste de commandes interprétée par `src/overworld/script-runner.js` :
 
 ### Sauvegarde
 
-JSON versionné `{ version, savedAt, player, party, storage, bag, money, badges, flags, bestiary, position, playTime, options }`, écrit par le processus principal dans `app.getPath('userData')/save.json` via IPC, avec écriture atomique (fichier temporaire puis renommage) et une copie `save.bak.json`.
+JSON versionné (`SAVE_VERSION` = 2, `src/save/save-format.js`) :
+
+```js
+{
+  version: 2, savedAt: '2026-11-20T10:00:00.000Z',
+  player, rival, party, storage, bag, money, badges, flags, bestiary, position, playTime,
+  daycare, visitedTowns, escapePoint, lastHalte, repelSteps, daily, hallOfFame,
+  options,   // copie des options, utilisée seulement si options.json manque
+}
+```
+
+- Le renderer sérialise (`serializeSave`) et envoie le texte par IPC ; `electron/save-store.js` écrit `userData/save.json` via un fichier temporaire, `fsync` puis renommage. Avant chaque écriture, l'ancien `save.json` devient `save.bak.json`, sauf s'il est illisible.
+- Au chargement, le processus principal renvoie le texte brut des deux fichiers ; `chooseSave` prend le principal, sinon la copie (message sur l'écran titre), sinon signale les deux comme illisibles.
+- Migrations : `migrations[n]` transforme une sauvegarde de version n en version n + 1. Version 1 = l'ancienne sauvegarde provisoire du navigateur (état brut sans version), importée une fois depuis `localStorage`.
+- Les champs absents d'une ancienne sauvegarde prennent les valeurs par défaut de `createGameState`.
+- Pas de sauvegarde dans les cartes `league: true`. Le temps de jeu n'avance que fenêtre active (la boucle est en pause hors focus).
 
 ## Commandes npm
 
@@ -120,8 +139,20 @@ JSON versionné `{ version, savedAt, player, party, storage, bag, money, badges,
 | `npm test` | Tests unitaires |
 | `npm run atlas` | Régénère `assets/atlas/*.png` et `*.json` |
 | `npm run validate` | Valide les données |
-| `npm run dist` | Construit les installeurs |
+| `npm run dist` | Construit les installeurs de la plateforme courante (`dist/`) |
+| `npm run icon` | Régénère `build/icon.png`, `.ico`, `.icns` depuis le sprite d'Azurel |
+| `npm run screenshots` | Régénère `docs/screenshots/` (jeu lancé en mode capture) |
+| `npm run perf` | Mesure images/s et temps de calcul sur une carte dense et en combat |
+| `npm run check-text` | Vérifie seul que les textes tiennent dans leur fenêtre (inclus dans `validate`) |
 
 ## Menu debug (`npm run dev` uniquement)
 
+Le mode dev exige `--dev` et un jeu non empaqueté (`!app.isPackaged`) : le jeu installé n'a ni DevTools ni menu debug, et `src/debug/` n'est pas dans le paquet.
+
+Options dev : `--newgame` (écran titre au lieu de la carte de test), `--simulate-save-crash` (le processus est tué entre l'écriture du fichier temporaire et le renommage), `--capture=<dossier>` et `--perf` (utilisés par `npm run screenshots` et `npm run perf`).
+
 Touche `F1` : téléportation vers une carte, ajout de bestiole, mode marche à travers les murs, désactivation des rencontres, mise à niveau de l'équipe, réglage des drapeaux. Indispensable pour tester les étapes tardives.
+
+## Erreurs
+
+Toute exception non rattrapée (boucle, promesse) est écrite dans `userData/logs/AAAA-MM-JJ.log` et remplace le jeu par un écran d'erreur (`src/ui/error-scene.js`, sans atlas) : RECHARGER relance le jeu sur l'écran titre (CONTINUER reprend la dernière sauvegarde), QUITTER ferme la fenêtre.

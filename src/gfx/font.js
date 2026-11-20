@@ -15,6 +15,20 @@ const glyphTable = buildGlyphTable();
 const glyphIndex = new Map([...glyphTable.keys()].map((character, index) => [character, index]));
 const atlasCache = new Map();
 
+/** Glyph lists of the texts drawn recently: the same labels are drawn every frame. */
+const MAX_CACHED_TEXTS = 512;
+const characterCache = new Map();
+
+function cachedCharacters(text) {
+  let characters = characterCache.get(text);
+  if (!characters) {
+    if (characterCache.size >= MAX_CACHED_TEXTS) characterCache.clear();
+    characters = toCharacters(text);
+    characterCache.set(text, characters);
+  }
+  return characters;
+}
+
 function toCharacters(text) {
   return Array.from(text.normalize('NFC'), (character) => CHARACTER_ALIASES[character] ?? character);
 }
@@ -35,14 +49,16 @@ function buildAtlas(colorIndex) {
   return canvas;
 }
 
+/** One atlas per palette key and ink color: atlasCache.get(paletteKey)[colorIndex]. */
 function getAtlas(colorIndex) {
-  const key = `${getPaletteKey()}|${colorIndex}`;
-  let atlas = atlasCache.get(key);
-  if (!atlas) {
-    atlas = buildAtlas(colorIndex);
-    atlasCache.set(key, atlas);
+  const paletteKey = getPaletteKey();
+  let atlases = atlasCache.get(paletteKey);
+  if (!atlases) {
+    atlases = [];
+    atlasCache.set(paletteKey, atlases);
   }
-  return atlas;
+  atlases[colorIndex] ??= buildAtlas(colorIndex);
+  return atlases[colorIndex];
 }
 
 export function hasGlyph(character) {
@@ -51,14 +67,18 @@ export function hasGlyph(character) {
 
 /**
  * Draws monospace 8×8 text. '\n' moves down TEXT_LINE_HEIGHT pixels.
- * colorIndex (0-3) replaces the glyph ink color.
+ * colorIndex (0-3) replaces the glyph ink color. maxCharacters draws only the start of the text
+ * (letter-by-letter dialogs) without building a new string each frame.
  */
-export function drawText(ctx, text, x, y, colorIndex = INK_INDEX) {
+export function drawText(ctx, text, x, y, colorIndex = INK_INDEX, maxCharacters = Infinity) {
   const atlas = getAtlas(colorIndex);
+  const characters = cachedCharacters(text);
+  const count = Math.min(characters.length, maxCharacters);
   let cursorX = x;
   let cursorY = y;
 
-  for (const character of toCharacters(text)) {
+  for (let i = 0; i < count; i += 1) {
+    const character = characters[i];
     if (character === '\n') {
       cursorX = x;
       cursorY += TEXT_LINE_HEIGHT;

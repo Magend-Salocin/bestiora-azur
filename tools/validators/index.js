@@ -12,6 +12,7 @@ import { checkMaps, checkTrainers } from './maps.js';
 import { checkGlobalScripts } from './scripts.js';
 import { checkGameTexts, checkTexts } from './texts.js';
 import { checkTypes } from './types.js';
+import { checkTextFit } from '../check-text-fit.js';
 
 export const CHECKERS = [
   { name: 'Identifiants', run: checkIds },
@@ -23,6 +24,7 @@ export const CHECKERS = [
   { name: 'Classes de dresseurs', run: checkTrainerClasses },
   { name: 'Textes', run: checkTexts },
   { name: 'Textes de dialogue', run: checkGameTexts },
+  { name: 'Textes dans leur fenêtre', run: checkTextFit },
   { name: 'Dresseurs', run: checkTrainers },
   { name: 'Scripts globaux', run: checkGlobalScripts },
   { name: 'Cartes', run: checkMaps },
