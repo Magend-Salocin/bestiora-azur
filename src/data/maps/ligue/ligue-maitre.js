@@ -74,6 +74,11 @@ export default {
           { cmd: 'move', actor: 'morvan', path: ['up', 'up', 'up'] },
           { cmd: 'say', text: 'morvan_ligue_1' },
           { cmd: 'say', text: 'morvan_ligue_2' },
+          {
+            cmd: 'if_flag',
+            flag: 'ligue_terminee',
+            else: [{ cmd: 'say', text: 'morvan_ligue_capsule' }, { cmd: 'give_item', item: 'capsule_maitresse' }],
+          },
           { cmd: 'call', script: 'fin' },
         ],
       },

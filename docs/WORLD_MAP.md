@@ -212,6 +212,7 @@ Deux échanges PNJ (Haute-Bise : Volplanin ; Ombrecourt : Fangelet) offrent les 
 
 - Entrer (oui à la question de la porte) efface `ligue_g1` à `ligue_g4`, `ligue_maitre_vaincu` et `ligue_morvan_visible` : chaque passage recommence à la salle 1. Pas de Halte, la défaite ramène à la dernière Halte (celle de la Citadelle).
 - Gardiens : Aldebert (Métal), Ségolène (Combat), Florimond (Givre), Mathilde (Terre et Toxique), 5 bestioles de 52 à 58, IA `smart`. Maître de la Ligue : la rivale, 6 bestioles de 58 à 62 selon le starter du joueur, son starter final en dernier.
+- Première victoire : la Pr Morvan donne la Capsule Maîtresse (seul exemplaire du jeu).
 - Après `ligue_terminee`, la Ligue rejouée utilise `*_plus` et `rival_maitre_plus` (65 à 72).
 - Fin (script `fin` de `ligue_maitre`) : efface `azurel_ko`, `glacerne_ko`, `volcarde_ko`, `fulgorine_ko` (les légendaires mis K.O. reviennent), Salle d'honneur (`open_menu hall_of_fame`, équipe enregistrée dans `state.hallOfFame`). Première fois : `ligue_terminee`, crédits (`open_menu credits`), « FIN », retour dans la chambre, sauvegarde automatique, Maman (`fin_maman_vue`). Ensuite : retour devant la Citadelle.
 

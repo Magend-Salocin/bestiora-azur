@@ -48,6 +48,7 @@ export default {
   maitre_intro: '{RIVAL} : Te voilà. Ici, je ne suis plus ta rivale : je suis Maître de la Ligue.\fJ’ai gravi chaque marche avant toi. Aujourd’hui, on saura qui mérite de rester en haut.\fPas de retenue, {PLAYER} !',
   maitre_defaite: '{RIVAL} : …Tu m’as dépassée. Je le savais, au fond, depuis la Tour de la Mémoire.\fMerci de ne m’avoir rien cédé. C’est la plus belle victoire que je pouvais perdre.',
   morvan_ligue_1: 'Pr Morvan : {PLAYER} ! Je suis arrivée dès que j’ai su. Tu as battu la Ligue entière… et ma petite-fille, en plus !',
+  morvan_ligue_capsule: 'Pr Morvan : Avant que j’oublie : voici la seule Capsule Maîtresse de Brumeval. Garde-la pour une bestiole qui en vaut la peine.',
   morvan_ligue_2: 'Pr Morvan : Quand je t’ai donné ta première bestiole, je ne savais pas où cela te mènerait. Maintenant, je le sais.\fViens, la Salle d’honneur t’attend.',
   salle_honneur_rejouee: 'La Salle d’honneur : une nouvelle fois, ton équipe y est gravée.',
   salle_honneur_1: 'La Salle d’honneur. Les murs sont gravés du nom des dresseurs qui ont vaincu la Ligue.\fAujourd’hui, la liste s’allonge d’un nom : le tien.',
