@@ -186,3 +186,11 @@ body.touch .touch-controls {
   color: #a03030;
   font-size: 15px;
 }
+
+.access-notice {
+  position: absolute;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  margin: 0 24px;
+  color: #587860;
+  font-size: 12px;
+}

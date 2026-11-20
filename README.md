@@ -1,6 +1,6 @@
 # Bestiora Azur
 
-RPG original de capture de créatures en pixel art 4 teintes (160 × 144), pour Windows, macOS et Linux. On y parcourt la péninsule de Brumeval, on capture et entraîne 150 bestioles, on affronte 8 champions d'arène puis la Ligue. Tout est original : créatures, cartes, textes et musiques composées pour le jeu, synthétisées en temps réel.
+RPG original de capture de créatures en pixel art 4 teintes (160 × 144), pour Windows, macOS, Linux et navigateur. On y parcourt la péninsule de Brumeval, on capture et entraîne 150 bestioles, on affronte 8 champions d'arène puis la Ligue. Tout est original : créatures, cartes, textes et musiques composées pour le jeu, synthétisées en temps réel.
 
 | Écran titre | Ville | Menu | Combat |
 |---|---|---|---|
@@ -107,6 +107,10 @@ Les sprites sont décrits en texte dans `src/gfx/sources/` et assemblés en atla
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : organisation du code et formats.
 - [docs/PROGRESS.md](docs/PROGRESS.md) : journal de développement.
 
-## Licence
+## Statut et licence
 
-À définir : aucune licence n'est encore choisie pour le code.
+Projet personnel, non commercial, réalisé pour mon usage propre et à des fins de découverte. Il n'est ni vendu ni distribué publiquement : la version web est réservée à quelques testeurs munis d'une clé.
+
+Le jeu ne reprend aucun contenu d'un jeu existant : personnages, créatures, lieux, textes, graphismes et musiques sont originaux (voir les règles d'originalité de [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md)). Il n'est affilié à aucun éditeur de jeux vidéo.
+
+Aucune licence de réutilisation n'est accordée : tous droits réservés.

@@ -45,6 +45,7 @@ function showGate(revoked) {
       input,
       element('button', 'access-button', 'Valider'),
       error,
+      element('p', 'access-notice', 'Projet personnel et non commercial, réalisé à des fins de découverte.'),
     );
     gate.addEventListener('submit', (event) => {
       event.preventDefault();

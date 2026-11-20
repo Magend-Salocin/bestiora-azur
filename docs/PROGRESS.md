@@ -105,7 +105,7 @@ Reste
 - La planche a été vérifiée sur le PNG de l'atlas, pas dans la visionneuse Electron.
 
 Décisions
-- Seul `GAME_DESIGN.md` fait foi pour les bestioles : `docs/Pokedex/` (bestiaire folklorique) est ignoré à la demande de l'utilisateur.
+- Seul `GAME_DESIGN.md` fait foi pour les bestioles : le bestiaire folklorique (aujourd'hui hors du dépôt, dans `prive/`) est ignoré à la demande de l'utilisateur.
 - Répartition : « 15 / 30 / 15 lignées » donne 120 bestioles, pas 150. Retenu : 18 lignées à 3 stades, 34 à 2 stades, 1 embranchement, 20 isolées, 5 légendaires et mythique (78 lignées).
 - Champ ajouté `minLevel` sur chaque bestiole : plus bas niveau de rencontre (sauvage ou par évolution). Le validateur s'en sert pour « 4 attaques au niveau de rencontre » ; les tables de rencontres (prompts 09 à 11) doivent le respecter.
 - Formules d'XP dans `src/data/formulas.js` (le prompt) au lieu de `src/battle/logic/experience.js` (game design) : rapide `4n³/5`, moyenne `n³`, lente `5n³/4`.

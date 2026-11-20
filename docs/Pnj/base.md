@@ -22,7 +22,7 @@ Les PNJ doivent permettre au joueur de :
 - Rencontrer des dresseurs et des spécialistes.
 - Découvrir progressivement l'histoire du monde.
 
-**Règle fondamentale :** les PNJ sont des personnages humains. Les créatures issues du folklore appartiennent au Pokédex et doivent rester dans un document distinct.
+**Règle fondamentale :** les PNJ sont des personnages humains. Les créatures issues du folklore appartiennent au Bestiaire et doivent rester dans un document distinct.
 
 ---
 
@@ -292,7 +292,7 @@ Exemples :
 - Folkloriste.
 - Musicien traditionnel.
 
-**Fonction :** faire découvrir les légendes et traditions sans confondre les humains avec les créatures du Pokédex.
+**Fonction :** faire découvrir les légendes et traditions sans confondre les humains avec les créatures du Bestiaire.
 
 ### E. Personnages à quête
 
@@ -379,7 +379,7 @@ Cette section accueillera les personnages qui structurent l'aventure.
 
 | Rôle | Nombre indicatif | Fonction |
 |---|---:|---|
-| Professeur principal | 1 | Présenter le monde et le Pokédex |
+| Professeur principal | 1 | Présenter le monde et le Bestiaire |
 | Rival ou rivale | 1 à 2 | Accompagner et défier le joueur |
 | Champions et responsables d'épreuves | À définir | Structurer la progression |
 | Alliés principaux | À définir | Aider le joueur |
@@ -396,7 +396,7 @@ Les personnages principaux auront des fiches plus approfondies, avec leur histoi
 2. Les personnages ne doivent pas être des copies directes de personnes réelles.
 3. Les vêtements et accessoires doivent être adaptés à leur région et à leur fonction.
 4. Les accents et expressions régionales doivent rester naturels et respectueux.
-5. Les légendes doivent être racontées par les humains, mais les créatures folkloriques restent dans le Pokédex.
+5. Les légendes doivent être racontées par les humains, mais les créatures folkloriques restent dans le Bestiaire.
 6. Un même personnage peut être lié à plusieurs quêtes ou revenir à différents moments de l'aventure.
 7. Les PNJ doivent contribuer à la cohérence géographique et culturelle du monde.
 8. Les références historiques et folkloriques devront être vérifiées avant validation définitive.
