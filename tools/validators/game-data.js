@@ -12,7 +12,7 @@ import { MOVE_EFFECTS } from '../../src/data/move-effects.js';
 import { MOVES } from '../../src/data/moves.js';
 import { MUSIC_INTROS, TRAINER_CLASSES } from '../../src/data/trainer-classes.js';
 import { TYPE_CHART, TYPES } from '../../src/data/types.js';
-import { ALL_MAPS } from '../../src/data/maps/index.js';
+import { ALL_MAPS, MAPS } from '../../src/data/maps/index.js';
 import { SCRIPTS } from '../../src/data/scripts.js';
 import { BATTLE_TEXTS } from '../../src/data/texts/battle-fr.js';
 import { TEXTS } from '../../src/data/texts/index.js';
@@ -47,6 +47,7 @@ export function loadGameData() {
     atlas: { ui: atlasFrameIds('ui'), trainers: atlasFrameIds('trainers'), characters: atlasFrameIds('characters') },
     tilesets: readAtlasJson('tiles').meta.tilesets,
     maps: ALL_MAPS,
+    worldMaps: MAPS, // without the test maps
     scripts: SCRIPTS,
     texts: TEXTS,
     battleTexts: BATTLE_TEXTS,

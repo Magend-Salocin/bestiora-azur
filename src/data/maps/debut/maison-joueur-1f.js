@@ -34,6 +34,18 @@ export default {
   scripts: {
     maman: [
       {
+        cmd: 'if_flag', flag: 'ligue_terminee',
+        then: [{
+          cmd: 'if_flag', flag: 'fin_maman_vue',
+          else: [
+            { cmd: 'say', text: 'fin_maman_1' },
+            { cmd: 'say', text: 'fin_maman_2' },
+            { cmd: 'say', text: 'fin_maman_3' },
+            { cmd: 'set_flag', flag: 'fin_maman_vue' },
+          ],
+        }],
+      },
+      {
         cmd: 'if_flag', flag: 'got_starter',
         then: [
           {

@@ -2,7 +2,8 @@
 // The runner owns the game state changes; everything visual or not built yet goes through
 // `ctx` (provided by the overworld scene, or a fake in tests).
 import {
-  addBadge, addCreature, addItem, addMoney, clearFlag, hasBadge, hasFlag, hasItem, removeItem, setFlag,
+  addBadge, addCreature, addItem, addMoney, clearFlag, hasBadge, hasFlag, hasItem, isDailyAvailable, markDaily,
+  removeItem, setFlag,
 } from '../state/game-state.js';
 
 /**
@@ -43,12 +44,21 @@ export const SCRIPT_COMMANDS = {
   set_respawn: {},
   trade: { wanted: 'creature', offer: 'trade_offer', flag: 'flag?' },
   choose_starter: {},
+  if_daily: { key: 'any', then: 'script?', else: 'script?' },
+  set_daily: { key: 'any' },
+  autosave: {},
   end: {},
 };
 
-export const MENUS = ['shop', 'storage', 'daycare', 'party', 'bag', 'bestiary'];
+export const MENUS = ['shop', 'storage', 'daycare', 'party', 'bag', 'bestiary', 'hall_of_fame', 'credits', 'diploma'];
 
 const STOP = Symbol('stop');
+
+/** YYYY-MM-DD of the local system date. */
+export function localDate(date) {
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
 const STARTER_LEVEL = 5;
 
 export function createScriptRunner(ctx) {
@@ -142,8 +152,17 @@ export function createScriptRunner(ctx) {
       addCreature(state, ctx.createCreature(species, STARTER_LEVEL));
       await ctx.say('got_creature', { CREATURE: ctx.creatureName(species) });
     },
+    // Once per real day (local system date): `if_daily` runs `then` while `set_daily` has not
+    // marked the key today.
+    if_daily: (c) => runList(isDailyAvailable(state, c.key, today()) ? c.then : c.else),
+    set_daily: (c) => markDaily(state, c.key, today()),
+    autosave: () => ctx.autosave?.(),
     end: () => STOP,
   };
+
+  function today() {
+    return ctx.today?.() ?? localDate(new Date());
+  }
 
   async function runCommand(command) {
     const handler = handlers[command.cmd];

@@ -14,7 +14,7 @@ const GRASS_COVER_ROW = 10;
 const DARK_RADIUS = 24;
 const DARK_CELL = 4;
 
-function drawTiles(ctx, world, camera, animationStep) {
+export function drawTiles(ctx, world, camera, animationStep) {
   const firstX = Math.floor(camera.x / METATILE);
   const firstY = Math.floor(camera.y / METATILE);
   const columns = Math.ceil(SCREEN_WIDTH / METATILE) + 1;

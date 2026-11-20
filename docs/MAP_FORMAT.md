@@ -14,6 +14,7 @@ export default {
   music: 'town_1',
   border: 'T',                   // optionnel : caractère dessiné hors carte (sinon noir)
   dark: false,                   // grotte sombre : cercle de 3 métatuiles sans la Lanterne
+  league: false,                 // salle de la Ligue : Fil d'Ariane interdit
   legend: { '%': 'bridge_h' },   // optionnel : complète ou remplace la légende par défaut
   layers: {
     ground: [
@@ -126,9 +127,11 @@ Liste de commandes `{ cmd, ... }` exécutée par `src/overworld/script-runner.js
 | `play_music`, `play_sfx` | `track` / `sfx` |
 | `fade` | `direction` (`out`, `in`), `color` |
 | `shake_screen` | `seconds` |
-| `open_menu` | `menu` (`shop`, `storage`, `nickname`, `party`, `bag`, `bestiary`, `heal`), `params` |
+| `open_menu` | `menu` (`shop`, `storage`, `daycare`, `party`, `bag`, `bestiary`, `hall_of_fame`, `credits`, `diploma`), `params` |
 | `call` | `script` (nom) |
 | `set_rival_name`, `choose_starter` | - |
+| `if_daily`, `set_daily` | `key` : `if_daily` exécute `then` si `set_daily` n'a pas marqué la clé aujourd'hui (date système locale), sinon `else` |
+| `autosave` | sauvegarde la partie |
 | `end` | arrête le script |
 
 Une défaite en `blackout` arrête le script, soigne l'équipe et ramène à la dernière Halte.

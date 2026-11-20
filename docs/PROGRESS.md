@@ -14,7 +14,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | 08 Audio | fait |
 | 09 Monde, partie 1 (arènes 1 à 4) | fait |
 | 10 Monde, partie 2 (arènes 5 à 8) | fait (voir « Reste ») |
-| 11 Ligue, post-jeu, fin | à faire |
+| 11 Ligue, post-jeu, fin | fait (voir « Reste ») |
 | 12 Sauvegarde, finition, packaging | à faire |
 | 13 Recette complète | à faire |
 
@@ -377,6 +377,30 @@ Décisions
 - Mirelle apparaît si `bestiary_149` ; deux échanges PNJ donnent les starters non choisis pour que les 149 espèces soient atteignables.
 - Les champions ont 4 à 5 bestioles à 2 à 4 niveaux sous le plafond (sinon l'équilibrage face à une équipe de 3 est hors cible).
 - Le « Î » majuscule n'existe pas dans la police : « Ilots » sans accent circonflexe.
+
+Problèmes connus
+- Aucun connu, hors ce qui n'a pas été joué (voir « Reste »).
+
+### 2026-11-20 : prompt 11, Col des Échos, Ligue, fin et post-jeu
+
+Fait
+- Données générées par les scripts hors dépôt (même méthode qu'en partie 2, accessibilité vérifiée par parcours en largeur) : zones `ligue` (Col des Échos, Grotte des Échos, Citadelle d'Azur, Halte, Comptoir, 4 salles, Salle du Maître, Salle d'honneur) et `postjeu` (Pic d'Azur, Grotte Boréale). +13 cartes, +51 dresseurs (dont 8 revanches et la Ligue renforcée), Fonderion, Frimastoc, Fangeroi, Azurel et Glacerne placés.
+- Monde existant : Givremont relié au Col (gardes retirés) et à la Grotte Boréale (corniche à Grappin) ; revanche quotidienne dans les 8 arènes (scripts globaux `revanche_<id>`) ; diplôme chez la Pr Morvan ; dialogue de Maman après la fin.
+- Moteur : commandes `if_daily`, `set_daily` (`state.daily`, date système locale) et `autosave` ; menus `hall_of_fame` (équipe enregistrée dans `state.hallOfFame`), `credits` (noms qui défilent sous les villes visitées rendues en fond, musique `ending`) et `diploma` (`src/ui/ending-screens.js`) ; drapeau calculé `bestiary_150` ; pas de Fil d'Ariane dans les cartes `league`. Crédits dans `src/data/texts/credits.js` avec `CREDITS_AUTHOR` (texte générique à remplacer).
+- `tools/check-obtainability.js` et le contrôle « Obtention des 150 espèces » de `npm run validate` : pour chaque starter, 150/150 (140 captures dont Mirelle sous `bestiary_149`, 8 évolutions, 2 échanges).
+- `npm run balance` : rivale 6 74 %, revanches 59 à 73 %, Ligue enchaînée 61 % (56 / 63 / 63 selon le starter, cible 45-65). Toutes les cibles des parties 1 et 2 restent atteintes.
+- Tests : `tests/world-part3.test.js` (238 tests au total), `npm run validate` sans erreur.
+
+Reste
+- Rien n'a été joué dans Electron pour cette partie : Col, Ligue, Salle d'honneur, crédits, diplôme et revanches sont vérifiés par les données, les tests et l'aperçu de Givremont. À jouer au prompt 13 avec les étapes des parties 1 et 2.
+- `autosave` utilise encore la sauvegarde provisoire (`localStorage`) ; le prompt 12 la remplace.
+
+Décisions
+- La rivale est Maître de la Ligue (textes accordés au féminin, comme dans le reste du jeu) ; son starter final passe en dernier (réplique `lastText`).
+- Modèle d'équilibrage de la Ligue : équipe de 6 au niveau 55, soins et rappels par objets entre les salles, PP jamais rendus ; les salles seules sont affichées sans cible. Revanches : même équipe au niveau 59-60.
+- Équipes modifiées par rapport aux générateurs : rivale 6 à 4 bestioles (45 à 48), Gardienne Combat 52-53, Maître 58 à 62 avec IA `smart` et équipes revues pour Fenouillot et Braisille, revanches de Maël, Aubin, Ysolde et Oswin recomposées sans formes intermédiaires (6 bestioles pour Aubin, Ysolde et Oswin), Brune ramenée sous 66.
+- La sauvegarde automatique de fin est écrite dans la chambre, jamais dans la Salle d'honneur (sans sortie). Les légendaires mis K.O. reviennent à chaque victoire à la Ligue.
+- Revanche : le jour n'est consommé que sur une victoire.
 
 Problèmes connus
 - Aucun connu, hors ce qui n'a pas été joué (voir « Reste »).

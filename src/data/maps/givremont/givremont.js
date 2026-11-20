@@ -1,4 +1,4 @@
-// Givremont: snowy mountain town reached by the cable car. North (cols 10-11) is reserved for the Col des Échos (prompt 11).
+// Givremont: snowy mountain town reached by the cable car. North (cols 10-11) leads to the Col des Échos; the Grotte Boréale opens behind a grapple ledge (south-east).
 export default {
   id: 'givremont',
   name: 'Givremont',
@@ -23,11 +23,11 @@ export default {
       'TT________::__________TT',
       'TT::::::::::S:::::::::TT',
       'TT________::__,,,,,,__TT',
-      'TTTTTT____::__,,,,,,__TT',
+      'TTTTTT____::__,,,,,,##TT',
+      'TTTTTT____::__TTTTTT#:TT',
       'TTTTTT____::__TTTTTT__TT',
       'TTTTTT____::__TTTTTT__TT',
-      'TTTTTT____::__TTTTTT__TT',
-      'TT________::__TTTTTT__TT',
+      'TT________::__TTTTTTggTT',
       'TTTTTTTT__::__________TT',
       'TTTTTTTTTTTTTTTTTTTTTTTT',
       'TTTTTTTTTTTTTTTTTTTTTTTT',
@@ -67,26 +67,9 @@ export default {
     { x: 7, y: 11, to: 'maison_givremont_3', toX: 3, toY: 7 },
     { x: 14, y: 11, to: 'maison_givremont_4', toX: 3, toY: 7 },
     { x: 19, y: 11, to: 'telepherique_givremont', toX: 3, toY: 7 },
+    { x: 21, y: 15, to: 'grotte_boreale', toX: 11, toY: 28 },
   ],
   npcs: [
-    {
-      id: 'garde_col_g',
-      sprite: 'montagnard',
-      x: 10,
-      y: 2,
-      facing: 'down',
-      movement: 'static',
-      script: [{ cmd: 'say', text: 'givremont_garde_col' }],
-    },
-    {
-      id: 'garde_col_d',
-      sprite: 'montagnard',
-      x: 11,
-      y: 2,
-      facing: 'down',
-      movement: 'static',
-      script: [{ cmd: 'say', text: 'givremont_garde_col_2' }],
-    },
     {
       id: 'gamin_neige',
       sprite: 'gamin',
@@ -128,14 +111,14 @@ export default {
   ],
   items: [
     { x: 7, y: 16, item: 'hyper_capsule', flag: 'item_givremont_1' },
-    { x: 21, y: 18, item: 'potion_totale', flag: 'item_givremont_2' },
+    { x: 21, y: 17, item: 'potion_totale', flag: 'item_givremont_2' },
   ],
   hiddenItems: [
     { x: 5, y: 8, item: 'pierre_lunaire', flag: 'hidden_givremont_1' },
-    { x: 20, y: 15, item: 'ranimant_max', flag: 'hidden_givremont_2' },
+    { x: 20, y: 16, item: 'ranimant_max', flag: 'hidden_givremont_2' },
   ],
   triggers: [],
-  connections: {  },
+  connections: { north: 'col_des_echos' },
   scripts: {
     dame: [
       {

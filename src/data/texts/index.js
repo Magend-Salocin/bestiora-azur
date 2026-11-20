@@ -14,9 +14,11 @@ import forge from './forge.js';
 import givremont from './givremont.js';
 import centrale from './centrale.js';
 import reactions from './reactions.js';
+import ligue from './ligue.js';
+import postjeu from './postjeu.js';
 import test from './test.js';
 
-export const TEXTS = { ...common, ...menus, ...intro, ...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...reactions, ...test };
+export const TEXTS = { ...common, ...menus, ...intro, ...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...reactions, ...ligue, ...postjeu, ...test };
 
 export function getText(id) {
   const text = TEXTS[id];

@@ -3,9 +3,6 @@
 import { STARTERS } from '../../src/data/trainers/helpers.js';
 import { COMPUTED_FLAGS } from '../../src/state/game-state.js';
 
-/** Flags set by a later prompt (11, Ligue and post-game); reading them now is intended. */
-const PLANNED_FLAGS = ['ligue_terminee'];
-
 /** Calls visit(command) on every command of a script, nested lists included. */
 function walk(commands, visit) {
   if (!Array.isArray(commands)) return;
@@ -27,7 +24,7 @@ function allScripts(data) {
 }
 
 export function checkFlags(data) {
-  const set = new Set([...STARTERS.map((starter) => `starter_${starter}`), ...Object.keys(COMPUTED_FLAGS), ...PLANNED_FLAGS]);
+  const set = new Set([...STARTERS.map((starter) => `starter_${starter}`), ...Object.keys(COMPUTED_FLAGS)]);
   const read = [];
   for (const { where, commands } of allScripts(data)) {
     walk(commands, (command) => {

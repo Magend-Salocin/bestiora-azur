@@ -1,0 +1,31 @@
+// Salle d’honneur: scene of the final sequence (script of ligue_maitre).
+export default {
+  id: 'salle_honneur',
+  name: 'Salle d’honneur',
+  tileset: 'special',
+  music: 'ending',
+  layers: {
+    ground: [
+      '##########',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccllccc#',
+      '#cccccccc#',
+      '##########',
+    ],
+  },
+  encounters: null,
+  warps: [],
+  npcs: [],
+  trainers: [],
+  signs: [],
+  items: [],
+  hiddenItems: [],
+  triggers: [],
+  connections: {  },
+  league: true,
+};

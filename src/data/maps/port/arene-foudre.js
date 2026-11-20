@@ -60,7 +60,7 @@ export default {
     leader: [
       {
         cmd: 'if_badge', badge: 'foudre',
-        then: [{ cmd: 'say', text: 'selene_after' }],
+        then: [{ cmd: 'call', script: 'revanche_selene' }],
         else: [
           { cmd: 'say', text: 'selene_intro' },
           { cmd: 'battle', trainer: 'selene' },

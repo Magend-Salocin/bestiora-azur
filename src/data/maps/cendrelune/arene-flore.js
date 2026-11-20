@@ -54,7 +54,7 @@ export default {
     }],
     leader: [{
       cmd: 'if_badge', badge: 'flore',
-      then: [{ cmd: 'say', text: 'aubin_after' }],
+      then: [{ cmd: 'call', script: 'revanche_aubin' }],
       else: [
         { cmd: 'say', text: 'aubin_intro' },
         { cmd: 'battle', trainer: 'aubin' },

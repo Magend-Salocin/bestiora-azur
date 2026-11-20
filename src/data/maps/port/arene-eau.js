@@ -45,7 +45,7 @@ export default {
     leader: [
       {
         cmd: 'if_badge', badge: 'eau',
-        then: [{ cmd: 'say', text: 'mael_after' }],
+        then: [{ cmd: 'call', script: 'revanche_mael' }],
         else: [
           { cmd: 'say', text: 'mael_intro' },
           { cmd: 'battle', trainer: 'mael' },

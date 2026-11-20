@@ -673,6 +673,7 @@ export class OverworldScene {
         if (name) this.state.rival.name = name;
       },
       chooseStarter: () => hooks.chooseStarter(),
+      autosave: () => hooks.saveGame(this.state),
       healParty: () => hooks.healParty(),
       itemName: (id) => this.itemName(id),
       itemPocket: (id) => ITEMS_BY_ID[id]?.pocket,
@@ -699,7 +700,8 @@ export class OverworldScene {
       save: () => hooks.saveGame(this.state),
       canFly: () => this.fieldStatus('fly') === 'ok' && !this.isDungeon() && this.state.visitedTowns.length > 0,
       fly: () => this.chooseFlyDestination(),
-      canEscape: () => this.isDungeon() && Boolean(this.state.escapePoint),
+      // No Fil d'Ariane inside the League: once the door is passed, there is no way back.
+      canEscape: () => this.isDungeon() && !this.map.league && Boolean(this.state.escapePoint),
       escape: async () => {
         const point = this.state.escapePoint;
         this.state.escapePoint = null;

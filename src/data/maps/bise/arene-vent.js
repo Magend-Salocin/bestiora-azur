@@ -72,7 +72,7 @@ export default {
       {
         cmd: 'if_badge',
         badge: 'vent',
-        then: [{ cmd: 'say', text: 'ysolde_after' }],
+        then: [{ cmd: 'call', script: 'revanche_ysolde' }],
         else: [
           { cmd: 'say', text: 'ysolde_intro' },
           { cmd: 'battle', trainer: 'ysolde' },

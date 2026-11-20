@@ -68,7 +68,7 @@ export default {
     leader: [
       {
         cmd: 'if_badge', badge: 'roche',
-        then: [{ cmd: 'say', text: 'garance_after' }],
+        then: [{ cmd: 'call', script: 'revanche_garance' }],
         else: [
           { cmd: 'say', text: 'garance_intro' },
           { cmd: 'battle', trainer: 'garance' },

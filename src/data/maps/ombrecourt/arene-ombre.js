@@ -228,7 +228,7 @@ export default {
       {
         cmd: 'if_badge',
         badge: 'ombre',
-        then: [{ cmd: 'say', text: 'lazare_after' }],
+        then: [{ cmd: 'call', script: 'revanche_lazare' }],
         else: [
           { cmd: 'say', text: 'lazare_intro' },
           { cmd: 'battle', trainer: 'lazare' },

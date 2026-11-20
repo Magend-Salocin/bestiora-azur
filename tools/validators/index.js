@@ -7,6 +7,7 @@ import { checkFlags } from './flags.js';
 import { checkIds } from './ids.js';
 import { checkItems, checkTrainerClasses } from './items.js';
 import { checkMoves } from './moves.js';
+import { checkObtainability } from './obtainability.js';
 import { checkMaps, checkTrainers } from './maps.js';
 import { checkGlobalScripts } from './scripts.js';
 import { checkGameTexts, checkTexts } from './texts.js';
@@ -27,6 +28,7 @@ export const CHECKERS = [
   { name: 'Cartes', run: checkMaps },
   { name: 'Drapeaux', run: checkFlags },
   { name: 'Audio', run: checkAudio },
+  { name: 'Obtention des 150 espèces', run: (data) => checkObtainability(data.worldMaps, data.scripts, data.creatures) },
 ];
 
 /** Runs every checker; returns [{ name, errors }]. */

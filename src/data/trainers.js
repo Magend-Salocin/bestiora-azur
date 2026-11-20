@@ -11,9 +11,11 @@ import mer from './trainers/mer.js';
 import forge from './trainers/forge.js';
 import givremont from './trainers/givremont.js';
 import centrale from './trainers/centrale.js';
+import ligue from './trainers/ligue.js';
+import postjeu from './trainers/postjeu.js';
 import test from './trainers/test.js';
 
-export const TRAINERS = [...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...test];
+export const TRAINERS = [...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...ligue, ...postjeu, ...test];
 
 export const TRAINERS_BY_ID = Object.fromEntries(TRAINERS.map((trainer) => [trainer.id, trainer]));
 

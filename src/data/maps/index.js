@@ -11,6 +11,8 @@ import mer from './mer/index.js';
 import forge from './forge/index.js';
 import givremont from './givremont/index.js';
 import centrale from './centrale/index.js';
+import ligue from './ligue/index.js';
+import postjeu from './postjeu/index.js';
 import testBourg from './test/test-bourg.js';
 import testGrotte from './test/test-grotte.js';
 import testHalte from './test/test-halte.js';
@@ -19,7 +21,7 @@ import testRoute from './test/test-route.js';
 
 const byId = (maps) => Object.fromEntries(maps.map((map) => [map.id, map]));
 
-export const MAPS = byId([...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale]);
+export const MAPS = byId([...debut, ...bois, ...port, ...cendrelune, ...bise, ...marais, ...ombrecourt, ...mer, ...forge, ...givremont, ...centrale, ...ligue, ...postjeu]);
 
 export const TEST_MAPS = byId([testBourg, testRoute, testMaison, testGrotte, testHalte]);
 

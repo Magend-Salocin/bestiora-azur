@@ -4,6 +4,7 @@ import { getGameState } from '../state/game-state.js';
 import { openBag } from './bag-menu.js';
 import { openBestiary } from './bestiary-screen.js';
 import { openPartyMenu } from './party-menu.js';
+import { openCredits, openDiploma, openHallOfFame } from './ending-screens.js';
 import { openDaycare } from './services.js';
 import { openShop } from './shop-menu.js';
 import { openStorage } from './storage-menu.js';
@@ -17,6 +18,9 @@ export function installMenuHooks(manager, getState = getGameState) {
     party: () => openPartyMenu(manager, getState()),
     bag: () => openBag(manager, getState()),
     bestiary: () => openBestiary(manager, getState()),
+    hall_of_fame: () => openHallOfFame(manager, getState()),
+    credits: () => openCredits(manager, getState()),
+    diploma: () => openDiploma(manager, getState()),
   };
   setHooks({
     chooseStarter: () => chooseStarter(manager),

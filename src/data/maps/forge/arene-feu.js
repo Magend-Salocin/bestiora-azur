@@ -125,7 +125,7 @@ export default {
       {
         cmd: 'if_badge',
         badge: 'feu',
-        then: [{ cmd: 'say', text: 'brune_after' }],
+        then: [{ cmd: 'call', script: 'revanche_brune' }],
         else: [
           { cmd: 'say', text: 'brune_intro' },
           { cmd: 'battle', trainer: 'brune' },

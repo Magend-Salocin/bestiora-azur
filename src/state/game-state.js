@@ -21,6 +21,8 @@ export function createGameState(overrides = {}) {
     position: { map: null, x: 0, y: 0, facing: 'down' },
     lastHalte: null,
     repelSteps: 0,
+    daily: {}, // { key: 'YYYY-MM-DD' of the last use }, see if_daily
+    hallOfFame: [], // [{ date, team: [{ species, name, level }] }], one entry per League win
     ...overrides,
   };
 }
@@ -41,6 +43,7 @@ export function setGameState(state) {
  */
 export const COMPUTED_FLAGS = {
   bestiary_149: (state) => Object.values(state.bestiary.caught).filter(Boolean).length >= 149,
+  bestiary_150: (state) => Object.values(state.bestiary.caught).filter(Boolean).length >= 150,
 };
 
 export const hasFlag = (state, flag) => (COMPUTED_FLAGS[flag] ? COMPUTED_FLAGS[flag](state) : state.flags[flag] === true);
@@ -69,6 +72,21 @@ export function removeItem(state, item, count = 1) {
   state.bag[item] -= count;
   if (state.bag[item] === 0) delete state.bag[item];
   return true;
+}
+
+export const isDailyAvailable = (state, key, day) => (state.daily ?? {})[key] !== day;
+export function markDaily(state, key, day) {
+  state.daily = { ...state.daily, [key]: day };
+}
+
+/** Records the current party in the Hall of Fame and returns the new entry. */
+export function recordHallOfFame(state, date) {
+  const entry = {
+    date,
+    team: state.party.map((creature) => ({ species: creature.species, name: creature.nickname ?? null, level: creature.level })),
+  };
+  state.hallOfFame = [...(state.hallOfFame ?? []), entry];
+  return entry;
 }
 
 export const hasBadge = (state, badge) => state.badges.includes(badge);

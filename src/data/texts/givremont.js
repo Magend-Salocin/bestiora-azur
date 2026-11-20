@@ -1,11 +1,9 @@
 // Texts of the zone « givremont » (Givremont, arène Arcane).
 export default {
-  givremont_garde_col: 'Le Col des Échos est fermé aux visiteurs : avalanches.\fIl rouvrira pour les dresseurs qui auront les huit badges.',
-  givremont_garde_col_2: 'Au-delà du col, il y a la Citadelle. Mais c’est une autre histoire.',
   givremont_gamin: 'La neige ne fond jamais ici ! Même en été, mes doigts sont bleus.',
   sign_givremont: 'Givremont\fLe village au-dessus des nuages.',
   sign_arene_arcane: 'Arène de Givremont\fChampion : Oswin\fLe plus sage de Brumeval.',
-  sign_givremont_col: 'Col des Échos\fFermé : avalanches. Huit badges exigés.',
+  sign_givremont_col: 'Col des Échos\fRoute de la Ligue. Huit badges exigés.',
   sign_telepherique_g: 'Téléphérique\fDescente vers Haute-Bise.',
   givremont_dame_dissous: 'On dit que le Syndicat est dissous. La montagne respire.',
   givremont_dame: 'Les gens en gris nous ont proposé d’acheter nos sources chaudes. Nous avons refusé.',

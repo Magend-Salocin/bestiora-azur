@@ -4,7 +4,7 @@ Référence des cartes, de leurs liaisons et du verrouillage de la progression. 
 
 ## Schéma de la région
 
-Partie 1 (prompt 09) en traits pleins, partie 2 (prompt 10) en pointillés. Nord en haut.
+Partie 1 (prompt 09) en traits pleins, partie 2 (prompt 10) en pointillés. La partie 3 (prompt 11) part du nord de Givremont (voir plus bas). Nord en haut.
 
 ```
                                    . . . . . . . . . . .  Givremont, Citadelle (nord-est)
@@ -135,7 +135,7 @@ La Tour n'a pas d'escalier : ses étages sont reliés par des dalles `X` (télé
 | `forge_ardente` | 24×22 | ouest rangées 10-11 ; la Fonderie (11, 16) mène au Cœur de la Forge |
 | `givremont` | 24×22 | aucune connexion de bord : téléphérique depuis `haute_bise` (badge Feu) |
 
-**Pour le prompt 11** : le nord de `givremont` (colonnes 10-11, rangées 0-2) est réservé au Col des Échos ; deux gardes (`garde_col_g`, `garde_col_d`) le barrent et sont à retirer ou à cacher. La porte de la Centrale (`route_6`, 15, 15) est maintenant un warp.
+Le nord de `givremont` (colonnes 10-11) mène au Col des Échos (partie 3). La porte de la Centrale (`route_6`, 15, 15) est un warp.
 
 ### Intérieurs et donjons
 
@@ -154,7 +154,7 @@ La Tour n'a pas d'escalier : ses étages sont reliés par des dalles `X` (télé
 
 ### Verrous de progression (partie 2)
 
-- Route 7 : `tour_memoire_liberee`. Port d'Ombrecourt : `qg_opale_cleared`. Fonderie : badge Feu. Téléphérique : badge Feu. Col des Échos : prompt 11.
+- Route 7 : `tour_memoire_liberee`. Port d'Ombrecourt : `qg_opale_cleared`. Fonderie : badge Feu. Téléphérique : badge Feu. Col des Échos : 8 badges (partie 3).
 - Cerf-volant : ingénieur libéré au bureau du Syndicat (badge Ombre pour l'utiliser). Bouée : pêcheur du Marais Gris. Gants de Force : ancien de Haute-Bise après le badge Vent.
 - Clé Sous-Sol : donnée par Lazare. Pierre Braise : Brune.
 - Récompenses de champions : Hyper Capsules (Ysolde), Clé Sous-Sol + Ranimants Max (Lazare), Pierre Braise + Ranimants Max (Brune), Hyper Capsules + Potions Totales (Oswin).
@@ -176,8 +176,54 @@ La Tour n'a pas d'escalier : ses étages sont reliés par des dalles `X` (télé
 | Fulgorine | Centrale abandonnée | 50 | `fulgorine_ko` (idem), `fulgorine_capturee` |
 | Mirelle | Bibliothèque Engloutie, visible si `bestiary_149` | 50 | `mirelle_gone` (rencontre unique) |
 
-Commande `wild_battle` : `legendary: true` (musique `battle_final`, fuite impossible), branches `won` et `caught`. `ligue_terminee` est posé par le prompt 11.
+Commande `wild_battle` : `legendary: true` (musique `battle_final`, fuite impossible), branches `won` et `caught`.
 
 ### Échanges et espèces
 
-Deux échanges PNJ (Haute-Bise : Volplanin ; Ombrecourt : Fangelet) offrent les deux starters que le joueur n'a pas choisis (niveau 15), sinon le Bestiaire à 149 serait impossible. 58 nouvelles espèces capturables (129 au total dans les rencontres) ; restent à placer au prompt 11 : Fonderion, Frimastoc, Fangeroi, Azurel, Glacerne (les évolutions par pierre Cocomarin et Cocorage s'obtiennent avec les pierres).
+Deux échanges PNJ (Haute-Bise : Volplanin ; Ombrecourt : Fangelet) offrent les deux starters que le joueur n'a pas choisis (niveau 15), sinon le Bestiaire à 149 serait impossible. 58 nouvelles espèces capturables (129 au total dans les rencontres) ; Fonderion, Frimastoc, Fangeroi, Azurel et Glacerne arrivent en partie 3.
+
+## Monde, partie 3 (prompt 11) : Ligue et post-jeu
+
+```
+   [Pic d'Azur] (Azurel 70, après la Ligue)
+        |
+   [Citadelle d'Azur] -- porte de la Ligue : salles 1 à 4, Salle du Maître, Salle d'honneur
+        |
+   [Grotte des Échos] (Machette, Gants, Bouée, Grappin, Lanterne)
+        |
+   [Col des Échos] (8 gardes, un par badge)
+        |
+   [Givremont] --g-- [Grotte Boréale] (Glacerne 60)
+```
+
+### Cartes et liaisons
+
+| Carte | Taille | Liaisons |
+|---|---|---|
+| `col_des_echos` | 24×40 | sud → `givremont` (colonnes 10-11) ; 8 portes gardées (rangées 34 à 6), une par badge dans l'ordre des arènes ; nord → `grotte_des_echos` |
+| `grotte_des_echos` | 24×30 | combine les 5 objets de terrain ; nord → `citadelle_azur` |
+| `citadelle_azur` | 24×22 | Halte, Comptoir (meilleur stock), rivale 6 sur le chemin, porte de la Ligue (16, 5), est → `pic_d_azur` (porte fermée tant que `ligue_terminee` manque) |
+| `ligue_salle_1` à `ligue_salle_4`, `ligue_maitre` | 14×12, 14×14 | un warp vers la salle suivante seulement, `league: true` (pas de Fil d'Ariane) |
+| `salle_honneur` | 10×10 | scène de fin, sans sortie |
+| `pic_d_azur` | 28×22 | ouest → `citadelle_azur` ; Azurel au sommet |
+| `grotte_boreale` | 22×30 | entrée à Givremont (21, 15), derrière une corniche à Grappin ; glace glissante (11 coups minimum, aucune position sans retour) |
+
+### Ligue
+
+- Entrer (oui à la question de la porte) efface `ligue_g1` à `ligue_g4`, `ligue_maitre_vaincu` et `ligue_morvan_visible` : chaque passage recommence à la salle 1. Pas de Halte, la défaite ramène à la dernière Halte (celle de la Citadelle).
+- Gardiens : Aldebert (Métal), Ségolène (Combat), Florimond (Givre), Mathilde (Terre et Toxique), 5 bestioles de 52 à 58, IA `smart`. Maître de la Ligue : la rivale, 6 bestioles de 58 à 62 selon le starter du joueur, son starter final en dernier.
+- Après `ligue_terminee`, la Ligue rejouée utilise `*_plus` et `rival_maitre_plus` (65 à 72).
+- Fin (script `fin` de `ligue_maitre`) : efface `azurel_ko`, `glacerne_ko`, `volcarde_ko`, `fulgorine_ko` (les légendaires mis K.O. reviennent), Salle d'honneur (`open_menu hall_of_fame`, équipe enregistrée dans `state.hallOfFame`). Première fois : `ligue_terminee`, crédits (`open_menu credits`), « FIN », retour dans la chambre, sauvegarde automatique, Maman (`fin_maman_vue`). Ensuite : retour devant la Citadelle.
+
+### Post-jeu
+
+| Contenu | Condition | Drapeaux |
+|---|---|---|
+| Azurel (niveau 70), sommet du Pic d'Azur | `ligue_terminee` | `azurel_ko`, `azurel_capturee` |
+| Glacerne (niveau 60), fond de la Grotte Boréale | Grappin | `glacerne_ko`, `glacerne_capturee` |
+| Revanche des 8 champions (`<id>_revanche`, 60 à 66) | `ligue_terminee`, une par jour réel | `state.daily.revanche_<id>` (date locale, posée seulement si le joueur gagne) |
+| Diplôme du Bestiaire (Pr Morvan) | `bestiary_150` (drapeau calculé) | `diplome_recu` |
+
+### Espèces
+
+Fonderion et Fangeroi au Pic d'Azur, Frimastoc au Col, au Pic et dans la Grotte Boréale. `tools/check-obtainability.js` (et le contrôle « Obtention des 150 espèces » de `npm run validate`) prouve pour chaque starter que les 150 espèces sont obtenables : 140 par capture (dont Mirelle, sous `bestiary_149`), 8 par évolution, 2 par échange.

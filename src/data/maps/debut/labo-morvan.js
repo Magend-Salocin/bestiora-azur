@@ -91,7 +91,21 @@ export default {
     professeure: [
       {
         cmd: 'if_flag', flag: 'has_bestiary',
-        then: [{ cmd: 'say', text: 'labo_morvan_apres' }],
+        then: [{
+          cmd: 'if_flag', flag: 'bestiary_150',
+          then: [{
+            cmd: 'if_flag', flag: 'diplome_recu',
+            then: [{ cmd: 'say', text: 'morvan_diplome_deja' }],
+            else: [
+              { cmd: 'say', text: 'morvan_diplome_1' },
+              { cmd: 'play_sfx', sfx: 'jingle_key_item' },
+              { cmd: 'open_menu', menu: 'diploma' },
+              { cmd: 'set_flag', flag: 'diplome_recu' },
+              { cmd: 'say', text: 'morvan_diplome_2' },
+            ],
+          }],
+          else: [{ cmd: 'say', text: 'labo_morvan_apres' }],
+        }],
         else: [
           {
             cmd: 'if_flag', flag: 'parcel_received',

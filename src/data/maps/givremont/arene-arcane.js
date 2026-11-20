@@ -83,7 +83,7 @@ export default {
       {
         cmd: 'if_badge',
         badge: 'arcane',
-        then: [{ cmd: 'say', text: 'oswin_after' }],
+        then: [{ cmd: 'call', script: 'revanche_oswin' }],
         else: [
           { cmd: 'say', text: 'oswin_intro' },
           { cmd: 'battle', trainer: 'oswin' },
