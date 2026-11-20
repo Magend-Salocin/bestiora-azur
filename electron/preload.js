@@ -6,6 +6,7 @@ contextBridge.exposeInMainWorld('bestiora', {
   load: () => ipcRenderer.invoke('save:read'),
   logError: (report) => ipcRenderer.send('log:error', String(report)),
   reload: () => ipcRenderer.send('window:reload'),
+  clearAllData: () => ipcRenderer.invoke('data:clear'),
   toggleFullscreen: () => ipcRenderer.send('window:toggle-fullscreen'),
   setFullscreen: (enabled) => ipcRenderer.send('window:set-fullscreen', Boolean(enabled)),
   setWindowScale: (scale) => ipcRenderer.send('window:set-scale', Number(scale)),

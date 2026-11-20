@@ -8,6 +8,8 @@ export default {
   menu_save_forbidden: 'Impossible de sauvegarder ici.',
   save_loaded_backup: 'La sauvegarde était endommagée.\fLa copie de secours a été chargée.',
   save_corrupt: 'La sauvegarde et sa copie de secours sont illisibles.\fUne nouvelle partie les remplacera.',
+  title_reset_ask: 'Tout effacer ?\fLa sauvegarde, les options et la clé d’activation seront supprimées.',
+  title_reset_confirm: 'Vraiment ? C’est définitif.',
 
   bag_use_on_obstacle: 'Utilise-le face à l’obstacle.',
   bag_run_shoes: 'Maintiens B pour courir.',

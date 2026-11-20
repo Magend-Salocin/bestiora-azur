@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
-const { readSave, writeAtomic, writeSave } = require('./save-store.js');
+const { deleteSave, readSave, writeAtomic, writeSave } = require('./save-store.js');
 
 // The packaged game never runs in dev mode: no DevTools, no F1 debug menu.
 const isDev = process.argv.includes('--dev') && !app.isPackaged;
@@ -142,6 +142,20 @@ function registerIpc() {
       return { ok: false, error: error.message };
     }
   });
+  // TOUT EFFACER on the title screen: save, backup, options, browser storage and cache. Logs are kept.
+  ipcMain.handle('data:clear', async (event) => {
+    try {
+      deleteSave(userData());
+      fs.rmSync(optionsPath(), { force: true });
+      await event.sender.session.clearStorageData();
+      await event.sender.session.clearCache();
+      return { ok: true };
+    } catch (error) {
+      writeErrorLog(`data:clear ${error.stack ?? error.message}`);
+      return { ok: false, error: error.message };
+    }
+  });
+
   ipcMain.handle('save:read', () => {
     try {
       return readSave(userData());

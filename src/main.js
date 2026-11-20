@@ -10,7 +10,7 @@ import { hooks, setHooks } from './overworld/hooks.js';
 import { OverworldScene } from './overworld/overworld-scene.js';
 import { createGameState, getGameState, setGameState } from './state/game-state.js';
 import { setOptions } from './state/options.js';
-import { readGameSave, writeGameSave } from './save/save-system.js';
+import { clearAllData, readGameSave, writeGameSave } from './save/save-system.js';
 import { ErrorScene } from './ui/error-scene.js';
 import { LoadingScene } from './ui/loading-scene.js';
 import { installMenuHooks } from './ui/menu-hooks.js';
@@ -111,9 +111,17 @@ async function showTitle() {
     notice: SAVE_NOTICES[result.status] ?? null,
     onChoice: (choice) => {
       if (choice === 'continue') continueGame(save);
+      else if (choice === 'reset') resetEverything();
       else startNewGame();
     },
   }));
+}
+
+/** TOUT EFFACER: everything is deleted, then the game restarts (web: the key is asked again). */
+async function resetEverything() {
+  await clearAllData();
+  if (window.bestiora?.reload) window.bestiora.reload();
+  else window.location.reload();
 }
 
 /** The options file wins; the options stored in the save only fill in when it is missing. */

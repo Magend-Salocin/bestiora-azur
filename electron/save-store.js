@@ -52,6 +52,13 @@ function writeSave(directory, json, { beforeRename } = {}) {
   writeAtomic(main, json, { beforeRename });
 }
 
+/** Deletes the save, its backup and their temporary files (TOUT EFFACER). */
+function deleteSave(directory) {
+  for (const name of [MAIN_FILE, BACKUP_FILE]) {
+    for (const file of [name, `${name}.tmp`]) fs.rmSync(path.join(directory, file), { force: true });
+  }
+}
+
 /** Raw texts of both files, null when a file does not exist. */
 function readSave(directory) {
   return {
@@ -60,4 +67,4 @@ function readSave(directory) {
   };
 }
 
-module.exports = { MAIN_FILE, BACKUP_FILE, writeSave, readSave, writeAtomic };
+module.exports = { MAIN_FILE, BACKUP_FILE, writeSave, readSave, writeAtomic, deleteSave };

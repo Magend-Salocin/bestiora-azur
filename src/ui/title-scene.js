@@ -10,7 +10,7 @@ import { getColor } from '../gfx/palette.js';
 import { ListMenu } from './components/list-menu.js';
 import { openOptions } from './options-screen.js';
 import { hooks } from '../overworld/hooks.js';
-import { say } from './messages.js';
+import { ask, say } from './messages.js';
 
 const SPRITE_SIZE = 48;
 const AZUREL = { x: 56, y: 44 };
@@ -41,7 +41,8 @@ export class TitleScene {
   blocksInput = true;
 
   /**
-   * onChoice(choice) is called with 'continue' or 'new'. hasSave tells whether CONTINUER is shown.
+   * onChoice(choice) is called with 'continue', 'new' or 'reset' (TOUT EFFACER, confirmed twice).
+   * hasSave tells whether CONTINUER is shown.
    * notice: text id shown once when the title appears (save loaded from its backup, unreadable save).
    */
   constructor({ hasSave = false, notice = null, onChoice }) {
@@ -86,7 +87,7 @@ export class TitleScene {
   }
 
   get entries() {
-    return [...(this.hasSave ? [{ id: 'continue', label: 'CONTINUER' }] : []), { id: 'new', label: 'NOUVELLE PARTIE' }, { id: 'options', label: 'OPTIONS' }];
+    return [...(this.hasSave ? [{ id: 'continue', label: 'CONTINUER' }] : []), { id: 'new', label: 'NOUVELLE PARTIE' }, { id: 'options', label: 'OPTIONS' }, { id: 'reset', label: 'TOUT EFFACER' }];
   }
 
   async select(id) {
@@ -97,6 +98,10 @@ export class TitleScene {
       return;
     }
     this.busy = true;
+    if (id === 'reset' && !((await ask(this.manager, 'title_reset_ask')) && (await ask(this.manager, 'title_reset_confirm')))) {
+      this.busy = false;
+      return;
+    }
     await this.manager.fadeOut();
     this.onChoice(id);
   }
@@ -107,7 +112,8 @@ export class TitleScene {
     if (this.busy) return;
     if (!this.menu) {
       if (input.justPressed('start') || input.justPressed('a')) {
-        this.menu = new ListMenu(this.entries.map((entry) => ({ label: entry.label })), { x: 8, y: 80, width: 144, rows: this.entries.length, rowHeight: 14 });
+        this.menu = new ListMenu(this.entries.map((entry) => ({ label: entry.label })), { x: 8, width: 144, rows: this.entries.length, rowHeight: 14 });
+        this.menu.y = SCREEN_HEIGHT - this.menu.height; // bottom of the screen, whatever the entry count
       }
       return;
     }

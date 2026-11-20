@@ -26,6 +26,29 @@ export async function writeGameSave(state) {
   }
 }
 
+/**
+ * TOUT EFFACER: save, options, activation key and caches, on disk (Electron) and in the browser.
+ * The caller reloads the game afterwards.
+ */
+export async function clearAllData() {
+  try {
+    await window.bestiora?.clearAllData?.();
+  } catch {
+    // The browser storage below is still cleared.
+  }
+  try {
+    localStorage.clear();
+    sessionStorage.clear();
+  } catch {
+    // Storage blocked: nothing stored there.
+  }
+  try {
+    if (window.caches) for (const name of await caches.keys()) await caches.delete(name);
+  } catch {
+    // No cache storage on plain HTTP pages.
+  }
+}
+
 /** Reads the save: { status: 'none' | 'ok' | 'backup' | 'corrupt', save?, error? } (see chooseSave). */
 export async function readGameSave() {
   let files = { main: null, backup: null };
