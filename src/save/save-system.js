@@ -44,8 +44,10 @@ export async function clearAllData() {
   }
   try {
     if (window.caches) for (const name of await caches.keys()) await caches.delete(name);
+    const workers = (await navigator.serviceWorker?.getRegistrations()) ?? [];
+    for (const worker of workers) await worker.unregister();
   } catch {
-    // No cache storage on plain HTTP pages.
+    // No cache storage nor service worker on plain HTTP pages.
   }
 }
 

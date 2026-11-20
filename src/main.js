@@ -164,6 +164,19 @@ async function boot() {
 // Dev tasks (screenshots, perf) run in a window that may not have the focus.
 if (!(isDev && new URLSearchParams(window.location.search).has('devtask'))) attachFocusPause(loop);
 loop.start();
+/**
+ * Web version on HTTPS (GitHub Pages): the service worker keeps the game on the device, so it
+ * starts offline once loaded. Not on plain HTTP (npm run web), where browsers refuse it.
+ */
+function registerOfflineMode() {
+  if (!window.isSecureContext || !('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.register('sw.js').catch(logError);
+}
+
 // Web version (no Electron bridge): private test, an activation key is required first.
-if (window.bestiora) boot();
-else requireAccessKey().then(boot);
+if (window.bestiora) {
+  boot();
+} else {
+  registerOfflineMode();
+  requireAccessKey().then(boot);
+}

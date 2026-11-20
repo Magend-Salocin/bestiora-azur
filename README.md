@@ -61,6 +61,10 @@ Le jeu tourne aussi dans le navigateur, avec des contrôles tactiles (croix, A, 
 
 Les contrôles tactiles apparaissent seuls sur un écran tactile. L'option TACTILE (AUTO, OUI, NON) les force ou les masque. La sauvegarde est stockée dans le navigateur de l'iPhone, séparément de celle du PC. Le PC doit être allumé, avec `npm run web` lancé, au moment d'ouvrir le jeu.
 
+### Version en ligne et hors ligne
+
+Chaque push sur `main` publie la version web sur GitHub Pages (`.github/workflows/pages.yml`, construite par `npm run build-web`). Ouverte une fois en HTTPS, elle est gardée sur l'appareil par un service worker (`src/sw.js`) et démarre ensuite sans réseau. Une nouvelle version publiée est téléchargée au lancement suivant avec réseau, puis utilisée au lancement d'après. Le serveur local (`npm run web`, en HTTP) n'a pas de mode hors ligne.
+
 ### Clés d'activation (test privé)
 
 La version web demande une clé avant de lancer le jeu ; la version PC n'en demande pas.
