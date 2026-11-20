@@ -4,6 +4,8 @@
 export const OPTION_LIMITS = { volume: [0, 10], windowScale: [2, 6] };
 export const TEXT_SPEED_IDS = ['slow', 'medium', 'fast', 'instant'];
 export const BATTLE_STYLES = ['choice', 'set'];
+/** On-screen buttons: 'auto' shows them on touch screens (phone, tablet). */
+export const TOUCH_MODES = ['auto', 'on', 'off'];
 
 export const DEFAULT_OPTIONS = {
   textSpeed: 'medium',
@@ -17,6 +19,7 @@ export const DEFAULT_OPTIONS = {
   keyBindings: null, // null = defaults of src/engine/input.js
   gamepadBindings: null, // { button: [gamepad button index] }, null = defaults
   reduceFlashes: false, // battle blinks become a small shift, no flashing transition
+  touchControls: 'auto',
 };
 
 let current = { ...DEFAULT_OPTIONS };
@@ -39,6 +42,7 @@ export function normalizeOptions(raw = {}) {
   if (raw.keyBindings && typeof raw.keyBindings === 'object') options.keyBindings = raw.keyBindings;
   if (raw.gamepadBindings && typeof raw.gamepadBindings === 'object') options.gamepadBindings = raw.gamepadBindings;
   if (typeof raw.reduceFlashes === 'boolean') options.reduceFlashes = raw.reduceFlashes;
+  if (TOUCH_MODES.includes(raw.touchControls)) options.touchControls = raw.touchControls;
   return options;
 }
 

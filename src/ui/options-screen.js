@@ -5,8 +5,9 @@ import { BUTTONS } from '../engine/constants.js';
 import { drawText } from '../gfx/font.js';
 import { PALETTES, getColor, setActivePalette } from '../gfx/palette.js';
 import {
-  BATTLE_STYLES, OPTION_LIMITS, TEXT_SPEED_IDS, getOptions, normalizeOptions, setOptions,
+  BATTLE_STYLES, OPTION_LIMITS, TEXT_SPEED_IDS, TOUCH_MODES, getOptions, normalizeOptions, setOptions,
 } from '../state/options.js';
+import { setTouchControlsMode } from './touch-controls.js';
 import { setTextSpeed } from './dialog-box.js';
 import { hooks } from '../overworld/hooks.js';
 import { PromiseScene, moveCursor } from './menu-cursor.js';
@@ -16,14 +17,16 @@ const TEXT_SPEED_LABELS = { slow: 'LENT', medium: 'MOYEN', fast: 'RAPIDE', insta
 const BUTTON_LABELS = { up: 'HAUT', down: 'BAS', left: 'GAUCHE', right: 'DROITE', a: 'A', b: 'B', start: 'START', select: 'SELECT' };
 const ROWS = [
   'textSpeed', 'battleAnimations', 'reduceFlashes', 'battleStyle', 'musicVolume', 'sfxVolume', 'palette',
-  'windowScale', 'fullscreen', 'keys', 'gamepad',
+  'windowScale', 'fullscreen', 'touchControls', 'keys', 'gamepad',
 ];
 const ROW_LABELS = {
   textSpeed: 'TEXTE', battleAnimations: 'ANIMATIONS', reduceFlashes: 'FLASHS RÉDUITS', battleStyle: 'STYLE',
   musicVolume: 'MUSIQUE', sfxVolume: 'EFFETS', palette: 'PALETTE', windowScale: 'TAILLE', fullscreen: 'PLEIN ÉCRAN',
-  keys: 'TOUCHES', gamepad: 'MANETTE',
+  touchControls: 'TACTILE', keys: 'TOUCHES', gamepad: 'MANETTE',
 };
-const ROW_HEIGHT = 12;
+const TOUCH_LABELS = { auto: 'AUTO', on: 'OUI', off: 'NON' };
+const FIRST_ROW_Y = 6;
+const ROW_HEIGHT = 11;
 
 let targets = { input: null };
 
@@ -41,6 +44,7 @@ export function applyOptions(options = getOptions()) {
   if (options.gamepadBindings) targets.input?.setGamepadBindings(options.gamepadBindings);
   window.bestiora?.setWindowScale?.(options.windowScale);
   window.bestiora?.setFullscreen?.(options.fullscreen);
+  setTouchControlsMode(options.touchControls);
 }
 
 /** Loads userData/options.json (or browser storage). Resolves true when options were found. */
@@ -105,6 +109,7 @@ export class OptionsScene extends PromiseScene {
     else if (row === 'palette') o.palette = cycle(PALETTES.map((palette) => palette.id), o.palette, delta);
     else if (row === 'windowScale') o.windowScale = clampStep(o.windowScale, OPTION_LIMITS.windowScale, delta);
     else if (row === 'fullscreen') o.fullscreen = !o.fullscreen;
+    else if (row === 'touchControls') o.touchControls = cycle(TOUCH_MODES, o.touchControls, delta);
     else return;
     applyOptions(setOptions(o));
   }
@@ -185,6 +190,7 @@ export class OptionsScene extends PromiseScene {
       case 'palette': return PALETTES.find((palette) => palette.id === o.palette)?.name.toUpperCase() ?? '';
       case 'windowScale': return `×${o.windowScale}`;
       case 'fullscreen': return o.fullscreen ? 'OUI' : 'NON';
+      case 'touchControls': return TOUCH_LABELS[o.touchControls];
       default: return '';
     }
   }
@@ -194,7 +200,7 @@ export class OptionsScene extends PromiseScene {
     ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     drawWindowFrame(ctx, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     ROWS.forEach((row, index) => {
-      const y = 8 + index * ROW_HEIGHT;
+      const y = FIRST_ROW_Y + index * ROW_HEIGHT;
       if (index === this.index) drawText(ctx, '▶', 8, y);
       drawText(ctx, ROW_LABELS[row], 16, y);
       const value = this.value(row);

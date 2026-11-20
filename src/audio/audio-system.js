@@ -40,6 +40,7 @@ export function createAudioSystem() {
 
   window.addEventListener('keydown', unlock);
   window.addEventListener('pointerdown', unlock);
+  window.addEventListener('touchend', unlock); // iOS Safari unlocks audio on touchend
   window.addEventListener('blur', () => ctx?.suspend());
   window.addEventListener('focus', () => ctx?.resume());
 

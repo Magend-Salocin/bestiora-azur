@@ -17,6 +17,7 @@ import { installMenuHooks } from './ui/menu-hooks.js';
 import { createAudioSystem } from './audio/audio-system.js';
 import { applyOptions, loadAndApplyOptions, registerOptionTargets } from './ui/options-screen.js';
 import { TitleScene } from './ui/title-scene.js';
+import { installTouchControls } from './ui/touch-controls.js';
 import { playIntro } from './ui/intro-scene.js';
 
 const renderer = createRenderer(document.getElementById('screen'));
@@ -129,6 +130,7 @@ async function boot() {
   const loading = scenes.push(new LoadingScene());
   try {
     registerOptionTargets({ input });
+    installTouchControls(input);
     audio = createAudioSystem();
     setHooks({ playMusic: audio.playMusic, playSfx: audio.playSfx, setVolumes: audio.setVolumes, saveGame: writeGameSave });
     hasOptionsFile = await loadAndApplyOptions();

@@ -20,7 +20,8 @@
     "icon": "node tools/build-icon.js",
     "screenshots": "node tools/capture-screenshots.js",
     "check-text": "node tools/check-text-fit.js",
-    "perf": "node tools/run-perf.js"
+    "perf": "node tools/run-perf.js",
+    "web": "node tools/web-server.js"
   },
   "repository": {
     "type": "git",

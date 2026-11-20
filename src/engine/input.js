@@ -57,6 +57,9 @@ export function createInput({
   // Keys pressed since the last update, so a tap shorter than one step is not lost.
   const tappedCodes = new Set();
   const states = Object.fromEntries(BUTTONS.map((button) => [button, createButtonState()]));
+  // On-screen buttons (touch controls): held ones, and presses since the last update.
+  const virtualHeld = new Set();
+  const virtualTapped = new Set();
 
   function isBoundCode(code) {
     return BUTTONS.some((button) => keys[button].includes(code));
@@ -77,6 +80,7 @@ export function createInput({
   function clearKeys() {
     heldCodes.clear();
     tappedCodes.clear();
+    virtualHeld.clear();
   }
 
   target.addEventListener('keydown', onKeyDown);
@@ -131,9 +135,11 @@ export function createInput({
     update(dt) {
       const gamepadDown = readGamepadButtons();
       for (const button of BUTTONS) {
-        updateButton(states[button], isKeyboardDown(button) || gamepadDown.has(button), dt);
+        const virtualDown = virtualHeld.has(button) || virtualTapped.has(button);
+        updateButton(states[button], isKeyboardDown(button) || gamepadDown.has(button) || virtualDown, dt);
       }
       tappedCodes.clear();
+      virtualTapped.clear();
     },
     isDown: (button) => states[button].down,
     justPressed: (button) => states[button].pressed,
@@ -144,6 +150,16 @@ export function createInput({
     setKeyBindings(bindings) {
       keys = cloneBindings({ ...keys, ...bindings });
       clearKeys();
+    },
+    /** On-screen button pressed or released (src/ui/touch-controls.js). */
+    setVirtualButton(button, down) {
+      if (!states[button]) return;
+      if (down) {
+        virtualHeld.add(button);
+        virtualTapped.add(button);
+      } else {
+        virtualHeld.delete(button);
+      }
     },
     getGamepadBindings: () => cloneBindings(pads),
     setGamepadBindings(bindings) {

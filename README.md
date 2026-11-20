@@ -51,6 +51,16 @@ Prérequis : Node.js 20 ou plus récent, puis `npm install`.
 
 Les touches et les boutons de manette se remappent dans OPTIONS (TOUCHES, MANETTE). Les options proposent aussi le texte instantané, la palette Contraste (contraste maximal) et la réduction des flashs (les clignotements de combat deviennent un léger décalage).
 
+## Jouer sur iPhone (ou tablette)
+
+Le jeu tourne aussi dans le navigateur, avec des contrôles tactiles (croix, A, B, START, SELECT).
+
+1. Sur le PC : `npm run web`. Le terminal affiche les adresses du PC sur le réseau, par exemple `http://192.168.1.94:8080/`. Au premier lancement, autoriser Node.js dans le pare-feu Windows (réseau privé).
+2. Sur l'iPhone, connecté au même Wi-Fi : ouvrir cette adresse dans Safari.
+3. Partager, puis « Sur l'écran d'accueil » : le jeu s'ouvre ensuite en plein écran depuis son icône.
+
+Les contrôles tactiles apparaissent seuls sur un écran tactile. L'option TACTILE (AUTO, OUI, NON) les force ou les masque. La sauvegarde est stockée dans le navigateur de l'iPhone, séparément de celle du PC. Le PC doit être allumé, avec `npm run web` lancé, au moment d'ouvrir le jeu.
+
 ## Sauvegardes
 
 La partie se sauvegarde depuis le menu START (SAUVER), sauf dans la Ligue une fois la porte franchie. Les fichiers sont dans le dossier de données de l'application :

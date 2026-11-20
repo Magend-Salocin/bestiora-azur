@@ -12,3 +12,109 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+/* ---- Touch controls (src/ui/touch-controls.js), shown when body has the "touch" class ---- */
+
+.touch-controls {
+  display: none;
+}
+
+body.touch {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.touch .touch-controls {
+  display: block;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.touch-dpad,
+.touch-button,
+.touch-pill {
+  position: absolute;
+  pointer-events: auto;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8d0c0;
+  background: #2a302c;
+  box-shadow: 0 3px 0 #121612;
+}
+
+.touch-dpad {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #1a1e1b;
+}
+
+.touch-arrow {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: #3a423c;
+  border-radius: 6px;
+}
+
+.touch-up { top: 6px; left: 52px; }
+.touch-down { bottom: 6px; left: 52px; }
+.touch-left { left: 6px; top: 52px; }
+.touch-right { right: 6px; top: 52px; }
+
+.touch-dpad[data-direction='up'] .touch-up,
+.touch-dpad[data-direction='down'] .touch-down,
+.touch-dpad[data-direction='left'] .touch-left,
+.touch-dpad[data-direction='right'] .touch-right,
+.touch-button.pressed,
+.touch-pill.pressed {
+  background: #6a7a6e;
+}
+
+.touch-button {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #5a2a3a;
+}
+
+.touch-pill {
+  width: 76px;
+  height: 28px;
+  border-radius: 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Portrait: screen on top, controls below (handheld layout). */
+@media (orientation: portrait) {
+  body.touch #screen {
+    height: calc(100vw * 144 / 160 + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    box-sizing: border-box;
+  }
+
+  .touch-dpad { left: 20px; bottom: calc(110px + env(safe-area-inset-bottom)); }
+  .touch-b { right: 104px; bottom: calc(110px + env(safe-area-inset-bottom)); }
+  .touch-a { right: 20px; bottom: calc(150px + env(safe-area-inset-bottom)); }
+  .touch-select { left: calc(50% - 86px); bottom: calc(30px + env(safe-area-inset-bottom)); }
+  .touch-start { left: calc(50% + 10px); bottom: calc(30px + env(safe-area-inset-bottom)); }
+}
+
+/* Landscape: screen in the middle, d-pad on the left, buttons on the right. */
+@media (orientation: landscape) {
+  .touch-dpad { left: calc(16px + env(safe-area-inset-left)); bottom: 40px; }
+  .touch-b { right: calc(96px + env(safe-area-inset-right)); bottom: 40px; }
+  .touch-a { right: calc(16px + env(safe-area-inset-right)); bottom: 80px; }
+  .touch-select { left: calc(16px + env(safe-area-inset-left)); top: 16px; }
+  .touch-start { right: calc(16px + env(safe-area-inset-right)); top: 16px; }
+}

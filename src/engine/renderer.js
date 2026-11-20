@@ -44,7 +44,12 @@ export function createRenderer(displayCanvas) {
       setDisplaySize(Math.round(entry.contentRect.width * ratio), Math.round(entry.contentRect.height * ratio));
     }
   });
-  observer.observe(displayCanvas, { box: 'device-pixel-content-box' });
+  try {
+    observer.observe(displayCanvas, { box: 'device-pixel-content-box' });
+  } catch {
+    // Safari (iPhone) does not know this box and throws: CSS size × devicePixelRatio instead.
+    observer.observe(displayCanvas);
+  }
 
   return {
     ctx,
