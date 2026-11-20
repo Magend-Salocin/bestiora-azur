@@ -21,7 +21,8 @@
     "screenshots": "node tools/capture-screenshots.js",
     "check-text": "node tools/check-text-fit.js",
     "perf": "node tools/run-perf.js",
-    "web": "node tools/web-server.js"
+    "web": "node tools/web-server.js",
+    "key": "node tools/access-key.js"
   },
   "repository": {
     "type": "git",

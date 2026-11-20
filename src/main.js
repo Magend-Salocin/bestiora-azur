@@ -18,6 +18,7 @@ import { createAudioSystem } from './audio/audio-system.js';
 import { applyOptions, loadAndApplyOptions, registerOptionTargets } from './ui/options-screen.js';
 import { TitleScene } from './ui/title-scene.js';
 import { installTouchControls } from './ui/touch-controls.js';
+import { requireAccessKey } from './access/access-gate.js';
 import { playIntro } from './ui/intro-scene.js';
 
 const renderer = createRenderer(document.getElementById('screen'));
@@ -155,4 +156,6 @@ async function boot() {
 // Dev tasks (screenshots, perf) run in a window that may not have the focus.
 if (!(isDev && new URLSearchParams(window.location.search).has('devtask'))) attachFocusPause(loop);
 loop.start();
-boot();
+// Web version (no Electron bridge): private test, an activation key is required first.
+if (window.bestiora) boot();
+else requireAccessKey().then(boot);

@@ -118,3 +118,71 @@ body.touch .touch-controls {
   .touch-select { left: calc(16px + env(safe-area-inset-left)); top: 16px; }
   .touch-start { right: calc(16px + env(safe-area-inset-right)); top: 16px; }
 }
+
+/* ---- Activation key screen of the web version (src/access/access-gate.js) ---- */
+
+.access-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #203028;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.access-title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.access-status {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #587860;
+}
+
+.access-text {
+  margin: 0 0 8px;
+  max-width: 320px;
+  font-size: 15px;
+}
+
+.access-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  border: 2px solid #203028;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: ui-monospace, monospace;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.access-button {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #203028;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.access-error {
+  min-height: 20px;
+  margin: 0;
+  color: #a03030;
+  font-size: 15px;
+}

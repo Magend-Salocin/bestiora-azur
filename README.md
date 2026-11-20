@@ -61,6 +61,18 @@ Le jeu tourne aussi dans le navigateur, avec des contrôles tactiles (croix, A, 
 
 Les contrôles tactiles apparaissent seuls sur un écran tactile. L'option TACTILE (AUTO, OUI, NON) les force ou les masque. La sauvegarde est stockée dans le navigateur de l'iPhone, séparément de celle du PC. Le PC doit être allumé, avec `npm run web` lancé, au moment d'ouvrir le jeu.
 
+### Clés d'activation (test privé)
+
+La version web demande une clé avant de lancer le jeu ; la version PC n'en demande pas.
+
+```powershell
+npm run key -- new "Prénom"      # crée une clé, à envoyer à la personne
+npm run key -- list              # clés créées sur ce PC
+npm run key -- revoke "Prénom"   # révoque une clé
+```
+
+Commit et push ensuite pour appliquer le changement au site. Seuls les hachages sont publiés (`src/data/access-keys.js`). Les noms et les clés restent dans `access-keys.local.json`, non versionné : le garder en lieu sûr. Une clé révoquée cesse de fonctionner au lancement suivant. Cette protection écarte les visiteurs de passage, mais un site statique reste téléchargeable par quelqu'un de déterminé.
+
 ## Sauvegardes
 
 La partie se sauvegarde depuis le menu START (SAUVER), sauf dans la Ligue une fois la porte franchie. Les fichiers sont dans le dossier de données de l'application :
