@@ -165,7 +165,6 @@ body.touch .touch-controls {
   font-size: 18px;
   font-family: ui-monospace, monospace;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .access-button {
@@ -193,4 +192,26 @@ body.touch .touch-controls {
   margin: 0 24px;
   color: #587860;
   font-size: 12px;
+}
+
+.access-device {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.access-device-id {
+  font-family: ui-monospace, monospace;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.access-copy {
+  padding: 6px 10px;
+  border: 2px solid #203028;
+  border-radius: 6px;
+  background: #fff;
+  color: #203028;
+  font-size: 14px;
 }

@@ -67,15 +67,24 @@ Chaque push sur `main` publie la version web sur GitHub Pages (`.github/workflow
 
 ### Clés d'activation (test privé)
 
-La version web demande une clé avant de lancer le jeu ; la version PC n'en demande pas.
+La version web en ligne demande une clé liée à l'appareil ; la version PC et le serveur local (`npm run web`, HTTP) n'en demandent pas.
+
+1. Le joueur ouvre le jeu (depuis l'icône de l'écran d'accueil sur iPhone) : l'écran « Test en cours » affiche l'identifiant de son appareil, par exemple `K7QM-2XRA`.
+2. Il te l'envoie ; tu génères sa clé et la lui renvoies, il la colle dans le jeu.
 
 ```powershell
-npm run key -- new "Prénom"      # crée une clé, à envoyer à la personne
-npm run key -- list              # clés créées sur ce PC
-npm run key -- revoke "Prénom"   # révoque une clé
+npm run key -- init                     # une seule fois : crée la paire de clés
+npm run key -- new K7QM-2XRA "Prénom"   # clé pour cet appareil, aucun push nécessaire
+npm run key -- list                     # appareils et clés créés sur ce PC
+npm run key -- revoke "Prénom"          # révoque un appareil : commit et push ensuite
 ```
 
-Commit et push ensuite pour appliquer le changement au site. Seuls les hachages sont publiés (`src/data/access-keys.js`). Les noms et les clés restent dans `access-keys.local.json`, non versionné : le garder en lieu sûr. Une clé révoquée cesse de fonctionner au lancement suivant. Cette protection écarte les visiteurs de passage, mais un site statique reste téléchargeable par quelqu'un de déterminé.
+La clé est une signature de l'identifiant par ta clé privée (`access-private-key.local.pem`) ; le jeu ne contient que la clé publique (`src/data/access-public-key.js`), il peut vérifier une clé mais personne ne peut en fabriquer. Une clé ne marche que sur l'appareil pour lequel elle a été faite.
+
+- Sauvegarder `access-private-key.local.pem` et `access-devices.local.json` (non versionnés). Sans la clé privée, plus aucune clé ne peut être créée, et refaire `init` invalide toutes les clés données.
+- TOUT EFFACER ou l'effacement des données de Safari crée un nouvel identifiant : il faut alors une nouvelle clé. Sur iPhone, Safari et l'icône d'écran d'accueil ont des données séparées.
+- Une révocation s'applique au deuxième lancement avec réseau après le push (mise à jour du cache hors ligne).
+- Cette protection tient les curieux à l'écart ; quelqu'un de déterminé peut toujours copier le jeu et retirer le contrôle dans sa propre copie.
 
 ## Sauvegardes
 

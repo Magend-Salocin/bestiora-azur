@@ -1,6 +1,7 @@
 node_modules/
 dist/
 out/
-access-keys.local.json
+*.local.json
+*.local.pem
 prive/
 _site/
