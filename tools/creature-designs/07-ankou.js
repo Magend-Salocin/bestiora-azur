@@ -51,56 +51,50 @@ const ANKOULET_ICON = iconFrom([
   { shape: poly([6.5, 9.5], [9.5, 9.5], [8, 13]), tone: 1, shade: 2 },
 ]);
 
-// ---------- 094 Ankou: the tall reaper with a raven skull, its scythe and a pale flame ----------
+// ---------- 094 Ankou: a great raven-skulled bird, tattered wings, a scythe-blade tail and a pale flame ----------
 const A2 = {
-  handle: capsule([[38, 6], [40, 44]], 1),
-  blade: poly([38, 5], [26, 4], [16, 8], [26, 7], [38, 9]),
-  cloak: union(poly([16, 16], [32, 16], [38, 38], [10, 38]), hem(10, 38, 36, 45, 6)),
-  hood: ellipse(24, 15, 8, 7.5),
-  skull: ellipse(24, 16, 5, 4.5),
-  beak: poly([21, 18], [27, 18], [24, 29]),
-  arm: capsule([[30, 22], [36, 26], [38, 25]], 2.2),
-  hand: ellipse(38.5, 25, 2, 2),
-  armLeft: capsule([[17, 22], [11, 28], [10, 31]], 2),
-  flame: flame(10, 36, 8, 3),
+  tail: poly([29, 38], [40, 33], [45, 22], [44, 15], [42, 24], [36, 31], [28, 34]),
+  wings: mirrorX(poly([16, 25], [5, 17], [2, 29], [5, 27], [4, 35], [8, 32], [9, 39], [15, 34])),
+  legs: union(capsule([[20, 40], [19, 44.5]], 1.2), capsule([[28, 40], [29, 44.5]], 1.2)),
+  body: union(ellipse(24, 30, 9, 9), hem(15, 33, 33, 42, 4)),
+  crest: poly([16, 17], [18, 7], [21, 12], [24, 5], [27, 12], [30, 7], [32, 17]),
+  skull: ellipse(24, 17, 6, 5.5),
+  beak: poly([20.5, 20], [27.5, 20], [24, 31]),
+  flame: flame(8, 14, 8, 3),
 };
 
 function ankouFront() {
   return toRows(paint([
-    { shape: A2.handle, tone: 2, shade: 3 },
-    { shape: A2.blade, tone: 1, shade: 2, light: { tone: 0, shape: poly([30, 6], [22, 6], [30, 7]) } },
-    { shape: A2.cloak, tone: 2, shade: 3, light: { tone: 3, shape: poly([22, 24], [26, 24], [28, 40], [20, 40]) }, pixels: px(1, [14, 30], [33, 31]) },
-    { shape: A2.armLeft, tone: 2, shade: 3 },
-    { shape: A2.flame, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(10, 32, 1.2, 2) } },
-    { shape: A2.hood, tone: 2, shade: 3, light: { tone: 1, shape: ellipse(19, 11, 2, 1.5) } },
-    { shape: A2.skull, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(22, 13, 1.5, 0.8) }, pixels: stamp(21, 15, ['33..33', '30..03']) },
-    { shape: A2.beak, tone: 1, shade: 2, pixels: px(3, [24, 21], [24, 22], [24, 23]) },
-    { shape: A2.arm, tone: 2, shade: 3 },
-    { shape: A2.hand, tone: 1, shade: 2 },
-    { pixels: [...wisp(3, 14), ...wisp(5, 41)] },
+    { shape: A2.tail, tone: 1, shade: 2, light: { tone: 0, shape: poly([43, 18], [44, 16], [42, 23]) } },
+    { shape: A2.wings, tone: 2, shade: 3, light: { tone: 1, shape: poly([12, 21], [6, 19], [6, 21]) } },
+    { shape: A2.legs, tone: 1, shade: 2, pixels: px(3, [17, 45], [18, 45], [21, 45], [27, 45], [30, 45], [31, 45]) },
+    { shape: A2.body, tone: 2, shade: 3, pixels: px(3, [20, 31], [28, 31], [24, 36]) },
+    { shape: A2.crest, tone: 2, shade: 3 },
+    { shape: A2.skull, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(21, 14, 1.5, 0.8) }, pixels: stamp(20, 16, ['333..333', '303..303', '333..333']) },
+    { shape: A2.beak, tone: 1, shade: 2, pixels: px(3, [24, 23], [24, 24], [24, 25]) },
+    { shape: A2.flame, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(8, 10, 1.2, 2) } },
+    { pixels: [...wisp(39, 40), ...wisp(3, 40)] },
   ]));
 }
 
 function ankouBack() {
   return toRows(paint([
-    { shape: A2.flame, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(10, 32, 1.2, 2) } },
-    { shape: A2.cloak, tone: 2, shade: 3, pixels: px(3, [24, 26], [24, 32], [20, 38], [28, 38]) },
-    { shape: A2.armLeft, tone: 2, shade: 3 },
-    { shape: A2.hood, tone: 2, shade: 3, light: { tone: 1, shape: ellipse(20, 11, 2.5, 2) } },
-    { shape: A2.handle, tone: 2, shade: 3 },
-    { shape: A2.blade, tone: 1, shade: 2 },
-    { shape: A2.arm, tone: 2, shade: 3 },
-    { shape: A2.hand, tone: 1, shade: 2 },
+    { shape: A2.legs, tone: 1, shade: 2 },
+    { shape: A2.body, tone: 2, shade: 3 },
+    { shape: A2.wings, tone: 2, shade: 3, light: { tone: 1, shape: poly([12, 21], [6, 19], [6, 21]) }, pixels: px(3, [10, 27], [38, 27], [11, 32], [37, 32]) },
+    { shape: union(A2.crest, ellipse(24, 17, 6.5, 6)), tone: 2, shade: 3, light: { tone: 1, shape: ellipse(21, 13, 2, 1.2) } },
+    { shape: A2.tail, tone: 1, shade: 2 },
+    { shape: A2.flame, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(8, 10, 1.2, 2) } },
   ]));
 }
 
 const ANKOU_ICON = iconFrom([
-  { shape: capsule([[13, 1], [14, 15]], 0.6), tone: 2 },
-  { shape: poly([13, 1], [6, 0.5], [3, 2.5], [8, 2], [13, 3]), tone: 1, shade: 2 },
-  { shape: union(poly([5, 7], [11, 7], [13, 15.5], [3, 15.5])), tone: 2, shade: 3 },
-  { shape: ellipse(8, 6.5, 4, 3.5), tone: 2, shade: 3 },
-  { shape: ellipse(8, 7, 2.5, 2.2), tone: 1, outline: false, pixels: [...px(3, [7, 7], [9, 7])] },
-  { shape: poly([6.5, 8], [9.5, 8], [8, 12]), tone: 1, shade: 2 },
+  { shape: poly([10, 13], [14, 10], [15.5, 4], [13, 9], [10, 11]), tone: 1, shade: 2 },
+  { shape: mirrorX(poly([5, 9], [1, 6], [0.5, 12], [4, 13]), 8), tone: 2, shade: 3 },
+  { shape: ellipse(8, 11.5, 4, 3.5), tone: 2, shade: 3 },
+  { shape: poly([4, 6], [5, 1], [8, 3], [11, 1], [12, 6]), tone: 2, shade: 3 },
+  { shape: ellipse(8, 6, 3, 2.6), tone: 1, shade: 2, pixels: [...px(3, [6, 6], [10, 6]), ...px(0, [6, 5])] },
+  { shape: poly([6.5, 7.5], [9.5, 7.5], [8, 12]), tone: 1, shade: 2 },
 ]);
 
 // ---------- 095 Revenant: a cracked headstone that climbs back out of its grave ----------

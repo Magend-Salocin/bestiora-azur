@@ -13,7 +13,7 @@ import { hooks } from '../overworld/hooks.js';
 import { ask, say } from './messages.js';
 
 const SPRITE_SIZE = 48;
-const AZUREL = { x: 56, y: 44 };
+const AZUREL = { x: 56, y: 41 }; // the Vouivre fills its 48 rows: it sits between the logo and the parade
 /** Azurel cycle, in seconds: silhouette, colors appear top-down, colors, colors disappear. */
 const REVEAL = { start: 5, show: 0.5, hold: 2, period: 8 };
 
@@ -146,7 +146,7 @@ export class TitleScene {
   }
 
   renderAzurel(ctx) {
-    const y = AZUREL.y + Math.round(Math.sin(this.time * 2) * 3);
+    const y = AZUREL.y + Math.round(Math.sin(this.time * 2));
     drawSprite(ctx, 'ui', 'title/vouivre', AZUREL.x, y);
     const rows = azurelRevealRows(this.time);
     if (rows > 0) drawSpritePart(ctx, 'creatures', 'vouivre/front', 0, 0, SPRITE_SIZE, rows, AZUREL.x, y);

@@ -6,7 +6,7 @@ Emplacements `ankoulet`, `ankou`. Types Ombre et Feu. Évolution au niveau 34. N
 
 **Légende.** En Bretagne, l'Ankou est l'ouvrier de la mort. Il parcourt les chemins la nuit avec sa charrette qui grince et sa faux, et vient chercher ceux dont l'heure est venue. Selon la tradition, le dernier mort de l'année dans une paroisse devient l'Ankou de l'année suivante.
 
-**Dans le jeu.** Pour éviter un squelette humain, l'Ankou porte un crâne d'oiseau. Un petit esprit drapé qui porte une flamme pâle sur son crâne, puis un grand faucheur encapuchonné, sa faux à la main et une flamme qui flotte près de lui. Éléments signature : crâne d'oiseau, cape effilochée, faux, flamme pâle.
+**Dans le jeu.** Pour éviter un squelette humain, l'Ankou porte un crâne d'oiseau. Un petit esprit drapé qui porte une flamme pâle sur son crâne, puis un grand corbeau au crâne nu, aux ailes effilochées comme une cape, dont la queue a la courbe d'une lame de faux. Éléments signature : crâne d'oiseau, plumes effilochées, queue en faux, flamme pâle.
 
 | N° | Nom | Catégorie | Taille, poids | Description en jeu |
 |---|---|---|---|---|
