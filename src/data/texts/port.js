@@ -112,7 +112,7 @@ export default {
   maison_route_5_jardinier_don: 'Le badge Eau ! Maël t’a reconnu, alors je te fais confiance.\fTiens, prends ma Machette.',
   maison_route_5_jardinier_conseil: 'Regarde un arbuste et appuie sur A pour le couper. Il repoussera, mais pas avant ton passage.',
   maison_route_5_jardinier_after: 'Les arbustes repoussent vite. Garde bien ta Machette.',
-  maison_route_5_fermiere: 'Je rêve d’un Bovaillon pour tirer ma charrette.\fJ’ai un Noisetin plein d’énergie, Grignotte. On échange ?',
+  maison_route_5_fermiere: 'Je rêve d’un Bovaillon pour tirer ma charrette.\fJ’ai un Faramin plein d’énergie, Grignotte. On échange ?',
   maison_route_5_fermiere_after: 'Ton Bovaillon tire la charrette comme un champion ! Prends soin de Grignotte.',
 
   // Vireval

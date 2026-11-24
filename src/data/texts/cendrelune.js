@@ -68,7 +68,7 @@ export default {
   halte_cendrelune_randonneur: 'J’ai traversé le tunnel sans Lanterne, une fois. J’ai mis trois jours.',
   halte_cendrelune_gamin: 'Les dalles de la Tour te font monter d’un étage en un clin d’œil !',
   comptoir_cendrelune_dame: 'Les Grandes Potions ne sont vendues qu’aux porteurs du badge Flore. Le règlement !',
-  maison_cendrelune_1_vieille_dame: 'Mon vieux Noiseclat repose dans la Tour.\fChaque matin, je monte lui dire bonjour. Enfin… quand le Syndicat n’est pas là.',
+  maison_cendrelune_1_vieille_dame: 'Ma vieille Faramine repose dans la Tour.\fChaque matin, je monte lui dire bonjour. Enfin… quand le Syndicat n’est pas là.',
   maison_cendrelune_1_gamin: 'Mamie dit que les bestioles disparues deviennent des étoiles.',
   maison_cendrelune_2_fillette: 'Papa cultive des fleurs qui mangent les mouches. Je ne m’approche pas.',
   maison_cendrelune_2_echange: 'Je cherche un Ronceroc pour ma rocaille.\fEn échange, je te donne ma Nimbelaine. Ça te va ?',
@@ -96,7 +96,7 @@ export default {
 
   // Tour de la Mémoire
   tour_memoire_stele_1: '« A Pivolo, qui chantait chaque matin. »',
-  tour_memoire_stele_2: '« A Grosbec, le plus gourmand des Noiseclat. »',
+  tour_memoire_stele_2: '« A Grosbec, la plus gourmande des Faramine. »',
   tour_memoire_stele_3: '« A Fanfreluche, partie trop tôt. On t’aime. »',
   tour_memoire_stele_4: '« A toutes les bestioles disparues : nous nous souvenons. »',
   tour_memoire_1_vieille_dame: 'Je viens ici pour me souvenir. Ça fait du bien.',

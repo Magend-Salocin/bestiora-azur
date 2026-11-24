@@ -30,19 +30,19 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 022 | Dame verte | Flore | 360 | - | Forêt | 5 |
 | 023 | Basilin | Toxique | 290 | Basilic (niv. 22) | Forêt | 5 |
 | 024 | Basilic | Toxique | 445 | - | Forêt | 22 |
-| 025 | Lumignon | Arcane | 290 | Lumidanse (niv. 20) | Forêt | 6 |
-| 026 | Lumidanse | Arcane | 400 | Lumirande (Pierre Lunaire) | Forêt | 20 |
-| 027 | Lumirande | Arcane / Vent | 515 | - | Forêt | 30 |
-| 028 | Noisetin | Normal | 280 | Noiseclat (niv. 25) | Forêt | 4 |
-| 029 | Noiseclat | Normal | 430 | - | Forêt | 25 |
-| 030 | Faonille | Flore | 300 | Cerfeuil (niv. 20) | Forêt | 6 |
-| 031 | Cerfeuil | Flore | 410 | Cervoral (niv. 38) | Forêt | 20 |
-| 032 | Cervoral | Flore / Arcane | 525 | - | Forêt | 38 |
-| 033 | Caillotin | Roche / Terre | 300 | Bloquetin (niv. 25) | Grotte | 8 |
-| 034 | Bloquetin | Roche / Terre | 390 | Menhirgon (niv. 40) | Grotte | 25 |
-| 035 | Menhirgon | Roche / Terre | 505 | - | Grotte | 40 |
-| 036 | Noctule | Ombre / Vent | 270 | Noctulard (niv. 22) | Grotte | 8 |
-| 037 | Noctulard | Ombre / Vent | 440 | - | Grotte | 22 |
+| 025 | Hada | Arcane | 290 | Hadalune (niv. 20) | Forêt | 6 |
+| 026 | Hadalune | Arcane | 400 | Hadélys (Pierre Lunaire) | Forêt | 20 |
+| 027 | Hadélys | Arcane / Vent | 515 | - | Forêt | 30 |
+| 028 | Faramin | Normal | 280 | Faramine (niv. 25) | Forêt | 4 |
+| 029 | Faramine | Normal | 430 | - | Forêt | 25 |
+| 030 | Fadet | Flore | 300 | Fadebois (niv. 20) | Forêt | 6 |
+| 031 | Fadebois | Flore | 410 | Fadéon (niv. 38) | Forêt | 20 |
+| 032 | Fadéon | Flore / Arcane | 525 | - | Forêt | 38 |
+| 033 | Gargoulin | Roche / Terre | 300 | Gargoulard (niv. 25) | Grotte | 8 |
+| 034 | Gargoulard | Roche / Terre | 390 | Gargouille (niv. 40) | Grotte | 25 |
+| 035 | Gargouille | Roche / Terre | 505 | - | Grotte | 40 |
+| 036 | Lubin | Ombre / Vent | 270 | Lubinou (niv. 22) | Grotte | 8 |
+| 037 | Lubinou | Ombre / Vent | 440 | - | Grotte | 22 |
 | 038 | Salamoue | Terre / Eau | 300 | Salamarde (niv. 26) | Rivière | 9 |
 | 039 | Salamarde | Terre / Eau | 410 | Salamassif (niv. 42) | Rivière | 26 |
 | 040 | Salamassif | Terre / Eau | 515 | - | Rivière | 42 |

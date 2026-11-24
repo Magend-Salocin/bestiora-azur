@@ -67,7 +67,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 0 | Genre grammatical, outils de dessin et de planche | 0 | Fait |
 | Starters | 001 à 009 | 9 | Fait |
 | 1 | Premières routes (010 à 024) | 15 | Fait |
-| 2 | Forêts et premières grottes (025 à 037) | 13 | |
+| 2 | Forêts et premières grottes (025 à 037) | 13 | Fait |
 | 3 | Rivières et grottes (038 à 049) | 12 | |
 | 4 | Côte et prairies (050 à 061) | 12 | |
 | 5 | Prairies et ville (062 à 074) | 13 | |
@@ -95,11 +95,11 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 020 | Morillon > Morillard | Mandragot > Mandragoul | Toxique, Flore | Mandragot, mandragore familière | Provence | F, J (fait) |
 | 022 | Glandor | Dame verte | Flore | Dames vertes des forêts | Franche-Comté | F (fait) |
 | 023 | Venimot > Venimorde | Basilin > Basilic | Toxique | Basilic | Bestiaire médiéval | J, F (fait) |
-| 025 | Lumignon > Lumidanse > Lumirande | Hada > Hadalune > Hadélys | Arcane (Vent au stade 3) | Hadas, fées | Pyrénées | F, J, J |
-| 028 | Noisetin > Noiseclat | Faramin > Faramine | Normal | Bête faramine, bête qu'on chasse sans jamais la voir | Poitou, Vendée | J, F |
-| 030 | Faonille > Cerfeuil > Cervoral | Fadet > Fadebois > Fadéon | Flore (Arcane au stade 3) | Fadet | Poitou, Vendée | A, J, J |
-| 033 | Caillotin > Bloquetin > Menhirgon | Gargoulin > Gargoulard > Gargouille | Roche, Terre | Gargouille | Rouen | J, J, F |
-| 036 | Noctule > Noctulard | Lubin > Lubinou | Ombre, Vent | Lubin | Normandie | F, J |
+| 025 | Lumignon > Lumidanse > Lumirande | Hada > Hadalune > Hadélys | Arcane (Vent au stade 3) | Hadas, fées | Pyrénées | F, J, J (fait) |
+| 028 | Noisetin > Noiseclat | Faramin > Faramine | Normal | Bête faramine, bête qu'on chasse sans jamais la voir | Poitou, Vendée | J, F (fait) |
+| 030 | Faonille > Cerfeuil > Cervoral | Fadet > Fadebois > Fadéon | Flore (Arcane au stade 3) | Fadet | Poitou, Vendée | A, J, J (fait) |
+| 033 | Caillotin > Bloquetin > Menhirgon | Gargoulin > Gargoulard > Gargouille | Roche, Terre | Gargouille | Rouen | J, J, F (fait) |
+| 036 | Noctule > Noctulard | Lubin > Lubinou | Ombre, Vent | Lubin | Normandie | F, J (fait) |
 | 038 | Salamoue > Salamarde > Salamassif | Dracounet > Dracorive > Dracrhodan | Terre, Eau | Drac du Rhône | Provence (Beaucaire) | J, J, F |
 | 041 | Fouisseron | Bolégan | Terre | Petit peuple souterrain | Bretagne | F, à vérifier |
 | 042 | Quartzelle > Quartzard | Houlin > Houlécrin | Roche, Arcane | Fions, fées des houles (grottes marines) | Haute-Bretagne | F, J |

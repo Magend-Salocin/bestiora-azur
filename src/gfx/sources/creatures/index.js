@@ -29,6 +29,19 @@ import morillard from './morillard.js';
 import glandor from './glandor.js';
 import venimot from './venimot.js';
 import venimorde from './venimorde.js';
+import lumignon from './lumignon.js';
+import lumidanse from './lumidanse.js';
+import lumirande from './lumirande.js';
+import noisetin from './noisetin.js';
+import noiseclat from './noiseclat.js';
+import faonille from './faonille.js';
+import cerfeuil from './cerfeuil.js';
+import cervoral from './cervoral.js';
+import caillotin from './caillotin.js';
+import bloquetin from './bloquetin.js';
+import menhirgon from './menhirgon.js';
+import noctule from './noctule.js';
+import noctulard from './noctulard.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -40,4 +53,7 @@ export const HAND_DRAWN_CREATURES = {
   musaraille, musarogne, feuillarve, nymphot, phalenoir,
   bousiot, bousigor, morillon, morillard,
   glandor, venimot, venimorde,
+  lumignon, lumidanse, lumirande, noisetin, noiseclat,
+  faonille, cerfeuil, cervoral,
+  caillotin, bloquetin, menhirgon, noctule, noctulard,
 };

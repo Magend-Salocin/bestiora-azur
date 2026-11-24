@@ -74,7 +74,7 @@ export default {
   route_1_fillette_lise_after: 'Les herbes hautes cachent plein de bestioles. Regarde bien !',
   route_1_ecolier_marius_intro: 'J’ai révisé mes types toute la semaine. Interrogation surprise !',
   route_1_ecolier_marius_defeat: 'Zéro sur vingt…',
-  route_1_ecolier_marius_after: 'Le Noisetin est rare par ici. J’ai eu de la chance.',
+  route_1_ecolier_marius_after: 'Le Faramin est rare par ici. J’ai eu de la chance.',
 
   // Bourg-Sablon
   sign_bourg_sablon: 'Bourg-Sablon\fLe sable des collines, la patience des pierres.',
