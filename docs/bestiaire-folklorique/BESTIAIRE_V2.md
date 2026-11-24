@@ -70,7 +70,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 2 | Forêts et premières grottes (025 à 037) | 13 | Fait |
 | 3 | Rivières et grottes (038 à 049) | 12 | Fait |
 | 4 | Côte et prairies (050 à 061) | 12 | Fait |
-| 5 | Prairies et ville (062 à 074) | 13 | |
+| 5 | Prairies et ville (062 à 074) | 13 | Fait |
 | 6 | Ville et grottes (075 à 087) | 13 | |
 | 7 | Ruines (088 à 100) | 13 | |
 | 8 | Montagne et neige (101 à 114) | 14 | |
@@ -111,12 +111,12 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 057 | Lapugil > Lapugilat | Lougarou > Louvar | Combat | Loup-garou | France | A, J (fait) |
 | 059 | Toisonnet > Nimbelaine | Truffandec > Truffandor | Normal, Vent | Esprit du foyer | Béarn | F, à vérifier ; J (fait) |
 | 061 | Hurlegroin | Warabouc | Combat | Bouc métamorphe | Lorraine, à vérifier | F (fait) |
-| 062 | Pétalune > Corolline | Margelle > Margolys | Flore, Arcane | Margot la fée (nom changé : un dresseur s'appelle Margot) | Haute-Bretagne | F, J |
-| 064 | Lampyrin > Lampyrex | Follet > Follumine | Insecte, Foudre | Feu follet | France | A, J |
-| 066 | Bovaillon | Gonfaron | Normal | Âne de Gonfaron, l'âne qui vole | Provence (Var) | F |
-| 067 | Cocolet > Cocomarin / Cocorage | Fullettu > Fullemarin / Fulletonne | Normal > Eau / Foudre | Fullettu | Corse | F, J, J |
-| 070 | Fumeron > Fumelard > Cendrador | Lébérou > Lébérouge > Lébérombre | Feu (Ombre au stade 3) | Lébérou | Périgord | F, J, J |
-| 073 | Boulonnet > Boulonnier | Gobelinet > Gobelin | Métal, Foudre | Gobelin | Normandie | J, A |
+| 062 | Pétalune > Corolline | Margelle > Margolys | Flore, Arcane | Margot la fée (nom changé : un dresseur s'appelle Margot) | Haute-Bretagne | F, J (fait) |
+| 064 | Lampyrin > Lampyrex | Follet > Follumine | Insecte, Foudre | Feu follet | France | A, J (fait) |
+| 066 | Bovaillon | Gonfaron | Normal | Âne de Gonfaron, l'âne qui vole | Provence (Var) | F (fait) |
+| 067 | Cocolet > Cocomarin / Cocorage | Fullettu > Fullemarin / Fulletonne | Normal > Eau / Foudre | Fullettu | Corse | F, J, J (fait) |
+| 070 | Fumeron > Fumelard > Cendrador | Lébérou > Lébérouge > Lébérombre | Feu (Ombre au stade 3) | Lébérou | Périgord | F, J, J (fait) |
+| 073 | Boulonnet > Boulonnier | Gobelinet > Gobelin | Métal, Foudre | Gobelin | Normandie | J, A (fait) |
 | 075 | Crassou > Crassolard | Veluchon > Velucorne | Toxique | La Velue | La Ferté-Bernard | J, J |
 | 077 | Piquevolt | Fouletot | Foudre | Fouletot, lutin des écuries | Franche-Comté | F |
 | 078 | Ampoulin > Ampoulard > Ampérion | Follaton > Follaclair > Follorage | Foudre (Métal au stade 3) | Follaton | Savoie | F, J, J |

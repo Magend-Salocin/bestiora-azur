@@ -92,7 +92,7 @@ export default {
   campeur_noe_after: 'Les vergers attirent toutes sortes de bestioles.',
   campeuse_maya_intro: 'Tu piétines mes fleurs !',
   campeuse_maya_defeat: 'Bon, elles repousseront.',
-  campeuse_maya_after: 'Une Pierre Solaire ferait fleurir ma Pétalune.',
+  campeuse_maya_after: 'Une Pierre Solaire ferait fleurir ma Margelle.',
   randonneur_paul_intro: 'Mes bestioles ont des muscles. Et les tiennes ?',
   randonneur_paul_defeat: 'Des muscles, mais pas de chance.',
   randonneur_paul_after: 'Le jardinier de la maison là-bas coupe les arbustes.',
@@ -112,8 +112,8 @@ export default {
   maison_route_5_jardinier_don: 'Le badge Eau ! Maël t’a reconnu, alors je te fais confiance.\fTiens, prends ma Machette.',
   maison_route_5_jardinier_conseil: 'Regarde un arbuste et appuie sur A pour le couper. Il repoussera, mais pas avant ton passage.',
   maison_route_5_jardinier_after: 'Les arbustes repoussent vite. Garde bien ta Machette.',
-  maison_route_5_fermiere: 'Je rêve d’un Bovaillon pour tirer ma charrette.\fJ’ai un Faramin plein d’énergie, Grignotte. On échange ?',
-  maison_route_5_fermiere_after: 'Ton Bovaillon tire la charrette comme un champion ! Prends soin de Grignotte.',
+  maison_route_5_fermiere: 'Je rêve d’un Gonfaron pour tirer ma charrette.\fJ’ai un Faramin plein d’énergie, Grignotte. On échange ?',
+  maison_route_5_fermiere_after: 'Ton Gonfaron tire la charrette comme un champion ! Prends soin de Grignotte.',
 
   // Vireval
   sign_vireval: 'VIREVAL\fLa ville où tournent les turbines.\fNord : Route 6',

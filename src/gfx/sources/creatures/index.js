@@ -66,6 +66,19 @@ import lapugilat from './lapugilat.js';
 import toisonnet from './toisonnet.js';
 import nimbelaine from './nimbelaine.js';
 import hurlegroin from './hurlegroin.js';
+import petalune from './petalune.js';
+import corolline from './corolline.js';
+import lampyrin from './lampyrin.js';
+import lampyrex from './lampyrex.js';
+import bovaillon from './bovaillon.js';
+import cocolet from './cocolet.js';
+import cocomarin from './cocomarin.js';
+import cocorage from './cocorage.js';
+import fumeron from './fumeron.js';
+import fumelard from './fumelard.js';
+import cendrador from './cendrador.js';
+import boulonnet from './boulonnet.js';
+import boulonnier from './boulonnier.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -86,4 +99,7 @@ export const HAND_DRAWN_CREATURES = {
   crabouille, crabastion, ombrelle, ombrellor,
   anguilet, anguistral, fulmarene,
   lapugil, lapugilat, toisonnet, nimbelaine, hurlegroin,
+  petalune, corolline, lampyrin, lampyrex, bovaillon,
+  cocolet, cocomarin, cocorage,
+  fumeron, fumelard, cendrador, boulonnet, boulonnier,
 };

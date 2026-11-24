@@ -67,19 +67,19 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 059 | Truffandec | Normal / Vent | 290 | Truffandor (amitié 220) | Prairie | 14 |
 | 060 | Truffandor | Normal / Vent | 450 | - | Prairie | 25 |
 | 061 | Warabouc | Combat | 410 | - | Forêt | 15 |
-| 062 | Pétalune | Flore / Arcane | 300 | Corolline (Pierre Solaire) | Prairie | 15 |
-| 063 | Corolline | Flore / Arcane | 470 | - | Prairie | 30 |
-| 064 | Lampyrin | Insecte / Foudre | 280 | Lampyrex (niv. 24) | Prairie | 15 |
-| 065 | Lampyrex | Insecte / Foudre | 440 | - | Prairie | 24 |
-| 066 | Bovaillon | Normal | 440 | - | Prairie | 16 |
-| 067 | Cocolet | Normal | 300 | Cocomarin (Pierre Marine), Cocorage (Pierre Orage) | Prairie | 16 |
-| 068 | Cocomarin | Eau | 480 | - | Prairie | 30 |
-| 069 | Cocorage | Foudre | 480 | - | Prairie | 30 |
-| 070 | Fumeron | Feu | 300 | Fumelard (niv. 22) | Prairie | 16 |
-| 071 | Fumelard | Feu | 410 | Cendrador (Pierre Braise) | Prairie | 22 |
-| 072 | Cendrador | Feu / Ombre | 525 | - | Prairie | 40 |
-| 073 | Boulonnet | Métal / Foudre | 300 | Boulonnier (niv. 30) | Ville | 20 |
-| 074 | Boulonnier | Métal / Foudre | 470 | - | Ville | 30 |
+| 062 | Margelle | Flore / Arcane | 300 | Margolys (Pierre Solaire) | Prairie | 15 |
+| 063 | Margolys | Flore / Arcane | 470 | - | Prairie | 30 |
+| 064 | Follet | Insecte / Foudre | 280 | Follumine (niv. 24) | Prairie | 15 |
+| 065 | Follumine | Insecte / Foudre | 440 | - | Prairie | 24 |
+| 066 | Gonfaron | Normal | 440 | - | Prairie | 16 |
+| 067 | Fullettu | Normal | 300 | Fullemarin (Pierre Marine), Fulletonne (Pierre Orage) | Prairie | 16 |
+| 068 | Fullemarin | Eau | 480 | - | Prairie | 30 |
+| 069 | Fulletonne | Foudre | 480 | - | Prairie | 30 |
+| 070 | Lébérou | Feu | 300 | Lébérouge (niv. 22) | Prairie | 16 |
+| 071 | Lébérouge | Feu | 410 | Lébérombre (Pierre Braise) | Prairie | 22 |
+| 072 | Lébérombre | Feu / Ombre | 525 | - | Prairie | 40 |
+| 073 | Gobelinet | Métal / Foudre | 300 | Gobelin (niv. 30) | Ville | 20 |
+| 074 | Gobelin | Métal / Foudre | 470 | - | Ville | 30 |
 | 075 | Crassou | Toxique | 300 | Crassolard (niv. 30) | Ville | 20 |
 | 076 | Crassolard | Toxique | 460 | - | Ville | 30 |
 | 077 | Piquevolt | Foudre | 400 | - | Ville | 20 |

@@ -1814,22 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "948cde05834264576cc61eac57ecef9464d3ee4d894f382e4f776639643449ef",
+    "pngHash": "762d84328e7bc4bd67151132cb23ee52242e9e644155dece723974bc1683f42b",
     "source": "src/data/creatures.js",
     "generated": [
-      "petalune",
-      "corolline",
-      "lampyrin",
-      "lampyrex",
-      "bovaillon",
-      "cocolet",
-      "cocomarin",
-      "cocorage",
-      "fumeron",
-      "fumelard",
-      "cendrador",
-      "boulonnet",
-      "boulonnier",
       "crassou",
       "crassolard",
       "piquevolt",
@@ -1968,7 +1955,20 @@
       "lapugilat",
       "toisonnet",
       "nimbelaine",
-      "hurlegroin"
+      "hurlegroin",
+      "petalune",
+      "corolline",
+      "lampyrin",
+      "lampyrex",
+      "bovaillon",
+      "cocolet",
+      "cocomarin",
+      "cocorage",
+      "fumeron",
+      "fumelard",
+      "cendrador",
+      "boulonnet",
+      "boulonnier"
     ]
   }
 }
