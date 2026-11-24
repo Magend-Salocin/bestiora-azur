@@ -120,6 +120,7 @@ Les sprites sont décrits en texte dans `src/gfx/sources/` et assemblés en atla
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : organisation du code et formats.
 - [docs/PROGRESS.md](docs/PROGRESS.md) : journal de développement.
 - [docs/WEB_DEPLOIEMENT.md](docs/WEB_DEPLOIEMENT.md) : version web, iPhone, hors ligne et clés d'activation, à reprendre dans un autre jeu.
+- [docs/apprendre/](docs/apprendre/README.md) : le code expliqué simplement, chapitre par chapitre (niveau CM2).
 
 ## Statut et licence
 
