@@ -2730,7 +2730,7 @@ export const CREATURES = [
     evolution: null,
     learnset: [[1, 'effroi'], [1, 'egratignure'], [7, 'elan_vif'], [13, 'tambourin'], [18, 'regard_dur'], [20, 'hantise'], [25, 'pietinement'], [31, 'pansement'], [33, 'traitrise'], [37, 'ponction'], [43, 'gueule_noire'], [49, 'percee'], [55, 'onde_brute']],
     teachable: [],
-    category: 'Bestiole Chapardeur',
+    category: 'Bestiole Voleur',
     height: 0.7,
     weight: 9,
     description: 'Il se cache sous un drap pour voler dans les maisons. Soigneux, il lave chaque objet volé.',

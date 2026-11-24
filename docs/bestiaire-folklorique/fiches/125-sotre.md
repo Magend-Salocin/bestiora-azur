@@ -39,7 +39,7 @@ Emplacement `chipotard`. Types Normal et Ombre. Pas d'évolution.
 
 | N° | Nom | Catégorie | Taille, poids | Description en jeu |
 |---|---|---|---|---|
-| 128 | Drapet | Chapardeur | 0,7 m, 9 kg | Il se cache sous un drap pour voler dans les maisons. Soigneux, il lave chaque objet volé. |
+| 128 | Drapet | Voleur | 0,7 m, 9 kg | Il se cache sous un drap pour voler dans les maisons. Soigneux, il lave chaque objet volé. |
 
 Origines : Drapet, à vérifier.
 
