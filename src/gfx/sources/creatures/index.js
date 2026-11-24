@@ -133,6 +133,19 @@ import miroitin from './miroitin.js';
 import miroitage from './miroitage.js';
 import nocturbe from './nocturbe.js';
 import chipotard from './chipotard.js';
+import raielle from './raielle.js';
+import raieciel from './raieciel.js';
+import grimoule from './grimoule.js';
+import grimoulix from './grimoulix.js';
+import octobras from './octobras.js';
+import epavard from './epavard.js';
+import albavent from './albavent.js';
+import tisonnet from './tisonnet.js';
+import tisonnard from './tisonnard.js';
+import pyrobelier from './pyrobelier.js';
+import enclumor from './enclumor.js';
+import scorielle from './scorielle.js';
+import scoriarque from './scoriarque.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -161,4 +174,5 @@ export const HAND_DRAWN_CREATURES = {
   fusiblet, fusiblard, brumelin, brumoire, brumaitre, cierget, lustrombre, glasnuit, dionelle, dionavore, ronceroc, butinet, butinelle,
   cabrelin, bouquetor, cabrecime, volplanin, volplaneur, eolithe, givrelet, givrailes, frimousson, frimours, frimastoc, nuageot, cumulard, girouette,
   fangelet, fangeur, fangeroi, patineau, patinoir, silurbe, pestelet, pestorne, chafouin, chafourbe, miroitin, miroitage, nocturbe, chipotard,
+  raielle, raieciel, grimoule, grimoulix, octobras, epavard, albavent, tisonnet, tisonnard, pyrobelier, enclumor, scorielle, scoriarque,
 };

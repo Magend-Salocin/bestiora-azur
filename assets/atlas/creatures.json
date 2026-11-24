@@ -1814,22 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "45acb3495268e8580f2793c4fec679fa5ea9da2feaf92b7aee2633bbfeee695e",
+    "pngHash": "2c19017ab5a9ef7c476a6825a47cb7736b6db2b1a29a00d500cd08116b87427c",
     "source": "src/data/creatures.js",
     "generated": [
-      "raielle",
-      "raieciel",
-      "grimoule",
-      "grimoulix",
-      "octobras",
-      "epavard",
-      "albavent",
-      "tisonnet",
-      "tisonnard",
-      "pyrobelier",
-      "enclumor",
-      "scorielle",
-      "scoriarque",
       "cristelan",
       "cristarche",
       "neveon",
@@ -1968,7 +1955,20 @@
       "miroitin",
       "miroitage",
       "nocturbe",
-      "chipotard"
+      "chipotard",
+      "raielle",
+      "raieciel",
+      "grimoule",
+      "grimoulix",
+      "octobras",
+      "epavard",
+      "albavent",
+      "tisonnet",
+      "tisonnard",
+      "pyrobelier",
+      "enclumor",
+      "scorielle",
+      "scoriarque"
     ]
   }
 }

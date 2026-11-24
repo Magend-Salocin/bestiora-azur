@@ -75,7 +75,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 7 | Ruines (088 à 100) | 13 | Fait |
 | 8 | Montagne et neige (101 à 114) | 14 | Fait |
 | 9 | Marais et ville (115 à 128) | 14 | Fait |
-| 10 | Mer et volcan (129 à 141) | 13 | |
+| 10 | Mer et volcan (129 à 141) | 13 | Fait |
 | 11 | Sommets, légendaires et mythique (142 à 150) | 9 | |
 | 12 | Finitions : identifiants, migration des sauvegardes, retrait du générateur, captures du README, documentation | 0 | |
 
@@ -146,15 +146,15 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 125 | Miroitin > Miroitage | Sotrin > Sotrémage | Arcane, Métal | Sotré | Lorraine | J, J (fait) |
 | 127 | Nocturbe | Birette | Arcane, Ombre | Birette | Normandie, à vérifier | F (fait) |
 | 128 | Chipotard | Drapet | Normal, Ombre | Drapet, esprit domestique chapardeur | À vérifier | F (fait) |
-| 129 | Raielle > Raieciel | Sirénéa > Sirénor | Eau, Vent | Sirène de la Garonne | Aquitaine | J, J |
-| 131 | Grimoule > Grimoulix | Mélusineau > Mélusine | Eau, Arcane | Mélusine | Poitou (Lusignan) | J, F |
-| 133 | Octobras | Nainmarin | Eau, Combat | Nain de mer | Bretagne | A |
-| 134 | Épavard | Bagnoz | Ombre, Eau | Bag noz, bateau des noyés | Bretagne | F |
-| 135 | Albavent | Goélâme | Vent, Normal | Âmes des noyés en oiseaux de mer | Bretagne | A |
-| 136 | Tisonnet > Tisonnard | Goulinet > Grangoule | Feu, Roche | Grand'Goule | Poitiers | J, F |
-| 138 | Pyrobélier | Taurnoir | Feu | Taureau noir | France | A |
-| 139 | Enclumor | Mallet | Métal, Feu | Cheval Mallet | Poitou, Vendée | F |
-| 140 | Scorielle > Scoriarque | Babauet > Babau | Feu, Insecte | Babau | Languedoc (Nîmes) | J, F |
+| 129 | Raielle > Raieciel | Sirénéa > Sirénor | Eau, Vent | Sirène de la Garonne | Aquitaine | J, J (fait) |
+| 131 | Grimoule > Grimoulix | Mélusineau > Mélusine | Eau, Arcane | Mélusine | Poitou (Lusignan) | J, F (fait) |
+| 133 | Octobras | Nainmarin | Eau, Combat | Nain de mer | Bretagne | A (fait) |
+| 134 | Épavard | Bagnoz | Ombre, Eau | Bag noz, bateau des noyés | Bretagne | F (fait) |
+| 135 | Albavent | Goélâme | Vent, Normal | Âmes des noyés en oiseaux de mer | Bretagne | A (fait) |
+| 136 | Tisonnet > Tisonnard | Goulinet > Grangoule | Feu, Roche | Grand'Goule | Poitiers | J, F (fait) |
+| 138 | Pyrobélier | Taurnoir | Feu | Taureau noir | France | A (fait) |
+| 139 | Enclumor | Mallet | Métal, Feu | Cheval Mallet | Poitou, Vendée | F (fait) |
+| 140 | Scorielle > Scoriarque | Babauet > Babau | Feu, Insecte | Babau | Languedoc (Nîmes) | J, F (fait) |
 | 142 | Cristelan > Cristarche | Alicornet > Alicorne | Givre, Arcane | Alicorne d'Avignon | Provence, à vérifier | J, F |
 | 144 | Névéon | Dahu | Givre | Dahu | Alpes, Jura | F |
 | 145 | Stoïcor | Gévaudan | Combat, Arcane | Bête du Gévaudan | Lozère | F |

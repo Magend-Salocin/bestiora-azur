@@ -134,19 +134,19 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 126 | Sotrémage | Arcane / Métal | 490 | - | Ville | 40 |
 | 127 | Birette | Arcane / Ombre | 470 | - | Forêt | 37 |
 | 128 | Drapet | Normal / Ombre | 450 | - | Ville | 37 |
-| 129 | Raielle | Eau / Vent | 330 | Raieciel (niv. 40) | Mer | 38 |
-| 130 | Raieciel | Eau / Vent | 500 | - | Mer | 40 |
-| 131 | Grimoule | Eau / Arcane | 330 | Grimoulix (niv. 42) | Mer | 38 |
-| 132 | Grimoulix | Eau / Arcane | 500 | - | Mer | 42 |
-| 133 | Octobras | Eau / Combat | 480 | - | Mer | 39 |
-| 134 | Épavard | Ombre / Eau | 480 | - | Mer | 39 |
-| 135 | Albavent | Vent / Normal | 485 | - | Mer | 40 |
-| 136 | Tisonnet | Feu / Roche | 340 | Tisonnard (niv. 45) | Volcan | 42 |
-| 137 | Tisonnard | Feu / Roche | 500 | - | Volcan | 45 |
-| 138 | Pyrobélier | Feu | 480 | - | Volcan | 43 |
-| 139 | Enclumor | Métal / Feu | 490 | - | Volcan | 43 |
-| 140 | Scorielle | Feu / Insecte | 330 | Scoriarque (niv. 44) | Volcan | 42 |
-| 141 | Scoriarque | Feu / Insecte | 500 | - | Volcan | 44 |
+| 129 | Sirénéa | Eau / Vent | 330 | Sirénor (niv. 40) | Mer | 38 |
+| 130 | Sirénor | Eau / Vent | 500 | - | Mer | 40 |
+| 131 | Mélusineau | Eau / Arcane | 330 | Mélusine (niv. 42) | Mer | 38 |
+| 132 | Mélusine | Eau / Arcane | 500 | - | Mer | 42 |
+| 133 | Nainmarin | Eau / Combat | 480 | - | Mer | 39 |
+| 134 | Bagnoz | Ombre / Eau | 480 | - | Mer | 39 |
+| 135 | Goélâme | Vent / Normal | 485 | - | Mer | 40 |
+| 136 | Goulinet | Feu / Roche | 340 | Grangoule (niv. 45) | Volcan | 42 |
+| 137 | Grangoule | Feu / Roche | 500 | - | Volcan | 45 |
+| 138 | Taurnoir | Feu | 480 | - | Volcan | 43 |
+| 139 | Mallet | Métal / Feu | 490 | - | Volcan | 43 |
+| 140 | Babauet | Feu / Insecte | 330 | Babau (niv. 44) | Volcan | 42 |
+| 141 | Babau | Feu / Insecte | 500 | - | Volcan | 44 |
 | 142 | Cristelan | Givre / Arcane | 330 | Cristarche (niv. 48) | Neige | 46 |
 | 143 | Cristarche | Givre / Arcane | 510 | - | Neige | 48 |
 | 144 | Névéon | Givre | 470 | - | Neige | 46 |
