@@ -2,8 +2,6 @@
 // Used to choose a creature (battle, items, scripts) and by the Start menu.
 // Resolves with the chosen index, or null on B (unless `forced`).
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
-import { CREATURES_BY_ID } from '../data/creatures.js';
-import { hasFrame } from '../gfx/atlas.js';
 import { drawSprite } from '../gfx/draw.js';
 import { drawText } from '../gfx/font.js';
 import { getColor } from '../gfx/palette.js';
@@ -16,24 +14,12 @@ import { hooks } from '../overworld/hooks.js';
 
 const ROW_HEIGHT = 20;
 const MESSAGE_Y = 120;
-/** Plan icons of the hand-drawn species that have no icon of their own yet. */
-const HANDMADE_ICONS = {
-  vouivre: 'bird', gaussier: 'golem', draguignan: 'dragon', veneur: 'bird', mitreve: 'insect',
-};
-
-/** Icon frame prefix: the species' own icon when it has one, else its body plan's. */
-export function iconPlan(species) {
-  if (hasFrame('ui', `icon/${species}/0`)) return species;
-  const sprite = CREATURES_BY_ID[species].sprite;
-  return sprite === 'handmade' ? HANDMADE_ICONS[species] ?? 'blob' : sprite.plan;
-}
-
 /** Icon frame: 2 frames, faster when HP is high. */
 export function drawCreatureIcon(ctx, creature, x, y, time) {
   const ratio = creature.stats.hp > 0 ? creature.hp / creature.stats.hp : 0;
   const period = creature.hp <= 0 ? Infinity : ratio > 0.5 ? 0.25 : ratio > 0.2 ? 0.5 : 1;
   const frame = Number.isFinite(period) ? Math.floor(time / period) % 2 : 0;
-  drawSprite(ctx, 'ui', `icon/${iconPlan(creature.species)}/${frame}`, x, y);
+  drawSprite(ctx, 'ui', `icon/${creature.species}/${frame}`, x, y);
 }
 
 export class PartyScreen extends PromiseScene {

@@ -1,5 +1,4 @@
 // Species fields, stat totals, learnsets, sprites and type distribution.
-import { validateCreatureSpec } from '../../src/gfx/creature-generator.js';
 import { GROWTH_RATES, STAT_KEYS } from '../../src/data/formulas.js';
 import { GENDERS } from '../../src/data/grammar.js';
 
@@ -39,12 +38,7 @@ function checkFields(creature, data) {
 }
 
 function checkSprite(creature, data) {
-  const label = `bestiole ${creature.id}`;
-  if (creature.sprite === 'handmade') {
-    return data.handDrawnCreatures.has(creature.id) ? [] : [`${label} : sprite 'handmade' sans source dessinée`];
-  }
-  if (!creature.sprite || typeof creature.sprite !== 'object') return [`${label} : sprite manquant`];
-  return validateCreatureSpec(creature.sprite).map((error) => `${label} : sprite ${error}`);
+  return data.handDrawnCreatures.has(creature.id) ? [] : [`bestiole ${creature.id} : pas de sprite dans src/gfx/sources/creatures`];
 }
 
 function checkLearnset(creature, data) {

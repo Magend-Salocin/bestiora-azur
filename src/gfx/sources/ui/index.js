@@ -3,7 +3,6 @@
 
 import { capsule, ellipse, poly, rect } from '../../shape-renderer.js';
 import { buildGlyphTable } from '../../font-glyphs.js';
-import { BODY_PLANS } from '../../creature-generator.js';
 import { shapeRows, shiftRows } from '../tiles/tile-helpers.js';
 import { HAND_DRAWN_CREATURES } from '../creatures/index.js';
 import { FRAME_TILES } from './frame.js';
@@ -97,26 +96,6 @@ function badge(type) {
   return shapeRows(16, 16, [{ z: 0, tone: 2, shapes: [ellipse(8, 8, 7.5, 7.5)] }, emblem], [], 1);
 }
 
-// Party mini icons: one per body plan, 2 frames (second one bounces 1 pixel).
-const MINI_ICONS = {
-  biped: [{ tone: 1, shapes: [ellipse(8, 11, 4, 3.5), ...[5.5, 10.5].map((x) => ellipse(x, 14, 1.6, 1.2))] }, { z: 1, tone: 1, shapes: [ellipse(8, 6, 4.5, 4)] }],
-  quadruped: [{ tone: 1, shapes: [ellipse(8, 10, 6, 3.5), ...[3.5, 6.5, 9.5, 12.5].map((x) => rect(x - 0.8, 11, 1.6, 4))] }, { z: 1, tone: 1, shapes: [ellipse(5, 7, 3.5, 3.2), poly([3, 5], [3, 1.5], [5.5, 4])] }],
-  bird: [{ tone: 1, shapes: [poly([8, 9], [1, 5], [2, 11]), poly([8, 9], [15, 5], [14, 11])] }, { z: 1, tone: 1, shapes: [ellipse(8, 10, 3.5, 4), ellipse(8, 5, 3, 2.8)] }],
-  serpent: [{ tone: 1, shapes: [capsule([[3, 14], [12, 14], [12, 9], [5, 8], [6, 4]], 1.8)] }, { z: 1, tone: 1, shapes: [ellipse(8, 4, 3, 2.5)] }],
-  fish: [{ tone: 1, shapes: [ellipse(7, 9, 5.5, 4), poly([11, 9], [15, 5], [15, 13])] }],
-  insect: [{ tone: 2, shapes: [...[4, 12].map((x) => capsule([[8, 10], [x, 13]], 0.6)), capsule([[6, 4], [5, 1]], 0.5), capsule([[10, 4], [11, 1]], 0.5)] }, { z: 1, tone: 1, shapes: [ellipse(8, 11, 3.5, 3.5), ellipse(8, 6, 3.5, 3)] }],
-  blob: [{ tone: 1, shapes: [ellipse(8, 10, 6.5, 5)] }],
-  plant: [{ tone: 1, shapes: [ellipse(5, 4, 3.5, 1.5, -0.5), ellipse(11, 4, 3.5, 1.5, 0.5)] }, { z: 1, tone: 1, shapes: [ellipse(8, 10, 5, 4.5)] }],
-  golem: [{ tone: 1, shapes: [rect(3, 6, 10, 8), rect(1, 7, 2, 5), rect(13, 7, 2, 5)] }, { z: 1, tone: 1, shapes: [rect(5.5, 2, 5, 4)] }],
-  ghost: [{ tone: 1, shapes: [ellipse(8, 7, 5, 5), poly([3, 7], [13, 7], [13, 14], [10.5, 12], [8, 14], [5.5, 12], [3, 14])] }],
-  dragon: [{ tone: 1, shapes: [poly([7, 8], [1, 3], [2, 9]), poly([9, 8], [15, 3], [14, 9])] }, { z: 1, tone: 1, shapes: [ellipse(8, 11, 3.5, 3.5), ellipse(8, 5.5, 3, 2.8), poly([6, 4], [5, 1], [7, 3]), poly([10, 4], [11, 1], [9, 3])] }],
-};
-
-function miniIconFrames(plan) {
-  const rows = shapeRows(16, 16, MINI_ICONS[plan].map((part, index) => ({ z: index, ...part })), [], 1);
-  return bounceFrames(rows);
-}
-
 function bounceFrames(rows) {
   return [rows, shiftRows(rows, 0, -1)];
 }
@@ -155,7 +134,7 @@ function silhouette(rows) {
   return rows.map((row) => row.replace(/[0-3]/g, '3'));
 }
 
-/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<plan>/<n>", "icon/<species>/<n>", "logo/<word>", "title/vouivre". */
+/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<species>/<n>", "logo/<word>", "title/vouivre". */
 export function buildUiFrames() {
   const frames = {};
   for (const [part, rows] of Object.entries(FRAME_TILES)) frames[`frame/${part}`] = rows;
@@ -167,14 +146,8 @@ export function buildUiFrames() {
   for (const [id, text] of Object.entries(TYPE_LABELS)) frames[`type/${id}`] = label(text, 20, { background: '0', ink: '3' });
   for (const [state, rows] of Object.entries(CAPSULE_ICONS)) frames[`capsule/${state}`] = rows;
   for (const type of Object.keys(BADGE_EMBLEMS)) frames[`badge/${type}`] = badge(type);
-  for (const plan of BODY_PLANS) {
-    miniIconFrames(plan).forEach((rows, index) => {
-      frames[`icon/${plan}/${index}`] = rows;
-    });
-  }
-  // Species icons of the hand-drawn creatures that have one (bestiary V2).
+  // Species icons, 2 frames (the second one bounces 1 pixel).
   for (const [id, views] of Object.entries(HAND_DRAWN_CREATURES)) {
-    if (!views.icon) continue;
     bounceFrames(views.icon).forEach((rows, index) => {
       frames[`icon/${id}/${index}`] = rows;
     });

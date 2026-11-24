@@ -9,7 +9,6 @@ import { PNG } from 'pngjs';
 
 import { CREATURES } from '../src/data/creatures.js';
 import { PALETTES } from '../src/gfx/palette.js';
-import { generateCreatureSprite } from '../src/gfx/creature-generator.js';
 import { HAND_DRAWN_CREATURES } from '../src/gfx/sources/creatures/index.js';
 import { spriteToRows } from '../src/gfx/sprite-utils.js';
 
@@ -22,13 +21,7 @@ const hex = (color) => [1, 3, 5].map((index) => parseInt(color.slice(index, inde
 const COLORS = PALETTES[0].colors.map(hex);
 
 function views(species) {
-  const drawn = HAND_DRAWN_CREATURES[species.id];
-  if (drawn) return drawn;
-  return {
-    front: spriteToRows(generateCreatureSprite(species.sprite, 'front')),
-    back: spriteToRows(generateCreatureSprite(species.sprite, 'back')),
-    icon: null,
-  };
+  return HAND_DRAWN_CREATURES[species.id];
 }
 
 export function buildSheet(species) {

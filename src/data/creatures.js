@@ -1,8 +1,7 @@
 // The 150 species. Field reference: prompts/03-donnees-jeu.md.
 // `gender: 'f'` = feminine name (« une Tarasque »), masculine by default.
 // `minLevel` = lowest level at which the species can be met (wild or by evolution);
-// encounter tables (prompts 09 to 11) must respect it. `sprite: 'handmade'` = drawn in
-// src/gfx/sources/creatures/, otherwise a spec for src/gfx/creature-generator.js.
+// encounter tables (prompts 09 to 11) must respect it. Sprites: src/gfx/sources/creatures/<id>.js.
 
 export const HABITATS = {
   prairie: 'Prairie',
@@ -39,7 +38,6 @@ export const CREATURES = [
     description: 'Lutin des landes, il veille sur les dolmens anciens. Les soirs de lune, il danse autour des menhirs.',
     habitat: 'foret',
     minLevel: 5,
-    sprite: 'handmade',
   },
   {
     id: 'korrigard',
@@ -60,7 +58,6 @@ export const CREATURES = [
     description: 'Gardien des menhirs, il porte une armure de granit. Nul ne franchit le cercle qu’il protège.',
     habitat: 'foret',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'korriroi',
@@ -81,7 +78,6 @@ export const CREATURES = [
     description: 'Roi des tertres, sa barbe de mousse touche le sol. Quand il frappe de son bâton, les menhirs se lèvent.',
     habitat: 'foret',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'galtza',
@@ -102,7 +98,6 @@ export const CREATURES = [
     description: 'Lutin basque aux culottes rouges. Sans travail à faire, il met le feu partout.',
     habitat: 'volcan',
     minLevel: 5,
-    sprite: 'handmade',
   },
   {
     id: 'galtzabras',
@@ -123,7 +118,6 @@ export const CREATURES = [
     description: 'Ses poings brûlent comme des braises. En une seule nuit, il abat le travail d’un mois.',
     habitat: 'volcan',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'galtzagor',
@@ -144,7 +138,6 @@ export const CREATURES = [
     description: 'Géant des forges pyrénéennes. Sa crinière de flammes attise le feu de l’enclume.',
     habitat: 'volcan',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'tarasquin',
@@ -165,7 +158,6 @@ export const CREATURES = [
     description: 'Petit de la Tarasque. Il dort dans les roseaux du Rhône, tête rentrée dans sa carapace.',
     habitat: 'mer',
     minLevel: 5,
-    sprite: 'handmade',
   },
   {
     id: 'taraskor',
@@ -186,7 +178,6 @@ export const CREATURES = [
     description: 'Sa carapace arrête les lances. Il garde les gués du Rhône et charge les intrus.',
     habitat: 'mer',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'tarasque',
@@ -208,7 +199,6 @@ export const CREATURES = [
     description: 'Monstre de Tarascon, mi-lion mi-tortue. On dit que ses colères font déborder le Rhône.',
     habitat: 'mer',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'farfadet',
@@ -229,7 +219,6 @@ export const CREATURES = [
     description: 'Lutin des haies du Poitou. Il siffle comme un moineau pour égarer les passants.',
     habitat: 'prairie',
     minLevel: 2,
-    sprite: 'handmade',
   },
   {
     id: 'farfandole',
@@ -250,7 +239,6 @@ export const CREATURES = [
     description: 'Il tourbillonne dans le vent d’ouest. Qui suit sa ronde se perd au bout du pays.',
     habitat: 'prairie',
     minLevel: 14,
-    sprite: 'handmade',
   },
   {
     id: 'farfator',
@@ -271,7 +259,6 @@ export const CREATURES = [
     description: 'Seigneur des vents du marais. D’un coup d’ailes, il couche les blés d’une plaine.',
     habitat: 'prairie',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'poulpiquet',
@@ -292,7 +279,6 @@ export const CREATURES = [
     description: 'Lutin velu de Bretagne. La nuit, il fait tinter sa clochette pour attirer les curieux.',
     habitat: 'prairie',
     minLevel: 2,
-    sprite: 'handmade',
   },
   {
     id: 'poulpifol',
@@ -313,7 +299,6 @@ export const CREATURES = [
     description: 'Il cache les outils et emmêle les crins des chevaux. Ses farces tournent souvent mal.',
     habitat: 'prairie',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'chauchet',
@@ -334,7 +319,6 @@ export const CREATURES = [
     description: 'Il somnole le jour sous son bonnet de nuit. Le soir venu, il rampe vers les lits.',
     habitat: 'foret',
     minLevel: 2,
-    sprite: 'handmade',
   },
   {
     id: 'chauchenid',
@@ -355,7 +339,6 @@ export const CREATURES = [
     description: 'Emmitouflé dans sa couette de soie, il guette les dormeurs d’un œil entrouvert.',
     habitat: 'foret',
     minLevel: 8,
-    sprite: 'handmade',
   },
   {
     id: 'chauchemor',
@@ -376,7 +359,6 @@ export const CREATURES = [
     description: 'Il se pose sur la poitrine des dormeurs. Les yeux de ses ailes hantent leurs rêves.',
     habitat: 'foret',
     minLevel: 14,
-    sprite: 'handmade',
   },
   {
     id: 'carcolh',
@@ -397,7 +379,6 @@ export const CREATURES = [
     description: 'Escargot des Landes. Il glisse sans bruit sous les pins et laisse une bave qui brille.',
     habitat: 'foret',
     minLevel: 4,
-    sprite: 'handmade',
   },
   {
     id: 'carcolosse',
@@ -418,7 +399,6 @@ export const CREATURES = [
     description: 'Escargot géant des Landes. Ses tentacules velus happent tout ce qui passe à portée.',
     habitat: 'foret',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'mandragot',
@@ -439,7 +419,6 @@ export const CREATURES = [
     description: 'Racine de mandragore douée de vie. Arrachée du sol, elle pousse un cri glaçant.',
     habitat: 'foret',
     minLevel: 4,
-    sprite: 'handmade',
   },
   {
     id: 'mandragoul',
@@ -460,7 +439,6 @@ export const CREATURES = [
     description: 'Ses baies sont un poison violent. Il grandit la nuit, au pied des vieux gibets.',
     habitat: 'foret',
     minLevel: 24,
-    sprite: 'handmade',
   },
   {
     id: 'dame_verte',
@@ -482,7 +460,6 @@ export const CREATURES = [
     description: 'Fée des forêts du Jura. Elle danse dans les clairières et l’herbe pousse sous ses pas.',
     habitat: 'foret',
     minLevel: 5,
-    sprite: 'handmade',
   },
   {
     id: 'basilin',
@@ -503,7 +480,6 @@ export const CREATURES = [
     description: 'Né d’un œuf de vieux coq, dit-on. Son regard engourdit déjà les petites bêtes.',
     habitat: 'foret',
     minLevel: 5,
-    sprite: 'handmade',
   },
   {
     id: 'basilic',
@@ -524,7 +500,6 @@ export const CREATURES = [
     description: 'Mi-coq, mi-serpent, son regard pétrifie. Pour le vaincre, on lui tend un miroir.',
     habitat: 'foret',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'hada',
@@ -546,7 +521,6 @@ export const CREATURES = [
     description: 'Petite fée des Pyrénées. Elle guide les bergers égarés avec la lueur qu’elle tient.',
     habitat: 'foret',
     minLevel: 6,
-    sprite: 'handmade',
   },
   {
     id: 'hadalune',
@@ -568,7 +542,6 @@ export const CREATURES = [
     description: 'Elle danse sous la pleine lune au bord des lacs. Sa robe luit comme l’eau la nuit.',
     habitat: 'foret',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'hadelys',
@@ -590,7 +563,6 @@ export const CREATURES = [
     description: 'Ses voiles de lumière ondulent comme une aurore. Elle exauce les vœux sincères.',
     habitat: 'foret',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'faramin',
@@ -611,7 +583,6 @@ export const CREATURES = [
     description: 'Caché derrière sa queue, il épie les chasseurs. Nul ne l’a jamais vu en entier.',
     habitat: 'foret',
     minLevel: 4,
-    sprite: 'handmade',
   },
   {
     id: 'faramine',
@@ -633,7 +604,6 @@ export const CREATURES = [
     description: 'La bête qu’on chasse sans jamais la prendre. Elle se moque des battues.',
     habitat: 'foret',
     minLevel: 25,
-    sprite: 'handmade',
   },
   {
     id: 'fadet',
@@ -654,7 +624,6 @@ export const CREATURES = [
     description: 'Esprit des prés du Poitou. Il boit la rosée et fait germer les graines où il passe.',
     habitat: 'foret',
     minLevel: 6,
-    sprite: 'handmade',
   },
   {
     id: 'fadebois',
@@ -675,7 +644,6 @@ export const CREATURES = [
     description: 'Ses bois bourgeonnent au printemps. Il garde les sentiers creux des bocages.',
     habitat: 'foret',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'fadeon',
@@ -696,7 +664,6 @@ export const CREATURES = [
     description: 'Grand esprit des bois et des brumes. Quand il brame, toute la forêt s’éveille.',
     habitat: 'foret',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'gargoulin',
@@ -717,7 +684,6 @@ export const CREATURES = [
     description: 'Petite gargouille tombée d’un toit. Il crache l’eau de pluie sur les passants.',
     habitat: 'grotte',
     minLevel: 8,
-    sprite: 'handmade',
   },
   {
     id: 'gargoulard',
@@ -738,7 +704,6 @@ export const CREATURES = [
     description: 'Perché sur son socle, il veille sur les clochers. Il ne bouge que dans votre dos.',
     habitat: 'grotte',
     minLevel: 25,
-    sprite: 'handmade',
   },
   {
     id: 'gargouille',
@@ -760,7 +725,6 @@ export const CREATURES = [
     description: 'Dragon de pierre de Rouen. Sa gueule béante crachait jadis des torrents.',
     habitat: 'grotte',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'lubin',
@@ -781,7 +745,6 @@ export const CREATURES = [
     description: 'Petit loup aux oreilles de chauve-souris. La nuit, il bavarde près des cimetières.',
     habitat: 'grotte',
     minLevel: 8,
-    sprite: 'handmade',
   },
   {
     id: 'lubinou',
@@ -802,7 +765,6 @@ export const CREATURES = [
     description: 'Il plane dans le vent des nuits sans lune. Son hurlement fait vaciller les cierges.',
     habitat: 'grotte',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'dracounet',
@@ -823,7 +785,6 @@ export const CREATURES = [
     description: 'Petit drac du Rhône. Il barbote dans les vasières. Ses ouïes soufflent des bulles.',
     habitat: 'riviere',
     minLevel: 9,
-    sprite: 'handmade',
   },
   {
     id: 'dracorive',
@@ -844,7 +805,6 @@ export const CREATURES = [
     description: 'Il guette les lavandières au bord du Rhône. Nageur agile, il rame de ses ailes courtes.',
     habitat: 'riviere',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'dracrhodan',
@@ -865,7 +825,6 @@ export const CREATURES = [
     description: 'Le Drac de Beaucaire. Il dort au fond du Rhône. À son réveil, le fleuve déborde.',
     habitat: 'riviere',
     minLevel: 42,
-    sprite: 'handmade',
   },
   {
     id: 'bolegan',
@@ -886,7 +845,6 @@ export const CREATURES = [
     description: 'Il vit sous les landes bretonnes, dans les ténèbres. Ses grandes mains creusent la roche.',
     habitat: 'grotte',
     minLevel: 10,
-    sprite: 'handmade',
   },
   {
     id: 'houlin',
@@ -907,7 +865,6 @@ export const CREATURES = [
     description: 'Il vit dans une géode au fond des grottes marines. Il chante avec la marée.',
     habitat: 'grotte',
     minLevel: 10,
-    sprite: 'handmade',
   },
   {
     id: 'houlecrin',
@@ -928,7 +885,6 @@ export const CREATURES = [
     description: 'Il garde son écrin de cristal dans les houles. Aveuglant, son éclat chasse les intrus.',
     habitat: 'grotte',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'servan',
@@ -949,7 +905,6 @@ export const CREATURES = [
     description: 'Lutin de Savoie. La nuit, il range toute la maison. Il garde la clé du grenier.',
     habitat: 'grotte',
     minLevel: 12,
-    sprite: 'handmade',
   },
   {
     id: 'servarmure',
@@ -970,7 +925,6 @@ export const CREATURES = [
     description: 'Son armure est faite de marmites et de casseroles. Il veille sur les trésors cachés.',
     habitat: 'grotte',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'servargent',
@@ -991,7 +945,6 @@ export const CREATURES = [
     description: 'Il garde les trésors enfouis sous les alpages. Qui vole son coffre se perd en chemin.',
     habitat: 'grotte',
     minLevel: 55,
-    sprite: 'handmade',
   },
   {
     id: 'laminak',
@@ -1012,7 +965,6 @@ export const CREATURES = [
     description: 'Petit esprit des sources et des rivières basques. Il a des pieds de cane et un peigne d’or.',
     habitat: 'riviere',
     minLevel: 10,
-    sprite: 'handmade',
   },
   {
     id: 'laminea',
@@ -1034,7 +986,6 @@ export const CREATURES = [
     description: 'Elle peigne ses cheveux au bord des sources. Malheur à qui lui vole son peigne.',
     habitat: 'riviere',
     minLevel: 18,
-    sprite: 'handmade',
   },
   {
     id: 'laminara',
@@ -1056,7 +1007,6 @@ export const CREATURES = [
     description: 'Reine des laminak. Elle bâtit un pont en une seule nuit. Elle fuit au chant du coq.',
     habitat: 'riviere',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'tudgommon',
@@ -1077,7 +1027,6 @@ export const CREATURES = [
     description: 'Il se terre sous le goémon quand la mer descend. Farceur, il pince les orteils des pêcheurs.',
     habitat: 'mer',
     minLevel: 10,
-    sprite: 'handmade',
   },
   {
     id: 'goemonroc',
@@ -1098,7 +1047,6 @@ export const CREATURES = [
     description: 'Couvert de goémon, on le prend pour un gros rocher. Les vagues se brisent sur son dos.',
     habitat: 'mer',
     minLevel: 28,
-    sprite: 'handmade',
   },
   {
     id: 'morgann',
@@ -1120,7 +1068,6 @@ export const CREATURES = [
     description: 'Petite fée de la mer d’Iroise, près d’Ouessant. Endormie, elle flotte sous sa cloche de méduse.',
     habitat: 'mer',
     minLevel: 12,
-    sprite: 'handmade',
   },
   {
     id: 'morgavague',
@@ -1142,7 +1089,6 @@ export const CREATURES = [
     description: 'Elle attire les marins par son chant envoûtant. Ses longues mèches piquent comme des orties.',
     habitat: 'mer',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'coulobrin',
@@ -1163,7 +1109,6 @@ export const CREATURES = [
     description: 'Petit serpent ailé des eaux de la Sorgue. Électrique, il crépite au moindre contact.',
     habitat: 'mer',
     minLevel: 12,
-    sprite: 'handmade',
   },
   {
     id: 'coulobron',
@@ -1184,7 +1129,6 @@ export const CREATURES = [
     description: 'Ses ailes battent avec un bruit d’orage. Fulgurant, il éclaire tout un quai.',
     habitat: 'mer',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'coulobre',
@@ -1206,7 +1150,6 @@ export const CREATURES = [
     description: 'Serpent ailé qui hante la fontaine de Vaucluse. Crépitants, des éclairs dansent sur ses écailles.',
     habitat: 'mer',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'lougarou',
@@ -1227,7 +1170,6 @@ export const CREATURES = [
     description: 'Louveteau hirsute aux grands yeux jaunes. Querelleur, il boxe tout ce qui bouge.',
     habitat: 'prairie',
     minLevel: 14,
-    sprite: 'handmade',
   },
   {
     id: 'louvar',
@@ -1248,7 +1190,6 @@ export const CREATURES = [
     description: 'Debout sur ses pattes, il court les campagnes. Infatigable, il fait sept paroisses.',
     habitat: 'prairie',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'truffandec',
@@ -1269,7 +1210,6 @@ export const CREATURES = [
     description: 'Esprit du foyer, il somnole dans les cendres. Bienveillant, il veille sur la maisonnée.',
     habitat: 'prairie',
     minLevel: 14,
-    sprite: 'handmade',
   },
   {
     id: 'truffandor',
@@ -1290,7 +1230,6 @@ export const CREATURES = [
     description: 'Choyé par les siens, il s’envole avec la fumée. Lumineuse, sa toison porte bonheur.',
     habitat: 'prairie',
     minLevel: 25,
-    sprite: 'handmade',
   },
   {
     id: 'warabouc',
@@ -1311,7 +1250,6 @@ export const CREATURES = [
     description: 'Bouc sauvage qui change de forme à sa guise. Narquois, il défie les voyageurs à la lutte.',
     habitat: 'foret',
     minLevel: 15,
-    sprite: 'handmade',
   },
   {
     id: 'margelle',
@@ -1333,7 +1271,6 @@ export const CREATURES = [
     description: 'Petite fée en bouton des landes bretonnes. Rêveuse, elle ne s’ouvre qu’au clair de lune.',
     habitat: 'prairie',
     minLevel: 15,
-    sprite: 'handmade',
   },
   {
     id: 'margolys',
@@ -1355,7 +1292,6 @@ export const CREATURES = [
     description: 'Une Pierre Solaire a fait éclore ses pétales. Envoûtant, son parfum calme les plus féroces.',
     habitat: 'prairie',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'follet',
@@ -1376,7 +1312,6 @@ export const CREATURES = [
     description: 'Petite lueur qui danse sur les marais. Insaisissable, il égare les voyageurs.',
     habitat: 'prairie',
     minLevel: 15,
-    sprite: 'handmade',
   },
   {
     id: 'follumine',
@@ -1398,7 +1333,6 @@ export const CREATURES = [
     description: 'Sa lanterne clignote au-dessus des marais. Trompeuse, elle mène les égarés au fond de l’eau.',
     habitat: 'prairie',
     minLevel: 24,
-    sprite: 'handmade',
   },
   {
     id: 'gonfaron',
@@ -1419,7 +1353,6 @@ export const CREATURES = [
     description: 'L’âne qui vole, fierté du village de Gonfaron. Entêté, il ne laboure qu’à son idée.',
     habitat: 'prairie',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'fullettu',
@@ -1443,7 +1376,6 @@ export const CREATURES = [
     description: 'Lutin corse caché dans une bogue de châtaigne. Malicieux, il emmêle la crinière des chevaux.',
     habitat: 'prairie',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'fullemarin',
@@ -1464,7 +1396,6 @@ export const CREATURES = [
     description: 'Une Pierre Marine a ouvert sa bogue en deux. Facétieux, il éclabousse les pêcheurs.',
     habitat: 'prairie',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'fulletonne',
@@ -1486,7 +1417,6 @@ export const CREATURES = [
     description: 'Une Pierre Orage a ouvert sa bogue d’un éclair. Électriques, ses cheveux se dressent.',
     habitat: 'prairie',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'leberou',
@@ -1507,7 +1437,6 @@ export const CREATURES = [
     description: 'Chiot de braise des campagnes du Périgord. Lorsqu’il est content, il fait fumer sa queue.',
     habitat: 'prairie',
     minLevel: 16,
-    sprite: 'handmade',
   },
   {
     id: 'leberouge',
@@ -1528,7 +1457,6 @@ export const CREATURES = [
     description: 'Il garde les fours à pain des villages. Flamboyante, sa crinière brille la nuit.',
     habitat: 'prairie',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'leberombre',
@@ -1549,7 +1477,6 @@ export const CREATURES = [
     description: 'Bête d’ombre et de fumée qui rôde la nuit. Incandescents, ses yeux brûlent comme des braises.',
     habitat: 'prairie',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'gobelinet',
@@ -1570,7 +1497,6 @@ export const CREATURES = [
     description: 'Petit lutin rouillé des forges normandes. Gourmand, il grignote les fils électriques.',
     habitat: 'ville',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'gobelin',
@@ -1591,7 +1517,6 @@ export const CREATURES = [
     description: 'Gobelin des vieux moulins de Normandie. Furieux, il fait crépiter sa corne et casse tout.',
     habitat: 'ville',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'veluchon',
@@ -1612,7 +1537,6 @@ export const CREATURES = [
     description: 'Boule de poils verts des égouts de Vireval. Venimeux, ses piquants brûlent la peau.',
     habitat: 'ville',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'velucorne',
@@ -1634,7 +1558,6 @@ export const CREATURES = [
     description: 'La bête velue de la Huisne, revenue hanter les villes. Redoutable, elle n’a qu’un point faible : sa queue.',
     habitat: 'ville',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'fouletot',
@@ -1655,7 +1578,6 @@ export const CREATURES = [
     description: 'Il se glisse la nuit dans les écuries. Électriques, ses piquants emmêlent les crinières.',
     habitat: 'ville',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'follaton',
@@ -1676,7 +1598,6 @@ export const CREATURES = [
     description: 'Esprit savoyard logé dans une lanterne. Espiègle, il déplace les objets la nuit.',
     habitat: 'ville',
     minLevel: 21,
-    sprite: 'handmade',
   },
   {
     id: 'follaclair',
@@ -1697,7 +1618,6 @@ export const CREATURES = [
     description: 'Il éclaire les ruelles de Vireval en marchant. Serviable, il raccompagne les veilleurs.',
     habitat: 'ville',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'follorage',
@@ -1718,7 +1638,6 @@ export const CREATURES = [
     description: 'Sa lanterne de fer retient captif un orage entier. Grondant, il fait trembler les vitres.',
     habitat: 'ville',
     minLevel: 42,
-    sprite: 'handmade',
   },
   {
     id: 'croquemine',
@@ -1739,7 +1658,6 @@ export const CREATURES = [
     description: 'Ombre qui se cache sous les lits des enfants. Malicieux, il croque les mauvais rêves.',
     habitat: 'grotte',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'croquefrou',
@@ -1760,7 +1678,6 @@ export const CREATURES = [
     description: 'On l’invoque pour faire peur aux enfants. Insatiable, sa gueule avale toute lumière.',
     habitat: 'grotte',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'dame_noire',
@@ -1782,7 +1699,6 @@ export const CREATURES = [
     description: 'Stalagmite voilée qui veille au fond des grottes. Silencieuse, elle observe les intrus.',
     habitat: 'grotte',
     minLevel: 22,
-    sprite: 'handmade',
   },
   {
     id: 'lycastre',
@@ -1803,7 +1719,6 @@ export const CREATURES = [
     description: 'Ver fouisseur des terres de Provence. Infatigable, il creuse sans jamais s’arrêter.',
     habitat: 'grotte',
     minLevel: 20,
-    sprite: 'handmade',
   },
   {
     id: 'lycastron',
@@ -1824,7 +1739,6 @@ export const CREATURES = [
     description: 'Ses galeries font trembler le sol des villages. Gigantesque, il avale la roche entière.',
     habitat: 'grotte',
     minLevel: 28,
-    sprite: 'handmade',
   },
   {
     id: 'camecru',
@@ -1845,7 +1759,6 @@ export const CREATURES = [
     description: 'Larve des grottes qui ne tient que sur une jambe. Sautillant, il guette sa proie.',
     habitat: 'grotte',
     minLevel: 21,
-    sprite: 'handmade',
   },
   {
     id: 'camecruse',
@@ -1867,7 +1780,6 @@ export const CREATURES = [
     description: 'Elle tend ses toiles au fond des grottes. Insomniaque, elle ne ferme jamais son œil.',
     habitat: 'grotte',
     minLevel: 28,
-    sprite: 'handmade',
   },
   {
     id: 'moinillon',
@@ -1888,7 +1800,6 @@ export const CREATURES = [
     description: 'Il court les rues de Paris les nuits d’hiver. Ébouriffé, sa laine crépite d’étincelles.',
     habitat: 'ruines',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'moinbourru',
@@ -1909,7 +1820,6 @@ export const CREATURES = [
     description: 'Il rôde dans les rues de Paris pendant l’Avent. Malheur aux curieux à la fenêtre.',
     habitat: 'ruines',
     minLevel: 34,
-    sprite: 'handmade',
   },
   {
     id: 'blanchin',
@@ -1930,7 +1840,6 @@ export const CREATURES = [
     description: 'Lambeau de brume qui flotte près des tours. Craintif, il se dissipe au moindre bruit.',
     habitat: 'ruines',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'blancome',
@@ -1951,7 +1860,6 @@ export const CREATURES = [
     description: 'Voile blanc qui erre au bord des routes la nuit. Silencieux, il annonce un malheur.',
     habitat: 'ruines',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'blancelune',
@@ -1973,7 +1881,6 @@ export const CREATURES = [
     description: 'Grand voile qui apparaît les nuits de pleine lune. Majestueuse, elle veille sur les ruines.',
     habitat: 'ruines',
     minLevel: 44,
-    sprite: 'handmade',
   },
   {
     id: 'ankoulet',
@@ -1994,7 +1901,6 @@ export const CREATURES = [
     description: 'Il porte une flamme pâle sur son crâne. Lorsqu’il passe, les chiens hurlent.',
     habitat: 'ruines',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'ankou',
@@ -2015,7 +1921,6 @@ export const CREATURES = [
     description: 'Ouvrier de la mort en Bretagne, il fauche les âmes. Inévitable, il vient chercher chacun.',
     habitat: 'ruines',
     minLevel: 34,
-    sprite: 'handmade',
   },
   {
     id: 'revenant',
@@ -2036,7 +1941,6 @@ export const CREATURES = [
     description: 'Pierre tombale qui sort de terre les nuits sans lune. Tourmenté, il cherche le repos.',
     habitat: 'ruines',
     minLevel: 27,
-    sprite: 'handmade',
   },
   {
     id: 'bugulin',
@@ -2057,7 +1961,6 @@ export const CREATURES = [
     description: 'Plante carnivore coiffée d’un large chapeau. Redoutable, il claque des mâchoires la nuit.',
     habitat: 'ville',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'bugul_noz',
@@ -2078,7 +1981,6 @@ export const CREATURES = [
     description: 'Le berger de la nuit du pays vannetais. Lorsqu’il crie, il est temps de rentrer chez soi.',
     habitat: 'ville',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'roncefee',
@@ -2100,7 +2002,6 @@ export const CREATURES = [
     description: 'Rocher couvert de ronces où sommeille une fée. Susceptible, elle griffe qui cueille ses mûres.',
     habitat: 'ville',
     minLevel: 27,
-    sprite: 'handmade',
   },
   {
     id: 'jetin',
@@ -2121,7 +2022,6 @@ export const CREATURES = [
     description: 'Petite abeille des falaises de Haute-Bretagne. Infatigable, il butine contre le vent.',
     habitat: 'prairie',
     minLevel: 26,
-    sprite: 'handmade',
   },
   {
     id: 'jetinelle',
@@ -2143,7 +2043,6 @@ export const CREATURES = [
     description: 'Elle règne sur les ruches nichées dans les falaises. Courageuse, elle chasse les goélands.',
     habitat: 'prairie',
     minLevel: 30,
-    sprite: 'handmade',
   },
   {
     id: 'cabrillon',
@@ -2164,7 +2063,6 @@ export const CREATURES = [
     description: 'Chevreau au pelage doré des falaises des Baux. Intrépide, il saute de roc en roc.',
     habitat: 'montagne',
     minLevel: 28,
-    sprite: 'handmade',
   },
   {
     id: 'cabridor',
@@ -2185,7 +2083,6 @@ export const CREATURES = [
     description: 'Ses cornes dorées s’entrechoquent dans les combats. Orgueilleux, il défie tous les grimpeurs.',
     habitat: 'montagne',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'cabro_dor',
@@ -2207,7 +2104,6 @@ export const CREATURES = [
     description: 'La chèvre d’or qui garde le trésor des Baux. Insaisissable, elle disparaît dans la roche.',
     habitat: 'montagne',
     minLevel: 46,
-    sprite: 'handmade',
   },
   {
     id: 'serpvolin',
@@ -2228,7 +2124,6 @@ export const CREATURES = [
     description: 'Petit serpent ailé des gorges de Provence. Imprudent, il plane au ras des falaises.',
     habitat: 'montagne',
     minLevel: 28,
-    sprite: 'handmade',
   },
   {
     id: 'serpvolant',
@@ -2249,7 +2144,6 @@ export const CREATURES = [
     description: 'Le serpent volant qui traverse les vallées. Majestueux, il ne se pose jamais au sol.',
     habitat: 'montagne',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'koril',
@@ -2270,7 +2164,6 @@ export const CREATURES = [
     description: 'Pierre dressée qui s’anime les nuits de lune. Tourbillonnant, il danse autour des menhirs.',
     habitat: 'montagne',
     minLevel: 29,
-    sprite: 'handmade',
   },
   {
     id: 'barbegel',
@@ -2291,7 +2184,6 @@ export const CREATURES = [
     description: 'Petit habitant des glaciers caché sous sa barbe. Grâce à ses grands pieds, il glisse sur la neige.',
     habitat: 'neige',
     minLevel: 29,
-    sprite: 'handmade',
   },
   {
     id: 'barbegazi',
@@ -2312,7 +2204,6 @@ export const CREATURES = [
     description: 'Sa longue barbe de givre claque dans les rafales. Lorsqu’il siffle, l’avalanche menace.',
     habitat: 'neige',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'vosgoup',
@@ -2333,7 +2224,6 @@ export const CREATURES = [
     description: 'Ourson des sapinières des Vosges. Affectueux, il se roule dans la neige fraîche.',
     habitat: 'neige',
     minLevel: 29,
-    sprite: 'handmade',
   },
   {
     id: 'vosgar',
@@ -2354,7 +2244,6 @@ export const CREATURES = [
     description: 'Ses aiguilles de givre hérissent son dos. Redoutable, il brise la glace des lacs.',
     habitat: 'neige',
     minLevel: 34,
-    sprite: 'handmade',
   },
   {
     id: 'vosgarde',
@@ -2375,7 +2264,6 @@ export const CREATURES = [
     description: 'Dressé sur ses pattes, il garde les cols. Inflexible, il ne recule jamais devant rien.',
     habitat: 'neige',
     minLevel: 50,
-    sprite: 'handmade',
   },
   {
     id: 'hellequet',
@@ -2396,7 +2284,6 @@ export const CREATURES = [
     description: 'Chiot de nuée égaré loin de la chasse sauvage. Lorsqu’il aboie, le vent se lève.',
     habitat: 'montagne',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'hellequin',
@@ -2417,7 +2304,6 @@ export const CREATURES = [
     description: 'Il mène la chasse sauvage à travers les nuages. Hurlante, sa meute réveille les villages.',
     habitat: 'montagne',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'bayard',
@@ -2438,7 +2324,6 @@ export const CREATURES = [
     description: 'Le cheval enchanté des Ardennes, bardé de fer. Infatigable, il galope plus vite que le vent.',
     habitat: 'montagne',
     minLevel: 33,
-    sprite: 'handmade',
   },
   {
     id: 'graoulet',
@@ -2459,7 +2344,6 @@ export const CREATURES = [
     description: 'Petit crapaud cornu des berges de la Seille. Venimeux, il crache sur les curieux.',
     habitat: 'marais',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'graoulard',
@@ -2480,7 +2364,6 @@ export const CREATURES = [
     description: 'Il patauge dans les marais en crachant du venin. Grincheux, il mord tout ce qui bouge.',
     habitat: 'marais',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'graoully',
@@ -2501,7 +2384,6 @@ export const CREATURES = [
     description: 'Le dragon de Metz, chassé jadis jusqu’à la Seille. Redouté, son souffle empoisonne les marais.',
     habitat: 'marais',
     minLevel: 48,
-    sprite: 'handmade',
   },
   {
     id: 'lavandiere',
@@ -2523,7 +2405,6 @@ export const CREATURES = [
     description: 'Elle glisse sur l’eau la nuit avec un bout de linge. Diligente, elle le tord sans fin.',
     habitat: 'marais',
     minLevel: 32,
-    sprite: 'handmade',
   },
   {
     id: 'lavandame',
@@ -2545,7 +2426,6 @@ export const CREATURES = [
     description: 'Elle bat son drap blanc au bord des lavoirs à minuit. Implacable, elle force les passants à le tordre.',
     habitat: 'marais',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'magou',
@@ -2566,7 +2446,6 @@ export const CREATURES = [
     description: 'Poisson moustachu qui remonte avec les crues. Paresseux, il dort dans la vase.',
     habitat: 'marais',
     minLevel: 33,
-    sprite: 'handmade',
   },
   {
     id: 'galipotin',
@@ -2587,7 +2466,6 @@ export const CREATURES = [
     description: 'Petite bête de nuit qui sent la vase et le soufre. Craintif, il fuit les lanternes.',
     habitat: 'marais',
     minLevel: 33,
-    sprite: 'handmade',
   },
   {
     id: 'galipote',
@@ -2609,7 +2487,6 @@ export const CREATURES = [
     description: 'Elle court la campagne jusqu’au chant du coq. Bondissante, elle saute d’un marais à l’autre.',
     habitat: 'marais',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'matagri',
@@ -2630,7 +2507,6 @@ export const CREATURES = [
     description: 'Chaton gris qui suit qui le nourrit. Reconnaissant, il porte bonheur à son maître.',
     habitat: 'ville',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'matagot',
@@ -2651,7 +2527,6 @@ export const CREATURES = [
     description: 'Le chat sorcier des vieux contes provençaux. Lorsqu’il est bien nourri, il rapporte de l’or.',
     habitat: 'ville',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'sotrin',
@@ -2672,7 +2547,6 @@ export const CREATURES = [
     description: 'Petit miroir lorrain qui grimace la nuit. Farceur, il cache les objets des maisons.',
     habitat: 'ville',
     minLevel: 36,
-    sprite: 'handmade',
   },
   {
     id: 'sotremage',
@@ -2693,7 +2567,6 @@ export const CREATURES = [
     description: 'Grand miroir enchanté des maisons lorraines. Envoûtant, il montre à chacun son avenir.',
     habitat: 'ville',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'birette',
@@ -2715,7 +2588,6 @@ export const CREATURES = [
     description: 'Chouette voilée qui hante les haies la nuit. Mystérieuse, elle effraie les promeneurs.',
     habitat: 'foret',
     minLevel: 37,
-    sprite: 'handmade',
   },
   {
     id: 'drapet',
@@ -2736,7 +2608,6 @@ export const CREATURES = [
     description: 'Il se cache sous un drap pour voler dans les maisons. Soigneux, il lave chaque objet volé.',
     habitat: 'ville',
     minLevel: 37,
-    sprite: 'handmade',
   },
   {
     id: 'sirenea',
@@ -2758,7 +2629,6 @@ export const CREATURES = [
     description: 'Poisson ailé des eaux de la Garonne. Mélodieux, son chant égare les bateliers.',
     habitat: 'mer',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'sirenor',
@@ -2779,7 +2649,6 @@ export const CREATURES = [
     description: 'Il plane sur l’estuaire de la Gironde. Majestueux, il chante les nuits de tempête.',
     habitat: 'mer',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'melusineau',
@@ -2800,7 +2669,6 @@ export const CREATURES = [
     description: 'Petit serpent des fontaines du Poitou. Insouciant, il nage autour des lavoirs.',
     habitat: 'mer',
     minLevel: 38,
-    sprite: 'handmade',
   },
   {
     id: 'melusine',
@@ -2822,7 +2690,6 @@ export const CREATURES = [
     description: 'Elle bâtit en une nuit le château de Lusignan. Démasquée, elle s’envola en criant.',
     habitat: 'mer',
     minLevel: 42,
-    sprite: 'handmade',
   },
   {
     id: 'nainmarin',
@@ -2843,7 +2710,6 @@ export const CREATURES = [
     description: 'Lutteur des grottes marines de Bretagne. Bagarreur, il cogne de tous ses bras.',
     habitat: 'mer',
     minLevel: 39,
-    sprite: 'handmade',
   },
   {
     id: 'bagnoz',
@@ -2864,7 +2730,6 @@ export const CREATURES = [
     description: 'Bateau de nuit qui recueille les noyés de l’année. Silencieux, il glisse sans bruit.',
     habitat: 'mer',
     minLevel: 39,
-    sprite: 'handmade',
   },
   {
     id: 'goelame',
@@ -2885,7 +2750,6 @@ export const CREATURES = [
     description: 'Goéland pâle qui porte l’âme d’un marin noyé. Fidèle, il suit les bateaux de pêche.',
     habitat: 'mer',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'goulinet',
@@ -2906,7 +2770,6 @@ export const CREATURES = [
     description: 'Petit dragon de pierre des grottes de Poitiers. Gourmand, il croque les cailloux chauds.',
     habitat: 'volcan',
     minLevel: 42,
-    sprite: 'handmade',
   },
   {
     id: 'grangoule',
@@ -2928,7 +2791,6 @@ export const CREATURES = [
     description: 'Le dragon des souterrains de Poitiers. Gigantesque, sa gueule de braise avale tout.',
     habitat: 'volcan',
     minLevel: 45,
-    sprite: 'handmade',
   },
   {
     id: 'taurnoir',
@@ -2949,7 +2811,6 @@ export const CREATURES = [
     description: 'Taureau noir qui garde les trésors des grottes. Lorsqu’il charge, il souffle des flammes.',
     habitat: 'volcan',
     minLevel: 43,
-    sprite: 'handmade',
   },
   {
     id: 'mallet',
@@ -2970,7 +2831,6 @@ export const CREATURES = [
     description: 'Cheval de nuit qui attend les voyageurs las. Envoûtant, il emporte ceux qui le montent.',
     habitat: 'volcan',
     minLevel: 43,
-    sprite: 'handmade',
   },
   {
     id: 'babauet',
@@ -2991,7 +2851,6 @@ export const CREATURES = [
     description: 'Petite bête de braise du Languedoc. Rampant, il se glisse sous les lits la nuit.',
     habitat: 'volcan',
     minLevel: 42,
-    sprite: 'handmade',
   },
   {
     id: 'babau',
@@ -3012,7 +2871,6 @@ export const CREATURES = [
     description: 'Le babau qui fait peur aux enfants de Nîmes. Effrayant, il craque comme une braise.',
     habitat: 'volcan',
     minLevel: 44,
-    sprite: 'handmade',
   },
   {
     id: 'alicornet',
@@ -3033,7 +2891,6 @@ export const CREATURES = [
     description: 'Poulain blanc né dans les cols enneigés. Délicate, sa corne de givre pousse avec l’hiver.',
     habitat: 'neige',
     minLevel: 46,
-    sprite: 'handmade',
   },
   {
     id: 'alicorne',
@@ -3055,7 +2912,6 @@ export const CREATURES = [
     description: 'Sa corne purifie les sources empoisonnées. Majestueuse, elle ne se montre qu’aux cœurs purs.',
     habitat: 'neige',
     minLevel: 48,
-    sprite: 'handmade',
   },
   {
     id: 'dahu',
@@ -3076,7 +2932,6 @@ export const CREATURES = [
     description: 'Ses pattes de droite sont plus courtes. Infatigable, il tourne autour des sommets.',
     habitat: 'neige',
     minLevel: 46,
-    sprite: 'handmade',
   },
   {
     id: 'gevaudan',
@@ -3097,7 +2952,6 @@ export const CREATURES = [
     description: 'Bête immense qui terrorisait les monts de Lozère. Implacable, il guette au Col des Échos.',
     habitat: 'montagne',
     minLevel: 47,
-    sprite: 'handmade',
   },
   {
     id: 'vouivre',
@@ -3119,7 +2973,6 @@ export const CREATURES = [
     description: 'Serpent ailé qui porte une escarboucle. Quiconque la dérobe devient riche.',
     habitat: 'inconnu',
     minLevel: 70,
-    sprite: 'handmade',
   },
   {
     id: 'gaussier',
@@ -3140,7 +2993,6 @@ export const CREATURES = [
     description: 'Lion de pierre endormi depuis mille hivers. Réveillé, il fait trembler les Alpilles.',
     habitat: 'inconnu',
     minLevel: 60,
-    sprite: 'handmade',
   },
   {
     id: 'draguignan',
@@ -3161,7 +3013,6 @@ export const CREATURES = [
     description: 'Dragon des marais du Var, réveillé par le volcan. Furieux, il crache des torrents de lave.',
     habitat: 'inconnu',
     minLevel: 50,
-    sprite: 'handmade',
   },
   {
     id: 'veneur',
@@ -3182,7 +3033,6 @@ export const CREATURES = [
     description: 'Son cor résonne dans les forêts les nuits d’orage. Fantomatique, il mène la chasse des nuées.',
     habitat: 'inconnu',
     minLevel: 40,
-    sprite: 'handmade',
   },
   {
     id: 'mitreve',
@@ -3204,7 +3054,6 @@ export const CREATURES = [
     description: 'Petite mite qui se nourrit des mauvais rêves. Silencieuse, elle veille sur les dormeurs.',
     habitat: 'inconnu',
     minLevel: 50,
-    sprite: 'handmade',
   },
 ];
 
