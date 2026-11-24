@@ -98,37 +98,46 @@ function dameVerteBack() {
   ]));
 }
 
-// ---------- 023 Basilin: hatchling basilisk ----------
+// ---------- 023 Basilin: basilisk chick with a snake tail ----------
 const B1 = {
-  coil: union(ellipse(24, 40, 12, 5), capsule([[32, 38], [36, 33], [33, 28], [28, 26]], 3.2)),
-  tail: capsule([[13, 41], [8, 40], [6, 37]], 1.4),
-  wings: mirrorX(poly([20, 30], [13, 25], [12, 30], [15, 33])),
-  head: ellipse(24, 23, 6.5, 5.5),
-  crest: poly([20, 19], [19, 13], [22, 16], [24, 11], [26, 16], [29, 13], [28, 19]),
-  beak: poly([22, 25], [26, 25], [24, 29]),
-  wattle: ellipse(24, 30, 1.4, 1.6),
+  tail: capsule([[29, 41], [36, 42], [41, 38], [41, 32], [37, 29]], 2.2),
+  tailTip: poly([35, 30], [37, 25], [39.5, 29]),
+  feet: union(poly([18, 43], [22, 43], [23.5, 46], [16.5, 46]), poly([26, 43], [30, 43], [31.5, 46], [24.5, 46])),
+  body: ellipse(24, 36.5, 8.5, 7.5),
+  wings: mirrorX(poly([16.5, 32], [11, 34], [10, 39], [13, 41], [17, 39])),
+  head: ellipse(24, 24.5, 7.5, 6.8),
+  crest: poly([19.5, 19.5], [18, 12], [21.5, 15], [23.5, 9], [25.5, 14.5], [29, 11], [28.5, 19.5]),
+  beak: poly([20.5, 26.5], [27.5, 26.5], [24, 31.5]),
+  wattle: union(ellipse(23, 32.5, 1.3, 1.8), ellipse(25, 32.5, 1.3, 1.8)),
 };
 
 function basilinFront() {
   return toRows(paint([
-    { shape: B1.tail, tone: 1, shade: 2 },
-    { shape: B1.coil, tone: 1, shade: 2, light: { tone: 0, shape: union(rect(16, 40, 32, 41), ellipse(33, 33, 1, 3)) }, pixels: px(2, [14, 39], [18, 37], [30, 37], [34, 40], [35, 30]) },
-    { shape: B1.wings, tone: 2, shade: 3, pixels: px(1, [15, 28], [33, 28]) },
-    { shape: B1.crest, tone: 2, light: { tone: 1, shape: poly([22, 16], [24, 12], [25, 16]) } },
-    { shape: B1.head, tone: 1, shade: 2 },
+    { shape: B1.tail, tone: 1, shade: 2, pixels: px(2, [33, 41], [38, 40], [40, 35]) },
+    { shape: B1.tailTip, tone: 2, shade: 3 },
+    { shape: B1.feet, tone: 2, pixels: px(3, [19, 45], [21, 45], [27, 45], [29, 45]) },
+    // Feathered chick body with a scaly, pale belly.
+    { shape: B1.body, tone: 1, shade: 2, light: { tone: 0, shape: ellipse(24, 38, 5, 5) },
+      pixels: px(1, [22, 36], [26, 36], [24, 38], [22, 40], [26, 40]) },
+    { shape: B1.wings, tone: 2, shade: 3, light: { tone: 1, shape: union(poly([11.5, 35], [15, 33], [12.5, 38]), poly([36.5, 35], [33, 33], [35.5, 38])) } },
+    { shape: B1.crest, tone: 2, light: { tone: 1, shape: union(poly([21.5, 15.5], [23.5, 10.5], [24.5, 15]), poly([19, 14], [20.5, 16], [19.5, 18])) } },
+    { shape: B1.head, tone: 1, shade: 2, light: { tone: 0, shape: union(ellipse(20, 23.5, 2.8, 2.6), ellipse(28, 23.5, 2.8, 2.6)) } },
     { shape: B1.wattle, tone: 2 },
-    { shape: B1.beak, tone: 0, shade: 1 },
-    { pixels: [...eyes(20, 26, 21), ...px(3, [19, 20], [20, 20], [27, 20], [28, 20])] },
+    { shape: B1.beak, tone: 0, shade: 1, pixels: px(3, [22, 28], [23, 28], [24, 28], [25, 28], [26, 28]) },
+    // Big glaring eyes under angry brows.
+    { pixels: [...eyes(19, 27, 22), ...px(3, [17, 20], [18, 20], [19, 21], [20, 21], [30, 20], [29, 20], [28, 21], [27, 21])] },
   ]));
 }
 
 function basilinBack() {
   return toRows(paint([
-    { shape: B1.coil, tone: 1, shade: 2, pixels: px(2, [14, 39], [18, 37], [30, 37], [34, 40], [35, 30], [22, 40], [26, 40]) },
-    { shape: B1.tail, tone: 1, shade: 2 },
-    { shape: B1.head, tone: 1, shade: 2 },
-    { shape: B1.wings, tone: 2, shade: 3 },
-    { shape: B1.crest, tone: 2, light: { tone: 1, shape: poly([22, 16], [24, 12], [25, 16]) } },
+    { shape: B1.feet, tone: 2 },
+    { shape: B1.body, tone: 1, shade: 2, pixels: px(2, [20, 34], [24, 33], [28, 34], [22, 38], [26, 38]) },
+    { shape: capsule([[24, 41], [31, 43], [38, 41], [40, 35], [37, 30]], 2.2), tone: 1, shade: 2, pixels: px(2, [30, 42], [36, 41], [39, 37]) },
+    { shape: poly([35, 31], [37, 26], [39.5, 30]), tone: 2, shade: 3 },
+    { shape: B1.wings, tone: 2, shade: 3, light: { tone: 1, shape: union(poly([11.5, 35], [15, 33], [12.5, 38]), poly([36.5, 35], [33, 33], [35.5, 38])) } },
+    { shape: B1.head, tone: 1, shade: 2, pixels: px(2, [21, 23], [24, 22], [27, 23], [23, 27], [26, 27]) },
+    { shape: B1.crest, tone: 2, light: { tone: 1, shape: union(poly([21.5, 15.5], [23.5, 10.5], [24.5, 15]), poly([19, 14], [20.5, 16], [19.5, 18])) } },
   ]));
 }
 
@@ -228,22 +237,22 @@ const DAME_VERTE_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 const BASILIN_ICON = [
-  '................',
-  '......3.3.3.....',
-  '.....3232323....',
-  '.....32222223...',
-  '....3111111113..',
-  '.33.3303113033 .',
-  '3223310303 0133.',
-  '3222331000 133..',
-  '.3223310013.33..',
-  '..33.312213311 3',
-  '....31111111111 3',
-  '...311111111111 3',
-  '.33111111111113.',
-  '3113333333333 3.',
-  '.33.............',
-  '................',
+  '......3..3......',
+  '.....323323.....',
+  '....32222223....',
+  '...3111111113...',
+  '..313031130313..',
+  '..313331133313..',
+  '..311100001113..',
+  '...3110330113...',
+  '..3331000013333.',
+  '.322311111132233',
+  '.322310000132313',
+  '..33310000133313',
+  '....311111133313',
+  '....333333333113',
+  '...323..323.333.',
+  '...333..333.....',
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 const BASILIC_ICON = [
