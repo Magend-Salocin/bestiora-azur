@@ -11,6 +11,7 @@ import { FALLBACK_PLACES } from '../src/ui/ending-screens.js';
 import { NAME_MAX_LENGTH } from '../src/ui/name-entry.js';
 import { START_MENU_BOX } from '../src/ui/start-menu.js';
 import { DIALOG_LINE_WIDTH, splitWords } from '../src/ui/text-layout.js';
+import { longestAgreement } from '../src/data/grammar.js';
 
 const textWidth = (text) => Array.from(text).length * GLYPH_SIZE;
 
@@ -45,7 +46,7 @@ export function worstCaseVariables(data) {
   };
 }
 
-const fill = (text, variables) => text.replace(/\{([A-Z_]+)\}/g, (token, name) => variables[name] ?? token);
+const fill = (text, variables) => longestAgreement(text).replace(/\{([A-Z_]+)\}/g, (token, name) => variables[name] ?? token);
 
 /** Dialog text: wrapping is automatic, so only a word wider than the box can overflow. */
 function checkDialogText(label, text, variables, errors) {

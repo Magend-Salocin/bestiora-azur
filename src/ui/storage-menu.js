@@ -7,7 +7,7 @@ import {
 } from '../state/storage.js';
 import { ListMenu } from './components/list-menu.js';
 import { openAndKeep, withMenuLayer } from './components/menu-layer.js';
-import { creatureName } from './creature-widgets.js';
+import { creatureName, creatureVars } from './creature-widgets.js';
 import { ask, say } from './messages.js';
 import { enterName } from './name-entry.js';
 import { choosePartyMember } from './party-screen.js';
@@ -68,7 +68,7 @@ async function runChoice(manager, layer, state, choice) {
     if (index === null) return;
     const creature = state.party[index];
     const error = deposit(state, index, box);
-    await say(manager, ERRORS[error] ?? 'storage_deposited', { CREATURE: creatureName(creature) });
+    await say(manager, ERRORS[error] ?? 'storage_deposited', creatureVars(creature));
   } else if (choice === 'RETIRER') {
     const slot = await pickStoredWithSummary(manager, layer, storage, 'RETIRER');
     if (slot === null) return;

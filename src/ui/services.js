@@ -2,7 +2,7 @@
 import { CREATURES_BY_ID } from '../data/creatures.js';
 import { daycareCost, depositInDaycare, withdrawFromDaycare } from '../state/daycare.js';
 import { tradeCreature } from '../state/trade.js';
-import { creatureName } from './creature-widgets.js';
+import { creatureName, creatureVars } from './creature-widgets.js';
 import { ask, say } from './messages.js';
 import { choosePartyMember } from './party-screen.js';
 
@@ -13,8 +13,8 @@ export async function openDaycare(manager, state) {
   if (state.daycare) {
     const { creature, levelAtDeposit } = state.daycare;
     const name = creatureName(creature);
-    await say(manager, 'daycare_status', { CREATURE: name, NUMBER: creature.level - levelAtDeposit });
-    if (await ask(manager, 'daycare_ask_withdraw', { NUMBER: daycareCost(state) })) {
+    await say(manager, 'daycare_status', { ...creatureVars(creature), NUMBER: creature.level - levelAtDeposit });
+    if (await ask(manager, 'daycare_ask_withdraw', { ...creatureVars(creature), NUMBER: daycareCost(state) })) {
       const error = withdrawFromDaycare(state);
       await say(manager, DAYCARE_ERRORS[error] ?? 'daycare_returned', { CREATURE: name });
       if (error) return;

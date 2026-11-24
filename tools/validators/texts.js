@@ -2,6 +2,7 @@
 // characters the font can draw, and forbidden words.
 import { TEXT_VARIABLES, wrapParagraph } from '../../src/ui/text-layout.js';
 import { FORBIDDEN_WORDS } from '../forbidden-words.js';
+import { AGREEMENT_MARKER } from '../../src/data/grammar.js';
 
 export const TEXT_LIMITS = {
   moveName: 12,
@@ -69,10 +70,10 @@ export function checkGameTexts(data) {
       errors.push(`${label} : vide`);
       continue;
     }
-    for (const [, name] of text.matchAll(/\{([A-Z_]+)\}/g)) {
+    for (const [, name] of [...text.matchAll(/\{([A-Z_]+)\}/g), ...text.matchAll(AGREEMENT_MARKER)]) {
       if (!TEXT_VARIABLES.includes(name)) errors.push(`${label} : variable inconnue {${name}}`);
     }
-    const drawn = text.replace(/\{[A-Z_]+\}/g, '').replace(/[\f\n]/g, '');
+    const drawn = text.replace(AGREEMENT_MARKER, '$2$3').replace(/\{[A-Z_]+\}/g, '').replace(/[\f\n]/g, '');
     const missing = [...new Set(Array.from(drawn).filter((character) => !data.glyphs.has(character)))];
     if (missing.length > 0) errors.push(`${label} : caractères absents de la police ${JSON.stringify(missing.join(''))}`);
     const forbidden = findForbiddenWords(text);

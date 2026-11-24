@@ -23,7 +23,9 @@
     "perf": "node tools/run-perf.js",
     "web": "node tools/web-server.js",
     "key": "node tools/access-key.js",
-    "build-web": "node tools/build-web.js"
+    "build-web": "node tools/build-web.js",
+    "planche": "node tools/creature-sheet.js",
+    "creature-design": "node tools/export-creature-design.js"
   },
   "repository": {
     "type": "git",

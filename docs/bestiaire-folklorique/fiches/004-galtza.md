@@ -50,4 +50,4 @@ Colosse des forges, crinière de flammes, cornes recourbées, tablier de cuir et
 
 ## Sprites
 
-Face, dos et icône pour les trois stades : [rendus/starters-planche.png](../rendus/starters-planche.png), captures en jeu dans `rendus/braisille/`, `rendus/fournaise/`, `rendus/pyrogrue/`.
+Face, dos et icône pour les trois stades : [rendus/planche-001-009.png](../rendus/planche-001-009.png), captures en jeu dans `rendus/braisille/`, `rendus/fournaise/`, `rendus/pyrogrue/`.

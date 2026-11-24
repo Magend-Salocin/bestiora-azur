@@ -1,5 +1,6 @@
 // Pure text layout for dialog boxes (no DOM). Lengths are counted in characters,
 // since the font is monospace.
+import { applyAgreement } from '../data/grammar.js';
 
 export const DIALOG_LINE_WIDTH = 18;
 export const DIALOG_LINES_PER_PAGE = 2;
@@ -14,9 +15,12 @@ function length(text) {
   return Array.from(text).length;
 }
 
-/** Replaces {PLAYER}, {RIVAL}… with context values. Unknown variables are left visible. */
+/**
+ * Replaces {PLAYER}, {RIVAL}… with context values, after the agreement markers
+ * ({CREATURE:Un|Une}, see src/data/grammar.js). Unknown variables are left visible.
+ */
 export function applyVariables(text, context = {}) {
-  return text.replace(VARIABLE_PATTERN, (token, name) =>
+  return applyAgreement(text, context).replace(VARIABLE_PATTERN, (token, name) =>
     Object.hasOwn(context, name) ? String(context[name]) : token,
   );
 }

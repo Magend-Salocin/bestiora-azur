@@ -14,7 +14,7 @@ import {
   PARTY_SIZE, addCreature, addMoney, markSeen, removeItem,
 } from '../../state/game-state.js';
 import { TEXT_SPEEDS, getTextSpeed } from '../../ui/dialog-box.js';
-import { creatureName } from '../../ui/creature-widgets.js';
+import { creatureName, creatureVars } from '../../ui/creature-widgets.js';
 import { askBattle } from '../../ui/learn-move.js';
 import { moveCursor } from '../../ui/menu-cursor.js';
 import { chooseMoveSlot } from '../../ui/move-list-screen.js';
@@ -401,7 +401,7 @@ export class BattleScene {
       });
       hooks.playSfx(`cry_${enemyEvent.species}`);
       this.shown[1].hudVisible = true;
-      await this.say('wild_appears', { CREATURE: creatureName(this.battle.sides[1].party[0]) });
+      await this.say('wild_appears', creatureVars(this.battle.sides[1].party[0]));
     }
     await this.tween(0.3, (t) => { portraits.player.dx = Math.round(-t * 80); });
     portraits.player.visible = false;
@@ -538,7 +538,7 @@ export class BattleScene {
       if (nickname !== name) caught.nickname = nickname;
     }
     this.caught = caught;
-    if (this.battle.sides[0].party.length >= PARTY_SIZE) await this.say('sent_to_storage', { CREATURE: creatureName(caught) });
+    if (this.battle.sides[0].party.length >= PARTY_SIZE) await this.say('sent_to_storage', creatureVars(caught));
     return { result: 'caught', caughtCreature: caught };
   }
 

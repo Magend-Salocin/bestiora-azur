@@ -2,6 +2,7 @@
 import { drawSprite } from '../gfx/draw.js';
 import { GLYPH_HP, GLYPH_LEVEL, drawText } from '../gfx/font.js';
 import { getSpecies } from '../battle/logic/creature.js';
+import { speciesGender } from '../data/grammar.js';
 
 export const HP_BAR_WIDTH = 48;
 export const XP_BAR_WIDTH = 64;
@@ -60,6 +61,11 @@ export function drawStatus(ctx, status, x, y) {
 
 export function creatureName(creature) {
   return creature.nickname ?? getSpecies(creature.species).name;
+}
+
+/** Text variables for a creature: its name and its species' gender, which a nickname keeps. */
+export function creatureVars(creature, key = 'CREATURE') {
+  return { [key]: creatureName(creature), [`${key}_GENDER`]: speciesGender(getSpecies(creature.species)) };
 }
 
 /** "hp/maxHp" right-aligned in 7 characters. */

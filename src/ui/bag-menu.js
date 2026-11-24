@@ -10,7 +10,7 @@ import { fieldItemProblem, fieldItemTarget, useItemOnCreature, useRepel } from '
 import { removeItem } from '../state/game-state.js';
 import { ListMenu } from './components/list-menu.js';
 import { QuantityWindow } from './components/small-windows.js';
-import { creatureName } from './creature-widgets.js';
+import { creatureName, creatureVars } from './creature-widgets.js';
 import { playEvolution } from './evolution-scene.js';
 import { learnMoveOutsideBattle, sayBattle } from './learn-move.js';
 import { ask, say } from './messages.js';
@@ -161,10 +161,11 @@ export class BagScene extends PromiseScene {
       return;
     }
     const name = creatureName(creature);
+    const gender = creatureVars(creature).CREATURE_GENDER;
     const effect = ITEMS_BY_ID[itemId].use.effect;
     if (effect === 'heal_hp') await say(this.manager, 'bag_healed', { CREATURE: name, NUMBER: creature.hp - before });
     else if (effect === 'revive') await say(this.manager, 'bag_revived', { CREATURE: name });
-    else if (effect === 'cure_status') await say(this.manager, 'bag_cured', { CREATURE: name });
+    else if (effect === 'cure_status') await say(this.manager, 'bag_cured', { CREATURE: name, CREATURE_GENDER: gender });
     else if (effect === 'restore_pp') await say(this.manager, 'bag_pp', { CREATURE: name });
     else if (effect === 'add_training') await say(this.manager, 'bag_training', { CREATURE: name });
     else if (effect === 'level_up') {

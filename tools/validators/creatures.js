@@ -1,6 +1,7 @@
 // Species fields, stat totals, learnsets, sprites and type distribution.
 import { validateCreatureSpec } from '../../src/gfx/creature-generator.js';
 import { GROWTH_RATES, STAT_KEYS } from '../../src/data/formulas.js';
+import { GENDERS } from '../../src/data/grammar.js';
 
 export const LEGENDARY_NUMBERS = [146, 147, 148, 149, 150];
 export const STAT_TOTALS = { regular: [250, 600], legendary: [580, 680] };
@@ -31,6 +32,7 @@ function checkFields(creature, data) {
   if (!STAT_KEYS.includes(stat) || !(points >= 1 && points <= 3)) errors.push(`${label} : trainingYield invalide`);
   if (!Array.isArray(creature.teachable)) errors.push(`${label} : teachable doit être un tableau`);
   if (!(creature.height > 0 && creature.weight > 0)) errors.push(`${label} : taille et poids positifs`);
+  if (creature.gender !== undefined && !GENDERS.includes(creature.gender)) errors.push(`${label} : genre « ${creature.gender} » inconnu (m ou f)`);
   if (!data.habitats[creature.habitat]) errors.push(`${label} : habitat inconnu « ${creature.habitat} »`);
   if (!(Number.isInteger(creature.minLevel) && creature.minLevel >= 1 && creature.minLevel <= 100)) errors.push(`${label} : minLevel invalide`);
   return errors;

@@ -14,6 +14,7 @@ Source de vérité unique pour la refonte des bestioles. Les fichiers de `archiv
 | Identifiants | Les identifiants internes (`fenouillot`…) restent, seul le nom affiché change. Renommage en fin de chantier, avec migration des sauvegardes. | 570 références dans le code, les cartes, les tests et les sauvegardes. |
 | Vocabulaire | « bestiole », « Bestiaire ». Le mot « Folklomon » est abandonné. | Le suffixe « -mon » évoque une franchise ([GAME_DESIGN.md](../GAME_DESIGN.md), section 1). |
 | Noms | 10 caractères maximum, sans espace de préférence. Les noms longs restent dans la légende. | Limite d'affichage vérifiée par `npm run validate`. |
+| Genre | Chaque espèce a un genre grammatical : masculin par défaut, `gender: 'f'` pour un nom féminin (Tarasque, Dame verte…). Les textes s'accordent : « Une Tarasque sauvage », « Tarasque ennemie », « est brûlée ». | Un nom féminin précédé de « Un » sonne faux. |
 | Description en jeu | 6 lignes de 18 caractères, sur deux pages de bestiaire (A tourne la page). Couper de préférence entre deux phrases à la 3e ligne. | La fiche complète est dans `fiches/`, la description en jeu en est le résumé. |
 | Exclusions | Pas d'humains, de saints, de chevaliers ni de personnages littéraires (Gargantua, Merlin, Viviane, Morgane retirés). | Règle des brouillons, conservée. |
 | Concepts | Les images de `concepts/` inspirent l'ambiance uniquement. Elles portent des logos et un style de la franchise : rien n'est repris tel quel. | Règles d'originalité. |
@@ -35,7 +36,7 @@ Pour lire les fiches archivées :
 
 ## Charte graphique
 
-Établie sur les trois lignées de starters ([rendus/starters-planche.png](rendus/starters-planche.png)).
+Établie sur les trois lignées de starters ([rendus/planche-001-009.png](rendus/planche-001-009.png)).
 
 - Sprite 48 × 48, 4 teintes, sol à la ligne 46, axe vertical au centre.
 - Taille selon le stade : stade 1 compact (corps d'environ 30 px, accessoires en plus), stade 2 plus haut et plus large, stade final occupe presque tout le cadre.
@@ -49,11 +50,34 @@ Pour lire les fiches archivées :
 
 ## Production d'une espèce
 
-1. Rédiger la fiche dans `fiches/` (modèle : [fiches/001-korrigan.md](fiches/001-korrigan.md)).
-2. Dessiner face, dos et icône dans `src/gfx/sources/creatures/<id>.js`, puis l'ajouter à `index.js`.
-3. Mettre à jour l'espèce dans `src/data/creatures.js` (nom, catégorie, taille, poids, description) et passer `sprite` à `'handmade'`.
-4. `npm run atlas`, `npm run validate`, `npm test`.
-5. `npm run screenshots -- --preview <id>` : captures dans `rendus/<id>/` (starter, bestiaire, équipe, combat de face et de dos).
+1. Rédiger la fiche de la lignée dans `fiches/` (modèle : [fiches/001-korrigan.md](fiches/001-korrigan.md)).
+2. Dessiner face, dos et icône dans un module de `tools/creature-designs/` (modèle : `00-korrigan.js`), avec les formes de `tools/creature-painter.js`.
+3. `npm run creature-design -- tools/creature-designs/<fichier>.js` écrit `src/gfx/sources/creatures/<id>.js` ; ajouter l'espèce à `index.js` à sa première exportation.
+4. Mettre à jour l'espèce dans `src/data/creatures.js` : nom, genre, catégorie, taille, poids, description, et `sprite: 'handmade'`.
+5. `npm run atlas`, `npm run validate`, `npm test`.
+6. `npm run planche -- <de>-<à>` : planche du lot dans `rendus/planche-<de>-<à>.png` (face, dos, icône).
+7. `npm run screenshots -- --preview <id>` : captures dans `rendus/<id>/` (starter, bestiaire, équipe, combat de face et de dos).
+
+## Plan de production
+
+Chaque lot se termine par une planche, des captures, les tests et un commit, puis un retour avant le lot suivant.
+
+| Lot | Contenu | Espèces | État |
+|---|---|---|---|
+| 0 | Genre grammatical, outils de dessin et de planche | 0 | Fait |
+| Starters | 001 à 009 | 9 | Fait |
+| 1 | Premières routes (010 à 024) | 15 | |
+| 2 | Forêts et premières grottes (025 à 037) | 13 | |
+| 3 | Rivières et grottes (038 à 049) | 12 | |
+| 4 | Côte et prairies (050 à 061) | 12 | |
+| 5 | Prairies et ville (062 à 074) | 13 | |
+| 6 | Ville et grottes (075 à 087) | 13 | |
+| 7 | Ruines (088 à 100) | 13 | |
+| 8 | Montagne et neige (101 à 114) | 14 | |
+| 9 | Marais et ville (115 à 128) | 14 | |
+| 10 | Mer et volcan (129 à 141) | 13 | |
+| 11 | Sommets, légendaires et mythique (142 à 150) | 9 | |
+| 12 | Finitions : identifiants, migration des sauvegardes, retrait du générateur, captures du README, documentation | 0 | |
 
 ## Correspondance des 150 emplacements
 

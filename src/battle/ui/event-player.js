@@ -6,7 +6,7 @@ import { ITEMS_BY_ID } from '../../data/items.js';
 import { MOVES_BY_ID } from '../../data/moves.js';
 import { STAT_LABELS } from '../../data/texts/battle-fr.js';
 import { hooks } from '../../overworld/hooks.js';
-import { creatureName } from '../../ui/creature-widgets.js';
+import { creatureVars } from '../../ui/creature-widgets.js';
 import { chooseMoveToForget } from '../../ui/learn-move.js';
 import { answerLearnMove } from '../logic/engine.js';
 import { CAPTURE_STARS, STAT_ANIMATIONS, TYPE_ANIMATIONS } from './move-animations.js';
@@ -30,11 +30,13 @@ export class EventPlayer {
     return this.battle.sides[side].party[index];
   }
 
-  /** Name used in texts: « Fenouillot », « Pivelin ennemi », « Pivelin sauvage ». */
-  nameOf(side, index) {
-    const name = creatureName(this.creatureAt(side, index));
-    if (side === 0) return name;
-    return this.battle.kind === 'wild' ? `${name} sauvage` : `${name} ennemi`;
+  /** Text variables of a creature: « Korrigan », « Pivelin ennemi », « Tarasque ennemie », « Pivelin sauvage ». */
+  nameVars(side, index, key = 'CREATURE') {
+    const variables = creatureVars(this.creatureAt(side, index), key);
+    if (side === 0) return variables;
+    const feminine = variables[`${key}_GENDER`] === 'f';
+    variables[key] += this.battle.kind === 'wild' ? ' sauvage' : feminine ? ' ennemie' : ' ennemi';
+    return variables;
   }
 
   say(key, variables, options) {
@@ -58,9 +60,9 @@ export class EventPlayer {
       const isLast = event.index > 0 && event.index === this.battle.sides[1].party.length - 1;
       if (isLast && scene.trainer?.lastText) await this.say(scene.trainer.lastText);
       await scene.offerSwitchBeforeEnemy(event);
-      await this.say('trainer_sends', { TRAINER: scene.trainerTitle, CREATURE: creatureName(this.creatureAt(1, event.index)) });
+      await this.say('trainer_sends', { TRAINER: scene.trainerTitle, ...creatureVars(this.creatureAt(1, event.index)) });
     } else if (side === 0) {
-      await this.say('player_sends', { CREATURE: creatureName(this.creatureAt(0, event.index)) }, { wait: false });
+      await this.say('player_sends', { ...creatureVars(this.creatureAt(0, event.index)) }, { wait: false });
     }
     scene.showCreature(side, event);
     hooks.playSfx('capsule_open');
@@ -69,7 +71,7 @@ export class EventPlayer {
   }
 
   async switch_out(event) {
-    if (event.side === 0) await this.say('player_recalls', { CREATURE: creatureName(this.creatureAt(0, event.index)) }, { wait: false });
+    if (event.side === 0) await this.say('player_recalls', { ...creatureVars(this.creatureAt(0, event.index)) }, { wait: false });
     await this.scene.slide(event.side, 0, event.side === 0 ? -64 : 64, 0.3);
     this.scene.shown[event.side].visible = false;
     this.scene.shown[event.side].hudVisible = false;
@@ -82,14 +84,14 @@ export class EventPlayer {
     shown.visible = false;
     shown.clipBottom = 0;
     shown.hudVisible = event.side === 0 ? shown.hudVisible : false;
-    await this.say('faint', { CREATURE: this.nameOf(event.side, event.index) });
+    await this.say('faint', { ...this.nameVars(event.side, event.index) });
   }
 
   // ---- Moves -----------------------------------------------------------------
 
   async move_used(event, rest) {
     const move = MOVES_BY_ID[event.move];
-    await this.say('move_used', { CREATURE: this.nameOf(event.side), MOVE: move.name }, { wait: false });
+    await this.say('move_used', { ...this.nameVars(event.side), MOVE: move.name }, { wait: false });
     const next = rest.find((other) => other.type !== 'confused');
     const lands = next && !OUTCOME_EVENTS.includes(next.type) && next.type !== 'charging';
     if (!lands) return;
@@ -100,15 +102,15 @@ export class EventPlayer {
   }
 
   move_failed() { return this.say('move_failed'); }
-  charging(event) { return this.say('charging', { CREATURE: this.nameOf(event.side) }); }
-  miss(event) { return this.say('miss', { CREATURE: this.nameOf(event.side) }); }
-  protected(event) { return this.say('protected', { CREATURE: this.nameOf(event.side) }); }
+  charging(event) { return this.say('charging', { ...this.nameVars(event.side) }); }
+  miss(event) { return this.say('miss', { ...this.nameVars(event.side) }); }
+  protected(event) { return this.say('protected', { ...this.nameVars(event.side) }); }
   critical() { return this.say('critical'); }
   hits(event) { return this.say('hits', { NUMBER: event.count }); }
   ohko() { return this.say('ohko'); }
 
   effectiveness(event) {
-    if (event.value === 0) return this.say('no_effect', { TARGET: this.nameOf(event.side) });
+    if (event.value === 0) return this.say('no_effect', { ...this.nameVars(event.side, undefined, 'TARGET') });
     return this.say(event.value > 1 ? 'super_effective' : 'not_very_effective');
   }
 
@@ -120,11 +122,11 @@ export class EventPlayer {
       const strong = rest.some((other) => other.type === 'effectiveness' && other.value > 1) || event.amount >= event.maxHp * 0.4;
       await Promise.all([scene.blink(event.side, BLINK_COUNT), strong ? scene.shakeScreen(0.3) : null]);
     } else if (event.source === 'recoil' || event.source === 'struggle') {
-      await this.say('recoil', { CREATURE: this.nameOf(event.side) }, { wait: false });
+      await this.say('recoil', { ...this.nameVars(event.side) }, { wait: false });
     } else if (event.source === 'leech') {
-      await this.say('leech_damage', { CREATURE: this.nameOf(event.side) }, { wait: false });
+      await this.say('leech_damage', { ...this.nameVars(event.side) }, { wait: false });
     } else if (event.source === 'trap') {
-      await this.say('trap_damage', { CREATURE: this.nameOf(event.side) }, { wait: false });
+      await this.say('trap_damage', { ...this.nameVars(event.side) }, { wait: false });
     }
     await this.animateHp(event.side, event.hp);
   }
@@ -133,7 +135,7 @@ export class EventPlayer {
     const activeIndex = this.battle.sides[event.side].active;
     if (event.index === undefined || event.index === activeIndex) await this.animateHp(event.side, event.hp);
     const key = event.source === 'drain' ? 'drain' : 'heal';
-    await this.say(key, { CREATURE: this.nameOf(event.side, event.index) });
+    await this.say(key, { ...this.nameVars(event.side, event.index) });
   }
 
   async animateHp(side, target) {
@@ -150,34 +152,34 @@ export class EventPlayer {
   status_applied(event) {
     this.scene.shown[event.side].status = { id: event.status };
     const key = event.rest ? 'status_som_rest' : `status_${event.status}${event.badly ? '_badly' : ''}`;
-    return this.say(key, { CREATURE: this.nameOf(event.side) });
+    return this.say(key, { ...this.nameVars(event.side) });
   }
 
   status_cured(event) {
     if (event.index === undefined || event.index === this.battle.sides[event.side].active) this.scene.shown[event.side].status = null;
     if (event.reason === 'rest') return null;
-    return this.say(`cured_${event.reason}`, { CREATURE: this.nameOf(event.side, event.index) });
+    return this.say(`cured_${event.reason}`, { ...this.nameVars(event.side, event.index) });
   }
 
-  status_prevented(event) { return this.say(`prevented_${event.reason}`, { CREATURE: this.nameOf(event.side) }); }
+  status_prevented(event) { return this.say(`prevented_${event.reason}`, { ...this.nameVars(event.side) }); }
 
   async status_damage(event) {
-    await this.say(`status_damage_${event.status}`, { CREATURE: this.nameOf(event.side) }, { wait: false });
+    await this.say(`status_damage_${event.status}`, { ...this.nameVars(event.side) }, { wait: false });
     await this.scene.blink(event.side, 1);
     await this.animateHp(event.side, event.hp);
   }
 
-  confused(event) { return this.say('confused', { CREATURE: this.nameOf(event.side) }, { wait: false }); }
+  confused(event) { return this.say('confused', { ...this.nameVars(event.side) }, { wait: false }); }
   confusion_hit() { return this.say('confusion_hit', {}, { wait: false }); }
-  volatile_applied(event) { return this.say(`volatile_${event.volatile}`, { CREATURE: this.nameOf(event.side) }); }
+  volatile_applied(event) { return this.say(`volatile_${event.volatile}`, { ...this.nameVars(event.side) }); }
 
   volatile_ended(event) {
     if (event.volatile !== 'confusion' && event.volatile !== 'trap') return null;
-    return this.say(`ended_${event.volatile}`, { CREATURE: this.nameOf(event.side) });
+    return this.say(`ended_${event.volatile}`, { ...this.nameVars(event.side) });
   }
 
   async stat_change(event) {
-    const variables = { STAT: STAT_LABELS[event.stat], CREATURE: this.nameOf(event.side) };
+    const variables = { STAT: STAT_LABELS[event.stat], ...this.nameVars(event.side) };
     if (event.blocked) {
       await this.say(event.delta >= 0 && event.stage >= 6 ? 'stat_blocked_up' : 'stat_blocked_down', variables);
       return;
@@ -206,8 +208,8 @@ export class EventPlayer {
 
   item_failed() { return this.say('item_failed'); }
   capture_blocked() { return this.say('capture_blocked'); }
-  revive(event) { return this.say('revive', { CREATURE: this.nameOf(event.side, event.index) }); }
-  pp_restored(event) { return this.say('pp_restored', { CREATURE: this.nameOf(event.side, event.index) }); }
+  revive(event) { return this.say('revive', { ...this.nameVars(event.side, event.index) }); }
+  pp_restored(event) { return this.say('pp_restored', { ...this.nameVars(event.side, event.index) }); }
 
   async capture_shake() {
     const { scene } = this;
@@ -247,7 +249,7 @@ export class EventPlayer {
 
   async exp_gain(event) {
     const { scene } = this;
-    await this.say('exp_gain', { CREATURE: creatureName(this.creatureAt(0, event.index)), NUMBER: event.amount }, { wait: false });
+    await this.say('exp_gain', { ...creatureVars(this.creatureAt(0, event.index)), NUMBER: event.amount }, { wait: false });
     const tracker = scene.expTracker(event.index);
     tracker.exp += event.amount;
     if (this.isShownPlayerCreature(event.index)) await this.fillExpBar(event.index);
@@ -278,13 +280,13 @@ export class EventPlayer {
       scene.shown[0].expRatio = 0;
     }
     hooks.playSfx('jingle_level_up');
-    await this.say('level_up', { CREATURE: creatureName(this.creatureAt(0, event.index)), NUMBER: event.level });
+    await this.say('level_up', { ...creatureVars(this.creatureAt(0, event.index)), NUMBER: event.level });
     await scene.showStatGains(event.previousStats, event.stats);
     if (shownCreature) await this.fillExpBar(event.index);
   }
 
   move_learned(event) {
-    return this.say('move_learned', { CREATURE: creatureName(this.creatureAt(0, event.index)), MOVE: MOVES_BY_ID[event.move].name });
+    return this.say('move_learned', { ...creatureVars(this.creatureAt(0, event.index)), MOVE: MOVES_BY_ID[event.move].name });
   }
 
   async learn_move_prompt(event) {

@@ -50,4 +50,4 @@ Monstre complet de la légende : crinière de lion, cornes de taureau, carapace 
 
 ## Sprites
 
-Face, dos et icône pour les trois stades : [rendus/starters-planche.png](../rendus/starters-planche.png), captures en jeu dans `rendus/flaquin/`, `rendus/ondeclat/`, `rendus/marevor/`.
+Face, dos et icône pour les trois stades : [rendus/planche-001-009.png](../rendus/planche-001-009.png), captures en jeu dans `rendus/flaquin/`, `rendus/ondeclat/`, `rendus/marevor/`.

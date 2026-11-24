@@ -1,4 +1,5 @@
 // The 150 species. Field reference: prompts/03-donnees-jeu.md.
+// `gender: 'f'` = feminine name (« une Tarasque »), masculine by default.
 // `minLevel` = lowest level at which the species can be met (wild or by evolution);
 // encounter tables (prompts 09 to 11) must respect it. `sprite: 'handmade'` = drawn in
 // src/gfx/sources/creatures/, otherwise a spec for src/gfx/creature-generator.js.
@@ -191,6 +192,7 @@ export const CREATURES = [
     id: 'marevor',
     number: 9,
     name: 'Tarasque',
+    gender: 'f',
     types: ['eau'],
     baseStats: { hp: 111, atk: 94, def: 121, spa: 52, spd: 96, spe: 56 },
     growth: 'medium',
