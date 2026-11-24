@@ -114,6 +114,10 @@ const MINI_ICONS = {
 
 function miniIconFrames(plan) {
   const rows = shapeRows(16, 16, MINI_ICONS[plan].map((part, index) => ({ z: index, ...part })), [], 1);
+  return bounceFrames(rows);
+}
+
+function bounceFrames(rows) {
   return [rows, shiftRows(rows, 0, -1)];
 }
 
@@ -151,7 +155,7 @@ function silhouette(rows) {
   return rows.map((row) => row.replace(/[0-3]/g, '3'));
 }
 
-/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<plan>/<n>", "logo/<word>", "title/azurel". */
+/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<plan>/<n>", "icon/<species>/<n>", "logo/<word>", "title/azurel". */
 export function buildUiFrames() {
   const frames = {};
   for (const [part, rows] of Object.entries(FRAME_TILES)) frames[`frame/${part}`] = rows;
@@ -166,6 +170,13 @@ export function buildUiFrames() {
   for (const plan of BODY_PLANS) {
     miniIconFrames(plan).forEach((rows, index) => {
       frames[`icon/${plan}/${index}`] = rows;
+    });
+  }
+  // Species icons of the hand-drawn creatures that have one (bestiary V2).
+  for (const [id, views] of Object.entries(HAND_DRAWN_CREATURES)) {
+    if (!views.icon) continue;
+    bounceFrames(views.icon).forEach((rows, index) => {
+      frames[`icon/${id}/${index}`] = rows;
     });
   }
   frames['logo/bestiora'] = logoRows('BESTIORA');

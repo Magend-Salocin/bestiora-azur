@@ -6,7 +6,12 @@ import path from 'node:path';
 import { PNG } from 'pngjs';
 import { ROOT, runElectron } from './run-electron.js';
 
-const OUTPUT_DIR = path.join(ROOT, 'docs', 'screenshots');
+// --preview <species>: bestiary V2 preview of one species, in docs/bestiaire-folklorique/rendus/<species>/.
+const previewIndex = process.argv.indexOf('--preview');
+const previewSpecies = previewIndex >= 0 ? process.argv[previewIndex + 1] ?? 'fenouillot' : null;
+const OUTPUT_DIR = previewSpecies
+  ? path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewSpecies)
+  : path.join(ROOT, 'docs', 'screenshots');
 const SCALE = 4;
 
 /** Nearest neighbor enlargement of a PNG buffer. */
@@ -22,7 +27,7 @@ export function enlargePng(buffer, scale) {
   return PNG.sync.write(target);
 }
 
-const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`]);
+const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies}`] : [])]);
 if (result.status !== 0) {
   process.stderr.write(`La capture a échoué (code ${result.status ?? result.signal}).\n`);
   process.exit(1);

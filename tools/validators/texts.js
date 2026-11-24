@@ -7,7 +7,7 @@ export const TEXT_LIMITS = {
   moveName: 12,
   moveDescriptionLines: 2,
   creatureName: 10,
-  creatureDescriptionLines: 3,
+  creatureDescriptionLines: 6, // two bestiary pages of 3 lines
   creatureCategory: 18,
   itemName: 17,
   itemDescriptionLines: 3,

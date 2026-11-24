@@ -2,11 +2,14 @@
 //   --capture=<dir>  README screenshots: each step of src/debug/capture-scenes.js returns the
 //                    160 × 144 game canvas as a PNG data URL, written as <step>.png
 //                    (tools/capture-screenshots.js enlarges them afterwards).
+//   --preview=<species>  with --capture: the bestiary V2 preview steps for that species.
 //   --perf           frame time measures of src/debug/perf-probe.js, printed as JSON on stdout.
 const fs = require('node:fs');
 const path = require('node:path');
 
 const CAPTURE_STEPS = ['title', 'town', 'menu', 'battle'];
+// Same list as PREVIEW_STEPS in src/debug/capture-scenes.js.
+const PREVIEW_STEPS = ['starter', 'bestiary', 'bestiary-2', 'party', 'battle-front', 'battle-back'];
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -18,10 +21,10 @@ async function waitForDebugTools(win) {
   throw new Error('Debug tools are missing (is the game running with --dev?)');
 }
 
-async function captureScreens(win, directory) {
+async function captureScreens(win, directory, { preview = false } = {}) {
   fs.mkdirSync(directory, { recursive: true });
   await waitForDebugTools(win);
-  for (const step of CAPTURE_STEPS) {
+  for (const step of preview ? PREVIEW_STEPS : CAPTURE_STEPS) {
     const dataUrl = await win.webContents.executeJavaScript(`window.debugCapture(${JSON.stringify(step)})`);
     fs.writeFileSync(path.join(directory, `${step}.png`), Buffer.from(dataUrl.split(',')[1], 'base64'));
   }

@@ -14,6 +14,7 @@ import { drawWindowFrame } from './window-frame.js';
 import { hooks } from '../overworld/hooks.js';
 
 const VISIBLE_ROWS = 7;
+const DESCRIPTION_LINES = 3;
 const REGION_ORIGIN = { x: 0, y: 16 };
 
 export function bestiaryCounts(bestiary) {
@@ -29,6 +30,7 @@ export class BestiaryScreen extends PromiseScene {
     this.index = 0;
     this.offset = 0;
     this.view = 'list';
+    this.page = 0;
     this.time = 0;
   }
 
@@ -53,12 +55,14 @@ export class BestiaryScreen extends PromiseScene {
       this.offset = scrollOffset(this.offset, this.index, VISIBLE_ROWS);
       if (input.justPressed('a') && this.isSeen(this.species)) {
         this.view = 'entry';
+        this.page = 0;
         hooks.playSfx(`cry_${this.species.id}`);
       }
       else if (input.justPressed('b')) this.done(null);
       return;
     }
     if (input.repeat('left') || input.repeat('right')) this.view = this.view === 'entry' ? 'zones' : 'entry';
+    if (input.justPressed('a') && this.view === 'entry') this.page = (this.page + 1) % this.descriptionPages().length;
     if (input.justPressed('b')) this.view = 'list';
   }
 
@@ -84,6 +88,16 @@ export class BestiaryScreen extends PromiseScene {
     drawText(ctx, `VUS ${seen}  PRIS ${caught}`, 8, 132);
   }
 
+  /** Description split in pages of 3 lines; A turns the page. */
+  descriptionPages() {
+    const species = this.species;
+    const text = this.isCaught(species) ? species.description : 'Capturez-la pour en savoir plus.';
+    const lines = wrapParagraph(text);
+    const pages = [];
+    for (let start = 0; start < lines.length; start += DESCRIPTION_LINES) pages.push(lines.slice(start, start + DESCRIPTION_LINES));
+    return pages;
+  }
+
   renderEntry(ctx) {
     const species = this.species;
     drawSprite(ctx, 'creatures', `${species.id}/front`, 4, 4);
@@ -94,8 +108,9 @@ export class BestiaryScreen extends PromiseScene {
     drawText(ctx, `T ${formatMeasure(species.height, 'm')}`, 8, 56);
     drawText(ctx, `P ${formatMeasure(species.weight, 'kg')}`, 80, 56);
     drawWindowFrame(ctx, 0, 72, SCREEN_WIDTH, 72);
-    const text = this.isCaught(species) ? species.description : 'Capturez-la pour en savoir plus.';
-    drawText(ctx, wrapParagraph(text).slice(0, 3).join('\n'), 8, 82);
+    const pages = this.descriptionPages();
+    drawText(ctx, pages[this.page % pages.length].join('\n'), 8, 82);
+    if (pages.length > 1 && Math.floor(this.time * 2) % 2 === 0) drawText(ctx, '▼', 144, 130);
   }
 
   renderZones(ctx) {

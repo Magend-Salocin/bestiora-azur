@@ -1,4 +1,4 @@
-# Folklomon refondu --- 151 créatures légendaires de France
+# Bestiaire refondu --- 151 créatures légendaires de France
 
 > **Version de travail.** Cette proposition organise 151 entrées en 12
 > familles. Elle distingue les figures folkloriques, les archétypes
@@ -362,6 +362,6 @@ Garder cette structure de 12 familles comme nouvelle base de travail,
 mais ne pas figer définitivement les 151 numéros avant une dernière
 vérification documentaire.
 
-Le but doit rester un Folklomon où chaque entrée possède une identité
+Le but doit rester un Bestiaire où chaque entrée possède une identité
 propre, une région, une description et une légende identifiable --- et
 non simplement un nom qui remplit une case.

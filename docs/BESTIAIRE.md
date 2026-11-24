@@ -6,15 +6,15 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 
 | N° | Nom | Types | Total | Évolution | Habitat | Niv. min |
 |---:|---|---|---:|---|---|---:|
-| 001 | Fenouillot | Flore | 318 | Fenouvert (niv. 16) | Forêt | 5 |
-| 002 | Fenouvert | Flore | 405 | Sylvenard (niv. 36) | Forêt | 16 |
-| 003 | Sylvenard | Flore | 530 | - | Forêt | 36 |
-| 004 | Braisille | Feu | 309 | Fournaise (niv. 16) | Volcan | 5 |
-| 005 | Fournaise | Feu | 405 | Pyrogrue (niv. 36) | Volcan | 16 |
-| 006 | Pyrogrue | Feu | 534 | - | Volcan | 36 |
-| 007 | Flaquin | Eau | 314 | Ondéclat (niv. 16) | Mer | 5 |
-| 008 | Ondéclat | Eau | 405 | Marévor (niv. 36) | Mer | 16 |
-| 009 | Marévor | Eau | 530 | - | Mer | 36 |
+| 001 | Korrigan | Flore | 318 | Korrigard (niv. 16) | Forêt | 5 |
+| 002 | Korrigard | Flore | 405 | Korriroi (niv. 36) | Forêt | 16 |
+| 003 | Korriroi | Flore | 530 | - | Forêt | 36 |
+| 004 | Galtza | Feu | 309 | Galtzabras (niv. 16) | Volcan | 5 |
+| 005 | Galtzabras | Feu | 405 | Galtzagor (niv. 36) | Volcan | 16 |
+| 006 | Galtzagor | Feu | 534 | - | Volcan | 36 |
+| 007 | Tarasquin | Eau | 314 | Taraskor (niv. 16) | Mer | 5 |
+| 008 | Taraskor | Eau | 405 | Tarasque (niv. 36) | Mer | 16 |
+| 009 | Tarasque | Eau | 530 | - | Mer | 36 |
 | 010 | Pivelin | Normal / Vent | 255 | Grivelin (niv. 14) | Prairie | 2 |
 | 011 | Grivelin | Normal / Vent | 360 | Aquilard (niv. 32) | Prairie | 14 |
 | 012 | Aquilard | Normal / Vent | 480 | - | Prairie | 32 |

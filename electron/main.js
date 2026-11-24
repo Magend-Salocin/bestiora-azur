@@ -12,6 +12,9 @@ const simulateSaveCrash = isDev && process.argv.includes('--simulate-save-crash'
 const captureArgument = process.argv.find((argument) => argument.startsWith('--capture='));
 const captureDirectory = isDev && captureArgument ? path.resolve(captureArgument.slice('--capture='.length)) : null;
 const measurePerf = isDev && process.argv.includes('--perf');
+// --preview=<species> (with --capture): bestiary V2 preview steps instead of the README ones.
+const previewArgument = process.argv.find((argument) => argument.startsWith('--preview='));
+const previewSpecies = captureDirectory && previewArgument ? previewArgument.slice('--preview='.length) : null;
 const devTask = captureDirectory || measurePerf;
 
 const WINDOW_WIDTH = 640;
@@ -70,6 +73,7 @@ function createWindow() {
   const query = process.argv.includes('--newgame') || devTask ? { newgame: '1' } : {};
   if (devTask) {
     query.devtask = '1';
+    if (previewSpecies) query.preview = previewSpecies;
     win.webContents.setAudioMuted(true);
     win.webContents.once('did-finish-load', () => runDevTask(win));
   }
@@ -84,7 +88,7 @@ function createWindow() {
 async function runDevTask(win) {
   const { captureScreens, measurePerformance } = require('./dev-tasks.js');
   try {
-    if (captureDirectory) await captureScreens(win, captureDirectory);
+    if (captureDirectory) await captureScreens(win, captureDirectory, { preview: Boolean(previewSpecies) });
     else await measurePerformance(win);
     app.exit(0);
   } catch (error) {

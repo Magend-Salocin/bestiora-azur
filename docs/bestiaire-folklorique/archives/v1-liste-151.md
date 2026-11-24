@@ -1,4 +1,4 @@
-# FOLKLOMON – LES 151 CRÉATURES LÉGENDAIRES DE FRANCE
+# BESTIAIRE – LES 151 CRÉATURES LÉGENDAIRES DE FRANCE
 
 **Projet :** RPG rétro inspiré des jeux de capture de créatures  
 **Direction artistique :** Game Boy / pixel art  
@@ -8,7 +8,7 @@
 
 ---
 
-## Règles du Folklomon
+## Règles du Bestiaire
 
 - Les créatures de base sont inspirées de traditions folkloriques françaises identifiables.
 - Les deux formes évoluées sont des créations originales destinées au jeu.
@@ -335,7 +335,7 @@ Pour chaque lignée, les trois formes devront respecter cette progression :
 
 Chaque créature devra ensuite recevoir les informations suivantes :
 
-- Numéro Folklomon
+- Numéro
 - Nom
 - Nom folklorique d'origine
 - Région d'origine
@@ -366,7 +366,7 @@ Les ouvrages et ressources suivants doivent servir à vérifier les noms, les va
 
 ## Règle éditoriale définitive
 
-Le Folklomon doit rester une réinterprétation ludique du folklore français.
+Le Bestiaire doit rester une réinterprétation ludique du folklore français.
 
 Les noms et les inspirations folkloriques seront documentés. Les évolutions, les statistiques, les attaques, les types et les designs seront des créations originales du jeu.
 

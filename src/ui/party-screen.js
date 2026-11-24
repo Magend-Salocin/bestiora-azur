@@ -3,6 +3,7 @@
 // Resolves with the chosen index, or null on B (unless `forced`).
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
 import { CREATURES_BY_ID } from '../data/creatures.js';
+import { hasFrame } from '../gfx/atlas.js';
 import { drawSprite } from '../gfx/draw.js';
 import { drawText } from '../gfx/font.js';
 import { getColor } from '../gfx/palette.js';
@@ -15,15 +16,14 @@ import { hooks } from '../overworld/hooks.js';
 
 const ROW_HEIGHT = 20;
 const MESSAGE_Y = 120;
-/** Icons of the hand-drawn species, which have no generator plan. */
+/** Plan icons of the hand-drawn species that have no icon of their own yet. */
 const HANDMADE_ICONS = {
-  fenouillot: 'quadruped', fenouvert: 'quadruped', sylvenard: 'quadruped',
-  braisille: 'bird', fournaise: 'bird', pyrogrue: 'bird',
-  flaquin: 'fish', ondeclat: 'quadruped', marevor: 'dragon',
   azurel: 'bird', glacerne: 'golem', volcarde: 'dragon', fulgorine: 'bird', mirelle: 'insect',
 };
 
+/** Icon frame prefix: the species' own icon when it has one, else its body plan's. */
 export function iconPlan(species) {
+  if (hasFrame('ui', `icon/${species}/0`)) return species;
   const sprite = CREATURES_BY_ID[species].sprite;
   return sprite === 'handmade' ? HANDMADE_ICONS[species] ?? 'blob' : sprite.plan;
 }

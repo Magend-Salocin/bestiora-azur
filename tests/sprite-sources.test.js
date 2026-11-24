@@ -95,6 +95,7 @@ test('hand-drawn creatures have valid 48×48 front and back views', () => {
   for (const [id, views] of Object.entries(HAND_DRAWN_CREATURES)) {
     assertValidFrames({ [`${id}/front`]: views.front, [`${id}/back`]: views.back }, { width: 48, height: 48 });
     assert.notDeepEqual(views.front, views.back, `${id}: back view identical to front`);
+    if (views.icon) assertValidFrames({ [`${id}/icon`]: views.icon }, { width: 16, height: 16 });
   }
 });
 
@@ -106,7 +107,8 @@ test('UI sources are valid and complete', () => {
   assert.equal(count('status/'), 5);
   assert.equal(count('badge/'), 8);
   assert.equal(count('capsule/'), 3);
-  assert.equal(count('icon/'), 22);
+  const speciesIcons = Object.values(HAND_DRAWN_CREATURES).filter((views) => views.icon).length;
+  assert.equal(count('icon/'), 22 + 2 * speciesIcons);
   for (const id of ['hp/frame', 'hp/high', 'hp/mid', 'hp/low', 'xp/frame', 'xp/fill', 'logo/bestiora', 'title/azurel']) {
     assert.ok(frames[id], `${id} missing`);
   }
