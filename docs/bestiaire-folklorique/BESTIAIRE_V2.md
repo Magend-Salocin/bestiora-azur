@@ -56,7 +56,7 @@ Pour lire les fiches archivées :
 4. Mettre à jour l'espèce dans `src/data/creatures.js` : nom, genre, catégorie, taille, poids, description, et `sprite: 'handmade'`.
 5. Remplacer les anciens noms cités dans les dialogues (`src/data/texts/`), puis `npm run atlas`, `npm run validate`, `npm test`.
 6. `npm run planche -- <de>-<à>` : planche du lot dans `rendus/planche-<de>-<à>.png` (face, dos, icône).
-7. `npm run screenshots -- --preview <id>` : captures dans `rendus/<id>/` (starter, bestiaire, équipe, combat de face et de dos).
+7. `npm run screenshots -- --preview <id, nom ou numéro>` : captures dans `rendus/<numéro>-<nom>/`, par exemple `rendus/022-dame-verte/` (starter, bestiaire, équipe, combat de face et de dos).
 
 ## Plan de production
 

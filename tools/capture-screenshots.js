@@ -6,11 +6,26 @@ import path from 'node:path';
 import { PNG } from 'pngjs';
 import { ROOT, runElectron } from './run-electron.js';
 
-// --preview <species>: bestiary V2 preview of one species, in docs/bestiaire-folklorique/rendus/<species>/.
+import { CREATURES } from '../src/data/creatures.js';
+
+/** Folder of a species' captures: number and displayed name, e.g. « 022-dame-verte ». */
+export function previewFolder(species) {
+  const slug = species.name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return `${String(species.number).padStart(3, '0')}-${slug}`;
+}
+
+// --preview <id | name | number>: bestiary V2 preview of one species, in
+// docs/bestiaire-folklorique/rendus/<number>-<name>/ (see previewFolder).
 const previewIndex = process.argv.indexOf('--preview');
-const previewSpecies = previewIndex >= 0 ? process.argv[previewIndex + 1] ?? 'fenouillot' : null;
+const previewArgument = previewIndex >= 0 ? process.argv[previewIndex + 1] ?? 'fenouillot' : null;
+const previewSpecies = previewArgument === null ? null : CREATURES.find((creature) =>
+  [creature.id, creature.name.toLowerCase(), String(creature.number), String(creature.number).padStart(3, '0')].includes(previewArgument.toLowerCase()));
+if (previewArgument !== null && !previewSpecies) {
+  process.stderr.write(`Espèce inconnue : ${previewArgument}\n`);
+  process.exit(1);
+}
 const OUTPUT_DIR = previewSpecies
-  ? path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewSpecies)
+  ? path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewFolder(previewSpecies))
   : path.join(ROOT, 'docs', 'screenshots');
 const SCALE = 4;
 
@@ -27,7 +42,7 @@ export function enlargePng(buffer, scale) {
   return PNG.sync.write(target);
 }
 
-const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies}`] : [])]);
+const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies.id}`] : [])]);
 if (result.status !== 0) {
   process.stderr.write(`La capture a échoué (code ${result.status ?? result.signal}).\n`);
   process.exit(1);

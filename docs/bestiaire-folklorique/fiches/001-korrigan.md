@@ -29,7 +29,7 @@ Emplacements `fenouillot`, `fenouvert`, `sylvenard` (starter Flore). Stats, atta
 - Dos : même silhouette, cape couvrant tout le dos, cheveux de mousse, oreilles et chapeau visibles.
 - Icône : chapeau, oreilles, visage et barbe.
 - Inspiration : [concepts/famille-01-korrigan-poulpiquet-fadet.png](../concepts/famille-01-korrigan-poulpiquet-fadet.png) (chapeau, oreilles, cape de feuilles), redessiné pour la palette 4 teintes.
-- Rendu : [rendus/fenouillot/](../rendus/fenouillot/).
+- Rendu : [rendus/001-korrigan/](../rendus/001-korrigan/).
 
 ## 002 Korrigard
 
