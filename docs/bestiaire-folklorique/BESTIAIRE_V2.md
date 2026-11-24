@@ -71,7 +71,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 3 | Rivières et grottes (038 à 049) | 12 | Fait |
 | 4 | Côte et prairies (050 à 061) | 12 | Fait |
 | 5 | Prairies et ville (062 à 074) | 13 | Fait |
-| 6 | Ville et grottes (075 à 087) | 13 | |
+| 6 | Ville et grottes (075 à 087) | 13 | Fait |
 | 7 | Ruines (088 à 100) | 13 | |
 | 8 | Montagne et neige (101 à 114) | 14 | |
 | 9 | Marais et ville (115 à 128) | 14 | |
@@ -117,13 +117,13 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 067 | Cocolet > Cocomarin / Cocorage | Fullettu > Fullemarin / Fulletonne | Normal > Eau / Foudre | Fullettu | Corse | F, J, J (fait) |
 | 070 | Fumeron > Fumelard > Cendrador | Lébérou > Lébérouge > Lébérombre | Feu (Ombre au stade 3) | Lébérou | Périgord | F, J, J (fait) |
 | 073 | Boulonnet > Boulonnier | Gobelinet > Gobelin | Métal, Foudre | Gobelin | Normandie | J, A (fait) |
-| 075 | Crassou > Crassolard | Veluchon > Velucorne | Toxique | La Velue | La Ferté-Bernard | J, J |
-| 077 | Piquevolt | Fouletot | Foudre | Fouletot, lutin des écuries | Franche-Comté | F |
-| 078 | Ampoulin > Ampoulard > Ampérion | Follaton > Follaclair > Follorage | Foudre (Métal au stade 3) | Follaton | Savoie | F, J, J |
-| 081 | Sombrelin > Sombrecor | Croquemine > Croquefrou | Ombre | Croquemitaine | France | J, J |
-| 083 | Stalactor | Dame noire | Roche, Ombre | Dames noires des grottes | À vérifier | F |
-| 084 | Lombrin > Lombrigant | Lycastre > Lycastron | Terre | Lycastre | Provence, à vérifier | F, J |
-| 086 | Filandrin > Filandrix | Câmecru > Câmecruse | Insecte, Ombre | Câme-Cruse | À vérifier | F, J |
+| 075 | Crassou > Crassolard | Veluchon > Velucorne | Toxique | La Velue | La Ferté-Bernard | J, J (fait) |
+| 077 | Piquevolt | Fouletot | Foudre | Fouletot, lutin des écuries | Franche-Comté | F (fait) |
+| 078 | Ampoulin > Ampoulard > Ampérion | Follaton > Follaclair > Follorage | Foudre (Métal au stade 3) | Follaton | Savoie | F, J, J (fait) |
+| 081 | Sombrelin > Sombrecor | Croquemine > Croquefrou | Ombre | Croquemitaine | France | J, J (fait) |
+| 083 | Stalactor | Dame noire | Roche, Ombre | Dames noires des grottes | À vérifier | F (fait) |
+| 084 | Lombrin > Lombrigant | Lycastre > Lycastron | Terre | Lycastre | Provence, à vérifier | F, J (fait) |
+| 086 | Filandrin > Filandrix | Câmecru > Câmecruse | Insecte, Ombre | Câme-Cruse | À vérifier | F, J (fait) |
 | 088 | Fusiblet > Fusiblard | Moinillon > Moinbourru | Foudre, Ombre | Moine bourru | Paris | J, F |
 | 090 | Brumelin > Brumoire > Brumaître | Blanchin > Blancôme > Blancélune | Ombre, Arcane | Dame blanche | France | J, J, J |
 | 093 | Cierget > Lustrombre | Ankoulet > Ankou | Ombre, Feu | Ankou et sa lanterne | Bretagne | J, F |

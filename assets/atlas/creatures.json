@@ -1814,22 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "762d84328e7bc4bd67151132cb23ee52242e9e644155dece723974bc1683f42b",
+    "pngHash": "2e353b0f59b8b5608af530c6050f4fab2622e846bbb28f4876b6264023ebf3f1",
     "source": "src/data/creatures.js",
     "generated": [
-      "crassou",
-      "crassolard",
-      "piquevolt",
-      "ampoulin",
-      "ampoulard",
-      "amperion",
-      "sombrelin",
-      "sombrecor",
-      "stalactor",
-      "lombrin",
-      "lombrigant",
-      "filandrin",
-      "filandrix",
       "fusiblet",
       "fusiblard",
       "brumelin",
@@ -1968,7 +1955,20 @@
       "fumelard",
       "cendrador",
       "boulonnet",
-      "boulonnier"
+      "boulonnier",
+      "crassou",
+      "crassolard",
+      "piquevolt",
+      "ampoulin",
+      "ampoulard",
+      "amperion",
+      "sombrelin",
+      "sombrecor",
+      "stalactor",
+      "lombrin",
+      "lombrigant",
+      "filandrin",
+      "filandrix"
     ]
   }
 }

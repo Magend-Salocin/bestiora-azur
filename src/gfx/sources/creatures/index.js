@@ -79,6 +79,19 @@ import fumelard from './fumelard.js';
 import cendrador from './cendrador.js';
 import boulonnet from './boulonnet.js';
 import boulonnier from './boulonnier.js';
+import crassou from './crassou.js';
+import crassolard from './crassolard.js';
+import piquevolt from './piquevolt.js';
+import ampoulin from './ampoulin.js';
+import ampoulard from './ampoulard.js';
+import amperion from './amperion.js';
+import sombrelin from './sombrelin.js';
+import sombrecor from './sombrecor.js';
+import stalactor from './stalactor.js';
+import lombrin from './lombrin.js';
+import lombrigant from './lombrigant.js';
+import filandrin from './filandrin.js';
+import filandrix from './filandrix.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -102,4 +115,6 @@ export const HAND_DRAWN_CREATURES = {
   petalune, corolline, lampyrin, lampyrex, bovaillon,
   cocolet, cocomarin, cocorage,
   fumeron, fumelard, cendrador, boulonnet, boulonnier,
+  crassou, crassolard, piquevolt, ampoulin, ampoulard, amperion, sombrelin,
+  sombrecor, stalactor, lombrin, lombrigant, filandrin, filandrix,
 };

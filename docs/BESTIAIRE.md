@@ -80,19 +80,19 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 072 | Lébérombre | Feu / Ombre | 525 | - | Prairie | 40 |
 | 073 | Gobelinet | Métal / Foudre | 300 | Gobelin (niv. 30) | Ville | 20 |
 | 074 | Gobelin | Métal / Foudre | 470 | - | Ville | 30 |
-| 075 | Crassou | Toxique | 300 | Crassolard (niv. 30) | Ville | 20 |
-| 076 | Crassolard | Toxique | 460 | - | Ville | 30 |
-| 077 | Piquevolt | Foudre | 400 | - | Ville | 20 |
-| 078 | Ampoulin | Foudre | 290 | Ampoulard (niv. 26) | Ville | 21 |
-| 079 | Ampoulard | Foudre | 405 | Ampérion (niv. 42) | Ville | 26 |
-| 080 | Ampérion | Foudre / Métal | 520 | - | Ville | 42 |
-| 081 | Sombrelin | Ombre | 310 | Sombrecor (niv. 30) | Grotte | 20 |
-| 082 | Sombrecor | Ombre | 470 | - | Grotte | 30 |
-| 083 | Stalactor | Roche / Ombre | 420 | - | Grotte | 22 |
-| 084 | Lombrin | Terre | 300 | Lombrigant (niv. 28) | Grotte | 20 |
-| 085 | Lombrigant | Terre | 465 | - | Grotte | 28 |
-| 086 | Filandrin | Insecte / Ombre | 290 | Filandrix (niv. 28) | Grotte | 21 |
-| 087 | Filandrix | Insecte / Ombre | 460 | - | Grotte | 28 |
+| 075 | Veluchon | Toxique | 300 | Velucorne (niv. 30) | Ville | 20 |
+| 076 | Velucorne | Toxique | 460 | - | Ville | 30 |
+| 077 | Fouletot | Foudre | 400 | - | Ville | 20 |
+| 078 | Follaton | Foudre | 290 | Follaclair (niv. 26) | Ville | 21 |
+| 079 | Follaclair | Foudre | 405 | Follorage (niv. 42) | Ville | 26 |
+| 080 | Follorage | Foudre / Métal | 520 | - | Ville | 42 |
+| 081 | Croquemine | Ombre | 310 | Croquefrou (niv. 30) | Grotte | 20 |
+| 082 | Croquefrou | Ombre | 470 | - | Grotte | 30 |
+| 083 | Dame noire | Roche / Ombre | 420 | - | Grotte | 22 |
+| 084 | Lycastre | Terre | 300 | Lycastron (niv. 28) | Grotte | 20 |
+| 085 | Lycastron | Terre | 465 | - | Grotte | 28 |
+| 086 | Câmecru | Insecte / Ombre | 290 | Câmecruse (niv. 28) | Grotte | 21 |
+| 087 | Câmecruse | Insecte / Ombre | 460 | - | Grotte | 28 |
 | 088 | Fusiblet | Foudre / Ombre | 320 | Fusiblard (niv. 34) | Ruines | 30 |
 | 089 | Fusiblard | Foudre / Ombre | 490 | - | Ruines | 34 |
 | 090 | Brumelin | Ombre / Arcane | 300 | Brumoire (niv. 30) | Ruines | 26 |
