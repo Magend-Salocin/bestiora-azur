@@ -77,7 +77,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 9 | Marais et ville (115 à 128) | 14 | Fait |
 | 10 | Mer et volcan (129 à 141) | 13 | Fait |
 | 11 | Sommets, légendaires et mythique (142 à 150) | 9 | Fait |
-| 12 | Finitions : identifiants, migration des sauvegardes, retrait du générateur, captures du README, documentation | 0 | |
+| 12 | Finitions : identifiants (sans migration des sauvegardes), retrait du générateur, captures du README, documentation | 0 | Fait |
 
 ## Correspondance des 150 emplacements
 

@@ -115,7 +115,7 @@ Le joueur a deux variantes : `joueur` ou `joueuse` selon le choix fait au début
 
 ## Les portraits de combat
 
-En combat, l'adversaire apparaît en grand (48 × 48), et toi de dos. Ces portraits sont fabriqués avec la même machine à dessiner que les bestioles ([src/gfx/shape-renderer.js](../../src/gfx/shape-renderer.js)) : des ellipses pour la tête, un polygone pour les épaules, etc.
+En combat, l'adversaire apparaît en grand (48 × 48), et toi de dos. Ces portraits sont fabriqués par une machine à dessiner, [src/gfx/shape-renderer.js](../../src/gfx/shape-renderer.js), sur le même principe que les bestioles du chapitre [04](04-bestioles-dessin.md) : des ellipses pour la tête, un polygone pour les épaules, etc.
 
 La fiche d'un portrait, dans [src/gfx/sources/trainers/index.js](../../src/gfx/sources/trainers/index.js), a plus de choix :
 

@@ -2,306 +2,161 @@
 
 Ce que tu vas apprendre :
 
-- pourquoi 136 bestioles sont dessinées par un programme, et 14 à la main ;
-- ce qu'est une « recette de bestiole » (plan, graine, taille, accessoires, motif) ;
-- comment le programme transforme des cercles et des triangles en pixel art ;
-- pourquoi une bestiole et son évolution se ressemblent.
+- comment est faite l'image d'une bestiole (une grille de 48 × 48 caractères) ;
+- comment on la dessine avec des formes simples plutôt que pixel par pixel ;
+- comment le dessin passe d'un fichier de travail jusqu'au jeu ;
+- comment vérifier son dessin avant de jouer.
 
-C'est le chapitre le plus important pour comprendre la conception du jeu.
+C'est le chapitre le plus important pour comprendre comment le jeu a été illustré.
 
-## Deux façons de dessiner
+## Une bestiole, c'est trois grilles
 
-Dessiner 150 bestioles, de face et de dos, à la main, pixel par pixel, prendrait des semaines. Le jeu utilise donc deux méthodes :
+Les 150 bestioles sont toutes dessinées à la main. Chacune a son propre fichier dans [src/gfx/sources/creatures/](../../src/gfx/sources/creatures/), qui porte son identifiant : [fullettu.js](../../src/gfx/sources/creatures/fullettu.js), [dame_noire.js](../../src/gfx/sources/creatures/dame_noire.js)…
 
-| Méthode | Combien | Qui | Où |
-| --- | --- | --- | --- |
-| Dessin à la main | 14 | Les 9 starters et leurs évolutions, les 4 légendaires, la mythique | [src/gfx/sources/creatures/](../../src/gfx/sources/creatures/) |
-| Générateur | 136 | Toutes les autres | [src/gfx/creature-generator.js](../../src/gfx/creature-generator.js) |
+Ce fichier contient trois grilles de caractères, sur le principe de la capsule du chapitre [02](02-pixels-et-couleurs.md) :
 
-Les bestioles les plus importantes de l'histoire ont droit à un dessin soigné. Les autres sont fabriquées par une machine à dessiner.
+| Grille | Taille | Où on la voit |
+| --- | --- | --- |
+| `front` | 48 × 48 | de face : l'adversaire en combat, le Bestiaire |
+| `back` | 48 × 48 | de dos : ta propre bestiole en combat |
+| `icon` | 16 × 16 | la petite icône animée de l'écran d'équipe |
 
-## Les bestioles dessinées à la main
-
-Chaque bestiole dessinée à la main a son propre fichier, avec deux grilles de 48 × 48 caractères : `front` (de face) et `back` (de dos, vue par le joueur en combat). C'est exactement le principe de la capsule du chapitre [02](02-pixels-et-couleurs.md), en plus grand.
-
-Voici le début du Korrigan, dans [src/gfx/sources/creatures/korrigan.js](../../src/gfx/sources/creatures/korrigan.js). Tu peux reconnaître le haut de ses deux grandes oreilles :
+Chaque caractère est un pixel : `0` le plus clair, `1` et `2` les teintes du milieu, `3` le plus foncé (l'encre), et `.` pour la transparence. Voici le milieu du Fullettu, un lutin corse caché dans une bogue de châtaigne. Tu peux repérer ses yeux (`00` sur `03`) et sa bouche (`30003`) :
 
 ```text
-.........33..........................33.........
-........31233......................33123........
-.......3111123....................3111223.......
-.......31111223..................31211223.......
-.......311112123................311211223.......
-.......3111001123..............3111001223.......
+...........32222223100111001232222233...........
+...........33322223103111031232222333...........
+............332222311111111123222333............
+.............3222232111111112322233.............
+............322222232130003232222233............
+............333222223223332322222333............
 ```
 
-Le fichier [src/gfx/sources/creatures/index.js](../../src/gfx/sources/creatures/index.js) liste ces 14 bestioles. Pour elles, la fiche de [src/data/creatures.js](../../src/data/creatures.js) contient simplement `sprite: 'handmade'` (« fait main »).
+Les règles de style sont les mêmes pour toutes les bestioles :
 
-## La recette d'une bestiole générée
+- un contour d'un pixel en couleur `3` autour de la silhouette ;
+- la lumière vient d'en haut à gauche : le bord en bas à droite de chaque partie est plus foncé ;
+- les pieds posent sur la ligne 46 de la grille, pour que toutes les bestioles soient au même niveau dans l'arène.
 
-Pour les 136 autres, la fiche contient une **recette** à la place du dessin. Celle du Farfadet, un petit oiseau des prairies :
+## Dessiner avec des formes
 
-```js
-sprite: { plan: 'bird', seed: 1013, size: 1, features: [], pattern: 'light_belly' },
-```
+Taper 2 304 caractères à la main pour chaque vue serait long, et la moindre correction obligerait à tout retaper. Le jeu utilise donc un petit outil, le peintre de formes : [tools/creature-painter.js](../../tools/creature-painter.js). On lui décrit des formes simples, et il remplit la grille.
 
-Cinq ingrédients :
-
-| Ingrédient | Signification | Farfadet |
+| Forme | Ce qu'elle dessine | Exemple |
 | --- | --- | --- |
-| `plan` | La forme du corps | `bird` : un oiseau |
-| `seed` | La graine, un nombre qui décide des petits détails | 1013 |
-| `size` | La taille, de 1 (petit) à 3 (grand) | 1 : petit |
-| `features` | Les accessoires : cornes, ailes, queue de flamme… | aucun |
-| `pattern` | Le motif sur le corps | `light_belly` : ventre clair |
+| `ellipse(cx, cy, rx, ry)` | un rond étiré, de centre (cx, cy) | une tête, un ventre, un pied |
+| `poly([x, y], [x, y], …)` | une forme à angles, point par point | une corne, une oreille, une flamme |
+| `capsule([[x, y], …], r)` | un boudin qui suit un chemin, d'épaisseur r | une queue, un bras, une patte |
+| `rect(x0, y0, x1, y1)` | un rectangle | une lanterne, un socle |
+| `union(a, b, …)` | plusieurs formes réunies en une | deux pieds |
+| `minus(a, b)` | la forme a, trouée par la forme b | une bogue ouverte |
+| `mirrorX(forme)` | la forme et son reflet de l'autre côté | deux oreilles symétriques |
 
-Avec cette seule ligne, le programme dessine le Farfadet de face et de dos. Toujours exactement le même, à chaque fois.
+Les coordonnées sont des pixels : x de 0 (à gauche) à 47 (à droite), y de 0 (en haut) à 47 (en bas).
 
-### Ingrédient 1 : le plan du corps
+### Les calques
 
-Il existe 11 plans, comme 11 gabarits de pâte à modeler :
+Une bestiole est une liste de **calques**, peints dans l'ordre, du plus lointain au plus proche, comme des feuilles de papier découpées et posées les unes sur les autres. La fonction `paint` reçoit cette liste. Chaque calque peut avoir :
 
-| Plan | Forme | Nombre de bestioles |
-| --- | --- | --- |
-| `quadruped` | Animal à quatre pattes | 37 |
-| `blob` | Boule molle, sans pattes | 21 |
-| `insect` | Insecte à six pattes et antennes | 15 |
-| `bird` | Oiseau avec ailes et bec | 12 |
-| `golem` | Créature carrée, en pierre ou en métal | 12 |
-| `ghost` | Fantôme avec un bas en dents de scie | 11 |
-| `serpent` | Serpent enroulé, vu de côté | 7 |
-| `biped` | Debout sur deux pattes | 6 |
-| `fish` | Poisson, vu de côté | 6 |
-| `plant` | Plante avec des feuilles sur la tête | 6 |
-| `dragon` | Dragon avec ailes et cornes | 3 |
+| Champ | Rôle |
+| --- | --- |
+| `shape` | la forme du calque |
+| `tone` | sa couleur principale, de 0 à 3 |
+| `shade` | la couleur du bord en bas à droite (l'ombre) |
+| `light` | une petite zone plus claire, `{ tone, shape }`, souvent en haut à gauche (le reflet) |
+| `outline` | `false` pour ne pas tracer de contour (le contour est tracé par défaut) |
+| `pixels` | des pixels posés un par un à la fin : yeux, bouche, étincelles |
 
-Chaque plan est une liste de **parties** (tête, corps, pattes, ailes…). Chaque partie est faite de formes simples : ellipses (des ronds étirés), polygones (des formes à angles), capsules (des boudins) et rectangles.
+Le contour de chaque calque est tracé juste avant lui, autour de sa forme. Quand une tête est posée sur un corps, son contour passe donc sur le corps : c'est ce trait qui sépare la tête du reste.
 
-Par exemple, le plan `biped` dit, en simplifiant :
+### Un exemple réel : le Fullettu
 
-```js
-{ role: 'limb', ... shapes: deux jambes en forme de boudin },
-{ role: 'limb', ... shapes: deux pieds en forme d'ellipse },
-{ role: 'body', ... shapes: une grosse ellipse pour le ventre },
-{ role: 'limb', ... shapes: deux bras },
-{ role: 'head', ... shapes: une ellipse pour la tête },
-```
-
-Chaque partie a un numéro `z` : la profondeur. Plus le `z` est grand, plus la partie est devant. La tête (z = 5) passe devant le corps (z = 3), qui passe devant les jambes (z = 1). Comme des feuilles de papier découpées et superposées.
-
-Beaucoup de formes sont dessinées une seule fois, pour le côté gauche, puis copiées en miroir pour le côté droit (`mirror`). La bestiole est donc symétrique, comme un papillon. Sauf le serpent et le poisson, vus de profil.
-
-### Ingrédient 2 : la graine
-
-La graine (`seed`) est le secret qui rend chaque bestiole différente. On la donne à la machine à hasard du chapitre [01](01-vue-ensemble.md), qui en tire les **traits** de la bestiole :
+Voici, un peu raccourci, le dessin de face du Fullettu, dans [tools/creature-designs/05-fullettu.js](../../tools/creature-designs/05-fullettu.js) :
 
 ```js
-function drawTraits(seed) {
-  const rng = createRng(seed);
-  return {
-    headScale: 0.9 + rng.next() * 0.25,   // tête un peu plus petite ou plus grosse
-    bodyWidth: 0.85 + rng.next() * 0.3,   // corps plus fin ou plus large
-    limbLength: 0.9 + rng.next() * 0.2,   // pattes plus courtes ou plus longues
-    eyeStyle: pick(['small', 'round', 'round', 'angry', 'sleepy', 'big']),
-    eyeSpacing: 0.25 + rng.next() * 0.2,  // yeux rapprochés ou écartés
-    mouth: pick(['none', 'line', 'smile', 'open']),
-    darkBody: rng.next() < 0.2,           // 1 chance sur 5 d'avoir un corps foncé
-    ...
-  };
+const C1 = {
+  feet: union(ellipse(19.5, 44.6, 3, 1.5), ellipse(28.5, 44.6, 3, 1.5)), // deux pieds sur la ligne 46
+  husk: husk(24, 34, 10, 16),               // la bogue : un rond hérissé de 16 piquants
+  opening: ellipse(24, 34, 6.5, 5),         // le trou sombre dans la bogue
+  face: ellipse(24, 35, 5.5, 4),            // le visage du lutin
+  horns: mirrorX(poly([20, 31], [19, 27], [22, 30])), // deux petites cornes
+};
+
+function fullettuFront() {
+  return toRows(paint([
+    { shape: C1.feet, tone: 1, shade: 2 },
+    { shape: C1.husk, tone: 2, shade: 3, light: { tone: 1, shape: ellipse(18, 28, 3, 2) } },
+    { shape: C1.opening, tone: 3, outline: false },
+    { shape: C1.horns, tone: 1, outline: false },
+    { shape: C1.face, tone: 1, shade: 2, pixels: [
+      ...stamp(20, 33, ['00...00', '03...03']), // les yeux
+      ...stamp(22, 37, ['30003', '.333.']),     // le sourire
+    ] },
+  ]));
 }
 ```
 
-(`rng.next()` donne un nombre au hasard entre 0 et 1.)
+Lis les calques dans l'ordre : d'abord les pieds, puis la bogue qui les recouvre en partie, puis le trou noir, les cornes, et enfin le visage avec ses yeux et sa bouche. `stamp` est un tampon encreur : une mini-grille de caractères posée à un endroit précis. `toRows` transforme le résultat en lignes de texte, comme celles qu'on a vues plus haut.
 
-Les yeux sont de petits tampons dessinés à l'avance. Le style `round` est écrit deux fois dans la liste : il sort donc deux fois plus souvent que les autres.
+`husk` n'est pas une forme du peintre : c'est une petite fonction écrite dans ce module, qui fabrique un polygone en étoile. Chaque module peut ainsi se créer ses propres formes.
 
-```text
-small   round   big     angry   sleepy
- 03      .33    .33.    3..     333
- 33      303    3033    .33
-         333    3333    333
-                .33.
-```
+Une astuce : la couleur `0` est aussi la couleur du fond de l'écran. Une forme peinte seulement en `0` disparaît, il ne reste que son contour. On peint donc plutôt en `1`, avec un reflet (`light`) en `0` au centre.
 
-Le hasard ne fait pas que la graine : le programme mélange la graine avec le nom du plan. Ainsi, un oiseau et un serpent qui auraient la même graine n'auraient pas le même visage.
+### La vue de dos et l'icône
 
-Voici deux boules (`blob`) identiques sauf la graine. La première a des yeux « en colère », la seconde de grands yeux ronds, un corps plus large et une bouche différente :
+La vue de dos est une deuxième fonction, avec les mêmes formes : pas de visage, le dos de la tête, et parfois des parties qui passent devant (une queue, des ailes).
 
-```text
-graine 1                                          graine 2
-.....................333333.....................  .....................333333.....................
-...................3311111233...................  ..................333111112333..................
-.................33111111111233.................  ................3311111111111233................
-................3111111111111123................  ...............311111111111111123...............
-...............311100011111111123...............  ..............31110001111111111123..............
-...............311100011111111123...............  .............3111000001111111111123.............
-..............31111001111111111223..............  ............311111003111111031111223............
-.............3311113331111333112233.............  ............311111133111111331111223............
-............323111111111111111122323............  ............311111111111111111111223............
-............323111111111111111122323............  ............311111111111111111111223............
-...........31131111111111111112223223...........  ...........33111111111111111111122233...........
-...........32232111111111111122223223...........  ...........33211111111111111111222233...........
-...........32223211111111111222232223...........  ...........32321111111111111112222323...........
-............333332111111111222233333............  ............333211111111111122222333............
-.................32211112222223.................  ...............322221111222222223...............
-..................322222222223..................  ................3322222222222233................
-...................3332222333...................  ..................333322223333..................
-......................3333......................  ......................3333......................
-```
+L'icône de 16 × 16 est peinte avec la même fonction `paint`, dans le coin en haut à gauche de la grille, puis découpée par `iconFrom`. Le jeu fabrique tout seul sa deuxième image, décalée d'un pixel vers le haut : c'est ce qui fait sautiller les icônes dans l'écran d'équipe.
 
-### Ingrédient 3 : la taille, et le secret des évolutions
+## Du module de dessin au jeu
 
-La taille va de 1 à 3. Elle sert à agrandir le dessin : à la taille 1, la bestiole est dessinée à environ 62 % de sa taille maximale, à la taille 2 à 80 %, à la taille 3 à 98 %.
-
-Voici le secret le plus malin du générateur : **une lignée garde la même graine**. Seules la taille et les accessoires changent.
+Les fichiers de travail sont rangés dans [tools/creature-designs/](../../tools/creature-designs/), un module par famille de bestioles. Chaque module se termine par une liste `line` qui donne, pour chaque espèce, son identifiant et ses trois grilles :
 
 ```js
-// Farfadet, 1er stade
-sprite: { plan: 'bird', seed: 1013, size: 1, features: [],        pattern: 'light_belly' },
-// Farfandole, 2e stade
-sprite: { plan: 'bird', seed: 1013, size: 2, features: ['crest'], pattern: 'light_belly' },
-// Farfator, 3e stade
-sprite: { plan: 'bird', seed: 1013, size: 3, features: ['crest'], pattern: 'light_belly' },
+export const line = [
+  { id: 'fullettu', front: fullettuFront(), back: fullettuBack(), icon: FULLETTU_ICON },
+  { id: 'fullemarin', front: fullemarinFront(), back: fullemarinBack(), icon: FULLEMARIN_ICON },
+  { id: 'fulletonne', front: fulletonneFront(), back: fulletonneBack(), icon: FULLETONNE_ICON },
+];
 ```
 
-Même graine, donc mêmes proportions, mêmes yeux, même bouche : on reconnaît la famille. En grandissant, l'oiseau gagne une crête. Compare le petit Farfadet et le grand Farfator :
+Ensuite, quatre étapes :
 
-```text
-Farfadet (taille 1)                                Farfator (taille 3, avec crête)
-.......................33.......................  ......................3..3......................
-....................33312333....................  .....................333333.....................
-...................3111111123...................  .....................333333.....................
-..................311011111123..................  ....................33222333....................
-...........3.....31100011111223.....3...........  ...................3332223333...................
-..........3233...31111111111223...3323..........  ...................3222222333...................
-..........31123..31103111103223..31223..........  ...................3333333233...................
-..........311123.31133111133223.311123..........  ...................3333333333...................
-..........3111123311111111122233111223..........  ..................331111111233..................
-.........321111123211221111222311112223.........  .................33111111111233.................
-..........3111111231111332222311112223..........  ................3111111111111123................
-..........3211111232223113222311112223..........  ...............311110111111111123...............
-...........31111223332233223331112223...........  ...............311100011111111123...............
-...........32111223103333331231122223...........  .....333......31111000111111111223......333.....
-............321123111000001122322223............  ....31123.....31111111111111111223.....31223....
-.............3222311100000012232223.............  ....311123....31111133111113311223....311223....
-..............33231110000001223233..............  ....3111123...31111303111130311223...3111123....
-................3311000000012233................  ....311111233.31111333111133311223.331111123....
-.................32100000001223.................  ...311111111233111111111111111222331111111223...
-..................311000001223..................  ...311111111123211111111111111222311111112223...
-..................321000011223..................  ...321111111112311112222111112223111111112223...
-...................3221111223...................  ....3111111111132111123333112222311111112223....
-....................32222223....................  ....3211111111123211131111322223111111112223....
-....................33333333....................  .....31111111122232222311322223111111112223.....
-....................33333333....................  .....32111111122313322233222332311111112223.....
-.....................33..33.....................  ......311111112311103333333311223111112223......
-                                                  (et encore 18 lignes plus bas)
-```
+1. `npm run creature-design -- tools/creature-designs/05-fullettu.js` vérifie les trois grilles (bonnes tailles, seulement `0` à `3` et `.`) et écrit les fichiers `src/gfx/sources/creatures/<id>.js` ([tools/export-creature-design.js](../../tools/export-creature-design.js)).
+2. Pour une nouvelle espèce, on l'ajoute dans [src/gfx/sources/creatures/index.js](../../src/gfx/sources/creatures/index.js), la liste de tous les dessins.
+3. `npm run atlas` ([tools/build-atlas.js](../../tools/build-atlas.js)) colle toutes les vues dans [assets/atlas/creatures.png](../../assets/atlas/creatures.png), et les icônes dans l'atlas de l'interface.
+4. Le jeu n'a plus qu'à découper le bon morceau de l'atlas, avec le nom `<id>/front` ou `<id>/back`.
 
-Quand les yeux deviennent trop petits pour être lisibles (petite taille), le programme choisit automatiquement un tampon d'yeux plus simple.
+Le jeu ne dessine donc rien pendant que tu joues : tout est préparé à l'avance.
 
-### Ingrédient 4 : les accessoires
+## Vérifier son dessin
 
-Les `features` sont des morceaux ajoutés au plan, placés par rapport à la tête ou au corps :
+Avant de lancer le jeu, on regarde le résultat sur une planche : `npm run planche -- 067-069` ([tools/creature-sheet.js](../../tools/creature-sheet.js)) crée une image avec, pour chaque espèce, la face, le dos et l'icône, agrandis trois fois. Les planches de tout le bestiaire sont rangées dans [docs/bestiaire-folklorique/rendus/](../../docs/bestiaire-folklorique/rendus/).
 
-| Accessoire | Dessin |
-| --- | --- |
-| `horns` | deux cornes sur la tête |
-| `long_ears` | deux longues oreilles, avec l'intérieur plus clair |
-| `crest` | une crête en pointes sur le crâne |
-| `wings` | deux ailes sur les côtés du corps |
-| `tail_flame` | une flamme derrière le corps |
-| `tail_leaf` | des feuilles derrière le corps |
-| `tail_fin` | des nageoires |
-| `tail_spikes` | des piquants dans le dos |
-| `shell` | une carapace sous le corps |
-| `antennae` | deux antennes avec une boule au bout |
-| `crystals` | des cristaux sur les épaules et la tête |
-| `cloud` | un petit nuage sous les pieds |
-| `fangs` | deux crocs sous la bouche |
-| `shadow` | le corps devient foncé |
+Deux gardiens surveillent aussi les dessins :
 
-Certains plans ont des accessoires automatiques : l'insecte a toujours des antennes, le dragon toujours des cornes.
+- `npm run validate` refuse une espèce qui n'a pas de dessin ;
+- `npm test` vérifie que chaque espèce a bien une face, un dos différent de la face, et une icône, aux bonnes tailles.
 
-Si un accessoire fait dépasser le dessin du cadre de 48 × 48, le programme rétrécit un peu la bestiole (de 7 % à chaque essai) jusqu'à ce qu'elle tienne entièrement.
-
-### Ingrédient 5 : le motif
-
-Le motif (`pattern`) est peint seulement sur le corps :
-
-| Motif | Effet |
-| --- | --- |
-| `plain` | uni |
-| `stripes` | rayures horizontales plus foncées |
-| `spots` | 2 à 4 taches, placées selon la graine |
-| `light_belly` | ventre plus clair (seulement de face) |
-
-## Des formes aux pixels : la machine à dessiner
-
-Une fois toutes les parties assemblées, il reste à transformer des formes mathématiques en une grille de 48 × 48 pixels. C'est le travail de [src/gfx/shape-renderer.js](../../src/gfx/shape-renderer.js), la machine à dessiner du jeu. Elle sert aussi pour les portraits des dresseurs (chapitre [05](05-personnages.md)) et certaines tuiles du décor.
-
-Elle travaille en 7 étapes, comme un illustrateur :
-
-```text
- 1. Découper   2. Empiler    3. Motifs   4. Ombre      5. Reflet     6. Contours   7. Visage
-  les formes    par z                     en bas à      en haut à      noirs          (tampons)
-                                          droite        gauche
-```
-
-1. **Découper.** Pour chaque pixel, la machine regarde si son centre est à l'intérieur de la forme. Si oui, le pixel appartient à la partie. C'est comme poser un emporte-pièce sur une grille.
-2. **Empiler.** Les parties sont posées de la plus lointaine (petit `z`) à la plus proche. Une partie de devant recouvre celle de derrière.
-3. **Motifs.** Les rayures, taches ou ventre clair sont peints, mais seulement sur les pixels qui appartiennent encore au corps.
-4. **Ombre.** La lumière vient d'en haut à gauche. Le bord en bas à droite de chaque partie devient d'une teinte plus foncée.
-5. **Reflet.** Sur les grosses parties (tête, corps), une petite tache plus claire est ajoutée en haut à gauche, comme un reflet sur une bille.
-6. **Contours.** Un trait de couleur 3 (la plus foncée) entoure la silhouette. Un trait est aussi tracé là où une partie de devant touche une partie de derrière : c'est ce qui sépare la tête du corps.
-7. **Visage.** Enfin, les yeux, la bouche et les crocs sont posés comme des tampons encreurs.
-
-### De face et de dos
-
-La même recette donne aussi la vue de dos, utilisée pour ta propre bestiole en combat. Pour le dos :
-
-- pas de visage (on voit l'arrière de la tête) ;
-- les parties marquées `frontOnly` (museau, bec) disparaissent ;
-- certaines parties changent de profondeur : les ailes, derrière le corps vues de face, passent devant vues de dos ;
-- pas de reflet, et une ombre un peu plus épaisse.
-
-## Pourquoi c'est malin
-
-- **Déterministe.** La même recette donne toujours exactement le même dessin. On peut donc régénérer les 136 bestioles quand on veut, sans rien perdre.
-- **Économique.** Une ligne de recette remplace deux grilles de 2 304 pixels.
-- **Cohérent.** Toutes les bestioles ont le même style : contours d'un pixel, ombre en bas à droite, reflet en haut à gauche.
-- **Familles reconnaissables.** Une lignée partage sa graine.
-
-## Quand le dessin est-il fait ?
-
-Le jeu ne dessine pas les bestioles pendant que tu joues. Le générateur est lancé une seule fois, par la commande `npm run atlas` ([tools/build-atlas.js](../../tools/build-atlas.js)) :
-
-```js
-for (const creature of creatures) {
-  if (HAND_DRAWN_CREATURES[creature.id]) continue;   // les 14 faites main sont lues à part
-  sprites[`${creature.id}/front`] = generateCreatureSprite(creature.sprite, 'front');
-  sprites[`${creature.id}/back`]  = generateCreatureSprite(creature.sprite, 'back');
-}
-```
-
-Le résultat est collé dans l'atlas [assets/atlas/creatures.png](../../assets/atlas/creatures.png). Le jeu n'a plus qu'à découper le bon morceau.
-
-Le cri de chaque bestiole est lui aussi inventé par un programme, sur le même principe : voir le chapitre [09](09-musique-et-sons.md).
+Le cri de chaque bestiole, lui, est inventé par un programme : voir le chapitre [09](09-musique-et-sons.md).
 
 ## Petit défi
 
 Avec un adulte, et une copie du projet que tu as le droit de modifier :
 
-1. Dans [src/data/creatures.js](../../src/data/creatures.js), trouve le Farfadet (`id: 'farfadet'`).
-2. Change sa graine `1013` en `1014`.
-3. Lance `npm run atlas`, puis `npm run dev`.
-4. Regarde le Farfadet dans le Bestiaire. Que remarques-tu ? Et ses évolutions, ont-elles changé ?
+1. Ouvre [tools/creature-designs/05-fullettu.js](../../tools/creature-designs/05-fullettu.js) et trouve la ligne `horns` du Fullettu.
+2. Agrandis ses cornes : remplace `[19, 27]` par `[18, 23]`. Le sommet de la corne monte de 4 pixels et s'écarte d'un pixel.
+3. Lance `npm run creature-design -- tools/creature-designs/05-fullettu.js`, puis `npm run planche -- 067-069`.
+4. Ouvre la planche `planche-067-069.png` dans [docs/bestiaire-folklorique/rendus/](../../docs/bestiaire-folklorique/rendus/). Les deux cornes ont-elles changé, ou une seule ? Pourquoi ?
 
-(Réponse : seul le Farfadet change, puisque Farfandole et Farfator gardent la graine 1013. La famille n'est plus cohérente. Remets 1013 après l'essai.)
+(Réponse : les deux, parce que la corne est dessinée une fois puis copiée en miroir par `mirrorX`. Pour revenir en arrière, remets `[19, 27]` et relance les deux commandes.)
+
+Deuxième essai : dans le calque `husk`, change `tone: 2` en `tone: 1`. La bogue devient plus claire, mais regarde bien le reflet : il est en `1` lui aussi, et ne se voit plus. C'est pour ça que chaque partie a besoin d'au moins deux teintes.
 
 ## À retenir
 
-- 14 bestioles sont dessinées à la main, 136 par un générateur.
-- Une recette = un plan de corps, une graine, une taille, des accessoires et un motif.
-- La graine décide des proportions, des yeux et de la bouche ; une lignée garde la même graine.
-- La machine à dessiner découpe des formes, les empile, ajoute motifs, ombre, reflet, contours et visage.
-- Tout est calculé à l'avance par `npm run atlas`, puis rangé dans un atlas.
+- Les 150 bestioles sont dessinées à la main : une face, un dos et une icône par espèce.
+- On ne tape pas les pixels un par un : on décrit des formes (ellipses, polygones, boudins), peintes en calques par le peintre de formes.
+- Chaque calque a une couleur, une ombre en bas à droite, parfois un reflet en haut à gauche, et un contour d'encre.
+- Le chemin d'un dessin : module de dessin, `npm run creature-design`, `index.js`, `npm run atlas`.
+- On vérifie avec `npm run planche` avant de lancer le jeu.

@@ -23,7 +23,7 @@ src/
   main.js              Point d'entrée renderer
   engine/              Boucle, entrées, rendu, gestionnaire de scènes, timers, tweens
   gfx/                 Palette, police, chargement d'atlas, dessin de sprites
-  gfx/sources/         Sources des sprites (tableaux de chaînes), générateur de bestioles
+  gfx/sources/         Sources des sprites (tableaux de chaînes) ; creatures/ : une bestiole dessinée par fichier
   data/                Données pures : types, attaques, bestioles, objets, dresseurs, textes
   data/maps/           Une carte par fichier
   overworld/           Joueur, PNJ, collisions, warps, scripts d'événements
@@ -36,6 +36,7 @@ src/
   state/               État global du jeu (équipe, sac, drapeaux, position)
 assets/atlas/          PNG + JSON générés (versionnés)
 tools/                 Scripts Node : build-atlas, validate-data, check-text-fit, build-icon, map-preview…
+tools/creature-designs/ Modules de dessin des bestioles (peintre de formes : tools/creature-painter.js)
 build/                 Icônes de l'application (générées par npm run icon)
 tests/                 Tests node:test
 docs/                  GAME_DESIGN.md, ARCHITECTURE.md, PROGRESS.md
@@ -43,7 +44,7 @@ docs/                  GAME_DESIGN.md, ARCHITECTURE.md, PROGRESS.md
 
 ## Principes
 
-1. **Logique séparée du rendu.** `battle/logic`, `data`, `state`, `save` et le générateur de sprites ne touchent jamais au DOM. Ils sont testables sous Node.
+1. **Logique séparée du rendu.** `battle/logic`, `data`, `state`, `save` et les sources de sprites ne touchent jamais au DOM. Ils sont testables sous Node.
 2. **Données déclaratives.** Cartes, dresseurs, événements et dialogues sont des objets JS exportés, pas du code. Un script `tools/validate-data.js` vérifie toutes les références croisées (attaque inconnue, carte cible de warp manquante, texte manquant…).
 3. **Scènes empilées.** `SceneManager` gère une pile : `update(dt, input)` et `render(ctx)` sur la scène du haut, `render` des scènes inférieures si la scène du haut est transparente (dialogue par-dessus la carte).
 4. **Pas fixe.** Boucle à 60 mises à jour par seconde (accumulateur), rendu à chaque frame.
@@ -143,6 +144,8 @@ JSON versionné (`SAVE_VERSION` = 2, `src/save/save-format.js`) :
 | `npm run icon` | Régénère `build/icon.png`, `.ico`, `.icns` depuis le sprite de la Vouivre |
 | `npm run screenshots` | Régénère `docs/screenshots/` (jeu lancé en mode capture) |
 | `npm run perf` | Mesure images/s et temps de calcul sur une carte dense et en combat |
+| `npm run creature-design -- <module>` | Écrit `src/gfx/sources/creatures/<id>.js` depuis un module de `tools/creature-designs/` |
+| `npm run planche -- 001-009` | Planche de contrôle (face, dos, icône) dans `docs/bestiaire-folklorique/rendus/` |
 | `npm run check-text` | Vérifie seul que les textes tiennent dans leur fenêtre (inclus dans `validate`) |
 
 ## Menu debug (`npm run dev` uniquement)

@@ -13,7 +13,7 @@ Lis les chapitres dans l'ordre la première fois. Ensuite, sers-toi du chapitre 
 | 01 | [Vue d'ensemble](01-vue-ensemble.md) | Comment le jeu a été fabriqué, comment il est rangé, comment il « respire » 60 fois par seconde |
 | 02 | [Pixels et couleurs](02-pixels-et-couleurs.md) | L'écran minuscule, les 4 couleurs, les dessins écrits avec des chiffres, les atlas |
 | 03 | [La fiche d'une bestiole](03-bestioles-fiche.md) | Ce qu'on sait d'une bestiole : types, statistiques, niveaux, gènes, évolutions |
-| 04 | [Comment on dessine une bestiole](04-bestioles-dessin.md) | Le générateur qui invente 136 bestioles à partir de formes et d'une graine |
+| 04 | [Comment on dessine une bestiole](04-bestioles-dessin.md) | Les 150 bestioles dessinées à la main, avec des formes peintes en calques |
 | 05 | [Les personnages](05-personnages.md) | Le joueur, les habitants, les dresseurs : petits sprites et grands portraits |
 | 06 | [Le monde](06-monde.md) | Les tuiles, les cartes écrites en texte, les routes, les maisons, les herbes hautes |
 | 07 | [L'histoire et les événements](07-histoire-scripts.md) | Les scripts, les drapeaux, les dialogues, l'ordre de l'aventure |

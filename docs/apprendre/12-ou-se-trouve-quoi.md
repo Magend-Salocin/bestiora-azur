@@ -7,9 +7,8 @@ Ce chapitre est un plan. Sers-t'en pour retrouver un fichier quand tu sais ce qu
 | Je veux changer… | Je vais dans… | Puis je lance… |
 | --- | --- | --- |
 | les statistiques, le type ou les attaques d'une bestiole | [src/data/creatures.js](../../src/data/creatures.js) | `npm run validate` |
-| l'apparence d'une bestiole générée | le champ `sprite` de sa fiche dans [src/data/creatures.js](../../src/data/creatures.js) | `npm run atlas` |
-| le dessin d'un starter ou d'un légendaire | [src/gfx/sources/creatures/](../../src/gfx/sources/creatures/) | `npm run atlas` |
-| la façon dont le générateur dessine (formes, yeux, accessoires) | [src/gfx/creature-generator.js](../../src/gfx/creature-generator.js) | `npm run atlas`, `npm test` |
+| le dessin d'une bestiole | son module dans [tools/creature-designs/](../../tools/creature-designs/) | `npm run creature-design -- <module>`, `npm run planche`, `npm run atlas` |
+| les formes du peintre de bestioles (ellipse, capsule, calques) | [tools/creature-painter.js](../../tools/creature-painter.js) | `npm run creature-design -- <module>` |
 | une attaque | [src/data/moves.js](../../src/data/moves.js) | `npm run validate` |
 | le tableau des types | [src/data/types.js](../../src/data/types.js) | `npm test` |
 | un objet | [src/data/items.js](../../src/data/items.js) | `npm run validate` |
@@ -53,13 +52,12 @@ Après tout changement : `npm test` et `npm run validate`.
 | --- | --- |
 | [palette.js](../../src/gfx/palette.js) | les 6 palettes et les fondus |
 | [sprite-utils.js](../../src/gfx/sprite-utils.js) | lire et écrire un dessin en chiffres |
-| [shape-renderer.js](../../src/gfx/shape-renderer.js) | la machine à dessiner : formes vers pixels, ombre, reflet, contours |
-| [creature-generator.js](../../src/gfx/creature-generator.js) | le générateur de bestioles |
+| [shape-renderer.js](../../src/gfx/shape-renderer.js) | la machine à dessiner des tuiles et des portraits : formes vers pixels, ombre, reflet, contours |
 | [atlas.js](../../src/gfx/atlas.js) | charger les atlas et les colorier avec la palette |
 | [draw.js](../../src/gfx/draw.js) | poser un dessin ou une case à l'écran |
 | [font.js](../../src/gfx/font.js), [font-glyphs.js](../../src/gfx/font-glyphs.js) | la police de 8 × 8 avec accents |
 | [bitmap.js](../../src/gfx/bitmap.js) | petites aides pour les images |
-| `sources/creatures/` | les 14 bestioles dessinées à la main |
+| `sources/creatures/` | les 150 bestioles dessinées à la main : face, dos et icône, un fichier par espèce |
 | `sources/characters/` | les personnages de la carte (gabarit et patchs) et les objets posés au sol |
 | `sources/trainers/` | les portraits de combat |
 | `sources/tiles/` | les cases du décor, une famille par fichier |
@@ -151,10 +149,11 @@ Après tout changement : `npm test` et `npm run validate`.
 Pour relier tous les chapitres, suivons une bestiole sauvage, le Farfadet, depuis sa fiche jusqu'à l'écran de combat :
 
 ```text
-1. FICHE        src/data/creatures.js            id, types, statistiques, recette de dessin
+1. FICHE        src/data/creatures.js            id, types, statistiques, description
                         │
-2. DESSIN       npm run atlas                    le générateur transforme la recette en pixels
-                src/gfx/creature-generator.js    et les colle dans assets/atlas/creatures.png
+2. DESSIN       tools/creature-designs/          formes peintes en calques, exportées en grilles
+                src/gfx/sources/creatures/       par npm run creature-design, puis collées
+                npm run atlas                    dans assets/atlas/creatures.png
                         │
 3. CARTE        src/data/maps/debut/route-1.js   « Farfadet, niveaux 2 à 4, poids 35 »
                         │

@@ -37,7 +37,7 @@ Les tests sont dans le dossier [tests/](../../tests/), un fichier par sujet :
 | `battle-damage.test.js` | le calcul des dégâts, les critiques, la précision |
 | `battle-effects.test.js` | chaque effet d'attaque (sommeil, poison, coups multiples…) |
 | `battle-flow.test.js` | le déroulement des combats, la capture, l'expérience |
-| `creature-generator.test.js` | le générateur de bestioles : même recette, même dessin |
+| `sprite-sources.test.js` | les dessins : chaque bestiole a une face, un dos et une icône aux bonnes tailles |
 | `rng.test.js` | la machine à hasard : même graine, mêmes tirages |
 | `overworld.test.js` | les collisions, les corniches, les rencontres |
 | `script-runner.test.js` | le lecteur de scripts |
@@ -45,7 +45,7 @@ Les tests sont dans le dossier [tests/](../../tests/), un fichier par sujet :
 | `world.test.js`, `world-part2.test.js`, `world-part3.test.js` | l'aventure : starters, rivale, champions, objets de terrain |
 | `text-fit.test.js` | les textes tiennent dans leur fenêtre |
 
-Les 252 tests passent en un peu plus d'une seconde. Ils n'ont pas besoin d'ouvrir le jeu, parce que la logique est séparée du dessin (chapitre [01](01-vue-ensemble.md)), et que le hasard est contrôlé par une graine.
+Les 242 tests passent en un peu plus d'une seconde. Ils n'ont pas besoin d'ouvrir le jeu, parce que la logique est séparée du dessin (chapitre [01](01-vue-ensemble.md)), et que le hasard est contrôlé par une graine.
 
 ## La validation : `npm run validate`
 
@@ -56,7 +56,7 @@ Le validateur ([tools/validate-data.js](../../tools/validate-data.js)) relit tou
 | Identifiants | deux bestioles avec le même `id`, un `id` avec un accent |
 | Types | un type inconnu |
 | Attaques | un effet d'attaque inconnu, une précision impossible |
-| Bestioles | une attaque apprise qui n'existe pas, une recette de dessin invalide |
+| Bestioles | une attaque apprise qui n'existe pas, une bestiole sans dessin |
 | Évolutions | une évolution vers une espèce inconnue, une boucle d'évolution |
 | Objets | un objet sans prix, un effet inconnu |
 | Textes | un texte manquant, un mot interdit |
@@ -124,6 +124,8 @@ Dans [tools/](../../tools/) :
 | Commande | Outil | Rôle |
 | --- | --- | --- |
 | `npm run atlas` | `build-atlas.js` | fabrique les 5 atlas (chapitres [02](02-pixels-et-couleurs.md) et [04](04-bestioles-dessin.md)) |
+| `npm run creature-design -- <module>` | `export-creature-design.js` | écrit les dessins d'une famille de bestioles à partir de son module (chapitre [04](04-bestioles-dessin.md)) |
+| `npm run planche -- 067-069` | `creature-sheet.js` | dessine une planche des bestioles choisies (face, dos, icône), pour vérifier les dessins |
 | `npm run map-preview -- route_1` | `map-preview.js` | dessine une carte en image, sans lancer le jeu |
 | `npm run bestiary` | `export-bestiary-md.js` | réécrit [docs/BESTIAIRE.md](../BESTIAIRE.md) à partir des fiches |
 | `npm run check-text` | `check-text-fit.js` | vérifie seulement que les textes tiennent dans leur fenêtre |

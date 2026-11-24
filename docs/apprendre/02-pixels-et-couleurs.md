@@ -102,13 +102,13 @@ Il y en a 5, dans [assets/atlas/](../../assets/atlas/) :
 Les atlas ne sont pas dessinés dans un logiciel. Ils sont fabriqués par un programme, [tools/build-atlas.js](../../tools/build-atlas.js), lancé avec la commande `npm run atlas` :
 
 ```text
- sources en texte          générateurs           atlas
- (src/gfx/sources/)  ───▶  (bestioles,     ───▶  assets/atlas/*.png
-                           personnages,          assets/atlas/*.json
+ sources en texte          programmes de         atlas
+ (src/gfx/sources/)  ───▶  formes          ───▶  assets/atlas/*.png
+                           (tuiles,              assets/atlas/*.json
                            portraits)
 ```
 
-1. Il lit tous les dessins sources et lance les générateurs.
+1. Il lit tous les dessins sources. Les bestioles y sont déjà sous forme de grilles (chapitre [04](04-bestioles-dessin.md)) ; certaines tuiles et les portraits des dresseurs sont calculés à partir de formes à ce moment-là.
 2. Il range les dessins sur une grande planche, sans qu'ils se chevauchent ([tools/atlas-packer.js](../../tools/atlas-packer.js)).
 3. Il écrit chaque numéro sous forme de gris : 0 = blanc, 1 = gris clair, 2 = gris foncé, 3 = noir.
 
