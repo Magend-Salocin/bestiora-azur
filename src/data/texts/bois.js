@@ -48,7 +48,7 @@ export default {
   fillette_rose_after: 'Les fleurs de la clairière sont mes préférées.',
   campeuse_margot_intro: 'J’ai attrapé tout ça ce matin. Essaie de faire mieux !',
   campeuse_margot_defeat: 'Tu fais mieux, en effet.',
-  campeuse_margot_after: 'Les Nymphot ne sortent que dans le cœur du Bois.',
+  campeuse_margot_after: 'Les Chauchenid ne sortent que dans le cœur du Bois.',
   campeur_basile_intro: 'Les arbres murmurent ton nom. Ils disent que tu vas perdre !',
   campeur_basile_defeat: 'Les arbres se sont trompés.',
   campeur_basile_after: 'En vrai, c’est juste le vent dans les feuilles.',

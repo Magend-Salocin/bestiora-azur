@@ -103,3 +103,13 @@ export function stamp(x0, y0, rows) {
   }));
   return pixels;
 }
+
+/** Two glinting 2 × 3 eyes, left one at column lx, right one at rx, top row y. */
+export function eyes(lx, rx, y, { height = 3 } = {}) {
+  const pixels = [];
+  for (const x of [lx, rx]) {
+    for (let dy = 0; dy < height; dy += 1) pixels.push([x, y + dy, 3], [x + 1, y + dy, 3]);
+    pixels.push([x + 1, y, 0]);
+  }
+  return pixels;
+}

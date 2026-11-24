@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildCharacterFrames } from '../src/gfx/sources/characters/index.js';
+import { CREATURES } from '../src/data/creatures.js';
 import { HAND_DRAWN_CREATURES } from '../src/gfx/sources/creatures/index.js';
 import { TILESETS, buildMetatileIndex } from '../src/gfx/sources/tiles/index.js';
 import { FLAG_NAMES } from '../src/gfx/sources/tiles/tile-helpers.js';
@@ -91,7 +92,8 @@ test('trainer portraits and player backs are 48×48', () => {
 });
 
 test('hand-drawn creatures have valid 48×48 front and back views', () => {
-  assert.equal(Object.keys(HAND_DRAWN_CREATURES).length, 14);
+  const handmade = CREATURES.filter((creature) => creature.sprite === 'handmade').map((creature) => creature.id);
+  assert.deepEqual(Object.keys(HAND_DRAWN_CREATURES).sort(), handmade.sort());
   for (const [id, views] of Object.entries(HAND_DRAWN_CREATURES)) {
     assertValidFrames({ [`${id}/front`]: views.front, [`${id}/back`]: views.back }, { width: 48, height: 48 });
     assert.notDeepEqual(views.front, views.back, `${id}: back view identical to front`);

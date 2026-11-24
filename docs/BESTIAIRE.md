@@ -15,21 +15,21 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 007 | Tarasquin | Eau | 314 | Taraskor (niv. 16) | Mer | 5 |
 | 008 | Taraskor | Eau | 405 | Tarasque (niv. 36) | Mer | 16 |
 | 009 | Tarasque | Eau | 530 | - | Mer | 36 |
-| 010 | Pivelin | Normal / Vent | 255 | Grivelin (niv. 14) | Prairie | 2 |
-| 011 | Grivelin | Normal / Vent | 360 | Aquilard (niv. 32) | Prairie | 14 |
-| 012 | Aquilard | Normal / Vent | 480 | - | Prairie | 32 |
-| 013 | Musaraille | Normal | 260 | Musarogne (niv. 20) | Prairie | 2 |
-| 014 | Musarogne | Normal | 420 | - | Prairie | 20 |
-| 015 | Feuillarve | Insecte | 250 | Nymphot (niv. 8) | Forêt | 2 |
-| 016 | Nymphot | Insecte | 290 | Phalénoir (niv. 14) | Forêt | 8 |
-| 017 | Phalénoir | Insecte / Ombre | 420 | - | Forêt | 14 |
-| 018 | Bousiot | Insecte / Terre | 300 | Bousigor (niv. 22) | Forêt | 4 |
-| 019 | Bousigor | Insecte / Terre | 450 | - | Forêt | 22 |
-| 020 | Morillon | Toxique / Flore | 290 | Morillard (niv. 24) | Forêt | 4 |
-| 021 | Morillard | Toxique / Flore | 440 | - | Forêt | 24 |
-| 022 | Glandor | Flore | 360 | - | Forêt | 5 |
-| 023 | Venimot | Toxique | 290 | Venimorde (niv. 22) | Forêt | 5 |
-| 024 | Venimorde | Toxique | 445 | - | Forêt | 22 |
+| 010 | Farfadet | Normal / Vent | 255 | Farfandole (niv. 14) | Prairie | 2 |
+| 011 | Farfandole | Normal / Vent | 360 | Farfator (niv. 32) | Prairie | 14 |
+| 012 | Farfator | Normal / Vent | 480 | - | Prairie | 32 |
+| 013 | Poulpiquet | Normal | 260 | Poulpifol (niv. 20) | Prairie | 2 |
+| 014 | Poulpifol | Normal | 420 | - | Prairie | 20 |
+| 015 | Chauchet | Insecte | 250 | Chauchenid (niv. 8) | Forêt | 2 |
+| 016 | Chauchenid | Insecte | 290 | Chauchemor (niv. 14) | Forêt | 8 |
+| 017 | Chauchemor | Insecte / Ombre | 420 | - | Forêt | 14 |
+| 018 | Carcolh | Insecte / Terre | 300 | Carcolosse (niv. 22) | Forêt | 4 |
+| 019 | Carcolosse | Insecte / Terre | 450 | - | Forêt | 22 |
+| 020 | Mandragot | Toxique / Flore | 290 | Mandragoul (niv. 24) | Forêt | 4 |
+| 021 | Mandragoul | Toxique / Flore | 440 | - | Forêt | 24 |
+| 022 | Dame verte | Flore | 360 | - | Forêt | 5 |
+| 023 | Basilin | Toxique | 290 | Basilic (niv. 22) | Forêt | 5 |
+| 024 | Basilic | Toxique | 445 | - | Forêt | 22 |
 | 025 | Lumignon | Arcane | 290 | Lumidanse (niv. 20) | Forêt | 6 |
 | 026 | Lumidanse | Arcane | 400 | Lumirande (Pierre Lunaire) | Forêt | 20 |
 | 027 | Lumirande | Arcane / Vent | 515 | - | Forêt | 30 |

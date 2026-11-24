@@ -54,7 +54,7 @@ Pour lire les fiches archivées :
 2. Dessiner face, dos et icône dans un module de `tools/creature-designs/` (modèle : `00-korrigan.js`), avec les formes de `tools/creature-painter.js`.
 3. `npm run creature-design -- tools/creature-designs/<fichier>.js` écrit `src/gfx/sources/creatures/<id>.js` ; ajouter l'espèce à `index.js` à sa première exportation.
 4. Mettre à jour l'espèce dans `src/data/creatures.js` : nom, genre, catégorie, taille, poids, description, et `sprite: 'handmade'`.
-5. `npm run atlas`, `npm run validate`, `npm test`.
+5. Remplacer les anciens noms cités dans les dialogues (`src/data/texts/`), puis `npm run atlas`, `npm run validate`, `npm test`.
 6. `npm run planche -- <de>-<à>` : planche du lot dans `rendus/planche-<de>-<à>.png` (face, dos, icône).
 7. `npm run screenshots -- --preview <id>` : captures dans `rendus/<id>/` (starter, bestiaire, équipe, combat de face et de dos).
 
@@ -66,7 +66,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 |---|---|---|---|
 | 0 | Genre grammatical, outils de dessin et de planche | 0 | Fait |
 | Starters | 001 à 009 | 9 | Fait |
-| 1 | Premières routes (010 à 024) | 15 | |
+| 1 | Premières routes (010 à 024) | 15 | Fait |
 | 2 | Forêts et premières grottes (025 à 037) | 13 | |
 | 3 | Rivières et grottes (038 à 049) | 12 | |
 | 4 | Côte et prairies (050 à 061) | 12 | |
@@ -88,13 +88,13 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 001 | Fenouillot > Fenouvert > Sylvenard | Korrigan > Korrigard > Korriroi | Flore | Korrigan | Bretagne | F, J, J (fait) |
 | 004 | Braisille > Fournaise > Pyrogrue | Galtza > Galtzabras > Galtzagor | Feu | Galtzagorri | Pays basque | F, J, J (fait) |
 | 007 | Flaquin > Ondéclat > Marévor | Tarasquin > Taraskor > Tarasque | Eau | Tarasque | Provence (Tarascon) | J, J, F (fait) |
-| 010 | Pivelin > Grivelin > Aquilard | Farfadet > Farfandole > Farfator | Normal, Vent | Farfadet | Poitou, Vendée | A, J, J |
-| 013 | Musaraille > Musarogne | Poulpiquet > Poulpifol | Normal | Poulpiquet | Bretagne | A, J |
-| 015 | Feuillarve > Nymphot > Phalénoir | Chauchet > Chauchenid > Chauchemor | Insecte (Ombre au stade 3) | Chauche-vieille, esprit qui pèse sur les dormeurs | Languedoc, Provence | F, J, J |
-| 018 | Bousiot > Bousigor | Carcolh > Carcolosse | Insecte, Terre | Lou Carcolh, escargot géant | Gascogne | F, J |
-| 020 | Morillon > Morillard | Mandragot > Mandragoul | Toxique, Flore | Mandragot, mandragore familière | Provence | F, J |
-| 022 | Glandor | Dame verte | Flore | Dames vertes des forêts | Franche-Comté | F |
-| 023 | Venimot > Venimorde | Basilin > Basilic | Toxique | Basilic | Bestiaire médiéval | J, F |
+| 010 | Pivelin > Grivelin > Aquilard | Farfadet > Farfandole > Farfator | Normal, Vent | Farfadet | Poitou, Vendée | A, J, J (fait) |
+| 013 | Musaraille > Musarogne | Poulpiquet > Poulpifol | Normal | Poulpiquet | Bretagne | A, J (fait) |
+| 015 | Feuillarve > Nymphot > Phalénoir | Chauchet > Chauchenid > Chauchemor | Insecte (Ombre au stade 3) | Chauche-vieille, esprit qui pèse sur les dormeurs | Languedoc, Provence | F, J, J (fait) |
+| 018 | Bousiot > Bousigor | Carcolh > Carcolosse | Insecte, Terre | Lou Carcolh, escargot géant | Gascogne | F, J (fait) |
+| 020 | Morillon > Morillard | Mandragot > Mandragoul | Toxique, Flore | Mandragot, mandragore familière | Provence | F, J (fait) |
+| 022 | Glandor | Dame verte | Flore | Dames vertes des forêts | Franche-Comté | F (fait) |
+| 023 | Venimot > Venimorde | Basilin > Basilic | Toxique | Basilic | Bestiaire médiéval | J, F (fait) |
 | 025 | Lumignon > Lumidanse > Lumirande | Hada > Hadalune > Hadélys | Arcane (Vent au stade 3) | Hadas, fées | Pyrénées | F, J, J |
 | 028 | Noisetin > Noiseclat | Faramin > Faramine | Normal | Bête faramine, bête qu'on chasse sans jamais la voir | Poitou, Vendée | J, F |
 | 030 | Faonille > Cerfeuil > Cervoral | Fadet > Fadebois > Fadéon | Flore (Arcane au stade 3) | Fadet | Poitou, Vendée | A, J, J |
@@ -111,7 +111,7 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 057 | Lapugil > Lapugilat | Lougarou > Louvar | Combat | Loup-garou | France | A, J |
 | 059 | Toisonnet > Nimbelaine | Truffandec > Truffandor | Normal, Vent | Esprit du foyer | Béarn | F, à vérifier ; J |
 | 061 | Hurlegroin | Warabouc | Combat | Bouc métamorphe | Lorraine, à vérifier | F |
-| 062 | Pétalune > Corolline | Margot > Margolys | Flore, Arcane | Margot la fée | Haute-Bretagne | F, J |
+| 062 | Pétalune > Corolline | Margelle > Margolys | Flore, Arcane | Margot la fée (nom changé : un dresseur s'appelle Margot) | Haute-Bretagne | F, J |
 | 064 | Lampyrin > Lampyrex | Follet > Follumine | Insecte, Foudre | Feu follet | France | A, J |
 | 066 | Bovaillon | Gonfaron | Normal | Âne de Gonfaron, l'âne qui vole | Provence (Var) | F |
 | 067 | Cocolet > Cocomarin / Cocorage | Fullettu > Fullemarin / Fulletonne | Normal > Eau / Foudre | Fullettu | Corse | F, J, J |
