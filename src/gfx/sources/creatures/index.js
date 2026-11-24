@@ -92,6 +92,19 @@ import lombrin from './lombrin.js';
 import lombrigant from './lombrigant.js';
 import filandrin from './filandrin.js';
 import filandrix from './filandrix.js';
+import fusiblet from './fusiblet.js';
+import fusiblard from './fusiblard.js';
+import brumelin from './brumelin.js';
+import brumoire from './brumoire.js';
+import brumaitre from './brumaitre.js';
+import cierget from './cierget.js';
+import lustrombre from './lustrombre.js';
+import glasnuit from './glasnuit.js';
+import dionelle from './dionelle.js';
+import dionavore from './dionavore.js';
+import ronceroc from './ronceroc.js';
+import butinet from './butinet.js';
+import butinelle from './butinelle.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -117,4 +130,5 @@ export const HAND_DRAWN_CREATURES = {
   fumeron, fumelard, cendrador, boulonnet, boulonnier,
   crassou, crassolard, piquevolt, ampoulin, ampoulard, amperion, sombrelin,
   sombrecor, stalactor, lombrin, lombrigant, filandrin, filandrix,
+  fusiblet, fusiblard, brumelin, brumoire, brumaitre, cierget, lustrombre, glasnuit, dionelle, dionavore, ronceroc, butinet, butinelle,
 };

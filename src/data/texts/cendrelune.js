@@ -57,7 +57,7 @@ export default {
   cendrelune_eboulement: 'Des rochers tombés de la falaise bloquent la route de l’est.\fOn déblaie, mais ça va prendre du temps. Dès que la Tour sera libérée, on aura du renfort !',
   cendrelune_fillette: 'Aubin parle à ses plantes. Il dit qu’elles lui répondent !',
   cendrelune_vieille_dame: 'Quand une bestiole nous quitte, on grave son nom dans la Tour.\fLà-haut, on dit que leur souvenir veille sur nous.',
-  cendrelune_campeuse: 'Dans ce jardin, j’ai vu une Dionavore une seule fois. Elle a mangé mon sandwich.',
+  cendrelune_campeuse: 'Dans ce jardin, j’ai vu un Bugul Noz une seule fois. Il a mangé mon sandwich.',
   cendrelune_gentleman: 'Des gens en gris sont entrés dans la Tour hier soir.\fLe gardien n’est jamais redescendu. Je n’aime pas ça.',
   cendrelune_gentleman_apres: 'Le Syndicat a quitté la Tour, grâce à toi. Cendrelune te doit une fière chandelle.',
   cendrelune_apprentie: 'Je suis l’apprentie du gardien de la Tour de la Mémoire.\fSeuls ceux qui portent le badge Flore peuvent y entrer.',
@@ -71,8 +71,8 @@ export default {
   maison_cendrelune_1_vieille_dame: 'Ma vieille Faramine repose dans la Tour.\fChaque matin, je monte lui dire bonjour. Enfin… quand le Syndicat n’est pas là.',
   maison_cendrelune_1_gamin: 'Mamie dit que les bestioles disparues deviennent des étoiles.',
   maison_cendrelune_2_fillette: 'Papa cultive des fleurs qui mangent les mouches. Je ne m’approche pas.',
-  maison_cendrelune_2_echange: 'Je cherche un Ronceroc pour ma rocaille.\fEn échange, je te donne mon Truffandor. Ça te va ?',
-  maison_cendrelune_2_echange_apres: 'Mon Ronceroc se plaît beaucoup dans la rocaille. Merci encore !',
+  maison_cendrelune_2_echange: 'Je cherche une Roncefée pour ma rocaille.\fEn échange, je te donne mon Truffandor. Ça te va ?',
+  maison_cendrelune_2_echange_apres: 'Ma Roncefée se plaît beaucoup dans la rocaille. Merci encore !',
 
   // Arène Flore
   arene_flore_guide: 'Bienvenue dans la grande serre !\fCertaines haies se coupent à la Machette. Mais attention aux impasses !',

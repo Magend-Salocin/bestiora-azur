@@ -1814,22 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "2e353b0f59b8b5608af530c6050f4fab2622e846bbb28f4876b6264023ebf3f1",
+    "pngHash": "1f586d992a1c96bd65dc3f3fde0e783872215387da209dedd3be36980bd71a36",
     "source": "src/data/creatures.js",
     "generated": [
-      "fusiblet",
-      "fusiblard",
-      "brumelin",
-      "brumoire",
-      "brumaitre",
-      "cierget",
-      "lustrombre",
-      "glasnuit",
-      "dionelle",
-      "dionavore",
-      "ronceroc",
-      "butinet",
-      "butinelle",
       "cabrelin",
       "bouquetor",
       "cabrecime",
@@ -1968,7 +1955,20 @@
       "lombrin",
       "lombrigant",
       "filandrin",
-      "filandrix"
+      "filandrix",
+      "fusiblet",
+      "fusiblard",
+      "brumelin",
+      "brumoire",
+      "brumaitre",
+      "cierget",
+      "lustrombre",
+      "glasnuit",
+      "dionelle",
+      "dionavore",
+      "ronceroc",
+      "butinet",
+      "butinelle"
     ]
   }
 }

@@ -72,7 +72,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 4 | Côte et prairies (050 à 061) | 12 | Fait |
 | 5 | Prairies et ville (062 à 074) | 13 | Fait |
 | 6 | Ville et grottes (075 à 087) | 13 | Fait |
-| 7 | Ruines (088 à 100) | 13 | |
+| 7 | Ruines (088 à 100) | 13 | Fait |
 | 8 | Montagne et neige (101 à 114) | 14 | |
 | 9 | Marais et ville (115 à 128) | 14 | |
 | 10 | Mer et volcan (129 à 141) | 13 | |
@@ -124,13 +124,13 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 083 | Stalactor | Dame noire | Roche, Ombre | Dames noires des grottes | À vérifier | F (fait) |
 | 084 | Lombrin > Lombrigant | Lycastre > Lycastron | Terre | Lycastre | Provence, à vérifier | F, J (fait) |
 | 086 | Filandrin > Filandrix | Câmecru > Câmecruse | Insecte, Ombre | Câme-Cruse | À vérifier | F, J (fait) |
-| 088 | Fusiblet > Fusiblard | Moinillon > Moinbourru | Foudre, Ombre | Moine bourru | Paris | J, F |
-| 090 | Brumelin > Brumoire > Brumaître | Blanchin > Blancôme > Blancélune | Ombre, Arcane | Dame blanche | France | J, J, J |
-| 093 | Cierget > Lustrombre | Ankoulet > Ankou | Ombre, Feu | Ankou et sa lanterne | Bretagne | J, F |
-| 095 | Glasnuit | Revenant | Ombre | Revenant | France | A |
-| 096 | Dionelle > Dionavore | Bugulin > Bugul Noz | Flore | Bugul Noz | Bretagne (Vannetais) | J, F |
-| 098 | Ronceroc | Roncefée | Flore, Roche | Fée des ronces | France | J |
-| 099 | Butinet > Butinelle | Jetin > Jetinelle | Insecte, Vent | Jetins, petit peuple des côtes | Haute-Bretagne | F, J |
+| 088 | Fusiblet > Fusiblard | Moinillon > Moinbourru | Foudre, Ombre | Moine bourru | Paris | J, F (fait) |
+| 090 | Brumelin > Brumoire > Brumaître | Blanchin > Blancôme > Blancélune | Ombre, Arcane | Dame blanche | France | J, J, J (fait) |
+| 093 | Cierget > Lustrombre | Ankoulet > Ankou | Ombre, Feu | Ankou et sa lanterne | Bretagne | J, F (fait) |
+| 095 | Glasnuit | Revenant | Ombre | Revenant | France | A (fait) |
+| 096 | Dionelle > Dionavore | Bugulin > Bugul Noz | Flore | Bugul Noz | Bretagne (Vannetais) | J, F (fait) |
+| 098 | Ronceroc | Roncefée | Flore, Roche | Fée des ronces | France | J (fait) |
+| 099 | Butinet > Butinelle | Jetin > Jetinelle | Insecte, Vent | Jetins, petit peuple des côtes | Haute-Bretagne | F, J (fait) |
 | 101 | Cabrelin > Bouquetor > Cabrecime | Cabrillon > Cabridor > Cabro d'Or | Combat (Roche au stade 3) | Cabro d'Or, chèvre d'or | Provence (Baux) | J, J, F |
 | 104 | Volplanin > Volplaneur | Serpvolin > Serpvolant | Vent | Serpent volant | Provence | J, F |
 | 106 | Éolithe | Koril | Roche, Vent | Korils, danseurs des menhirs | Bretagne | F |

@@ -93,19 +93,19 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 085 | Lycastron | Terre | 465 | - | Grotte | 28 |
 | 086 | Câmecru | Insecte / Ombre | 290 | Câmecruse (niv. 28) | Grotte | 21 |
 | 087 | Câmecruse | Insecte / Ombre | 460 | - | Grotte | 28 |
-| 088 | Fusiblet | Foudre / Ombre | 320 | Fusiblard (niv. 34) | Ruines | 30 |
-| 089 | Fusiblard | Foudre / Ombre | 490 | - | Ruines | 34 |
-| 090 | Brumelin | Ombre / Arcane | 300 | Brumoire (niv. 30) | Ruines | 26 |
-| 091 | Brumoire | Ombre / Arcane | 410 | Brumaître (niv. 44) | Ruines | 30 |
-| 092 | Brumaître | Ombre / Arcane | 525 | - | Ruines | 44 |
-| 093 | Cierget | Ombre / Feu | 310 | Lustrombre (niv. 34) | Ruines | 26 |
-| 094 | Lustrombre | Ombre / Feu | 480 | - | Ruines | 34 |
-| 095 | Glasnuit | Ombre | 440 | - | Ruines | 27 |
-| 096 | Dionelle | Flore | 310 | Dionavore (niv. 32) | Ville | 26 |
-| 097 | Dionavore | Flore | 480 | - | Ville | 32 |
-| 098 | Ronceroc | Flore / Roche | 450 | - | Ville | 27 |
-| 099 | Butinet | Insecte / Vent | 280 | Butinelle (niv. 30) | Prairie | 26 |
-| 100 | Butinelle | Insecte / Vent | 450 | - | Prairie | 30 |
+| 088 | Moinillon | Foudre / Ombre | 320 | Moinbourru (niv. 34) | Ruines | 30 |
+| 089 | Moinbourru | Foudre / Ombre | 490 | - | Ruines | 34 |
+| 090 | Blanchin | Ombre / Arcane | 300 | Blancôme (niv. 30) | Ruines | 26 |
+| 091 | Blancôme | Ombre / Arcane | 410 | Blancélune (niv. 44) | Ruines | 30 |
+| 092 | Blancélune | Ombre / Arcane | 525 | - | Ruines | 44 |
+| 093 | Ankoulet | Ombre / Feu | 310 | Ankou (niv. 34) | Ruines | 26 |
+| 094 | Ankou | Ombre / Feu | 480 | - | Ruines | 34 |
+| 095 | Revenant | Ombre | 440 | - | Ruines | 27 |
+| 096 | Bugulin | Flore | 310 | Bugul Noz (niv. 32) | Ville | 26 |
+| 097 | Bugul Noz | Flore | 480 | - | Ville | 32 |
+| 098 | Roncefée | Flore / Roche | 450 | - | Ville | 27 |
+| 099 | Jetin | Insecte / Vent | 280 | Jetinelle (niv. 30) | Prairie | 26 |
+| 100 | Jetinelle | Insecte / Vent | 450 | - | Prairie | 30 |
 | 101 | Cabrelin | Combat | 300 | Bouquetor (niv. 32) | Montagne | 28 |
 | 102 | Bouquetor | Combat | 420 | Cabrecime (niv. 46) | Montagne | 32 |
 | 103 | Cabrecime | Combat / Roche | 530 | - | Montagne | 46 |

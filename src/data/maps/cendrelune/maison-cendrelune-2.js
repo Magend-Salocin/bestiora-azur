@@ -1,6 +1,6 @@
 import { house } from '../interiors.js';
 
-// Greenhouse keeper who trades a Nimbelaine for a Ronceroc.
+// Greenhouse keeper who trades a Nimbelaine for a Roncefée.
 export default house({
   id: 'maison_cendrelune_2',
   name: 'Cendrelune',
