@@ -13,7 +13,7 @@ export default {
 
   halte_port_ondine_voyageuse: 'Après Port-Ondine, la Route 4 longe la plage.\fIl y a une pension là-bas. Pratique pour entraîner une bestiole sans y penser.',
   comptoir_port_ondine_client: 'Les Super Capsules attrapent mieux que les Capsules.\fPour les bestioles des dunes, c’est pas du luxe.',
-  maison_port_ondine_1_conteur: 'Jadis, Brumeval n’avait pas de route.\fOn voyageait par la mer intérieure, de crique en crique, sur des barques à voile carrée.\fLes bancs de goujonets guidaient les marins vers les ports. On dit qu’ils connaissent encore le chemin.',
+  maison_port_ondine_1_conteur: 'Jadis, Brumeval n’avait pas de route.\fOn voyageait par la mer intérieure, de crique en crique, sur des barques à voile carrée.\fLes Laminak guidaient les marins vers les ports. On dit qu’ils connaissent encore le chemin.',
   maison_port_ondine_1_fillette: 'Mon grand-père raconte toujours la même histoire.\fMais je l’aime bien quand même.',
   maison_port_ondine_2_voisine: 'Maël habite juste à côté. Il part nager à l’aube, même en hiver !',
   maison_port_ondine_2_apprenti: 'Le jardinier de la Route 5 a une Machette.\fIl ne la prête qu’aux dresseurs que Maël a reconnus. Gagne ton badge d’abord !',
@@ -71,7 +71,7 @@ export default {
   nageuse_clara_after: 'Le soleil tape fort sur cette plage.',
   pecheur_marcel_intro: 'Trois heures sans une touche. Toi, tu vas mordre !',
   pecheur_marcel_defeat: 'Même les dresseurs me filent entre les doigts.',
-  pecheur_marcel_after: 'Les goujonets grandissent vite par ici.',
+  pecheur_marcel_after: 'Les Laminak grandissent vite par ici.',
   pecheur_alain_intro: 'Mon crabe pince plus fort que le tien !',
   pecheur_alain_defeat: 'Il a lâché prise...',
   pecheur_alain_after: 'Les anguilles de la côte piquent un peu. Attention.',

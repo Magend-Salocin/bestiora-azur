@@ -1814,21 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "952c8e399e42d76dccc31d8cede5e189f1a6eb88489f309eb991f5f5051d1dec",
+    "pngHash": "c6b73a10ef5c070cd400e013c36713fd1e8aa5e0119651e39c601db003e74c14",
     "source": "src/data/creatures.js",
     "generated": [
-      "salamoue",
-      "salamarde",
-      "salamassif",
-      "fouisseron",
-      "quartzelle",
-      "quartzard",
-      "grenaillon",
-      "lingotard",
-      "fonderion",
-      "goujonet",
-      "goujarde",
-      "brochemor",
       "crabouille",
       "crabastion",
       "ombrelle",
@@ -1968,7 +1956,19 @@
       "bloquetin",
       "menhirgon",
       "noctule",
-      "noctulard"
+      "noctulard",
+      "salamoue",
+      "salamarde",
+      "salamassif",
+      "fouisseron",
+      "quartzelle",
+      "quartzard",
+      "grenaillon",
+      "lingotard",
+      "fonderion",
+      "goujonet",
+      "goujarde",
+      "brochemor"
     ]
   }
 }

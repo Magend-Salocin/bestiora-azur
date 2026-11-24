@@ -68,7 +68,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | Starters | 001 à 009 | 9 | Fait |
 | 1 | Premières routes (010 à 024) | 15 | Fait |
 | 2 | Forêts et premières grottes (025 à 037) | 13 | Fait |
-| 3 | Rivières et grottes (038 à 049) | 12 | |
+| 3 | Rivières et grottes (038 à 049) | 12 | Fait |
 | 4 | Côte et prairies (050 à 061) | 12 | |
 | 5 | Prairies et ville (062 à 074) | 13 | |
 | 6 | Ville et grottes (075 à 087) | 13 | |
@@ -100,11 +100,11 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 030 | Faonille > Cerfeuil > Cervoral | Fadet > Fadebois > Fadéon | Flore (Arcane au stade 3) | Fadet | Poitou, Vendée | A, J, J (fait) |
 | 033 | Caillotin > Bloquetin > Menhirgon | Gargoulin > Gargoulard > Gargouille | Roche, Terre | Gargouille | Rouen | J, J, F (fait) |
 | 036 | Noctule > Noctulard | Lubin > Lubinou | Ombre, Vent | Lubin | Normandie | F, J (fait) |
-| 038 | Salamoue > Salamarde > Salamassif | Dracounet > Dracorive > Dracrhodan | Terre, Eau | Drac du Rhône | Provence (Beaucaire) | J, J, F |
-| 041 | Fouisseron | Bolégan | Terre | Petit peuple souterrain | Bretagne | F, à vérifier |
-| 042 | Quartzelle > Quartzard | Houlin > Houlécrin | Roche, Arcane | Fions, fées des houles (grottes marines) | Haute-Bretagne | F, J |
-| 044 | Grenaillon > Lingotard > Fonderion | Servan > Servarmure > Servargent | Métal (Combat au stade 3) | Servan, gardien des richesses | Savoie | F, J, J |
-| 047 | Goujonet > Goujarde > Brochemor | Laminak > Laminéa > Laminara | Eau | Laminak | Pays basque | F, J, J |
+| 038 | Salamoue > Salamarde > Salamassif | Dracounet > Dracorive > Dracrhodan | Terre, Eau | Drac du Rhône | Provence (Beaucaire) | J, J, F (fait) |
+| 041 | Fouisseron | Bolégan | Terre | Petit peuple souterrain | Bretagne | F, à vérifier (fait) |
+| 042 | Quartzelle > Quartzard | Houlin > Houlécrin | Roche, Arcane | Fions, fées des houles (grottes marines) | Haute-Bretagne | F, J (fait) |
+| 044 | Grenaillon > Lingotard > Fonderion | Servan > Servarmure > Servargent | Métal (Combat au stade 3) | Servan, gardien des richesses | Savoie | F, J, J (fait) |
+| 047 | Goujonet > Goujarde > Brochemor | Laminak > Laminéa > Laminara | Eau | Laminak | Pays basque | F, J, J (fait) |
 | 050 | Crabouille > Crabastion | Tudgommon > Goémonroc | Eau, Roche | Tud-gommon, peuple du goémon | Bretagne (Léon) | F, J |
 | 052 | Ombrelle > Ombrellor | Morgann > Morgavague | Eau, Toxique | Marie-Morgane | Bretagne | F, J |
 | 054 | Anguilet > Anguistral > Fulmarène | Coulobrin > Coulobron > Coulobre | Eau, Foudre | Coulobre, serpent des tempêtes | Provence (Sorgue) | J, J, F |

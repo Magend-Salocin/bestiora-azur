@@ -42,6 +42,18 @@ import bloquetin from './bloquetin.js';
 import menhirgon from './menhirgon.js';
 import noctule from './noctule.js';
 import noctulard from './noctulard.js';
+import salamoue from './salamoue.js';
+import salamarde from './salamarde.js';
+import salamassif from './salamassif.js';
+import fouisseron from './fouisseron.js';
+import quartzelle from './quartzelle.js';
+import quartzard from './quartzard.js';
+import grenaillon from './grenaillon.js';
+import lingotard from './lingotard.js';
+import fonderion from './fonderion.js';
+import goujonet from './goujonet.js';
+import goujarde from './goujarde.js';
+import brochemor from './brochemor.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -56,4 +68,7 @@ export const HAND_DRAWN_CREATURES = {
   lumignon, lumidanse, lumirande, noisetin, noiseclat,
   faonille, cerfeuil, cervoral,
   caillotin, bloquetin, menhirgon, noctule, noctulard,
+  salamoue, salamarde, salamassif, fouisseron,
+  quartzelle, quartzard, grenaillon, lingotard, fonderion,
+  goujonet, goujarde, brochemor,
 };

@@ -48,7 +48,7 @@ export default {
   marin_baudouin_after: 'Le vent se lève vers l’est. Suis-le jusqu’aux Ilots.',
   pecheur_anselme_intro: 'Cette île est mon coin de pêche. Pas touche !',
   pecheur_anselme_defeat: 'Ma canne est brisée.',
-  pecheur_anselme_after: 'Les Salamassifs sont rares ici. Cherche à l’eau calme.',
+  pecheur_anselme_after: 'Les Dracrhodan sont rares ici. Cherche à l’eau calme.',
   nageuse_oriane_intro: 'Je fais le tour de la région à la nage. Combat ?',
   nageuse_oriane_defeat: 'Il me reste la moitié du tour.',
   nageuse_oriane_after: 'Pas facile de nager quand on se fait battre.',

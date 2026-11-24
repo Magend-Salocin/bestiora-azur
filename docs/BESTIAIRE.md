@@ -43,18 +43,18 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 035 | Gargouille | Roche / Terre | 505 | - | Grotte | 40 |
 | 036 | Lubin | Ombre / Vent | 270 | Lubinou (niv. 22) | Grotte | 8 |
 | 037 | Lubinou | Ombre / Vent | 440 | - | Grotte | 22 |
-| 038 | Salamoue | Terre / Eau | 300 | Salamarde (niv. 26) | Rivière | 9 |
-| 039 | Salamarde | Terre / Eau | 410 | Salamassif (niv. 42) | Rivière | 26 |
-| 040 | Salamassif | Terre / Eau | 515 | - | Rivière | 42 |
-| 041 | Fouisseron | Terre | 380 | - | Grotte | 10 |
-| 042 | Quartzelle | Roche / Arcane | 300 | Quartzard (niv. 30) | Grotte | 10 |
-| 043 | Quartzard | Roche / Arcane | 470 | - | Grotte | 30 |
-| 044 | Grenaillon | Métal | 300 | Lingotard (niv. 30) | Grotte | 12 |
-| 045 | Lingotard | Métal | 420 | Fonderion (niv. 55) | Grotte | 30 |
-| 046 | Fonderion | Métal / Combat | 600 | - | Grotte | 55 |
-| 047 | Goujonet | Eau | 260 | Goujarde (niv. 18) | Rivière | 10 |
-| 048 | Goujarde | Eau | 380 | Brochemor (niv. 36) | Rivière | 18 |
-| 049 | Brochemor | Eau | 500 | - | Rivière | 36 |
+| 038 | Dracounet | Terre / Eau | 300 | Dracorive (niv. 26) | Rivière | 9 |
+| 039 | Dracorive | Terre / Eau | 410 | Dracrhodan (niv. 42) | Rivière | 26 |
+| 040 | Dracrhodan | Terre / Eau | 515 | - | Rivière | 42 |
+| 041 | Bolégan | Terre | 380 | - | Grotte | 10 |
+| 042 | Houlin | Roche / Arcane | 300 | Houlécrin (niv. 30) | Grotte | 10 |
+| 043 | Houlécrin | Roche / Arcane | 470 | - | Grotte | 30 |
+| 044 | Servan | Métal | 300 | Servarmure (niv. 30) | Grotte | 12 |
+| 045 | Servarmure | Métal | 420 | Servargent (niv. 55) | Grotte | 30 |
+| 046 | Servargent | Métal / Combat | 600 | - | Grotte | 55 |
+| 047 | Laminak | Eau | 260 | Laminéa (niv. 18) | Rivière | 10 |
+| 048 | Laminéa | Eau | 380 | Laminara (niv. 36) | Rivière | 18 |
+| 049 | Laminara | Eau | 500 | - | Rivière | 36 |
 | 050 | Crabouille | Eau / Roche | 300 | Crabastion (niv. 28) | Mer | 10 |
 | 051 | Crabastion | Eau / Roche | 470 | - | Mer | 28 |
 | 052 | Ombrelle | Eau / Toxique | 300 | Ombrellor (niv. 30) | Mer | 12 |

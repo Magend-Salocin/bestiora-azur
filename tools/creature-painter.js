@@ -113,3 +113,6 @@ export function eyes(lx, rx, y, { height = 3 } = {}) {
   }
   return pixels;
 }
+
+/** 16 × 16 party icon painted with the same layers, in the top-left corner of the grid. */
+export const iconFrom = (layers) => toRows(paint(layers)).slice(0, 16).map((row) => row.slice(0, 16));
