@@ -120,20 +120,20 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 112 | Hellequet | Vent | 310 | Hellequin (niv. 36) | Montagne | 32 |
 | 113 | Hellequin | Vent | 485 | - | Montagne | 36 |
 | 114 | Bayard | Vent / Métal | 470 | - | Montagne | 33 |
-| 115 | Fangelet | Toxique / Eau | 300 | Fangeur (niv. 36) | Marais | 32 |
-| 116 | Fangeur | Toxique / Eau | 410 | Fangeroi (niv. 48) | Marais | 36 |
-| 117 | Fangeroi | Toxique / Eau | 520 | - | Marais | 48 |
-| 118 | Patineau | Insecte / Eau | 290 | Patinoir (niv. 38) | Marais | 32 |
-| 119 | Patinoir | Insecte / Eau | 460 | - | Marais | 38 |
-| 120 | Silurbe | Terre / Eau | 470 | - | Marais | 33 |
-| 121 | Pestelet | Toxique / Ombre | 320 | Pestorne (niv. 38) | Marais | 33 |
-| 122 | Pestorne | Toxique / Ombre | 490 | - | Marais | 38 |
-| 123 | Chafouin | Ombre | 300 | Chafourbe (niv. 38) | Ville | 36 |
-| 124 | Chafourbe | Ombre | 470 | - | Ville | 38 |
-| 125 | Miroitin | Arcane / Métal | 320 | Miroitage (niv. 40) | Ville | 36 |
-| 126 | Miroitage | Arcane / Métal | 490 | - | Ville | 40 |
-| 127 | Nocturbe | Arcane / Ombre | 470 | - | Forêt | 37 |
-| 128 | Chipotard | Normal / Ombre | 450 | - | Ville | 37 |
+| 115 | Graoulet | Toxique / Eau | 300 | Graoulard (niv. 36) | Marais | 32 |
+| 116 | Graoulard | Toxique / Eau | 410 | Graoully (niv. 48) | Marais | 36 |
+| 117 | Graoully | Toxique / Eau | 520 | - | Marais | 48 |
+| 118 | Lavandière | Insecte / Eau | 290 | Lavandâme (niv. 38) | Marais | 32 |
+| 119 | Lavandâme | Insecte / Eau | 460 | - | Marais | 38 |
+| 120 | Magou | Terre / Eau | 470 | - | Marais | 33 |
+| 121 | Galipotin | Toxique / Ombre | 320 | Galipote (niv. 38) | Marais | 33 |
+| 122 | Galipote | Toxique / Ombre | 490 | - | Marais | 38 |
+| 123 | Matagri | Ombre | 300 | Matagot (niv. 38) | Ville | 36 |
+| 124 | Matagot | Ombre | 470 | - | Ville | 38 |
+| 125 | Sotrin | Arcane / Métal | 320 | Sotrémage (niv. 40) | Ville | 36 |
+| 126 | Sotrémage | Arcane / Métal | 490 | - | Ville | 40 |
+| 127 | Birette | Arcane / Ombre | 470 | - | Forêt | 37 |
+| 128 | Drapet | Normal / Ombre | 450 | - | Ville | 37 |
 | 129 | Raielle | Eau / Vent | 330 | Raieciel (niv. 40) | Mer | 38 |
 | 130 | Raieciel | Eau / Vent | 500 | - | Mer | 40 |
 | 131 | Grimoule | Eau / Arcane | 330 | Grimoulix (niv. 42) | Mer | 38 |

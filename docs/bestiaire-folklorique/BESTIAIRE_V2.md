@@ -74,7 +74,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 6 | Ville et grottes (075 à 087) | 13 | Fait |
 | 7 | Ruines (088 à 100) | 13 | Fait |
 | 8 | Montagne et neige (101 à 114) | 14 | Fait |
-| 9 | Marais et ville (115 à 128) | 14 | |
+| 9 | Marais et ville (115 à 128) | 14 | Fait |
 | 10 | Mer et volcan (129 à 141) | 13 | |
 | 11 | Sommets, légendaires et mythique (142 à 150) | 9 | |
 | 12 | Finitions : identifiants, migration des sauvegardes, retrait du générateur, captures du README, documentation | 0 | |
@@ -138,14 +138,14 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 109 | Frimousson > Frimours > Frimastoc | Vosgoup > Vosgar > Vosgarde | Givre (Combat au stade 3) | Bête des Vosges | Vosges | J, J, J (fait) |
 | 112 | Nuageot > Cumulard | Hellequet > Hellequin | Vent | Mesnie Hellequin, chasse des nuées | Normandie | J, F (fait) |
 | 114 | Girouette | Bayard | Vent, Métal | Cheval Bayard | Ardennes | F (fait) |
-| 115 | Fangelet > Fangeur > Fangeroi | Graoulet > Graoulard > Graoully | Toxique, Eau | Graoully | Metz | J, J, F |
-| 118 | Patineau > Patinoir | Lavandière > Lavandâme | Insecte, Eau | Lavandières de nuit | Bretagne, Berry | F, J |
-| 120 | Silurbe | Magou | Terre, Eau | Poisson moustachu des crues | À vérifier | F |
-| 121 | Pestelet > Pestorne | Galipotin > Galipote | Toxique, Ombre | Galipote | Saintonge | J, F |
-| 123 | Chafouin > Chafourbe | Matagri > Matagot | Ombre | Matagot, chat sorcier | Provence, Gascogne | J, F |
-| 125 | Miroitin > Miroitage | Sotrin > Sotrémage | Arcane, Métal | Sotré | Lorraine | J, J |
-| 127 | Nocturbe | Birette | Arcane, Ombre | Birette | Normandie, à vérifier | F |
-| 128 | Chipotard | Drapet | Normal, Ombre | Drapet, esprit domestique chapardeur | À vérifier | F |
+| 115 | Fangelet > Fangeur > Fangeroi | Graoulet > Graoulard > Graoully | Toxique, Eau | Graoully | Metz | J, J, F (fait) |
+| 118 | Patineau > Patinoir | Lavandière > Lavandâme | Insecte, Eau | Lavandières de nuit | Bretagne, Berry | F, J (fait) |
+| 120 | Silurbe | Magou | Terre, Eau | Poisson moustachu des crues | À vérifier | F (fait) |
+| 121 | Pestelet > Pestorne | Galipotin > Galipote | Toxique, Ombre | Galipote | Saintonge | J, F (fait) |
+| 123 | Chafouin > Chafourbe | Matagri > Matagot | Ombre | Matagot, chat sorcier | Provence, Gascogne | J, F (fait) |
+| 125 | Miroitin > Miroitage | Sotrin > Sotrémage | Arcane, Métal | Sotré | Lorraine | J, J (fait) |
+| 127 | Nocturbe | Birette | Arcane, Ombre | Birette | Normandie, à vérifier | F (fait) |
+| 128 | Chipotard | Drapet | Normal, Ombre | Drapet, esprit domestique chapardeur | À vérifier | F (fait) |
 | 129 | Raielle > Raieciel | Sirénéa > Sirénor | Eau, Vent | Sirène de la Garonne | Aquitaine | J, J |
 | 131 | Grimoule > Grimoulix | Mélusineau > Mélusine | Eau, Arcane | Mélusine | Poitou (Lusignan) | J, F |
 | 133 | Octobras | Nainmarin | Eau, Combat | Nain de mer | Bretagne | A |

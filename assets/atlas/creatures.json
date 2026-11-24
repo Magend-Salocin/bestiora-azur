@@ -1814,23 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "83f6c084397c0119b9d30486d53987c1e0a1a982d3d3b2c44e931336018a31a6",
+    "pngHash": "45acb3495268e8580f2793c4fec679fa5ea9da2feaf92b7aee2633bbfeee695e",
     "source": "src/data/creatures.js",
     "generated": [
-      "fangelet",
-      "fangeur",
-      "fangeroi",
-      "patineau",
-      "patinoir",
-      "silurbe",
-      "pestelet",
-      "pestorne",
-      "chafouin",
-      "chafourbe",
-      "miroitin",
-      "miroitage",
-      "nocturbe",
-      "chipotard",
       "raielle",
       "raieciel",
       "grimoule",
@@ -1968,7 +1954,21 @@
       "frimastoc",
       "nuageot",
       "cumulard",
-      "girouette"
+      "girouette",
+      "fangelet",
+      "fangeur",
+      "fangeroi",
+      "patineau",
+      "patinoir",
+      "silurbe",
+      "pestelet",
+      "pestorne",
+      "chafouin",
+      "chafourbe",
+      "miroitin",
+      "miroitage",
+      "nocturbe",
+      "chipotard"
     ]
   }
 }

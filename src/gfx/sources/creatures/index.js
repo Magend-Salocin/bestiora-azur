@@ -119,6 +119,20 @@ import frimastoc from './frimastoc.js';
 import nuageot from './nuageot.js';
 import cumulard from './cumulard.js';
 import girouette from './girouette.js';
+import fangelet from './fangelet.js';
+import fangeur from './fangeur.js';
+import fangeroi from './fangeroi.js';
+import patineau from './patineau.js';
+import patinoir from './patinoir.js';
+import silurbe from './silurbe.js';
+import pestelet from './pestelet.js';
+import pestorne from './pestorne.js';
+import chafouin from './chafouin.js';
+import chafourbe from './chafourbe.js';
+import miroitin from './miroitin.js';
+import miroitage from './miroitage.js';
+import nocturbe from './nocturbe.js';
+import chipotard from './chipotard.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -146,4 +160,5 @@ export const HAND_DRAWN_CREATURES = {
   sombrecor, stalactor, lombrin, lombrigant, filandrin, filandrix,
   fusiblet, fusiblard, brumelin, brumoire, brumaitre, cierget, lustrombre, glasnuit, dionelle, dionavore, ronceroc, butinet, butinelle,
   cabrelin, bouquetor, cabrecime, volplanin, volplaneur, eolithe, givrelet, givrailes, frimousson, frimours, frimastoc, nuageot, cumulard, girouette,
+  fangelet, fangeur, fangeroi, patineau, patinoir, silurbe, pestelet, pestorne, chafouin, chafourbe, miroitin, miroitage, nocturbe, chipotard,
 };
