@@ -161,7 +161,7 @@ const VOSGARDE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'frimousson', front: vosgoupFront(), back: vosgoupBack(), icon: VOSGOUP_ICON },
-  { id: 'frimours', front: vosgarFront(), back: vosgarBack(), icon: VOSGAR_ICON },
-  { id: 'frimastoc', front: vosgardeFront(), back: vosgardeBack(), icon: VOSGARDE_ICON },
+  { id: 'vosgoup', front: vosgoupFront(), back: vosgoupBack(), icon: VOSGOUP_ICON },
+  { id: 'vosgar', front: vosgarFront(), back: vosgarBack(), icon: VOSGAR_ICON },
+  { id: 'vosgarde', front: vosgardeFront(), back: vosgardeBack(), icon: VOSGARDE_ICON },
 ];

@@ -42,7 +42,7 @@ export default {
       script: [{ cmd: 'say', text: 'bibliotheque_erudit' }],
     },
     {
-      id: 'mirelle',
+      id: 'mitreve',
       sprite: 'brasero_allume',
       x: 7,
       y: 6,
@@ -50,7 +50,7 @@ export default {
       movement: 'static',
       showIf: 'bestiary_149',
       hideIf: 'mirelle_gone',
-      script: 'mirelle',
+      script: 'mitreve',
     },
   ],
   trainers: [
@@ -79,7 +79,7 @@ export default {
   triggers: [],
   connections: {  },
   scripts: {
-    mirelle: [
+    mitreve: [
       {
         cmd: 'if_flag',
         flag: 'mirelle_gone',
@@ -88,7 +88,7 @@ export default {
           { cmd: 'play_sfx', sfx: 'teleporter' },
           {
             cmd: 'wild_battle',
-            creature: 'mirelle',
+            creature: 'mitreve',
             level: 50,
             legendary: true,
             won: [{ cmd: 'set_flag', flag: 'mirelle_gone' }, { cmd: 'say', text: 'bibliotheque_mirelle_fuite' }],

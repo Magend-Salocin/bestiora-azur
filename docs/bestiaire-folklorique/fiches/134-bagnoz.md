@@ -2,7 +2,7 @@
 
 ## 134 : Bagnoz
 
-Emplacement `epavard`. Types Ombre et Eau. Pas d'évolution.
+Emplacement `bagnoz`. Types Ombre et Eau. Pas d'évolution.
 
 **Légende.** En Bretagne, le bag noz est le « bateau de nuit » qui recueille les âmes des noyés. Selon les récits rassemblés par Anatole Le Braz, il est commandé par le premier noyé de l'année, et on entend les plaintes de l'équipage quand il passe au large.
 
@@ -16,7 +16,7 @@ Origines : bag noz, figure attestée (Bretagne).
 
 ## 135 : Goélâme
 
-Emplacement `albavent`. Types Vent et Normal. Pas d'évolution.
+Emplacement `goelame`. Types Vent et Normal. Pas d'évolution.
 
 **Légende.** Sur les côtes de Bretagne, on disait que les âmes des marins noyés revenaient en oiseaux de mer, et qu'il ne fallait pas tuer les goélands qui suivaient les bateaux.
 

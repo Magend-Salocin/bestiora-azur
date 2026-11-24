@@ -2,7 +2,7 @@
 
 ## 125 et 126 : lignée du Sotré
 
-Emplacements `miroitin`, `miroitage`. Types Arcane et Métal. Évolution au niveau 40.
+Emplacements `sotrin`, `sotremage`. Types Arcane et Métal. Évolution au niveau 40.
 
 **Légende.** En Lorraine, le sotré est un petit lutin farceur. Il visite les maisons et les étables la nuit, rend parfois service, mais déplace les objets et tresse la crinière des chevaux.
 
@@ -17,7 +17,7 @@ Origines : sotré, figure attestée (Lorraine). Sotrin et Sotrémage : création
 
 ## 127 : Birette
 
-Emplacement `nocturbe`. Types Arcane et Ombre. Pas d'évolution. Nom féminin.
+Emplacement `birette`. Types Arcane et Ombre. Pas d'évolution. Nom féminin.
 
 **Légende.** Le référentiel rattache la birette à la Normandie. Récit et source à vérifier.
 
@@ -31,7 +31,7 @@ Origines : birette, Normandie, à vérifier.
 
 ## 128 : Drapet
 
-Emplacement `chipotard`. Types Normal et Ombre. Pas d'évolution.
+Emplacement `drapet`. Types Normal et Ombre. Pas d'évolution.
 
 **Légende.** Le référentiel le décrit comme un esprit domestique chapardeur. Région et source à vérifier.
 

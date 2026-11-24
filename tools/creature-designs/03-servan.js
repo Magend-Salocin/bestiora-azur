@@ -178,7 +178,7 @@ const SERVARGENT_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'grenaillon', front: servanFront(), back: servanBack(), icon: SERVAN_ICON },
-  { id: 'lingotard', front: servarmureFront(), back: servarmureBack(), icon: SERVARMURE_ICON },
-  { id: 'fonderion', front: servargentFront(), back: servargentBack(), icon: SERVARGENT_ICON },
+  { id: 'servan', front: servanFront(), back: servanBack(), icon: SERVAN_ICON },
+  { id: 'servarmure', front: servarmureFront(), back: servarmureBack(), icon: SERVARMURE_ICON },
+  { id: 'servargent', front: servargentFront(), back: servargentBack(), icon: SERVARGENT_ICON },
 ];

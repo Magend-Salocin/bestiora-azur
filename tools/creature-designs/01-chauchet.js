@@ -167,7 +167,7 @@ const CHAUCHEMOR_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'feuillarve', front: chauchetFront(), back: chauchetBack(), icon: CHAUCHET_ICON },
-  { id: 'nymphot', front: chauchenidFront(), back: chauchenidBack(), icon: CHAUCHENID_ICON },
-  { id: 'phalenoir', front: chauchemorFront(), back: chauchemorBack(), icon: CHAUCHEMOR_ICON },
+  { id: 'chauchet', front: chauchetFront(), back: chauchetBack(), icon: CHAUCHET_ICON },
+  { id: 'chauchenid', front: chauchenidFront(), back: chauchenidBack(), icon: CHAUCHENID_ICON },
+  { id: 'chauchemor', front: chauchemorFront(), back: chauchemorBack(), icon: CHAUCHEMOR_ICON },
 ];

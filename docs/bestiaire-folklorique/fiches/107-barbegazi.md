@@ -1,6 +1,6 @@
 # 107 et 108 : lignée du Barbegazi
 
-Emplacements `givrelet`, `givrailes`. Type Givre, Vent au stade 2. Évolution au niveau 36.
+Emplacements `barbegel`, `barbegazi`. Type Givre, Vent au stade 2. Évolution au niveau 36.
 
 **Légende.** Dans les Alpes savoyardes, le barbegazi est un petit nain des glaciers. Sa longue barbe gelée lui a donné son nom (« barbe glacée »), et ses pieds immenses lui servent de skis. Il sort l'hiver, siffle pour prévenir des avalanches et aide parfois les bergers pris dans la neige.
 

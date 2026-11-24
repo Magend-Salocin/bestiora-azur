@@ -220,12 +220,12 @@ export const MOVES = [
   move('rouille', 'Rouille', 'metal', X, 0, 90, 20, 'Rouille : Défense très baissée.', { effect: 'target_stat_down', params: stats({ def: -2 }) }),
 
   // Signatures des légendaires et du mythique
-  move('ciel_dazur', 'Ciel d’Azur', 'vent', S, 110, 100, 5, 'Le ciel souffle. Monte l’A.Spé.', { effect: 'self_stat_up', chance: 20, params: stats({ spa: 1 }), exclusiveTo: ['azurel'] }),
-  move('aube_bleue', 'Aube Bleue', 'arcane', S, 100, 100, 5, 'L’aube draine la vie de la cible.', { effect: 'drain', params: { fraction: 1 / 2 }, exclusiveTo: ['azurel'] }),
-  move('glacier_roc', 'Glacier Roc', 'givre', P, 110, 90, 5, 'Bloc de glacier. Peut geler.', { effect: 'freeze', chance: 20, exclusiveTo: ['glacerne'] }),
-  move('coeur_ardent', 'Cœur Ardent', 'feu', S, 110, 90, 5, 'Feu du volcan. Brûle souvent.', { effect: 'burn', chance: 30, exclusiveTo: ['volcarde'] }),
-  move('fulgurance', 'Fulgurance', 'foudre', S, 110, 95, 5, 'Éclair fulgurant. Peut paralyser.', { effect: 'paralyze', chance: 20, exclusiveTo: ['fulgorine'] }),
-  move('mille_eclats', 'Mille Éclats', 'arcane', S, 100, null, 5, 'Brûle, gèle ou paralyse parfois.', { effect: 'tri_status', chance: 20, exclusiveTo: ['mirelle'] }),
+  move('ciel_dazur', 'Ciel d’Azur', 'vent', S, 110, 100, 5, 'Le ciel souffle. Monte l’A.Spé.', { effect: 'self_stat_up', chance: 20, params: stats({ spa: 1 }), exclusiveTo: ['vouivre'] }),
+  move('aube_bleue', 'Aube Bleue', 'arcane', S, 100, 100, 5, 'L’aube draine la vie de la cible.', { effect: 'drain', params: { fraction: 1 / 2 }, exclusiveTo: ['vouivre'] }),
+  move('glacier_roc', 'Glacier Roc', 'givre', P, 110, 90, 5, 'Bloc de glacier. Peut geler.', { effect: 'freeze', chance: 20, exclusiveTo: ['gaussier'] }),
+  move('coeur_ardent', 'Cœur Ardent', 'feu', S, 110, 90, 5, 'Feu du volcan. Brûle souvent.', { effect: 'burn', chance: 30, exclusiveTo: ['draguignan'] }),
+  move('fulgurance', 'Fulgurance', 'foudre', S, 110, 95, 5, 'Éclair fulgurant. Peut paralyser.', { effect: 'paralyze', chance: 20, exclusiveTo: ['veneur'] }),
+  move('mille_eclats', 'Mille Éclats', 'arcane', S, 100, null, 5, 'Brûle, gèle ou paralyse parfois.', { effect: 'tri_status', chance: 20, exclusiveTo: ['mitreve'] }),
 ];
 
 export const MOVES_BY_ID = Object.fromEntries(MOVES.map((entry) => [entry.id, entry]));

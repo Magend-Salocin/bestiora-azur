@@ -34,17 +34,17 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'cumulard', minLevel: 55, maxLevel: 58, weight: 14 },
-      { creature: 'volplaneur', minLevel: 55, maxLevel: 58, weight: 14 },
-      { creature: 'albavent', minLevel: 55, maxLevel: 58, weight: 14 },
-      { creature: 'cabrecime', minLevel: 55, maxLevel: 58, weight: 12 },
-      { creature: 'cristarche', minLevel: 56, maxLevel: 60, weight: 10 },
-      { creature: 'stoicor', minLevel: 56, maxLevel: 60, weight: 10 },
-      { creature: 'neveon', minLevel: 56, maxLevel: 60, weight: 8 },
-      { creature: 'miroitage', minLevel: 56, maxLevel: 60, weight: 6 },
-      { creature: 'frimastoc', minLevel: 56, maxLevel: 60, weight: 4 },
-      { creature: 'fangeroi', minLevel: 56, maxLevel: 58, weight: 2 },
-      { creature: 'fonderion', minLevel: 56, maxLevel: 58, weight: 2 },
+      { creature: 'hellequin', minLevel: 55, maxLevel: 58, weight: 14 },
+      { creature: 'serpvolant', minLevel: 55, maxLevel: 58, weight: 14 },
+      { creature: 'goelame', minLevel: 55, maxLevel: 58, weight: 14 },
+      { creature: 'cabro_dor', minLevel: 55, maxLevel: 58, weight: 12 },
+      { creature: 'alicorne', minLevel: 56, maxLevel: 60, weight: 10 },
+      { creature: 'gevaudan', minLevel: 56, maxLevel: 60, weight: 10 },
+      { creature: 'dahu', minLevel: 56, maxLevel: 60, weight: 8 },
+      { creature: 'sotremage', minLevel: 56, maxLevel: 60, weight: 6 },
+      { creature: 'vosgarde', minLevel: 56, maxLevel: 60, weight: 4 },
+      { creature: 'graoully', minLevel: 56, maxLevel: 58, weight: 2 },
+      { creature: 'servargent', minLevel: 56, maxLevel: 58, weight: 2 },
     ],
   },
   warps: [],
@@ -109,10 +109,10 @@ export default {
     { x: 9, y: 19, item: 'pierre_lunaire', flag: 'hidden_pic_1' },
     { x: 25, y: 18, item: 'ranimant_max', flag: 'hidden_pic_2' },
   ],
-  triggers: [{ x: 23, y: 8, w: 3, h: 1, script: [{ cmd: 'call', script: 'azurel' }] }],
+  triggers: [{ x: 23, y: 8, w: 3, h: 1, script: [{ cmd: 'call', script: 'vouivre' }] }],
   connections: { west: 'citadelle_azur' },
   scripts: {
-    azurel: [
+    vouivre: [
       {
         cmd: 'if_flag',
         flag: 'azurel_capturee',
@@ -130,7 +130,7 @@ export default {
               { cmd: 'say', text: 'azurel_2' },
               {
                 cmd: 'wild_battle',
-                creature: 'azurel',
+                creature: 'vouivre',
                 level: 70,
                 legendary: true,
                 won: [{ cmd: 'set_flag', flag: 'azurel_ko' }, { cmd: 'say', text: 'azurel_ko' }],

@@ -1,6 +1,6 @@
 # 109 à 111 : lignée de la Bête des Vosges
 
-Emplacements `frimousson`, `frimours`, `frimastoc`. Type Givre, Combat au stade 3. Évolutions aux niveaux 34 et 50.
+Emplacements `vosgoup`, `vosgar`, `vosgarde`. Type Givre, Combat au stade 3. Évolutions aux niveaux 34 et 50.
 
 **Légende.** La Bête des Vosges sert d'inspiration générale : une bête des forêts de montagne qu'on accuse des disparitions de bétail. Les trois formes sont des créations du jeu ; le référentiel ne s'appuie pas sur un récit précis.
 

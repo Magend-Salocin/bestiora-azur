@@ -53,7 +53,7 @@ test('les légendaires du chapitre sont des rencontres uniques de niveau 50', ()
     };
     walk(MAPS[id]);
   }
-  for (const creature of ['volcarde', 'fulgorine', 'mirelle']) {
+  for (const creature of ['draguignan', 'veneur', 'mitreve']) {
     assert.ok(found[creature], creature);
     assert.equal(found[creature].level, 50);
     assert.equal(found[creature].legendary, true);

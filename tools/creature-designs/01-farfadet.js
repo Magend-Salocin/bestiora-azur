@@ -191,7 +191,7 @@ const FARFATOR_ICON = [
 ].map((row) => row.replace(/ /g, '3').slice(0, 16));
 
 export const line = [
-  { id: 'pivelin', front: farfadetFront(), back: farfadetBack(), icon: FARFADET_ICON },
-  { id: 'grivelin', front: farfandoleFront(), back: farfandoleBack(), icon: FARFANDOLE_ICON },
-  { id: 'aquilard', front: farfatorFront(), back: farfatorBack(), icon: FARFATOR_ICON },
+  { id: 'farfadet', front: farfadetFront(), back: farfadetBack(), icon: FARFADET_ICON },
+  { id: 'farfandole', front: farfandoleFront(), back: farfandoleBack(), icon: FARFANDOLE_ICON },
+  { id: 'farfator', front: farfatorFront(), back: farfatorBack(), icon: FARFATOR_ICON },
 ];

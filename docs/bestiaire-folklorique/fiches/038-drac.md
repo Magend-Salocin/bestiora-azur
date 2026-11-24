@@ -2,7 +2,7 @@
 
 ## 038 à 040 : lignée du Drac
 
-Emplacements `salamoue`, `salamarde`, `salamassif`. Types Terre et Eau. Évolutions aux niveaux 26 et 42.
+Emplacements `dracounet`, `dracorive`, `dracrhodan`. Types Terre et Eau. Évolutions aux niveaux 26 et 42.
 
 **Légende.** À Beaucaire, le Drac est un dragon qui vit au fond du Rhône. Selon Gervais de Tilbury (XIIIe siècle), il enleva une lavandière pour qu'elle nourrisse son petit pendant sept ans. Revenue chez elle, elle le reconnut un jour au marché grâce à l'onguent qui lui avait touché l'œil, et le Drac lui creva cet œil.
 
@@ -18,7 +18,7 @@ Origines : Drac de Beaucaire, figure attestée. Dracounet et Dracorive : créati
 
 ## 041 : Bolégan
 
-Emplacement `fouisseron`. Type Terre. Pas d'évolution.
+Emplacement `bolegan`. Type Terre. Pas d'évolution.
 
 **Légende.** En Bretagne, plusieurs récits parlent d'un petit peuple qui vit sous terre, creuse des galeries et garde les veines de métal. Le nom de Bolégan et son rattachement précis restent à vérifier dans Sébillot avant de figer la fiche.
 

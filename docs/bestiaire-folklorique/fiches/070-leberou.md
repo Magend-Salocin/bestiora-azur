@@ -2,7 +2,7 @@
 
 ## 070 à 072 : lignée du Lébérou
 
-Emplacements `fumeron`, `fumelard`, `cendrador`. Type Feu, Ombre au stade 3. Lébérouge évolue au niveau 22, Lébérombre avec une Pierre de Braise.
+Emplacements `leberou`, `leberouge`, `leberombre`. Type Feu, Ombre au stade 3. Lébérouge évolue au niveau 22, Lébérombre avec une Pierre de Braise.
 
 **Légende.** En Périgord et en Limousin, le lébérou est la forme locale du loup-garou. Certaines nuits, il revêt une peau de bête et court la campagne jusqu'à l'aube. Selon la tradition, on le délivre en lui tirant une goutte de sang. Le folklore en fait un humain transformé ; le jeu n'en garde que la bête.
 
@@ -18,7 +18,7 @@ Origines : lébérou, figure attestée (Périgord, Limousin). Lébérouge et Lé
 
 ## 073 et 074 : lignée du Gobelin
 
-Emplacements `boulonnet`, `boulonnier`. Types Métal et Foudre. Évolution au niveau 30.
+Emplacements `gobelinet`, `gobelin`. Types Métal et Foudre. Évolution au niveau 30.
 
 **Légende.** En Normandie, le gobelin est un lutin qui hante les maisons, les moulins et les ruines. Il rend parfois service mais casse tout quand on l'offense. Le mot est passé dans toute la France pour désigner les lutins malicieux.
 

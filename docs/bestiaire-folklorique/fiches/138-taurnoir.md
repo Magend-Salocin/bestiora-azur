@@ -2,7 +2,7 @@
 
 ## 138 : Taurnoir
 
-Emplacement `pyrobelier`. Type Feu. Pas d'évolution.
+Emplacement `taurnoir`. Type Feu. Pas d'évolution.
 
 **Légende.** Dans de nombreuses régions de France, un taureau noir garde les trésors enfouis ou apparaît la nuit aux carrefours ; on y voit souvent le diable sous forme de bête.
 
@@ -16,7 +16,7 @@ Origines : taureau noir, archétype traditionnel.
 
 ## 139 : Mallet
 
-Emplacement `enclumor`. Types Métal et Feu. Pas d'évolution.
+Emplacement `mallet`. Types Métal et Feu. Pas d'évolution.
 
 **Légende.** En Poitou et en Vendée, le cheval Mallet apparaît la nuit aux voyageurs fatigués, sellé et docile. Celui qui le monte est emporté au galop et ne revient jamais.
 

@@ -58,7 +58,7 @@ Le chapitre [12](12-ou-se-trouve-quoi.md) détaille chaque fichier.
 
 ### 1. Les données ne sont pas du code
 
-Une bestiole, une carte ou un dialogue ne sont pas « programmés ». Ce sont des fiches remplies, comme des fiches de bibliothèque. Par exemple, la Route 1 est décrite par un dessin en lettres (voir chapitre [06](06-monde.md)), et le Fenouillot par une fiche avec son nom, son type, ses forces (chapitre [03](03-bestioles-fiche.md)).
+Une bestiole, une carte ou un dialogue ne sont pas « programmés ». Ce sont des fiches remplies, comme des fiches de bibliothèque. Par exemple, la Route 1 est décrite par un dessin en lettres (voir chapitre [06](06-monde.md)), et le Korrigan par une fiche avec son nom, son type, ses forces (chapitre [03](03-bestioles-fiche.md)).
 
 Avantage : pour ajouter une bestiole ou une maison, on remplit une fiche, on ne touche pas au moteur.
 

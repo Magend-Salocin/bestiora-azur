@@ -132,7 +132,7 @@ const GRAOULLY_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'fangelet', front: graouletFront(), back: graouletBack(), icon: GRAOULET_ICON },
-  { id: 'fangeur', front: graoulardFront(), back: graoulardBack(), icon: GRAOULARD_ICON },
-  { id: 'fangeroi', front: graoullyFront(), back: graoullyBack(), icon: GRAOULLY_ICON },
+  { id: 'graoulet', front: graouletFront(), back: graouletBack(), icon: GRAOULET_ICON },
+  { id: 'graoulard', front: graoulardFront(), back: graoulardBack(), icon: GRAOULARD_ICON },
+  { id: 'graoully', front: graoullyFront(), back: graoullyBack(), icon: GRAOULLY_ICON },
 ];

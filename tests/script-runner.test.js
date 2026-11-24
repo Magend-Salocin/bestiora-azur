@@ -30,7 +30,7 @@ function fakeContext({ answers = [], outcomes = [] } = {}) {
     openMenu: async (menu) => { log.push(`menu:${menu}`); },
     getScript: (name) => ({ sub: [{ cmd: 'say', text: 'from_sub' }] })[name],
     setRivalName: async () => {},
-    chooseStarter: async () => 'braisille',
+    chooseStarter: async () => 'galtza',
     healParty: () => log.push('heal'),
     itemName: (id) => id.toUpperCase(),
     creatureName: (id) => id,
@@ -93,9 +93,9 @@ test('battle runs `won` or `lost` depending on the outcome', async () => {
 test('choose_starter gives the creature and records the choice', async () => {
   const ctx = fakeContext();
   await createScriptRunner(ctx).run([{ cmd: 'choose_starter' }]);
-  assert.equal(ctx.state.starter, 'braisille');
-  assert.ok(hasFlag(ctx.state, 'starter_braisille'));
-  assert.deepEqual(ctx.state.party, [{ species: 'braisille', level: 5 }]);
+  assert.equal(ctx.state.starter, 'galtza');
+  assert.ok(hasFlag(ctx.state, 'starter_galtza'));
+  assert.deepEqual(ctx.state.party, [{ species: 'galtza', level: 5 }]);
 });
 
 test('end stops the script and async moves are awaited', async () => {

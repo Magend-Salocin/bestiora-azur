@@ -97,6 +97,6 @@ const GOELAME_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'epavard', front: bagnozFront(), back: bagnozBack(), icon: BAGNOZ_ICON },
-  { id: 'albavent', front: goelameFront(), back: goelameBack(), icon: GOELAME_ICON },
+  { id: 'bagnoz', front: bagnozFront(), back: bagnozBack(), icon: BAGNOZ_ICON },
+  { id: 'goelame', front: goelameFront(), back: goelameBack(), icon: GOELAME_ICON },
 ];

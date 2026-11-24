@@ -281,11 +281,11 @@ Chaque carte peut avoir une table de rencontres :
 encounters: {
   rate: 10,   // 10 % de chances à chaque pas dans l'herbe haute
   grass: [
-    { creature: 'pivelin',    minLevel: 2, maxLevel: 4, weight: 35 },
-    { creature: 'musaraille', minLevel: 2, maxLevel: 4, weight: 35 },
-    { creature: 'feuillarve', minLevel: 2, maxLevel: 3, weight: 20 },
-    { creature: 'noisetin',   minLevel: 4, maxLevel: 4, weight: 5 },
-    { creature: 'morillon',   minLevel: 4, maxLevel: 4, weight: 5 },
+    { creature: 'farfadet',    minLevel: 2, maxLevel: 4, weight: 35 },
+    { creature: 'poulpiquet', minLevel: 2, maxLevel: 4, weight: 35 },
+    { creature: 'chauchet', minLevel: 2, maxLevel: 3, weight: 20 },
+    { creature: 'faramin',   minLevel: 4, maxLevel: 4, weight: 5 },
+    { creature: 'mandragot',   minLevel: 4, maxLevel: 4, weight: 5 },
   ],
 },
 ```
@@ -293,7 +293,7 @@ encounters: {
 Le tirage se fait en deux temps ([src/overworld/encounters.js](../../src/overworld/encounters.js)) :
 
 1. Lancer un dé à 100 faces. Si le résultat est sous `rate` (10), une bestiole surgit.
-2. Choisir laquelle avec les **poids** (`weight`). Imagine un sac de 100 billes : 35 billes Pivelin, 35 Musaraille, 20 Feuillarve, 5 Noisetin, 5 Morillon. On en tire une. Le Pivelin sort souvent, le Morillon rarement.
+2. Choisir laquelle avec les **poids** (`weight`). Imagine un sac de 100 billes : 35 billes Farfadet, 35 Poulpiquet, 20 Chauchet, 5 Faramin, 5 Mandragot. On en tire une. Le Farfadet sort souvent, le Mandragot rarement.
 3. Tirer son niveau entre `minLevel` et `maxLevel`.
 
 Il y a trois tables possibles : `grass` (herbe haute), `water` (en nageant) et `cave` (partout dans une grotte). Si un Répulsif est actif, les bestioles plus faibles que ta première bestiole ne viennent pas.

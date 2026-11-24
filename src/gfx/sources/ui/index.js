@@ -155,7 +155,7 @@ function silhouette(rows) {
   return rows.map((row) => row.replace(/[0-3]/g, '3'));
 }
 
-/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<plan>/<n>", "icon/<species>/<n>", "logo/<word>", "title/azurel". */
+/** Atlas frames: "frame/<part>", "hp/<state>", "status/<id>", "type/<id>", "capsule/<state>", "badge/<type>", "icon/<plan>/<n>", "icon/<species>/<n>", "logo/<word>", "title/vouivre". */
 export function buildUiFrames() {
   const frames = {};
   for (const [part, rows] of Object.entries(FRAME_TILES)) frames[`frame/${part}`] = rows;
@@ -181,6 +181,6 @@ export function buildUiFrames() {
   }
   frames['logo/bestiora'] = logoRows('BESTIORA');
   frames['logo/azur'] = logoRows('AZUR');
-  frames['title/azurel'] = silhouette(HAND_DRAWN_CREATURES.azurel.front);
+  frames['title/vouivre'] = silhouette(HAND_DRAWN_CREATURES.vouivre.front);
   return frames;
 }

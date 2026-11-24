@@ -92,6 +92,6 @@ const SIRENOR_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'raielle', front: sireneaFront(), back: sireneaBack(), icon: SIRENEA_ICON },
-  { id: 'raieciel', front: sirenorFront(), back: sirenorBack(), icon: SIRENOR_ICON },
+  { id: 'sirenea', front: sireneaFront(), back: sireneaBack(), icon: SIRENEA_ICON },
+  { id: 'sirenor', front: sirenorFront(), back: sirenorBack(), icon: SIRENOR_ICON },
 ];

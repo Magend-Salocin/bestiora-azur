@@ -2,7 +2,7 @@
 
 ## 042 et 043 : lignée du Houlin
 
-Emplacements `quartzelle`, `quartzard`. Types Roche et Arcane. Évolution au niveau 30.
+Emplacements `houlin`, `houlecrin`. Types Roche et Arcane. Évolution au niveau 30.
 
 **Légende.** Sur la côte de Haute-Bretagne, les houles sont des grottes marines. Paul Sébillot y a recueilli les récits des fées des houles et des fions, un petit peuple qui y vivait, lavait son linge et gardait des trésors. Les pêcheurs entendaient parfois leurs chants mêlés au bruit des vagues.
 
@@ -17,7 +17,7 @@ Origines : fées des houles et fions, figures attestées (Haute-Bretagne). Houli
 
 ## 044 à 046 : lignée du Servan
 
-Emplacements `grenaillon`, `lingotard`, `fonderion`. Type Métal, Combat au stade 3. Évolutions aux niveaux 30 et 55.
+Emplacements `servan`, `servarmure`, `servargent`. Type Métal, Combat au stade 3. Évolutions aux niveaux 30 et 55.
 
 **Légende.** En Savoie et en Suisse romande, le servan est un lutin domestique. Il soigne les bêtes et range la maison la nuit, mais se venge en semant le désordre quand on le néglige. Certains récits en font le gardien des richesses cachées de la maison.
 

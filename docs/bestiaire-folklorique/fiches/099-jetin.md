@@ -1,6 +1,6 @@
 # 099 et 100 : lignée du Jetin
 
-Emplacements `butinet`, `butinelle`. Types Insecte et Vent. Évolution au niveau 30. Jetin est masculin, Jetinelle féminin.
+Emplacements `jetin`, `jetinelle`. Types Insecte et Vent. Évolution au niveau 30. Jetin est masculin, Jetinelle féminin.
 
 **Légende.** En Haute-Bretagne, les jetins font partie du petit peuple qui habite les grottes des falaises, au bord de la mer. Comme les fées des houles, ils vivent cachés près des côtes et se montrent rarement aux humains.
 

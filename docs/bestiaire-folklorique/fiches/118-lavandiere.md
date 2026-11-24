@@ -2,7 +2,7 @@
 
 ## 118 et 119 : lignée de la Lavandière
 
-Emplacements `patineau`, `patinoir`. Types Insecte et Eau. Évolution au niveau 38. Noms féminins.
+Emplacements `lavandiere`, `lavandame`. Types Insecte et Eau. Évolution au niveau 38. Noms féminins.
 
 **Légende.** En Bretagne comme dans le Berry, les lavandières de nuit battent leur linge au bord des lavoirs après minuit. Ce linge serait un linceul. Le passant attardé est forcé de les aider à tordre les draps, et celui qui tord à contresens finit broyé.
 
@@ -17,7 +17,7 @@ Origines : lavandières de nuit, figure attestée (Bretagne, Berry). Lavandâme 
 
 ## 120 : Magou
 
-Emplacement `silurbe`. Types Terre et Eau. Pas d'évolution.
+Emplacement `magou`. Types Terre et Eau. Pas d'évolution.
 
 **Légende.** Le référentiel le décrit comme un poisson moustachu qui remonte avec les crues. Région et source à vérifier.
 

@@ -2,7 +2,7 @@
 
 ## 033 à 035 : lignée de la Gargouille
 
-Emplacements `caillotin`, `bloquetin`, `menhirgon`. Types Roche et Terre. Évolutions aux niveaux 25 et 40. Gargoulin et Gargoulard sont masculins, Gargouille féminin.
+Emplacements `gargoulin`, `gargoulard`, `gargouille`. Types Roche et Terre. Évolutions aux niveaux 25 et 40. Gargoulin et Gargoulard sont masculins, Gargouille féminin.
 
 **Légende.** À Rouen, la Gargouille était un dragon qui vivait dans les marais de la Seine. Sa gueule crachait des flots qui inondaient la ville. Une fois vaincue, sa tête fut fixée sur les remparts ; on dit que les gargouilles des cathédrales, qui crachent l'eau de pluie, lui doivent leur nom.
 
@@ -18,7 +18,7 @@ Origines : Gargouille de Rouen, figure attestée. Gargoulin et Gargoulard : cré
 
 ## 036 et 037 : lignée du Lubin
 
-Emplacements `noctule`, `noctulard`. Types Ombre et Vent. Évolution au niveau 22.
+Emplacements `lubin`, `lubinou`. Types Ombre et Vent. Évolution au niveau 22.
 
 **Légende.** En Normandie et dans le Berry, les lubins sont des esprits nocturnes à forme de loup, qui se rassemblent la nuit le long des murs des cimetières et bavardent entre eux d'une voix humaine. Ils s'enfuient dès qu'on les approche.
 

@@ -235,9 +235,9 @@ const GOBELIN_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'fumeron', front: leberouFront(), back: leberouBack(), icon: LEBEROU_ICON },
-  { id: 'fumelard', front: leberougeFront(), back: leberougeBack(), icon: LEBEROUGE_ICON },
-  { id: 'cendrador', front: leberombreFront(), back: leberombreBack(), icon: LEBEROMBRE_ICON },
-  { id: 'boulonnet', front: gobelinetFront(), back: gobelinetBack(), icon: GOBELINET_ICON },
-  { id: 'boulonnier', front: gobelinFront(), back: gobelinBack(), icon: GOBELIN_ICON },
+  { id: 'leberou', front: leberouFront(), back: leberouBack(), icon: LEBEROU_ICON },
+  { id: 'leberouge', front: leberougeFront(), back: leberougeBack(), icon: LEBEROUGE_ICON },
+  { id: 'leberombre', front: leberombreFront(), back: leberombreBack(), icon: LEBEROMBRE_ICON },
+  { id: 'gobelinet', front: gobelinetFront(), back: gobelinetBack(), icon: GOBELINET_ICON },
+  { id: 'gobelin', front: gobelinFront(), back: gobelinBack(), icon: GOBELIN_ICON },
 ];

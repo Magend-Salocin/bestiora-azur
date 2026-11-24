@@ -111,7 +111,7 @@ test('UI sources are valid and complete', () => {
   assert.equal(count('capsule/'), 3);
   const speciesIcons = Object.values(HAND_DRAWN_CREATURES).filter((views) => views.icon).length;
   assert.equal(count('icon/'), 22 + 2 * speciesIcons);
-  for (const id of ['hp/frame', 'hp/high', 'hp/mid', 'hp/low', 'xp/frame', 'xp/fill', 'logo/bestiora', 'title/azurel']) {
+  for (const id of ['hp/frame', 'hp/high', 'hp/mid', 'hp/low', 'xp/frame', 'xp/fill', 'logo/bestiora', 'title/vouivre']) {
     assert.ok(frames[id], `${id} missing`);
   }
   assert.ok(parseSprite(frames['logo/bestiora']).width > 100);

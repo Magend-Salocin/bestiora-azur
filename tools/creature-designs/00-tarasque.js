@@ -209,7 +209,7 @@ const TARASQUE_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'flaquin', front: tarasquinFront(), back: tarasquinBack(), icon: TARASQUIN_ICON },
-  { id: 'ondeclat', front: taraskorFront(), back: taraskorBack(), icon: TARASKOR_ICON },
-  { id: 'marevor', front: tarasqueFront(), back: tarasqueBack(), icon: TARASQUE_ICON },
+  { id: 'tarasquin', front: tarasquinFront(), back: tarasquinBack(), icon: TARASQUIN_ICON },
+  { id: 'taraskor', front: taraskorFront(), back: taraskorBack(), icon: TARASKOR_ICON },
+  { id: 'tarasque', front: tarasqueFront(), back: tarasqueBack(), icon: TARASQUE_ICON },
 ];

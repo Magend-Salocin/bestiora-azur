@@ -17,8 +17,8 @@ const wait = (seconds) => new Promise((resolve) => setTimeout(resolve, seconds *
 function demoState() {
   const rng = createRng(12);
   const state = createGameState({ player: { name: 'Elio', gender: 'boy' }, flags: { has_bestiary: true } });
-  for (const [species, level] of [['braisille', 24], ['pivelin', 18], ['flaquin', 16]]) addCreature(state, createCreature(species, level, rng));
-  for (const species of ['grivelin', 'marevor', 'fenouillot']) markSeen(state, species);
+  for (const [species, level] of [['galtza', 24], ['farfadet', 18], ['tarasquin', 16]]) addCreature(state, createCreature(species, level, rng));
+  for (const species of ['farfandole', 'tarasque', 'korrigan']) markSeen(state, species);
   state.badges = ['roche', 'eau', 'foudre'];
   state.playTime = 4 * 3600 + 17 * 60;
   return state;
@@ -38,7 +38,7 @@ export async function runCaptureStep(step, { scenes, getOverworld, startGame }) 
   }
   if (step === 'battle') {
     scenes.pop(); // the start menu
-    hooks.startWildBattle({ creature: 'grivelin', level: 17 });
+    hooks.startWildBattle({ creature: 'farfandole', level: 17 });
     return wait(5.5);
   }
   if (PREVIEW_STEPS.includes(step)) return runPreviewStep(step, { scenes, startGame });
@@ -54,14 +54,14 @@ let previewBestiary = null;
 function previewState(species, lead) {
   const rng = createRng(7);
   const state = createGameState({ player: { name: 'Elio', gender: 'boy' }, flags: { has_bestiary: true } });
-  for (const [id, level] of [[lead, 12], ['pivelin', 9], ['flaquin', 10]]) addCreature(state, createCreature(id, level, rng));
+  for (const [id, level] of [[lead, 12], ['farfadet', 9], ['tarasquin', 10]]) addCreature(state, createCreature(id, level, rng));
   markSeen(state, species);
   markCaught(state, species);
   return state;
 }
 
 async function runPreviewStep(step, { scenes, startGame }) {
-  const species = new URLSearchParams(window.location.search).get('preview') ?? 'fenouillot';
+  const species = new URLSearchParams(window.location.search).get('preview') ?? 'korrigan';
   const index = CREATURES.findIndex((creature) => creature.id === species);
   const reset = (lead = species) => {
     while (scenes.size > 1) scenes.pop();
@@ -91,12 +91,12 @@ async function runPreviewStep(step, { scenes, startGame }) {
     return wait(0.5);
   }
   if (step === 'battle-front') {
-    reset('braisille');
+    reset('galtza');
     hooks.startWildBattle({ creature: species, level: 8 });
     return wait(5.5);
   }
   reset();
-  hooks.startWildBattle({ creature: 'pivelin', level: 8 });
+  hooks.startWildBattle({ creature: 'farfadet', level: 8 });
   await wait(5.5);
   await pressA(); // « Un Pivelin sauvage apparaît ! » → the player sends the species
   return wait(4);

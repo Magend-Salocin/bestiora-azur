@@ -56,7 +56,7 @@ async function measure(scenes, seconds) {
 function denseState() {
   const rng = createRng(3);
   const state = createGameState({ player: { name: 'Elio', gender: 'boy' } });
-  for (const species of ['braisille', 'pivelin', 'flaquin']) addCreature(state, createCreature(species, 30, rng));
+  for (const species of ['galtza', 'farfadet', 'tarasquin']) addCreature(state, createCreature(species, 30, rng));
   return state;
 }
 
@@ -69,7 +69,7 @@ export async function runPerfProbe({ scenes, startGame, bootTime }) {
   await wait(1);
   results.denseMap = await measure(scenes, 5);
 
-  hooks.startWildBattle({ creature: 'grivelin', level: 30 });
+  hooks.startWildBattle({ creature: 'farfandole', level: 30 });
   let battle = null;
   for (let attempt = 0; attempt < 50 && !battle; attempt += 1) {
     await wait(0.1);

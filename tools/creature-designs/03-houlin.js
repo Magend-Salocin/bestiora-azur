@@ -103,6 +103,6 @@ const HOULECRIN_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'quartzelle', front: houlinFront(), back: houlinBack(), icon: HOULIN_ICON },
-  { id: 'quartzard', front: houlecrinFront(), back: houlecrinBack(), icon: HOULECRIN_ICON },
+  { id: 'houlin', front: houlinFront(), back: houlinBack(), icon: HOULIN_ICON },
+  { id: 'houlecrin', front: houlecrinFront(), back: houlecrinBack(), icon: HOULECRIN_ICON },
 ];

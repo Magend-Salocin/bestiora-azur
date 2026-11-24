@@ -25,7 +25,7 @@ Les drapeaux sont rangés dans l'état du jeu ([src/state/game-state.js](../../s
 
 Beaucoup de choses posent des drapeaux automatiquement : un objet ramassé, un dresseur battu (`trainer_<son id>`), une case piégée déjà déclenchée. Les scripts peuvent aussi en lever ou en baisser.
 
-Deux drapeaux sont spéciaux : ils sont calculés au lieu d'être cochés. `bestiary_149` est levé quand tu as capturé 149 espèces différentes. C'est lui qui fait apparaître la mythique Mirelle.
+Deux drapeaux sont spéciaux : ils sont calculés au lieu d'être cochés. `bestiary_149` est levé quand tu as capturé 149 espèces différentes. C'est lui qui fait apparaître la mythique Mitrêve.
 
 ## Les scripts : des recettes de scène
 
@@ -190,10 +190,10 @@ Pour t'y retrouver dans les fichiers, voici l'aventure en résumé, avec le doss
 | La Bouée | Marais Gris | `marais` |
 | Arène 6 (Ombre), le QG secret du Syndicat | Ombrecourt | `ombrecourt` |
 | Les routes maritimes, la Bibliothèque Engloutie | la mer | `mer` |
-| Arène 7 (Feu), le combat contre Corvin et Volcarde | Forge-Ardente | `forge` |
+| Arène 7 (Feu), le combat contre Corvin et Draguignan | Forge-Ardente | `forge` |
 | Arène 8 (Arcane) | Givremont | `givremont` |
 | 4 Gardiens, puis le Maître (la rivale) | Citadelle d'Azur | `ligue` |
-| Après la victoire : Azurel et Glacerne | Pic d'Azur, Grotte Boréale | `postjeu` |
+| Après la victoire : Vouivre et Gaussier | Pic d'Azur, Grotte Boréale | `postjeu` |
 
 Chaque zone a trois fichiers frères : ses cartes (`src/data/maps/<zone>/`), ses dresseurs (`src/data/trainers/<zone>.js`) et ses textes (`src/data/texts/<zone>.js`).
 

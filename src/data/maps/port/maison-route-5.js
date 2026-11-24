@@ -38,8 +38,8 @@ export default house({
         else: [
           { cmd: 'say', text: 'maison_route_5_fermiere' },
           {
-            cmd: 'trade', wanted: 'bovaillon', flag: 'route_5_echange',
-            offer: { creature: 'noisetin', level: 18, nickname: 'Grignotte', originalTrainer: 'Odile' },
+            cmd: 'trade', wanted: 'gonfaron', flag: 'route_5_echange',
+            offer: { creature: 'faramin', level: 18, nickname: 'Grignotte', originalTrainer: 'Odile' },
           },
         ],
       },

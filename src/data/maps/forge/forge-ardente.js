@@ -45,14 +45,14 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'scorielle', minLevel: 42, maxLevel: 43, weight: 16 },
-      { creature: 'tisonnet', minLevel: 42, maxLevel: 43, weight: 16 },
-      { creature: 'pyrobelier', minLevel: 43, maxLevel: 44, weight: 12 },
-      { creature: 'enclumor', minLevel: 43, maxLevel: 44, weight: 10 },
-      { creature: 'cendrador', minLevel: 41, maxLevel: 43, weight: 8 },
-      { creature: 'scoriarque', minLevel: 44, maxLevel: 45, weight: 3 },
-      { creature: 'tisonnard', minLevel: 45, maxLevel: 45, weight: 2 },
-      { creature: 'amperion', minLevel: 42, maxLevel: 43, weight: 3 },
+      { creature: 'babauet', minLevel: 42, maxLevel: 43, weight: 16 },
+      { creature: 'goulinet', minLevel: 42, maxLevel: 43, weight: 16 },
+      { creature: 'taurnoir', minLevel: 43, maxLevel: 44, weight: 12 },
+      { creature: 'mallet', minLevel: 43, maxLevel: 44, weight: 10 },
+      { creature: 'leberombre', minLevel: 41, maxLevel: 43, weight: 8 },
+      { creature: 'babau', minLevel: 44, maxLevel: 45, weight: 3 },
+      { creature: 'grangoule', minLevel: 45, maxLevel: 45, weight: 2 },
+      { creature: 'follorage', minLevel: 42, maxLevel: 43, weight: 3 },
     ],
   },
   warps: [

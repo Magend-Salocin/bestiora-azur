@@ -18,7 +18,7 @@ const ROW_HEIGHT = 20;
 const MESSAGE_Y = 120;
 /** Plan icons of the hand-drawn species that have no icon of their own yet. */
 const HANDMADE_ICONS = {
-  azurel: 'bird', glacerne: 'golem', volcarde: 'dragon', fulgorine: 'bird', mirelle: 'insect',
+  vouivre: 'bird', gaussier: 'golem', draguignan: 'dragon', veneur: 'bird', mitreve: 'insect',
 };
 
 /** Icon frame prefix: the species' own icon when it has one, else its body plan's. */

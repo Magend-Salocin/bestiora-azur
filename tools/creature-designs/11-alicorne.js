@@ -111,6 +111,6 @@ const ALICORNE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'cristelan', front: alicornetFront(), back: alicornetBack(), icon: ALICORNET_ICON },
-  { id: 'cristarche', front: alicorneFront(), back: alicorneBack(), icon: ALICORNE_ICON },
+  { id: 'alicornet', front: alicornetFront(), back: alicornetBack(), icon: ALICORNET_ICON },
+  { id: 'alicorne', front: alicorneFront(), back: alicorneBack(), icon: ALICORNE_ICON },
 ];

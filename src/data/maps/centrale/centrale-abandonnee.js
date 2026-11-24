@@ -34,13 +34,13 @@ export default {
   encounters: {
     rate: 9,
     cave: [
-      { creature: 'ampoulard', minLevel: 30, maxLevel: 34, weight: 16 },
-      { creature: 'boulonnier', minLevel: 30, maxLevel: 34, weight: 16 },
-      { creature: 'lingotard', minLevel: 30, maxLevel: 34, weight: 14 },
-      { creature: 'crassolard', minLevel: 30, maxLevel: 34, weight: 12 },
-      { creature: 'fusiblard', minLevel: 34, maxLevel: 36, weight: 10 },
-      { creature: 'fusiblet', minLevel: 30, maxLevel: 33, weight: 10 },
-      { creature: 'piquevolt', minLevel: 30, maxLevel: 33, weight: 8 },
+      { creature: 'follaclair', minLevel: 30, maxLevel: 34, weight: 16 },
+      { creature: 'gobelin', minLevel: 30, maxLevel: 34, weight: 16 },
+      { creature: 'servarmure', minLevel: 30, maxLevel: 34, weight: 14 },
+      { creature: 'velucorne', minLevel: 30, maxLevel: 34, weight: 12 },
+      { creature: 'moinbourru', minLevel: 34, maxLevel: 36, weight: 10 },
+      { creature: 'moinillon', minLevel: 30, maxLevel: 33, weight: 10 },
+      { creature: 'fouletot', minLevel: 30, maxLevel: 33, weight: 8 },
     ],
   },
   warps: [{ x: 12, y: 20, to: 'route_6', toX: 15, toY: 16 }],
@@ -84,10 +84,10 @@ export default {
     { x: 7, y: 3, item: 'potion_totale', flag: 'item_centrale_3' },
   ],
   hiddenItems: [{ x: 16, y: 3, item: 'pierre_orage', flag: 'hidden_centrale_1' }],
-  triggers: [{ x: 6, y: 3, w: 12, h: 1, script: [{ cmd: 'call', script: 'fulgorine' }] }],
+  triggers: [{ x: 6, y: 3, w: 12, h: 1, script: [{ cmd: 'call', script: 'veneur' }] }],
   connections: {  },
   scripts: {
-    fulgorine: [
+    veneur: [
       {
         cmd: 'if_flag',
         flag: 'fulgorine_capturee',
@@ -106,7 +106,7 @@ export default {
       { cmd: 'play_sfx', sfx: 'teleporter' },
       {
         cmd: 'wild_battle',
-        creature: 'fulgorine',
+        creature: 'veneur',
         level: 50,
         legendary: true,
         won: [{ cmd: 'set_flag', flag: 'fulgorine_ko' }, { cmd: 'say', text: 'centrale_fulgorine_ko' }],

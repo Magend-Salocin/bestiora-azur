@@ -1,6 +1,6 @@
 # 030 à 032 : lignée du Fadet
 
-Emplacements `faonille`, `cerfeuil`, `cervoral`. Type Flore, Arcane au stade 3. Évolutions aux niveaux 20 et 38.
+Emplacements `fadet`, `fadebois`, `fadeon`. Type Flore, Arcane au stade 3. Évolutions aux niveaux 20 et 38.
 
 **Légende.** Dans le Poitou et la Vendée, les fadets sont des esprits des campagnes, cousins des farfadets, tantôt serviables tantôt farceurs. On les dit liés aux prés, aux haies et aux brumes du matin.
 

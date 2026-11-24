@@ -20,7 +20,7 @@ export const NAME_SUGGESTIONS = {
 const NEW_NAME = 'NOUVEAU NOM';
 const PORTRAIT = { x: 56, y: 24 };
 const CREATURE = { x: 96, y: 40 };
-const INTRO_CREATURE = 'pivelin';
+const INTRO_CREATURE = 'farfadet';
 
 export class IntroScene extends PromiseScene {
   constructor() {

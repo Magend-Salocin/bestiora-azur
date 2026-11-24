@@ -1,6 +1,6 @@
 # 001 à 003 : lignée du Korrigan
 
-Emplacements `fenouillot`, `fenouvert`, `sylvenard` (starter Flore). Stats, attaques et niveaux d'évolution inchangés.
+Emplacements `korrigan`, `korrigard`, `korriroi` (starter Flore). Stats, attaques et niveaux d'évolution inchangés.
 
 ## 001 Korrigan
 

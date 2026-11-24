@@ -275,9 +275,9 @@ const BASILIC_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'morillon', front: mandragotFront(), back: mandragotBack(), icon: MANDRAGOT_ICON },
-  { id: 'morillard', front: mandragoulFront(), back: mandragoulBack(), icon: MANDRAGOUL_ICON },
-  { id: 'glandor', front: dameVerteFront(), back: dameVerteBack(), icon: DAME_VERTE_ICON },
-  { id: 'venimot', front: basilinFront(), back: basilinBack(), icon: BASILIN_ICON },
-  { id: 'venimorde', front: basilicFront(), back: basilicBack(), icon: BASILIC_ICON },
+  { id: 'mandragot', front: mandragotFront(), back: mandragotBack(), icon: MANDRAGOT_ICON },
+  { id: 'mandragoul', front: mandragoulFront(), back: mandragoulBack(), icon: MANDRAGOUL_ICON },
+  { id: 'dame_verte', front: dameVerteFront(), back: dameVerteBack(), icon: DAME_VERTE_ICON },
+  { id: 'basilin', front: basilinFront(), back: basilinBack(), icon: BASILIN_ICON },
+  { id: 'basilic', front: basilicFront(), back: basilicBack(), icon: BASILIC_ICON },
 ];

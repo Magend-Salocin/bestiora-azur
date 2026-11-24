@@ -1,6 +1,6 @@
 # 067 à 069 : lignée du Fullettu
 
-Emplacements `cocolet`, `cocomarin`, `cocorage`. Fullettu est de type Normal. Il évolue en Fullemarin (Eau) avec une Pierre Marine, ou en Fulletonne (Foudre) avec une Pierre Orage. Fullettu et Fullemarin sont masculins, Fulletonne féminin.
+Emplacements `fullettu`, `fullemarin`, `fulletonne`. Fullettu est de type Normal. Il évolue en Fullemarin (Eau) avec une Pierre Marine, ou en Fulletonne (Foudre) avec une Pierre Orage. Fullettu et Fullemarin sont masculins, Fulletonne féminin.
 
 **Légende.** En Corse, le fullettu est un petit esprit farceur, cousin du folletto italien. Il entre la nuit dans les maisons et les écuries, cache les objets et tresse les crinières des chevaux, qu'on retrouve emmêlées au matin.
 

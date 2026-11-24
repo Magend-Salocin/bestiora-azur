@@ -38,18 +38,18 @@ export default {
   encounters: {
     rate: 9,
     cave: [
-      { creature: 'scorielle', minLevel: 44, maxLevel: 46, weight: 14 },
-      { creature: 'tisonnet', minLevel: 44, maxLevel: 46, weight: 14 },
-      { creature: 'enclumor', minLevel: 44, maxLevel: 46, weight: 12 },
-      { creature: 'pyrobelier', minLevel: 44, maxLevel: 46, weight: 12 },
-      { creature: 'scoriarque', minLevel: 45, maxLevel: 46, weight: 6 },
-      { creature: 'tisonnard', minLevel: 45, maxLevel: 47, weight: 4 },
+      { creature: 'babauet', minLevel: 44, maxLevel: 46, weight: 14 },
+      { creature: 'goulinet', minLevel: 44, maxLevel: 46, weight: 14 },
+      { creature: 'mallet', minLevel: 44, maxLevel: 46, weight: 12 },
+      { creature: 'taurnoir', minLevel: 44, maxLevel: 46, weight: 12 },
+      { creature: 'babau', minLevel: 45, maxLevel: 46, weight: 6 },
+      { creature: 'grangoule', minLevel: 45, maxLevel: 47, weight: 4 },
     ],
     water: [
-      { creature: 'grimoulix', minLevel: 44, maxLevel: 46, weight: 14 },
-      { creature: 'octobras', minLevel: 44, maxLevel: 46, weight: 14 },
-      { creature: 'raieciel', minLevel: 44, maxLevel: 46, weight: 12 },
-      { creature: 'salamassif', minLevel: 44, maxLevel: 46, weight: 8 },
+      { creature: 'melusine', minLevel: 44, maxLevel: 46, weight: 14 },
+      { creature: 'nainmarin', minLevel: 44, maxLevel: 46, weight: 14 },
+      { creature: 'sirenor', minLevel: 44, maxLevel: 46, weight: 12 },
+      { creature: 'dracrhodan', minLevel: 44, maxLevel: 46, weight: 8 },
     ],
   },
   warps: [{ x: 14, y: 25, to: 'forge_ardente', toX: 11, toY: 17 }],
@@ -160,7 +160,7 @@ export default {
   ],
   triggers: [
     { x: 3, y: 15, w: 22, h: 1, script: [{ cmd: 'call', script: 'corvin_forge' }] },
-    { x: 8, y: 4, w: 12, h: 1, script: [{ cmd: 'call', script: 'volcarde' }] },
+    { x: 8, y: 4, w: 12, h: 1, script: [{ cmd: 'call', script: 'draguignan' }] },
   ],
   connections: {  },
   scripts: {
@@ -185,7 +185,7 @@ export default {
         ],
       },
     ],
-    volcarde: [
+    draguignan: [
       {
         cmd: 'if_flag',
         flag: 'volcarde_capturee',
@@ -204,7 +204,7 @@ export default {
       { cmd: 'play_sfx', sfx: 'teleporter' },
       {
         cmd: 'wild_battle',
-        creature: 'volcarde',
+        creature: 'draguignan',
         level: 50,
         legendary: true,
         won: [{ cmd: 'set_flag', flag: 'volcarde_ko' }, { cmd: 'say', text: 'coeur_volcarde_ko' }],

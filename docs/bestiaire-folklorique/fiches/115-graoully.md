@@ -1,6 +1,6 @@
 # 115 à 117 : lignée du Graoully
 
-Emplacements `fangelet`, `fangeur`, `fangeroi`. Types Toxique et Eau. Évolutions aux niveaux 36 et 48.
+Emplacements `graoulet`, `graoulard`, `graoully`. Types Toxique et Eau. Évolutions aux niveaux 36 et 48.
 
 **Légende.** À Metz, le Graoully est un dragon qui infestait la ville et ses environs de son haleine empoisonnée. Selon la tradition, saint Clément, premier évêque de Metz, le dompta et le mena jusqu'à la Seille, où il le noya. Le Graoully est resté l'emblème de la ville.
 

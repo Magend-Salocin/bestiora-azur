@@ -2,7 +2,7 @@
 
 ## 050 et 051 : lignée du Tudgommon
 
-Emplacements `crabouille`, `crabastion`. Types Eau et Roche. Évolution au niveau 28.
+Emplacements `tudgommon`, `goemonroc`. Types Eau et Roche. Évolution au niveau 28.
 
 **Légende.** Dans le Léon, les récits de la grève parlent des tud-gommon, les « gens du goémon » : un petit peuple qui se cache sous les tas d'algues laissés par la marée et joue des tours aux goémoniers. Les récits restent rares ; la source précise est à citer dans la fiche lors des finitions.
 
@@ -17,7 +17,7 @@ Origines : tud-gommon, figure du Léon. Goémonroc : création du jeu.
 
 ## 052 et 053 : lignée de la Morgann
 
-Emplacements `ombrelle`, `ombrellor`. Types Eau et Toxique. Évolution au niveau 30. Noms féminins.
+Emplacements `morgann`, `morgavague`. Types Eau et Toxique. Évolution au niveau 30. Noms féminins.
 
 **Légende.** Autour d'Ouessant et dans toute la Basse-Bretagne, les marie-morgane sont des fées de la mer. Elles vivent dans des palais sous les vagues, peignent leurs cheveux sur les rochers et attirent les marins par leur chant pour les emmener au fond de l'eau.
 

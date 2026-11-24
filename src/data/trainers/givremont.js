@@ -2,12 +2,12 @@
 import { trainer, rival } from './helpers.js';
 
 export default [
-  trainer('randonneur_hilaire', 'randonneur', 'Hilaire', ['givrailes:44', 'frimours:45']),
-  trainer('campeuse_gwenaelle', 'campeuse', 'Gwenaëlle', ['givrelet:44', 'frimousson:44', 'cabrecime:46']),
-  trainer('mystique_balthus', 'mystique', 'Balthus', ['cristelan:46', 'stoicor:47']),
-  trainer('mystique_alizee', 'mystique', 'Alizée', ['miroitage:46', 'grimoulix:45']),
-  trainer('savant_theodule', 'scientifique', 'Théodule', ['cervoral:46', 'brumaitre:46']),
-  trainer('mystique_sybille', 'mystique', 'Sybille', ['nocturbe:46', 'miroitage:47']),
-  trainer('archimage_gaspard', 'mystique', 'Gaspard', ['cristelan:47', 'grimoulix:47']),
-  trainer('oswin', 'champion', 'Oswin', ['cervoral:43', 'miroitage:45', 'brumaitre:47', 'cristarche:48', 'stoicor:50'], { portrait: 'portrait/oswin', ai: 'smart', last: true }),
+  trainer('randonneur_hilaire', 'randonneur', 'Hilaire', ['barbegazi:44', 'vosgar:45']),
+  trainer('campeuse_gwenaelle', 'campeuse', 'Gwenaëlle', ['barbegel:44', 'vosgoup:44', 'cabro_dor:46']),
+  trainer('mystique_balthus', 'mystique', 'Balthus', ['alicornet:46', 'gevaudan:47']),
+  trainer('mystique_alizee', 'mystique', 'Alizée', ['sotremage:46', 'melusine:45']),
+  trainer('savant_theodule', 'scientifique', 'Théodule', ['fadeon:46', 'blancelune:46']),
+  trainer('mystique_sybille', 'mystique', 'Sybille', ['birette:46', 'sotremage:47']),
+  trainer('archimage_gaspard', 'mystique', 'Gaspard', ['alicornet:47', 'melusine:47']),
+  trainer('oswin', 'champion', 'Oswin', ['fadeon:43', 'sotremage:45', 'blancelune:47', 'alicorne:48', 'gevaudan:50'], { portrait: 'portrait/oswin', ai: 'smart', last: true }),
 ];

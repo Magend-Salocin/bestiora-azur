@@ -24,10 +24,10 @@ export default {
   encounters: {
     rate: 8,
     cave: [
-      { creature: 'boulonnet', minLevel: 20, maxLevel: 23, weight: 35 },
-      { creature: 'piquevolt', minLevel: 20, maxLevel: 23, weight: 30 },
-      { creature: 'crassou', minLevel: 20, maxLevel: 22, weight: 20 },
-      { creature: 'ampoulin', minLevel: 21, maxLevel: 24, weight: 15 },
+      { creature: 'gobelinet', minLevel: 20, maxLevel: 23, weight: 35 },
+      { creature: 'fouletot', minLevel: 20, maxLevel: 23, weight: 30 },
+      { creature: 'veluchon', minLevel: 20, maxLevel: 22, weight: 20 },
+      { creature: 'follaton', minLevel: 21, maxLevel: 24, weight: 15 },
     ],
   },
   warps: [

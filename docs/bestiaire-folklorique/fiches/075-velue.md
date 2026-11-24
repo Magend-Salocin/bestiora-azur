@@ -2,7 +2,7 @@
 
 ## 075 et 076 : lignée de la Velue
 
-Emplacements `crassou`, `crassolard`. Type Toxique. Évolution au niveau 30. Veluchon est masculin, Velucorne féminin.
+Emplacements `veluchon`, `velucorne`. Type Toxique. Évolution au niveau 30. Veluchon est masculin, Velucorne féminin.
 
 **Légende.** À La Ferté-Bernard, dans la Sarthe, la Velue est un monstre couvert de longs poils verts et de piquants empoisonnés, avec une queue de serpent. Elle sortait de l'Huisne pour ravager les champs, et son souffle faisait mourir les récoltes. On ne pouvait la blesser qu'à la queue, et c'est ainsi qu'un jeune homme finit par la tuer.
 
@@ -17,7 +17,7 @@ Origines : la Velue, figure attestée (La Ferté-Bernard, Sarthe). Veluchon : cr
 
 ## 077 : Fouletot
 
-Emplacement `piquevolt`. Type Foudre. Pas d'évolution.
+Emplacement `fouletot`. Type Foudre. Pas d'évolution.
 
 **Légende.** En Franche-Comté, le fouletot est un lutin des écuries. Il soigne les chevaux qu'il aime et monte les autres la nuit ; au matin, on les retrouve en sueur, la crinière tressée ou emmêlée.
 

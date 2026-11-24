@@ -11,27 +11,27 @@ Ce que tu vas apprendre :
 
 Il faut d'abord distinguer deux choses :
 
-- l'**espèce**, c'est le modèle : « le Fenouillot ». Il y en a 150.
-- la **bestiole**, c'est un individu précis : « le Fenouillot de Elio, niveau 12, surnommé Pipou ».
+- l'**espèce**, c'est le modèle : « le Korrigan ». Il y en a 150.
+- la **bestiole**, c'est un individu précis : « le Korrigan de Elio, niveau 12, surnommé Pipou ».
 
 C'est comme « le chat » (l'espèce) et « Minou, le chat de ta voisine » (un individu). Tous les chats se ressemblent, mais chacun a son caractère.
 
 ## La fiche d'une espèce
 
-Les 150 fiches sont dans [src/data/creatures.js](../../src/data/creatures.js). Voici celle du Fenouillot, le petit renard aux oreilles en feuilles, avec des explications :
+Les 150 fiches sont dans [src/data/creatures.js](../../src/data/creatures.js). Voici celle du Korrigan, le petit lutin breton de départ, avec des explications :
 
 ```js
 {
-  id: 'fenouillot',          // nom technique, sans accent ni espace
+  id: 'korrigan',          // nom technique, sans accent ni espace
   number: 1,                 // numéro dans le Bestiaire
-  name: 'Fenouillot',        // nom affiché dans le jeu
+  name: 'Korrigan',        // nom affiché dans le jeu
   types: ['flore'],          // un ou deux types
   baseStats: { hp: 42, atk: 61, def: 37, spa: 55, spd: 41, spe: 82 },
   growth: 'medium',          // vitesse pour monter de niveau
   catchRate: 190,            // facile (255) ou difficile (3) à capturer
   baseExp: 81,               // expérience gagnée quand on le bat
   trainingYield: { stat: 'spe', points: 1 },  // ce qu'il fait progresser chez le vainqueur
-  evolution: { to: 'fenouvert', method: 'level', value: 16 },
+  evolution: { to: 'korrigard', method: 'level', value: 16 },
   learnset: [[1, 'seve_volee'], [1, 'spore_raide'], [4, 'egratignure'], [5, 'brindille'], ...],
   category: 'Bestiole Renard',
   height: 0.4,               // en mètres
@@ -85,13 +85,13 @@ Les statistiques sont les forces et faiblesses d'une bestiole :
 | `spd` | Défense Spéciale | Résistance aux attaques spéciales |
 | `spe` | Vitesse | Qui attaque en premier |
 
-Les `baseStats` de la fiche sont les forces de l'espèce. Le Fenouillot a une Vitesse de base de 82 : il est rapide. Sa Défense de 37 est faible : il est fragile.
+Les `baseStats` de la fiche sont les forces de l'espèce. Le Korrigan a une Vitesse de base de 82 : il est rapide. Sa Défense de 37 est faible : il est fragile.
 
 ## Ce qui rend chaque bestiole unique
 
-Deux Fenouillot du même niveau n'ont pas exactement les mêmes statistiques, grâce à deux choses.
+Deux Korrigan du même niveau n'ont pas exactement les mêmes statistiques, grâce à deux choses.
 
-**Les gènes.** À la naissance (en fait, au moment où elle apparaît dans le jeu), chaque bestiole tire au hasard un nombre de 0 à 15 pour chaque statistique. C'est son talent naturel. Un Fenouillot avec 15 en Vitesse sera un peu plus rapide qu'un autre avec 2.
+**Les gènes.** À la naissance (en fait, au moment où elle apparaît dans le jeu), chaque bestiole tire au hasard un nombre de 0 à 15 pour chaque statistique. C'est son talent naturel. Un Korrigan avec 15 en Vitesse sera un peu plus rapide qu'un autre avec 2.
 
 **L'entraînement.** Chaque fois qu'elle bat une bestiole, elle gagne des points d'entraînement dans une statistique (celle indiquée par `trainingYield` de la bestiole vaincue). C'est comme faire du sport : on progresse. Le maximum est 255 points par statistique.
 
@@ -106,7 +106,7 @@ PV          = (2 × base + gène + entraînement ÷ 4) × niveau ÷ 100 + niveau
 
 (Toutes les divisions sont arrondies vers le bas.)
 
-Faisons le calcul pour la Vitesse d'un Fenouillot de niveau 10, avec un gène de 8 et aucun entraînement :
+Faisons le calcul pour la Vitesse d'un Korrigan de niveau 10, avec un gène de 8 et aucun entraînement :
 
 ```text
 2 × 82 + 8 + 0 = 172
@@ -153,11 +153,11 @@ En grandissant, certaines bestioles se transforment en une nouvelle espèce. Le 
 
 | Méthode | Exemple dans la fiche | Signification |
 | --- | --- | --- |
-| Niveau | `{ to: 'fenouvert', method: 'level', value: 16 }` | Au niveau 16, Fenouillot devient Fenouvert |
-| Objet | `{ to: 'lumirande', method: 'item', value: 'pierre_lunaire' }` | En lui donnant une Pierre Lunaire |
-| Amitié | `{ to: 'nimbelaine', method: 'friendship', value: 220 }` | Quand elle t'aime assez (220 sur 255) |
+| Niveau | `{ to: 'korrigard', method: 'level', value: 16 }` | Au niveau 16, Korrigan devient Korrigard |
+| Objet | `{ to: 'hadelys', method: 'item', value: 'pierre_lunaire' }` | En lui donnant une Pierre Lunaire |
+| Amitié | `{ to: 'truffandor', method: 'friendship', value: 220 }` | Quand il t'aime assez (220 sur 255) |
 
-L'amitié commence à 70 et monte quand on marche et qu'on gagne des niveaux. Une famille de bestioles qui évoluent les unes dans les autres s'appelle une **lignée** : Fenouillot → Fenouvert → Sylvenard.
+L'amitié commence à 70 et monte quand on marche et qu'on gagne des niveaux. Une famille de bestioles qui évoluent les unes dans les autres s'appelle une **lignée** : Korrigan → Korrigard → Korriroi.
 
 Quand une bestiole évolue, elle garde son surnom, ses attaques et son niveau. Seules ses statistiques sont recalculées avec les bases de la nouvelle espèce.
 
@@ -166,7 +166,7 @@ Quand une bestiole évolue, elle garde son surnom, ses attaques et son niveau. S
 La fonction qui fabrique une bestiole précise est `createCreature`, dans [src/battle/logic/creature.js](../../src/battle/logic/creature.js) :
 
 ```js
-const pipou = createCreature('fenouillot', 12, rng);
+const pipou = createCreature('korrigan', 12, rng);
 ```
 
 Elle :
@@ -183,7 +183,7 @@ Le résultat est un simple objet, facile à sauvegarder :
 ```js
 {
   uid: 'fenouillot-k3x9a',   // identifiant unique
-  species: 'fenouillot',
+  species: 'korrigan',
   nickname: null,            // pas de surnom
   level: 12,
   genes: { hp: 7, atk: 12, def: 3, spa: 15, spd: 0, spe: 9 },

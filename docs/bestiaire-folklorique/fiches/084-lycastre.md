@@ -2,7 +2,7 @@
 
 ## 084 et 085 : lignée du Lycastre
 
-Emplacements `lombrin`, `lombrigant`. Type Terre. Évolution au niveau 28.
+Emplacements `lycastre`, `lycastron`. Type Terre. Évolution au niveau 28.
 
 **Légende.** Le référentiel rattache le lycastre à la Provence, sans source confirmée. Le jeu en fait une créature souterraine en attendant de retrouver le récit d'origine.
 
@@ -17,7 +17,7 @@ Origines : lycastre, Provence, à vérifier. Lycastron : création du jeu.
 
 ## 086 et 087 : lignée de la Câme-Cruse
 
-Emplacements `filandrin`, `filandrix`. Types Insecte et Ombre. Évolution au niveau 28. Câmecru est masculin, Câmecruse féminin.
+Emplacements `camecru`, `camecruse`. Types Insecte et Ombre. Évolution au niveau 28. Câmecru est masculin, Câmecruse féminin.
 
 **Légende.** Selon un récit gascon, la câme-cruse est une créature à une seule jambe, avec un œil unique. Le récit en fait une jeune fille transformée ; le jeu n'en garde que la créature. Source à vérifier.
 

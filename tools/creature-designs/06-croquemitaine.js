@@ -124,7 +124,7 @@ const DAME_NOIRE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'sombrelin', front: croqueminFront(), back: croqueminBack(), icon: CROQUEMIN_ICON },
-  { id: 'sombrecor', front: croquefrouFront(), back: croquefrouBack(), icon: CROQUEFROU_ICON },
-  { id: 'stalactor', front: dameNoireFront(), back: dameNoireBack(), icon: DAME_NOIRE_ICON },
+  { id: 'croquemine', front: croqueminFront(), back: croqueminBack(), icon: CROQUEMIN_ICON },
+  { id: 'croquefrou', front: croquefrouFront(), back: croquefrouBack(), icon: CROQUEFROU_ICON },
+  { id: 'dame_noire', front: dameNoireFront(), back: dameNoireBack(), icon: DAME_NOIRE_ICON },
 ];

@@ -49,11 +49,11 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'pivelin', minLevel: 2, maxLevel: 4, weight: 35 },
-      { creature: 'musaraille', minLevel: 2, maxLevel: 4, weight: 35 },
-      { creature: 'feuillarve', minLevel: 2, maxLevel: 3, weight: 20 },
-      { creature: 'noisetin', minLevel: 4, maxLevel: 4, weight: 5 },
-      { creature: 'morillon', minLevel: 4, maxLevel: 4, weight: 5 },
+      { creature: 'farfadet', minLevel: 2, maxLevel: 4, weight: 35 },
+      { creature: 'poulpiquet', minLevel: 2, maxLevel: 4, weight: 35 },
+      { creature: 'chauchet', minLevel: 2, maxLevel: 3, weight: 20 },
+      { creature: 'faramin', minLevel: 4, maxLevel: 4, weight: 5 },
+      { creature: 'mandragot', minLevel: 4, maxLevel: 4, weight: 5 },
     ],
   },
   warps: [],

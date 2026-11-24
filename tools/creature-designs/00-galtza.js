@@ -250,7 +250,7 @@ const GALTZAGOR_ICON = [
 ];
 
 export const line = [
-  { id: 'braisille', front: galtzaFront(), back: galtzaBack(), icon: GALTZA_ICON },
-  { id: 'fournaise', front: galtzabrasFront(), back: galtzabrasBack(), icon: GALTZABRAS_ICON },
-  { id: 'pyrogrue', front: galtzagorFront(), back: galtzagorBack(), icon: GALTZAGOR_ICON },
+  { id: 'galtza', front: galtzaFront(), back: galtzaBack(), icon: GALTZA_ICON },
+  { id: 'galtzabras', front: galtzabrasFront(), back: galtzabrasBack(), icon: GALTZABRAS_ICON },
+  { id: 'galtzagor', front: galtzagorFront(), back: galtzagorBack(), icon: GALTZAGOR_ICON },
 ];

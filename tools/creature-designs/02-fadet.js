@@ -183,7 +183,7 @@ const FADEON_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'faonille', front: fadetFront(), back: fadetBack(), icon: FADET_ICON },
-  { id: 'cerfeuil', front: fadeboisFront(), back: fadeboisBack(), icon: FADEBOIS_ICON },
-  { id: 'cervoral', front: fadeonFront(), back: fadeonBack(), icon: FADEON_ICON },
+  { id: 'fadet', front: fadetFront(), back: fadetBack(), icon: FADET_ICON },
+  { id: 'fadebois', front: fadeboisFront(), back: fadeboisBack(), icon: FADEBOIS_ICON },
+  { id: 'fadeon', front: fadeonFront(), back: fadeonBack(), icon: FADEON_ICON },
 ];

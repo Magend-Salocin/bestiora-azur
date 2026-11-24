@@ -26,7 +26,7 @@ const BADGE_STEPS = [
 ];
 const TRACK_IDS = Object.keys(TRACKS);
 const SFX_IDS = SFX.map((effect) => effect.id);
-const TEST_PARTY = ['fenouvert', 'ondeclat', 'fournaise'];
+const TEST_PARTY = ['korrigard', 'taraskor', 'galtzabras'];
 
 export class DebugMenuScene extends PromiseScene {
   /** warp(mapId): teleports the player (provided by the overworld). */

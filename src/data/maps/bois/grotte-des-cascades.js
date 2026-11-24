@@ -35,13 +35,13 @@ export default {
   encounters: {
     rate: 8,
     cave: [
-      { creature: 'caillotin', minLevel: 9, maxLevel: 11, weight: 25 },
-      { creature: 'noctule', minLevel: 9, maxLevel: 11, weight: 25 },
-      { creature: 'fouisseron', minLevel: 10, maxLevel: 12, weight: 15 },
-      { creature: 'salamoue', minLevel: 9, maxLevel: 12, weight: 12 },
-      { creature: 'quartzelle', minLevel: 10, maxLevel: 12, weight: 10 },
-      { creature: 'goujonet', minLevel: 10, maxLevel: 12, weight: 8 },
-      { creature: 'grenaillon', minLevel: 12, maxLevel: 12, weight: 5 },
+      { creature: 'gargoulin', minLevel: 9, maxLevel: 11, weight: 25 },
+      { creature: 'lubin', minLevel: 9, maxLevel: 11, weight: 25 },
+      { creature: 'bolegan', minLevel: 10, maxLevel: 12, weight: 15 },
+      { creature: 'dracounet', minLevel: 9, maxLevel: 12, weight: 12 },
+      { creature: 'houlin', minLevel: 10, maxLevel: 12, weight: 10 },
+      { creature: 'laminak', minLevel: 10, maxLevel: 12, weight: 8 },
+      { creature: 'servan', minLevel: 12, maxLevel: 12, weight: 5 },
     ],
   },
   warps: [

@@ -32,11 +32,11 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'pivelin', minLevel: 2, maxLevel: 4, weight: 50 },
-      { creature: 'musaraille', minLevel: 2, maxLevel: 4, weight: 40 },
-      { creature: 'feuillarve', minLevel: 3, maxLevel: 4, weight: 10 },
+      { creature: 'farfadet', minLevel: 2, maxLevel: 4, weight: 50 },
+      { creature: 'poulpiquet', minLevel: 2, maxLevel: 4, weight: 40 },
+      { creature: 'chauchet', minLevel: 3, maxLevel: 4, weight: 10 },
     ],
-    water: [{ creature: 'goujonet', minLevel: 10, maxLevel: 12, weight: 1 }],
+    water: [{ creature: 'laminak', minLevel: 10, maxLevel: 12, weight: 1 }],
   },
   warps: [{ x: 6, y: 16, to: 'test_grotte', toX: 5, toY: 10 }],
   npcs: [

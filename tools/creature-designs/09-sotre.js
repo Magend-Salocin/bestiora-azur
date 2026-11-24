@@ -175,8 +175,8 @@ const DRAPET_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'miroitin', front: sotrinFront(), back: sotrinBack(), icon: SOTRIN_ICON },
-  { id: 'miroitage', front: sotremageFront(), back: sotremageBack(), icon: SOTREMAGE_ICON },
-  { id: 'nocturbe', front: biretteFront(), back: biretteBack(), icon: BIRETTE_ICON },
-  { id: 'chipotard', front: drapetFront(), back: drapetBack(), icon: DRAPET_ICON },
+  { id: 'sotrin', front: sotrinFront(), back: sotrinBack(), icon: SOTRIN_ICON },
+  { id: 'sotremage', front: sotremageFront(), back: sotremageBack(), icon: SOTREMAGE_ICON },
+  { id: 'birette', front: biretteFront(), back: biretteBack(), icon: BIRETTE_ICON },
+  { id: 'drapet', front: drapetFront(), back: drapetBack(), icon: DRAPET_ICON },
 ];

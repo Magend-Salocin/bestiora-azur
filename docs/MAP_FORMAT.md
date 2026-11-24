@@ -33,8 +33,8 @@ export default {
   structures: [{ type: 'halte', x: 3, y: 1, width: 4, door: 1 }],
   encounters: {
     rate: 8,                     // % de rencontre par pas sur une tuile concernée
-    grass: [{ creature: 'pivelin', minLevel: 2, maxLevel: 4, weight: 60 }],
-    water: [{ creature: 'goujonet', minLevel: 10, maxLevel: 12, weight: 1 }],
+    grass: [{ creature: 'farfadet', minLevel: 2, maxLevel: 4, weight: 60 }],
+    water: [{ creature: 'laminak', minLevel: 10, maxLevel: 12, weight: 1 }],
     cave: [],                    // toute tuile praticable de la carte (grottes)
   },
   warps: [{ x: 4, y: 3, to: 'halte_bourg_sablon', toX: 4, toY: 7 }],

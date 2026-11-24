@@ -2,7 +2,7 @@
 
 ## 025 à 027 : lignée de la Hada
 
-Emplacements `lumignon`, `lumidanse`, `lumirande`. Type Arcane, Vent au stade 3. Hadalune évolue au niveau 20, Hadélys avec une Pierre Lunaire. Noms féminins.
+Emplacements `hada`, `hadalune`, `hadelys`. Type Arcane, Vent au stade 3. Hadalune évolue au niveau 20, Hadélys avec une Pierre Lunaire. Noms féminins.
 
 **Légende.** Dans les Pyrénées et en Gascogne, les hadas (« fées » en gascon) vivent près des sources, des grottes et des lacs de montagne. Bienveillantes avec qui les respecte, elles apportent la prospérité aux maisons qu'elles visitent la nuit du Nouvel An.
 
@@ -18,7 +18,7 @@ Origines : Hadas, figure attestée (Pyrénées, Gascogne). Hadalune et Hadélys 
 
 ## 028 et 029 : lignée du Faramin
 
-Emplacements `noisetin`, `noiseclat`. Type Normal. Évolution au niveau 25. Faramin est masculin, Faramine féminin.
+Emplacements `faramin`, `faramine`. Type Normal. Évolution au niveau 25. Faramin est masculin, Faramine féminin.
 
 **Légende.** La bête faramine est un animal imaginaire du Poitou et de la Vendée. On envoyait les naïfs la chasser la nuit, un sac à la main, pendant que les autres riaient. Personne ne s'accorde sur son apparence, puisque personne ne l'a jamais vue.
 

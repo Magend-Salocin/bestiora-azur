@@ -2,7 +2,7 @@
 
 ## 057 et 058 : lignée du Lougarou
 
-Emplacements `lapugil`, `lapugilat`. Type Combat. Évolution au niveau 26.
+Emplacements `lougarou`, `louvar`. Type Combat. Évolution au niveau 26.
 
 **Légende.** Le loup-garou est connu dans toute la France. Dans le Berry, la Normandie ou le Limousin, on dit que le garou doit « courir » chaque nuit à travers sept paroisses et rentrer avant l'aube. Le folklore en fait un humain transformé ; le jeu n'en garde que la bête.
 
@@ -17,7 +17,7 @@ Origines : loup-garou, archétype traditionnel. Louvar : création du jeu.
 
 ## 059 et 060 : lignée du Truffandec
 
-Emplacements `toisonnet`, `nimbelaine`. Types Normal et Vent. Truffandor évolue par l'amitié.
+Emplacements `truffandec`, `truffandor`. Types Normal et Vent. Truffandor évolue par l'amitié.
 
 **Légende.** Le référentiel le rattache à un esprit du foyer béarnais, qui vit près de l'âtre et protège la maisonnée tant qu'on le traite bien. Origine à vérifier dans les sources avant de figer la fiche.
 
@@ -32,7 +32,7 @@ Origines : esprit du foyer (Béarn), à vérifier. Truffandor : création du jeu
 
 ## 061 : Warabouc
 
-Emplacement `hurlegroin`. Type Combat. Pas d'évolution.
+Emplacement `warabouc`. Type Combat. Pas d'évolution.
 
 **Légende.** Le référentiel le rattache à un bouc métamorphe de Lorraine, qui apparaît la nuit aux carrefours et défie les passants. Le rattachement régional est à vérifier dans les sources.
 

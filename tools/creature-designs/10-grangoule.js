@@ -106,6 +106,6 @@ const GRANGOULE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'tisonnet', front: goulinetFront(), back: goulinetBack(), icon: GOULINET_ICON },
-  { id: 'tisonnard', front: grangouleFront(), back: grangouleBack(), icon: GRANGOULE_ICON },
+  { id: 'goulinet', front: goulinetFront(), back: goulinetBack(), icon: GOULINET_ICON },
+  { id: 'grangoule', front: grangouleFront(), back: grangouleBack(), icon: GRANGOULE_ICON },
 ];

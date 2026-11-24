@@ -2,7 +2,7 @@
 
 ## 096 et 097 : lignée du Bugul Noz
 
-Emplacements `dionelle`, `dionavore`. Type Flore. Évolution au niveau 32. Noms masculins.
+Emplacements `bugulin`, `bugul_noz`. Type Flore. Évolution au niveau 32. Noms masculins.
 
 **Légende.** Dans le pays vannetais, le bugul noz est le « berger de la nuit ». Coiffé d'un large chapeau et drapé d'une grande cape, il parcourt la campagne à la tombée de la nuit. Son cri avertit les gens qu'il est temps de rentrer chez eux.
 
@@ -17,7 +17,7 @@ Origines : bugul noz, figure attestée (Bretagne, pays vannetais). Bugulin : cr�
 
 ## 098 : Roncefée
 
-Emplacement `ronceroc`. Types Flore et Roche. Pas d'évolution. Nom féminin.
+Emplacement `roncefee`. Types Flore et Roche. Pas d'évolution. Nom féminin.
 
 **Légende.** Création du jeu, inspirée des fées des haies et des ronciers qu'on retrouve dans de nombreux contes. Ce n'est pas une figure attestée sous ce nom.
 

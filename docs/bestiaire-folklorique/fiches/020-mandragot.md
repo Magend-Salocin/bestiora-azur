@@ -2,7 +2,7 @@
 
 ## 020 et 021 : lignée du Mandragot
 
-Emplacements `morillon`, `morillard`. Types Toxique et Flore. Évolution au niveau 24.
+Emplacements `mandragot`, `mandragoul`. Types Toxique et Flore. Évolution au niveau 24.
 
 **Légende.** La mandragore est une racine à forme humaine. Selon la croyance, elle pousse au pied des gibets et hurle quand on l'arrache, d'un cri qui tue celui qui l'entend. En Provence et dans le Languedoc, le mandragot est aussi un esprit familier qui enrichit son maître.
 
@@ -15,7 +15,7 @@ Emplacements `morillon`, `morillard`. Types Toxique et Flore. Évolution au nive
 
 ## 022 Dame verte
 
-Emplacement `glandor`. Type Flore. Pas d'évolution. Nom féminin (« une Dame verte »).
+Emplacement `dame_verte`. Type Flore. Pas d'évolution. Nom féminin (« une Dame verte »).
 
 **Légende.** Dans le Jura et en Franche-Comté, les dames vertes sont des fées des forêts et des prés. On les voit danser dans les clairières au crépuscule ; l'herbe pousse plus drue là où elles sont passées, mais elles égarent les jeunes gens qui les suivent.
 
@@ -27,7 +27,7 @@ Emplacement `glandor`. Type Flore. Pas d'évolution. Nom féminin (« une Dame v
 
 ## 023 et 024 : lignée du Basilic
 
-Emplacements `venimot`, `venimorde`. Type Toxique. Évolution au niveau 22.
+Emplacements `basilin`, `basilic`. Type Toxique. Évolution au niveau 22.
 
 **Légende.** Le basilic du bestiaire médiéval naît d'un œuf pondu par un vieux coq et couvé par un crapaud. Mi-coq mi-serpent, il tue ou pétrifie d'un regard. On ne peut le vaincre qu'en lui présentant un miroir, où il se foudroie lui-même.
 

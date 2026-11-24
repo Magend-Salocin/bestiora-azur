@@ -1,6 +1,6 @@
 # 150 : Mitrêve
 
-Emplacement `mirelle`. Type Arcane. Mythique, pas d'évolution. Nom féminin.
+Emplacement `mitreve`. Type Arcane. Mythique, pas d'évolution. Nom féminin.
 
 **Légende.** Aucune : Mitrêve est une création du jeu. Elle prolonge les croyances sur les papillons de nuit, qu'on disait porteurs d'âmes ou de songes.
 

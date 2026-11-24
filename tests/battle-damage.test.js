@@ -31,45 +31,45 @@ test('base damage, computed by hand', () => {
 });
 
 test('STAB multiplies by 1.5', () => {
-  const attacker = fighter('musaraille', { atk: 100 }); // Normal
-  const defender = fighter('lapugil', { def: 80 }); // Combat, neutral to Normal
+  const attacker = fighter('poulpiquet', { atk: 100 }); // Normal
+  const defender = fighter('lougarou', { def: 80 }); // Combat, neutral to Normal
   assert.equal(computeDamage(scratch, attacker, defender).damage, 36); // floor(24 × 1.5)
-  const noStab = fighter('lapugil', { atk: 100 });
+  const noStab = fighter('lougarou', { atk: 100 });
   assert.equal(computeDamage(scratch, noStab, defender).damage, 24);
 });
 
 test('random factor is applied before the final floor', () => {
-  const attacker = fighter('musaraille', { atk: 100 });
-  const defender = fighter('lapugil', { def: 80 });
+  const attacker = fighter('poulpiquet', { atk: 100 });
+  const defender = fighter('lougarou', { def: 80 });
   assert.equal(computeDamage(scratch, attacker, defender, { random: 0.85 }).damage, 30); // floor(36 × 0.85 = 30.6)
 });
 
 test('critical hit ×1.5 ignores the attacker drops and the defender boosts', () => {
-  const attacker = fighter('musaraille', { atk: 100 }, { stages: { atk: -2 } });
-  const defender = fighter('lapugil', { def: 80 }, { stages: { def: 2 } });
+  const attacker = fighter('poulpiquet', { atk: 100 }, { stages: { atk: -2 } });
+  const defender = fighter('lougarou', { def: 80 }, { stages: { def: 2 } });
   assert.equal(computeDamage(scratch, attacker, defender, { critical: true }).damage, 54); // floor(24 × 1.5 × 1.5)
   assert.ok(computeDamage(scratch, attacker, defender).damage < 20);
 });
 
 test('type effectiveness: ×2, ×4 on two weaknesses, 0 on immunity', () => {
-  const attacker = fighter('lapugil', { spa: 100 }); // no STAB with Feu
-  assert.equal(computeDamage(ember, attacker, fighter('feuillarve', { spd: 80 })).damage, 48); // Insecte: ×2
-  assert.equal(computeDamage(ember, attacker, fighter('cristelan', { spd: 80 })).damage, 48); // Givre ×2, Arcane ×1
-  assert.equal(computeDamage(MOVES_BY_ID.giclee, attacker, fighter('tisonnet', { spd: 80 })).damage, 96); // Feu and Roche: ×4
-  const immune = computeDamage(scratch, fighter('lapugil', {}), fighter('sombrelin', {}));
+  const attacker = fighter('lougarou', { spa: 100 }); // no STAB with Feu
+  assert.equal(computeDamage(ember, attacker, fighter('chauchet', { spd: 80 })).damage, 48); // Insecte: ×2
+  assert.equal(computeDamage(ember, attacker, fighter('alicornet', { spd: 80 })).damage, 48); // Givre ×2, Arcane ×1
+  assert.equal(computeDamage(MOVES_BY_ID.giclee, attacker, fighter('goulinet', { spd: 80 })).damage, 96); // Feu and Roche: ×4
+  const immune = computeDamage(scratch, fighter('lougarou', {}), fighter('croquemine', {}));
   assert.deepEqual([immune.damage, immune.effectiveness], [0, 0]);
 });
 
 test('burn halves physical damage, not special damage', () => {
-  const burned = fighter('musaraille', { atk: 100, spa: 100 }, { creature: { status: { id: 'brl' } } });
-  const defender = fighter('lapugil', { def: 80, spd: 80 });
+  const burned = fighter('poulpiquet', { atk: 100, spa: 100 }, { creature: { status: { id: 'brl' } } });
+  const defender = fighter('lougarou', { def: 80, spd: 80 });
   assert.equal(computeDamage(scratch, burned, defender).damage, 18);
   assert.equal(computeDamage(ember, burned, defender).damage, 24);
 });
 
 test('screens halve damage of their category, except critical hits', () => {
-  const attacker = fighter('musaraille', { atk: 100 });
-  const defender = fighter('lapugil', { def: 80 }, { screens: { physical: 3, special: 0 } });
+  const attacker = fighter('poulpiquet', { atk: 100 });
+  const defender = fighter('lougarou', { def: 80 }, { screens: { physical: 3, special: 0 } });
   assert.equal(computeDamage(scratch, attacker, defender).damage, 18);
   assert.equal(computeDamage(scratch, attacker, defender, { critical: true }).damage, 54);
 });
@@ -96,18 +96,18 @@ test('paralysis divides speed by 4', () => {
 });
 
 test('createCreature: stats from the formulas, full HP, last four learned moves', () => {
-  const creature = createCreature('pivelin', 20, createRng(3), { genes: ZERO_GENES });
-  const base = CREATURES_BY_ID.pivelin.baseStats;
+  const creature = createCreature('farfadet', 20, createRng(3), { genes: ZERO_GENES });
+  const base = CREATURES_BY_ID.farfadet.baseStats;
   assert.equal(creature.stats.hp, computeHp(base.hp, 0, 0, 20));
   assert.equal(creature.stats.spe, computeStat(base.spe, 0, 0, 20));
   assert.equal(creature.hp, creature.stats.hp);
-  assert.deepEqual(creature.moves.map((slot) => slot.id), defaultMoves('pivelin', 20));
+  assert.deepEqual(creature.moves.map((slot) => slot.id), defaultMoves('farfadet', 20));
   assert.ok(creature.moves.length <= 4);
   assert.ok(creature.moves.every((slot) => slot.pp === slot.maxPp && slot.pp === MOVES_BY_ID[slot.id].pp));
 });
 
 test('recalculating stats moves current HP by the change of max HP', () => {
-  const creature = createCreature('pivelin', 20, createRng(3), { genes: ZERO_GENES });
+  const creature = createCreature('farfadet', 20, createRng(3), { genes: ZERO_GENES });
   creature.hp -= 10;
   const before = creature.stats.hp;
   creature.level = 30;
@@ -117,11 +117,11 @@ test('recalculating stats moves current HP by the change of max HP', () => {
 });
 
 test('evolveCreature changes the species, keeps moves, raises stats', () => {
-  const creature = createCreature('pivelin', 20, createRng(3), { genes: ZERO_GENES });
+  const creature = createCreature('farfadet', 20, createRng(3), { genes: ZERO_GENES });
   const moves = creature.moves.map((slot) => slot.id);
   const attack = creature.stats.atk;
-  evolveCreature(creature, 'grivelin');
-  assert.equal(creature.species, 'grivelin');
+  evolveCreature(creature, 'farfandole');
+  assert.equal(creature.species, 'farfandole');
   assert.deepEqual(creature.moves.map((slot) => slot.id), moves);
   assert.ok(creature.stats.atk > attack);
 });

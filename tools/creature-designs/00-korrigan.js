@@ -165,7 +165,7 @@ const KORRIROI_ICON = [
 ];
 
 export const line = [
-  { id: 'fenouillot', front: korrigan.front, back: korrigan.back, icon: korrigan.icon },
-  { id: 'fenouvert', front: korrigardFront(), back: korrigardBack(), icon: KORRIGARD_ICON },
-  { id: 'sylvenard', front: korriroiFront(), back: korriroiBack(), icon: KORRIROI_ICON },
+  { id: 'korrigan', front: korrigan.front, back: korrigan.back, icon: korrigan.icon },
+  { id: 'korrigard', front: korrigardFront(), back: korrigardBack(), icon: KORRIGARD_ICON },
+  { id: 'korriroi', front: korriroiFront(), back: korriroiBack(), icon: KORRIROI_ICON },
 ];

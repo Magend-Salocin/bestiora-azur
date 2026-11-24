@@ -2,7 +2,7 @@
 
 ## 104 et 105 : lignée du Serpent volant
 
-Emplacements `volplanin`, `volplaneur`. Type Vent. Évolution au niveau 36.
+Emplacements `serpvolin`, `serpvolant`. Type Vent. Évolution au niveau 36.
 
 **Légende.** En Provence, plusieurs récits parlent d'un serpent ailé qui traverse les vallées et plane d'une falaise à l'autre. Il fait partie de la famille des dragons provençaux, aux côtés de la Tarasque et du Drac.
 
@@ -17,7 +17,7 @@ Origines : serpent volant, figure attestée (Provence). Serpvolin : création du
 
 ## 106 : Koril
 
-Emplacement `eolithe`. Types Roche et Vent. Pas d'évolution.
+Emplacement `koril`. Types Roche et Vent. Pas d'évolution.
 
 **Légende.** En Bretagne, les korils sont un petit peuple qui danse la nuit autour des menhirs et des dolmens. Le voyageur pris dans leur ronde doit danser avec eux jusqu'à l'épuisement.
 

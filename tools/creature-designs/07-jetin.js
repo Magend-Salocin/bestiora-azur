@@ -108,6 +108,6 @@ const JETINELLE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'butinet', front: jetinFront(), back: jetinBack(), icon: JETIN_ICON },
-  { id: 'butinelle', front: jetinelleFront(), back: jetinelleBack(), icon: JETINELLE_ICON },
+  { id: 'jetin', front: jetinFront(), back: jetinBack(), icon: JETIN_ICON },
+  { id: 'jetinelle', front: jetinelleFront(), back: jetinelleBack(), icon: JETINELLE_ICON },
 ];

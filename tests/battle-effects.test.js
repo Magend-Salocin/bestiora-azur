@@ -12,8 +12,8 @@ const IDLE = 'point_focal'; // the enemy's harmless move
 /** Turn order draws two values first (speed ties), then the move rolls follow. */
 const afterOrder = (values) => scriptedRng([0.5, 0.5, ...values]);
 
-/** Player musaraille (faster) uses `moveId` on enemy lapugil, both level 20 unless overridden. */
-function setup(moveId, { attacker = 'musaraille', defender = 'lapugil', level = 20, enemyLevel = level, enemyMoves = [IDLE] } = {}) {
+/** Player poulpiquet (faster) uses `moveId` on enemy lougarou, both level 20 unless overridden. */
+function setup(moveId, { attacker = 'poulpiquet', defender = 'lougarou', level = 20, enemyLevel = level, enemyMoves = [IDLE] } = {}) {
   return makeBattle([makeCreature(attacker, level, [moveId, 'egratignure'])], [makeCreature(defender, enemyLevel, enemyMoves)]);
 }
 
@@ -79,7 +79,7 @@ test('flinch stops a slower target this turn', () => {
 });
 
 test('tri_status inflicts burn, freeze or paralysis', () => {
-  const { state } = use('mille_eclats', { attacker: 'mirelle', defender: 'menhirgon', enemyLevel: 60 }, afterOrder([0.5, 0.5, 0.05, 0.9]));
+  const { state } = use('mille_eclats', { attacker: 'mitreve', defender: 'gargouille', enemyLevel: 60 }, afterOrder([0.5, 0.5, 0.05, 0.9]));
   assert.ok(['brl', 'gel', 'par'].includes(enemy(state).status?.id));
 });
 
@@ -166,7 +166,7 @@ test('charge_turn: charges, is out of reach, then hits on turn 2', () => {
 });
 
 test('recharge: the user must rest next turn', () => {
-  const first = use('onde_brute', { level: 20, enemyLevel: 60, defender: 'menhirgon' });
+  const first = use('onde_brute', { level: 20, enemyLevel: 60, defender: 'gargouille' });
   assert.deepEqual(getAvailableActions(first.state, 0).forced, { type: 'recharge' });
   const second = turn(first.state, move(0));
   assert.equal(eventsOf(second.events, 'status_prevented')[0].reason, 'recharging');
@@ -188,8 +188,8 @@ test('ohko knocks out a lower level target and fails against a higher one', () =
 });
 
 test('trap: damage at end of turn and no switching or running', () => {
-  const state = makeBattle([makeCreature('musaraille', 20, ['egratignure']), makeCreature('pivelin', 20, ['egratignure'])],
-    [makeCreature('anguilet', 20, ['remous'])]);
+  const state = makeBattle([makeCreature('poulpiquet', 20, ['egratignure']), makeCreature('farfadet', 20, ['egratignure'])],
+    [makeCreature('coulobrin', 20, ['remous'])]);
   const { state: after, events } = turn(state, move(0), move(0), scriptedRng([0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]));
   assert.ok(after.sides[0].volatile.trap);
   assert.ok(eventsOf(events, 'damage').some((event) => event.source === 'trap'));
@@ -198,7 +198,7 @@ test('trap: damage at end of turn and no switching or running', () => {
 });
 
 test('self_destruct knocks out the user', () => {
-  const { state } = use('implosion', { enemyLevel: 60, defender: 'menhirgon' });
+  const { state } = use('implosion', { enemyLevel: 60, defender: 'gargouille' });
   assert.equal(player(state).hp, 0);
 });
 
@@ -208,7 +208,7 @@ test('leech drains the target at the end of each turn, never a Flore target', ()
   const { events } = turn(state, move(0));
   assert.ok(eventsOf(events, 'damage').some((event) => event.source === 'leech' && event.side === 1));
   assert.ok(eventsOf(events, 'heal').some((event) => event.source === 'leech' && event.side === 0));
-  assert.equal(eventsOf(use('germe_voleur', { defender: 'faonille' }).events, 'move_failed').length, 1);
+  assert.equal(eventsOf(use('germe_voleur', { defender: 'fadet' }).events, 'move_failed').length, 1);
 });
 
 test('counter returns twice the physical damage received this turn', () => {
@@ -242,7 +242,7 @@ test('screen halves physical damage for 5 turns', () => {
 });
 
 test('rampage locks the move for 2-3 turns, then confuses the user', () => {
-  const state = setup('frenesie', { level: 20, enemyLevel: 70, defender: 'menhirgon' });
+  const state = setup('frenesie', { level: 20, enemyLevel: 70, defender: 'gargouille' });
   let current = turn(state, move(0), move(0), constantRng(0.99)).state;
   assert.ok(current.sides[0].volatile.rampage);
   let confused = false;

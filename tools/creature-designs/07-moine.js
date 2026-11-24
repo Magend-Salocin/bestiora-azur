@@ -218,9 +218,9 @@ const BLANCELUNE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'fusiblet', front: moinillonFront(), back: moinillonBack(), icon: MOINILLON_ICON },
-  { id: 'fusiblard', front: moinbourruFront(), back: moinbourruBack(), icon: MOINBOURRU_ICON },
-  { id: 'brumelin', front: blanchinFront(), back: blanchinBack(), icon: BLANCHIN_ICON },
-  { id: 'brumoire', front: blancomeFront(), back: blancomeBack(), icon: BLANCOME_ICON },
-  { id: 'brumaitre', front: blanceluneFront(), back: blanceluneBack(), icon: BLANCELUNE_ICON },
+  { id: 'moinillon', front: moinillonFront(), back: moinillonBack(), icon: MOINILLON_ICON },
+  { id: 'moinbourru', front: moinbourruFront(), back: moinbourruBack(), icon: MOINBOURRU_ICON },
+  { id: 'blanchin', front: blanchinFront(), back: blanchinBack(), icon: BLANCHIN_ICON },
+  { id: 'blancome', front: blancomeFront(), back: blancomeBack(), icon: BLANCOME_ICON },
+  { id: 'blancelune', front: blanceluneFront(), back: blanceluneBack(), icon: BLANCELUNE_ICON },
 ];

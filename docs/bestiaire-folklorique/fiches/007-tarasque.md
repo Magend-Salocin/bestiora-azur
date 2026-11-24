@@ -1,6 +1,6 @@
 # 007 à 009 : lignée de la Tarasque
 
-Emplacements `flaquin`, `ondeclat`, `marevor` (starter Eau). Stats, attaques et niveaux d'évolution inchangés.
+Emplacements `tarasquin`, `taraskor`, `tarasque` (starter Eau). Stats, attaques et niveaux d'évolution inchangés.
 
 **Légende.** La Tarasque hantait les rives du Rhône près de Nerluc, qui deviendra Tarascon. On la décrit avec une tête de lion, une carapace de tortue hérissée de piquants, six pattes d'ours et une queue de serpent. Elle dévorait les voyageurs et renversait les bateaux. Chaque année, la fête de la Tarasque promène son effigie dans les rues de Tarascon ; elle est inscrite au patrimoine culturel immatériel de l'UNESCO.
 

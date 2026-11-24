@@ -164,8 +164,8 @@ const MORGAVAGUE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'crabouille', front: tudgommonFront(), back: tudgommonBack(), icon: TUDGOMMON_ICON },
-  { id: 'crabastion', front: goemonrocFront(), back: goemonrocBack(), icon: GOEMONROC_ICON },
-  { id: 'ombrelle', front: morgannFront(), back: morgannBack(), icon: MORGANN_ICON },
-  { id: 'ombrellor', front: morgavagueFront(), back: morgavagueBack(), icon: MORGAVAGUE_ICON },
+  { id: 'tudgommon', front: tudgommonFront(), back: tudgommonBack(), icon: TUDGOMMON_ICON },
+  { id: 'goemonroc', front: goemonrocFront(), back: goemonrocBack(), icon: GOEMONROC_ICON },
+  { id: 'morgann', front: morgannFront(), back: morgannBack(), icon: MORGANN_ICON },
+  { id: 'morgavague', front: morgavagueFront(), back: morgavagueBack(), icon: MORGAVAGUE_ICON },
 ];

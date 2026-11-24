@@ -22,11 +22,11 @@ L'arbitre ne dessine rien. À chaque tour, il reçoit l'état du combat et les c
 1. le **nouvel état** du combat ;
 2. une liste d'**événements**, dans l'ordre où ils se sont produits.
 
-Par exemple, pour un tour où ton Fenouillot attaque en premier :
+Par exemple, pour un tour où ton Korrigan attaque en premier :
 
 ```js
 [
-  { type: 'move_used', side: 0, move: 'brindille' },     // Fenouillot utilise Brindille !
+  { type: 'move_used', side: 0, move: 'brindille' },     // Korrigan utilise Brindille !
   { type: 'damage', side: 1, amount: 12, ... },          // l'adversaire perd 12 PV
   { type: 'effectiveness', value: 2 },                   // C'est super efficace !
   { type: 'move_used', side: 1, move: 'egratignure' },   // l'adversaire riposte
@@ -179,7 +179,7 @@ Quelques chances réelles, calculées avec la formule du jeu et une Capsule norm
 
 | Bestiole | PV restants | Statut | Chance de capture |
 | --- | --- | --- | --- |
-| Très facile (taux 255, comme le Pivelin) | tous | aucun | 44 % |
+| Très facile (taux 255, comme le Farfadet) | tous | aucun | 44 % |
 | Très facile | la moitié | aucun | 74 % |
 | Très facile | tous | endormie | 74 % |
 | Difficile (taux 45, comme une 3e évolution) | tous | aucun | 12 % |

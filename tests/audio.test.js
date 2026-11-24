@@ -63,7 +63,7 @@ test('envelope steps and noise generator', () => {
 });
 
 test('cries are deterministic, 0.3 to 0.8 s, distinct per species', () => {
-  assert.deepEqual(generateCry('pivelin'), generateCry('pivelin'));
+  assert.deepEqual(generateCry('farfadet'), generateCry('farfadet'));
   const signatures = new Set();
   for (const creature of CREATURES) {
     const cry = generateCry(creature.id);
@@ -74,11 +74,11 @@ test('cries are deterministic, 0.3 to 0.8 s, distinct per species', () => {
 });
 
 test('an evolution cries close to its base form, but lower', () => {
-  assert.equal(lineRoot('aquilard').root, 'pivelin');
-  assert.ok(cryPitch('grivelin') < cryPitch('pivelin'));
-  assert.ok(cryPitch('aquilard') < cryPitch('grivelin'));
-  const base = generateCry('pivelin').channels[1].events.map((event) => event.duty);
-  const evolved = generateCry('grivelin').channels[1].events.map((event) => event.duty);
+  assert.equal(lineRoot('farfator').root, 'farfadet');
+  assert.ok(cryPitch('farfandole') < cryPitch('farfadet'));
+  assert.ok(cryPitch('farfator') < cryPitch('farfandole'));
+  const base = generateCry('farfadet').channels[1].events.map((event) => event.duty);
+  const evolved = generateCry('farfandole').channels[1].events.map((event) => event.duty);
   assert.equal(base[0], evolved[0]);
 });
 

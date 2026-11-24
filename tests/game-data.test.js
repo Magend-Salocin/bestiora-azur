@@ -23,9 +23,9 @@ test('content volumes match the game design', () => {
 });
 
 test('starters, legendaries and mythical have the numbers of the game design', () => {
-  const starters = ['fenouillot', 'fenouvert', 'sylvenard', 'braisille', 'fournaise', 'pyrogrue', 'flaquin', 'ondeclat', 'marevor'];
+  const starters = ['korrigan', 'korrigard', 'korriroi', 'galtza', 'galtzabras', 'galtzagor', 'tarasquin', 'taraskor', 'tarasque'];
   starters.forEach((id, index) => assert.equal(CREATURES_BY_ID[id].number, index + 1));
-  ['azurel', 'glacerne', 'volcarde', 'fulgorine', 'mirelle'].forEach((id, index) => {
+  ['vouivre', 'gaussier', 'draguignan', 'veneur', 'mitreve'].forEach((id, index) => {
     assert.equal(CREATURES_BY_ID[id].number, 146 + index);
     assert.equal(CREATURES_BY_ID[id].evolution, null);
   });

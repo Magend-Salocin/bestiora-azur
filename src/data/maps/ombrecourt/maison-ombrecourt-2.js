@@ -34,33 +34,33 @@ export default {
           { cmd: 'say', text: 'maison_ombrecourt_2_intro' },
           {
             cmd: 'if_flag',
-            flag: 'starter_fenouillot',
+            flag: 'starter_korrigan',
             then: [
               {
                 cmd: 'trade',
-                wanted: 'fangelet',
+                wanted: 'graoulet',
                 flag: 'ombrecourt_echange',
-                offer: { creature: 'flaquin', level: 15, nickname: 'Goutte', originalTrainer: 'Ambre' },
+                offer: { creature: 'tarasquin', level: 15, nickname: 'Goutte', originalTrainer: 'Ambre' },
               },
             ],
             else: [
               {
                 cmd: 'if_flag',
-                flag: 'starter_braisille',
+                flag: 'starter_galtza',
                 then: [
                   {
                     cmd: 'trade',
-                    wanted: 'fangelet',
+                    wanted: 'graoulet',
                     flag: 'ombrecourt_echange',
-                    offer: { creature: 'fenouillot', level: 15, nickname: 'Feuille', originalTrainer: 'Ambre' },
+                    offer: { creature: 'korrigan', level: 15, nickname: 'Feuille', originalTrainer: 'Ambre' },
                   },
                 ],
                 else: [
                   {
                     cmd: 'trade',
-                    wanted: 'fangelet',
+                    wanted: 'graoulet',
                     flag: 'ombrecourt_echange',
-                    offer: { creature: 'braisille', level: 15, nickname: 'Cendre', originalTrainer: 'Ambre' },
+                    offer: { creature: 'galtza', level: 15, nickname: 'Cendre', originalTrainer: 'Ambre' },
                   },
                 ],
               },

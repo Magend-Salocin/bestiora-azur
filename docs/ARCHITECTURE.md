@@ -48,7 +48,7 @@ docs/                  GAME_DESIGN.md, ARCHITECTURE.md, PROGRESS.md
 3. **Scènes empilées.** `SceneManager` gère une pile : `update(dt, input)` et `render(ctx)` sur la scène du haut, `render` des scènes inférieures si la scène du haut est transparente (dialogue par-dessus la carte).
 4. **Pas fixe.** Boucle à 60 mises à jour par seconde (accumulateur), rendu à chaque frame.
 5. **Aléatoire injectable.** Toute fonction aléatoire reçoit un RNG (`createRng(seed)`), ce qui rend les tests et les combats reproductibles.
-6. **Identifiants stables.** Toute entité de données a un `id` en `snake_case` ASCII (`fenouillot`, `jet_de_braise`, `route_1`). Les textes affichés sont séparés.
+6. **Identifiants stables.** Toute entité de données a un `id` en `snake_case` ASCII (`korrigan`, `jet_de_braise`, `route_1`). Les textes affichés sont séparés.
 7. **Pas de dépendance runtime** dans le renderer. Dépendances de dev autorisées : `electron`, `electron-builder`, `pngjs`.
 
 ## Conventions de code
@@ -140,7 +140,7 @@ JSON versionné (`SAVE_VERSION` = 2, `src/save/save-format.js`) :
 | `npm run atlas` | Régénère `assets/atlas/*.png` et `*.json` |
 | `npm run validate` | Valide les données |
 | `npm run dist` | Construit les installeurs de la plateforme courante (`dist/`) |
-| `npm run icon` | Régénère `build/icon.png`, `.ico`, `.icns` depuis le sprite d'Azurel |
+| `npm run icon` | Régénère `build/icon.png`, `.ico`, `.icns` depuis le sprite de la Vouivre |
 | `npm run screenshots` | Régénère `docs/screenshots/` (jeu lancé en mode capture) |
 | `npm run perf` | Mesure images/s et temps de calcul sur une carte dense et en combat |
 | `npm run check-text` | Vérifie seul que les textes tiennent dans leur fenêtre (inclus dans `validate`) |

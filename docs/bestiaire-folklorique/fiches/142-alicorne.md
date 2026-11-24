@@ -1,6 +1,6 @@
 # 142 et 143 : lignée de l'Alicorne
 
-Emplacements `cristelan`, `cristarche`. Types Givre et Arcane. Évolution au niveau 48. Alicornet est masculin, Alicorne féminin.
+Emplacements `alicornet`, `alicorne`. Types Givre et Arcane. Évolution au niveau 48. Alicornet est masculin, Alicorne féminin.
 
 **Légende.** « Alicorne » est l'ancien nom français de la licorne et de sa corne. On prêtait à cette corne le pouvoir de déceler et de neutraliser les poisons, et on en vendait la poudre fort cher. Le référentiel cite une alicorne d'Avignon, dont le récit reste à vérifier.
 

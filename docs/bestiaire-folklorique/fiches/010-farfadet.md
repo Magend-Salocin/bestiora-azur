@@ -1,6 +1,6 @@
 # 010 à 012 : lignée du Farfadet
 
-Emplacements `pivelin`, `grivelin`, `aquilard`. Types Normal et Vent. Évolutions aux niveaux 14 et 32.
+Emplacements `farfadet`, `farfandole`, `farfator`. Types Normal et Vent. Évolutions aux niveaux 14 et 32.
 
 **Légende.** Dans le Poitou et en Vendée, le farfadet est un petit lutin des campagnes, farceur plus que méchant. Il égare les voyageurs, tresse la crinière des chevaux et rend parfois service en échange d'une écuelle de lait.
 

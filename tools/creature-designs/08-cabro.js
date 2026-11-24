@@ -129,7 +129,7 @@ const CABRO_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'cabrelin', front: cabrillonFront(), back: cabrillonBack(), icon: CABRILLON_ICON },
-  { id: 'bouquetor', front: cabridorFront(), back: cabridorBack(), icon: CABRIDOR_ICON },
-  { id: 'cabrecime', front: cabroFront(), back: cabroBack(), icon: CABRO_ICON },
+  { id: 'cabrillon', front: cabrillonFront(), back: cabrillonBack(), icon: CABRILLON_ICON },
+  { id: 'cabridor', front: cabridorFront(), back: cabridorBack(), icon: CABRIDOR_ICON },
+  { id: 'cabro_dor', front: cabroFront(), back: cabroBack(), icon: CABRO_ICON },
 ];

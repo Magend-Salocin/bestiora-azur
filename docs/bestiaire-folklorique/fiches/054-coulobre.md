@@ -1,6 +1,6 @@
 # 054 à 056 : lignée de la Coulobre
 
-Emplacements `anguilet`, `anguistral`, `fulmarene`. Types Eau et Foudre. Évolutions aux niveaux 22 et 40. Coulobrin et Coulobron sont masculins, Coulobre féminin.
+Emplacements `coulobrin`, `coulobron`, `coulobre`. Types Eau et Foudre. Évolutions aux niveaux 22 et 40. Coulobrin et Coulobron sont masculins, Coulobre féminin.
 
 **Légende.** La Coulobre est un serpent ailé qui vivait dans le gouffre de la Fontaine-de-Vaucluse, d'où sort la Sorgue. Elle dévorait les habitants des environs jusqu'à ce que saint Véran, évêque de Cavaillon au VIe siècle, la chasse. Le nom vient du latin *coluber*, la couleuvre.
 

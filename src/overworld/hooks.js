@@ -13,7 +13,7 @@ const defaults = {
   /** Name entry for the rival. Resolves with the chosen name. */
   nameRival: async () => null,
   /** Starter choice. Resolves with a creature id. */
-  chooseStarter: async () => 'fenouillot',
+  chooseStarter: async () => 'korrigan',
   healParty() {},
   /** Volumes of the options, 0 to 1. */
   setVolumes() {},

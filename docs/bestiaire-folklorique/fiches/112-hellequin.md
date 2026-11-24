@@ -2,7 +2,7 @@
 
 ## 112 et 113 : lignée de la Mesnie Hellequin
 
-Emplacements `nuageot`, `cumulard`. Type Vent. Évolution au niveau 36.
+Emplacements `hellequet`, `hellequin`. Type Vent. Évolution au niveau 36.
 
 **Légende.** En Normandie, la mesnie Hellequin est une chasse fantastique qui traverse le ciel les nuits de tempête, dans un grand tumulte de chiens et de chevaux. Celui qui la croise risque d'être emporté. Le folklore en fait une troupe de cavaliers morts.
 
@@ -17,7 +17,7 @@ Origines : mesnie Hellequin, figure attestée (Normandie). Hellequet : création
 
 ## 114 : Bayard
 
-Emplacement `girouette`. Types Vent et Métal. Pas d'évolution.
+Emplacement `bayard`. Types Vent et Métal. Pas d'évolution.
 
 **Légende.** Dans les Ardennes, Bayard est le cheval enchanté des quatre fils Aymon. Il les portait tous les quatre à la fois et franchissait les vallées d'un seul bond ; des rochers de la Meuse portent encore, dit-on, la trace de ses sabots.
 

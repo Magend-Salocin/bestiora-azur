@@ -2,7 +2,7 @@
 
 ## 093 et 094 : lignée de l'Ankou
 
-Emplacements `cierget`, `lustrombre`. Types Ombre et Feu. Évolution au niveau 34. Noms masculins.
+Emplacements `ankoulet`, `ankou`. Types Ombre et Feu. Évolution au niveau 34. Noms masculins.
 
 **Légende.** En Bretagne, l'Ankou est l'ouvrier de la mort. Il parcourt les chemins la nuit avec sa charrette qui grince et sa faux, et vient chercher ceux dont l'heure est venue. Selon la tradition, le dernier mort de l'année dans une paroisse devient l'Ankou de l'année suivante.
 
@@ -17,7 +17,7 @@ Origines : Ankou, figure attestée (Bretagne). Ankoulet : création du jeu.
 
 ## 095 : Revenant
 
-Emplacement `glasnuit`. Type Ombre. Pas d'évolution.
+Emplacement `revenant`. Type Ombre. Pas d'évolution.
 
 **Légende.** Partout en France, les revenants sont des morts qui reviennent parmi les vivants, souvent pour réclamer une prière, une restitution ou une sépulture convenable. Ils retournent au repos quand leur dette est réglée.
 

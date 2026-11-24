@@ -281,9 +281,9 @@ const FARAMINE_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'lumignon', front: hadaFront(), back: hadaBack(), icon: HADA_ICON },
-  { id: 'lumidanse', front: hadaluneFront(), back: hadaluneBack(), icon: HADALUNE_ICON },
-  { id: 'lumirande', front: hadelysFront(), back: hadelysBack(), icon: HADELYS_ICON },
-  { id: 'noisetin', front: faraminFront(), back: faraminBack(), icon: FARAMIN_ICON },
-  { id: 'noiseclat', front: faramineFront(), back: faramineBack(), icon: FARAMINE_ICON },
+  { id: 'hada', front: hadaFront(), back: hadaBack(), icon: HADA_ICON },
+  { id: 'hadalune', front: hadaluneFront(), back: hadaluneBack(), icon: HADALUNE_ICON },
+  { id: 'hadelys', front: hadelysFront(), back: hadelysBack(), icon: HADELYS_ICON },
+  { id: 'faramin', front: faraminFront(), back: faraminBack(), icon: FARAMIN_ICON },
+  { id: 'faramine', front: faramineFront(), back: faramineBack(), icon: FARAMINE_ICON },
 ];

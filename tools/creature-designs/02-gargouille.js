@@ -299,9 +299,9 @@ const LUBINOU_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'caillotin', front: gargoulinFront(), back: gargoulinBack(), icon: GARGOULIN_ICON },
-  { id: 'bloquetin', front: gargoulardFront(), back: gargoulardBack(), icon: GARGOULARD_ICON },
-  { id: 'menhirgon', front: gargouilleFront(), back: gargouilleBack(), icon: GARGOUILLE_ICON },
-  { id: 'noctule', front: lubinFront(), back: lubinBack(), icon: LUBIN_ICON },
-  { id: 'noctulard', front: lubinouFront(), back: lubinouBack(), icon: LUBINOU_ICON },
+  { id: 'gargoulin', front: gargoulinFront(), back: gargoulinBack(), icon: GARGOULIN_ICON },
+  { id: 'gargoulard', front: gargoulardFront(), back: gargoulardBack(), icon: GARGOULARD_ICON },
+  { id: 'gargouille', front: gargouilleFront(), back: gargouilleBack(), icon: GARGOUILLE_ICON },
+  { id: 'lubin', front: lubinFront(), back: lubinBack(), icon: LUBIN_ICON },
+  { id: 'lubinou', front: lubinouFront(), back: lubinouBack(), icon: LUBINOU_ICON },
 ];

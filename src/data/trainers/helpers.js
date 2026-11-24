@@ -3,7 +3,7 @@
 // Text ids are derived from the trainer id: <id>_intro, <id>_defeat, <id>_after (and <id>_last
 // with `last: true`, said before the trainer sends the last creature).
 
-export const STARTERS = ['fenouillot', 'braisille', 'flaquin'];
+export const STARTERS = ['korrigan', 'galtza', 'tarasquin'];
 
 function member(entry) {
   if (typeof entry !== 'string') return entry;
@@ -11,7 +11,7 @@ function member(entry) {
   return { creature, level: Number(level) };
 }
 
-/** trainer('gamin_leo', 'gamin', 'Léo', ['pivelin:3', 'musaraille:4'], { ai: 'smart', last: true }) */
+/** trainer('gamin_leo', 'gamin', 'Léo', ['farfadet:3', 'poulpiquet:4'], { ai: 'smart', last: true }) */
 export function trainer(id, trainerClass, name, party, { last = false, ...options } = {}) {
   return {
     id,
@@ -32,5 +32,5 @@ export function trainer(id, trainerClass, name, party, { last = false, ...option
  */
 export function rival(id, partiesByPlayerStarter, options = {}) {
   const partyByStarter = Object.fromEntries(STARTERS.map((starter) => [starter, partiesByPlayerStarter[starter].map(member)]));
-  return { ...trainer(id, 'rival', '', partiesByPlayerStarter.fenouillot, options), partyByStarter };
+  return { ...trainer(id, 'rival', '', partiesByPlayerStarter.korrigan, options), partyByStarter };
 }

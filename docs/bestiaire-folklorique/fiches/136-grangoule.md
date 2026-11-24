@@ -1,6 +1,6 @@
 # 136 et 137 : lignée de la Grand'Goule
 
-Emplacements `tisonnet`, `tisonnard`. Types Feu et Roche. Évolution au niveau 45. Goulinet est masculin, Grangoule féminin.
+Emplacements `goulinet`, `grangoule`. Types Feu et Roche. Évolution au niveau 45. Goulinet est masculin, Grangoule féminin.
 
 **Légende.** À Poitiers, la Grand'Goule est un dragon ailé qui vivait dans les souterrains au bord du Clain et dévorait les religieuses de l'abbaye Sainte-Croix. La tradition attribue sa défaite à sainte Radegonde. Son effigie, une gueule immense, était promenée dans les processions des Rogations.
 

@@ -147,8 +147,8 @@ export class TitleScene {
 
   renderAzurel(ctx) {
     const y = AZUREL.y + Math.round(Math.sin(this.time * 2) * 3);
-    drawSprite(ctx, 'ui', 'title/azurel', AZUREL.x, y);
+    drawSprite(ctx, 'ui', 'title/vouivre', AZUREL.x, y);
     const rows = azurelRevealRows(this.time);
-    if (rows > 0) drawSpritePart(ctx, 'creatures', 'azurel/front', 0, 0, SPRITE_SIZE, rows, AZUREL.x, y);
+    if (rows > 0) drawSpritePart(ctx, 'creatures', 'vouivre/front', 0, 0, SPRITE_SIZE, rows, AZUREL.x, y);
   }
 }

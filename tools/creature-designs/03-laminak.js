@@ -153,7 +153,7 @@ const LAMINARA_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'goujonet', front: laminakFront(), back: laminakBack(), icon: LAMINAK_ICON },
-  { id: 'goujarde', front: lamineaFront(), back: lamineaBack(), icon: LAMINEA_ICON },
-  { id: 'brochemor', front: laminaraFront(), back: laminaraBack(), icon: LAMINARA_ICON },
+  { id: 'laminak', front: laminakFront(), back: laminakBack(), icon: LAMINAK_ICON },
+  { id: 'laminea', front: lamineaFront(), back: lamineaBack(), icon: LAMINEA_ICON },
+  { id: 'laminara', front: laminaraFront(), back: laminaraBack(), icon: LAMINARA_ICON },
 ];

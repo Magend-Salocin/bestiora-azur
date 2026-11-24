@@ -12,7 +12,7 @@ import { askYesNo } from './dialog-box.js';
 import { PromiseScene, moveCursor } from './menu-cursor.js';
 import { drawWindowFrame } from './window-frame.js';
 
-export const STARTER_IDS = ['fenouillot', 'braisille', 'flaquin'];
+export const STARTER_IDS = ['korrigan', 'galtza', 'tarasquin'];
 const SLOT_X = [4, 56, 108];
 const SPRITE_Y = 28;
 

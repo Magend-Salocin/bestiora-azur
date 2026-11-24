@@ -41,15 +41,15 @@ export default {
   encounters: {
     rate: 9,
     cave: [
-      { creature: 'givrailes', minLevel: 54, maxLevel: 56, weight: 14 },
-      { creature: 'frimours', minLevel: 54, maxLevel: 56, weight: 14 },
-      { creature: 'cristelan', minLevel: 54, maxLevel: 57, weight: 14 },
-      { creature: 'neveon', minLevel: 55, maxLevel: 58, weight: 12 },
-      { creature: 'cristarche', minLevel: 56, maxLevel: 58, weight: 10 },
-      { creature: 'frimastoc', minLevel: 56, maxLevel: 58, weight: 8 },
-      { creature: 'stoicor', minLevel: 56, maxLevel: 58, weight: 8 },
-      { creature: 'glasnuit', minLevel: 54, maxLevel: 56, weight: 8 },
-      { creature: 'menhirgon', minLevel: 54, maxLevel: 56, weight: 6 },
+      { creature: 'barbegazi', minLevel: 54, maxLevel: 56, weight: 14 },
+      { creature: 'vosgar', minLevel: 54, maxLevel: 56, weight: 14 },
+      { creature: 'alicornet', minLevel: 54, maxLevel: 57, weight: 14 },
+      { creature: 'dahu', minLevel: 55, maxLevel: 58, weight: 12 },
+      { creature: 'alicorne', minLevel: 56, maxLevel: 58, weight: 10 },
+      { creature: 'vosgarde', minLevel: 56, maxLevel: 58, weight: 8 },
+      { creature: 'gevaudan', minLevel: 56, maxLevel: 58, weight: 8 },
+      { creature: 'revenant', minLevel: 54, maxLevel: 56, weight: 8 },
+      { creature: 'gargouille', minLevel: 54, maxLevel: 56, weight: 6 },
     ],
   },
   warps: [{ x: 11, y: 28, to: 'givremont', toX: 21, toY: 15 }],
@@ -120,10 +120,10 @@ export default {
     { x: 14, y: 2, item: 'hyper_capsule', flag: 'item_boreale_4' },
   ],
   hiddenItems: [{ x: 3, y: 21, item: 'pierre_lunaire', flag: 'hidden_boreale_1' }],
-  triggers: [{ x: 6, y: 3, w: 10, h: 1, script: [{ cmd: 'call', script: 'glacerne' }] }],
+  triggers: [{ x: 6, y: 3, w: 10, h: 1, script: [{ cmd: 'call', script: 'gaussier' }] }],
   connections: {  },
   scripts: {
-    glacerne: [
+    gaussier: [
       {
         cmd: 'if_flag',
         flag: 'glacerne_capturee',
@@ -139,7 +139,7 @@ export default {
               { cmd: 'say', text: 'glacerne_2' },
               {
                 cmd: 'wild_battle',
-                creature: 'glacerne',
+                creature: 'gaussier',
                 level: 60,
                 legendary: true,
                 won: [{ cmd: 'set_flag', flag: 'glacerne_ko' }, { cmd: 'say', text: 'glacerne_ko' }],

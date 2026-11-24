@@ -1,1800 +1,1800 @@
 {
   "frames": {
-    "albavent/back": {
+    "alicorne/back": {
       "x": 0,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "albavent/front": {
+    "alicorne/front": {
       "x": 49,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "amperion/back": {
+    "alicornet/back": {
       "x": 98,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "amperion/front": {
+    "alicornet/front": {
       "x": 147,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "ampoulard/back": {
+    "ankou/back": {
       "x": 196,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "ampoulard/front": {
+    "ankou/front": {
       "x": 245,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "ampoulin/back": {
+    "ankoulet/back": {
       "x": 294,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "ampoulin/front": {
+    "ankoulet/front": {
       "x": 343,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "anguilet/back": {
+    "babau/back": {
       "x": 392,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "anguilet/front": {
+    "babau/front": {
       "x": 441,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "anguistral/back": {
+    "babauet/back": {
       "x": 490,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "anguistral/front": {
+    "babauet/front": {
       "x": 539,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "aquilard/back": {
+    "bagnoz/back": {
       "x": 588,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "aquilard/front": {
+    "bagnoz/front": {
       "x": 637,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "azurel/back": {
+    "barbegazi/back": {
       "x": 686,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "azurel/front": {
+    "barbegazi/front": {
       "x": 735,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "bloquetin/back": {
+    "barbegel/back": {
       "x": 784,
       "y": 0,
       "w": 48,
       "h": 48
     },
-    "bloquetin/front": {
+    "barbegel/front": {
       "x": 0,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "boulonnet/back": {
+    "basilic/back": {
       "x": 49,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "boulonnet/front": {
+    "basilic/front": {
       "x": 98,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "boulonnier/back": {
+    "basilin/back": {
       "x": 147,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "boulonnier/front": {
+    "basilin/front": {
       "x": 196,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bouquetor/back": {
+    "bayard/back": {
       "x": 245,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bouquetor/front": {
+    "bayard/front": {
       "x": 294,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bousigor/back": {
+    "birette/back": {
       "x": 343,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bousigor/front": {
+    "birette/front": {
       "x": 392,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bousiot/back": {
+    "blancelune/back": {
       "x": 441,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bousiot/front": {
+    "blancelune/front": {
       "x": 490,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bovaillon/back": {
+    "blanchin/back": {
       "x": 539,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "bovaillon/front": {
+    "blanchin/front": {
       "x": 588,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "braisille/back": {
+    "blancome/back": {
       "x": 637,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "braisille/front": {
+    "blancome/front": {
       "x": 686,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "brochemor/back": {
+    "bolegan/back": {
       "x": 735,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "brochemor/front": {
+    "bolegan/front": {
       "x": 784,
       "y": 49,
       "w": 48,
       "h": 48
     },
-    "brumaitre/back": {
+    "bugul_noz/back": {
       "x": 0,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "brumaitre/front": {
+    "bugul_noz/front": {
       "x": 49,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "brumelin/back": {
+    "bugulin/back": {
       "x": 98,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "brumelin/front": {
+    "bugulin/front": {
       "x": 147,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "brumoire/back": {
+    "cabridor/back": {
       "x": 196,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "brumoire/front": {
+    "cabridor/front": {
       "x": 245,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "butinelle/back": {
+    "cabrillon/back": {
       "x": 294,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "butinelle/front": {
+    "cabrillon/front": {
       "x": 343,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "butinet/back": {
+    "cabro_dor/back": {
       "x": 392,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "butinet/front": {
+    "cabro_dor/front": {
       "x": 441,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cabrecime/back": {
+    "camecru/back": {
       "x": 490,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cabrecime/front": {
+    "camecru/front": {
       "x": 539,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cabrelin/back": {
+    "camecruse/back": {
       "x": 588,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cabrelin/front": {
+    "camecruse/front": {
       "x": 637,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "caillotin/back": {
+    "carcolh/back": {
       "x": 686,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "caillotin/front": {
+    "carcolh/front": {
       "x": 735,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cendrador/back": {
+    "carcolosse/back": {
       "x": 784,
       "y": 98,
       "w": 48,
       "h": 48
     },
-    "cendrador/front": {
+    "carcolosse/front": {
       "x": 0,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cerfeuil/back": {
+    "chauchemor/back": {
       "x": 49,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cerfeuil/front": {
+    "chauchemor/front": {
       "x": 98,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cervoral/back": {
+    "chauchenid/back": {
       "x": 147,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cervoral/front": {
+    "chauchenid/front": {
       "x": 196,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chafouin/back": {
+    "chauchet/back": {
       "x": 245,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chafouin/front": {
+    "chauchet/front": {
       "x": 294,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chafourbe/back": {
+    "coulobre/back": {
       "x": 343,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chafourbe/front": {
+    "coulobre/front": {
       "x": 392,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chipotard/back": {
+    "coulobrin/back": {
       "x": 441,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "chipotard/front": {
+    "coulobrin/front": {
       "x": 490,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cierget/back": {
+    "coulobron/back": {
       "x": 539,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cierget/front": {
+    "coulobron/front": {
       "x": 588,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cocolet/back": {
+    "croquefrou/back": {
       "x": 637,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cocolet/front": {
+    "croquefrou/front": {
       "x": 686,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cocomarin/back": {
+    "croquemine/back": {
       "x": 735,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cocomarin/front": {
+    "croquemine/front": {
       "x": 784,
       "y": 147,
       "w": 48,
       "h": 48
     },
-    "cocorage/back": {
+    "dahu/back": {
       "x": 0,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cocorage/front": {
+    "dahu/front": {
       "x": 49,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "corolline/back": {
+    "dame_noire/back": {
       "x": 98,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "corolline/front": {
+    "dame_noire/front": {
       "x": 147,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crabastion/back": {
+    "dame_verte/back": {
       "x": 196,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crabastion/front": {
+    "dame_verte/front": {
       "x": 245,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crabouille/back": {
+    "dracorive/back": {
       "x": 294,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crabouille/front": {
+    "dracorive/front": {
       "x": 343,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crassolard/back": {
+    "dracounet/back": {
       "x": 392,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crassolard/front": {
+    "dracounet/front": {
       "x": 441,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crassou/back": {
+    "dracrhodan/back": {
       "x": 490,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "crassou/front": {
+    "dracrhodan/front": {
       "x": 539,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cristarche/back": {
+    "draguignan/back": {
       "x": 588,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cristarche/front": {
+    "draguignan/front": {
       "x": 637,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cristelan/back": {
+    "drapet/back": {
       "x": 686,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cristelan/front": {
+    "drapet/front": {
       "x": 735,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cumulard/back": {
+    "fadebois/back": {
       "x": 784,
       "y": 196,
       "w": 48,
       "h": 48
     },
-    "cumulard/front": {
+    "fadebois/front": {
       "x": 0,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "dionavore/back": {
+    "fadeon/back": {
       "x": 49,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "dionavore/front": {
+    "fadeon/front": {
       "x": 98,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "dionelle/back": {
+    "fadet/back": {
       "x": 147,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "dionelle/front": {
+    "fadet/front": {
       "x": 196,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "enclumor/back": {
+    "faramin/back": {
       "x": 245,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "enclumor/front": {
+    "faramin/front": {
       "x": 294,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "eolithe/back": {
+    "faramine/back": {
       "x": 343,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "eolithe/front": {
+    "faramine/front": {
       "x": 392,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "epavard/back": {
+    "farfadet/back": {
       "x": 441,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "epavard/front": {
+    "farfadet/front": {
       "x": 490,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangelet/back": {
+    "farfandole/back": {
       "x": 539,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangelet/front": {
+    "farfandole/front": {
       "x": 588,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangeroi/back": {
+    "farfator/back": {
       "x": 637,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangeroi/front": {
+    "farfator/front": {
       "x": 686,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangeur/back": {
+    "follaclair/back": {
       "x": 735,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "fangeur/front": {
+    "follaclair/front": {
       "x": 784,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "faonille/back": {
+    "follaton/back": {
       "x": 0,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "faonille/front": {
+    "follaton/front": {
       "x": 49,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fenouillot/back": {
+    "follet/back": {
       "x": 98,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fenouillot/front": {
+    "follet/front": {
       "x": 147,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fenouvert/back": {
+    "follorage/back": {
       "x": 196,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fenouvert/front": {
+    "follorage/front": {
       "x": 245,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "feuillarve/back": {
+    "follumine/back": {
       "x": 294,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "feuillarve/front": {
+    "follumine/front": {
       "x": 343,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "filandrin/back": {
+    "fouletot/back": {
       "x": 392,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "filandrin/front": {
+    "fouletot/front": {
       "x": 441,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "filandrix/back": {
+    "fullemarin/back": {
       "x": 490,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "filandrix/front": {
+    "fullemarin/front": {
       "x": 539,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "flaquin/back": {
+    "fulletonne/back": {
       "x": 588,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "flaquin/front": {
+    "fulletonne/front": {
       "x": 637,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fonderion/back": {
+    "fullettu/back": {
       "x": 686,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fonderion/front": {
+    "fullettu/front": {
       "x": 735,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fouisseron/back": {
+    "galipote/back": {
       "x": 784,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "fouisseron/front": {
+    "galipote/front": {
       "x": 0,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fournaise/back": {
+    "galipotin/back": {
       "x": 49,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fournaise/front": {
+    "galipotin/front": {
       "x": 98,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimastoc/back": {
+    "galtza/back": {
       "x": 147,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimastoc/front": {
+    "galtza/front": {
       "x": 196,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimours/back": {
+    "galtzabras/back": {
       "x": 245,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimours/front": {
+    "galtzabras/front": {
       "x": 294,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimousson/back": {
+    "galtzagor/back": {
       "x": 343,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "frimousson/front": {
+    "galtzagor/front": {
       "x": 392,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fulgorine/back": {
+    "gargouille/back": {
       "x": 441,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fulgorine/front": {
+    "gargouille/front": {
       "x": 490,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fulmarene/back": {
+    "gargoulard/back": {
       "x": 539,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fulmarene/front": {
+    "gargoulard/front": {
       "x": 588,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fumelard/back": {
+    "gargoulin/back": {
       "x": 637,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fumelard/front": {
+    "gargoulin/front": {
       "x": 686,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fumeron/back": {
+    "gaussier/back": {
       "x": 735,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fumeron/front": {
+    "gaussier/front": {
       "x": 784,
       "y": 343,
       "w": 48,
       "h": 48
     },
-    "fusiblard/back": {
+    "gevaudan/back": {
       "x": 0,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "fusiblard/front": {
+    "gevaudan/front": {
       "x": 49,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "fusiblet/back": {
+    "gobelin/back": {
       "x": 98,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "fusiblet/front": {
+    "gobelin/front": {
       "x": 147,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "girouette/back": {
+    "gobelinet/back": {
       "x": 196,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "girouette/front": {
+    "gobelinet/front": {
       "x": 245,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "givrailes/back": {
+    "goelame/back": {
       "x": 294,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "givrailes/front": {
+    "goelame/front": {
       "x": 343,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "givrelet/back": {
+    "goemonroc/back": {
       "x": 392,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "givrelet/front": {
+    "goemonroc/front": {
       "x": 441,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glacerne/back": {
+    "gonfaron/back": {
       "x": 490,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glacerne/front": {
+    "gonfaron/front": {
       "x": 539,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glandor/back": {
+    "goulinet/back": {
       "x": 588,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glandor/front": {
+    "goulinet/front": {
       "x": 637,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glasnuit/back": {
+    "grangoule/back": {
       "x": 686,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "glasnuit/front": {
+    "grangoule/front": {
       "x": 735,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "goujarde/back": {
+    "graoulard/back": {
       "x": 784,
       "y": 392,
       "w": 48,
       "h": 48
     },
-    "goujarde/front": {
+    "graoulard/front": {
       "x": 0,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "goujonet/back": {
+    "graoulet/back": {
       "x": 49,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "goujonet/front": {
+    "graoulet/front": {
       "x": 98,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grenaillon/back": {
+    "graoully/back": {
       "x": 147,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grenaillon/front": {
+    "graoully/front": {
       "x": 196,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grimoule/back": {
+    "hada/back": {
       "x": 245,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grimoule/front": {
+    "hada/front": {
       "x": 294,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grimoulix/back": {
+    "hadalune/back": {
       "x": 343,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grimoulix/front": {
+    "hadalune/front": {
       "x": 392,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grivelin/back": {
+    "hadelys/back": {
       "x": 441,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "grivelin/front": {
+    "hadelys/front": {
       "x": 490,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "hurlegroin/back": {
+    "hellequet/back": {
       "x": 539,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "hurlegroin/front": {
+    "hellequet/front": {
       "x": 588,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "lampyrex/back": {
+    "hellequin/back": {
       "x": 637,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "lampyrex/front": {
+    "hellequin/front": {
       "x": 686,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "lampyrin/back": {
+    "houlecrin/back": {
       "x": 735,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "lampyrin/front": {
+    "houlecrin/front": {
       "x": 784,
       "y": 441,
       "w": 48,
       "h": 48
     },
-    "lapugil/back": {
+    "houlin/back": {
       "x": 0,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lapugil/front": {
+    "houlin/front": {
       "x": 49,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lapugilat/back": {
+    "jetin/back": {
       "x": 98,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lapugilat/front": {
+    "jetin/front": {
       "x": 147,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lingotard/back": {
+    "jetinelle/back": {
       "x": 196,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lingotard/front": {
+    "jetinelle/front": {
       "x": 245,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lombrigant/back": {
+    "koril/back": {
       "x": 294,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lombrigant/front": {
+    "koril/front": {
       "x": 343,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lombrin/back": {
+    "korrigan/back": {
       "x": 392,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lombrin/front": {
+    "korrigan/front": {
       "x": 441,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumidanse/back": {
+    "korrigard/back": {
       "x": 490,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumidanse/front": {
+    "korrigard/front": {
       "x": 539,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumignon/back": {
+    "korriroi/back": {
       "x": 588,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumignon/front": {
+    "korriroi/front": {
       "x": 637,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumirande/back": {
+    "laminak/back": {
       "x": 686,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lumirande/front": {
+    "laminak/front": {
       "x": 735,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lustrombre/back": {
+    "laminara/back": {
       "x": 784,
       "y": 490,
       "w": 48,
       "h": 48
     },
-    "lustrombre/front": {
+    "laminara/front": {
       "x": 0,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "marevor/back": {
+    "laminea/back": {
       "x": 49,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "marevor/front": {
+    "laminea/front": {
       "x": 98,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "menhirgon/back": {
+    "lavandame/back": {
       "x": 147,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "menhirgon/front": {
+    "lavandame/front": {
       "x": 196,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "mirelle/back": {
+    "lavandiere/back": {
       "x": 245,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "mirelle/front": {
+    "lavandiere/front": {
       "x": 294,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "miroitage/back": {
+    "leberombre/back": {
       "x": 343,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "miroitage/front": {
+    "leberombre/front": {
       "x": 392,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "miroitin/back": {
+    "leberou/back": {
       "x": 441,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "miroitin/front": {
+    "leberou/front": {
       "x": 490,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "morillard/back": {
+    "leberouge/back": {
       "x": 539,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "morillard/front": {
+    "leberouge/front": {
       "x": 588,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "morillon/back": {
+    "lougarou/back": {
       "x": 637,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "morillon/front": {
+    "lougarou/front": {
       "x": 686,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "musaraille/back": {
+    "louvar/back": {
       "x": 735,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "musaraille/front": {
+    "louvar/front": {
       "x": 784,
       "y": 539,
       "w": 48,
       "h": 48
     },
-    "musarogne/back": {
+    "lubin/back": {
       "x": 0,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "musarogne/front": {
+    "lubin/front": {
       "x": 49,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "neveon/back": {
+    "lubinou/back": {
       "x": 98,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "neveon/front": {
+    "lubinou/front": {
       "x": 147,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nimbelaine/back": {
+    "lycastre/back": {
       "x": 196,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nimbelaine/front": {
+    "lycastre/front": {
       "x": 245,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noctulard/back": {
+    "lycastron/back": {
       "x": 294,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noctulard/front": {
+    "lycastron/front": {
       "x": 343,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noctule/back": {
+    "magou/back": {
       "x": 392,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noctule/front": {
+    "magou/front": {
       "x": 441,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nocturbe/back": {
+    "mallet/back": {
       "x": 490,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nocturbe/front": {
+    "mallet/front": {
       "x": 539,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noiseclat/back": {
+    "mandragot/back": {
       "x": 588,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noiseclat/front": {
+    "mandragot/front": {
       "x": 637,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noisetin/back": {
+    "mandragoul/back": {
       "x": 686,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "noisetin/front": {
+    "mandragoul/front": {
       "x": 735,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nuageot/back": {
+    "margelle/back": {
       "x": 784,
       "y": 588,
       "w": 48,
       "h": 48
     },
-    "nuageot/front": {
+    "margelle/front": {
       "x": 0,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "nymphot/back": {
+    "margolys/back": {
       "x": 49,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "nymphot/front": {
+    "margolys/front": {
       "x": 98,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "octobras/back": {
+    "matagot/back": {
       "x": 147,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "octobras/front": {
+    "matagot/front": {
       "x": 196,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ombrelle/back": {
+    "matagri/back": {
       "x": 245,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ombrelle/front": {
+    "matagri/front": {
       "x": 294,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ombrellor/back": {
+    "melusine/back": {
       "x": 343,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ombrellor/front": {
+    "melusine/front": {
       "x": 392,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ondeclat/back": {
+    "melusineau/back": {
       "x": 441,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "ondeclat/front": {
+    "melusineau/front": {
       "x": 490,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "patineau/back": {
+    "mitreve/back": {
       "x": 539,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "patineau/front": {
+    "mitreve/front": {
       "x": 588,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "patinoir/back": {
+    "moinbourru/back": {
       "x": 637,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "patinoir/front": {
+    "moinbourru/front": {
       "x": 686,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "pestelet/back": {
+    "moinillon/back": {
       "x": 735,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "pestelet/front": {
+    "moinillon/front": {
       "x": 784,
       "y": 637,
       "w": 48,
       "h": 48
     },
-    "pestorne/back": {
+    "morgann/back": {
       "x": 0,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pestorne/front": {
+    "morgann/front": {
       "x": 49,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "petalune/back": {
+    "morgavague/back": {
       "x": 98,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "petalune/front": {
+    "morgavague/front": {
       "x": 147,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "phalenoir/back": {
+    "nainmarin/back": {
       "x": 196,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "phalenoir/front": {
+    "nainmarin/front": {
       "x": 245,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "piquevolt/back": {
+    "poulpifol/back": {
       "x": 294,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "piquevolt/front": {
+    "poulpifol/front": {
       "x": 343,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pivelin/back": {
+    "poulpiquet/back": {
       "x": 392,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pivelin/front": {
+    "poulpiquet/front": {
       "x": 441,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pyrobelier/back": {
+    "revenant/back": {
       "x": 490,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pyrobelier/front": {
+    "revenant/front": {
       "x": 539,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pyrogrue/back": {
+    "roncefee/back": {
       "x": 588,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "pyrogrue/front": {
+    "roncefee/front": {
       "x": 637,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "quartzard/back": {
+    "serpvolant/back": {
       "x": 686,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "quartzard/front": {
+    "serpvolant/front": {
       "x": 735,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "quartzelle/back": {
+    "serpvolin/back": {
       "x": 784,
       "y": 686,
       "w": 48,
       "h": 48
     },
-    "quartzelle/front": {
+    "serpvolin/front": {
       "x": 0,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "raieciel/back": {
+    "servan/back": {
       "x": 49,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "raieciel/front": {
+    "servan/front": {
       "x": 98,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "raielle/back": {
+    "servargent/back": {
       "x": 147,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "raielle/front": {
+    "servargent/front": {
       "x": 196,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "ronceroc/back": {
+    "servarmure/back": {
       "x": 245,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "ronceroc/front": {
+    "servarmure/front": {
       "x": 294,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamarde/back": {
+    "sirenea/back": {
       "x": 343,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamarde/front": {
+    "sirenea/front": {
       "x": 392,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamassif/back": {
+    "sirenor/back": {
       "x": 441,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamassif/front": {
+    "sirenor/front": {
       "x": 490,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamoue/back": {
+    "sotremage/back": {
       "x": 539,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "salamoue/front": {
+    "sotremage/front": {
       "x": 588,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "scoriarque/back": {
+    "sotrin/back": {
       "x": 637,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "scoriarque/front": {
+    "sotrin/front": {
       "x": 686,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "scorielle/back": {
+    "taraskor/back": {
       "x": 735,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "scorielle/front": {
+    "taraskor/front": {
       "x": 784,
       "y": 735,
       "w": 48,
       "h": 48
     },
-    "silurbe/back": {
+    "tarasque/back": {
       "x": 0,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "silurbe/front": {
+    "tarasque/front": {
       "x": 49,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sombrecor/back": {
+    "tarasquin/back": {
       "x": 98,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sombrecor/front": {
+    "tarasquin/front": {
       "x": 147,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sombrelin/back": {
+    "taurnoir/back": {
       "x": 196,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sombrelin/front": {
+    "taurnoir/front": {
       "x": 245,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "stalactor/back": {
+    "truffandec/back": {
       "x": 294,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "stalactor/front": {
+    "truffandec/front": {
       "x": 343,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "stoicor/back": {
+    "truffandor/back": {
       "x": 392,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "stoicor/front": {
+    "truffandor/front": {
       "x": 441,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sylvenard/back": {
+    "tudgommon/back": {
       "x": 490,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "sylvenard/front": {
+    "tudgommon/front": {
       "x": 539,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "tisonnard/back": {
+    "veluchon/back": {
       "x": 588,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "tisonnard/front": {
+    "veluchon/front": {
       "x": 637,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "tisonnet/back": {
+    "velucorne/back": {
       "x": 686,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "tisonnet/front": {
+    "velucorne/front": {
       "x": 735,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "toisonnet/back": {
+    "veneur/back": {
       "x": 784,
       "y": 784,
       "w": 48,
       "h": 48
     },
-    "toisonnet/front": {
+    "veneur/front": {
       "x": 0,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "venimorde/back": {
+    "vosgar/back": {
       "x": 49,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "venimorde/front": {
+    "vosgar/front": {
       "x": 98,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "venimot/back": {
+    "vosgarde/back": {
       "x": 147,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "venimot/front": {
+    "vosgarde/front": {
       "x": 196,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volcarde/back": {
+    "vosgoup/back": {
       "x": 245,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volcarde/front": {
+    "vosgoup/front": {
       "x": 294,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volplaneur/back": {
+    "vouivre/back": {
       "x": 343,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volplaneur/front": {
+    "vouivre/front": {
       "x": 392,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volplanin/back": {
+    "warabouc/back": {
       "x": 441,
       "y": 833,
       "w": 48,
       "h": 48
     },
-    "volplanin/front": {
+    "warabouc/front": {
       "x": 490,
       "y": 833,
       "w": 48,
@@ -1814,160 +1814,160 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "b66a6e961a0dee124de4e50d1860ae8d8f2ca531ce5993609551e1a9b8542b6a",
+    "pngHash": "7da68472e6da2f3d431ef8e97660f6e42c686d3bf83da91354deb62336d3c77b",
     "source": "src/data/creatures.js",
     "generated": [],
     "handDrawn": [
-      "fenouillot",
-      "fenouvert",
-      "sylvenard",
-      "braisille",
-      "fournaise",
-      "pyrogrue",
-      "flaquin",
-      "ondeclat",
-      "marevor",
-      "azurel",
-      "glacerne",
-      "volcarde",
-      "fulgorine",
-      "mirelle",
-      "pivelin",
-      "grivelin",
-      "aquilard",
-      "musaraille",
-      "musarogne",
-      "feuillarve",
-      "nymphot",
-      "phalenoir",
-      "bousiot",
-      "bousigor",
-      "morillon",
-      "morillard",
-      "glandor",
-      "venimot",
-      "venimorde",
-      "lumignon",
-      "lumidanse",
-      "lumirande",
-      "noisetin",
-      "noiseclat",
-      "faonille",
-      "cerfeuil",
-      "cervoral",
-      "caillotin",
-      "bloquetin",
-      "menhirgon",
-      "noctule",
-      "noctulard",
-      "salamoue",
-      "salamarde",
-      "salamassif",
-      "fouisseron",
-      "quartzelle",
-      "quartzard",
-      "grenaillon",
-      "lingotard",
-      "fonderion",
-      "goujonet",
-      "goujarde",
-      "brochemor",
-      "crabouille",
-      "crabastion",
-      "ombrelle",
-      "ombrellor",
-      "anguilet",
-      "anguistral",
-      "fulmarene",
-      "lapugil",
-      "lapugilat",
-      "toisonnet",
-      "nimbelaine",
-      "hurlegroin",
-      "petalune",
-      "corolline",
-      "lampyrin",
-      "lampyrex",
-      "bovaillon",
-      "cocolet",
-      "cocomarin",
-      "cocorage",
-      "fumeron",
-      "fumelard",
-      "cendrador",
-      "boulonnet",
-      "boulonnier",
-      "crassou",
-      "crassolard",
-      "piquevolt",
-      "ampoulin",
-      "ampoulard",
-      "amperion",
-      "sombrelin",
-      "sombrecor",
-      "stalactor",
-      "lombrin",
-      "lombrigant",
-      "filandrin",
-      "filandrix",
-      "fusiblet",
-      "fusiblard",
-      "brumelin",
-      "brumoire",
-      "brumaitre",
-      "cierget",
-      "lustrombre",
-      "glasnuit",
-      "dionelle",
-      "dionavore",
-      "ronceroc",
-      "butinet",
-      "butinelle",
-      "cabrelin",
-      "bouquetor",
-      "cabrecime",
-      "volplanin",
-      "volplaneur",
-      "eolithe",
-      "givrelet",
-      "givrailes",
-      "frimousson",
-      "frimours",
-      "frimastoc",
-      "nuageot",
-      "cumulard",
-      "girouette",
-      "fangelet",
-      "fangeur",
-      "fangeroi",
-      "patineau",
-      "patinoir",
-      "silurbe",
-      "pestelet",
-      "pestorne",
-      "chafouin",
-      "chafourbe",
-      "miroitin",
-      "miroitage",
-      "nocturbe",
-      "chipotard",
-      "raielle",
-      "raieciel",
-      "grimoule",
-      "grimoulix",
-      "octobras",
-      "epavard",
-      "albavent",
-      "tisonnet",
-      "tisonnard",
-      "pyrobelier",
-      "enclumor",
-      "scorielle",
-      "scoriarque",
-      "cristelan",
-      "cristarche",
-      "neveon",
-      "stoicor"
+      "korrigan",
+      "korrigard",
+      "korriroi",
+      "galtza",
+      "galtzabras",
+      "galtzagor",
+      "tarasquin",
+      "taraskor",
+      "tarasque",
+      "vouivre",
+      "gaussier",
+      "draguignan",
+      "veneur",
+      "mitreve",
+      "farfadet",
+      "farfandole",
+      "farfator",
+      "poulpiquet",
+      "poulpifol",
+      "chauchet",
+      "chauchenid",
+      "chauchemor",
+      "carcolh",
+      "carcolosse",
+      "mandragot",
+      "mandragoul",
+      "dame_verte",
+      "basilin",
+      "basilic",
+      "hada",
+      "hadalune",
+      "hadelys",
+      "faramin",
+      "faramine",
+      "fadet",
+      "fadebois",
+      "fadeon",
+      "gargoulin",
+      "gargoulard",
+      "gargouille",
+      "lubin",
+      "lubinou",
+      "dracounet",
+      "dracorive",
+      "dracrhodan",
+      "bolegan",
+      "houlin",
+      "houlecrin",
+      "servan",
+      "servarmure",
+      "servargent",
+      "laminak",
+      "laminea",
+      "laminara",
+      "tudgommon",
+      "goemonroc",
+      "morgann",
+      "morgavague",
+      "coulobrin",
+      "coulobron",
+      "coulobre",
+      "lougarou",
+      "louvar",
+      "truffandec",
+      "truffandor",
+      "warabouc",
+      "margelle",
+      "margolys",
+      "follet",
+      "follumine",
+      "gonfaron",
+      "fullettu",
+      "fullemarin",
+      "fulletonne",
+      "leberou",
+      "leberouge",
+      "leberombre",
+      "gobelinet",
+      "gobelin",
+      "veluchon",
+      "velucorne",
+      "fouletot",
+      "follaton",
+      "follaclair",
+      "follorage",
+      "croquemine",
+      "croquefrou",
+      "dame_noire",
+      "lycastre",
+      "lycastron",
+      "camecru",
+      "camecruse",
+      "moinillon",
+      "moinbourru",
+      "blanchin",
+      "blancome",
+      "blancelune",
+      "ankoulet",
+      "ankou",
+      "revenant",
+      "bugulin",
+      "bugul_noz",
+      "roncefee",
+      "jetin",
+      "jetinelle",
+      "cabrillon",
+      "cabridor",
+      "cabro_dor",
+      "serpvolin",
+      "serpvolant",
+      "koril",
+      "barbegel",
+      "barbegazi",
+      "vosgoup",
+      "vosgar",
+      "vosgarde",
+      "hellequet",
+      "hellequin",
+      "bayard",
+      "graoulet",
+      "graoulard",
+      "graoully",
+      "lavandiere",
+      "lavandame",
+      "magou",
+      "galipotin",
+      "galipote",
+      "matagri",
+      "matagot",
+      "sotrin",
+      "sotremage",
+      "birette",
+      "drapet",
+      "sirenea",
+      "sirenor",
+      "melusineau",
+      "melusine",
+      "nainmarin",
+      "bagnoz",
+      "goelame",
+      "goulinet",
+      "grangoule",
+      "taurnoir",
+      "mallet",
+      "babauet",
+      "babau",
+      "alicornet",
+      "alicorne",
+      "dahu",
+      "gevaudan"
     ]
   }
 }

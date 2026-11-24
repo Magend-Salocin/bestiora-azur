@@ -1,6 +1,6 @@
 # 004 à 006 : lignée du Galtza
 
-Emplacements `braisille`, `fournaise`, `pyrogrue` (starter Feu). Stats, attaques et niveaux d'évolution inchangés.
+Emplacements `galtza`, `galtzabras`, `galtzagor` (starter Feu). Stats, attaques et niveaux d'évolution inchangés.
 
 **Légende.** Au Pays basque, les galtzagorri (« culottes rouges ») sont de minuscules lutins qu'on achète enfermés dans un étui à aiguilles. Une fois libérés, ils exécutent en un instant tout travail qu'on leur confie et en réclament aussitôt un autre. Leur maître doit sans cesse les occuper : désœuvrés, ils se retournent contre lui. Le seul moyen de s'en défaire est de leur donner une tâche impossible.
 

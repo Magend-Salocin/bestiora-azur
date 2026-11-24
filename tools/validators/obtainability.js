@@ -3,8 +3,8 @@
 // Scripts are walked with the starter known: `if_flag starter_<x>` follows the matching branch.
 import { STARTERS } from '../../src/data/trainers/helpers.js';
 
-export const LEGENDARIES = ['volcarde', 'fulgorine', 'glacerne', 'azurel'];
-export const MYTHICAL = 'mirelle';
+export const LEGENDARIES = ['draguignan', 'veneur', 'gaussier', 'vouivre'];
+export const MYTHICAL = 'mitreve';
 /** Flags that gate a source behind a late condition (reported, not blocking). */
 const CONDITION_FLAGS = ['bestiary_149', 'bestiary_150'];
 

@@ -2,7 +2,7 @@
 
 ## 088 et 089 : lignée du Moine bourru
 
-Emplacements `fusiblet`, `fusiblard`. Types Foudre et Ombre. Évolution au niveau 34. Noms masculins.
+Emplacements `moinillon`, `moinbourru`. Types Foudre et Ombre. Évolution au niveau 34. Noms masculins.
 
 **Légende.** À Paris, le moine bourru est un fantôme qui court les rues pendant l'Avent, enveloppé d'une bure grossière. On disait qu'il tordait le cou des curieux qui se penchaient à leur fenêtre pour le voir passer.
 
@@ -17,7 +17,7 @@ Origines : moine bourru, figure attestée (Paris). Moinillon : création du jeu.
 
 ## 090 à 092 : lignée de la Dame blanche
 
-Emplacements `brumelin`, `brumoire`, `brumaitre`. Types Ombre et Arcane. Évolutions aux niveaux 30 et 44. Blanchin et Blancôme sont masculins, Blancélune féminin.
+Emplacements `blanchin`, `blancome`, `blancelune`. Types Ombre et Arcane. Évolutions aux niveaux 30 et 44. Blanchin et Blancôme sont masculins, Blancélune féminin.
 
 **Légende.** Dans toute la France, la dame blanche est une apparition vêtue de blanc qu'on croise près des routes, des châteaux ou des lieux d'un drame ancien. Les récits varient beaucoup selon les régions ; son passage annonce souvent un malheur.
 

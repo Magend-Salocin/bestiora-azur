@@ -212,8 +212,8 @@ const VENEUR_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'azurel', front: vouivreFront(), back: vouivreBack(), icon: VOUIVRE_ICON },
-  { id: 'glacerne', front: gaussierFront(), back: gaussierBack(), icon: GAUSSIER_ICON },
-  { id: 'volcarde', front: draguignanFront(), back: draguignanBack(), icon: DRAGUIGNAN_ICON },
-  { id: 'fulgorine', front: veneurFront(), back: veneurBack(), icon: VENEUR_ICON },
+  { id: 'vouivre', front: vouivreFront(), back: vouivreBack(), icon: VOUIVRE_ICON },
+  { id: 'gaussier', front: gaussierFront(), back: gaussierBack(), icon: GAUSSIER_ICON },
+  { id: 'draguignan', front: draguignanFront(), back: draguignanBack(), icon: DRAGUIGNAN_ICON },
+  { id: 'veneur', front: veneurFront(), back: veneurBack(), icon: VENEUR_ICON },
 ];

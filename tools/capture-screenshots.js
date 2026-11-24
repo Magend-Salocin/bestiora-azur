@@ -17,7 +17,7 @@ export function previewFolder(species) {
 // --preview <id | name | number>: bestiary V2 preview of one species, in
 // docs/bestiaire-folklorique/rendus/<number>-<name>/ (see previewFolder).
 const previewIndex = process.argv.indexOf('--preview');
-const previewArgument = previewIndex >= 0 ? process.argv[previewIndex + 1] ?? 'fenouillot' : null;
+const previewArgument = previewIndex >= 0 ? process.argv[previewIndex + 1] ?? 'korrigan' : null;
 const previewSpecies = previewArgument === null ? null : CREATURES.find((creature) =>
   [creature.id, creature.name.toLowerCase(), String(creature.number), String(creature.number).padStart(3, '0')].includes(previewArgument.toLowerCase()));
 if (previewArgument !== null && !previewSpecies) {

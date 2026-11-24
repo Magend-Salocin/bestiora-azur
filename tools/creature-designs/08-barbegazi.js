@@ -100,6 +100,6 @@ const BARBEGAZI_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'givrelet', front: barbegelFront(), back: barbegelBack(), icon: BARBEGEL_ICON },
-  { id: 'givrailes', front: barbegaziFront(), back: barbegaziBack(), icon: BARBEGAZI_ICON },
+  { id: 'barbegel', front: barbegelFront(), back: barbegelBack(), icon: BARBEGEL_ICON },
+  { id: 'barbegazi', front: barbegaziFront(), back: barbegaziBack(), icon: BARBEGAZI_ICON },
 ];

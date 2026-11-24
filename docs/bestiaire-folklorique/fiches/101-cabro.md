@@ -1,6 +1,6 @@
 # 101 à 103 : lignée de la Cabro d'Or
 
-Emplacements `cabrelin`, `bouquetor`, `cabrecime`. Type Combat, Roche au stade 3. Évolutions aux niveaux 32 et 46. Cabrillon et Cabridor sont masculins, Cabro d'Or féminin.
+Emplacements `cabrillon`, `cabridor`, `cabro_dor`. Type Combat, Roche au stade 3. Évolutions aux niveaux 32 et 46. Cabrillon et Cabridor sont masculins, Cabro d'Or féminin.
 
 **Légende.** Aux Baux-de-Provence, on raconte qu'une chèvre d'or, la cabro d'or, garde le trésor caché sous les rochers du village. Elle apparaît la nuit, puis disparaît dans la roche. Ceux qui la suivent pour trouver le trésor se perdent ou n'en reviennent pas.
 

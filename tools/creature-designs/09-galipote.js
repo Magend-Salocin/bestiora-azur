@@ -171,8 +171,8 @@ const MATAGOT_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'pestelet', front: galipotinFront(), back: galipotinBack(), icon: GALIPOTIN_ICON },
-  { id: 'pestorne', front: galipoteFront(), back: galipoteBack(), icon: GALIPOTE_ICON },
-  { id: 'chafouin', front: matagriFront(), back: matagriBack(), icon: MATAGRI_ICON },
-  { id: 'chafourbe', front: matagotFront(), back: matagotBack(), icon: MATAGOT_ICON },
+  { id: 'galipotin', front: galipotinFront(), back: galipotinBack(), icon: GALIPOTIN_ICON },
+  { id: 'galipote', front: galipoteFront(), back: galipoteBack(), icon: GALIPOTE_ICON },
+  { id: 'matagri', front: matagriFront(), back: matagriBack(), icon: MATAGRI_ICON },
+  { id: 'matagot', front: matagotFront(), back: matagotBack(), icon: MATAGOT_ICON },
 ];

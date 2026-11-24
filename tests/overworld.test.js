@@ -106,12 +106,12 @@ function fakeRng(values) {
 }
 
 test('encounters: tile kinds, rate and repel', () => {
-  const mapEncounters = { rate: 10, grass: [{ creature: 'pivelin', minLevel: 3, maxLevel: 3, weight: 1 }], cave: [] };
+  const mapEncounters = { rate: 10, grass: [{ creature: 'farfadet', minLevel: 3, maxLevel: 3, weight: 1 }], cave: [] };
   assert.equal(encounterKind({ grass: true }, { surfing: false, mapEncounters }), 'grass');
   assert.equal(encounterKind({}, { surfing: true, mapEncounters }), null);
   assert.equal(encounterKind({}, { surfing: false, mapEncounters }), 'cave');
   assert.equal(encounterKind({ grass: true }, { surfing: false, mapEncounters: null }), null);
-  assert.deepEqual(rollEncounter({ mapEncounters, kind: 'grass', rng: fakeRng([0.05]) }), { creature: 'pivelin', level: 3 });
+  assert.deepEqual(rollEncounter({ mapEncounters, kind: 'grass', rng: fakeRng([0.05]) }), { creature: 'farfadet', level: 3 });
   assert.equal(rollEncounter({ mapEncounters, kind: 'grass', rng: fakeRng([0.5]) }), null);
   assert.equal(rollEncounter({ mapEncounters, kind: 'grass', rng: fakeRng([0.05]), repelActive: true, leadLevel: 5 }), null);
   assert.ok(rollEncounter({ mapEncounters, kind: 'grass', rng: fakeRng([0.05]), repelActive: true, leadLevel: 3 }));

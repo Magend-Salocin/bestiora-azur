@@ -133,7 +133,7 @@ Un cri est fait de 2 ou 3 petits « bips » qui glissent vers le haut ou le bas,
 | Durée | la somme de ses statistiques | une bestiole puissante crie plus longtemps (0,3 à 0,8 seconde) |
 | Forme | sa lignée | une évolution crie comme sa forme de base, en un peu plus grave |
 
-Le secret de la troisième règle : la graine du hasard est le nom de la **première forme** de la lignée. Fenouillot, Fenouvert et Sylvenard ont donc la même « mélodie » de cri. Seul le coup de bruit dépend de l'espèce elle-même, pour que deux formes d'une lignée ne soient jamais identiques.
+Le secret de la troisième règle : la graine du hasard est le nom de la **première forme** de la lignée. Korrigan, Korrigard et Korriroi ont donc la même « mélodie » de cri. Seul le coup de bruit dépend de l'espèce elle-même, pour que deux formes d'une lignée ne soient jamais identiques.
 
 ```js
 const { root } = lineRoot(speciesId);          // la première forme de la lignée

@@ -6,7 +6,7 @@ import { STARTERS } from '../src/data/trainers/helpers.js';
 import { loadGameData } from '../tools/validators/game-data.js';
 import { checkFlags } from '../tools/validators/flags.js';
 
-const BEATS = { fenouillot: 'braisille', braisille: 'flaquin', flaquin: 'fenouillot' };
+const BEATS = { korrigan: 'galtza', galtza: 'tarasquin', tarasquin: 'korrigan' };
 
 test('the first rival owns the starter that beats the player one', () => {
   for (const starter of STARTERS) {

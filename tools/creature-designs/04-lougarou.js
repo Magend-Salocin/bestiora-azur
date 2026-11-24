@@ -237,9 +237,9 @@ const WARABOUC_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'lapugil', front: lougarouFront(), back: lougarouBack(), icon: LOUGAROU_ICON },
-  { id: 'lapugilat', front: louvarFront(), back: louvarBack(), icon: LOUVAR_ICON },
-  { id: 'toisonnet', front: truffandecFront(), back: truffandecBack(), icon: TRUFFANDEC_ICON },
-  { id: 'nimbelaine', front: truffandorFront(), back: truffandorBack(), icon: TRUFFANDOR_ICON },
-  { id: 'hurlegroin', front: waraboucFront(), back: waraboucBack(), icon: WARABOUC_ICON },
+  { id: 'lougarou', front: lougarouFront(), back: lougarouBack(), icon: LOUGAROU_ICON },
+  { id: 'louvar', front: louvarFront(), back: louvarBack(), icon: LOUVAR_ICON },
+  { id: 'truffandec', front: truffandecFront(), back: truffandecBack(), icon: TRUFFANDEC_ICON },
+  { id: 'truffandor', front: truffandorFront(), back: truffandorBack(), icon: TRUFFANDOR_ICON },
+  { id: 'warabouc', front: waraboucFront(), back: waraboucBack(), icon: WARABOUC_ICON },
 ];

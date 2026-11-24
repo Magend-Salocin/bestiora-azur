@@ -1,6 +1,6 @@
 # 129 et 130 : lignée de la Sirène de la Garonne
 
-Emplacements `raielle`, `raieciel`. Types Eau et Vent. Évolution au niveau 40. Sirénéa est féminin, Sirénor masculin.
+Emplacements `sirenea`, `sirenor`. Types Eau et Vent. Évolution au niveau 40. Sirénéa est féminin, Sirénor masculin.
 
 **Légende.** Au Moyen Âge, les sirènes sont des femmes-oiseaux avant de devenir des femmes-poissons ; leur chant attire les marins et les fait périr. Le référentiel situe celles-ci sur la Garonne. Récit local à vérifier.
 

@@ -1,6 +1,6 @@
 # 146 à 149 : les quatre légendaires
 
-Emplacements `azurel`, `glacerne`, `volcarde`, `fulgorine`. Pas d'évolution. Vouivre est féminin, Gaussier, Draguignan et Veneur masculins. Les dialogues de l'aventure ont été mis à jour avec ces noms.
+Emplacements `vouivre`, `gaussier`, `draguignan`, `veneur`. Pas d'évolution. Vouivre est féminin, Gaussier, Draguignan et Veneur masculins. Les dialogues de l'aventure ont été mis à jour avec ces noms.
 
 ## 146 : Vouivre
 

@@ -136,7 +136,7 @@ const MAGOU_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'patineau', front: lavandiereFront(), back: lavandiereBack(), icon: LAVANDIERE_ICON },
-  { id: 'patinoir', front: lavandameFront(), back: lavandameBack(), icon: LAVANDAME_ICON },
-  { id: 'silurbe', front: magouFront(), back: magouBack(), icon: MAGOU_ICON },
+  { id: 'lavandiere', front: lavandiereFront(), back: lavandiereBack(), icon: LAVANDIERE_ICON },
+  { id: 'lavandame', front: lavandameFront(), back: lavandameBack(), icon: LAVANDAME_ICON },
+  { id: 'magou', front: magouFront(), back: magouBack(), icon: MAGOU_ICON },
 ];

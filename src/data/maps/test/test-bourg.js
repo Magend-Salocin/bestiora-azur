@@ -43,7 +43,7 @@ export default {
       {
         cmd: 'if_flag', flag: 'test_traded',
         then: [{ cmd: 'say', text: 'test_trade_after' }],
-        else: [{ cmd: 'trade', wanted: 'pivelin', offer: { creature: 'noctule', level: 8, nickname: 'Pipistrou', originalTrainer: 'Marius' }, flag: 'test_traded' }],
+        else: [{ cmd: 'trade', wanted: 'farfadet', offer: { creature: 'lubin', level: 8, nickname: 'Pipistrou', originalTrainer: 'Marius' }, flag: 'test_traded' }],
       },
     ],
     test_shoes: [
@@ -79,8 +79,8 @@ export default {
           { cmd: 'give_badge', badge: 'foudre' },
           { cmd: 'give_badge', badge: 'flore' },
           { cmd: 'give_badge', badge: 'vent' },
-          { cmd: 'give_creature', creature: 'fenouillot', level: 5 },
-          { cmd: 'give_creature', creature: 'lumidanse', level: 20 },
+          { cmd: 'give_creature', creature: 'korrigan', level: 5 },
+          { cmd: 'give_creature', creature: 'hadalune', level: 20 },
           { cmd: 'say', text: 'test_kit_done' },
         ],
         no: [{ cmd: 'say', text: 'test_kit_no' }],

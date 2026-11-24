@@ -146,7 +146,7 @@ const FOLLORAGE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'ampoulin', front: follatonFront(), back: follatonBack(), icon: FOLLATON_ICON },
-  { id: 'ampoulard', front: follaclairFront(), back: follaclairBack(), icon: FOLLACLAIR_ICON },
-  { id: 'amperion', front: follorageFront(), back: follorageBack(), icon: FOLLORAGE_ICON },
+  { id: 'follaton', front: follatonFront(), back: follatonBack(), icon: FOLLATON_ICON },
+  { id: 'follaclair', front: follaclairFront(), back: follaclairBack(), icon: FOLLACLAIR_ICON },
+  { id: 'follorage', front: follorageFront(), back: follorageBack(), icon: FOLLORAGE_ICON },
 ];

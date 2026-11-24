@@ -9,7 +9,7 @@ Ce que tu vas apprendre :
 
 ## Pourquoi des robots vérificateurs ?
 
-Le jeu contient 150 bestioles, 166 attaques, 248 dresseurs, 113 cartes et des milliers de phrases. Une seule faute de frappe (`'pivelim'` au lieu de `'pivelin'`) pourrait faire planter le jeu au milieu de l'aventure. Personne ne peut tout relire à la main à chaque changement.
+Le jeu contient 150 bestioles, 166 attaques, 248 dresseurs, 113 cartes et des milliers de phrases. Une seule faute de frappe (`'farfadit'` au lieu de `'farfadet'`) pourrait faire planter le jeu au milieu de l'aventure. Personne ne peut tout relire à la main à chaque changement.
 
 Alors on a écrit des programmes qui vérifient les autres programmes. Il y en a deux sortes : les **tests**, qui vérifient que le code fait ce qu'il doit faire, et les **validateurs**, qui vérifient que les données sont correctes.
 
@@ -127,7 +127,7 @@ Dans [tools/](../../tools/) :
 | `npm run map-preview -- route_1` | `map-preview.js` | dessine une carte en image, sans lancer le jeu |
 | `npm run bestiary` | `export-bestiary-md.js` | réécrit [docs/BESTIAIRE.md](../BESTIAIRE.md) à partir des fiches |
 | `npm run check-text` | `check-text-fit.js` | vérifie seulement que les textes tiennent dans leur fenêtre |
-| `npm run icon` | `build-icon.js` | fabrique l'icône du jeu à partir du dessin d'Azurel |
+| `npm run icon` | `build-icon.js` | fabrique l'icône du jeu à partir du dessin de la Vouivre |
 | `npm run screenshots` | `capture-screenshots.js` | prend les captures d'écran du README |
 | `npm run perf` | `run-perf.js` | mesure si le jeu tient bien 60 images par seconde |
 | `npm run web` | `web-server.js` | sert le jeu sur le réseau de la maison, pour y jouer sur téléphone |

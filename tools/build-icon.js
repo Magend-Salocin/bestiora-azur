@@ -42,7 +42,7 @@ export function iconDesign() {
       else if (insideRoundedSquare(x, y, DESIGN_SIZE, CORNER_RADIUS, 0)) grid[y * DESIGN_SIZE + x] = 3;
     }
   }
-  const sprite = parseSprite(HAND_DRAWN_CREATURES.azurel.front);
+  const sprite = parseSprite(HAND_DRAWN_CREATURES.vouivre.front);
   const offsetX = (DESIGN_SIZE - sprite.width) / 2;
   const offsetY = (DESIGN_SIZE - sprite.height) / 2;
   const spriteAt = (x, y) => (x >= 0 && y >= 0 && x < sprite.width && y < sprite.height ? sprite.pixels[y * sprite.width + x] : TRANSPARENT);

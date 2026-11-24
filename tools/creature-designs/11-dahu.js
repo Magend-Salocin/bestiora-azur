@@ -108,6 +108,6 @@ const GEVAUDAN_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'neveon', front: dahuFront(), back: dahuBack(), icon: DAHU_ICON },
-  { id: 'stoicor', front: gevaudanFront(), back: gevaudanBack(), icon: GEVAUDAN_ICON },
+  { id: 'dahu', front: dahuFront(), back: dahuBack(), icon: DAHU_ICON },
+  { id: 'gevaudan', front: gevaudanFront(), back: gevaudanBack(), icon: GEVAUDAN_ICON },
 ];

@@ -1,6 +1,6 @@
 # 018 et 019 : lignée du Carcolh
 
-Emplacements `bousiot`, `bousigor`. Types Insecte et Terre. Évolution au niveau 22.
+Emplacements `carcolh`, `carcolosse`. Types Insecte et Terre. Évolution au niveau 22.
 
 **Légende.** Lou Carcolh est un escargot monstrueux des Landes de Gascogne, terré dans les grottes près d'Hastingues. Sa coquille est immense, il laisse une traînée de bave et attrape ses proies avec de longs tentacules velus.
 

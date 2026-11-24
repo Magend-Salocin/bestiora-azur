@@ -228,8 +228,8 @@ const BOLEGAN_ICON = icon([
 ]);
 
 export const line = [
-  { id: 'salamoue', front: dracounetFront(), back: dracounetBack(), icon: DRACOUNET_ICON },
-  { id: 'salamarde', front: dracoriveFront(), back: dracoriveBack(), icon: DRACORIVE_ICON },
-  { id: 'salamassif', front: dracrhodanFront(), back: dracrhodanBack(), icon: DRACRHODAN_ICON },
-  { id: 'fouisseron', front: boleganFront(), back: boleganBack(), icon: BOLEGAN_ICON },
+  { id: 'dracounet', front: dracounetFront(), back: dracounetBack(), icon: DRACOUNET_ICON },
+  { id: 'dracorive', front: dracoriveFront(), back: dracoriveBack(), icon: DRACORIVE_ICON },
+  { id: 'dracrhodan', front: dracrhodanFront(), back: dracrhodanBack(), icon: DRACRHODAN_ICON },
+  { id: 'bolegan', front: boleganFront(), back: boleganBack(), icon: BOLEGAN_ICON },
 ];

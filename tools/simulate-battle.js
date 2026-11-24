@@ -1,4 +1,4 @@
-// npm run simulate -- [--seed 42] [--player sylvenard:40,crabastion:38] [--enemy pyrogrue:40,quartzard:38]
+// npm run simulate -- [--seed 42] [--player korriroi:40,goemonroc:38] [--enemy galtzagor:40,houlecrin:38]
 //                     [--ai smart|basic|wild] [--player-ai smart|basic|wild] [--kind trainer|wild]
 // Two AI teams fight; the log is readable and reproducible for a given seed (balancing tool).
 import { CREATURES_BY_ID } from '../src/data/creatures.js';
@@ -17,7 +17,7 @@ const PREVENTED = { asleep: 'dort', frozen: 'est gelé', paralyzed: 'est paralys
 const STAT_NAMES = { atk: 'Attaque', def: 'Défense', spa: 'Att. Spé.', spd: 'Déf. Spé.', spe: 'Vitesse', acc: 'Précision', eva: 'Esquive' };
 
 function parseArgs(argv) {
-  const args = { seed: 42, player: 'sylvenard:40,crabastion:38,ampoulard:36', enemy: 'pyrogrue:40,quartzard:38,chafourbe:38', ai: 'smart', 'player-ai': 'smart', kind: 'trainer' };
+  const args = { seed: 42, player: 'korriroi:40,goemonroc:38,follaclair:36', enemy: 'galtzagor:40,houlecrin:38,matagot:38', ai: 'smart', 'player-ai': 'smart', kind: 'trainer' };
   for (let i = 0; i < argv.length; i += 2) args[argv[i].replace(/^--/, '')] = argv[i + 1];
   args.seed = Number(args.seed);
   return args;

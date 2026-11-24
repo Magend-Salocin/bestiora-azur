@@ -2,7 +2,7 @@
 
 ## 131 et 132 : lignée de Mélusine
 
-Emplacements `grimoule`, `grimoulix`. Types Eau et Arcane. Évolution au niveau 42. Mélusineau est masculin, Mélusine féminin.
+Emplacements `melusineau`, `melusine`. Types Eau et Arcane. Évolution au niveau 42. Mélusineau est masculin, Mélusine féminin.
 
 **Légende.** Dans le roman de Jean d'Arras (1393), la fée Mélusine épouse Raymondin à condition qu'il ne cherche jamais à la voir le samedi. Elle bâtit pour lui le château de Lusignan, en Poitou. Le jour où il l'épie, il découvre qu'elle a une queue de serpent ; démasquée, elle s'envole par la fenêtre en serpent ailé.
 
@@ -17,7 +17,7 @@ Origines : Mélusine, figure attestée (Poitou, Lusignan). Mélusineau : créati
 
 ## 133 : Nainmarin
 
-Emplacement `octobras`. Types Eau et Combat. Pas d'évolution.
+Emplacement `nainmarin`. Types Eau et Combat. Pas d'évolution.
 
 **Légende.** Les côtes bretonnes ont leurs petits êtres de la mer, nains ou lutins qui vivent dans les grottes marines et les rochers découverts à marée basse. Récit précis à vérifier.
 

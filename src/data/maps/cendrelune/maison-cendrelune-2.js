@@ -17,7 +17,7 @@ export default house({
       then: [{ cmd: 'say', text: 'maison_cendrelune_2_echange_apres' }],
       else: [
         { cmd: 'say', text: 'maison_cendrelune_2_echange' },
-        { cmd: 'trade', wanted: 'ronceroc', offer: { creature: 'nimbelaine', level: 27, nickname: 'Floconne', originalTrainer: 'Anselme' }, flag: 'echange_cendrelune_fait' },
+        { cmd: 'trade', wanted: 'roncefee', offer: { creature: 'truffandor', level: 27, nickname: 'Floconne', originalTrainer: 'Anselme' }, flag: 'echange_cendrelune_fait' },
       ],
     }],
   },

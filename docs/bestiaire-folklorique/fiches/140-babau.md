@@ -1,6 +1,6 @@
 # 140 et 141 : lignée du Babau
 
-Emplacements `scorielle`, `scoriarque`. Types Feu et Insecte. Évolution au niveau 44.
+Emplacements `babauet`, `babau`. Types Feu et Insecte. Évolution au niveau 44.
 
 **Légende.** En Languedoc et en Provence, le babau est le croque-mitaine qu'on invoque pour faire peur aux enfants. En occitan, le même mot désigne aussi une petite bête, un insecte. Le rattachement précis à Nîmes reste à vérifier.
 

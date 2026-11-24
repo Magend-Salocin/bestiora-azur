@@ -2,7 +2,7 @@
 
 ## 144 : Dahu
 
-Emplacement `neveon`. Type Givre. Pas d'évolution.
+Emplacement `dahu`. Type Givre. Pas d'évolution.
 
 **Légende.** Dans les Alpes et le Jura, le dahu est un animal de montagne dont les pattes sont plus courtes d'un côté, ce qui lui permet de tenir sur les pentes, mais seulement dans un sens. La « chasse au dahu » est une farce faite aux nouveaux venus, envoyés la nuit avec un sac pour l'attraper.
 
@@ -16,7 +16,7 @@ Origines : dahu, figure attestée (Alpes, Jura).
 
 ## 145 : Gévaudan
 
-Emplacement `stoicor`. Types Combat et Arcane. Pas d'évolution.
+Emplacement `gevaudan`. Types Combat et Arcane. Pas d'évolution.
 
 **Légende.** Entre 1764 et 1767, une bête attaque les habitants du Gévaudan, dans l'actuelle Lozère, et fait des dizaines de victimes. Les témoins décrivent un animal plus grand qu'un loup, roux, avec une raie sombre sur le dos et une queue touffue. Sa nature exacte reste débattue.
 

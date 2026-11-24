@@ -214,9 +214,9 @@ const GONFARON_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'petalune', front: margelleFront(), back: margelleBack(), icon: MARGELLE_ICON },
-  { id: 'corolline', front: margolysFront(), back: margolysBack(), icon: MARGOLYS_ICON },
-  { id: 'lampyrin', front: folletFront(), back: folletBack(), icon: FOLLET_ICON },
-  { id: 'lampyrex', front: follumineFront(), back: follumineBack(), icon: FOLLUMINE_ICON },
-  { id: 'bovaillon', front: gonfaronFront(), back: gonfaronBack(), icon: GONFARON_ICON },
+  { id: 'margelle', front: margelleFront(), back: margelleBack(), icon: MARGELLE_ICON },
+  { id: 'margolys', front: margolysFront(), back: margolysBack(), icon: MARGOLYS_ICON },
+  { id: 'follet', front: folletFront(), back: folletBack(), icon: FOLLET_ICON },
+  { id: 'follumine', front: follumineFront(), back: follumineBack(), icon: FOLLUMINE_ICON },
+  { id: 'gonfaron', front: gonfaronFront(), back: gonfaronBack(), icon: GONFARON_ICON },
 ];

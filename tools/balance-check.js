@@ -15,13 +15,13 @@ import { answerLearnMove, chooseSwitch, createBattle, currentPending, resolveTur
 import { pathToFileURL } from 'node:url';
 import { createRng } from '../src/engine/rng.js';
 
-const STARTERS = ['fenouillot', 'braisille', 'flaquin'];
+const STARTERS = ['korrigan', 'galtza', 'tarasquin'];
 const REMATCHES = ['garance', 'mael', 'selene', 'aubin', 'ysolde', 'lazare', 'brune', 'oswin'].map((id) => `${id}_revanche`);
 /** Expected team for the League: starter 55 and 5 captures of the late zones. */
-const LEAGUE_TEAM = ['girouette:54', 'brumaitre:54', 'cabrecime:54', 'amperion:54', 'salamassif:54'];
+const LEAGUE_TEAM = ['bayard:54', 'blancelune:54', 'cabro_dor:54', 'follorage:54', 'dracrhodan:54'];
 const LEAGUE_OPPONENTS = ['gardien_metal', 'gardienne_combat', 'gardien_givre', 'gardienne_terre', 'rival_maitre'];
 /** Champion rematches: the League team, a few levels later. */
-const POST_GAME_CAPTURES = ['girouette:59', 'brumaitre:59', 'cabrecime:59', 'amperion:59', 'salamassif:59'];
+const POST_GAME_CAPTURES = ['bayard:59', 'blancelune:59', 'cabro_dor:59', 'follorage:59', 'dracrhodan:59'];
 const MAX_TURNS = 200;
 const TARGETS = { champion: [55, 75], rival: [60, 80], ligue: [45, 65] };
 
@@ -31,21 +31,21 @@ const TARGETS = { champion: [55, 75], rival: [60, 80], ligue: [45, 65] };
  */
 export const MATCHUPS = [
   { trainer: 'rival_1', starterLevel: 5, captures: [], playerAi: 'basic' },
-  { trainer: 'garance', starterLevel: 12, captures: ['pivelin:10', 'morillon:10'] },
-  { trainer: 'rival_2', starterLevel: 14, captures: ['pivelin:12', 'faonille:12'] },
-  { trainer: 'mael', starterLevel: 20, captures: ['grivelin:18', 'faonille:17'] },
-  { trainer: 'selene', starterLevel: 25, captures: ['fouisseron:23', 'lapugil:23'] },
-  { trainer: 'aubin', starterLevel: 30, captures: ['fumelard:28', 'noctulard:28'] },
-  { trainer: 'rival_3', starterLevel: 29, captures: ['fumelard:27', 'noctulard:27'] },
-  { trainer: 'rival_4', starterLevel: 34, captures: ['volplanin:31', 'noctulard:31'] },
-  { trainer: 'ysolde', starterLevel: 36, captures: ['girouette:33', 'nuageot:33'] },
-  { trainer: 'rival_5', starterLevel: 41, captures: ['fumelard:39', 'noctulard:39'] },
-  { trainer: 'lazare', starterLevel: 40, captures: ['sombrecor:37', 'fumelard:37'] },
-  { trainer: 'corvin_qg', starterLevel: 42, captures: ['chafourbe:40', 'lustrombre:40'] },
-  { trainer: 'brune', starterLevel: 44, captures: ['girouette:42', 'sombrecor:42'] },
-  { trainer: 'corvin_forge', starterLevel: 46, captures: ['fusiblard:44', 'lustrombre:44'] },
-  { trainer: 'oswin', starterLevel: 49, captures: ['miroitage:47', 'brumaitre:47'] },
-  { trainer: 'rival_6', starterLevel: 50, captures: ['brumaitre:48', 'cabrecime:48'] },
+  { trainer: 'garance', starterLevel: 12, captures: ['farfadet:10', 'mandragot:10'] },
+  { trainer: 'rival_2', starterLevel: 14, captures: ['farfadet:12', 'fadet:12'] },
+  { trainer: 'mael', starterLevel: 20, captures: ['farfandole:18', 'fadet:17'] },
+  { trainer: 'selene', starterLevel: 25, captures: ['bolegan:23', 'lougarou:23'] },
+  { trainer: 'aubin', starterLevel: 30, captures: ['leberouge:28', 'lubinou:28'] },
+  { trainer: 'rival_3', starterLevel: 29, captures: ['leberouge:27', 'lubinou:27'] },
+  { trainer: 'rival_4', starterLevel: 34, captures: ['serpvolin:31', 'lubinou:31'] },
+  { trainer: 'ysolde', starterLevel: 36, captures: ['bayard:33', 'hellequet:33'] },
+  { trainer: 'rival_5', starterLevel: 41, captures: ['leberouge:39', 'lubinou:39'] },
+  { trainer: 'lazare', starterLevel: 40, captures: ['croquefrou:37', 'leberouge:37'] },
+  { trainer: 'corvin_qg', starterLevel: 42, captures: ['matagot:40', 'ankou:40'] },
+  { trainer: 'brune', starterLevel: 44, captures: ['bayard:42', 'croquefrou:42'] },
+  { trainer: 'corvin_forge', starterLevel: 46, captures: ['moinbourru:44', 'ankou:44'] },
+  { trainer: 'oswin', starterLevel: 49, captures: ['sotremage:47', 'blancelune:47'] },
+  { trainer: 'rival_6', starterLevel: 50, captures: ['blancelune:48', 'cabro_dor:48'] },
   ...LEAGUE_OPPONENTS.map((trainer) => ({ trainer, starterLevel: 55, captures: LEAGUE_TEAM, category: 'salle' })),
   ...REMATCHES.map((trainer) => ({ trainer, starterLevel: 60, captures: POST_GAME_CAPTURES })),
 ];

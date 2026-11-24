@@ -145,7 +145,7 @@ const FOULETOT_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'crassou', front: veluchonFront(), back: veluchonBack(), icon: VELUCHON_ICON },
-  { id: 'crassolard', front: velucorneFront(), back: velucorneBack(), icon: VELUCORNE_ICON },
-  { id: 'piquevolt', front: fouletotFront(), back: fouletotBack(), icon: FOULETOT_ICON },
+  { id: 'veluchon', front: veluchonFront(), back: veluchonBack(), icon: VELUCHON_ICON },
+  { id: 'velucorne', front: velucorneFront(), back: velucorneBack(), icon: VELUCORNE_ICON },
+  { id: 'fouletot', front: fouletotFront(), back: fouletotBack(), icon: FOULETOT_ICON },
 ];

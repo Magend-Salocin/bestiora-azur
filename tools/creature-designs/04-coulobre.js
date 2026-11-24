@@ -149,7 +149,7 @@ const COULOBRE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'anguilet', front: coulobrinFront(), back: coulobrinBack(), icon: COULOBRIN_ICON },
-  { id: 'anguistral', front: coulobronFront(), back: coulobronBack(), icon: COULOBRON_ICON },
-  { id: 'fulmarene', front: coulobreFront(), back: coulobreBack(), icon: COULOBRE_ICON },
+  { id: 'coulobrin', front: coulobrinFront(), back: coulobrinBack(), icon: COULOBRIN_ICON },
+  { id: 'coulobron', front: coulobronFront(), back: coulobronBack(), icon: COULOBRON_ICON },
+  { id: 'coulobre', front: coulobreFront(), back: coulobreBack(), icon: COULOBRE_ICON },
 ];

@@ -24,8 +24,8 @@ export default {
   encounters: {
     rate: 8,
     cave: [
-      { creature: 'noctule', minLevel: 8, maxLevel: 10, weight: 60 },
-      { creature: 'caillotin', minLevel: 8, maxLevel: 10, weight: 40 },
+      { creature: 'lubin', minLevel: 8, maxLevel: 10, weight: 60 },
+      { creature: 'gargoulin', minLevel: 8, maxLevel: 10, weight: 40 },
     ],
   },
   warps: [{ x: 5, y: 10, to: 'test_route', toX: 6, toY: 16 }],

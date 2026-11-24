@@ -110,6 +110,6 @@ const CARCOLOSSE_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'bousiot', front: carcolhFront(), back: carcolhBack(), icon: CARCOLH_ICON },
-  { id: 'bousigor', front: carcolosseFront(), back: carcolosseBack(), icon: CARCOLOSSE_ICON },
+  { id: 'carcolh', front: carcolhFront(), back: carcolhBack(), icon: CARCOLH_ICON },
+  { id: 'carcolosse', front: carcolosseFront(), back: carcolosseBack(), icon: CARCOLOSSE_ICON },
 ];

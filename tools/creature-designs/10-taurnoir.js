@@ -98,6 +98,6 @@ const MALLET_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'pyrobelier', front: taurnoirFront(), back: taurnoirBack(), icon: TAURNOIR_ICON },
-  { id: 'enclumor', front: malletFront(), back: malletBack(), icon: MALLET_ICON },
+  { id: 'taurnoir', front: taurnoirFront(), back: taurnoirBack(), icon: TAURNOIR_ICON },
+  { id: 'mallet', front: malletFront(), back: malletBack(), icon: MALLET_ICON },
 ];

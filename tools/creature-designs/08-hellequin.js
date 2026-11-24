@@ -145,7 +145,7 @@ const BAYARD_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'nuageot', front: hellequetFront(), back: hellequetBack(), icon: HELLEQUET_ICON },
-  { id: 'cumulard', front: hellequinFront(), back: hellequinBack(), icon: HELLEQUIN_ICON },
-  { id: 'girouette', front: bayardFront(), back: bayardBack(), icon: BAYARD_ICON },
+  { id: 'hellequet', front: hellequetFront(), back: hellequetBack(), icon: HELLEQUET_ICON },
+  { id: 'hellequin', front: hellequinFront(), back: hellequinBack(), icon: HELLEQUIN_ICON },
+  { id: 'bayard', front: bayardFront(), back: bayardBack(), icon: BAYARD_ICON },
 ];

@@ -127,7 +127,7 @@ const KORIL_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'volplanin', front: serpvolinFront(), back: serpvolinBack(), icon: SERPVOLIN_ICON },
-  { id: 'volplaneur', front: serpvolantFront(), back: serpvolantBack(), icon: SERPVOLANT_ICON },
-  { id: 'eolithe', front: korilFront(), back: korilBack(), icon: KORIL_ICON },
+  { id: 'serpvolin', front: serpvolinFront(), back: serpvolinBack(), icon: SERPVOLIN_ICON },
+  { id: 'serpvolant', front: serpvolantFront(), back: serpvolantBack(), icon: SERPVOLANT_ICON },
+  { id: 'koril', front: korilFront(), back: korilBack(), icon: KORIL_ICON },
 ];

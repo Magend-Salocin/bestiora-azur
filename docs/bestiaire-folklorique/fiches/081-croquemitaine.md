@@ -2,7 +2,7 @@
 
 ## 081 et 082 : lignée du Croquemitaine
 
-Emplacements `sombrelin`, `sombrecor`. Type Ombre. Évolution au niveau 30.
+Emplacements `croquemine`, `croquefrou`. Type Ombre. Évolution au niveau 30.
 
 **Légende.** Partout en France, le croquemitaine est le monstre qu'on invoque pour faire obéir les enfants. Il n'a pas de forme fixe : chaque famille le décrit à sa façon, caché sous le lit, dans le placard ou au fond du puits.
 
@@ -17,7 +17,7 @@ Origines : croquemitaine, archétype traditionnel. Croquemine et Croquefrou : cr
 
 ## 083 : Dame noire
 
-Emplacement `stalactor`. Types Roche et Ombre. Pas d'évolution. Nom féminin.
+Emplacement `dame_noire`. Types Roche et Ombre. Pas d'évolution. Nom féminin.
 
 **Légende.** Plusieurs régions parlent de dames noires, esprits vêtus de sombre qui hantent les grottes et les ruines. Source précise à vérifier.
 

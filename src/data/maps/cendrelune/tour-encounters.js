@@ -2,24 +2,24 @@
 export const TOUR_ENCOUNTERS_LOW = {
   rate: 9,
   cave: [
-    { creature: 'sombrelin', minLevel: 26, maxLevel: 28, weight: 25 },
-    { creature: 'brumelin', minLevel: 26, maxLevel: 28, weight: 25 },
-    { creature: 'cierget', minLevel: 26, maxLevel: 28, weight: 25 },
-    { creature: 'glasnuit', minLevel: 27, maxLevel: 28, weight: 20 },
-    { creature: 'fusiblet', minLevel: 30, maxLevel: 30, weight: 5 },
+    { creature: 'croquemine', minLevel: 26, maxLevel: 28, weight: 25 },
+    { creature: 'blanchin', minLevel: 26, maxLevel: 28, weight: 25 },
+    { creature: 'ankoulet', minLevel: 26, maxLevel: 28, weight: 25 },
+    { creature: 'revenant', minLevel: 27, maxLevel: 28, weight: 20 },
+    { creature: 'moinillon', minLevel: 30, maxLevel: 30, weight: 5 },
   ],
 };
 
 export const TOUR_ENCOUNTERS_HIGH = {
   rate: 9,
   cave: [
-    { creature: 'brumelin', minLevel: 28, maxLevel: 30, weight: 22 },
-    { creature: 'cierget', minLevel: 28, maxLevel: 30, weight: 22 },
-    { creature: 'glasnuit', minLevel: 28, maxLevel: 30, weight: 20 },
-    { creature: 'sombrelin', minLevel: 28, maxLevel: 29, weight: 14 },
-    { creature: 'brumoire', minLevel: 30, maxLevel: 31, weight: 8 },
-    { creature: 'sombrecor', minLevel: 30, maxLevel: 32, weight: 7 },
-    { creature: 'fusiblet', minLevel: 30, maxLevel: 31, weight: 7 },
-    { creature: 'quartzard', minLevel: 30, maxLevel: 31, weight: 4 },
+    { creature: 'blanchin', minLevel: 28, maxLevel: 30, weight: 22 },
+    { creature: 'ankoulet', minLevel: 28, maxLevel: 30, weight: 22 },
+    { creature: 'revenant', minLevel: 28, maxLevel: 30, weight: 20 },
+    { creature: 'croquemine', minLevel: 28, maxLevel: 29, weight: 14 },
+    { creature: 'blancome', minLevel: 30, maxLevel: 31, weight: 8 },
+    { creature: 'croquefrou', minLevel: 30, maxLevel: 32, weight: 7 },
+    { creature: 'moinillon', minLevel: 30, maxLevel: 31, weight: 7 },
+    { creature: 'houlecrin', minLevel: 30, maxLevel: 31, weight: 4 },
   ],
 };

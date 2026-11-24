@@ -138,7 +138,7 @@ const FULLETONNE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'cocolet', front: fullettuFront(), back: fullettuBack(), icon: FULLETTU_ICON },
-  { id: 'cocomarin', front: fullemarinFront(), back: fullemarinBack(), icon: FULLEMARIN_ICON },
-  { id: 'cocorage', front: fulletonneFront(), back: fulletonneBack(), icon: FULLETONNE_ICON },
+  { id: 'fullettu', front: fullettuFront(), back: fullettuBack(), icon: FULLETTU_ICON },
+  { id: 'fullemarin', front: fullemarinFront(), back: fullemarinBack(), icon: FULLEMARIN_ICON },
+  { id: 'fulletonne', front: fulletonneFront(), back: fulletonneBack(), icon: FULLETONNE_ICON },
 ];

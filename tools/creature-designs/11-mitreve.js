@@ -59,5 +59,5 @@ const MITREVE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'mirelle', front: mitreveFront(), back: mitreveBack(), icon: MITREVE_ICON },
+  { id: 'mitreve', front: mitreveFront(), back: mitreveBack(), icon: MITREVE_ICON },
 ];

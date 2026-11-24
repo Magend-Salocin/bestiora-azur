@@ -11,7 +11,7 @@ Source de vérité unique pour la refonte des bestioles. Les fichiers de `archiv
 | Nombre | 150 espèces, pas 151. La « Mite des rêves » devient le mythique 150. | Le jeu, ses tests et l'outil d'obtention comptent 150 espèces. |
 | Types | Les types de l'emplacement font foi. La créature est adaptée à ses types, pas l'inverse. | Les arènes, les attaques et l'équilibrage reposent sur ces types. |
 | Structure des lignées | Celle du jeu (1, 2 ou 3 formes, branches, pierres, amitié). | Les brouillons imposaient 50 lignées de 3, incompatible avec le jeu. |
-| Identifiants | Les identifiants internes (`fenouillot`…) restent, seul le nom affiché change. Renommage en fin de chantier, avec migration des sauvegardes. | 570 références dans le code, les cartes, les tests et les sauvegardes. |
+| Identifiants | Les identifiants internes reprennent le nom affiché en `snake_case` ASCII (`korrigan`, `dame_noire`, `cabro_dor`). Renommés au lot 12, sans migration : les sauvegardes antérieures ne sont plus compatibles. Les clés de drapeaux et de textes des légendaires (`azurel_ko`, `mirelle_gone`, Pic d'Azur) gardent leur nom. | Fait. |
 | Vocabulaire | « bestiole », « Bestiaire ». Le mot « Folklomon » est abandonné. | Le suffixe « -mon » évoque une franchise ([GAME_DESIGN.md](../GAME_DESIGN.md), section 1). |
 | Noms | 10 caractères maximum, sans espace de préférence. Les noms longs restent dans la légende. | Limite d'affichage vérifiée par `npm run validate`. |
 | Genre | Chaque espèce a un genre grammatical : masculin par défaut, `gender: 'f'` pour un nom féminin (Tarasque, Dame verte…). Les textes s'accordent : « Une Tarasque sauvage », « Tarasque ennemie », « est brûlée ». | Un nom féminin précédé de « Un » sonne faux. |

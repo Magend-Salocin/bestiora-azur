@@ -133,6 +133,6 @@ const POULPIFOL_ICON = [
 ].map((row) => row.replace(/ /g, '').slice(0, 16).padEnd(16, '.'));
 
 export const line = [
-  { id: 'musaraille', front: poulpiquetFront(), back: poulpiquetBack(), icon: POULPIQUET_ICON },
-  { id: 'musarogne', front: poulpifolFront(), back: poulpifolBack(), icon: POULPIFOL_ICON },
+  { id: 'poulpiquet', front: poulpiquetFront(), back: poulpiquetBack(), icon: POULPIQUET_ICON },
+  { id: 'poulpifol', front: poulpifolFront(), back: poulpifolBack(), icon: POULPIFOL_ICON },
 ];

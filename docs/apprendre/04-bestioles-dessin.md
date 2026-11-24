@@ -24,7 +24,7 @@ Les bestioles les plus importantes de l'histoire ont droit à un dessin soigné.
 
 Chaque bestiole dessinée à la main a son propre fichier, avec deux grilles de 48 × 48 caractères : `front` (de face) et `back` (de dos, vue par le joueur en combat). C'est exactement le principe de la capsule du chapitre [02](02-pixels-et-couleurs.md), en plus grand.
 
-Voici le début du Fenouillot, dans [src/gfx/sources/creatures/fenouillot.js](../../src/gfx/sources/creatures/fenouillot.js). Tu peux reconnaître le haut de ses deux grandes oreilles :
+Voici le début du Korrigan, dans [src/gfx/sources/creatures/korrigan.js](../../src/gfx/sources/creatures/korrigan.js). Tu peux reconnaître le haut de ses deux grandes oreilles :
 
 ```text
 .........33..........................33.........
@@ -39,7 +39,7 @@ Le fichier [src/gfx/sources/creatures/index.js](../../src/gfx/sources/creatures/
 
 ## La recette d'une bestiole générée
 
-Pour les 136 autres, la fiche contient une **recette** à la place du dessin. Celle du Pivelin, un petit oiseau des prairies :
+Pour les 136 autres, la fiche contient une **recette** à la place du dessin. Celle du Farfadet, un petit oiseau des prairies :
 
 ```js
 sprite: { plan: 'bird', seed: 1013, size: 1, features: [], pattern: 'light_belly' },
@@ -47,7 +47,7 @@ sprite: { plan: 'bird', seed: 1013, size: 1, features: [], pattern: 'light_belly
 
 Cinq ingrédients :
 
-| Ingrédient | Signification | Pivelin |
+| Ingrédient | Signification | Farfadet |
 | --- | --- | --- |
 | `plan` | La forme du corps | `bird` : un oiseau |
 | `seed` | La graine, un nombre qui décide des petits détails | 1013 |
@@ -55,7 +55,7 @@ Cinq ingrédients :
 | `features` | Les accessoires : cornes, ailes, queue de flamme… | aucun |
 | `pattern` | Le motif sur le corps | `light_belly` : ventre clair |
 
-Avec cette seule ligne, le programme dessine le Pivelin de face et de dos. Toujours exactement le même, à chaque fois.
+Avec cette seule ligne, le programme dessine le Farfadet de face et de dos. Toujours exactement le même, à chaque fois.
 
 ### Ingrédient 1 : le plan du corps
 
@@ -156,18 +156,18 @@ La taille va de 1 à 3. Elle sert à agrandir le dessin : à la taille 1, la bes
 Voici le secret le plus malin du générateur : **une lignée garde la même graine**. Seules la taille et les accessoires changent.
 
 ```js
-// Pivelin, 1er stade
+// Farfadet, 1er stade
 sprite: { plan: 'bird', seed: 1013, size: 1, features: [],        pattern: 'light_belly' },
-// Grivelin, 2e stade
+// Farfandole, 2e stade
 sprite: { plan: 'bird', seed: 1013, size: 2, features: ['crest'], pattern: 'light_belly' },
-// Aquilard, 3e stade
+// Farfator, 3e stade
 sprite: { plan: 'bird', seed: 1013, size: 3, features: ['crest'], pattern: 'light_belly' },
 ```
 
-Même graine, donc mêmes proportions, mêmes yeux, même bouche : on reconnaît la famille. En grandissant, l'oiseau gagne une crête. Compare le petit Pivelin et le grand Aquilard :
+Même graine, donc mêmes proportions, mêmes yeux, même bouche : on reconnaît la famille. En grandissant, l'oiseau gagne une crête. Compare le petit Farfadet et le grand Farfator :
 
 ```text
-Pivelin (taille 1)                                Aquilard (taille 3, avec crête)
+Farfadet (taille 1)                                Farfator (taille 3, avec crête)
 .......................33.......................  ......................3..3......................
 ....................33312333....................  .....................333333.....................
 ...................3111111123...................  .....................333333.....................
@@ -291,12 +291,12 @@ Le cri de chaque bestiole est lui aussi inventé par un programme, sur le même 
 
 Avec un adulte, et une copie du projet que tu as le droit de modifier :
 
-1. Dans [src/data/creatures.js](../../src/data/creatures.js), trouve le Pivelin (`id: 'pivelin'`).
+1. Dans [src/data/creatures.js](../../src/data/creatures.js), trouve le Farfadet (`id: 'farfadet'`).
 2. Change sa graine `1013` en `1014`.
 3. Lance `npm run atlas`, puis `npm run dev`.
-4. Regarde le Pivelin dans le Bestiaire. Que remarques-tu ? Et ses évolutions, ont-elles changé ?
+4. Regarde le Farfadet dans le Bestiaire. Que remarques-tu ? Et ses évolutions, ont-elles changé ?
 
-(Réponse : seul le Pivelin change, puisque Grivelin et Aquilard gardent la graine 1013. La famille n'est plus cohérente. Remets 1013 après l'essai.)
+(Réponse : seul le Farfadet change, puisque Farfandole et Farfator gardent la graine 1013. La famille n'est plus cohérente. Remets 1013 après l'essai.)
 
 ## À retenir
 

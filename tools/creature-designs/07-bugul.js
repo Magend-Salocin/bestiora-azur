@@ -143,7 +143,7 @@ const RONCEFEE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'dionelle', front: bugulinFront(), back: bugulinBack(), icon: BUGULIN_ICON },
-  { id: 'dionavore', front: bugulNozFront(), back: bugulNozBack(), icon: BUGUL_NOZ_ICON },
-  { id: 'ronceroc', front: roncefeeFront(), back: roncefeeBack(), icon: RONCEFEE_ICON },
+  { id: 'bugulin', front: bugulinFront(), back: bugulinBack(), icon: BUGULIN_ICON },
+  { id: 'bugul_noz', front: bugulNozFront(), back: bugulNozBack(), icon: BUGUL_NOZ_ICON },
+  { id: 'roncefee', front: roncefeeFront(), back: roncefeeBack(), icon: RONCEFEE_ICON },
 ];

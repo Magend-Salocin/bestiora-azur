@@ -1,6 +1,6 @@
 # 015 à 017 : lignée du Chauchet
 
-Emplacements `feuillarve`, `nymphot`, `phalenoir`. Type Insecte, Ombre au stade 3. Évolutions aux niveaux 8 et 14.
+Emplacements `chauchet`, `chauchenid`, `chauchemor`. Type Insecte, Ombre au stade 3. Évolutions aux niveaux 8 et 14.
 
 **Légende.** Dans le Midi, la chauche-vieille (de l'occitan *chaucar*, presser) est l'esprit qui s'assoit sur la poitrine des dormeurs et les étouffe dans leur sommeil. C'est le nom populaire du cauchemar et de la paralysie du sommeil.
 

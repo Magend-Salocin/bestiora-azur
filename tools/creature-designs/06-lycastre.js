@@ -177,8 +177,8 @@ const CAMECRUSE_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'lombrin', front: lycastreFront(), back: lycastreBack(), icon: LYCASTRE_ICON },
-  { id: 'lombrigant', front: lycastronFront(), back: lycastronBack(), icon: LYCASTRON_ICON },
-  { id: 'filandrin', front: camecruFront(), back: camecruBack(), icon: CAMECRU_ICON },
-  { id: 'filandrix', front: camecruseFront(), back: camecruseBack(), icon: CAMECRUSE_ICON },
+  { id: 'lycastre', front: lycastreFront(), back: lycastreBack(), icon: LYCASTRE_ICON },
+  { id: 'lycastron', front: lycastronFront(), back: lycastronBack(), icon: LYCASTRON_ICON },
+  { id: 'camecru', front: camecruFront(), back: camecruBack(), icon: CAMECRU_ICON },
+  { id: 'camecruse', front: camecruseFront(), back: camecruseBack(), icon: CAMECRUSE_ICON },
 ];

@@ -34,33 +34,33 @@ export default {
           { cmd: 'say', text: 'maison_haute_bise_2_intro' },
           {
             cmd: 'if_flag',
-            flag: 'starter_fenouillot',
+            flag: 'starter_korrigan',
             then: [
               {
                 cmd: 'trade',
-                wanted: 'volplanin',
+                wanted: 'serpvolin',
                 flag: 'haute_bise_echange',
-                offer: { creature: 'braisille', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
+                offer: { creature: 'galtza', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
               },
             ],
             else: [
               {
                 cmd: 'if_flag',
-                flag: 'starter_braisille',
+                flag: 'starter_galtza',
                 then: [
                   {
                     cmd: 'trade',
-                    wanted: 'volplanin',
+                    wanted: 'serpvolin',
                     flag: 'haute_bise_echange',
-                    offer: { creature: 'flaquin', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
+                    offer: { creature: 'tarasquin', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
                   },
                 ],
                 else: [
                   {
                     cmd: 'trade',
-                    wanted: 'volplanin',
+                    wanted: 'serpvolin',
                     flag: 'haute_bise_echange',
-                    offer: { creature: 'fenouillot', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
+                    offer: { creature: 'korrigan', level: 15, nickname: 'Zéphyr', originalTrainer: 'Aurèle' },
                   },
                 ],
               },

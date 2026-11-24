@@ -1,6 +1,6 @@
 # 078 à 080 : lignée du Follaton
 
-Emplacements `ampoulin`, `ampoulard`, `amperion`. Type Foudre, Métal au stade 3. Évolutions aux niveaux 26 et 42.
+Emplacements `follaton`, `follaclair`, `follorage`. Type Foudre, Métal au stade 3. Évolutions aux niveaux 26 et 42.
 
 **Légende.** En Savoie, le follaton est un petit esprit de la maison. Tantôt serviable, tantôt turbulent, il se cache dans les greniers et les vieux bâtiments. On le reconnaît aux bruits de la nuit et aux objets déplacés au matin.
 

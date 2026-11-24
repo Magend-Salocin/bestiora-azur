@@ -14,7 +14,7 @@ import { tradeCreature } from '../src/state/trade.js';
 import { makeCreature } from './helpers/battle.js';
 import { createRng } from '../src/engine/rng.js';
 
-const creature = (species = 'pivelin', level = 10) => makeCreature(species, level, ['souffle']);
+const creature = (species = 'farfadet', level = 10) => makeCreature(species, level, ['souffle']);
 
 // ---- Inventory ------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ test('inventory: add up to 99, remove only what exists', () => {
 
 test('storage: deposit keeps at least one healthy creature in the party', () => {
   const state = createGameState();
-  state.party = [creature(), creature('musaraille')];
+  state.party = [creature(), creature('poulpiquet')];
   state.party[1].hp = 0;
   assert.equal(deposit(state, 0, 0), 'last_healthy');
   assert.equal(deposit(state, 1, 0), null);
@@ -43,11 +43,11 @@ test('storage: deposit keeps at least one healthy creature in the party', () => 
 test('storage: withdraw needs room in the party, boxes hold 30', () => {
   const state = createGameState();
   state.party = Array.from({ length: 6 }, () => creature());
-  state.storage.boxes[0].creatures.push(creature('musaraille'));
+  state.storage.boxes[0].creatures.push(creature('poulpiquet'));
   assert.equal(withdraw(state, 0, 0, 6), 'party_full');
   state.party.pop();
   assert.equal(withdraw(state, 0, 0, 6), null);
-  assert.equal(state.party.at(-1).species, 'musaraille');
+  assert.equal(state.party.at(-1).species, 'poulpiquet');
   state.storage.boxes[1].creatures = Array.from({ length: BOX_SIZE }, () => creature());
   state.storage.boxes[0].creatures.push(creature());
   assert.equal(moveCreature(state.storage, 0, 0, 1), 'box_full');
@@ -57,7 +57,7 @@ test('storage: withdraw needs room in the party, boxes hold 30', () => {
 test('storage: release, rename, overflow of a full party goes to the boxes', () => {
   const state = createGameState();
   state.party = Array.from({ length: 6 }, () => creature());
-  assert.equal(addCreature(state, creature('noctule')), 'storage');
+  assert.equal(addCreature(state, creature('lubin')), 'storage');
   assert.equal(storedCount(state.storage), 1);
   assert.equal(releaseCreature(state.storage, 0, 0), null);
   assert.equal(storedCount(state.storage), 0);
@@ -91,16 +91,16 @@ test('field items: potion heals and is consumed', () => {
 
 test('field items: evolution stone gives the target species', () => {
   const state = createGameState();
-  state.party = [makeCreature('lumidanse', 25, ['lueur'])];
+  state.party = [makeCreature('hadalune', 25, ['lueur'])];
   addItem(state, 'pierre_lunaire');
-  assert.equal(stoneEvolution(state.party[0], 'pierre_lunaire'), 'lumirande');
-  assert.equal(useItemOnCreature(state, 'pierre_lunaire', 0).evolution, 'lumirande');
+  assert.equal(stoneEvolution(state.party[0], 'pierre_lunaire'), 'hadelys');
+  assert.equal(useItemOnCreature(state, 'pierre_lunaire', 0).evolution, 'hadelys');
   assert.equal(state.bag.pierre_lunaire, undefined);
 });
 
 test('field items: Sucre d’Orge raises one level; vitamins add training up to 100', () => {
   const state = createGameState();
-  state.party = [makeCreature('musaraille', 17, ['egratignure', 'regard_dur', 'elan_vif', 'repli'])];
+  state.party = [makeCreature('poulpiquet', 17, ['egratignure', 'regard_dur', 'elan_vif', 'repli'])];
   addItem(state, 'sucre_dorge');
   const result = useItemOnCreature(state, 'sucre_dorge', 0);
   assert.equal(state.party[0].level, 18);
@@ -143,7 +143,7 @@ test('Comptoir: prices, missing money, the 99 limit, selling at half price', () 
 
 test('Pension: gains XP per step, learns moves alone, costs 100 + 100 per level', () => {
   const state = createGameState({ money: 1000 });
-  state.party = [creature(), makeCreature('musaraille', 17, ['egratignure', 'regard_dur', 'elan_vif', 'repli'])];
+  state.party = [creature(), makeCreature('poulpiquet', 17, ['egratignure', 'regard_dur', 'elan_vif', 'repli'])];
   state.party[1].exp = expForLevel('fast', 18) - 1;
   assert.equal(depositInDaycare(state, 1), null);
   assert.equal(depositInDaycare(state, 0), 'occupied');
@@ -158,11 +158,11 @@ test('Pension: gains XP per step, learns moves alone, costs 100 + 100 per level'
 
 test('trade: only the wanted species, the received creature keeps its nickname and trainer', () => {
   const state = createGameState();
-  state.party = [creature('pivelin')];
-  const offer = { creature: 'noctule', level: 12, nickname: 'Pipistrou', originalTrainer: 'Marius' };
-  assert.equal(tradeCreature(state, 0, 'musaraille', offer, createRng(1)).error, 'wrong_species');
-  const { received } = tradeCreature(state, 0, 'pivelin', offer, createRng(1));
+  state.party = [creature('farfadet')];
+  const offer = { creature: 'lubin', level: 12, nickname: 'Pipistrou', originalTrainer: 'Marius' };
+  assert.equal(tradeCreature(state, 0, 'poulpiquet', offer, createRng(1)).error, 'wrong_species');
+  const { received } = tradeCreature(state, 0, 'farfadet', offer, createRng(1));
   assert.equal(state.party[0], received);
-  assert.deepEqual([received.species, received.nickname, received.originalTrainer], ['noctule', 'Pipistrou', 'Marius']);
-  assert.ok(state.bestiary.caught.noctule);
+  assert.deepEqual([received.species, received.nickname, received.originalTrainer], ['lubin', 'Pipistrou', 'Marius']);
+  assert.ok(state.bestiary.caught.lubin);
 });

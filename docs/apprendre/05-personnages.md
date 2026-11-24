@@ -222,10 +222,10 @@ trainers: [
 **2. Son équipe**, dans [src/data/trainers/](../../src/data/trainers/), un fichier par zone. Grâce à une petite fonction d'aide, une ligne suffit :
 
 ```js
-trainer('route_1_gamin_theo', 'gamin', 'Théo', ['pivelin:3']),
-//       identifiant          classe   nom     équipe : un Pivelin niveau 3
+trainer('route_1_gamin_theo', 'gamin', 'Théo', ['farfadet:3']),
+//       identifiant          classe   nom     équipe : un Farfadet niveau 3
 
-trainer('garance', 'championne', 'Garance', ['caillotin:10', 'bousiot:10', 'quartzelle:10', 'caillotin:12'], {
+trainer('garance', 'championne', 'Garance', ['gargoulin:10', 'carcolh:10', 'houlin:10', 'gargoulin:12'], {
   ai: 'smart', last: true, portrait: 'portrait/garance',
 }),
 ```
@@ -240,7 +240,7 @@ Les textes du dresseur sont trouvés automatiquement à partir de son identifian
 argent gagné = niveau le plus haut de son équipe × base de la classe
 ```
 
-Un Gamin (base 15) avec un Pivelin niveau 3 donne 45 pièces. Un Gentleman (base 70) rapporte beaucoup plus.
+Un Gamin (base 15) avec un Farfadet niveau 3 donne 45 pièces. Un Gentleman (base 70) rapporte beaucoup plus.
 
 ### La rivale et son starter
 
@@ -248,9 +248,9 @@ La rivale choisit toujours le starter qui a l'avantage sur le tien. Son équipe 
 
 ```js
 rival('rival_1', {
-  fenouillot: [{ creature: 'braisille', level: 6, ... }],  // tu as pris Flore, elle prend Feu
-  braisille:  [{ creature: 'flaquin',   level: 3, ... }],  // tu as pris Feu, elle prend Eau
-  flaquin:    [{ creature: 'fenouillot', level: 6, ... }], // tu as pris Eau, elle prend Flore
+  korrigan:   [{ creature: 'galtza', level: 6, ... }],  // tu as pris Flore, elle prend Feu
+  galtza:     [{ creature: 'tarasquin',   level: 3, ... }],  // tu as pris Feu, elle prend Eau
+  tarasquin:  [{ creature: 'korrigan', level: 6, ... }], // tu as pris Eau, elle prend Flore
 }),
 ```
 

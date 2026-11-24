@@ -2,7 +2,7 @@
 
 ## 121 et 122 : lignée de la Galipote
 
-Emplacements `pestelet`, `pestorne`. Types Toxique et Ombre. Évolution au niveau 38. Galipotin est masculin, Galipote féminin.
+Emplacements `galipotin`, `galipote`. Types Toxique et Ombre. Évolution au niveau 38. Galipotin est masculin, Galipote féminin.
 
 **Légende.** En Saintonge et dans le Poitou, la galipote est une bête de nuit qui court la campagne. On dit qu'une personne ensorcelée prend sa forme et doit courir jusqu'à l'aube. L'expression « courir la galipote » vient de là.
 
@@ -17,7 +17,7 @@ Origines : galipote, figure attestée (Saintonge, Poitou). Galipotin : création
 
 ## 123 et 124 : lignée du Matagot
 
-Emplacements `chafouin`, `chafourbe`. Type Ombre. Évolution au niveau 38.
+Emplacements `matagri`, `matagot`. Type Ombre. Évolution au niveau 38.
 
 **Légende.** En Provence et en Gascogne, le matagot est un chat sorcier, le plus souvent noir. Celui qui l'attire et lui offre la première bouchée de chaque repas voit sa fortune grandir : le matagot lui rapporte chaque jour une pièce d'or.
 

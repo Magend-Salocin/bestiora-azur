@@ -46,14 +46,14 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'feuillarve', minLevel: 5, maxLevel: 7, weight: 20 },
-      { creature: 'glandor', minLevel: 5, maxLevel: 8, weight: 14 },
-      { creature: 'morillon', minLevel: 5, maxLevel: 8, weight: 12 },
-      { creature: 'bousiot', minLevel: 5, maxLevel: 8, weight: 12 },
-      { creature: 'faonille', minLevel: 6, maxLevel: 8, weight: 12 },
-      { creature: 'lumignon', minLevel: 6, maxLevel: 8, weight: 10 },
-      { creature: 'venimot', minLevel: 6, maxLevel: 8, weight: 10 },
-      { creature: 'nymphot', minLevel: 8, maxLevel: 9, weight: 10 },
+      { creature: 'chauchet', minLevel: 5, maxLevel: 7, weight: 20 },
+      { creature: 'dame_verte', minLevel: 5, maxLevel: 8, weight: 14 },
+      { creature: 'mandragot', minLevel: 5, maxLevel: 8, weight: 12 },
+      { creature: 'carcolh', minLevel: 5, maxLevel: 8, weight: 12 },
+      { creature: 'fadet', minLevel: 6, maxLevel: 8, weight: 12 },
+      { creature: 'hada', minLevel: 6, maxLevel: 8, weight: 10 },
+      { creature: 'basilin', minLevel: 6, maxLevel: 8, weight: 10 },
+      { creature: 'chauchenid', minLevel: 8, maxLevel: 9, weight: 10 },
     ],
   },
   warps: [

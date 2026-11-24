@@ -2,7 +2,7 @@
 
 ## 062 et 063 : lignée de la Margelle
 
-Emplacements `petalune`, `corolline`. Types Flore et Arcane. Margolys évolue avec une Pierre Solaire. Noms féminins.
+Emplacements `margelle`, `margolys`. Types Flore et Arcane. Margolys évolue avec une Pierre Solaire. Noms féminins.
 
 **Légende.** En Haute-Bretagne, Paul Sébillot a recueilli de nombreux récits sur Margot la fée, la plus connue des fées des houles. Elle aidait les gens qui la respectaient et punissait les curieux. Le nom a été changé en Margelle, car un dresseur du jeu s'appelle Margot.
 
@@ -17,7 +17,7 @@ Origines : Margot la fée, figure attestée (Haute-Bretagne). Margolys : créati
 
 ## 064 et 065 : lignée du Follet
 
-Emplacements `lampyrin`, `lampyrex`. Types Insecte et Foudre. Évolution au niveau 24. Follet est masculin, Follumine féminin.
+Emplacements `follet`, `follumine`. Types Insecte et Foudre. Évolution au niveau 24. Follet est masculin, Follumine féminin.
 
 **Légende.** Partout en France, les feux follets sont des lueurs qui dansent la nuit au-dessus des marais et des cimetières. Ceux qui les suivent s'égarent et finissent dans l'eau. Selon les régions, on y voit des âmes en peine ou des lutins farceurs.
 
@@ -32,7 +32,7 @@ Origines : feu follet, archétype traditionnel. Follumine : création du jeu.
 
 ## 066 : Gonfaron
 
-Emplacement `bovaillon`. Type Normal. Pas d'évolution.
+Emplacement `gonfaron`. Type Normal. Pas d'évolution.
 
 **Légende.** À Gonfaron, dans le Var, on raconte qu'un âne s'est envolé du haut de la colline, ou qu'on a voulu le faire voler. L'histoire a donné l'expression provençale de « l'âne de Gonfaron qui vole », et le village en a fait son emblème.
 

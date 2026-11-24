@@ -1,6 +1,6 @@
 # 013 et 014 : lignée du Poulpiquet
 
-Emplacements `musaraille`, `musarogne`. Type Normal. Évolution au niveau 20.
+Emplacements `poulpiquet`, `poulpifol`. Type Normal. Évolution au niveau 20.
 
 **Légende.** En Bretagne, les poulpiquets sont de petits êtres velus et noirauds, cousins des korrigans, qui hantent les landes et les ruines. Ils dansent la nuit, jouent des tours aux paysans et se font entendre de loin.
 

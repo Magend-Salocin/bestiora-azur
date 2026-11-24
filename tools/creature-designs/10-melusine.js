@@ -158,7 +158,7 @@ const NAINMARIN_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'grimoule', front: melusineauFront(), back: melusineauBack(), icon: MELUSINEAU_ICON },
-  { id: 'grimoulix', front: melusineFront(), back: melusineBack(), icon: MELUSINE_ICON },
-  { id: 'octobras', front: nainmarinFront(), back: nainmarinBack(), icon: NAINMARIN_ICON },
+  { id: 'melusineau', front: melusineauFront(), back: melusineauBack(), icon: MELUSINEAU_ICON },
+  { id: 'melusine', front: melusineFront(), back: melusineBack(), icon: MELUSINE_ICON },
+  { id: 'nainmarin', front: nainmarinFront(), back: nainmarinBack(), icon: NAINMARIN_ICON },
 ];

@@ -148,7 +148,7 @@ Après tout changement : `npm test` et `npm run validate`.
 
 ## Le chemin d'une bestiole, de la fiche à l'écran
 
-Pour relier tous les chapitres, suivons une bestiole sauvage, le Pivelin, depuis sa fiche jusqu'à l'écran de combat :
+Pour relier tous les chapitres, suivons une bestiole sauvage, le Farfadet, depuis sa fiche jusqu'à l'écran de combat :
 
 ```text
 1. FICHE        src/data/creatures.js            id, types, statistiques, recette de dessin
@@ -156,18 +156,18 @@ Pour relier tous les chapitres, suivons une bestiole sauvage, le Pivelin, depuis
 2. DESSIN       npm run atlas                    le générateur transforme la recette en pixels
                 src/gfx/creature-generator.js    et les colle dans assets/atlas/creatures.png
                         │
-3. CARTE        src/data/maps/debut/route-1.js   « Pivelin, niveaux 2 à 4, poids 35 »
+3. CARTE        src/data/maps/debut/route-1.js   « Farfadet, niveaux 2 à 4, poids 35 »
                         │
 4. PAS          src/overworld/encounters.js      le joueur marche dans l'herbe : un dé décide
                         │
-5. CRÉATION     src/battle/logic/creature.js     un Pivelin niveau 3 avec ses propres gènes
+5. CRÉATION     src/battle/logic/creature.js     un Farfadet niveau 3 avec ses propres gènes
                         │
 6. COMBAT       src/battle/logic/engine.js       l'arbitre calcule chaque tour
                 src/battle/ui/event-player.js    le spectacle le raconte, le cri est joué
                         │
 7. CAPTURE      src/battle/logic/capture.js      4 secousses réussies
                         │
-8. SAUVEGARDE   src/save/save-format.js          le Pivelin est écrit dans save.json
+8. SAUVEGARDE   src/save/save-format.js          le Farfadet est écrit dans save.json
 ```
 
 ## Lexique

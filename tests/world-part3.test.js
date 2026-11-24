@@ -190,9 +190,9 @@ test('entrer dans la Ligue remet à zéro les salles et la cinématique du Maît
 });
 
 test('la Salle d’honneur enregistre l’équipe', () => {
-  const state = createGameState({ party: [{ species: 'pyrogrue', nickname: null, level: 58 }, { species: 'brumaitre', nickname: 'Ombre', level: 55 }] });
+  const state = createGameState({ party: [{ species: 'galtzagor', nickname: null, level: 58 }, { species: 'blancelune', nickname: 'Ombre', level: 55 }] });
   const entry = recordHallOfFame(state, '2026-11-20');
-  assert.deepEqual(entry.team, [{ species: 'pyrogrue', name: null, level: 58 }, { species: 'brumaitre', name: 'Ombre', level: 55 }]);
+  assert.deepEqual(entry.team, [{ species: 'galtzagor', name: null, level: 58 }, { species: 'blancelune', name: 'Ombre', level: 55 }]);
   assert.equal(state.hallOfFame.length, 1);
 });
 
@@ -221,8 +221,8 @@ test('diplôme : drapeau calculé bestiary_150 et script de la Pr Morvan', () =>
 test('les 150 espèces sont obtenables pour chaque starter, et l’outil détecte un manque', () => {
   assert.deepEqual(checkObtainability(MAPS, SCRIPTS, CREATURES), []);
   const without = Object.fromEntries(Object.entries(MAPS).map(([id, map]) => [id, id === 'grotte_boreale' ? { ...map, scripts: {} } : map]));
-  const { missing } = computeObtainable(without, SCRIPTS, CREATURES, 'braisille');
-  assert.deepEqual(missing, ['glacerne']);
+  const { missing } = computeObtainable(without, SCRIPTS, CREATURES, 'galtza');
+  assert.deepEqual(missing, ['gaussier']);
 });
 
 test('les légendaires du post-jeu : Azurel niveau 70, Glacerne niveau 60', () => {
@@ -235,7 +235,7 @@ test('les légendaires du post-jeu : Azurel niveau 70, Glacerne niveau 60', () =
     }
   };
   walk([MAPS.pic_d_azur, MAPS.grotte_boreale]);
-  assert.equal(battles.azurel.level, 70);
-  assert.equal(battles.glacerne.level, 60);
-  assert.ok(battles.azurel.legendary && battles.glacerne.legendary);
+  assert.equal(battles.vouivre.level, 70);
+  assert.equal(battles.gaussier.level, 60);
+  assert.ok(battles.vouivre.legendary && battles.gaussier.legendary);
 });

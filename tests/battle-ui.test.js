@@ -67,12 +67,12 @@ test('evolution alternation speeds up', () => {
 
 test('game state: party then storage, bestiary, healing', () => {
   const state = createGameState();
-  markSeen(state, 'pivelin');
+  markSeen(state, 'farfadet');
   assert.deepEqual(state.bestiary.caught, {});
-  for (let i = 0; i < 6; i += 1) assert.equal(addCreature(state, makeCreature('pivelin', 5, ['souffle'])), 'party');
-  assert.equal(addCreature(state, makeCreature('musaraille', 5, ['egratignure'])), 'storage');
+  for (let i = 0; i < 6; i += 1) assert.equal(addCreature(state, makeCreature('farfadet', 5, ['souffle'])), 'party');
+  assert.equal(addCreature(state, makeCreature('poulpiquet', 5, ['egratignure'])), 'storage');
   assert.equal(state.storage.boxes[0].creatures.length, 1);
-  assert.ok(state.bestiary.caught.musaraille && state.bestiary.seen.musaraille);
+  assert.ok(state.bestiary.caught.poulpiquet && state.bestiary.seen.poulpiquet);
   state.party[0].hp = 0;
   state.party[0].status = { id: 'psn' };
   state.party[0].moves[0].pp = 0;

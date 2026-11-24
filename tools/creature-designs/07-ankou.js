@@ -143,7 +143,7 @@ const REVENANT_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'cierget', front: ankouletFront(), back: ankouletBack(), icon: ANKOULET_ICON },
-  { id: 'lustrombre', front: ankouFront(), back: ankouBack(), icon: ANKOU_ICON },
-  { id: 'glasnuit', front: revenantFront(), back: revenantBack(), icon: REVENANT_ICON },
+  { id: 'ankoulet', front: ankouletFront(), back: ankouletBack(), icon: ANKOULET_ICON },
+  { id: 'ankou', front: ankouFront(), back: ankouBack(), icon: ANKOU_ICON },
+  { id: 'revenant', front: revenantFront(), back: revenantBack(), icon: REVENANT_ICON },
 ];

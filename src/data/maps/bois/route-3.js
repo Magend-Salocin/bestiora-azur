@@ -45,13 +45,13 @@ export default {
   encounters: {
     rate: 10,
     grass: [
-      { creature: 'pivelin', minLevel: 8, maxLevel: 10, weight: 20 },
-      { creature: 'noisetin', minLevel: 8, maxLevel: 10, weight: 20 },
-      { creature: 'faonille', minLevel: 8, maxLevel: 11, weight: 15 },
-      { creature: 'nymphot', minLevel: 8, maxLevel: 11, weight: 15 },
-      { creature: 'venimot', minLevel: 8, maxLevel: 10, weight: 12 },
-      { creature: 'salamoue', minLevel: 9, maxLevel: 11, weight: 10 },
-      { creature: 'goujonet', minLevel: 10, maxLevel: 12, weight: 8 },
+      { creature: 'farfadet', minLevel: 8, maxLevel: 10, weight: 20 },
+      { creature: 'faramin', minLevel: 8, maxLevel: 10, weight: 20 },
+      { creature: 'fadet', minLevel: 8, maxLevel: 11, weight: 15 },
+      { creature: 'chauchenid', minLevel: 8, maxLevel: 11, weight: 15 },
+      { creature: 'basilin', minLevel: 8, maxLevel: 10, weight: 12 },
+      { creature: 'dracounet', minLevel: 9, maxLevel: 11, weight: 10 },
+      { creature: 'laminak', minLevel: 10, maxLevel: 12, weight: 8 },
     ],
   },
   warps: [

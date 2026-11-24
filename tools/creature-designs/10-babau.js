@@ -90,6 +90,6 @@ const BABAU_ICON = iconFrom([
 ]);
 
 export const line = [
-  { id: 'scorielle', front: babauetFront(), back: babauetBack(), icon: BABAUET_ICON },
-  { id: 'scoriarque', front: babauFront(), back: babauBack(), icon: BABAU_ICON },
+  { id: 'babauet', front: babauetFront(), back: babauetBack(), icon: BABAUET_ICON },
+  { id: 'babau', front: babauFront(), back: babauBack(), icon: BABAU_ICON },
 ];

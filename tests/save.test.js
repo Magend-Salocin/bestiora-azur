@@ -23,18 +23,18 @@ const STORE_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '..',
 function completeState() {
   const rng = createRng(7);
   const state = createGameState({ player: { name: 'Lou', gender: 'girl' }, rival: { name: 'Nora' } });
-  for (const [species, level] of [['fenouillot', 36], ['pivelin', 20], ['azurel', 70]]) addCreature(state, createCreature(species, level, rng));
+  for (const [species, level] of [['korrigan', 36], ['farfadet', 20], ['vouivre', 70]]) addCreature(state, createCreature(species, level, rng));
   state.party[0].nickname = 'Fenou';
   state.party[1].status = 'poison';
-  storeCreature(state.storage, createCreature('pivelin', 4, rng));
+  storeCreature(state.storage, createCreature('farfadet', 4, rng));
   state.storage.boxes[3].name = 'Favoris';
-  state.daycare = { creature: createCreature('pivelin', 12, rng), levelAtDeposit: 10 };
+  state.daycare = { creature: createCreature('farfadet', 12, rng), levelAtDeposit: 10 };
   addItem(state, 'potion', 12);
   addItem(state, 'capsule', 30);
   state.money = 123456;
   state.badges = ['roche', 'eau'];
-  state.flags = { has_bestiary: true, starter_fenouillot: true };
-  state.bestiary.seen.braisille = true;
+  state.flags = { has_bestiary: true, starter_korrigan: true };
+  state.bestiary.seen.galtza = true;
   state.position = { map: 'cendrelune', x: 12, y: 8, facing: 'left' };
   state.playTime = 3723.5;
   state.visitedTowns = ['bourg_sablon', 'cendrelune'];

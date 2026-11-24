@@ -2,7 +2,7 @@
 
 ## 047 à 049 : lignée du Laminak
 
-Emplacements `goujonet`, `goujarde`, `brochemor`. Type Eau. Évolutions aux niveaux 18 et 36. Laminak est masculin, Laminéa et Laminara féminins.
+Emplacements `laminak`, `laminea`, `laminara`. Type Eau. Évolutions aux niveaux 18 et 36. Laminak est masculin, Laminéa et Laminara féminins.
 
 **Légende.** Au Pays basque, les laminak (au singulier lamina) vivent près des sources, des rivières et des grottes. On les dit pourvues de pieds de cane ou de chèvre, et elles peignent leurs longs cheveux avec un peigne d'or. Bâtisseuses, elles élèvent un pont ou une église en une seule nuit, mais doivent s'enfuir au chant du coq : il manque alors toujours une pierre à l'ouvrage.
 
