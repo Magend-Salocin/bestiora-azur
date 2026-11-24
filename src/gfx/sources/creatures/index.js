@@ -105,6 +105,20 @@ import dionavore from './dionavore.js';
 import ronceroc from './ronceroc.js';
 import butinet from './butinet.js';
 import butinelle from './butinelle.js';
+import cabrelin from './cabrelin.js';
+import bouquetor from './bouquetor.js';
+import cabrecime from './cabrecime.js';
+import volplanin from './volplanin.js';
+import volplaneur from './volplaneur.js';
+import eolithe from './eolithe.js';
+import givrelet from './givrelet.js';
+import givrailes from './givrailes.js';
+import frimousson from './frimousson.js';
+import frimours from './frimours.js';
+import frimastoc from './frimastoc.js';
+import nuageot from './nuageot.js';
+import cumulard from './cumulard.js';
+import girouette from './girouette.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -131,4 +145,5 @@ export const HAND_DRAWN_CREATURES = {
   crassou, crassolard, piquevolt, ampoulin, ampoulard, amperion, sombrelin,
   sombrecor, stalactor, lombrin, lombrigant, filandrin, filandrix,
   fusiblet, fusiblard, brumelin, brumoire, brumaitre, cierget, lustrombre, glasnuit, dionelle, dionavore, ronceroc, butinet, butinelle,
+  cabrelin, bouquetor, cabrecime, volplanin, volplaneur, eolithe, givrelet, givrailes, frimousson, frimours, frimastoc, nuageot, cumulard, girouette,
 };

@@ -1814,23 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "1f586d992a1c96bd65dc3f3fde0e783872215387da209dedd3be36980bd71a36",
+    "pngHash": "83f6c084397c0119b9d30486d53987c1e0a1a982d3d3b2c44e931336018a31a6",
     "source": "src/data/creatures.js",
     "generated": [
-      "cabrelin",
-      "bouquetor",
-      "cabrecime",
-      "volplanin",
-      "volplaneur",
-      "eolithe",
-      "givrelet",
-      "givrailes",
-      "frimousson",
-      "frimours",
-      "frimastoc",
-      "nuageot",
-      "cumulard",
-      "girouette",
       "fangelet",
       "fangeur",
       "fangeroi",
@@ -1968,7 +1954,21 @@
       "dionavore",
       "ronceroc",
       "butinet",
-      "butinelle"
+      "butinelle",
+      "cabrelin",
+      "bouquetor",
+      "cabrecime",
+      "volplanin",
+      "volplaneur",
+      "eolithe",
+      "givrelet",
+      "givrailes",
+      "frimousson",
+      "frimours",
+      "frimastoc",
+      "nuageot",
+      "cumulard",
+      "girouette"
     ]
   }
 }

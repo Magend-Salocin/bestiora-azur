@@ -73,7 +73,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 5 | Prairies et ville (062 à 074) | 13 | Fait |
 | 6 | Ville et grottes (075 à 087) | 13 | Fait |
 | 7 | Ruines (088 à 100) | 13 | Fait |
-| 8 | Montagne et neige (101 à 114) | 14 | |
+| 8 | Montagne et neige (101 à 114) | 14 | Fait |
 | 9 | Marais et ville (115 à 128) | 14 | |
 | 10 | Mer et volcan (129 à 141) | 13 | |
 | 11 | Sommets, légendaires et mythique (142 à 150) | 9 | |
@@ -131,13 +131,13 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 096 | Dionelle > Dionavore | Bugulin > Bugul Noz | Flore | Bugul Noz | Bretagne (Vannetais) | J, F (fait) |
 | 098 | Ronceroc | Roncefée | Flore, Roche | Fée des ronces | France | J (fait) |
 | 099 | Butinet > Butinelle | Jetin > Jetinelle | Insecte, Vent | Jetins, petit peuple des côtes | Haute-Bretagne | F, J (fait) |
-| 101 | Cabrelin > Bouquetor > Cabrecime | Cabrillon > Cabridor > Cabro d'Or | Combat (Roche au stade 3) | Cabro d'Or, chèvre d'or | Provence (Baux) | J, J, F |
-| 104 | Volplanin > Volplaneur | Serpvolin > Serpvolant | Vent | Serpent volant | Provence | J, F |
-| 106 | Éolithe | Koril | Roche, Vent | Korils, danseurs des menhirs | Bretagne | F |
-| 107 | Givrelet > Givrailes | Barbegel > Barbegazi | Givre (Vent au stade 2) | Barbegazi, nain des glaciers | Savoie | J, F |
-| 109 | Frimousson > Frimours > Frimastoc | Vosgoup > Vosgar > Vosgarde | Givre (Combat au stade 3) | Bête des Vosges | Vosges | J, J, J |
-| 112 | Nuageot > Cumulard | Hellequet > Hellequin | Vent | Mesnie Hellequin, chasse des nuées | Normandie | J, F |
-| 114 | Girouette | Bayard | Vent, Métal | Cheval Bayard | Ardennes | F |
+| 101 | Cabrelin > Bouquetor > Cabrecime | Cabrillon > Cabridor > Cabro d'Or | Combat (Roche au stade 3) | Cabro d'Or, chèvre d'or | Provence (Baux) | J, J, F (fait) |
+| 104 | Volplanin > Volplaneur | Serpvolin > Serpvolant | Vent | Serpent volant | Provence | J, F (fait) |
+| 106 | Éolithe | Koril | Roche, Vent | Korils, danseurs des menhirs | Bretagne | F (fait) |
+| 107 | Givrelet > Givrailes | Barbegel > Barbegazi | Givre (Vent au stade 2) | Barbegazi, nain des glaciers | Savoie | J, F (fait) |
+| 109 | Frimousson > Frimours > Frimastoc | Vosgoup > Vosgar > Vosgarde | Givre (Combat au stade 3) | Bête des Vosges | Vosges | J, J, J (fait) |
+| 112 | Nuageot > Cumulard | Hellequet > Hellequin | Vent | Mesnie Hellequin, chasse des nuées | Normandie | J, F (fait) |
+| 114 | Girouette | Bayard | Vent, Métal | Cheval Bayard | Ardennes | F (fait) |
 | 115 | Fangelet > Fangeur > Fangeroi | Graoulet > Graoulard > Graoully | Toxique, Eau | Graoully | Metz | J, J, F |
 | 118 | Patineau > Patinoir | Lavandière > Lavandâme | Insecte, Eau | Lavandières de nuit | Bretagne, Berry | F, J |
 | 120 | Silurbe | Magou | Terre, Eau | Poisson moustachu des crues | À vérifier | F |

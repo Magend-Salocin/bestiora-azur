@@ -106,20 +106,20 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 098 | Roncefée | Flore / Roche | 450 | - | Ville | 27 |
 | 099 | Jetin | Insecte / Vent | 280 | Jetinelle (niv. 30) | Prairie | 26 |
 | 100 | Jetinelle | Insecte / Vent | 450 | - | Prairie | 30 |
-| 101 | Cabrelin | Combat | 300 | Bouquetor (niv. 32) | Montagne | 28 |
-| 102 | Bouquetor | Combat | 420 | Cabrecime (niv. 46) | Montagne | 32 |
-| 103 | Cabrecime | Combat / Roche | 530 | - | Montagne | 46 |
-| 104 | Volplanin | Vent | 300 | Volplaneur (niv. 36) | Montagne | 28 |
-| 105 | Volplaneur | Vent | 480 | - | Montagne | 36 |
-| 106 | Éolithe | Roche / Vent | 460 | - | Montagne | 29 |
-| 107 | Givrelet | Givre | 300 | Givrailes (niv. 36) | Neige | 29 |
-| 108 | Givrailes | Givre / Vent | 470 | - | Neige | 36 |
-| 109 | Frimousson | Givre | 310 | Frimours (niv. 34) | Neige | 29 |
-| 110 | Frimours | Givre | 420 | Frimastoc (niv. 50) | Neige | 34 |
-| 111 | Frimastoc | Givre / Combat | 530 | - | Neige | 50 |
-| 112 | Nuageot | Vent | 310 | Cumulard (niv. 36) | Montagne | 32 |
-| 113 | Cumulard | Vent | 485 | - | Montagne | 36 |
-| 114 | Girouette | Vent / Métal | 470 | - | Montagne | 33 |
+| 101 | Cabrillon | Combat | 300 | Cabridor (niv. 32) | Montagne | 28 |
+| 102 | Cabridor | Combat | 420 | Cabro d’Or (niv. 46) | Montagne | 32 |
+| 103 | Cabro d’Or | Combat / Roche | 530 | - | Montagne | 46 |
+| 104 | Serpvolin | Vent | 300 | Serpvolant (niv. 36) | Montagne | 28 |
+| 105 | Serpvolant | Vent | 480 | - | Montagne | 36 |
+| 106 | Koril | Roche / Vent | 460 | - | Montagne | 29 |
+| 107 | Barbegel | Givre | 300 | Barbegazi (niv. 36) | Neige | 29 |
+| 108 | Barbegazi | Givre / Vent | 470 | - | Neige | 36 |
+| 109 | Vosgoup | Givre | 310 | Vosgar (niv. 34) | Neige | 29 |
+| 110 | Vosgar | Givre | 420 | Vosgarde (niv. 50) | Neige | 34 |
+| 111 | Vosgarde | Givre / Combat | 530 | - | Neige | 50 |
+| 112 | Hellequet | Vent | 310 | Hellequin (niv. 36) | Montagne | 32 |
+| 113 | Hellequin | Vent | 485 | - | Montagne | 36 |
+| 114 | Bayard | Vent / Métal | 470 | - | Montagne | 33 |
 | 115 | Fangelet | Toxique / Eau | 300 | Fangeur (niv. 36) | Marais | 32 |
 | 116 | Fangeur | Toxique / Eau | 410 | Fangeroi (niv. 48) | Marais | 36 |
 | 117 | Fangeroi | Toxique / Eau | 520 | - | Marais | 48 |
