@@ -54,6 +54,18 @@ import fonderion from './fonderion.js';
 import goujonet from './goujonet.js';
 import goujarde from './goujarde.js';
 import brochemor from './brochemor.js';
+import crabouille from './crabouille.js';
+import crabastion from './crabastion.js';
+import ombrelle from './ombrelle.js';
+import ombrellor from './ombrellor.js';
+import anguilet from './anguilet.js';
+import anguistral from './anguistral.js';
+import fulmarene from './fulmarene.js';
+import lapugil from './lapugil.js';
+import lapugilat from './lapugilat.js';
+import toisonnet from './toisonnet.js';
+import nimbelaine from './nimbelaine.js';
+import hurlegroin from './hurlegroin.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -71,4 +83,7 @@ export const HAND_DRAWN_CREATURES = {
   salamoue, salamarde, salamassif, fouisseron,
   quartzelle, quartzard, grenaillon, lingotard, fonderion,
   goujonet, goujarde, brochemor,
+  crabouille, crabastion, ombrelle, ombrellor,
+  anguilet, anguistral, fulmarene,
+  lapugil, lapugilat, toisonnet, nimbelaine, hurlegroin,
 };

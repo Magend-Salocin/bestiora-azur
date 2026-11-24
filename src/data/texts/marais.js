@@ -42,7 +42,7 @@ export default {
   pecheur_baltazar_after: 'Les Fangeurs sont gourmands. Prépare des potions.',
   nageur_corentin_intro: 'La rivière est à moi ! Tu as ta Bouée ?',
   nageur_corentin_defeat: 'Je coule.',
-  nageur_corentin_after: 'Plonge sans peur : les Ombrellors ne piquent que les timides.',
+  nageur_corentin_after: 'Plonge sans peur : les Morgavague ne piquent que les timides.',
   nageuse_elodie_intro: 'Je nage depuis ce matin. Tu me rattrapes ?',
   nageuse_elodie_defeat: 'Tu m’as rattrapée.',
   nageuse_elodie_after: 'Au sud, l’eau devient claire.',

@@ -71,7 +71,7 @@ export default {
   maison_cendrelune_1_vieille_dame: 'Ma vieille Faramine repose dans la Tour.\fChaque matin, je monte lui dire bonjour. Enfin… quand le Syndicat n’est pas là.',
   maison_cendrelune_1_gamin: 'Mamie dit que les bestioles disparues deviennent des étoiles.',
   maison_cendrelune_2_fillette: 'Papa cultive des fleurs qui mangent les mouches. Je ne m’approche pas.',
-  maison_cendrelune_2_echange: 'Je cherche un Ronceroc pour ma rocaille.\fEn échange, je te donne ma Nimbelaine. Ça te va ?',
+  maison_cendrelune_2_echange: 'Je cherche un Ronceroc pour ma rocaille.\fEn échange, je te donne mon Truffandor. Ça te va ?',
   maison_cendrelune_2_echange_apres: 'Mon Ronceroc se plaît beaucoup dans la rocaille. Merci encore !',
 
   // Arène Flore

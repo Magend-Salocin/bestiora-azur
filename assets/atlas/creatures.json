@@ -1814,21 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "c6b73a10ef5c070cd400e013c36713fd1e8aa5e0119651e39c601db003e74c14",
+    "pngHash": "948cde05834264576cc61eac57ecef9464d3ee4d894f382e4f776639643449ef",
     "source": "src/data/creatures.js",
     "generated": [
-      "crabouille",
-      "crabastion",
-      "ombrelle",
-      "ombrellor",
-      "anguilet",
-      "anguistral",
-      "fulmarene",
-      "lapugil",
-      "lapugilat",
-      "toisonnet",
-      "nimbelaine",
-      "hurlegroin",
       "petalune",
       "corolline",
       "lampyrin",
@@ -1968,7 +1956,19 @@
       "fonderion",
       "goujonet",
       "goujarde",
-      "brochemor"
+      "brochemor",
+      "crabouille",
+      "crabastion",
+      "ombrelle",
+      "ombrellor",
+      "anguilet",
+      "anguistral",
+      "fulmarene",
+      "lapugil",
+      "lapugilat",
+      "toisonnet",
+      "nimbelaine",
+      "hurlegroin"
     ]
   }
 }

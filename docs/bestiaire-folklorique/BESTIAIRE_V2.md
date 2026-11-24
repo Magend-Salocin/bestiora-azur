@@ -69,7 +69,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 1 | Premières routes (010 à 024) | 15 | Fait |
 | 2 | Forêts et premières grottes (025 à 037) | 13 | Fait |
 | 3 | Rivières et grottes (038 à 049) | 12 | Fait |
-| 4 | Côte et prairies (050 à 061) | 12 | |
+| 4 | Côte et prairies (050 à 061) | 12 | Fait |
 | 5 | Prairies et ville (062 à 074) | 13 | |
 | 6 | Ville et grottes (075 à 087) | 13 | |
 | 7 | Ruines (088 à 100) | 13 | |
@@ -105,12 +105,12 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 042 | Quartzelle > Quartzard | Houlin > Houlécrin | Roche, Arcane | Fions, fées des houles (grottes marines) | Haute-Bretagne | F, J (fait) |
 | 044 | Grenaillon > Lingotard > Fonderion | Servan > Servarmure > Servargent | Métal (Combat au stade 3) | Servan, gardien des richesses | Savoie | F, J, J (fait) |
 | 047 | Goujonet > Goujarde > Brochemor | Laminak > Laminéa > Laminara | Eau | Laminak | Pays basque | F, J, J (fait) |
-| 050 | Crabouille > Crabastion | Tudgommon > Goémonroc | Eau, Roche | Tud-gommon, peuple du goémon | Bretagne (Léon) | F, J |
-| 052 | Ombrelle > Ombrellor | Morgann > Morgavague | Eau, Toxique | Marie-Morgane | Bretagne | F, J |
-| 054 | Anguilet > Anguistral > Fulmarène | Coulobrin > Coulobron > Coulobre | Eau, Foudre | Coulobre, serpent des tempêtes | Provence (Sorgue) | J, J, F |
-| 057 | Lapugil > Lapugilat | Lougarou > Louvar | Combat | Loup-garou | France | A, J |
-| 059 | Toisonnet > Nimbelaine | Truffandec > Truffandor | Normal, Vent | Esprit du foyer | Béarn | F, à vérifier ; J |
-| 061 | Hurlegroin | Warabouc | Combat | Bouc métamorphe | Lorraine, à vérifier | F |
+| 050 | Crabouille > Crabastion | Tudgommon > Goémonroc | Eau, Roche | Tud-gommon, peuple du goémon | Bretagne (Léon) | F, J (fait) |
+| 052 | Ombrelle > Ombrellor | Morgann > Morgavague | Eau, Toxique | Marie-Morgane | Bretagne | F, J (fait) |
+| 054 | Anguilet > Anguistral > Fulmarène | Coulobrin > Coulobron > Coulobre | Eau, Foudre | Coulobre, serpent des tempêtes | Provence (Sorgue) | J, J, F (fait) |
+| 057 | Lapugil > Lapugilat | Lougarou > Louvar | Combat | Loup-garou | France | A, J (fait) |
+| 059 | Toisonnet > Nimbelaine | Truffandec > Truffandor | Normal, Vent | Esprit du foyer | Béarn | F, à vérifier ; J (fait) |
+| 061 | Hurlegroin | Warabouc | Combat | Bouc métamorphe | Lorraine, à vérifier | F (fait) |
 | 062 | Pétalune > Corolline | Margelle > Margolys | Flore, Arcane | Margot la fée (nom changé : un dresseur s'appelle Margot) | Haute-Bretagne | F, J |
 | 064 | Lampyrin > Lampyrex | Follet > Follumine | Insecte, Foudre | Feu follet | France | A, J |
 | 066 | Bovaillon | Gonfaron | Normal | Âne de Gonfaron, l'âne qui vole | Provence (Var) | F |

@@ -55,18 +55,18 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 047 | Laminak | Eau | 260 | Laminéa (niv. 18) | Rivière | 10 |
 | 048 | Laminéa | Eau | 380 | Laminara (niv. 36) | Rivière | 18 |
 | 049 | Laminara | Eau | 500 | - | Rivière | 36 |
-| 050 | Crabouille | Eau / Roche | 300 | Crabastion (niv. 28) | Mer | 10 |
-| 051 | Crabastion | Eau / Roche | 470 | - | Mer | 28 |
-| 052 | Ombrelle | Eau / Toxique | 300 | Ombrellor (niv. 30) | Mer | 12 |
-| 053 | Ombrellor | Eau / Toxique | 480 | - | Mer | 30 |
-| 054 | Anguilet | Eau / Foudre | 290 | Anguistral (niv. 22) | Mer | 12 |
-| 055 | Anguistral | Eau / Foudre | 400 | Fulmarène (niv. 40) | Mer | 22 |
-| 056 | Fulmarène | Eau / Foudre | 515 | - | Mer | 40 |
-| 057 | Lapugil | Combat | 300 | Lapugilat (niv. 26) | Prairie | 14 |
-| 058 | Lapugilat | Combat | 465 | - | Prairie | 26 |
-| 059 | Toisonnet | Normal / Vent | 290 | Nimbelaine (amitié 220) | Prairie | 14 |
-| 060 | Nimbelaine | Normal / Vent | 450 | - | Prairie | 25 |
-| 061 | Hurlegroin | Combat | 410 | - | Forêt | 15 |
+| 050 | Tudgommon | Eau / Roche | 300 | Goémonroc (niv. 28) | Mer | 10 |
+| 051 | Goémonroc | Eau / Roche | 470 | - | Mer | 28 |
+| 052 | Morgann | Eau / Toxique | 300 | Morgavague (niv. 30) | Mer | 12 |
+| 053 | Morgavague | Eau / Toxique | 480 | - | Mer | 30 |
+| 054 | Coulobrin | Eau / Foudre | 290 | Coulobron (niv. 22) | Mer | 12 |
+| 055 | Coulobron | Eau / Foudre | 400 | Coulobre (niv. 40) | Mer | 22 |
+| 056 | Coulobre | Eau / Foudre | 515 | - | Mer | 40 |
+| 057 | Lougarou | Combat | 300 | Louvar (niv. 26) | Prairie | 14 |
+| 058 | Louvar | Combat | 465 | - | Prairie | 26 |
+| 059 | Truffandec | Normal / Vent | 290 | Truffandor (amitié 220) | Prairie | 14 |
+| 060 | Truffandor | Normal / Vent | 450 | - | Prairie | 25 |
+| 061 | Warabouc | Combat | 410 | - | Forêt | 15 |
 | 062 | Pétalune | Flore / Arcane | 300 | Corolline (Pierre Solaire) | Prairie | 15 |
 | 063 | Corolline | Flore / Arcane | 470 | - | Prairie | 30 |
 | 064 | Lampyrin | Insecte / Foudre | 280 | Lampyrex (niv. 24) | Prairie | 15 |
