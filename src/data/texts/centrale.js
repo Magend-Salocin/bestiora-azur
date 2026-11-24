@@ -2,8 +2,8 @@
 export default {
   centrale_ingenieur: 'Cette centrale alimentait Vireval avant l’accident. Depuis, un orage s’y est installé.\fOn raconte qu’une bestiole d’éclair y dort, tout au fond.',
   centrale_fulgorine_1: 'L’air crépite. Des arcs bleus courent sur les murs… Un éclair vivant se matérialise devant toi !',
-  centrale_fulgorine_ko: 'Fulgorine se disperse en un éclair éblouissant. La centrale retombe dans l’obscurité.',
-  centrale_fulgorine_capture: 'La centrale se tait. Fulgorine est désormais avec toi.',
+  centrale_fulgorine_ko: 'Veneur se disperse en un éclair éblouissant. La centrale retombe dans l’obscurité.',
+  centrale_fulgorine_capture: 'La centrale se tait. Veneur est désormais avec toi.',
   ouvrier_gedeon_intro: 'Un visiteur ! La centrale est fermée, mais le combat, jamais !',
   ouvrier_gedeon_defeat: 'Court-circuit.',
   ouvrier_gedeon_after: 'Plus loin, c’est de plus en plus sombre. Garde la Lanterne.',
@@ -15,5 +15,5 @@ export default {
   chercheuse_leopoldine_after: 'Au fond, il y a une présence. Pas humaine.',
   ouvrier_germain_intro: 'Derrière moi, la salle de l’orage. Tu es sûr de vouloir entrer ?',
   ouvrier_germain_defeat: 'Fais ce que tu veux.',
-  ouvrier_germain_after: 'Fulgorine est plus fort que tout ce que tu as rencontré. Prépare-toi.',
+  ouvrier_germain_after: 'Veneur est plus fort que tout ce que tu as rencontré. Prépare-toi.',
 };

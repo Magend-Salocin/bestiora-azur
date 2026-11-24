@@ -1814,14 +1814,9 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "2c19017ab5a9ef7c476a6825a47cb7736b6db2b1a29a00d500cd08116b87427c",
+    "pngHash": "b66a6e961a0dee124de4e50d1860ae8d8f2ca531ce5993609551e1a9b8542b6a",
     "source": "src/data/creatures.js",
-    "generated": [
-      "cristelan",
-      "cristarche",
-      "neveon",
-      "stoicor"
-    ],
+    "generated": [],
     "handDrawn": [
       "fenouillot",
       "fenouvert",
@@ -1968,7 +1963,11 @@
       "pyrobelier",
       "enclumor",
       "scorielle",
-      "scoriarque"
+      "scoriarque",
+      "cristelan",
+      "cristarche",
+      "neveon",
+      "stoicor"
     ]
   }
 }

@@ -146,6 +146,10 @@ import pyrobelier from './pyrobelier.js';
 import enclumor from './enclumor.js';
 import scorielle from './scorielle.js';
 import scoriarque from './scoriarque.js';
+import cristelan from './cristelan.js';
+import cristarche from './cristarche.js';
+import neveon from './neveon.js';
+import stoicor from './stoicor.js';
 
 export const HAND_DRAWN_CREATURES = {
   fenouillot, fenouvert, sylvenard,
@@ -175,4 +179,5 @@ export const HAND_DRAWN_CREATURES = {
   cabrelin, bouquetor, cabrecime, volplanin, volplaneur, eolithe, givrelet, givrailes, frimousson, frimours, frimastoc, nuageot, cumulard, girouette,
   fangelet, fangeur, fangeroi, patineau, patinoir, silurbe, pestelet, pestorne, chafouin, chafourbe, miroitin, miroitage, nocturbe, chipotard,
   raielle, raieciel, grimoule, grimoulix, octobras, epavard, albavent, tisonnet, tisonnard, pyrobelier, enclumor, scorielle, scoriarque,
+  cristelan, cristarche, neveon, stoicor,
 };

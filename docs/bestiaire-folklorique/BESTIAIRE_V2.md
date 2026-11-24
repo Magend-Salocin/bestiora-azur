@@ -76,7 +76,7 @@ Chaque lot se termine par une planche, des captures, les tests et un commit, pui
 | 8 | Montagne et neige (101 à 114) | 14 | Fait |
 | 9 | Marais et ville (115 à 128) | 14 | Fait |
 | 10 | Mer et volcan (129 à 141) | 13 | Fait |
-| 11 | Sommets, légendaires et mythique (142 à 150) | 9 | |
+| 11 | Sommets, légendaires et mythique (142 à 150) | 9 | Fait |
 | 12 | Finitions : identifiants, migration des sauvegardes, retrait du générateur, captures du README, documentation | 0 | |
 
 ## Correspondance des 150 emplacements
@@ -155,14 +155,14 @@ Statut : F = figure du folklore attestée, A = archétype traditionnel, J = cré
 | 138 | Pyrobélier | Taurnoir | Feu | Taureau noir | France | A (fait) |
 | 139 | Enclumor | Mallet | Métal, Feu | Cheval Mallet | Poitou, Vendée | F (fait) |
 | 140 | Scorielle > Scoriarque | Babauet > Babau | Feu, Insecte | Babau | Languedoc (Nîmes) | J, F (fait) |
-| 142 | Cristelan > Cristarche | Alicornet > Alicorne | Givre, Arcane | Alicorne d'Avignon | Provence, à vérifier | J, F |
-| 144 | Névéon | Dahu | Givre | Dahu | Alpes, Jura | F |
-| 145 | Stoïcor | Gévaudan | Combat, Arcane | Bête du Gévaudan | Lozère | F |
-| 146 | Azurel (légendaire) | Vouivre | Vent, Arcane | Vouivre | Franche-Comté | F |
-| 147 | Glacerne (légendaire) | Gaussier | Givre, Roche | Lion de pierre du mont Gaussier | Provence (Alpilles) | F |
-| 148 | Volcarde (légendaire) | Draguignan | Feu, Terre | Dragon de Draguignan | Var | F |
-| 149 | Fulgorine (légendaire) | Veneur | Foudre, Vent | Grand Veneur | Fontainebleau | F |
-| 150 | Mirelle (mythique) | Mitrêve | Arcane | Mite des rêves | Création | J |
+| 142 | Cristelan > Cristarche | Alicornet > Alicorne | Givre, Arcane | Alicorne d'Avignon | Provence, à vérifier | J, F (fait) |
+| 144 | Névéon | Dahu | Givre | Dahu | Alpes, Jura | F (fait) |
+| 145 | Stoïcor | Gévaudan | Combat, Arcane | Bête du Gévaudan | Lozère | F (fait) |
+| 146 | Azurel (légendaire) | Vouivre | Vent, Arcane | Vouivre | Franche-Comté | F (fait) |
+| 147 | Glacerne (légendaire) | Gaussier | Givre, Roche | Lion de pierre du mont Gaussier | Provence (Alpilles) | F (fait) |
+| 148 | Volcarde (légendaire) | Draguignan | Feu, Terre | Dragon de Draguignan | Var | F (fait) |
+| 149 | Fulgorine (légendaire) | Veneur | Foudre, Vent | Grand Veneur | Fontainebleau | F (fait) |
+| 150 | Mirelle (mythique) | Mitrêve | Arcane | Mite des rêves | Création | J (fait) |
 
 Les noms ont été vérifiés pour la longueur. Ils seront contrôlés par `npm run validate` (mots interdits, doublons) au moment de leur intégration.
 

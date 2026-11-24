@@ -147,12 +147,12 @@ Fichier généré par `npm run bestiary` depuis `src/data/creatures.js`. Ne pas 
 | 139 | Mallet | Métal / Feu | 490 | - | Volcan | 43 |
 | 140 | Babauet | Feu / Insecte | 330 | Babau (niv. 44) | Volcan | 42 |
 | 141 | Babau | Feu / Insecte | 500 | - | Volcan | 44 |
-| 142 | Cristelan | Givre / Arcane | 330 | Cristarche (niv. 48) | Neige | 46 |
-| 143 | Cristarche | Givre / Arcane | 510 | - | Neige | 48 |
-| 144 | Névéon | Givre | 470 | - | Neige | 46 |
-| 145 | Stoïcor | Combat / Arcane | 500 | - | Montagne | 47 |
-| 146 | Azurel | Vent / Arcane | 680 | - | Inconnu | 70 |
-| 147 | Glacerne | Givre / Roche | 590 | - | Inconnu | 60 |
-| 148 | Volcarde | Feu / Terre | 590 | - | Inconnu | 50 |
-| 149 | Fulgorine | Foudre / Vent | 590 | - | Inconnu | 40 |
-| 150 | Mirelle | Arcane | 600 | - | Inconnu | 50 |
+| 142 | Alicornet | Givre / Arcane | 330 | Alicorne (niv. 48) | Neige | 46 |
+| 143 | Alicorne | Givre / Arcane | 510 | - | Neige | 48 |
+| 144 | Dahu | Givre | 470 | - | Neige | 46 |
+| 145 | Gévaudan | Combat / Arcane | 500 | - | Montagne | 47 |
+| 146 | Vouivre | Vent / Arcane | 680 | - | Inconnu | 70 |
+| 147 | Gaussier | Givre / Roche | 590 | - | Inconnu | 60 |
+| 148 | Draguignan | Feu / Terre | 590 | - | Inconnu | 50 |
+| 149 | Veneur | Foudre / Vent | 590 | - | Inconnu | 40 |
+| 150 | Mitrêve | Arcane | 600 | - | Inconnu | 50 |
