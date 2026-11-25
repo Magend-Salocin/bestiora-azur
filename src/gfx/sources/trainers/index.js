@@ -1,10 +1,19 @@
 import { buildBackPortrait, buildPortrait } from './portrait-builder.js';
 import brune from './brune.js';
+import campeur from './campeur.js';
+import campeuse from './campeuse.js';
+import ecolier from './ecolier.js';
+import fillette from './fillette.js';
+import gamin from './gamin.js';
 import goemonier from './goemonier.js';
+import sonneur from './sonneur.js';
+import sonneuse from './sonneuse.js';
 
 // Hand-drawn portraits (prompt 2, tools/trainer-designs/): they replace the assembled ones below.
 // Each file exports { portrait } or { back } as 48 × 48 text rows.
-export const HAND_DRAWN_PORTRAITS = { brune, goemonier };
+export const HAND_DRAWN_PORTRAITS = {
+  brune, campeur, campeuse, ecolier, fillette, gamin, goemonier, sonneur, sonneuse,
+};
 
 // One portrait per trainer class (ids reused by src/data/trainer-classes.js), plus story characters.
 export const PORTRAIT_CONFIGS = {

@@ -246,9 +246,21 @@
       "w": 48,
       "h": 48
     },
-    "portrait/ysolde": {
+    "portrait/sonneur": {
       "x": 245,
       "y": 294,
+      "w": 48,
+      "h": 48
+    },
+    "portrait/sonneuse": {
+      "x": 0,
+      "y": 343,
+      "w": 48,
+      "h": 48
+    },
+    "portrait/ysolde": {
+      "x": 49,
+      "y": 343,
       "w": 48,
       "h": 48
     }
@@ -257,8 +269,8 @@
     "version": 1,
     "image": "trainers.png",
     "size": {
-      "w": 320,
-      "h": 342
+      "w": 336,
+      "h": 391
     },
     "levels": [
       "#ffffff",
@@ -266,6 +278,6 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "2dea037429c27c1390f9b53addf21c5343efab7cbbe2f050d0c87898f1ede62b"
+    "pngHash": "93d7d5ea997b34a5824af1fc60a27dddecc01b592f44016d2d77e650b5c5aee8"
   }
 }

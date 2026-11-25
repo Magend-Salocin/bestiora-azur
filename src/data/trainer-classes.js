@@ -35,8 +35,8 @@ export const TRAINER_CLASSES = [
   // Regional classes (docs/Pnj/PNJ_V2.md, section 4.2): same reward base and music as the
   // generic class they replace; portraits borrowed from it until the hand-drawn ones (prompt 2).
   trainerClass('carrier', 'Carrier', 'portrait/montagnard', 35),
-  trainerClass('sonneur', 'Sonneur', 'portrait/campeur', 20),
-  trainerClass('sonneuse', 'Sonneuse', 'portrait/campeuse', 20),
+  trainerClass('sonneur', 'Sonneur', 'portrait/sonneur', 20),
+  trainerClass('sonneuse', 'Sonneuse', 'portrait/sonneuse', 20),
   trainerClass('goemonier', 'Goémonier', 'portrait/goemonier', 35),
   trainerClass('cheminot', 'Cheminot', 'portrait/ouvrier', 30),
   trainerClass('mineur', 'Mineur', 'portrait/ouvrier', 30),

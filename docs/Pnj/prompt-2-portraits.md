@@ -87,6 +87,22 @@ Décision : chaque classe régionale du prompt 1 reçoit son propre portrait, ai
 | 5 | Sbires, Corvin, rivale, Pr Morvan | Lieutenant |
 | 6 | Champions et Gardiens | Brune faite au lot 0 |
 
+## Lot 1 : classes jeunes et génériques (fait)
+
+Planche : [rendus/planche-portraits-1.png](rendus/planche-portraits-1.png). Les classes génériques traversent plusieurs régions : leurs tenues restent rurales et sans marqueur régional fort.
+
+| Portrait | Silhouette et accessoire signature |
+|---|---|
+| Gamin | Casquette de travers, taches de rousseur, sourire édenté, bretelles, lance-pierre levé. |
+| Fillette | Nattes à rubans écartées, frange, robe sombre à col Claudine, pâquerettes. |
+| Écolier | Raie sur le côté et épi, blouse grise boutonnée, bandoulière du cartable, ardoise « 2+2= ». |
+| Campeur | Bob, foulard noué, sac à dos et couverture roulée sur une épaule, bâton de marche. |
+| Campeuse | Bandeau, queue de cheval de côté, gilet à poches, lanterne tempête. |
+| Sonneur | Chapeau rond à boucle et rubans de velours, gilet brodé, bombarde jouée les yeux fermés. Nouveau cadre `portrait/sonneur`. |
+| Sonneuse | Petite coiffe de dentelle, gilet brodé, biniou : poche sous le bras, bourdon sur l'épaule. Nouveau cadre `portrait/sonneuse`. |
+
+Les traits de visage communs (yeux 2 × 3, lignes) sont dans `tools/trainer-designs/face.js`.
+
 ## Contrôles
 
 - Une planche de tous les portraits côte à côte : aucune paire ne doit se confondre en silhouette.

@@ -542,3 +542,18 @@ Décisions
 
 Problèmes connus
 - Aucun connu.
+
+### 2026-11-25 : PNJ, prompt 2, lot 1 (classes jeunes et génériques)
+
+Fait
+- Portraits dessinés : Gamin, Fillette, Écolier, Campeur, Campeuse, Sonneur et Sonneuse. Les classes Sonneur et Sonneuse ont leur propre cadre (elles empruntaient Campeur et Campeuse).
+- `tools/trainer-designs/face.js` : yeux et lignes partagés par les dessins.
+
+Vérifié
+- `npm run validate`, `npm test` (252 tests), planche `docs/Pnj/rendus/planche-portraits-1.png` dans les 6 palettes, captures d'apparition des 7 portraits et de défaite du Sonneur.
+
+Reste
+- Lots 2 à 7.
+
+Problèmes connus
+- Aucun connu.
