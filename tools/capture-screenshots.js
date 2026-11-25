@@ -7,6 +7,8 @@ import { PNG } from 'pngjs';
 import { ROOT, runElectron } from './run-electron.js';
 
 import { CREATURES } from '../src/data/creatures.js';
+import { TRAINER_CLASSES_BY_ID } from '../src/data/trainer-classes.js';
+import { TRAINERS } from '../src/data/trainers.js';
 
 /** Folder of a species' captures: number and displayed name, e.g. « 022-dame-verte ». */
 export function previewFolder(species) {
@@ -24,9 +26,24 @@ if (previewArgument !== null && !previewSpecies) {
   process.stderr.write(`Espèce inconnue : ${previewArgument}\n`);
   process.exit(1);
 }
-const OUTPUT_DIR = previewSpecies
-  ? path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewFolder(previewSpecies))
-  : path.join(ROOT, 'docs', 'screenshots');
+/** Portrait id shown for a trainer: its own, or its class's. */
+export const trainerPortrait = (trainer) => (trainer.portrait ?? TRAINER_CLASSES_BY_ID[trainer.class]?.portrait ?? '').replace('portrait/', '');
+
+// --trainer <trainer id | portrait id>: battle portrait captures (start and defeat) in
+// docs/Pnj/rendus/<portrait id>/. A portrait id picks the first trainer that shows it.
+const trainerIndex = process.argv.indexOf('--trainer');
+const trainerArgument = trainerIndex >= 0 ? process.argv[trainerIndex + 1] : null;
+const previewTrainer = trainerArgument === null ? null
+  : TRAINERS.find((trainer) => trainer.id === trainerArgument) ?? TRAINERS.find((trainer) => trainerPortrait(trainer) === trainerArgument);
+if (trainerArgument !== null && !previewTrainer) {
+  process.stderr.write(`Dresseur ou portrait inconnu : ${trainerArgument}
+`);
+  process.exit(1);
+}
+
+let OUTPUT_DIR = path.join(ROOT, 'docs', 'screenshots');
+if (previewSpecies) OUTPUT_DIR = path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewFolder(previewSpecies));
+if (previewTrainer) OUTPUT_DIR = path.join(ROOT, 'docs', 'Pnj', 'rendus', trainerPortrait(previewTrainer));
 const SCALE = 4;
 
 /** Nearest neighbor enlargement of a PNG buffer. */
@@ -42,7 +59,7 @@ export function enlargePng(buffer, scale) {
   return PNG.sync.write(target);
 }
 
-const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies.id}`] : [])]);
+const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies.id}`] : []), ...(previewTrainer ? [`--trainer=${previewTrainer.id}`] : [])]);
 if (result.status !== 0) {
   process.stderr.write(`La capture a échoué (code ${result.status ?? result.signal}).\n`);
   process.exit(1);

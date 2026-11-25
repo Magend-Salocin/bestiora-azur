@@ -126,122 +126,128 @@
       "w": 48,
       "h": 48
     },
-    "portrait/lazare": {
+    "portrait/goemonier": {
       "x": 147,
+      "y": 147,
+      "w": 48,
+      "h": 48
+    },
+    "portrait/lazare": {
+      "x": 196,
       "y": 147,
       "w": 48,
       "h": 48
     },
     "portrait/mael": {
-      "x": 196,
+      "x": 245,
       "y": 147,
       "w": 48,
       "h": 48
     },
     "portrait/marin": {
-      "x": 245,
-      "y": 147,
+      "x": 0,
+      "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/montagnard": {
-      "x": 0,
+      "x": 49,
       "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/motard": {
-      "x": 49,
+      "x": 98,
       "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/mystique": {
-      "x": 98,
+      "x": 147,
       "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/nageur": {
-      "x": 147,
+      "x": 196,
       "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/nageuse": {
-      "x": 196,
+      "x": 245,
       "y": 196,
       "w": 48,
       "h": 48
     },
     "portrait/oswin": {
-      "x": 245,
-      "y": 196,
+      "x": 0,
+      "y": 245,
       "w": 48,
       "h": 48
     },
     "portrait/ouvrier": {
-      "x": 0,
+      "x": 49,
       "y": 245,
       "w": 48,
       "h": 48
     },
     "portrait/pecheur": {
-      "x": 49,
+      "x": 98,
       "y": 245,
       "w": 48,
       "h": 48
     },
     "portrait/professeure": {
-      "x": 98,
+      "x": 147,
       "y": 245,
       "w": 48,
       "h": 48
     },
     "portrait/randonneur": {
-      "x": 147,
+      "x": 196,
       "y": 245,
       "w": 48,
       "h": 48
     },
     "portrait/randonneuse": {
-      "x": 196,
-      "y": 245,
-      "w": 48,
-      "h": 48
-    },
-    "portrait/rival": {
       "x": 245,
       "y": 245,
       "w": 48,
       "h": 48
     },
-    "portrait/sbire_opale": {
+    "portrait/rival": {
       "x": 0,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "portrait/sbire_opale_f": {
+    "portrait/sbire_opale": {
       "x": 49,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "portrait/scientifique": {
+    "portrait/sbire_opale_f": {
       "x": 98,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "portrait/selene": {
+    "portrait/scientifique": {
       "x": 147,
       "y": 294,
       "w": 48,
       "h": 48
     },
-    "portrait/ysolde": {
+    "portrait/selene": {
       "x": 196,
+      "y": 294,
+      "w": 48,
+      "h": 48
+    },
+    "portrait/ysolde": {
+      "x": 245,
       "y": 294,
       "w": 48,
       "h": 48
@@ -260,6 +266,6 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "ff92a111283e847b762bf07e487d60a1ff2c83917987d7ddf3217f15dcbccd81"
+    "pngHash": "2dea037429c27c1390f9b53addf21c5343efab7cbbe2f050d0c87898f1ede62b"
   }
 }

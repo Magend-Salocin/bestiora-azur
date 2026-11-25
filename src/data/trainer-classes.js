@@ -37,7 +37,7 @@ export const TRAINER_CLASSES = [
   trainerClass('carrier', 'Carrier', 'portrait/montagnard', 35),
   trainerClass('sonneur', 'Sonneur', 'portrait/campeur', 20),
   trainerClass('sonneuse', 'Sonneuse', 'portrait/campeuse', 20),
-  trainerClass('goemonier', 'Goémonier', 'portrait/pecheur', 35),
+  trainerClass('goemonier', 'Goémonier', 'portrait/goemonier', 35),
   trainerClass('cheminot', 'Cheminot', 'portrait/ouvrier', 30),
   trainerClass('mineur', 'Mineur', 'portrait/ouvrier', 30),
   trainerClass('miquelot', 'Miquelot', 'portrait/mystique', 40),

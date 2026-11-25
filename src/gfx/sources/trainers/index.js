@@ -1,4 +1,10 @@
 import { buildBackPortrait, buildPortrait } from './portrait-builder.js';
+import brune from './brune.js';
+import goemonier from './goemonier.js';
+
+// Hand-drawn portraits (prompt 2, tools/trainer-designs/): they replace the assembled ones below.
+// Each file exports { portrait } or { back } as 48 × 48 text rows.
+export const HAND_DRAWN_PORTRAITS = { brune, goemonier };
 
 // One portrait per trainer class (ids reused by src/data/trainer-classes.js), plus story characters.
 export const PORTRAIT_CONFIGS = {
@@ -49,10 +55,14 @@ export const BACK_CONFIGS = {
   joueuse: { hairTone: 2, hair: 'long', hat: 'hat', hatTone: 1, top: 2, backpack: true },
 };
 
-/** Atlas frames: "portrait/<id>" and "back/<id>". */
+/** Atlas frames: "portrait/<id>" and "back/<id>". A hand-drawn view wins over its config. */
 export function buildTrainerFrames() {
   const frames = {};
   for (const [id, config] of Object.entries(PORTRAIT_CONFIGS)) frames[`portrait/${id}`] = buildPortrait(config);
   for (const [id, config] of Object.entries(BACK_CONFIGS)) frames[`back/${id}`] = buildBackPortrait(config);
+  for (const [id, views] of Object.entries(HAND_DRAWN_PORTRAITS)) {
+    if (views.portrait) frames[`portrait/${id}`] = views.portrait;
+    if (views.back) frames[`back/${id}`] = views.back;
+  }
   return frames;
 }

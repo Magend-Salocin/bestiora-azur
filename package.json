@@ -25,7 +25,8 @@
     "key": "node tools/access-key.js",
     "build-web": "node tools/build-web.js",
     "planche": "node tools/creature-sheet.js",
-    "creature-design": "node tools/export-creature-design.js"
+    "creature-design": "node tools/export-creature-design.js",
+    "trainer-design": "node tools/export-trainer-design.js"
   },
   "repository": {
     "type": "git",

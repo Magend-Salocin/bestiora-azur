@@ -15,6 +15,9 @@ const measurePerf = isDev && process.argv.includes('--perf');
 // --preview=<species> (with --capture): bestiary V2 preview steps instead of the README ones.
 const previewArgument = process.argv.find((argument) => argument.startsWith('--preview='));
 const previewSpecies = captureDirectory && previewArgument ? previewArgument.slice('--preview='.length) : null;
+// --trainer=<trainer id> (with --capture): battle portrait steps of that trainer.
+const trainerArgument = process.argv.find((argument) => argument.startsWith('--trainer='));
+const previewTrainer = captureDirectory && trainerArgument ? trainerArgument.slice('--trainer='.length) : null;
 const devTask = captureDirectory || measurePerf;
 
 const WINDOW_WIDTH = 640;
@@ -54,6 +57,8 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
+      // Dev tasks keep running when their window is hidden behind another one.
+      backgroundThrottling: !devTask,
     },
   });
 
@@ -74,6 +79,7 @@ function createWindow() {
   if (devTask) {
     query.devtask = '1';
     if (previewSpecies) query.preview = previewSpecies;
+    if (previewTrainer) query.trainer = previewTrainer;
     win.webContents.setAudioMuted(true);
     win.webContents.once('did-finish-load', () => runDevTask(win));
   }
@@ -88,7 +94,7 @@ function createWindow() {
 async function runDevTask(win) {
   const { captureScreens, measurePerformance } = require('./dev-tasks.js');
   try {
-    if (captureDirectory) await captureScreens(win, captureDirectory, { preview: Boolean(previewSpecies) });
+    if (captureDirectory) await captureScreens(win, captureDirectory, { preview: Boolean(previewSpecies), trainer: Boolean(previewTrainer) });
     else await measurePerformance(win);
     app.exit(0);
   } catch (error) {

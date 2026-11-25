@@ -45,6 +45,48 @@ Avant chaque lot, présenter les portraits prévus et attendre mon feu vert ; ap
 | 7 | Vues de dos du joueur et de la joueuse, retrait de `portrait-builder.js`, documentation. |
 | 8 (optionnel, à confirmer) | Sprites de carte 16 × 16 (`src/gfx/sources/characters/`) aux couleurs et accessoires des nouvelles tenues. |
 
+## Lot 0 : outils et pilotes (fait)
+
+### Outils
+
+| Étape | Commande | Résultat |
+|---|---|---|
+| Dessin | `tools/trainer-designs/<id>.js` | Exporte `portraits: [{ id, portrait }]` et, au lot 7, `backs: [{ id, back }]`. Formes de `tools/creature-painter.js`. |
+| Export | `npm run trainer-design -- tools/trainer-designs/<id>.js` | Écrit `src/gfx/sources/trainers/<id>.js`. Ajouter le portrait à `HAND_DRAWN_PORTRAITS` dans `trainers/index.js` à sa première exportation. |
+| Atlas | `npm run atlas` | Le portrait dessiné remplace celui de `PORTRAIT_CONFIGS` sous le même cadre `portrait/<id>`. |
+| Planche | `npm run planche -- --portraits <lot> <id> [...]` | `docs/Pnj/rendus/planche-portraits-<lot>.png` : une ligne par portrait, dans les 6 palettes. `back/<id>` pour une vue de dos. |
+| Captures | `npm run screenshots -- --trainer <dresseur ou portrait>` | `docs/Pnj/rendus/<portrait>/` : `trainer-intro.png` (apparition) et `trainer-defeated.png` (fin du combat). Un identifiant de portrait prend le premier dresseur qui l'affiche. |
+
+Un script frère a été préféré à une extension de `npm run creature-design`, lié aux espèces et aux trois vues face, dos, icône.
+
+### Pilotes
+
+| Portrait | Cadre | Choix |
+|---|---|---|
+| Goémonier (Pêcheur de Bretagne littorale) | `portrait/goemonier`, nouveau | Les pêcheurs de Port-Ondine sont goémoniers depuis le prompt 1. Ancien au bonnet, barbe grise, ciré clair ouvert sur une marinière, fourche à goémon. Le `pecheur` générique reste pour les autres zones. |
+| Brune | `portrait/brune` | Région, sexe et carrure opposés au goémonier. Béret, tresse, chemise grise aux manches retroussées, tablier de cuir, taillole, masse sur l'épaule. |
+
+Planche : [rendus/planche-portraits-0.png](rendus/planche-portraits-0.png).
+
+Repères de dessin tirés des pilotes :
+- tête de 14 à 15 px de large, sommet du crâne vers la ligne 10, menton vers la ligne 27 ;
+- un couvre-chef s'arrête au-dessus des sourcils, avec une ligne de peau entre son contour et les sourcils ;
+- la peau en teinte 0, les vêtements qui la touchent en teinte 1 ou 2, sinon les bras se perdent dans le buste ;
+- l'outil du métier sur un côté, assez grand pour se lire à l'échelle 1 (fourche verticale, masse en diagonale).
+
+### Classes régionales et Lieutenant
+
+Décision : chaque classe régionale du prompt 1 reçoit son propre portrait, ainsi que le Lieutenant (qui emprunte celui du sbire). Les féminins attestés (Sonneuse, Jardinière, Maraîchine) ont le leur. Répartition :
+
+| Lot | Classes génériques | Classes régionales ajoutées |
+|---|---|---|
+| 1 | Gamin, Fillette, Écolier, Campeur, Campeuse | Sonneur, Sonneuse |
+| 2 | Randonneur, Randonneuse, Montagnard, Nageur, Nageuse | Carrier, Fruitier, Gardian |
+| 3 | Pêcheur, Marin, Ouvrier, Motard | Goémonier (fait au lot 0), Corailleur, Cheminot, Mineur, Forgeron, Maraîchin, Maraîchine, Horloger |
+| 4 | Scientifique, Chercheuse, Gentleman, Dame, Mystique, Danseuse, Dresseur, Dresseuse | Jardinier, Jardinière, Cataphile, Miquelot |
+| 5 | Sbires, Corvin, rivale, Pr Morvan | Lieutenant |
+| 6 | Champions et Gardiens | Brune faite au lot 0 |
+
 ## Contrôles
 
 - Une planche de tous les portraits côte à côte : aucune paire ne doit se confondre en silhouette.

@@ -5,7 +5,7 @@ import { CREATURES } from '../src/data/creatures.js';
 import { HAND_DRAWN_CREATURES } from '../src/gfx/sources/creatures/index.js';
 import { TILESETS, buildMetatileIndex } from '../src/gfx/sources/tiles/index.js';
 import { FLAG_NAMES } from '../src/gfx/sources/tiles/tile-helpers.js';
-import { buildTrainerFrames } from '../src/gfx/sources/trainers/index.js';
+import { HAND_DRAWN_PORTRAITS, buildTrainerFrames } from '../src/gfx/sources/trainers/index.js';
 import { buildUiFrames } from '../src/gfx/sources/ui/index.js';
 import { parseSprite, validateSprite } from '../src/gfx/sprite-utils.js';
 
@@ -88,6 +88,15 @@ test('trainer portraits and player backs are 48×48', () => {
   assert.ok(frames['back/joueur'] && frames['back/joueuse']);
   for (const id of ['rival', 'professeure', 'corvin', 'garance', 'oswin', 'gardien_4', 'sbire_opale']) {
     assert.ok(frames[`portrait/${id}`], `portrait/${id} missing`);
+  }
+});
+
+test('hand-drawn portraits replace the assembled ones in the atlas', () => {
+  const frames = buildTrainerFrames();
+  for (const [id, views] of Object.entries(HAND_DRAWN_PORTRAITS)) {
+    assert.ok(views.portrait || views.back, `${id}: no view`);
+    if (views.portrait) assert.deepEqual(frames[`portrait/${id}`], views.portrait, id);
+    if (views.back) assert.deepEqual(frames[`back/${id}`], views.back, id);
   }
 });
 

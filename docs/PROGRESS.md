@@ -20,7 +20,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | Bestiaire V2 (150 bestioles dessinées) | fait |
 | Micro-animations et styles de combat | fait |
 | PNJ 1 Villes, PNJ et dialogues régionaux | fait |
-| PNJ 2 Portraits de combat dessinés | à faire |
+| PNJ 2 Portraits de combat dessinés | en cours |
 | PNJ 3 Attaques | à faire |
 
 ## Journal
@@ -521,3 +521,24 @@ Décisions
 - Les figures folkloriques ne sont jamais montrées, seulement racontées ou incarnées par des humains.
 - Les formes féminines douteuses (« Carrière », « Miquelotte ») sont écartées : ces dresseuses gardent leur classe générique.
 - Les entrées passées de ce journal gardent « Oswin ».
+
+### 2026-11-25 : PNJ, prompt 2, lot 0 (outils et portraits pilotes)
+
+Fait
+- Outils : `tools/trainer-designs/`, `npm run trainer-design` (`tools/export-trainer-design.js`), `HAND_DRAWN_PORTRAITS` dans `src/gfx/sources/trainers/index.js` (le portrait dessiné remplace l'assemblé sous le même cadre), `npm run planche -- --portraits` (`tools/portrait-sheet.js`, 6 palettes), `npm run screenshots -- --trainer` (apparition et défaite dans `docs/Pnj/rendus/<portrait>/`).
+- Pilotes dessinés : `portrait/goemonier` (nouveau cadre, classe Goémonier) et `portrait/brune`.
+- Test : les portraits dessinés remplacent bien les assemblés dans l'atlas (252 tests).
+
+Vérifié
+- `npm run validate`, `npm test`, planche `docs/Pnj/rendus/planche-portraits-0.png`, captures en combat des deux pilotes.
+
+Reste
+- Lots 1 à 7 ; répartition des classes régionales et du Lieutenant dans `docs/Pnj/prompt-2-portraits.md`.
+
+Décisions
+- Script d'export à part plutôt qu'une extension de `creature-design`.
+- Les fenêtres des tâches de développement (`--capture`, `--perf`) désactivent `backgroundThrottling` : masquées par une autre fenêtre, leur boucle de rendu gelait.
+- Chaque classe régionale et le Lieutenant auront leur portrait.
+
+Problèmes connus
+- Aucun connu.

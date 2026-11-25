@@ -2,6 +2,7 @@
 // on the Classique palette. Species without a hand-drawn source show their generated sprite.
 // Usage: npm run planche -- <from>-<to> [<from>-<to> ...]   (numbers, e.g. 001-009 010-024)
 // Output: docs/bestiaire-folklorique/rendus/planche-<from>-<to>.png
+// npm run planche -- --portraits <lot> <id> [...]: battle portraits instead (tools/portrait-sheet.js).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,6 +12,7 @@ import { CREATURES } from '../src/data/creatures.js';
 import { PALETTES } from '../src/gfx/palette.js';
 import { HAND_DRAWN_CREATURES } from '../src/gfx/sources/creatures/index.js';
 import { spriteToRows } from '../src/gfx/sprite-utils.js';
+import { main as portraitSheet } from './portrait-sheet.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUTPUT_DIR = path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus');
@@ -50,6 +52,7 @@ export function buildSheet(species) {
 }
 
 function main(ranges) {
+  if (ranges[0] === '--portraits') return portraitSheet(ranges.slice(1));
   if (ranges.length === 0) throw new Error('Usage: npm run planche -- <from>-<to> [...]');
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   for (const range of ranges) {

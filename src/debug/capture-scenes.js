@@ -3,6 +3,7 @@
 // captures the window.
 import { createCreature } from '../battle/logic/creature.js';
 import { CREATURES } from '../data/creatures.js';
+import { TRAINERS_BY_ID } from '../data/trainers.js';
 import { createRng } from '../engine/rng.js';
 import { hooks } from '../overworld/hooks.js';
 import { addCreature, createGameState, markCaught, markSeen } from '../state/game-state.js';
@@ -42,6 +43,7 @@ export async function runCaptureStep(step, { scenes, getOverworld, startGame }) 
     return wait(5.5);
   }
   if (PREVIEW_STEPS.includes(step)) return runPreviewStep(step, { scenes, startGame });
+  if (TRAINER_STEPS.includes(step)) return runTrainerStep(step, { scenes, startGame });
   throw new Error(`Unknown capture step: ${step}`);
 }
 
@@ -100,6 +102,49 @@ async function runPreviewStep(step, { scenes, startGame }) {
   await wait(5.5);
   await pressA(); // « Un Pivelin sauvage apparaît ! » → the player sends the species
   return wait(4);
+}
+
+// Battle portrait preview (npm run screenshots -- --trainer <trainer>): the trainer's portrait when
+// the battle starts and when it is defeated, written to docs/Pnj/rendus/.
+export const TRAINER_STEPS = ['trainer-intro', 'trainer-defeated'];
+
+// Strong lead whose only attack wins in one hit.
+const TRAINER_LEAD = { species: 'tarasque', level: 60, moves: ['deferlante'] };
+
+/** Resolves when `test()` is true, checking every 0.1 s; rejects after `seconds`. */
+async function waitUntil(test, seconds) {
+  for (let elapsed = 0; elapsed < seconds; elapsed += 0.1) {
+    if (test()) return;
+    await wait(0.1);
+  }
+  throw new Error('Capture: state not reached in time');
+}
+
+async function runTrainerStep(step, { scenes, startGame }) {
+  const id = new URLSearchParams(window.location.search).get('trainer');
+  const trainer = TRAINERS_BY_ID[id];
+  if (!trainer) throw new Error(`Unknown trainer: ${id}`);
+  while (scenes.size > 1) scenes.pop();
+  const state = createGameState({ player: { name: 'Elio', gender: 'boy' }, flags: { has_bestiary: true } });
+  addCreature(state, createCreature(TRAINER_LEAD.species, TRAINER_LEAD.level, createRng(7), { moves: TRAINER_LEAD.moves }));
+  startGame(state, { map: 'cendrelune', x: 3, y: 9, facing: 'down' });
+  await wait(0.5);
+  // A single weak creature, so that the defeat comes after one attack.
+  hooks.startBattle({ ...trainer, party: [{ creature: trainer.party[0].creature, level: 2 }], partyByStarter: undefined });
+  const battle = () => (scenes.top?.view?.portraits ? scenes.top : null);
+  const portrait = () => battle()?.view.portraits.trainer;
+  if (step === 'trainer-intro') {
+    await waitUntil(() => portrait()?.visible && portrait().dx === 0, 8);
+    return wait(1.2);
+  }
+  // A through the intro, the attack menu and the messages, until the defeat portrait slides in.
+  for (let presses = 0; !(battle()?.introDone && portrait().visible); presses += 1) {
+    if (presses > 80) throw new Error('Capture: the trainer was not defeated');
+    await pressA();
+    await wait(0.4);
+  }
+  await waitUntil(() => portrait().dx === 0, 2);
+  return wait(1.2);
 }
 
 /** Taps the A key (X), as the player would. */
