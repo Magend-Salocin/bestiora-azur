@@ -49,7 +49,7 @@ Prérequis : Node.js 20 ou plus récent, puis `npm install`.
 | Changer de palette | SELECT + START | SELECT + START |
 | Plein écran | `F11` | |
 
-Les touches et les boutons de manette se remappent dans OPTIONS (TOUCHES, MANETTE). Les options proposent aussi le texte instantané, la palette Contraste (contraste maximal) et la réduction des flashs (les clignotements de combat deviennent un léger décalage). La ligne COMBAT choisit l'interface de combat : CLASSIQUE (cadres arrondis, herbes animées, fiche de la bestiole et liste d'actions en bas), MODERNE (cadres en relief, bulle d'infos, menu en deux panneaux avec icônes, sélection foncée), DYNAMIQUE (cadres fins, herbes animées, bestioles qui respirent, curseur vivant, question « … doit faire quoi ? ») ou ÉPURÉE (filets légers, ombres sous les bestioles, menu en grille centrée).
+Les touches et les boutons de manette se remappent dans OPTIONS (TOUCHES, MANETTE). Les options proposent aussi le texte instantané, la palette Contraste (contraste maximal) et la réduction des flashs (les clignotements de combat deviennent un léger décalage, les reflets sur l'eau et l'éclat des objets au sol disparaissent). La ligne COMBAT choisit l'interface de combat : CLASSIQUE (cadres arrondis, herbes animées, fiche de la bestiole et liste d'actions en bas), MODERNE (cadres en relief, bulle d'infos, menu en deux panneaux avec icônes, sélection foncée), DYNAMIQUE (cadres fins, herbes animées, bestioles qui respirent, curseur vivant, question « … doit faire quoi ? ») ou ÉPURÉE (filets légers, ombres sous les bestioles, menu en grille centrée).
 
 ## Jouer sur iPhone (ou tablette)
 

@@ -59,21 +59,32 @@ const FLOWERS = overlay(tileRows(['00000000']), [
   '........1.......',
 ]);
 
-const TREE = splitLarge(overlay(
-  tileRows(GRASS, 32, 32),
-  shapeRows(32, 32, [
-    { z: 0, tone: 2, shade: false, shapes: [rect(13, 21, 6, 9)], overlays: [{ shapes: [rect(15, 22, 1, 8)], tone: 3 }] },
-    {
-      z: 1,
-      tone: 1,
-      shapes: [ellipse(16, 11.5, 14, 10.5), ellipse(9, 17, 7, 5), ellipse(23, 17, 7, 5)],
-      overlays: [
-        { shapes: [ellipse(11, 8, 3, 2), ellipse(20, 6, 3, 2), ellipse(16, 13, 3, 2), ellipse(7, 15, 2.5, 2), ellipse(25, 14, 2.5, 2)], tone: 2 },
-        { shapes: [ellipse(10, 6, 2, 1.2), ellipse(18, 4.5, 2, 1)], tone: 0 },
-      ],
-    },
-  ]),
-));
+/** 32 × 32 tree; `sway` leans the top of the canopy by 1 pixel to the right (wind frame). */
+function treeRows(sway) {
+  const top = (x) => x + sway;
+  const middle = (x) => x + sway / 2;
+  return overlay(
+    tileRows(GRASS, 32, 32),
+    shapeRows(32, 32, [
+      { z: 0, tone: 2, shade: false, shapes: [rect(13, 21, 6, 9)], overlays: [{ shapes: [rect(15, 22, 1, 8)], tone: 3 }] },
+      {
+        z: 1,
+        tone: 1,
+        shapes: [ellipse(middle(16), 11.5, 14, 10.5), ellipse(9, 17, 7, 5), ellipse(23, 17, 7, 5)],
+        overlays: [
+          {
+            shapes: [ellipse(top(11), 8, 3, 2), ellipse(top(20), 6, 3, 2), ellipse(middle(16), 13, 3, 2), ellipse(7, 15, 2.5, 2), ellipse(25, 14, 2.5, 2)],
+            tone: 2,
+          },
+          { shapes: [ellipse(top(10), 6, 2, 1.2), ellipse(top(18), 4.5, 2, 1)], tone: 0 },
+        ],
+      },
+    ]),
+  );
+}
+
+const TREE = splitLarge(treeRows(0));
+const TREE_WIND = splitLarge(treeRows(1));
 
 const SHRUB = overlay(GRASS, shapeRows(16, 16, [{
   tone: 1,
@@ -226,10 +237,10 @@ export default {
     metatile('path', PATH),
     metatile('sand', SAND),
     metatile('flowers', [FLOWERS, shiftRows(FLOWERS, 1)]),
-    metatile('tree_tl', TREE.tl, { solid: true }),
-    metatile('tree_tr', TREE.tr, { solid: true }),
-    metatile('tree_bl', TREE.bl, { solid: true }),
-    metatile('tree_br', TREE.br, { solid: true }),
+    metatile('tree_tl', [TREE.tl, TREE_WIND.tl], { solid: true, wind: true }),
+    metatile('tree_tr', [TREE.tr, TREE_WIND.tr], { solid: true, wind: true }),
+    metatile('tree_bl', [TREE.bl, TREE_WIND.bl], { solid: true, wind: true }),
+    metatile('tree_br', [TREE.br, TREE_WIND.br], { solid: true, wind: true }),
     metatile('shrub', SHRUB, { solid: true, cuttable: true }),
     metatile('boulder', overlay(GRASS, BOULDER), { solid: true, pushable: true }),
     metatile('ledge_down', LEDGE_DOWN, { ledge: 'down' }),

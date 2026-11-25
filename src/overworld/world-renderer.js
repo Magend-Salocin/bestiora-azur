@@ -1,11 +1,12 @@
 // Draws the visible part of the world: tiles (with connected neighbors), objects, actors,
-// tall grass over feet, the "!" emote and the darkness of unlit caves.
+// tall grass over feet, the "!" emote, the ambience (ambience.js) and the darkness of unlit caves.
 import { METATILE, SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
 import { createCanvas } from '../gfx/bitmap.js';
 import { drawMetatile, drawMetatileBottom, drawSprite } from '../gfx/draw.js';
 import { drawText } from '../gfx/font.js';
 import { getColor, getPaletteKey } from '../gfx/palette.js';
 import { animationFrame, pixelPosition } from './actor.js';
+import { drawItemSparkle } from './ambience.js';
 import { locateTile } from './world.js';
 
 /** Characters are drawn 4 px above their tile so they look grounded. */
@@ -13,8 +14,17 @@ export const SPRITE_OFFSET_Y = -4;
 const GRASS_COVER_ROW = 10;
 const DARK_RADIUS = 24;
 const DARK_CELL = 4;
+// The « ! » jumps up by 3 pixels and lands in this time.
+const EMOTE_POP_TIME = 0.25;
+const EMOTE_POP_HEIGHT = 3;
+// The buoy bobs by 1 pixel at rest, 2 steps per second.
+const BUOY_BOB_RATE = 2;
 
-export function drawTiles(ctx, world, camera, animationStep) {
+/** Frame of a metatile: the clock for animated tiles, the still frame for wind tiles. */
+const clockTileStep = (metatile, tx, ty, animationStep) => (metatile?.wind ? 0 : animationStep);
+
+/** `tileStep(metatile, tx, ty, animationStep)` picks each tile's frame (wind, see ambience.js). */
+export function drawTiles(ctx, world, camera, animationStep, tileStep = clockTileStep) {
   const firstX = Math.floor(camera.x / METATILE);
   const firstY = Math.floor(camera.y / METATILE);
   const columns = Math.ceil(SCREEN_WIDTH / METATILE) + 1;
@@ -28,8 +38,12 @@ export function drawTiles(ctx, world, camera, animationStep) {
       const sx = tx * METATILE - camera.x;
       const sy = ty * METATILE - camera.y;
       const located = locateTile(world, tx, ty);
-      if (located) drawMetatile(ctx, located.map.tileset, located.map.tileAt(located.x, located.y), sx, sy, animationStep);
-      else if (map.borderTile) drawMetatile(ctx, map.tileset, map.borderTile, sx, sy, animationStep);
+      if (located) {
+        const step = tileStep(located.map.metatileAt(located.x, located.y), tx, ty, animationStep);
+        drawMetatile(ctx, located.map.tileset, located.map.tileAt(located.x, located.y), sx, sy, step);
+      } else if (map.borderTile) {
+        drawMetatile(ctx, map.tileset, map.borderTile, sx, sy, tileStep(map.resolve(map.borderTile), tx, ty, animationStep));
+      }
     }
   }
 }
@@ -39,10 +53,12 @@ function spriteFrameId(actor, frame) {
   return `${actor.sprite}/${direction}/${frame}`;
 }
 
-function drawActor(ctx, actor, camera) {
+/** `nudge`: { x, y } pixel offset (bump recoil); the buoy bobs while it stays still. */
+function drawActor(ctx, actor, camera, time) {
   const { px, py, lift } = pixelPosition(actor);
-  const x = px - camera.x;
-  const y = py - camera.y + SPRITE_OFFSET_Y;
+  const bob = actor.sprite.endsWith('_bouee') && !actor.movement ? Math.floor(time * BUOY_BOB_RATE) % 2 : 0;
+  const x = px - camera.x + (actor.nudge?.x ?? 0);
+  const y = py - camera.y + SPRITE_OFFSET_Y + (actor.nudge?.y ?? 0) + bob;
   if (lift > 0) {
     // Shadow on the ground during a jump.
     ctx.fillStyle = getColor(2);
@@ -58,19 +74,21 @@ function feetTile(actor) {
   return { x: Math.round(px / METATILE), y: Math.round(py / METATILE) };
 }
 
-function drawGrassOverFeet(ctx, world, actor, camera, animationStep) {
+function drawGrassOverFeet(ctx, world, actor, camera, animationStep, tileStep) {
   if (actor.movement?.jump) return;
   const { x, y } = feetTile(actor);
   const located = locateTile(world, x, y);
-  if (!located || !located.map.metatileAt(located.x, located.y)?.grass) return;
+  const metatile = located?.map.metatileAt(located.x, located.y);
+  if (!metatile?.grass) return;
   drawMetatileBottom(ctx, located.map.tileset, located.map.tileAt(located.x, located.y),
-    x * METATILE - camera.x, y * METATILE - camera.y, GRASS_COVER_ROW, animationStep);
+    x * METATILE - camera.x, y * METATILE - camera.y, GRASS_COVER_ROW, tileStep(metatile, x, y, animationStep));
 }
 
-function drawEmote(ctx, actor, camera) {
+function drawEmote(ctx, actor, camera, age) {
   const { px, py } = pixelPosition(actor);
+  const pop = Math.round(Math.sin(Math.min(1, age / EMOTE_POP_TIME) * Math.PI) * EMOTE_POP_HEIGHT);
   const x = px - camera.x + 3;
-  const y = py - camera.y + SPRITE_OFFSET_Y - 12;
+  const y = py - camera.y + SPRITE_OFFSET_Y - 12 - pop;
   ctx.fillStyle = getColor(3);
   ctx.fillRect(x - 1, y - 1, 12, 12);
   ctx.fillStyle = getColor(0);
@@ -108,22 +126,32 @@ function drawDarkness(ctx, holes) {
 }
 
 /**
- * scene: { world, camera, player, actors, objects, animationStep, emote, dark, lights, shake }
+ * scene: { world, camera, player, actors, objects, animationStep, time, emote, emoteAge, dark,
+ *   lights, shake, ambience, sparkles }
  * `lights`: lit braziers [{ x, y }] (tile coordinates) that open a hole in the darkness.
- * `objects` are { x, y, frame } drawn from the characters atlas (items on the ground).
+ * `objects` are { x, y, frame } drawn from the characters atlas (items on the ground);
+ * `sparkles`: false hides their periodic sparkle (reduced flashes).
  */
 export function renderWorld(ctx, scene) {
-  const { world, player, actors, objects, animationStep, emote, dark, lights = [] } = scene;
+  const {
+    world, player, actors, objects, animationStep, time = 0, emote, emoteAge = 1, dark, lights = [], ambience,
+  } = scene;
   const camera = { x: scene.camera.x + (scene.shake ?? 0), y: scene.camera.y };
+  const tileStep = ambience ? (metatile, tx, ty, step) => ambience.tileStep(metatile, tx, ty, step) : clockTileStep;
 
-  drawTiles(ctx, world, camera, animationStep);
-  for (const object of objects) {
-    drawSprite(ctx, 'characters', object.frame, object.x * METATILE - camera.x, object.y * METATILE - camera.y + SPRITE_OFFSET_Y);
-  }
+  drawTiles(ctx, world, camera, animationStep, tileStep);
+  ambience?.drawGround(ctx, camera, world.map);
+  objects.forEach((object, index) => {
+    const x = object.x * METATILE - camera.x;
+    const y = object.y * METATILE - camera.y + SPRITE_OFFSET_Y;
+    drawSprite(ctx, 'characters', object.frame, x, y);
+    if (scene.sparkles !== false) drawItemSparkle(ctx, x, y, time, index);
+  });
   const visible = [...actors.filter((actor) => actor.visible), player].sort((a, b) => pixelPosition(a).py - pixelPosition(b).py);
-  for (const actor of visible) drawActor(ctx, actor, camera);
-  for (const actor of visible) drawGrassOverFeet(ctx, world, actor, camera, animationStep);
-  if (emote) drawEmote(ctx, emote, camera);
+  for (const actor of visible) drawActor(ctx, actor, camera, time);
+  for (const actor of visible) drawGrassOverFeet(ctx, world, actor, camera, animationStep, tileStep);
+  ambience?.drawAir(ctx, camera);
+  if (emote) drawEmote(ctx, emote, camera, emoteAge);
 
   if (dark) {
     const { px, py } = pixelPosition(player);

@@ -1,5 +1,6 @@
 // Exploration scene: player input, NPCs, trainers, warps, connections, field actions,
 // event scripts and wild encounters. Rendering lives in world-renderer.js.
+import { METATILE, SCREEN_WIDTH } from '../engine/constants.js';
 import { createRng } from '../engine/rng.js';
 import { createCreature } from '../battle/logic/creature.js';
 import { createScheduler } from '../engine/timer.js';
@@ -9,18 +10,24 @@ import { ITEMS_BY_ID } from '../data/items.js';
 import { getMapDefinition } from '../data/maps/index.js';
 import { SCRIPTS } from '../data/scripts.js';
 import { getText } from '../data/texts/index.js';
+import { drawText } from '../gfx/font.js';
 import { TRAINER_CLASSES_BY_ID } from '../data/trainer-classes.js';
 import { TRAINERS_BY_ID } from '../data/trainers.js';
 import {
   addItem, getGameState, hasBadge, hasFlag, hasItem, isPartyAlive, setFlag,
 } from '../state/game-state.js';
+import { getOptions } from '../state/options.js';
+import { drawWindowFrame } from '../ui/window-frame.js';
 import { askYesNo, showDialog } from '../ui/dialog-box.js';
 import {
   RUN_SPEED, WALK_SPEED, advanceMove, createActor, isMoving, pixelPosition, startMove, targetOf,
 } from './actor.js';
+import { Ambience, bannerLines } from './ambience.js';
 import { BattlePlaceholderScene, BattleTransitionScene } from './battle-stub.js';
 import { blocksSight, evaluateMove, evaluateTile, isWalkableLand, trainerSees } from './collision.js';
-import { DIRECTIONS, OPPOSITE, directionTo, step } from './directions.js';
+import {
+  DELTAS, DIRECTIONS, OPPOSITE, directionTo, step,
+} from './directions.js';
 import { encounterKind, rollEncounter } from './encounters.js';
 import { hooks } from './hooks.js';
 import { buildMap } from './map-loader.js';
@@ -42,6 +49,11 @@ const BUMP_COOLDOWN = 0.3;
 const EMOTE_DURATION = 0.8;
 const ANIMATION_RATE = 2;
 const SLIDE_SPEED = 2;
+const BUMP_RECOIL_TIME = 0.1;
+// Place name banner: slides down from the top, stays, slides back up.
+const BANNER_SLIDE = 0.25;
+const BANNER_TIME = 2.5;
+const GLYPH = 8;
 
 export class OverworldScene {
   transparent = false;
@@ -62,8 +74,13 @@ export class OverworldScene {
     this.bumpCooldown = 0;
     this.busy = false;
     this.emote = null;
+    this.emoteTime = 0;
     this.shakeTime = 0;
     this.animationTime = 0;
+    this.bumpTime = -1;
+    this.ambience = new Ambience();
+    this.banner = null;
+    this.bannerName = null;
     this.scheduler = createScheduler();
     this.rng = createRng(Date.now());
     this.actors = [];
@@ -85,6 +102,8 @@ export class OverworldScene {
 
   onMapEntered() {
     if (this.map.flyPoint && !this.state.visitedTowns.includes(this.map.id)) this.state.visitedTowns.push(this.map.id);
+    this.ambience.reset();
+    this.showBanner();
     this.spawnActors();
     this.updatePlayerSprite();
     this.savePosition();
@@ -98,6 +117,14 @@ export class OverworldScene {
     this.sliding = false;
     this.current = null;
     this.onMapEntered();
+  }
+
+  /** Name banner when entering a new outdoor place or dungeon (not houses, not the same place). */
+  showBanner() {
+    const { name, tileset } = this.map;
+    if (!name || tileset === 'indoor' || name === this.bannerName) return;
+    this.bannerName = name;
+    this.banner = { lines: bannerLines(name), age: 0 };
   }
 
   isShown(definition) {
@@ -181,15 +208,48 @@ export class OverworldScene {
     this.bumpCooldown = Math.max(0, this.bumpCooldown - dt);
     this.shakeTime = Math.max(0, this.shakeTime - dt);
     this.scheduler.update(dt);
+    this.updateAmbience(dt);
 
     for (const actor of this.actors) {
       if (advanceMove(actor)) actor.onArrive?.();
     }
-    if (advanceMove(this.player)) this.onPlayerArrived();
+    const jumping = Boolean(this.player.movement?.jump);
+    if (advanceMove(this.player)) {
+      if (jumping) this.ambience.add('dust', this.player.x * METATILE, this.player.y * METATILE, { landing: true });
+      this.onPlayerArrived();
+    }
 
     if (this.busy) return;
     for (const actor of this.actors) updateNpc(actor, this.brains.get(actor), dt, this.rng, (a, d) => this.canStep(a, d));
     this.handlePlayerInput(input);
+  }
+
+  updateAmbience(dt) {
+    if (this.banner) {
+      this.banner.age += dt;
+      if (this.banner.age >= BANNER_TIME) this.banner = null;
+    }
+    const { px, py } = pixelPosition(this.player);
+    this.ambience.update(dt, {
+      map: this.map,
+      camera: computeCamera(this.map, px, py),
+      actors: this.actors,
+      busy: this.busy,
+      reduceFlashes: getOptions().reduceFlashes,
+    });
+  }
+
+  /** Ambience of a player step: grass shaking, running dust, buoy wake. */
+  onStepStarted(direction, speed) {
+    const { player } = this;
+    const here = { x: player.x * METATILE, y: player.y * METATILE };
+    const target = step(player.x, player.y, direction);
+    const tile = this.map.metatileAt(target.x, target.y);
+    if (tile?.grass) {
+      this.ambience.add('grass', target.x * METATILE, target.y * METATILE, { tileset: this.map.tileset, tile: this.map.tileAt(target.x, target.y) });
+    }
+    if (this.surfing) this.ambience.add('wake', here.x, here.y);
+    else if (speed === RUN_SPEED) this.ambience.add('dust', here.x, here.y);
   }
 
   heldDirection(input) {
@@ -243,6 +303,7 @@ export class OverworldScene {
         this.surfing = false;
         this.updatePlayerSprite();
       }
+      this.onStepStarted(direction, speed);
       startMove(player, direction, { speed });
       this.chaining = true;
       return true;
@@ -258,6 +319,7 @@ export class OverworldScene {
     if (this.bumpCooldown === 0) {
       hooks.playSfx('bump');
       this.bumpCooldown = BUMP_COOLDOWN;
+      this.bumpTime = this.animationTime;
     }
     return false;
   }
@@ -294,6 +356,9 @@ export class OverworldScene {
     }
     if (!this.map.inBounds(player.x, player.y)) this.crossConnection();
     this.savePosition();
+    if (this.map.tileAt(player.x, player.y) === 'sand' && !this.surfing) {
+      this.ambience.add('print', player.x * METATILE, player.y * METATILE, { facing: player.facing });
+    }
 
     const warp = (this.map.warps ?? []).find((entry) => entry.x === player.x && entry.y === player.y);
     if (warp) {
@@ -489,6 +554,8 @@ export class OverworldScene {
     this.surfing = true;
     hooks.playSfx('surf');
     this.updatePlayerSprite();
+    const front = step(this.player.x, this.player.y, this.player.facing);
+    this.ambience.add('splash', front.x * METATILE, front.y * METATILE);
     await this.movePlayerScripted(this.player.facing);
   }
 
@@ -499,6 +566,7 @@ export class OverworldScene {
     this.sliding = false;
     this.current = null;
     this.emote = actor;
+    this.emoteTime = this.animationTime;
     hooks.playSfx('exclamation');
     hooks.playMusic(ENCOUNTER_MUSIC[TRAINER_CLASSES_BY_ID[trainer.class]?.musicIntro] ?? ENCOUNTER_MUSIC.trainer);
     await this.scheduler.wait(EMOTE_DURATION);
@@ -735,6 +803,10 @@ export class OverworldScene {
 
   render(ctx) {
     const { px, py } = pixelPosition(this.player);
+    // Bump: the player recoils by 1 pixel, away from the wall.
+    const recoiling = this.animationTime - this.bumpTime < BUMP_RECOIL_TIME;
+    const delta = DELTAS[this.player.facing];
+    this.player.nudge = recoiling ? { x: -delta.dx, y: -delta.dy } : null;
     renderWorld(ctx, {
       world: this.world,
       camera: computeCamera(this.map, px, py),
@@ -742,11 +814,28 @@ export class OverworldScene {
       actors: this.actors,
       objects: this.objects,
       animationStep: Math.floor(this.animationTime * ANIMATION_RATE),
+      time: this.animationTime,
+      ambience: this.ambience,
+      sparkles: !getOptions().reduceFlashes,
       emote: this.emote,
+      emoteAge: this.animationTime - this.emoteTime,
       // `dark: 'always'` rooms stay dark even with the Lanterne (Ombre arena); lit braziers open holes.
       dark: this.map.dark === 'always' || (Boolean(this.map.dark) && this.fieldStatus('flash') !== 'ok'),
       lights: (this.map.lights ?? []).filter((light) => !light.flag || hasFlag(this.state, light.flag)),
       shake: this.shakeTime > 0 ? (Math.floor(this.animationTime * 30) % 2 === 0 ? 2 : -2) : 0,
     });
+    this.drawBanner(ctx);
+  }
+
+  drawBanner(ctx) {
+    if (!this.banner) return;
+    const { lines, age } = this.banner;
+    const width = Math.max(...lines.map((line) => Array.from(line).length)) * GLYPH + 2 * GLYPH;
+    const height = lines.length === 1 ? 3 * GLYPH : 5 * GLYPH;
+    const shown = Math.min(1, age / BANNER_SLIDE, (BANNER_TIME - age) / BANNER_SLIDE);
+    const y = Math.round(-height * (1 - shown) ** 2);
+    const x = Math.floor((SCREEN_WIDTH - width) / 2);
+    drawWindowFrame(ctx, x, y, width, height);
+    lines.forEach((line, index) => drawText(ctx, line, x + GLYPH, y + GLYPH + index * 12));
   }
 }

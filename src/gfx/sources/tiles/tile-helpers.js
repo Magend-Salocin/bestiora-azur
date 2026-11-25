@@ -8,6 +8,7 @@ export const METATILE_SIZE = 16;
 
 export const FLAG_NAMES = [
   'solid', 'grass', 'water', 'ledge', 'cuttable', 'pushable', 'climbable', 'door', 'counter', 'slippery', 'current', 'animated',
+  'wind',
 ];
 
 /** Metatile made of four 8×8 tiles. */
@@ -103,7 +104,8 @@ export function edges(rows, sides, character) {
 /**
  * Metatile definition. `frames` holds 1 frame, or 2+ for animated tiles.
  * Flags: solid, grass, water, ledge ('down'|'left'|'right'), cuttable, pushable,
- * climbable, door, counter, slippery, animated.
+ * climbable, door, counter, slippery, animated, wind (frame 1 is drawn only when the wind
+ * blows on the tile, see src/overworld/ambience.js, never on the clock).
  */
 export function metatile(id, frames, flags = {}) {
   const list = Array.isArray(frames[0]) ? frames : [frames];
