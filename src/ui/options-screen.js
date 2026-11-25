@@ -5,7 +5,7 @@ import { BUTTONS } from '../engine/constants.js';
 import { drawText } from '../gfx/font.js';
 import { PALETTES, getColor, setActivePalette } from '../gfx/palette.js';
 import {
-  BATTLE_STYLES, OPTION_LIMITS, TEXT_SPEED_IDS, TOUCH_MODES, getOptions, normalizeOptions, setOptions,
+  BATTLE_STYLES, BATTLE_UI_STYLES, OPTION_LIMITS, TEXT_SPEED_IDS, TOUCH_MODES, getOptions, normalizeOptions, setOptions,
 } from '../state/options.js';
 import { setTouchControlsMode } from './touch-controls.js';
 import { setTextSpeed } from './dialog-box.js';
@@ -16,17 +16,18 @@ import { drawWindowFrame } from './window-frame.js';
 const TEXT_SPEED_LABELS = { slow: 'LENT', medium: 'MOYEN', fast: 'RAPIDE', instant: 'INSTANT' };
 const BUTTON_LABELS = { up: 'HAUT', down: 'BAS', left: 'GAUCHE', right: 'DROITE', a: 'A', b: 'B', start: 'START', select: 'SELECT' };
 const ROWS = [
-  'textSpeed', 'battleAnimations', 'reduceFlashes', 'battleStyle', 'musicVolume', 'sfxVolume', 'palette',
+  'textSpeed', 'battleAnimations', 'reduceFlashes', 'battleStyle', 'battleUi', 'musicVolume', 'sfxVolume', 'palette',
   'windowScale', 'fullscreen', 'touchControls', 'keys', 'gamepad',
 ];
 const ROW_LABELS = {
-  textSpeed: 'TEXTE', battleAnimations: 'ANIMATIONS', reduceFlashes: 'FLASHS RÉDUITS', battleStyle: 'STYLE',
+  textSpeed: 'TEXTE', battleAnimations: 'ANIMATIONS', reduceFlashes: 'FLASHS RÉDUITS', battleStyle: 'STYLE', battleUi: 'COMBAT',
   musicVolume: 'MUSIQUE', sfxVolume: 'EFFETS', palette: 'PALETTE', windowScale: 'TAILLE', fullscreen: 'PLEIN ÉCRAN',
   touchControls: 'TACTILE', keys: 'TOUCHES', gamepad: 'MANETTE',
 };
 const TOUCH_LABELS = { auto: 'AUTO', on: 'OUI', off: 'NON' };
+const BATTLE_UI_LABELS = { classique: 'CLASSIQUE', moderne: 'MODERNE', dynamique: 'DYNAMIQUE', epuree: 'ÉPURÉE' };
 const FIRST_ROW_Y = 6;
-const ROW_HEIGHT = 11;
+const ROW_HEIGHT = 10;
 
 let targets = { input: null };
 
@@ -104,6 +105,7 @@ export class OptionsScene extends PromiseScene {
     else if (row === 'battleAnimations') o.battleAnimations = !o.battleAnimations;
     else if (row === 'reduceFlashes') o.reduceFlashes = !o.reduceFlashes;
     else if (row === 'battleStyle') o.battleStyle = cycle(BATTLE_STYLES, o.battleStyle, delta);
+    else if (row === 'battleUi') o.battleUi = cycle(BATTLE_UI_STYLES, o.battleUi, delta);
     else if (row === 'musicVolume') o.musicVolume = clampStep(o.musicVolume, OPTION_LIMITS.volume, delta);
     else if (row === 'sfxVolume') o.sfxVolume = clampStep(o.sfxVolume, OPTION_LIMITS.volume, delta);
     else if (row === 'palette') o.palette = cycle(PALETTES.map((palette) => palette.id), o.palette, delta);
@@ -185,6 +187,7 @@ export class OptionsScene extends PromiseScene {
       case 'battleAnimations': return o.battleAnimations ? 'OUI' : 'NON';
       case 'reduceFlashes': return o.reduceFlashes ? 'OUI' : 'NON';
       case 'battleStyle': return o.battleStyle === 'choice' ? 'CHOIX' : 'DÉFINI';
+      case 'battleUi': return BATTLE_UI_LABELS[o.battleUi];
       case 'musicVolume': return String(o.musicVolume);
       case 'sfxVolume': return String(o.sfxVolume);
       case 'palette': return PALETTES.find((palette) => palette.id === o.palette)?.name.toUpperCase() ?? '';

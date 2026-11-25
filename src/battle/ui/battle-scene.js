@@ -32,18 +32,15 @@ import {
 import { itemProblem } from '../logic/items.js';
 import { openBattleBag } from './bag-screen.js';
 import {
-  LAYOUT, createShownCreature, renderBattle, spriteCenter,
+  LAYOUT, battleUiStyle, createShownCreature, renderBattle, spriteCenter,
 } from './battle-hud.js';
+import {
+  MAIN_MENU, drawActionMenu, menuColumns, menuShowsCreatureCard,
+} from './battle-menu.js';
 import { EventPlayer } from './event-player.js';
 
 const TEXT_SPEED_FACTOR = 1.5;
 const AUTO_ADVANCE = 0.6;
-const MAIN_MENU = [
-  { id: 'fight', label: 'ATTAQUE' },
-  { id: 'bag', label: 'SAC' },
-  { id: 'party', label: 'ÉQUIPE' },
-  { id: 'run', label: 'FUITE' },
-];
 const STAT_ROWS = [['hp', 'PV'], ['atk', 'ATT'], ['def', 'DÉF'], ['spa', 'A.SPÉ'], ['spd', 'D.SPÉ'], ['spe', 'VIT']];
 const ITEM_PROBLEMS = { fainted: 'Elle est K.O. !', not_fainted: 'Elle va bien.', default: 'Aucun effet.' };
 
@@ -95,24 +92,19 @@ class MessageBox {
 }
 
 class MainMenu {
-  constructor(index) {
+  constructor(index, shown) {
     this.index = index;
+    this.shown = shown;
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
   update(dt, input) {
-    this.index = moveCursor(this.index, MAIN_MENU.length, input, { columns: 2 });
+    this.index = moveCursor(this.index, MAIN_MENU.length, input, { columns: menuColumns(battleUiStyle()) });
     if (input.justPressed('a')) this.resolve(MAIN_MENU[this.index].id);
   }
 
   render(ctx) {
-    drawWindowFrame(ctx, 0, 96, 160, 48);
-    MAIN_MENU.forEach((entry, index) => {
-      const x = index % 2 === 0 ? 16 : 96;
-      const y = index < 2 ? 108 : 124;
-      if (index === this.index) drawText(ctx, '▶', x - 8, y);
-      drawText(ctx, entry.label, x, y);
-    });
+    drawActionMenu(ctx, battleUiStyle(), this.index, this.shown);
   }
 }
 
@@ -206,6 +198,9 @@ export class BattleScene {
       indicators: [],
       shake: 0,
       hidePlayerHud: false,
+      compactPlayerHud: false,
+      time: 0,
+      idle: false,
     };
     this.tweens = [];
     this.widget = null;
@@ -439,8 +434,12 @@ export class BattleScene {
       return available.forced;
     }
     for (;;) {
-      const menu = new MainMenu(this.menuIndex);
+      const menu = new MainMenu(this.menuIndex, this.shown[0]);
+      this.view.idle = true;
+      this.view.compactPlayerHud = menuShowsCreatureCard(battleUiStyle());
       const choice = await this.runWidget(menu);
+      this.view.idle = false;
+      this.view.compactPlayerHud = false;
       this.menuIndex = menu.index;
       const action = await this.handleMenuChoice(choice, available);
       if (action) return action;
@@ -554,6 +553,7 @@ export class BattleScene {
   // ---- Scene loop -----------------------------------------------------------------------
 
   update(dt, input) {
+    this.view.time += dt;
     for (const tween of [...this.tweens]) {
       tween.elapsed += dt;
       const t = Math.min(1, tween.elapsed / tween.duration);

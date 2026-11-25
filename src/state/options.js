@@ -4,6 +4,8 @@
 export const OPTION_LIMITS = { volume: [0, 10], windowScale: [2, 6] };
 export const TEXT_SPEED_IDS = ['slow', 'medium', 'fast', 'instant'];
 export const BATTLE_STYLES = ['choice', 'set'];
+/** Battle screen layouts, drawn by src/battle/ui/battle-hud.js and battle-menu.js. */
+export const BATTLE_UI_STYLES = ['classique', 'moderne', 'dynamique', 'epuree'];
 /** On-screen buttons: 'auto' shows them on touch screens (phone, tablet). */
 export const TOUCH_MODES = ['auto', 'on', 'off'];
 
@@ -11,6 +13,7 @@ export const DEFAULT_OPTIONS = {
   textSpeed: 'medium',
   battleAnimations: true,
   battleStyle: 'choice', // 'choice': offered to switch when the trainer sends its next creature
+  battleUi: 'classique',
   musicVolume: 8,
   sfxVolume: 8,
   palette: 'classique',
@@ -34,6 +37,7 @@ export function normalizeOptions(raw = {}) {
   if (TEXT_SPEED_IDS.includes(raw.textSpeed)) options.textSpeed = raw.textSpeed;
   if (typeof raw.battleAnimations === 'boolean') options.battleAnimations = raw.battleAnimations;
   if (BATTLE_STYLES.includes(raw.battleStyle)) options.battleStyle = raw.battleStyle;
+  if (BATTLE_UI_STYLES.includes(raw.battleUi)) options.battleUi = raw.battleUi;
   options.musicVolume = clamp(raw.musicVolume, OPTION_LIMITS.volume, DEFAULT_OPTIONS.musicVolume);
   options.sfxVolume = clamp(raw.sfxVolume, OPTION_LIMITS.volume, DEFAULT_OPTIONS.sfxVolume);
   if (typeof raw.palette === 'string') options.palette = raw.palette;

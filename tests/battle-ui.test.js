@@ -8,6 +8,8 @@ import { moveCursor, scrollOffset } from '../src/ui/menu-cursor.js';
 import { NAME_MAX_LENGTH, applyNameCell } from '../src/ui/name-entry.js';
 import { createGameState, addCreature, healParty, markSeen } from '../src/state/game-state.js';
 import { makeCreature } from './helpers/battle.js';
+import { MAIN_MENU, menuColumns } from '../src/battle/ui/battle-menu.js';
+import { BATTLE_UI_STYLES, normalizeOptions } from '../src/state/options.js';
 
 function pressed(...buttons) {
   return { repeat: (button) => buttons.includes(button), justPressed: () => false, isDown: () => false };
@@ -85,4 +87,20 @@ test('battle texts exist for every status, prevention and capture outcome', () =
   for (const reason of ['asleep', 'frozen', 'paralyzed', 'flinch', 'recharging']) assert.ok(BATTLE_TEXTS[`prevented_${reason}`]);
   for (const shakes of [0, 1, 2, 3]) assert.ok(BATTLE_TEXTS[`capture_fail_${shakes}`]);
   for (const reason of ['wake', 'thaw', 'item', 'rest']) assert.ok(BATTLE_TEXTS[`cured_${reason}`]);
+});
+
+test('battle interface option: four styles, unknown values fall back to classique', () => {
+  assert.deepEqual(BATTLE_UI_STYLES, ['classique', 'moderne', 'dynamique', 'epuree']);
+  assert.equal(normalizeOptions({}).battleUi, 'classique');
+  assert.equal(normalizeOptions({ battleUi: 'moderne' }).battleUi, 'moderne');
+  assert.equal(normalizeOptions({ battleUi: 'futuriste' }).battleUi, 'classique');
+});
+
+test('battle action menu: a 2 × 2 grid, a single column in the classique and dynamique styles', () => {
+  assert.deepEqual(MAIN_MENU.map((entry) => entry.id), ['fight', 'bag', 'party', 'run']);
+  assert.equal(menuColumns('classique'), 1);
+  assert.equal(menuColumns('moderne'), 2);
+  assert.equal(menuColumns('epuree'), 2);
+  assert.equal(menuColumns('dynamique'), 1);
+  assert.equal(moveCursor(0, 4, pressed('down'), { columns: menuColumns('dynamique') }), 1);
 });
