@@ -26,7 +26,8 @@
     "build-web": "node tools/build-web.js",
     "planche": "node tools/creature-sheet.js",
     "creature-design": "node tools/export-creature-design.js",
-    "trainer-design": "node tools/export-trainer-design.js"
+    "trainer-design": "node tools/export-trainer-design.js",
+    "trainer-import": "node tools/import-portrait.js"
   },
   "repository": {
     "type": "git",

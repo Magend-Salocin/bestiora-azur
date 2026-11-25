@@ -1,266 +1,266 @@
 {
   "frames": {
     "back/joueur": {
-      "x": 0,
-      "y": 0,
+      "x": 130,
+      "y": 65,
       "w": 48,
       "h": 48
     },
     "back/joueuse": {
-      "x": 49,
-      "y": 0,
+      "x": 179,
+      "y": 65,
       "w": 48,
       "h": 48
     },
     "portrait/aubin": {
-      "x": 98,
-      "y": 0,
+      "x": 228,
+      "y": 65,
       "w": 48,
       "h": 48
     },
     "portrait/brune": {
-      "x": 147,
-      "y": 0,
+      "x": 277,
+      "y": 65,
       "w": 48,
       "h": 48
     },
     "portrait/campeur": {
-      "x": 196,
+      "x": 0,
       "y": 0,
-      "w": 48,
-      "h": 48
+      "w": 64,
+      "h": 64
     },
     "portrait/campeuse": {
-      "x": 245,
+      "x": 65,
       "y": 0,
-      "w": 48,
-      "h": 48
+      "w": 64,
+      "h": 64
     },
     "portrait/chercheuse": {
       "x": 0,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/corvin": {
       "x": 49,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/dame": {
       "x": 98,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/danseuse": {
       "x": 147,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/dresseur": {
       "x": 196,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/dresseuse": {
       "x": 245,
-      "y": 49,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/ecolier": {
-      "x": 0,
-      "y": 98,
-      "w": 48,
-      "h": 48
+      "x": 130,
+      "y": 0,
+      "w": 64,
+      "h": 64
     },
     "portrait/fillette": {
-      "x": 49,
-      "y": 98,
-      "w": 48,
-      "h": 48
+      "x": 195,
+      "y": 0,
+      "w": 64,
+      "h": 64
     },
     "portrait/gamin": {
-      "x": 98,
-      "y": 98,
-      "w": 48,
-      "h": 48
+      "x": 260,
+      "y": 0,
+      "w": 64,
+      "h": 64
     },
     "portrait/garance": {
-      "x": 147,
-      "y": 98,
+      "x": 294,
+      "y": 130,
       "w": 48,
       "h": 48
     },
     "portrait/gardien_1": {
-      "x": 196,
-      "y": 98,
+      "x": 0,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/gardien_2": {
-      "x": 245,
-      "y": 98,
+      "x": 49,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/gardien_3": {
-      "x": 0,
-      "y": 147,
+      "x": 98,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/gardien_4": {
-      "x": 49,
-      "y": 147,
+      "x": 147,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/gentleman": {
-      "x": 98,
-      "y": 147,
+      "x": 196,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/goemonier": {
-      "x": 147,
-      "y": 147,
+      "x": 245,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/lazare": {
-      "x": 196,
-      "y": 147,
+      "x": 294,
+      "y": 179,
       "w": 48,
       "h": 48
     },
     "portrait/mael": {
-      "x": 245,
-      "y": 147,
+      "x": 0,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/marin": {
-      "x": 0,
-      "y": 196,
+      "x": 49,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/montagnard": {
-      "x": 49,
-      "y": 196,
+      "x": 98,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/motard": {
-      "x": 98,
-      "y": 196,
+      "x": 147,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/mystique": {
-      "x": 147,
-      "y": 196,
+      "x": 196,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/nageur": {
-      "x": 196,
-      "y": 196,
+      "x": 245,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/nageuse": {
-      "x": 245,
-      "y": 196,
+      "x": 294,
+      "y": 228,
       "w": 48,
       "h": 48
     },
     "portrait/oswin": {
       "x": 0,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/ouvrier": {
       "x": 49,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/pecheur": {
       "x": 98,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/professeure": {
       "x": 147,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/randonneur": {
       "x": 196,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/randonneuse": {
       "x": 245,
-      "y": 245,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/rival": {
-      "x": 0,
-      "y": 294,
+      "x": 294,
+      "y": 277,
       "w": 48,
       "h": 48
     },
     "portrait/sbire_opale": {
-      "x": 49,
-      "y": 294,
+      "x": 0,
+      "y": 326,
       "w": 48,
       "h": 48
     },
     "portrait/sbire_opale_f": {
-      "x": 98,
-      "y": 294,
+      "x": 49,
+      "y": 326,
       "w": 48,
       "h": 48
     },
     "portrait/scientifique": {
-      "x": 147,
-      "y": 294,
+      "x": 98,
+      "y": 326,
       "w": 48,
       "h": 48
     },
     "portrait/selene": {
-      "x": 196,
-      "y": 294,
+      "x": 147,
+      "y": 326,
       "w": 48,
       "h": 48
     },
     "portrait/sonneur": {
-      "x": 245,
-      "y": 294,
-      "w": 48,
-      "h": 48
+      "x": 0,
+      "y": 65,
+      "w": 64,
+      "h": 64
     },
     "portrait/sonneuse": {
-      "x": 0,
-      "y": 343,
-      "w": 48,
-      "h": 48
+      "x": 65,
+      "y": 65,
+      "w": 64,
+      "h": 64
     },
     "portrait/ysolde": {
-      "x": 49,
-      "y": 343,
+      "x": 196,
+      "y": 326,
       "w": 48,
       "h": 48
     }
@@ -269,8 +269,8 @@
     "version": 1,
     "image": "trainers.png",
     "size": {
-      "w": 336,
-      "h": 391
+      "w": 352,
+      "h": 374
     },
     "levels": [
       "#ffffff",
@@ -278,6 +278,6 @@
       "#555555",
       "#000000"
     ],
-    "pngHash": "93d7d5ea997b34a5824af1fc60a27dddecc01b592f44016d2d77e650b5c5aee8"
+    "pngHash": "33f110185991878003afd8ec628bc246dc572627a80b3e97233340342462c355"
   }
 }

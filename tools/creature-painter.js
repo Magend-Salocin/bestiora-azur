@@ -29,7 +29,9 @@ export const mirrorX = (test, axis = 24) => union(test, (x, y) => test(2 * axis 
 
 /**
  * layers: { shape, tone, outline = true, shade = null (darker tone on bottom/right rim),
- *           light = null ({ tone, shape } painted inside the layer), pixels = [[x, y, tone]] }
+ *           light = null ({ tone, shape } painted inside the layer), pixels = [[x, y, tone]],
+ *           outlineTone = 3, litOutline = outlineTone (tone of the outline on the top and left
+ *           sides, facing the light: a softer selective outline) }
  */
 export function paint(layers) {
   const grid = new Int8Array(W * H).fill(-1);
@@ -40,7 +42,10 @@ export function paint(layers) {
       for (let y = 0; y < H; y += 1) {
         for (let x = 0; x < W; x += 1) {
           if (m[y * W + x]) continue;
-          if ([[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => inside(m, x + dx, y + dy))) grid[y * W + x] = 3;
+          const shadowSide = inside(m, x - 1, y) || inside(m, x, y - 1);
+          const litSide = inside(m, x + 1, y) || inside(m, x, y + 1);
+          if (shadowSide) grid[y * W + x] = layer.outlineTone ?? 3;
+          else if (litSide) grid[y * W + x] = layer.litOutline ?? layer.outlineTone ?? 3;
         }
       }
     }

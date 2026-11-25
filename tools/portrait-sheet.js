@@ -15,12 +15,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUTPUT_DIR = path.join(ROOT, 'docs', 'Pnj', 'rendus');
 const SCALE = 3;
 const GAP = 6;
-const SIZE = 48;
 const hex = (color) => [1, 3, 5].map((index) => parseInt(color.slice(index, index + 2), 16));
 
 /** frames: [[label, rows]]. Returns the PNG buffer. */
 export function buildPortraitSheet(frames, palettes = PALETTES) {
-  const cell = SIZE * SCALE + GAP;
+  const size = Math.max(...frames.map(([, rows]) => rows.length));
+  const cell = size * SCALE + GAP;
   const width = palettes.length * cell + GAP;
   const height = frames.length * cell + GAP;
   const png = new PNG({ width, height });
@@ -28,8 +28,9 @@ export function buildPortraitSheet(frames, palettes = PALETTES) {
   for (let i = 0; i < width * height; i += 1) png.data.set([...separator, 255], i * 4);
   frames.forEach(([, rows], row) => palettes.forEach((palette, column) => {
     const colors = palette.colors.map(hex);
-    const ox = GAP + column * cell;
-    const oy = GAP + row * cell;
+    // Smaller portraits sit at the bottom right of the cell, as in battle.
+    const ox = GAP + column * cell + (size - rows.length) * SCALE;
+    const oy = GAP + row * cell + (size - rows.length) * SCALE;
     rows.forEach((line, y) => [...line].forEach((character, x) => {
       const color = colors[character === '.' ? 0 : Number(character)];
       for (let dy = 0; dy < SCALE; dy += 1) {

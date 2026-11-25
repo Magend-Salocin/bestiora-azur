@@ -8,8 +8,9 @@ Ancrage des personnages humains et des attaques dans le folklore des régions fr
 | [PNJ_V2.md](PNJ_V2.md) | Référentiel du prompt 1 : régions des zones, fiches et glossaires, classes de dresseurs, personnages principaux. Fait foi. |
 | [prompt-1-villes-et-pnj.md](prompt-1-villes-et-pnj.md) | Identité régionale des zones, réécriture des PNJ, des dresseurs et des dialogues. Crée `PNJ_V2.md`. |
 | [prompt-2-portraits.md](prompt-2-portraits.md) | Portraits de combat dessinés à la main, à partir des tenues du prompt 1. |
+| [references-portraits.md](references-portraits.md) | Prompts des images de référence des portraits (prompt 2, v3), une par personnage. |
 | [prompt-3-attaques.md](prompt-3-attaques.md) | Noms et descriptions des 166 attaques. Indépendant des deux autres. Crée `docs/attaques/ATTAQUES_V2.md`. |
 
 Ordre conseillé : 1, puis 2. Le 3 peut se faire à tout moment.
 
-État : prompt 1 terminé (lots 0 à 8). Prompt 2 en cours (lots 0 et 1 faits). Prompt 3 à faire.
+État : prompt 1 terminé (lots 0 à 8). Prompt 2 en cours (lots 0 et 1 faits, lot 1 en v3 64 × 64). Prompt 3 à faire.

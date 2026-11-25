@@ -557,6 +557,8 @@ export class BattleScene {
     if (outcome === 'win' || outcome === 'caught') hooks.playMusic(VICTORY_MUSIC[this.battle.kind]);
     if (outcome === 'win' && this.battle.kind === 'trainer') {
       const portrait = this.view.portraits.trainer;
+      // The battle is over: the HUD gives way to the (up to 64 px) portrait sliding back in.
+      this.view.hidePlayerHud = true;
       portrait.visible = true;
       portrait.dx = 80;
       await this.tween(0.4, (t) => { portrait.dx = Math.round(80 * (1 - t)); });

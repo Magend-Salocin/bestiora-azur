@@ -14,17 +14,17 @@ Remplacer les portraits de combat assemblés par des portraits dessinés à la m
 
 | Sujet | Décision |
 |---|---|
-| Méthode | Un module de dessin par portrait, sur le modèle des bestioles : `tools/trainer-designs/<id>.js` dessiné avec les formes de `tools/creature-painter.js`, exporté en source de sprite. Le générateur de pièces est retiré à la fin, comme celui des bestioles au lot 12. |
-| Charte | Celle des bestioles (section « Charte graphique » de `BESTIAIRE_V2.md`) : 48 × 48, 4 teintes, contour d'encre d'un pixel, lumière en haut à gauche, visage lisible. |
+| Méthode | Depuis la v3 (2026-11-25) : une image de référence par portrait ([references-portraits.md](references-portraits.md)), convertie par `npm run trainer-import` en base modifiable `tools/trainer-designs/<id>.js`, retouchée à la main si besoin, puis exportée. Les pilotes du lot 0, dessinés aux formes de `tools/creature-painter.js`, seront refaits ainsi. Le générateur de pièces est retiré à la fin. |
+| Charte | 64 × 64 et 4 teintes (48 × 48 accepté pendant la transition), lumière en haut à gauche, visage lisible. Les 4 teintes d'une planche de références sont communes à tous ses portraits. |
 | Cadrage | Buste, de la tête à la taille, avec les mains quand elles tiennent l'outil du métier (filet, lanterne, houlette, marteau). |
 | Variété | Formes de tête, âges, carrures et postures différents d'une classe à l'autre. Asymétrie autorisée (tête penchée, épaule relevée). Les plis des vêtements et les textures des cheveux sont dessinés. |
 | Identifiants | Les cadres d'atlas `portrait/<id>` et `back/<id>` gardent leur nom : `trainer-classes.js` et les dresseurs n'ont pas à changer. |
 
 ## Production d'un portrait
 
-1. Relire la fiche de la tenue dans `PNJ_V2.md` : métier, région, couleurs, accessoire signature.
-2. Dessiner le module `tools/trainer-designs/<id>.js`.
-3. L'exporter : étendre `npm run creature-design` aux portraits, ou ajouter un script frère. Le choix se fait au lot 0.
+1. Générer l'image de référence avec le prompt du portrait ([references-portraits.md](references-portraits.md)) et la déposer dans `docs/Pnj/references/`.
+2. `npm run trainer-import -- docs/Pnj/references/<image> --id <id> [--panel i/n]` : écrit `tools/trainer-designs/<id>.js` (`--force` pour écraser une base existante, retouches comprises).
+3. Retoucher les lignes du module si besoin (pixels isolés, yeux, mains), puis `npm run trainer-design -- tools/trainer-designs/<id>.js` et ajouter le portrait à `HAND_DRAWN_PORTRAITS` à sa première exportation.
 4. `npm run atlas`, `npm run validate`, `npm test`.
 5. Ajouter le portrait à une planche `docs/Pnj/rendus/planche-portraits-<lot>.png`.
 6. Prendre des captures en combat : apparition du dresseur, et `trainer_defeated` à la fin du combat.
@@ -87,21 +87,29 @@ Décision : chaque classe régionale du prompt 1 reçoit son propre portrait, ai
 | 5 | Sbires, Corvin, rivale, Pr Morvan | Lieutenant |
 | 6 | Champions et Gardiens | Brune faite au lot 0 |
 
-## Lot 1 : classes jeunes et génériques (fait)
+## Lot 1 : classes jeunes et génériques (fait, v3)
 
-Planche : [rendus/planche-portraits-1.png](rendus/planche-portraits-1.png). Les classes génériques traversent plusieurs régions : leurs tenues restent rurales et sans marqueur régional fort.
+Planche : [rendus/planche-portraits-1.png](rendus/planche-portraits-1.png). Référence : [references/lot-1.png](references/lot-1.png), une bande de 7 portraits.
+
+Historique : une v1 dessinée aux formes (têtes trop grosses, aspect jouet), puis des prototypes v2 dessinés au pixel (Gamin, Campeur) abandonnés au profit de la v3, convertie depuis la référence.
 
 | Portrait | Silhouette et accessoire signature |
 |---|---|
-| Gamin | Casquette de travers, taches de rousseur, sourire édenté, bretelles, lance-pierre levé. |
-| Fillette | Nattes à rubans écartées, frange, robe sombre à col Claudine, pâquerettes. |
-| Écolier | Raie sur le côté et épi, blouse grise boutonnée, bandoulière du cartable, ardoise « 2+2= ». |
-| Campeur | Bob, foulard noué, sac à dos et couverture roulée sur une épaule, bâton de marche. |
-| Campeuse | Bandeau, queue de cheval de côté, gilet à poches, lanterne tempête. |
-| Sonneur | Chapeau rond à boucle et rubans de velours, gilet brodé, bombarde jouée les yeux fermés. Nouveau cadre `portrait/sonneur`. |
-| Sonneuse | Petite coiffe de dentelle, gilet brodé, biniou : poche sous le bras, bourdon sur l'épaule. Nouveau cadre `portrait/sonneuse`. |
+| Gamin | Casquette, bretelles, lance-pierre levé. |
+| Fillette | Nattes à rubans, col Claudine, pâquerettes. |
+| Écolier | Épi, cravate, ardoise « 2+2= ». |
+| Campeur | Bob, foulard, sac et couverture roulée, bâton. |
+| Campeuse | Bandeau, queue de cheval, gilet à poches, lanterne. |
+| Sonneur | Chapeau rond à boucle et rubans, bombarde jouée les yeux fermés. Cadre `portrait/sonneur`. |
+| Sonneuse | Coiffe de dentelle, biniou sur l'épaule. Cadre `portrait/sonneuse`. |
 
-Les traits de visage communs (yeux 2 × 3, lignes) sont dans `tools/trainer-designs/face.js`.
+Conversion (`tools/import-portrait.js`) :
+- découpe des panneaux d'une bande sur ses traits de séparation, carré centré ;
+- réduction par moyenne, fond rendu transparent seulement s'il touche le bord (une joue claire reste opaque) ;
+- 4 teintes par regroupement des luminosités de toute la bande, pixels isolés retirés ;
+- pixels clairs du bord de silhouette passés en teinte 1 (côté lumière) ou 2 (côté ombre), sinon ils se fondent dans le fond du combat.
+
+Combat : un portrait de 64 px garde le bord droit de l'emplacement adverse et le haut de l'écran ; une vue de dos de 64 px garde le bas de l'emplacement du joueur (`portraitPosition` dans `battle-hud.js`). À la défaite du dresseur, le cadre de PV du joueur s'efface : le combat est fini, et le portrait le recouvrirait.
 
 ## Contrôles
 

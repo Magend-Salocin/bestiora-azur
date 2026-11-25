@@ -3,6 +3,7 @@
 // The battleUi option (classique, moderne, dynamique, epuree) changes the info boxes and the
 // scenery; the action menu of each style is drawn by battle-menu.js.
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../engine/constants.js';
+import { getAtlas } from '../../gfx/atlas.js';
 import { drawSprite } from '../../gfx/draw.js';
 import { GLYPH_HP, drawText } from '../../gfx/font.js';
 import { getColor } from '../../gfx/palette.js';
@@ -342,6 +343,21 @@ function drawPartyIndicator(ctx, indicator) {
 }
 
 /**
+ * Battle portrait (48 or 64 px). A 64 px trainer keeps the right edge of the enemy spot and the
+ * top of the screen; a 64 px player back keeps the bottom of the player spot, inside the screen.
+ */
+export function portraitPosition(size, side) {
+  const spot = side === 0 ? LAYOUT.playerSprite : LAYOUT.enemySprite;
+  if (side === 1) return { x: spot.x + 48 - size, y: Math.max(0, spot.y + 48 - size) };
+  return { x: Math.max(0, spot.x + 24 - size / 2), y: spot.y + 48 - size };
+}
+
+function drawPortrait(ctx, portrait, side) {
+  const { x, y } = portraitPosition(getAtlas('trainers').frames[portrait.frame].w, side);
+  drawSprite(ctx, 'trainers', portrait.frame, x + portrait.dx, y);
+}
+
+/**
  * view: { shown: [player, enemy], portraits: { player, trainer }, capsule, effect, indicators, shake,
  *   time (seconds, drives the idle motion), idle (true while the player chooses an action or a move),
  *   dust ({ side, progress } during a K.O.) }
@@ -370,8 +386,8 @@ export function renderBattle(ctx, view) {
   }
 
   const { player: playerPortrait, trainer: trainerPortrait } = view.portraits;
-  if (trainerPortrait.visible) drawSprite(ctx, 'trainers', trainerPortrait.frame, LAYOUT.enemySprite.x + trainerPortrait.dx, LAYOUT.enemySprite.y);
-  if (playerPortrait.visible) drawSprite(ctx, 'trainers', playerPortrait.frame, LAYOUT.playerSprite.x + playerPortrait.dx, LAYOUT.playerSprite.y);
+  if (trainerPortrait.visible) drawPortrait(ctx, trainerPortrait, 1);
+  if (playerPortrait.visible) drawPortrait(ctx, playerPortrait, 0);
   drawCreatureSprite(ctx, enemy, 1, enemyBob);
   drawCreatureSprite(ctx, player, 0, playerBob);
   drawCreatureStatus(ctx, enemy, 1, enemyBob, time);

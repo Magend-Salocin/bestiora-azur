@@ -557,3 +557,22 @@ Reste
 
 Problèmes connus
 - Aucun connu.
+
+### 2026-11-25 : PNJ, prompt 2, lot 1 v3 (portraits 64 × 64 depuis des références)
+
+Fait
+- Nouvelle méthode : images de référence générées (prompts dans `docs/Pnj/references-portraits.md`), converties par `npm run trainer-import` (`tools/import-portrait.js`) en base modifiable, puis exportées. Référence du lot 1 : `docs/Pnj/references/lot-1.png`.
+- Les 7 portraits du lot 1 refaits en 64 × 64 à partir de cette référence ; v1 et prototypes v2 abandonnés.
+- Portraits de 48 ou 64 px acceptés par l'export, la planche, le test et le combat (`portraitPosition` dans `battle-hud.js`). Le cadre de PV du joueur s'efface pendant la réplique de défaite du dresseur.
+- Peintre : contour sélectif optionnel (`litOutline`, `outlineTone`), sans effet sur les sprites existants. `tools/trainer-designs/face.js` retiré (plus utilisé).
+- Tests : `tests/import-portrait.test.js` (255 tests).
+
+Vérifié
+- `npm run validate`, `npm test`, planche du lot 1 dans les 6 palettes, captures d'apparition et de défaite des 7 portraits.
+
+Reste
+- Références des lots 2 à 7 à générer ; pilotes Goémonier et Brune (48 px) à refaire en v3.
+
+Décisions
+- 64 × 64, toujours 4 teintes par palette : plus de teintes casserait les 6 palettes.
+- Les teintes d'une bande de références sont communes à ses portraits, pour une série homogène.

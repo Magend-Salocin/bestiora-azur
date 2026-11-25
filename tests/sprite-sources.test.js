@@ -82,9 +82,12 @@ test('characters have 3 directions × 2 frames of 16×16', () => {
   assert.ok(frames.capsule && frames.rocher, 'overworld objects missing');
 });
 
-test('trainer portraits and player backs are 48×48', () => {
+test('trainer portraits and player backs are square, 48 or 64 px', () => {
   const frames = buildTrainerFrames();
-  assertValidFrames(frames, { width: 48, height: 48 });
+  for (const [id, rows] of Object.entries(frames)) {
+    assert.ok([48, 64].includes(rows.length), `${id}: ${rows.length} rows`);
+    assertValidFrames({ [id]: rows }, { width: rows.length, height: rows.length });
+  }
   assert.ok(frames['back/joueur'] && frames['back/joueuse']);
   for (const id of ['rival', 'professeure', 'corvin', 'garance', 'oswin', 'gardien_4', 'sbire_opale']) {
     assert.ok(frames[`portrait/${id}`], `portrait/${id} missing`);
