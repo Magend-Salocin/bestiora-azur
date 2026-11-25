@@ -433,7 +433,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 0 | Ce référentiel | Validé |
 | 1 | Classes : 17 classes ajoutées (14 régionales et 3 féminins), 46 dresseurs reclassés, anomalies de la section 4.3 corrigées, récompenses inchangées | Fait |
 | 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | Fait |
-| 3 | Zones bois et port | À faire |
+| 3 | Zones bois et port | Fait |
 | 4 | Zones cendrelune (avec la Centrale) et bise | À faire |
 | 5 | Zones marais et ombrecourt | À faire |
 | 6 | Zones mer, forge et givremont | À faire |
@@ -546,6 +546,58 @@ Zone debut, 102 textes de `src/data/texts/debut.js`, 6 prénoms de dresseurs dan
 ### Contrôles
 
 `npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (voisine, conteur, Garance).
+
+## 8 quater. Lot 3 : contenu (fait)
+
+Zones bois et port : 97 textes de `bois.js`, 166 de `port.js`, 46 prénoms de dresseurs. Les clés, scripts et drapeaux ne changent pas. Trois régions sont concernées : la Bretagne intérieure (gallo), la Bretagne littorale (breton) et le Nord-Est industriel (Vireval).
+
+### Principes
+
+- **Bretagne intérieure** (Routes 2 et 3, Bois Murmurant, Grotte des Cascades) :
+  - forêt de contes, sabotiers, sonneurs, veillées, lait ribot ;
+  - les anciens parlent gallo, sans un mot de breton ;
+  - clin d'œil : Perceval, le randonneur naïf de la maison de repos.
+- **Bretagne littorale** (Port-Ondine, bateau-musée, Routes 4 et 5, pension) :
+  - phare, goémon, fest-noz, ville d'Ys ;
+  - les anciens glissent des mots bretons, les autres un « Kenavo » ou un « Demat » ;
+  - clin d'œil : Tristan, l'apprenti aux voiles blanche et noire ;
+  - Maël, goémonier, mène l'arène Eau.
+- **Vireval et usine Opale** :
+  - mine, cheminots, estaminet, drache ;
+  - les anciens parlent ch'ti (« biloute »), l'usine a des touches lorraines (« Hopla ! ») ;
+  - clin d'œil : le professeur que les enfants surnomment « le Père Fouettard » ;
+  - Sélène est ingénieure des cités ouvrières.
+  - Le Syndicat Opale y est né : les habitants s'en souviennent.
+- On n'emploie que les mots marqués ✓ dans les glossaires. Les mots « à vérifier » (bonjou, ribin) attendent une confirmation et ne sont pas utilisés.
+- Textes de l'intrigue (rivale 2, Syndicat au Bois, usine, Lanterne) et de tutoriel (pension, échanges, Machette) : même contenu, voix régionale.
+
+### Prénoms
+
+| Lieu | Changements |
+|---|---|
+| Route 2 | Bastien → Loïc, Lison → Maïwenn, Hugo → Ronan, Inès → Gwenola, Timothée → Tanguy |
+| Bois Murmurant | Jules → Yannick, Rose → Soizic, Margot → Katell, Basile → Erwan, Solène → Enora, Capucine → Rozenn (sbires Brice et Odile inchangés) |
+| Route 3 | Anatole → Goulven, Marcel → Jakez, Gilles → Gwénolé, Armand → Hervé, Alix → Aziliz, Noé → Malo |
+| Grotte des Cascades | Yves (inchangé), Gaston → Riwal, Léonie → Gaïd, Firmin → Tugdual, Auguste → Paol, Bérénice → Bleuenn, Lucien → Herlé |
+| Port-Ondine, bateau-musée, arène Eau | Gaston → Youenn, Yves → Job, Hugo → Glenn, Théo → Kilian, René → Fañch |
+| Route 4 | Bastien → Iwan, Clara → Klervi, Marcel → Mikael, Alain (inchangé), Inès → Gwenn, Julie → Maëlys, Gilles → Pêr |
+| Route 5 | Noé → Brendan, Maya → Anaëlle, Paul → Pol, Éva → Azenor, Lucas → Eliaz, Kévin (inchangé), Hippolyte → Armel |
+| Vireval, usine Opale | Adèle → Thérèse, Rémi → Hubert, Gaspard → Joseph, Léa → Marthe (Ohmer, Brisac, Sélène et les sbires inchangés) |
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Hôtesse, maison de repos (Route 3) | « Entre donc, mon gars. Ici, on se repose comme à la veillée : un bol de lait ribot et une histoire de la forêt. » |
+| Randonneur au repos (Perceval) | « Je viens de loin chercher un vase qui brille. On dit qu'il dort dans ce bois. Tu l'as vu, toi ? » |
+| Gardien du phare | « Demat ! Mon phare veille sur le port depuis deux siècles. Dalc'h mat, qu'on se dit les nuits de brume : tiens bon. » |
+| Apprenti marin (Tristan) | « Voile blanche si tout va bien, voile noire sinon. Pour l'instant, c'est toujours la blanche ! » |
+| Contremaître (Vireval) | « Eh, biloute ! Avec cette drache, l'usine tourne à vide. Le Syndicat avale tout le courant. » |
+| Professeur (Vireval) | « Les gamins m'appellent le Père Fouettard. Je ne fouette que les mauvaises réponses. Hopla, au travail ! » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (phare, Perceval, contremaître).
 
 ## 9. Points ouverts
 
