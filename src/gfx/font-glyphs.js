@@ -136,6 +136,7 @@ const COMPOSITES = {
   'î': ['ı', ACCENTS.circumflex],
   'ï': ['ı', ACCENTS.diaeresis],
   'ô': ['o', ACCENTS.circumflex],
+  'ò': ['o', ACCENTS.grave], // Corsican and Occitan (« Aiò ! »)
   'ù': ['u', ACCENTS.grave],
   'û': ['u', ACCENTS.circumflex],
   'ç': ['c', CEDILLA],

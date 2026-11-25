@@ -30,7 +30,7 @@ export const CREDITS = [
   'Ysolde, Vent',
   'Lazare, Ombre',
   'Brune, Feu',
-  'Oswin, Arcane',
+  'Anselme, Arcane',
   '',
   '',
   'Gardiens de la Ligue',

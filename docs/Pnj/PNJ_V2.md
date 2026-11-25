@@ -436,7 +436,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 3 | Zones bois et port | Fait |
 | 4 | Zones cendrelune (avec la Centrale) et bise | Fait |
 | 5 | Zones marais et ombrecourt | Fait |
-| 6 | Zones mer, forge et givremont | À faire |
+| 6 | Zones mer, forge et givremont | Fait |
 | 7 | Ligue, post-jeu, réactions, textes communs | À faire |
 | 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | À faire |
 
@@ -700,6 +700,68 @@ Les clés, scripts et drapeaux ne changent pas. Deux régions sont concernées :
 ### Contrôles
 
 `npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (fillette au capuchon rouge, noctambule, gamin).
+
+## 8 septies. Lot 6 : contenu (fait)
+
+Zones mer, forge et givremont :
+- textes : 76 de `mer.js`, 85 de `forge.js`, 45 de `givremont.js` ;
+- 33 prénoms de dresseurs ;
+- le nom affiché d'Anselme (ex-Oswin).
+
+Les clés, scripts et drapeaux ne changent pas. Trois régions sont concernées : la Corse, l'Occitanie et l'Auvergne-Rhône-Alpes.
+
+### Principes
+
+- **Corse** (Routes 9 et 10, Ilots, Bibliothèque Engloutie) :
+  - îles, maquis, corailleurs, tours génoises, chants polyphoniques ;
+  - les anciens glissent des mots corses (« Bonghjornu », « Pace e salute », « avà », « Aiò ! »).
+  - Clin d'œil : l'hôtesse de la maison de repos est une mazzera qui « rêve la mer », montrée avec douceur.
+- **Occitanie** (Forge-Ardente, Cœur de la Forge) :
+  - forges catalanes, orpailleurs, transhumance, brèche de Roland ;
+  - les anciens parlent avec les tournures du Midi (« Adieu », « Boudu », « pitchoun », « le cagnard »).
+  - Clin d'œil : Roland, le vieux forgeron.
+  - Brune est forgeronne de forge catalane.
+- **Auvergne-Rhône-Alpes** (Givremont, téléphérique) :
+  - cristalliers, alpages, veillées d'hiver, la vogue, Barbegazi et Dahu racontés ;
+  - les anciens parlent savoyard et lyonnais (« Adieu », « y », « gone »).
+  - Clin d'œil : Gargantua, le vieil homme de la maison 1.
+  - Anselme est cristallier.
+- On n'emploie que les mots marqués ✓. « Missiavu » et « farga » attendent une confirmation.
+- Les textes de l'intrigue gardent leur contenu, avec une voix régionale. Ils concernent Mitrêve, la Pierre Braise, Corvin au Cœur de la Forge, la dissolution du Syndicat et Draguignan.
+
+### Corrections
+
+- `brune` est de classe `champion` : elle s'affiche « Champion Brune ». Elle passe en `championne`, avec la même récompense et la même musique.
+- `oswin` s'affiche désormais « Anselme » partout : son combat d'arène, sa revanche d'après-Ligue (`oswin_revanche`, textes de `postjeu.js`) et le générique (`credits.js`). L'identifiant ne change pas. La documentation (`WORLD_MAP.md`) suivra au lot 8.
+
+### Prénoms
+
+| Lieu | Changements |
+|---|---|
+| Route 9 | Gaspard → Ghjuvanni, Maëlle → Ghjulia, Octave → Petru, Léopold → Orsu, Pomme → Saveria, Titouan → Santu, Gontran → Pasquale |
+| Route 10 | Ysaline → Lucia, Ptolémée → Lisandru, Baudouin → Anghjulu, Anselme → Ghjacumu, Oriane → Vannina, Casimir → Matteu, Léonie → Catalina |
+| Ilots | Fabrice → Paulu, Hippolyte → Dumenicu, Tancrède → Carlu, Nolwenn → Letizia |
+| Bibliothèque Engloutie | Mortimer et Ophélie inchangés (érudits venus d'ailleurs) |
+| Forge-Ardente, arène Feu | Tiburce → Bernat, Isidore → Ramon, Éliott → Pau, Calixte → Esclarmonde, Balthazar → Joan, Léandre → Arnau, Mireille → Marieta, Sylvain → Guilhem |
+| Cœur de la Forge | Anatole → Pèire, Inès → Joana (sbires, Aubane et Corvin inchangés) |
+| Givremont, arène Arcane | Hilaire et Théodule inchangés, Gwenaëlle → Suzon, Balthus → Gratien, Alizée → Marguerite, Sybille → Fanchon, Gaspard → Maurice |
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Hôtesse des Ilots (mazzera) | « Bonghjornu. Chaque nuit, je rêve la mer. Cette nuit, j'ai vu des bestioles danser près des récifs de l'est. Va voir, avà. » |
+| Gardien des Ilots | « Pace e salute, voyageur. Cette tour génoise guette la mer depuis des siècles. » |
+| Vieux forgeron (Roland) | « Adieu, pitchoun ! Mon aïeul a reforgé l'épée qui fendit la montagne en deux. La brèche est encore là-haut. » |
+| Gamin de la forge | « Boudu, quel cagnard près de la fonderie ! » |
+| Vieil homme de Givremont (Gargantua) | « Une fondue pour douze ? Je la finis seul, gone ! Là-haut, une dent de la montagne porte mon nom. Enfin, presque. » |
+| Anselme | « Je suis Anselme. J'ai passé ma vie à chercher des cristaux dans la glace. Mes bestioles en ont l'éclat. » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (mazzera, vieux forgeron, Gargantua) et de l'intro du combat contre Anselme.
+
+Ajout en cours de lot : la police du jeu reçoit le caractère « ò » (o accent grave), nécessaire au corse et à l'occitan (« Aiò ! »).
 
 ## 9. Points ouverts
 

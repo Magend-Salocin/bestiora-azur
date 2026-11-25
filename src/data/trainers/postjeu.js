@@ -20,6 +20,6 @@ export default [
   trainer('aubin_revanche', 'champion', 'Aubin', ['mandragoul:64', 'roncefee:64', 'bugul_noz:65', 'margolys:65', 'carcolosse:65', 'fadeon:66'], { ai: 'smart', last: true, portrait: 'portrait/aubin' }),
   trainer('ysolde_revanche', 'championne', 'Ysolde', ['barbegazi:65', 'bayard:65', 'hellequin:65', 'carcolosse:66', 'sirenor:66', 'hadelys:66'], { ai: 'smart', last: true, portrait: 'portrait/ysolde' }),
   trainer('lazare_revanche', 'champion', 'Lazare', ['revenant:65', 'matagot:66', 'birette:66', 'ankou:66', 'blancelune:66'], { ai: 'smart', last: true, portrait: 'portrait/lazare' }),
-  trainer('brune_revanche', 'champion', 'Brune', ['leberombre:65', 'babau:66', 'taurnoir:66', 'mallet:66', 'grangoule:66'], { ai: 'smart', last: true, portrait: 'portrait/brune' }),
-  trainer('oswin_revanche', 'champion', 'Oswin', ['hadelys:66', 'sirenor:66', 'melusine:66', 'alicorne:66', 'blancelune:66', 'fadeon:66'], { ai: 'smart', last: true, portrait: 'portrait/oswin' }),
+  trainer('brune_revanche', 'championne', 'Brune', ['leberombre:65', 'babau:66', 'taurnoir:66', 'mallet:66', 'grangoule:66'], { ai: 'smart', last: true, portrait: 'portrait/brune' }),
+  trainer('oswin_revanche', 'champion', 'Anselme', ['hadelys:66', 'sirenor:66', 'melusine:66', 'alicorne:66', 'blancelune:66', 'fadeon:66'], { ai: 'smart', last: true, portrait: 'portrait/oswin' }),
 ];
