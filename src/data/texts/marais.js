@@ -55,5 +55,5 @@ export default {
   chercheuse_viviane_after: 'Les Lavandâme glissent sur l’eau, c’est magnifique.',
   randonneur_prosper_intro: 'Ce marais m’a fait traverser huit semaines de pluie. Combattons !',
   randonneur_prosper_defeat: 'Même la pluie est plus douce que toi.',
-  randonneur_prosper_after: 'Ombrecourt, c’est tout droit. Courage, drôle !',
+  randonneur_prosper_after: 'Ombrecourt, c’est tout droit. Courage, et garde les pieds au sec !',
 };

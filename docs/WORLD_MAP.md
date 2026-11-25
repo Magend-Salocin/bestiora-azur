@@ -150,21 +150,21 @@ Le nord de `givremont` (colonnes 10-11) mène au Col des Échos (partie 3). La p
 | `arene_vent` | Vent | courants d'air qui poussent le joueur (tuiles `^ v < >`), énigme générée et vérifiée par simulation : 14 coups minimum, aucune position sans retour | Ysolde (36) |
 | `arene_ombre` | Ombre | salle toujours sombre (`dark: 'always'`), 4 braseros à allumer (chacun éclaire un disque), barrière levée au 4e | Lazare (40) |
 | `arene_feu` | Feu | sol de lave praticable mais piégé (déclencheurs qui renvoient à l'entrée), chemin de dalles de pierre | Brune (45) |
-| `arene_arcane` | Arcane | téléporteurs à symboles (`o a q d`) : le bon symbole de chaque salle mène plus loin, les autres ramènent au hall ; devinettes données par les dresseurs | Oswin (50) |
+| `arene_arcane` | Arcane | téléporteurs à symboles (`o a q d`) : le bon symbole de chaque salle mène plus loin, les autres ramènent au hall ; devinettes données par les dresseurs | Anselme (50, identifiant `oswin`) |
 
 ### Verrous de progression (partie 2)
 
 - Route 7 : `tour_memoire_liberee`. Port d'Ombrecourt : `qg_opale_cleared`. Fonderie : badge Feu. Téléphérique : badge Feu. Col des Échos : 8 badges (partie 3).
 - Cerf-volant : ingénieur libéré au bureau du Syndicat (badge Ombre pour l'utiliser). Bouée : pêcheur du Marais Gris. Gants de Force : ancien de Haute-Bise après le badge Vent.
 - Clé Sous-Sol : donnée par Lazare. Pierre Braise : Brune.
-- Récompenses de champions : Hyper Capsules (Ysolde), Clé Sous-Sol + Ranimants Max (Lazare), Pierre Braise + Ranimants Max (Brune), Hyper Capsules + Potions Totales (Oswin).
+- Récompenses de champions : Hyper Capsules (Ysolde), Clé Sous-Sol + Ranimants Max (Lazare), Pierre Braise + Ranimants Max (Brune), Hyper Capsules + Potions Totales (Anselme).
 
 ### Scénario (partie 2)
 
 1. Rivale 4 sur les Falaises (`rival_4_done`) ; arène Vent (badge `vent`, Gants de Force) ; Marais Gris (Bouée) ; Ombrecourt.
 2. Lazare (badge `ombre`, Clé Sous-Sol) ; casino ; QG Opale ; rivale 5 au niveau 2 (`rival_5_done`) ; Corvin, première fois (`corvin_parti`) ; Cerf-volant et `qg_opale_cleared`.
 3. Routes 9 et 10, Ilots, Bibliothèque ; Forge-Ardente, Brune (badge `feu`) ; Cœur de la Forge : Corvin, dernier combat (`corvin_forge_done`) puis `syndicat_dissous` ; Volcarde.
-4. Téléphérique, Givremont, Oswin (badge `arcane`).
+4. Téléphérique, Givremont, Anselme (badge `arcane`).
 5. Optionnel : Centrale abandonnée (Fulgorine), Bibliothèque Engloutie (Mirelle).
 - Après `syndicat_dissous` : les sbires des anciennes cartes disparaissent (`hideIf`), des PNJ réagissent à Hameau-de-Lys, Bourg-Sablon, Port-Ondine, Vireval et Cendrelune (`showIf`).
 
@@ -228,3 +228,25 @@ Deux échanges PNJ (Haute-Bise : Volplanin ; Ombrecourt : Fangelet) offrent les 
 ### Espèces
 
 Fonderion et Fangeroi au Pic d'Azur, Frimastoc au Col, au Pic et dans la Grotte Boréale. `tools/check-obtainability.js` (et le contrôle « Obtention des 150 espèces » de `npm run validate`) prouve pour chaque starter que les 150 espèces sont obtenables : 140 par capture (dont Mirelle, sous `bestiary_149`), 8 par évolution, 2 par échange.
+
+## Identité régionale
+
+Chaque zone s'inspire d'une région de France : PNJ, dialogues, prénoms et classes de dresseurs. Le détail (glossaires, clins d'œil, classes) est dans [docs/Pnj/PNJ_V2.md](Pnj/PNJ_V2.md), qui fait foi.
+
+| Zone | Lieux | Région |
+|---|---|---|
+| debut | Hameau-de-Lys, Route 1 | Centre-Val de Loire |
+| debut | Bourg-Sablon | Pays de la Loire |
+| bois | Route 2, Bois Murmurant, Route 3, Grotte des Cascades | Bretagne intérieure (pays gallo) |
+| port | Port-Ondine, Routes 4 et 5 | Bretagne littorale |
+| port | Vireval, usine Opale | Nord-Est industriel |
+| cendrelune | Route 6, Tunnel Obscur, Cendrelune, Tour de la Mémoire, Centrale | Normandie |
+| bise | Route 7, Falaises de Bise, Haute-Bise | Bourgogne-Franche-Comté |
+| marais | Route 8, Marais Gris | Nouvelle-Aquitaine |
+| ombrecourt | Ombrecourt, casino, QG Opale | Île-de-France |
+| mer | Routes 9 et 10, Ilots, Bibliothèque Engloutie | Corse |
+| forge | Forge-Ardente, Cœur de la Forge | Occitanie |
+| givremont | Givremont, téléphériques, Grotte Boréale | Auvergne-Rhône-Alpes |
+| ligue | Col et Grotte des Échos, Citadelle d'Azur, Pic d'Azur | Provence-Alpes-Côte d'Azur |
+
+Le champion Arcane s'affiche « Anselme » ; ses identifiants (`oswin`, `oswin_revanche`, textes `oswin_*`, sprite) restent inchangés.

@@ -17,6 +17,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | 11 Ligue, post-jeu, fin | fait (voir « Reste ») |
 | 12 Sauvegarde, finition, packaging | fait |
 | 13 Recette complète | à faire |
+| PNJ 1 Villes, PNJ et dialogues régionaux | fait |
 
 ## Journal
 
@@ -439,3 +440,29 @@ Décisions
 
 Problèmes connus
 - Aucun connu.
+
+### 2026-11-25 : PNJ, prompt 1, identité régionale des villes et des PNJ
+
+Fait
+- Référentiel `docs/Pnj/PNJ_V2.md` : région de chaque zone, fiches et glossaires, classes, réserves de prénoms, plan en 9 lots (0 à 8).
+- Classes : 17 classes régionales ou féminines (`carrier`, `goemonier`, `cheminot`, `cataphile`, `gardian`…), 46 dresseurs reclassés. Le `moneyBase` propre au dresseur prime sur celui de la classe (`battle-setup.js`), donc les récompenses sont inchangées ; le validateur rejette un `moneyBase` invalide.
+- Textes réécrits zone par zone (`src/data/texts/`), mêmes clés : parler marqué pour les anciens et les conteurs, touche légère pour les jeunes et les commerçants, un ou deux clins d'œil incarnés par zone (Gargantua, Roland, la mazzera, Guillaume au court nez…). Les messages système (`common.js`) et les scènes de l'intrigue gardent leur contenu.
+- Prénoms des dresseurs tirés des réserves régionales ; trois doublons de sbires corrigés (Azalaïs, Émile, Fernande).
+- Corrections : Brune en classe `championne` ; dresseuses sorties des classes masculines ; Oswin s'affiche « Anselme » partout (identifiants conservés).
+- Police : caractères « ò » (« Aiò ! ») et « Ô » (« Ô bonne mère ! »).
+- `WORLD_MAP.md` : section « Identité régionale ».
+
+Vérifié
+- `npm run validate`, `npm run check-text` et `npm test` (251 tests) à chaque lot.
+- Captures Electron des dialogues clés et des intros de combat à chaque lot (« Champion Anselme », « Gardian Marius »…).
+- Balayage final : aucun prénom en double hors revanches, aucun mot non vérifié, aucun « Oswin » affiché, aucune interjection plus de trois fois dans une zone.
+
+Reste
+- Mots marqués « à vérifier » dans les glossaires (dont « missiavu », « farga ») : à confirmer dans les ouvrages de la section 3.14 avant tout emploi.
+- Portraits de combat (prompt 2) et attaques (prompt 3).
+
+Décisions
+- Réhabiller l'existant : mêmes PNJ, mêmes identifiants, même gameplay.
+- Les figures folkloriques ne sont jamais montrées, seulement racontées ou incarnées par des humains.
+- Les formes féminines douteuses (« Carrière », « Miquelotte ») sont écartées : ces dresseuses gardent leur classe générique.
+- Les entrées passées de ce journal gardent « Oswin ».

@@ -91,7 +91,7 @@ Ordre de progression. Niveaux indiqués = plage des dresseurs et rencontres sauv
 | 18 | Routes maritimes 9-10, Îlots | Surf, Bibliothèque Engloutie | 38-44 |
 | 19 | Forge-Ardente | Île volcanique. **Arène 7 Feu**, championne Brune | Plafond 45 |
 | 20 | Cœur de la Forge | Corvin tente de capturer Volcarde, combat final contre le Syndicat | 42-46 |
-| 21 | Givremont | Ville de montagne. **Arène 8 Arcane**, champion Oswin | Plafond 50 |
+| 21 | Givremont | Ville de montagne. **Arène 8 Arcane**, champion Anselme | Plafond 50 |
 | 22 | Col des Échos | Route de la victoire, contrôle des 8 badges, rival 6 | 46-52 |
 | 23 | Citadelle d'Azur (Ligue) | 4 Gardiens puis le Maître (le rival) sans soin entre les combats | 52-62 |
 | 24 | Post-jeu | Pic d'Azur (Azurel), Grotte Boréale (Glacerne), dresseurs revanche niveau 60+ | 55-70 |

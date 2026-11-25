@@ -438,7 +438,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 5 | Zones marais et ombrecourt | Fait |
 | 6 | Zones mer, forge et givremont | Fait |
 | 7 | Ligue, post-jeu, réactions, textes communs | Fait |
-| 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | À faire |
+| 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | Fait |
 
 ## 8 bis. Lot 1 : contenu (fait)
 
@@ -820,6 +820,49 @@ Ajouts aux réserves de la section 5 : Batistin, Calendal, Estelle (Provence) ; 
 
 Ajout en cours de lot : la police du jeu reçoit le caractère « Ô » (capitale courte, comme É et À), nécessaire à « Ô bonne mère ! ».
 
+## 8 nonies. Lot 8 : contenu (fait)
+
+Relecture d'ensemble du prompt 1 et mise à jour de la documentation. Aucun nouveau texte régional : ce lot corrige et documente.
+
+### Relecture
+
+Balayage scripté de `src/data/texts/` et `src/data/trainers/`, puis correction à la main :
+- **Prénoms en double** entre dresseurs différents (hors revanches et Gardiens `_plus`, qui sont les mêmes personnages). Trois doublons connus, antérieurs au chantier :
+
+| Dresseur | Doublon de | Nouveau prénom |
+|---|---|---|
+| `sbire_coeur_odile` (Cœur de la Forge) | `sbire_bois_2` (Bois) | Azalaïs (prénom occitan, celui d'une trobairitz) |
+| `sbire_qg_thibault` (QG Opale) | `scientifique_basile` (Cendrelune) | Émile |
+| `sbire_qg_perrine` (QG Opale) | `arene_roche_randonneuse_ines` (Bourg-Sablon) | Fernande |
+
+  Les sbires sont « recrutés dans les régions qu'ils occupent » : prénom occitan à la Forge, prénoms parisiens au QG. Les identifiants ne changent pas.
+- **Mots non vérifiés** (« bonjou », « ribin », « beuiller », « missiavu », « farga ») : contrôle qu'aucun n'apparaît dans les textes (déjà vrai à ce jour).
+- **Répétitions** : une interjection régionale ne doit pas revenir plus de trois fois dans une même zone. Les excès sont reformulés.
+- **Nom affiché « Oswin »** : contrôle qu'il n'en reste aucun dans les textes et les dresseurs.
+- **Classes** : contrôle que chaque dresseuse a une classe féminine ou neutre, et chaque champion la bonne forme (« Champion » ou « Championne »).
+
+### Documentation
+
+- `docs/WORLD_MAP.md` :
+  - Oswin devient Anselme (arène Arcane, récompenses, scénario), avec la mention « identifiant `oswin` conservé » ;
+  - nouvelle section courte « Identité régionale » : le tableau zone → région, avec un renvoi vers ce référentiel.
+- `docs/GAME_DESIGN.md` : « champion Oswin » devient « champion Anselme » (tableau des lieux).
+- `docs/PROGRESS.md` : une entrée datée pour le prompt 1 (lots 0 à 8), au format des entrées existantes (Fait, Vérifié, Reste, Décisions). Les entrées passées gardent « Oswin » : c'est un journal.
+- `docs/Pnj/README.md` : le prompt 1 est marqué terminé.
+- Ce référentiel : lot 8 marqué « Fait », points ouverts de la section 9 mis à jour.
+
+### Hors périmètre
+
+- Les identifiants `oswin*` (dresseurs, textes, sprite) restent : les renommer toucherait aux sauvegardes et aux cartes pour aucun gain visible.
+- Les portraits (prompt 2) et les attaques (prompt 3).
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`. Captures seulement si la relecture reformule des répliques ; sinon, seuls trois prénoms de sbires changent à l'écran.
+
+Résultat du balayage : les trois doublons attendus, aucune classe incohérente, aucun mot non vérifié, aucun « Oswin » affiché. Deux interjections dépassaient le seuil : « Boujou » (4 dans `cendrelune.js`, retiré du gardien de la Tour) et « drôle » (4 dans `marais.js`, retiré du randonneur Prosper).
+
 ## 9. Points ouverts
 
-1. Confirmer les mots « à vérifier » dans les ouvrages du tableau 3.14 avant le lot de chaque zone.
+1. Les mots « à vérifier » ne sont employés nulle part. Les confirmer dans les ouvrages du tableau 3.14 avant tout emploi.
+2. Les portraits de combat (prompt 2) s'appuieront sur les tenues des fiches de zone (section 3).

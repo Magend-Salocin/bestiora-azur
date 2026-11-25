@@ -122,7 +122,7 @@ export default {
   tour_memoire_5_gardien_captif: 'Petit… ces gens veulent réveiller les légendes. Ne les laisse pas faire.',
   tour_memoire_5_gardien_merci: 'Merci, {PLAYER}. Sans toi, ils auraient fouillé chaque souvenir de cette Tour.\fTiens, prends ceci. Il m’aidait à monter ici quand j’étais jeune.',
   tour_memoire_5_gardien_grappin: 'Le Grappin permet de franchir les corniches marquées.\fAvec le badge Flore, plus rien ne t’arrête.',
-  tour_memoire_5_gardien_apres: 'Ce Corvin cherche les légendes. Méfie-toi de lui, et de ses usines. Boujou, petit.',
+  tour_memoire_5_gardien_apres: 'Ce Corvin cherche les légendes. Méfie-toi de lui, et de ses usines, petit.',
 
   mystique_amandine_intro: 'Tu troubles le repos des esprits !',
   mystique_amandine_defeat: 'Les esprits t’ont choisi…',

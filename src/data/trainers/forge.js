@@ -14,7 +14,7 @@ export default [
   trainer('sbire_coeur_matthias', 'sbire_opale', 'Matthias', ['moinbourru:42', 'velucorne:42', 'galipote:43']),
   trainer('sbire_coeur_inaya', 'sbire_opale_f', 'Inaya', ['mallet:43', 'croquefrou:42']),
   trainer('sbire_coeur_stanislas', 'sbire_opale', 'Stanislas', ['ankou:43', 'blancome:42']),
-  trainer('sbire_coeur_odile', 'sbire_opale_f', 'Odile', ['galipote:43', 'follorage:43']),
+  trainer('sbire_coeur_odile', 'sbire_opale_f', 'Azalaïs', ['galipote:43', 'follorage:43']),
   trainer('sbire_coeur_ruben', 'sbire_opale', 'Ruben', ['moinbourru:44', 'mallet:43']),
   trainer('lieutenant_aubane', 'lieutenant_opale', 'Aubane', ['velucorne:44', 'follorage:44', 'galipote:44', 'mallet:44']),
   trainer('ouvrier_coeur_anatole', 'ouvrier', 'Pèire', ['mallet:43', 'goulinet:43']),

@@ -11,3 +11,5 @@ Ancrage des personnages humains et des attaques dans le folklore des régions fr
 | [prompt-3-attaques.md](prompt-3-attaques.md) | Noms et descriptions des 166 attaques. Indépendant des deux autres. Crée `docs/attaques/ATTAQUES_V2.md`. |
 
 Ordre conseillé : 1, puis 2. Le 3 peut se faire à tout moment.
+
+État : prompt 1 terminé (lots 0 à 8). Prompts 2 et 3 à faire.
