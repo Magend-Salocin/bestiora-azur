@@ -33,9 +33,8 @@ import { openBattleBag } from './bag-screen.js';
 import {
   LAYOUT, battleUiStyle, createShownCreature, drawBattleWindow, renderBattle, spriteCenter,
 } from './battle-hud.js';
-import { fillArea } from './battle-pixels.js';
 import {
-  MAIN_MENU, drawActionMenu, menuColumns,
+  MAIN_MENU, drawActionMenu, drawMoveList, menuColumns,
 } from './battle-menu.js';
 import { EventPlayer } from './event-player.js';
 
@@ -97,16 +96,18 @@ class MainMenu {
   constructor(index, shown) {
     this.index = index;
     this.shown = shown;
+    this.time = 0;
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
   update(dt, input) {
+    this.time += dt;
     this.index = moveCursor(this.index, MAIN_MENU.length, input, { columns: menuColumns(battleUiStyle()) });
     if (input.justPressed('a')) this.resolve(MAIN_MENU[this.index].id);
   }
 
   render(ctx) {
-    drawActionMenu(ctx, battleUiStyle(), this.index, this.shown);
+    drawActionMenu(ctx, battleUiStyle(), this.index, this.shown, this.time);
   }
 }
 
@@ -115,10 +116,12 @@ class MoveMenu {
     this.creature = creature;
     this.index = Math.min(index, creature.moves.length - 1);
     this.message = null;
+    this.time = 0;
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
   update(dt, input) {
+    this.time += dt;
     const previous = this.index;
     this.index = moveCursor(this.index, this.creature.moves.length, input);
     if (previous !== this.index) this.message = null;
@@ -131,15 +134,8 @@ class MoveMenu {
   }
 
   render(ctx) {
-    drawBattleWindow(ctx, 0, 96, 160, 48);
-    // Classique: rows of 10 pixels separated by thin lines, like the action list.
-    const ruled = battleUiStyle() === 'classique';
-    this.creature.moves.forEach((slot, index) => {
-      const y = ruled ? 101 + index * 10 : 104 + index * 8;
-      if (ruled && index > 0) fillArea(ctx, 2, 3, y - 2, 154, 1);
-      if (index === this.index) drawText(ctx, '▶', ruled ? 4 : 8, y);
-      drawText(ctx, MOVES_BY_ID[slot.id].name, ruled ? 12 : 16, y);
-    });
+    const names = this.creature.moves.map((slot) => MOVES_BY_ID[slot.id].name);
+    drawMoveList(ctx, battleUiStyle(), names, this.index, this.time);
     const slot = this.creature.moves[this.index];
     drawBattleWindow(ctx, 80, 56, 80, 40);
     if (this.message) {

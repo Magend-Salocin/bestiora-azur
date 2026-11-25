@@ -3,9 +3,8 @@
 // (classique, dynamique) in 1. Classique shows the player's creature card next to the list.
 import { drawText } from '../../gfx/font.js';
 import { drawLevel, drawXpBar } from '../../ui/creature-widgets.js';
-import { drawWindowFrame } from '../../ui/window-frame.js';
 import {
-  MENU_ICONS, drawBevelPanel, drawPixels, drawRoundFrame, fillArea,
+  MENU_ICONS, drawBevelPanel, drawFlatFrame, drawPanel, drawPixels, drawRoundFrame, fillArea,
 } from './battle-pixels.js';
 
 export const MAIN_MENU = [
@@ -87,41 +86,71 @@ function drawPanels(ctx, index) {
   });
 }
 
-/** Dynamique: the prompt on the left, a compact list on the right. */
-function drawDynamique(ctx, index, creatureName) {
-  drawWindowFrame(ctx, 0, MENU_Y, 88, MENU_HEIGHT);
-  drawWindowFrame(ctx, 88, MENU_Y, 72, MENU_HEIGHT);
+/** Dynamique: the cursor nudges forward and back, 2 steps per second. */
+const nudge = (time) => Math.floor(time * 4) % 2;
+
+/** Dynamique: the prompt on the left, a compact list with a lively cursor on the right. */
+function drawDynamique(ctx, index, creatureName, time) {
+  drawPanel(ctx, { x: 0, y: MENU_Y, width: 88, height: MENU_HEIGHT });
+  drawPanel(ctx, { x: 88, y: MENU_Y, width: 72, height: MENU_HEIGHT });
   [creatureName, 'doit faire', 'quoi ?'].forEach((line, i) => drawText(ctx, line, 4, 100 + i * 14));
   MAIN_MENU.forEach((entry, i) => {
     const y = 100 + i * 10;
-    if (i === index) drawText(ctx, '▶', 92, y);
+    if (i === index) drawText(ctx, '▶', 91 + nudge(time), y);
     drawText(ctx, entry.label, 100, y);
   });
 }
 
 /** Épurée: one window cut in a 2 × 2 grid, centered labels, the selected cell shaded. */
 function drawEpuree(ctx, index) {
-  drawWindowFrame(ctx, 0, MENU_Y, 160, MENU_HEIGHT);
-  const cellTop = [MENU_Y + 3, MENU_Y + 25];
-  const cellHeight = 20;
+  drawFlatFrame(ctx, { x: 0, y: MENU_Y, width: 160, height: MENU_HEIGHT });
+  const cellTop = [MENU_Y + 2, MENU_Y + 25];
+  const cellHeight = 21;
   MAIN_MENU.forEach((entry, i) => {
-    const left = i % 2 === 0 ? 3 : 81;
+    const left = i % 2 === 0 ? 2 : 81;
     const top = cellTop[Math.floor(i / 2)];
-    const y = top + 6;
+    const y = top + 7;
     if (i === index) {
-      fillArea(ctx, 1, left, top, 76, cellHeight);
-      drawText(ctx, '▶', left + 1, y);
+      fillArea(ctx, 1, left, top, 77, cellHeight);
+      drawText(ctx, '▶', left + 2, y);
     }
-    drawText(ctx, entry.label, left + 38 - labelWidth(entry.label) / 2, y);
+    drawText(ctx, entry.label, left + 39 - labelWidth(entry.label) / 2, y);
   });
-  fillArea(ctx, 2, 80, MENU_Y + 3, 1, MENU_HEIGHT - 6);
-  fillArea(ctx, 2, 3, MENU_Y + 24, 154, 1);
+  fillArea(ctx, 2, 80, MENU_Y + 2, 1, MENU_HEIGHT - 4);
+  fillArea(ctx, 2, 2, MENU_Y + 24, 156, 1);
 }
 
 /** Draws the action menu; `shown` is the player's displayed creature (card, dynamique prompt). */
-export function drawActionMenu(ctx, style, index, shown) {
+export function drawActionMenu(ctx, style, index, shown, time = 0) {
   if (style === 'classique') drawCardAndList(ctx, index, shown);
-  else if (style === 'dynamique') drawDynamique(ctx, index, shown.name);
+  else if (style === 'dynamique') drawDynamique(ctx, index, shown.name, time);
   else if (style === 'epuree') drawEpuree(ctx, index);
   else drawPanels(ctx, index);
+}
+
+const MOVE_ROW_Y = MENU_Y + 5;
+const MOVE_FRAMES = {
+  classique: drawRoundFrame, moderne: drawBevelPanel, dynamique: drawPanel, epuree: drawFlatFrame,
+};
+
+/**
+ * Move list at the bottom, one row of 10 pixels per move: classique and dynamique rule the rows
+ * (dynamique nudges the cursor), moderne fills the selected row dark, épurée shades it.
+ */
+export function drawMoveList(ctx, style, names, index, time = 0) {
+  (MOVE_FRAMES[style] ?? drawRoundFrame)(ctx, { x: 0, y: MENU_Y, width: 160, height: MENU_HEIGHT });
+  names.forEach((name, i) => {
+    const y = MOVE_ROW_Y + i * 10;
+    const selected = i === index;
+    let ink = 3;
+    if (selected && style === 'moderne') {
+      fillArea(ctx, 3, 4, y - 1, 152, 9);
+      ink = 0;
+    } else if (selected && style === 'epuree') {
+      fillArea(ctx, 1, 2, y - 1, 156, 9);
+    }
+    if (i > 0 && (style === 'classique' || style === 'dynamique')) fillArea(ctx, 2, 3, y - 2, 154, 1);
+    if (selected) drawText(ctx, '▶', 4 + (style === 'dynamique' ? nudge(time) : 0), y, ink);
+    drawText(ctx, name, 12, y, ink);
+  });
 }

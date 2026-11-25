@@ -31,6 +31,11 @@ export function drawPanel(ctx, { x, y, width, height }) {
   fillArea(ctx, 2, x + 2, y + height - 3, width - 4, 1);
 }
 
+/** Épurée frame: a 1-pixel mid-tone rounded outline on a plain background. */
+export function drawFlatFrame(ctx, { x, y, width, height }) {
+  roundedBox(ctx, x, y, width, height, 2);
+}
+
 // Speech bubble tail under the bottom left corner, pointing down-left to the player's creature.
 const BUBBLE_TAIL = ['3000003', '300003.', '30003..', '3003...', '303....', '33.....'];
 

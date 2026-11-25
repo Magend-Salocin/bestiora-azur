@@ -12,7 +12,7 @@ import {
   HP_BAR_WIDTH, barFill, drawHpBar, drawLevel, drawStatus, drawXpBar, hpColor, hpText,
 } from '../../ui/creature-widgets.js';
 import {
-  drawBevelPanel, drawPanel, drawPixels, drawRoundFrame, fillArea,
+  drawBevelPanel, drawFlatFrame, drawPanel, drawPixels, drawRoundFrame, fillArea,
 } from './battle-pixels.js';
 
 export const LAYOUT = {
@@ -36,8 +36,12 @@ export function createShownCreature() {
   };
 }
 
-// Dynamique and Épurée keep the original three-line layout; Dynamique adds a thin enemy panel.
+// Dynamique and Épurée keep the original three-line layout: Dynamique in thin panels, Épurée
+// without frames but with a soft shadow under each creature.
 const ENEMY_PANEL = { x: 4, y: 3, width: 86, height: 32 };
+const PLAYER_PANEL = { x: 76, y: 52, width: 84, height: 44 };
+const SHADOW_ROWS = [{ inset: 6, y: 0 }, { inset: 0, y: 1 }, { inset: 6, y: 2 }];
+const SHADOWS = [{ x: 8, y: 89, width: 48 }, { x: 104, y: 49, width: 48 }];
 
 // Moderne: name and level on one line (the level drops next to the bar when a long name leaves
 // no room), HP bar below; the player's box is a speech bubble.
@@ -71,7 +75,9 @@ const PLAYER_GRASS = { x: 0, y: 86, count: 9 };
 
 export const battleUiStyle = () => getOptions().battleUi;
 
-const STYLE_FRAMES = { classique: drawRoundFrame, moderne: drawBevelPanel };
+const STYLE_FRAMES = {
+  classique: drawRoundFrame, moderne: drawBevelPanel, dynamique: drawPanel, epuree: drawFlatFrame,
+};
 
 /** Window of the battle screen (messages, move list, stat gains) in the frame of the style. */
 export function drawBattleWindow(ctx, x, y, width, height) {
@@ -217,12 +223,18 @@ function drawPlayerHud(ctx, shown, style) {
     return;
   }
   const { x, y } = LAYOUT.playerHud;
+  if (style === 'dynamique') drawPanel(ctx, PLAYER_PANEL);
   drawText(ctx, shown.name, x, y);
   drawLevel(ctx, shown.level, x + 40, y + 9);
   drawStatus(ctx, shown.status, x + 8, y + 9);
   drawHpBar(ctx, x + 8, y + 20, shown.hp, shown.maxHp);
   drawText(ctx, hpText(shown.hp, shown.maxHp), x + 16, y + 26);
   drawXpBar(ctx, x + 8, y + 36, shown.expRatio);
+}
+
+/** Épurée: a flat oval shadow under the creature's feet. */
+function drawShadow(ctx, { x, y, width }) {
+  for (const row of SHADOW_ROWS) fillArea(ctx, 1, x + row.inset, y + row.y, width - 2 * row.inset, 1);
 }
 
 function drawGrass(ctx, { x, y, count }, time) {
@@ -258,6 +270,7 @@ export function renderBattle(ctx, view) {
   ctx.translate(view.shake ?? 0, 0);
   ctx.fillStyle = getColor(0);
   ctx.fillRect(-4, 0, SCREEN_WIDTH + 8, SCREEN_HEIGHT);
+  if (style === 'epuree') SHADOWS.forEach((shadow) => drawShadow(ctx, shadow));
   if (lively) {
     drawGrass(ctx, ENEMY_GRASS, time);
     drawGrass(ctx, PLAYER_GRASS, time + 0.5);
