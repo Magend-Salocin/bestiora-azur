@@ -15,6 +15,12 @@ import { drawBattleWindow, spriteCenter } from './battle-hud.js';
 const HP_SECONDS_PER_BAR = 1;
 const MIN_HP_ANIMATION = 0.25;
 const BLINK_COUNT = 3;
+const BLINK_SECONDS = 0.12;
+// Lost HP: the bar drops at twice the usual speed, the lost part stays light, then drains.
+const HP_DROP_SPEED = 2;
+const TRAIL_HOLD = 0.2;
+const TRAIL_DRAIN = 0.3;
+const DUST_TIME = 0.5;
 const OUTCOME_EVENTS = ['miss', 'move_failed', 'protected'];
 
 export class EventPlayer {
@@ -80,9 +86,14 @@ export class EventPlayer {
   async faint(event) {
     const shown = this.scene.shown[event.side];
     hooks.playSfx('faint');
+    const view = this.scene.view;
+    view.dust = { side: event.side, progress: 0 };
+    const dust = this.scene.tween(DUST_TIME, (t) => { view.dust.progress = t; });
     await this.scene.tween(0.4, (t) => { shown.clipBottom = Math.round(t * 48); });
     shown.visible = false;
     shown.clipBottom = 0;
+    await dust;
+    view.dust = null;
     shown.hudVisible = event.side === 0 ? shown.hudVisible : false;
     await this.say('faint', { ...this.nameVars(event.side, event.index) });
   }
@@ -119,8 +130,13 @@ export class EventPlayer {
     if (event.source === 'move') {
       const effectiveness = rest.find((other) => other.type === 'effectiveness')?.value ?? 1;
       hooks.playSfx(effectiveness > 1 ? 'hit_super' : effectiveness < 1 ? 'hit_weak' : 'hit');
-      const strong = rest.some((other) => other.type === 'effectiveness' && other.value > 1) || event.amount >= event.maxHp * 0.4;
-      await Promise.all([scene.blink(event.side, BLINK_COUNT), strong ? scene.shakeScreen(0.3) : null]);
+      const strong = effectiveness > 1 || event.amount >= event.maxHp * 0.4;
+      await Promise.all([
+        scene.blink(event.side, BLINK_COUNT),
+        scene.shakeHud(event.side),
+        strong ? scene.shakeScreen(0.3) : null,
+        effectiveness > 1 ? scene.squash(event.side, BLINK_COUNT * BLINK_SECONDS) : null,
+      ]);
     } else if (event.source === 'recoil' || event.source === 'struggle') {
       await this.say('recoil', { ...this.nameVars(event.side) }, { wait: false });
     } else if (event.source === 'leech') {
@@ -139,12 +155,20 @@ export class EventPlayer {
   }
 
   async animateHp(side, target) {
-    const shown = this.scene.shown[side];
+    const { scene } = this;
+    const shown = scene.shown[side];
     const start = shown.hp;
     if (start === target) return;
-    const duration = Math.max(MIN_HP_ANIMATION, (Math.abs(target - start) / shown.maxHp) * HP_SECONDS_PER_BAR);
-    await this.scene.tween(duration, (t) => { shown.hp = start + (target - start) * t; });
+    const losing = target < start;
+    const speed = losing ? HP_DROP_SPEED : 1;
+    const duration = Math.max(MIN_HP_ANIMATION, (Math.abs(target - start) / shown.maxHp) * HP_SECONDS_PER_BAR / speed);
+    if (losing) shown.trailHp = start;
+    await scene.tween(duration, (t) => { shown.hp = start + (target - start) * t; });
     shown.hp = target;
+    if (!losing) return;
+    await scene.wait(TRAIL_HOLD);
+    await scene.tween(TRAIL_DRAIN, (t) => { shown.trailHp = start + (target - start) * t; });
+    shown.trailHp = 0;
   }
 
   // ---- Statuses ---------------------------------------------------------------
@@ -165,7 +189,7 @@ export class EventPlayer {
 
   async status_damage(event) {
     await this.say(`status_damage_${event.status}`, { ...this.nameVars(event.side) }, { wait: false });
-    await this.scene.blink(event.side, 1);
+    await Promise.all([this.scene.blink(event.side, 1), this.scene.shakeHud(event.side)]);
     await this.animateHp(event.side, event.hp);
   }
 
@@ -274,12 +298,13 @@ export class EventPlayer {
     const tracker = scene.expTracker(event.index);
     tracker.level = event.level;
     const shownCreature = this.isShownPlayerCreature(event.index);
+    hooks.playSfx('jingle_level_up');
     if (shownCreature) {
+      await scene.sweepGlint();
       Object.assign(scene.shown[0], { level: event.level, maxHp: event.stats.hp });
       scene.shown[0].hp = Math.min(event.stats.hp, scene.shown[0].hp + event.stats.hp - event.previousStats.hp);
       scene.shown[0].expRatio = 0;
     }
-    hooks.playSfx('jingle_level_up');
     await this.say('level_up', { ...creatureVars(this.creatureAt(0, event.index)), NUMBER: event.level });
     await scene.showStatGains(event.previousStats, event.stats);
     if (shownCreature) await this.fillExpBar(event.index);

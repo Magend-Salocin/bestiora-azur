@@ -36,6 +36,7 @@ import {
 import {
   MAIN_MENU, drawActionMenu, drawMoveList, menuColumns,
 } from './battle-menu.js';
+import { CursorGlide } from './battle-motion.js';
 import { EventPlayer } from './event-player.js';
 
 const TEXT_SPEED_FACTOR = 1.5;
@@ -44,6 +45,11 @@ const STAT_ROWS = [['hp', 'PV'], ['atk', 'ATT'], ['def', 'DÉF'], ['spa', 'A.SP�
 // The move info window is 8 characters wide.
 const MOVE_MENU_MESSAGE_LINES = { no_pp: ['Plus de', 'PP !'] };
 const ITEM_PROBLEMS = { fainted: 'Elle est K.O. !', not_fainted: 'Elle va bien.', default: 'Aucun effet.' };
+const STAT_TICK_TIME = 0.4;
+const BLINK_SECONDS = 0.12;
+const HUD_SLIDE_TIME = 0.25;
+const HUD_SHAKE_TIME = 0.3;
+const GLINT_TIME = 0.45;
 
 /** Text box: types the pages, then waits for A (wait) or advances alone after a short pause. */
 class MessageBox {
@@ -88,7 +94,8 @@ class MessageBox {
       remaining = Math.max(0, remaining - Array.from(line).length);
     });
     const typed = this.visible >= this.pageLength;
-    if (typed && (this.wait || this.page < this.pages.length - 1) && this.idle % 0.6 < 0.3) drawText(ctx, '▼', 152, 124);
+    // The arrow bobs by one pixel while it waits for A.
+    if (typed && (this.wait || this.page < this.pages.length - 1)) drawText(ctx, '▼', 152, 124 + (Math.floor(this.idle * 4) % 2));
   }
 }
 
@@ -97,17 +104,19 @@ class MainMenu {
     this.index = index;
     this.shown = shown;
     this.time = 0;
+    this.glide = new CursorGlide(index);
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
   update(dt, input) {
     this.time += dt;
     this.index = moveCursor(this.index, MAIN_MENU.length, input, { columns: menuColumns(battleUiStyle()) });
+    this.glide.update(dt, this.index);
     if (input.justPressed('a')) this.resolve(MAIN_MENU[this.index].id);
   }
 
   render(ctx) {
-    drawActionMenu(ctx, battleUiStyle(), this.index, this.shown, this.time);
+    drawActionMenu(ctx, battleUiStyle(), this.shown, { time: this.time, glide: this.glide });
   }
 }
 
@@ -117,6 +126,7 @@ class MoveMenu {
     this.index = Math.min(index, creature.moves.length - 1);
     this.message = null;
     this.time = 0;
+    this.glide = new CursorGlide(this.index);
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
@@ -124,6 +134,7 @@ class MoveMenu {
     this.time += dt;
     const previous = this.index;
     this.index = moveCursor(this.index, this.creature.moves.length, input);
+    this.glide.update(dt, this.index);
     if (previous !== this.index) this.message = null;
     if (input.justPressed('a')) {
       if (this.creature.moves[this.index].pp > 0) this.resolve(this.index);
@@ -135,7 +146,7 @@ class MoveMenu {
 
   render(ctx) {
     const names = this.creature.moves.map((slot) => MOVES_BY_ID[slot.id].name);
-    drawMoveList(ctx, battleUiStyle(), names, this.index, this.time);
+    drawMoveList(ctx, battleUiStyle(), names, { time: this.time, glide: this.glide });
     const slot = this.creature.moves[this.index];
     drawBattleWindow(ctx, 80, 56, 80, 40);
     if (this.message) {
@@ -147,19 +158,27 @@ class MoveMenu {
   }
 }
 
-/** Window with the six stats: first the gains, then (after A) the new values. */
+/** Window with the six stats: first the gains, then (after A) the new values counting up. */
 class StatGainsWindow {
   constructor(previous, next) {
     this.previous = previous;
     this.next = next;
     this.showValues = false;
+    this.tick = 0;
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
   }
 
   update(dt, input) {
+    if (this.showValues) this.tick = Math.min(1, this.tick + dt / STAT_TICK_TIME);
     if (!input.justPressed('a') && !input.justPressed('b')) return;
-    if (this.showValues) this.resolve();
-    else this.showValues = true;
+    if (!this.showValues) this.showValues = true;
+    else if (this.tick < 1) this.tick = 1;
+    else this.resolve();
+  }
+
+  statValue(key) {
+    const from = this.previous[key];
+    return Math.round(from + (this.next[key] - from) * this.tick);
   }
 
   render(ctx) {
@@ -167,7 +186,7 @@ class StatGainsWindow {
     STAT_ROWS.forEach(([key, label], index) => {
       const y = 10 + index * 13;
       drawText(ctx, label, 80, y);
-      const value = this.showValues ? String(this.next[key]) : `+${this.next[key] - this.previous[key]}`;
+      const value = this.showValues ? String(this.statValue(key)) : `+${this.next[key] - this.previous[key]}`;
       drawText(ctx, value.padStart(4, ' '), 120, y);
     });
   }
@@ -200,6 +219,7 @@ export class BattleScene {
       },
       capsule: null,
       effect: null,
+      dust: null,
       indicators: [],
       shake: 0,
       hidePlayerHud: false,
@@ -271,12 +291,41 @@ export class BattleScene {
     const phase = (t) => Math.floor(t * count * 2) % 2 === 0 && t < 1;
     if (getOptions().reduceFlashes) {
       const restX = shown.dx;
-      await this.tween(count * 0.12, (t) => { shown.dx = restX + (phase(t) ? 2 : 0); });
+      await this.tween(count * BLINK_SECONDS, (t) => { shown.dx = restX + (phase(t) ? 2 : 0); });
       shown.dx = restX;
       return;
     }
-    await this.tween(count * 0.12, (t) => { shown.blink = phase(t); });
+    await this.tween(count * BLINK_SECONDS, (t) => { shown.blink = phase(t); });
     shown.blink = false;
+  }
+
+  /** The info box enters from the screen edge on its side (ease out). */
+  revealHud(side) {
+    const shown = this.shown[side];
+    shown.hudVisible = true;
+    shown.hudSlide = 1;
+    return this.tween(HUD_SLIDE_TIME, (t) => { shown.hudSlide = (1 - t) ** 2; });
+  }
+
+  /** The info box jolts by one pixel while its creature takes a hit. */
+  async shakeHud(side) {
+    const shown = this.shown[side];
+    await this.tween(HUD_SHAKE_TIME, (t) => { shown.hudShake = t < 1 ? (Math.floor(t * 12) % 2 === 0 ? 1 : -1) : 0; });
+    shown.hudShake = 0;
+  }
+
+  /** Super effective hit: the sprite is squashed by a few pixels, then springs back. */
+  async squash(side, duration) {
+    const shown = this.shown[side];
+    await this.tween(duration, (t) => { shown.squash = Math.round(3 * (1 - t)); });
+    shown.squash = 0;
+  }
+
+  /** Level up: a light glint sweeps the player's XP bar (the HP bar in classique). */
+  async sweepGlint() {
+    const shown = this.shown[0];
+    await this.tween(GLINT_TIME, (t) => { shown.glint = t; });
+    shown.glint = null;
   }
 
   async shakeScreen(duration) {
@@ -296,8 +345,9 @@ export class BattleScene {
     const shown = this.shown[side];
     Object.assign(shown, {
       visible: true, species: event.species, name: creatureName(creature), level: event.level,
-      hp: event.hp, maxHp: event.maxHp, status: creature.status, hudVisible: true, clipBottom: 0,
+      hp: event.hp, maxHp: event.maxHp, status: creature.status, clipBottom: 0, trailHp: 0,
     });
+    this.revealHud(side);
     if (side === 0) shown.expRatio = this.expRatio(event.index, creature.species);
     else markSeen(this.gameState, event.species);
   }
@@ -399,7 +449,7 @@ export class BattleScene {
         this.shown[1].dx = Math.round(-120 * (1 - t));
       });
       hooks.playSfx(`cry_${enemyEvent.species}`);
-      this.shown[1].hudVisible = true;
+      this.revealHud(1);
       await this.say('wild_appears', creatureVars(this.battle.sides[1].party[0]));
     }
     await this.tween(0.3, (t) => { portraits.player.dx = Math.round(-t * 80); });
@@ -452,9 +502,11 @@ export class BattleScene {
     const active = this.battle.sides[0].party[this.battle.sides[0].active];
     if (choice === 'fight') {
       this.view.hidePlayerHud = true;
+      this.view.idle = true;
       const menu = new MoveMenu(active, this.moveIndex);
       const index = await this.runWidget(menu);
       this.view.hidePlayerHud = false;
+      this.view.idle = false;
       this.moveIndex = menu.index;
       return index === null ? null : { type: 'move', index };
     }

@@ -9,11 +9,12 @@ import { getColor } from '../../gfx/palette.js';
 import { getOptions } from '../../state/options.js';
 import { drawWindowFrame } from '../../ui/window-frame.js';
 import {
-  HP_BAR_WIDTH, barFill, drawHpBar, drawLevel, drawStatus, drawXpBar, hpColor, hpText,
+  HP_BAR_WIDTH, XP_BAR_WIDTH, barFill, drawHpBar, drawLevel, drawStatus, drawXpBar, hpColor, hpText,
 } from '../../ui/creature-widgets.js';
 import {
   drawBevelPanel, drawFlatFrame, drawPanel, drawPixels, drawRoundFrame, fillArea,
 } from './battle-pixels.js';
+import { drawDustPuff, drawStatusMark } from './battle-motion.js';
 
 export const LAYOUT = {
   enemySprite: { x: 104, y: 4 },
@@ -28,11 +29,16 @@ export const spriteCenter = (side) => {
   return { x: x + 24, y: y + 24 };
 };
 
-/** One displayed combatant: what the screen shows, which may lag behind the logic state. */
+/**
+ * One displayed combatant: what the screen shows, which may lag behind the logic state.
+ * Motion: trailHp (lost HP still drawn light), hudSlide (1 = off screen, 0 = in place),
+ * hudShake (pixels), squash (pixels), glint (0 to 1 while the level-up glint sweeps, else null).
+ */
 export function createShownCreature() {
   return {
     visible: false, species: null, name: '', level: 1, hp: 0, maxHp: 1, status: null,
     dx: 0, dy: 0, blink: false, clipBottom: 0, expRatio: 0, hudVisible: false,
+    trailHp: 0, hudSlide: 0, hudShake: 0, squash: 0, glint: null,
   };
 }
 
@@ -57,8 +63,15 @@ const BOXED_STYLES = {
 const COMPACT_ENEMY = { x: 1, y: 2, height: 29, maxWidth: 103 };
 const SHORT_HP_FILL = 32;
 const MIN_HP_FILL = 16;
-// Grass tufts and breathing creatures.
+// Grass tufts.
 const LIVELY_STYLES = ['classique', 'dynamique'];
+// Breathing while the player chooses: 2 steps per second, 4 when the HP are low.
+const BREATH_RATE = 2;
+const LOW_HP_BREATH_RATE = 4;
+// Low HP bar pulse (3 changes per second), level-up glint width, info box slide distance.
+const PULSE_RATE = 3;
+const GLINT_WIDTH = 4;
+const HUD_SLIDE_DISTANCE = 112;
 
 // Lively styles: grass tufts under both creatures, the blade tips sway.
 const GRASS_TUFT = [
@@ -86,12 +99,24 @@ export function drawBattleWindow(ctx, x, y, width, height) {
   else drawWindowFrame(ctx, x, y, width, height);
 }
 
+function spritePosition(shown, side, bob) {
+  const base = side === 0 ? LAYOUT.playerSprite : LAYOUT.enemySprite;
+  return { base, x: base.x + shown.dx, y: base.y + shown.dy + bob };
+}
+
 function drawCreatureSprite(ctx, shown, side, bob = 0) {
   if (!shown.visible || shown.blink || !shown.species) return;
-  const base = side === 0 ? LAYOUT.playerSprite : LAYOUT.enemySprite;
-  const x = base.x + shown.dx;
-  const y = base.y + shown.dy + bob;
+  const { base, x, y } = spritePosition(shown, side, bob);
   const frame = `${shown.species}/${side === 0 ? 'back' : 'front'}`;
+  if (shown.clipBottom <= 0 && shown.squash > 0) {
+    // Squash anchored on the feet: wider and shorter by `squash` pixels.
+    ctx.save();
+    ctx.translate(x + 24, y + 48);
+    ctx.scale((48 + shown.squash) / 48, (48 - shown.squash) / 48);
+    drawSprite(ctx, 'creatures', frame, -24, -48);
+    ctx.restore();
+    return;
+  }
   if (shown.clipBottom <= 0) {
     drawSprite(ctx, 'creatures', frame, x, y);
     return;
@@ -105,6 +130,36 @@ function drawCreatureSprite(ctx, shown, side, bob = 0) {
   ctx.restore();
 }
 
+/** Light band sweeping a bar fill from left to right; progress from 0 to 1. */
+function drawGlint(ctx, left, top, width, height, progress) {
+  const start = left - GLINT_WIDTH + Math.round(progress * (width + GLINT_WIDTH));
+  const from = Math.max(left, start);
+  const to = Math.min(left + width, start + GLINT_WIDTH);
+  if (to > from) fillArea(ctx, 0, from, top, to - from, height);
+}
+
+/**
+ * Over an HP bar drawn at (x, y): the lost HP still shown light, the low HP pulse, the level-up
+ * glint (`withGlint`). fx: { pulse } from renderBattle.
+ */
+function drawHpEffects(ctx, x, y, shown, fillWidth, fx, withGlint = false) {
+  const fillX = x + GLYPH + 2;
+  const filled = barFill(shown.hp, shown.maxHp, fillWidth);
+  if (shown.trailHp > shown.hp) {
+    const trail = barFill(shown.trailHp, shown.maxHp, fillWidth);
+    fillArea(ctx, 1, fillX + filled, y + 1, trail - filled, 3);
+  }
+  if (fx.pulse && filled > 0 && hpColor(shown.hp, shown.maxHp) === 'low') fillArea(ctx, 2, fillX, y + 1, filled, 3);
+  if (withGlint && shown.glint !== null) drawGlint(ctx, fillX, y + 1, filled, 3, shown.glint);
+}
+
+/** XP bar with the level-up glint. */
+function drawBattleXpBar(ctx, x, y, shown) {
+  drawXpBar(ctx, x, y, shown.expRatio);
+  const filled = Math.round(Math.max(0, Math.min(1, shown.expRatio)) * XP_BAR_WIDTH);
+  if (shown.glint !== null) drawGlint(ctx, x + 2, y + 1, filled, 2, shown.glint);
+}
+
 /** Moderne: the filled part of the HP bar gets a light top row, like a glossy tube. */
 function drawGlossyHpBar(ctx, x, y, hp, maxHp) {
   drawHpBar(ctx, x, y, hp, maxHp);
@@ -116,7 +171,7 @@ const textWidth = (text) => Array.from(text).length * GLYPH;
 const levelWidth = (level) => (1 + String(level).length) * GLYPH;
 
 /** Name, level and HP bar inside a box; returns the y below the bar. */
-function drawBoxedInfo(ctx, shown, { x, width }, top, hpBar) {
+function drawBoxedInfo(ctx, shown, { x, width }, top, hpBar, fx) {
   const left = x + BOXED_PADDING;
   const right = x + width - BOXED_PADDING;
   const level = levelWidth(shown.level);
@@ -125,6 +180,7 @@ function drawBoxedInfo(ctx, shown, { x, width }, top, hpBar) {
   drawText(ctx, shown.name, left, top);
   drawLevel(ctx, shown.level, right - level, levelOnNameLine ? top : barY - 2);
   hpBar(ctx, left, barY, shown.hp, shown.maxHp);
+  drawHpEffects(ctx, left, barY, shown, HP_BAR_WIDTH, fx);
   if (shown.status) drawStatus(ctx, shown.status, right - (levelOnNameLine ? 16 : level + 18), barY - 1);
   return barY + 5;
 }
@@ -149,7 +205,7 @@ function drawHpGauge(ctx, x, y, hp, maxHp, fillWidth) {
 const gaugeWidth = (fillWidth) => GLYPH + fillWidth + 4;
 const STATUS_WIDTH = 16;
 
-function drawCompactEnemyHud(ctx, shown) {
+function drawCompactEnemyHud(ctx, shown, fx) {
   const level = levelWidth(shown.level);
   const status = shown.status ? STATUS_WIDTH + 4 : 0;
   const rowWidth = (fill) => gaugeWidth(fill) + 6 + status + level;
@@ -164,31 +220,32 @@ function drawCompactEnemyHud(ctx, shown) {
   const barY = top + 13;
   drawText(ctx, shown.name, left, top);
   drawHpGauge(ctx, left, barY, shown.hp, shown.maxHp, fill);
+  drawHpEffects(ctx, left, barY, shown, fill, fx);
   if (shown.status) drawStatus(ctx, shown.status, right - level - status, barY - 1);
   drawLevel(ctx, shown.level, right - level, barY - 2);
 }
 
-function drawBoxedEnemyHud(ctx, shown, { frame, hpBar }) {
+function drawBoxedEnemyHud(ctx, shown, { frame, hpBar }, fx) {
   frame(ctx, BOXED_ENEMY);
-  drawBoxedInfo(ctx, shown, BOXED_ENEMY, BOXED_ENEMY.y + 5, hpBar);
+  drawBoxedInfo(ctx, shown, BOXED_ENEMY, BOXED_ENEMY.y + 5, hpBar, fx);
 }
 
-function drawBoxedPlayerHud(ctx, shown, { frame, hpBar }) {
+function drawBoxedPlayerHud(ctx, shown, { frame, hpBar }, fx) {
   const box = BOXED_PLAYER;
   frame(ctx, box, { tail: true });
-  const below = drawBoxedInfo(ctx, shown, box, box.y + 5, hpBar);
+  const below = drawBoxedInfo(ctx, shown, box, box.y + 5, hpBar, fx);
   const hp = hpText(shown.hp, shown.maxHp);
   drawText(ctx, hp, box.x + box.width - BOXED_PADDING - textWidth(hp), below + 1);
-  drawXpBar(ctx, box.x + BOXED_PADDING, below + 12, shown.expRatio);
+  drawBattleXpBar(ctx, box.x + BOXED_PADDING, below + 12, shown);
 }
 
-function drawEnemyHud(ctx, shown, style) {
+function drawEnemyHud(ctx, shown, style, fx) {
   if (style === 'classique') {
-    drawCompactEnemyHud(ctx, shown);
+    drawCompactEnemyHud(ctx, shown, fx);
     return;
   }
   if (BOXED_STYLES[style]) {
-    drawBoxedEnemyHud(ctx, shown, BOXED_STYLES[style]);
+    drawBoxedEnemyHud(ctx, shown, BOXED_STYLES[style], fx);
     return;
   }
   const { x, y } = LAYOUT.enemyHud;
@@ -197,6 +254,7 @@ function drawEnemyHud(ctx, shown, style) {
   drawLevel(ctx, shown.level, x + 32, y + 9);
   drawStatus(ctx, shown.status, x + 8, y + 9);
   drawHpBar(ctx, x + 8, y + 20, shown.hp, shown.maxHp);
+  drawHpEffects(ctx, x + 8, y + 20, shown, HP_BAR_WIDTH, fx);
 }
 
 // Classique player: the name and the HP bar only, both right aligned just above the bottom
@@ -206,20 +264,22 @@ const COMPACT_NAME_Y = 72;
 const COMPACT_BAR_Y = 86;
 const HP_BAR_TOTAL_WIDTH = GLYPH + HP_BAR_WIDTH + 4;
 
-function drawCompactPlayerHud(ctx, shown) {
+// Without an XP bar on the field, the level-up glint sweeps the HP bar.
+function drawCompactPlayerHud(ctx, shown, fx) {
   drawText(ctx, shown.name, COMPACT_RIGHT - textWidth(shown.name), COMPACT_NAME_Y);
   const barX = COMPACT_RIGHT - HP_BAR_TOTAL_WIDTH;
   drawHpBar(ctx, barX, COMPACT_BAR_Y, shown.hp, shown.maxHp);
+  drawHpEffects(ctx, barX, COMPACT_BAR_Y, shown, HP_BAR_WIDTH, fx, true);
   drawStatus(ctx, shown.status, barX - 18, COMPACT_BAR_Y - 1);
 }
 
-function drawPlayerHud(ctx, shown, style) {
+function drawPlayerHud(ctx, shown, style, fx) {
   if (style === 'classique') {
-    drawCompactPlayerHud(ctx, shown);
+    drawCompactPlayerHud(ctx, shown, fx);
     return;
   }
   if (BOXED_STYLES[style]) {
-    drawBoxedPlayerHud(ctx, shown, BOXED_STYLES[style]);
+    drawBoxedPlayerHud(ctx, shown, BOXED_STYLES[style], fx);
     return;
   }
   const { x, y } = LAYOUT.playerHud;
@@ -228,13 +288,39 @@ function drawPlayerHud(ctx, shown, style) {
   drawLevel(ctx, shown.level, x + 40, y + 9);
   drawStatus(ctx, shown.status, x + 8, y + 9);
   drawHpBar(ctx, x + 8, y + 20, shown.hp, shown.maxHp);
+  drawHpEffects(ctx, x + 8, y + 20, shown, HP_BAR_WIDTH, fx);
   drawText(ctx, hpText(shown.hp, shown.maxHp), x + 16, y + 26);
-  drawXpBar(ctx, x + 8, y + 36, shown.expRatio);
+  drawBattleXpBar(ctx, x + 8, y + 36, shown);
 }
 
-/** Épurée: a flat oval shadow under the creature's feet. */
-function drawShadow(ctx, { x, y, width }) {
-  for (const row of SHADOW_ROWS) fillArea(ctx, 1, x + row.inset, y + row.y, width - 2 * row.inset, 1);
+/** Épurée: a flat oval shadow under the creature's feet, narrower while the creature rises. */
+function drawShadow(ctx, { x, y, width }, raised) {
+  const shrink = raised ? 2 : 0;
+  for (const row of SHADOW_ROWS) {
+    const inset = row.inset + shrink;
+    fillArea(ctx, 1, x + inset, y + row.y, width - 2 * inset, 1);
+  }
+}
+
+/** Info box drawn shifted by its slide-in and hit shake; the enemy's enters from the left. */
+function drawHudAt(ctx, shown, side, draw) {
+  const slide = Math.round(shown.hudSlide * HUD_SLIDE_DISTANCE) * (side === 1 ? -1 : 1);
+  ctx.save();
+  ctx.translate(slide + shown.hudShake, 0);
+  draw();
+  ctx.restore();
+}
+
+/** Breathing step (0 or 1) of a creature, faster when its HP are low. */
+function breathStep(shown, time) {
+  const rate = hpColor(shown.hp, shown.maxHp) === 'low' ? LOW_HP_BREATH_RATE : BREATH_RATE;
+  return Math.floor(time * rate) % 2;
+}
+
+function drawCreatureStatus(ctx, shown, side, bob, time) {
+  if (!shown.visible || shown.blink || !shown.species || !shown.status || shown.clipBottom > 0) return;
+  const { x, y } = spritePosition(shown, side, bob);
+  drawStatusMark(ctx, shown.status.id, x, y, time);
 }
 
 function drawGrass(ctx, { x, y, count }, time) {
@@ -257,20 +343,27 @@ function drawPartyIndicator(ctx, indicator) {
 
 /**
  * view: { shown: [player, enemy], portraits: { player, trainer }, capsule, effect, indicators, shake,
- *   time (seconds, drives the lively motion), idle (true while the action menu waits) }
+ *   time (seconds, drives the idle motion), idle (true while the player chooses an action or a move),
+ *   dust ({ side, progress } during a K.O.) }
  */
 export function renderBattle(ctx, view) {
   const style = battleUiStyle();
   const lively = LIVELY_STYLES.includes(style);
   const time = view.time ?? 0;
-  // Lively styles: while the player chooses, both creatures breathe in opposite phases.
-  const breathing = lively && view.idle;
-  const breath = breathing ? Math.floor(time * 2) % 2 : 0;
+  const [player, enemy] = view.shown;
+  // While the player chooses, both creatures breathe in opposite phases: the enemy rises on
+  // step 1, the player's creature on step 0.
+  const enemyBob = view.idle ? -breathStep(enemy, time) : 0;
+  const playerBob = view.idle ? breathStep(player, time) - 1 : 0;
+  const fx = { pulse: !getOptions().reduceFlashes && Math.floor(time * PULSE_RATE) % 2 === 1 };
   ctx.save();
   ctx.translate(view.shake ?? 0, 0);
   ctx.fillStyle = getColor(0);
   ctx.fillRect(-4, 0, SCREEN_WIDTH + 8, SCREEN_HEIGHT);
-  if (style === 'epuree') SHADOWS.forEach((shadow) => drawShadow(ctx, shadow));
+  if (style === 'epuree') {
+    drawShadow(ctx, SHADOWS[0], player.visible && playerBob < 0);
+    drawShadow(ctx, SHADOWS[1], enemy.visible && enemyBob < 0);
+  }
   if (lively) {
     drawGrass(ctx, ENEMY_GRASS, time);
     drawGrass(ctx, PLAYER_GRASS, time + 0.5);
@@ -279,13 +372,19 @@ export function renderBattle(ctx, view) {
   const { player: playerPortrait, trainer: trainerPortrait } = view.portraits;
   if (trainerPortrait.visible) drawSprite(ctx, 'trainers', trainerPortrait.frame, LAYOUT.enemySprite.x + trainerPortrait.dx, LAYOUT.enemySprite.y);
   if (playerPortrait.visible) drawSprite(ctx, 'trainers', playerPortrait.frame, LAYOUT.playerSprite.x + playerPortrait.dx, LAYOUT.playerSprite.y);
-  drawCreatureSprite(ctx, view.shown[1], 1, -breath);
-  drawCreatureSprite(ctx, view.shown[0], 0, breathing ? breath - 1 : 0);
+  drawCreatureSprite(ctx, enemy, 1, enemyBob);
+  drawCreatureSprite(ctx, player, 0, playerBob);
+  drawCreatureStatus(ctx, enemy, 1, enemyBob, time);
+  drawCreatureStatus(ctx, player, 0, playerBob, time);
+  if (view.dust) {
+    const { x, y } = view.dust.side === 0 ? LAYOUT.playerSprite : LAYOUT.enemySprite;
+    drawDustPuff(ctx, x + 24, y + 48, view.dust.progress);
+  }
   if (view.capsule) drawSprite(ctx, 'characters', 'capsule', Math.round(view.capsule.x - 8), Math.round(view.capsule.y - 8));
   if (view.effect) view.effect.animation.draw(ctx, view.effect.t, view.effect.from, view.effect.to);
 
-  if (view.shown[1].hudVisible) drawEnemyHud(ctx, view.shown[1], style);
-  if (view.shown[0].hudVisible && !view.hidePlayerHud) drawPlayerHud(ctx, view.shown[0], style);
+  if (enemy.hudVisible) drawHudAt(ctx, enemy, 1, () => drawEnemyHud(ctx, enemy, style, fx));
+  if (player.hudVisible && !view.hidePlayerHud) drawHudAt(ctx, player, 0, () => drawPlayerHud(ctx, player, style, fx));
   for (const indicator of view.indicators) drawPartyIndicator(ctx, indicator);
   ctx.restore();
 }
