@@ -122,6 +122,7 @@ const ACCENTS = {
 const SHORT_CAPITALS = {
   A: [_, _, '..333...', '.3...3..', '.33333..', '.3...3..', '.3...3..', _],
   E: [_, _, '.33333..', '.3......', '.3333...', '.3......', '.33333..', _],
+  O: [_, _, '..333...', '.3...3..', '.3...3..', '.3...3..', '..333...', _],
 };
 
 const CEDILLA = [_, _, _, _, _, _, _, '...3....'];
@@ -143,6 +144,7 @@ const COMPOSITES = {
   'É': [SHORT_CAPITALS.E, ACCENTS.acute],
   'È': [SHORT_CAPITALS.E, ACCENTS.grave],
   'À': [SHORT_CAPITALS.A, ACCENTS.grave],
+  'Ô': [SHORT_CAPITALS.O, ACCENTS.circumflex], // Provençal (« Ô bonne mère ! »)
   'Ç': ['C', CEDILLA],
 };
 

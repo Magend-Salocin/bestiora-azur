@@ -437,7 +437,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 4 | Zones cendrelune (avec la Centrale) et bise | Fait |
 | 5 | Zones marais et ombrecourt | Fait |
 | 6 | Zones mer, forge et givremont | Fait |
-| 7 | Ligue, post-jeu, réactions, textes communs | À faire |
+| 7 | Ligue, post-jeu, réactions, textes communs | Fait |
 | 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | À faire |
 
 ## 8 bis. Lot 1 : contenu (fait)
@@ -762,6 +762,63 @@ Les clés, scripts et drapeaux ne changent pas. Trois régions sont concernées 
 `npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (mazzera, vieux forgeron, Gargantua) et de l'intro du combat contre Anselme.
 
 Ajout en cours de lot : la police du jeu reçoit le caractère « ò » (o accent grave), nécessaire au corse et à l'occitan (« Aiò ! »).
+
+## 8 octies. Lot 7 : contenu (fait)
+
+Ligue, post-jeu, réactions et textes communs :
+- `ligue.js` (147 textes) : Col des Échos, Grotte des Échos, Citadelle d'Azur ;
+- `postjeu.js` (94 textes) : Pic d'Azur, Grotte Boréale, revanches des champions ;
+- `reactions.js` (5 textes) : réactions des premières villes après la dissolution du Syndicat ;
+- `common.js` (19 textes) : messages système ;
+- 13 prénoms de dresseurs.
+
+Les clés, scripts et drapeaux ne changent pas.
+
+### Principes
+
+- **Provence-Alpes-Côte d'Azur** (Col et Grotte des Échos, Citadelle, Pic d'Azur) :
+  - gardians, santons, lavande, farandole, galéjades, Tarasque ;
+  - les anciens glissent du provençal (« Peuchère », « Fan de chichourle », « Boulégan », « Adessias », « Ô bonne mère »).
+  - Clin d'œil : le guide de la Citadelle (`citadelle_guide`) est Guillaume au court nez. Il se présente comme « Guillaume, du côté d'Orange », vieux chevalier au nez cabossé. Les consignes de la Ligue (quatre Gardiens, porte qui se referme, pas de soin) restent intactes.
+  - Le Col est la porte de la Ligue : on y croise des dresseurs de toute la région. Seuls ceux qui « sont d'ici » prennent un prénom provençal ; gentlemen, scientifiques et chercheuses gardent le leur.
+- **Grotte Boréale** (zone postjeu, mais en Auvergne-Rhône-Alpes) : l'ermite parle savoyard, comme Givremont.
+- **Textes inchangés sur le fond** : gardes du Col (formule officielle identique pour les huit badges, seule la phrase d'accord prend une touche provençale), Gardiens de la Ligue, rivale et Maître, Pr Morvan, Maman, Salle d'honneur, fin. Ce sont les scènes de l'intrigue : la rivale vient du Hameau comme le joueur et ne parle pas patois.
+- **Revanches des champions** : chaque champion garde ses quatre répliques, avec une signature de sa région dans l'intro (« Demat ! » pour Maël, « Adieu, pitchoun ! » pour Brune, « Boujou ! » pour Aubin…). Les répliques génériques `revanche_*` (« Champion : … ») restent neutres, car elles servent à tous.
+- **Réactions** (`reactions.js`) : chaque ville réagit avec un mot de son glossaire (section 7).
+- **Textes communs** (`common.js`) : messages système (objets, capacités de terrain, Répulsif). Ils restent en français standard, sans changement.
+- On n'emploie que les mots marqués ✓.
+
+### Prénoms
+
+| Lieu | Changements |
+|---|---|
+| Col des Échos | Valentin → Marius, Clothilde → Magali, Éliacin → Frédéri, Selma → Vincènte, Clémentine → Fanny, Ysaure → Mireille ; Augustin et Thaddée inchangés |
+| Grotte des Échos | Barthélemy → Titin, Zéphirine → Estelle, Éphrem → Calendal ; Lazlo, Aurélie et Ptolémée inchangés |
+| Citadelle d'Azur | Sigismond et Lucienne inchangés (candidats venus de tout Brumeval) |
+| Pic d'Azur | Hildebert (« je suis né ici ») → Batistin ; les autres inchangés (dresseurs d'élite venus d'ailleurs) |
+| Grotte Boréale | Günther → Séraphin, Bérénice → Toinette, Edmée → Philomène ; Osmond, Isaure et Wolfram inchangés |
+
+Ajouts aux réserves de la section 5 : Batistin, Calendal, Estelle (Provence) ; Séraphin, Toinette, Philomène (Auvergne-Rhône-Alpes). Calendal est le héros d'un poème de Mistral (*Calendau*) ; Estelle rappelle la Santo Estello, fête annuelle du Félibrige.
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Guide de la Citadelle (Guillaume au court nez) | « Je suis Guillaume, du côté d'Orange. Ce nez, je l'ai laissé dans une vieille bataille. La Ligue d'Azur : quatre Gardiens, puis le Maître… » |
+| Ancienne de la Citadelle | « Fan de chichourle ! Tu as le même regard que les meilleurs. Et ça, ce n'est pas une galéjade. » |
+| Garde du Col, accord | « Le badge Roche, c'est bon. Passe, et boulégan : la route est longue. » |
+| Gardian Marius | « Ici, on garde les taureaux à cheval. Toi, je vais te garder un moment ! » |
+| Guide du Pic d'Azur | « Peuchère, tu veux voir Vouivre ? Elle ne se laisse approcher que par qui a vaincu la Ligue. » |
+| Ermite de la Grotte Boréale | « Adieu ! Gaussier dort au fond, derrière la glace. On y glisse, on y glisse… » |
+| Revanche de Maël | « Maël : Demat ! Une revanche ? Cette fois, la marée est pour moi. » |
+| Réaction de Port-Ondine | « Kenavo, le Syndicat ! Les bateaux filent de nouveau vers Ombrecourt. » |
+| Réaction de Vireval | « L'usine Opale tourne pour les ouvriers, maintenant. On a fêté ça à l'estaminet, ou bien ? » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures du guide de la Citadelle, de l'ermite de la Grotte Boréale, d'une revanche et d'une réaction.
+
+Ajout en cours de lot : la police du jeu reçoit le caractère « Ô » (capitale courte, comme É et À), nécessaire à « Ô bonne mère ! ».
 
 ## 9. Points ouverts
 
