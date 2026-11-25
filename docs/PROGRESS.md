@@ -17,7 +17,11 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | 11 Ligue, post-jeu, fin | fait (voir « Reste ») |
 | 12 Sauvegarde, finition, packaging | fait |
 | 13 Recette complète | à faire |
+| Bestiaire V2 (150 bestioles dessinées) | fait |
+| Micro-animations et styles de combat | fait |
 | PNJ 1 Villes, PNJ et dialogues régionaux | fait |
+| PNJ 2 Portraits de combat dessinés | à faire |
+| PNJ 3 Attaques | à faire |
 
 ## Journal
 
@@ -437,6 +441,57 @@ Décisions
 - RECHARGER relance la page (écran titre, CONTINUER) plutôt que de recharger la sauvegarde en mémoire : c'est le seul chemin sûr quand l'état du jeu est corrompu.
 - « Nuit en contraste maximal » est une palette à part, Contraste (teintes de Nuit poussées du blanc au noir), pour garder Nuit telle quelle.
 - Le défilé du titre exclut les espèces d'habitat « inconnu » (4 légendaires et le mythique).
+
+Problèmes connus
+- Aucun connu.
+
+### 2026-11-24 : Bestiaire V2, 150 bestioles folkloriques dessinées à la main
+
+Fait
+- Référentiel `docs/bestiaire-folklorique/BESTIAIRE_V2.md` : décisions, charte graphique, correspondance des 150 emplacements, plan en 14 lots (0, starters, 1 à 12). Brouillons rangés dans `archives/`, concepts dans `concepts/`, 47 fiches de lignée dans `fiches/`.
+- Chaque emplacement 001 à 150 reçoit une créature du folklore français : nom (10 caractères max), légende, description sur deux pages de bestiaire, sprites de face et de dos, icône d'équipe propre. Stats, attaques, évolutions, rencontres et dresseurs inchangés.
+- Genre grammatical : `gender: 'f'` dans `creatures.js`, marqueurs `{CREATURE:Un|Une}` dans les textes de combat et des menus, surnoms compris (`src/data/grammar.js`).
+- Outils : `tools/creature-painter.js` (formes, `iconFrom`), modules `tools/creature-designs/`, `npm run creature-design` (export vers `src/gfx/sources/creatures/`), `npm run planche` (planches `rendus/planche-<de>-<à>.png`), `npm run screenshots -- --preview <id, nom ou numéro>` (captures par espèce dans `rendus/<numéro>-<nom>/`).
+- Dialogues citant les anciens noms mis à jour à chaque lot.
+- Lot 12 : identifiants internes alignés sur les noms V2 (`korrigan`, `dame_noire`…), générateur de sprites et ses tests retirés, le validateur exige une source dessinée par espèce, icône de l'application régénérée avec la Vouivre, captures du README régénérées, `docs/apprendre/` à jour.
+- Retouches après relecture : Basilin, Poulpifol, catégorie du Drapet (18 caractères), Ankou en corbeau, Vouivre dégagée du défilé de l'écran titre, textes de Mitrêve.
+
+Vérifié
+- `npm run validate` et `npm test` à chaque lot ; planche et captures de contrôle par lot (12 planches, de `planche-001-009.png` à `planche-142-150.png`).
+
+Reste
+- Origines marquées « à vérifier » (dont Truffandec et Warabouc) : à confirmer dans Sébillot, Tembouret ou Joisten.
+- Créatures des brouillons hors table (Garache, Dauna d'Aygua…) : en réserve dans `archives/`.
+
+Décisions
+- 150 espèces, pas 151 : la « Mite des rêves » devient le mythique 150 (Mitrêve).
+- Les types de l'emplacement font foi ; la créature s'adapte à ses types.
+- Pas d'humains, de saints, de chevaliers ni de personnages littéraires. Le Lougarou et l'Ankou sont dessinés en bêtes, sans silhouette humaine.
+- Identifiants renommés sans migration : les sauvegardes antérieures au lot 12 ne sont plus compatibles. Les clés de drapeaux et de textes des légendaires (`azurel_ko`, `mirelle_gone`) gardent leur nom.
+
+Problèmes connus
+- Aucun connu.
+
+### 2026-11-25 : micro-animations, styles d'interface de combat et ambiance de la carte
+
+Fait
+- Option COMBAT (`battleUi`, défaut `classique`) : quatre interfaces de combat, CLASSIQUE, MODERNE, DYNAMIQUE et ÉPURÉE (`battle-hud.js`, `battle-menu.js`, aides de dessin dans `battle-pixels.js`). Décrites dans le README.
+- Cadres de fenêtre unifiés entre le combat, la boîte de dialogue, l'évolution et l'apprentissage d'attaque ; cadre plat pour DYNAMIQUE et ÉPURÉE.
+- Micro-animations de combat (`src/battle/ui/battle-motion.js`) : curseur qui glisse d'une entrée à l'autre (`CursorGlide`, 0,1 s), entrées de menu révélées en cascade, marques de statut au-dessus des bestioles, nuage de poussière au K.O. ; affichage des PV revu dans `event-player.js`.
+- Ambiance de la carte (`src/overworld/ambience.js`) : rafales qui font pencher arbres et herbes, feuilles, oiseaux, papillons, libellules, poissons, reflets sur l'eau, gouttes en grotte, bulles de lave, fumée de cheminée ; poussière de course et d'atterrissage, herbes foulées, sillage en surf, traces de pas, éclaboussures, bulles d'humeur des PNJ, scintillement des objets au sol. Aucun effet ne modifie l'état du jeu ; 60 effets au plus.
+- Tuiles extérieures retouchées (`outdoor.js`) pour accueillir ces effets.
+- Tests : `tests/battle-ui.test.js` étendu, `tests/ambience.test.js` (arbres, rafales, bulles d'humeur).
+
+Vérifié
+- `npm test` : 251 tests verts au 2026-11-25.
+
+Reste
+- Pas de passe de performance (`npm run perf`) consignée depuis l'ajout de l'ambiance.
+- Lisibilité des quatre styles avec les 6 palettes, dont Contraste : à vérifier pendant la recette (prompt 13).
+
+Décisions
+- FLASHS RÉDUITS coupe les effets qui clignotent : reflets sur l'eau en carte, pulsation de la barre de PV en combat.
+- Les micro-animations communes (curseur, cascade, statuts, K.O.) ne dépendent pas du style choisi.
 
 Problèmes connus
 - Aucun connu.
