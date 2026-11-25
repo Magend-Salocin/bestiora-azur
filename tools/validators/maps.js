@@ -208,6 +208,7 @@ export function checkTrainers(data) {
     if (seen.has(trainer.id)) errors.push(`${label} : id en double`);
     seen.add(trainer.id);
     if (!data.trainerClasses.some((entry) => entry.id === trainer.class)) errors.push(`${label} : classe inconnue « ${trainer.class} »`);
+    if (trainer.moneyBase !== undefined && !(Number.isInteger(trainer.moneyBase) && trainer.moneyBase > 0)) errors.push(`${label} : moneyBase invalide`);
     if (!(trainer.party?.length >= 1 && trainer.party.length <= 6)) errors.push(`${label} : équipe de 1 à 6 bestioles`);
     const parties = [trainer.party ?? [], ...Object.values(trainer.partyByStarter ?? {})];
     for (const member of parties.flat()) {

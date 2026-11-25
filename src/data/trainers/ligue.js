@@ -2,9 +2,9 @@
 import { trainer, rival } from './helpers.js';
 
 export default [
-  trainer('montagnard_valentin', 'montagnard', 'Valentin', ['gargouille:47', 'cabro_dor:47', 'dracrhodan:48']),
-  trainer('randonneuse_clothilde', 'campeuse', 'Clothilde', ['barbegazi:47', 'vosgar:48', 'alicornet:48']),
-  trainer('dresseur_eliacin', 'randonneur', 'Éliacin', ['dahu:48', 'gevaudan:48']),
+  trainer('montagnard_valentin', 'gardian', 'Valentin', ['gargouille:47', 'cabro_dor:47', 'dracrhodan:48']),
+  trainer('randonneuse_clothilde', 'randonneuse', 'Clothilde', ['barbegazi:47', 'vosgar:48', 'alicornet:48'], { moneyBase: 20 }),
+  trainer('dresseur_eliacin', 'gardian', 'Éliacin', ['dahu:48', 'gevaudan:48'], { moneyBase: 30 }),
   trainer('mystique_selma', 'mystique', 'Selma', ['alicornet:48', 'sotremage:49', 'blancelune:49']),
   trainer('gentleman_augustin', 'gentleman', 'Augustin', ['mallet:48', 'follorage:48', 'sotremage:49']),
   trainer('scientifique_thaddee', 'scientifique', 'Thaddée', ['cabro_dor:49', 'dracrhodan:49', 'alicorne:50']),

@@ -10,11 +10,11 @@ export default [
   trainer('ecolier_timothee', 'ecolier', 'Timothée', ['poulpiquet:6', 'dame_verte:6']),
 
   // Bois Murmurant (5-10)
-  trainer('campeur_jules', 'campeur', 'Jules', ['carcolh:6', 'chauchet:6']),
+  trainer('campeur_jules', 'sonneur', 'Jules', ['carcolh:6', 'chauchet:6']),
   trainer('fillette_rose', 'fillette', 'Rose', ['dame_verte:7', 'fadet:7']),
-  trainer('campeuse_margot', 'campeuse', 'Margot', ['mandragot:7', 'chauchet:7', 'chauchenid:8']),
-  trainer('campeur_basile', 'campeur', 'Basile', ['carcolh:8', 'chauchenid:9']),
-  trainer('campeuse_solene', 'campeuse', 'Solène', ['fadet:8', 'dame_verte:9']),
+  trainer('campeuse_margot', 'sonneuse', 'Margot', ['mandragot:7', 'chauchet:7', 'chauchenid:8']),
+  trainer('campeur_basile', 'sonneur', 'Basile', ['carcolh:8', 'chauchenid:9']),
+  trainer('campeuse_solene', 'sonneuse', 'Solène', ['fadet:8', 'dame_verte:9']),
   trainer('fillette_capucine', 'fillette', 'Capucine', ['chauchet:9', 'fadet:10']),
   // Syndicat Opale grunts, fought from the bois_murmurant script.
   trainer('sbire_bois_1', 'sbire_opale', 'Brice', ['basilin:8', 'poulpiquet:9']),

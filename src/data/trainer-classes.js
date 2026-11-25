@@ -1,4 +1,5 @@
 // Trainer classes. Reward = highest level in the team × moneyBase (game design, section 5).
+// A trainer's own `moneyBase` overrides the class one (a reclassed trainer keeps its reward).
 // `portrait: null` = each trainer of the class defines its own portrait (champions, Gardiens).
 // `name: ''` = only the trainer's name is shown (rival).
 
@@ -31,6 +32,25 @@ export const TRAINER_CLASSES = [
   trainerClass('dame', 'Dame', 'portrait/dame', 70),
   trainerClass('mystique', 'Mystique', 'portrait/mystique', 40),
   trainerClass('danseuse', 'Danseuse', 'portrait/danseuse', 30),
+  // Regional classes (docs/Pnj/PNJ_V2.md, section 4.2): same reward base and music as the
+  // generic class they replace; portraits borrowed from it until the hand-drawn ones (prompt 2).
+  trainerClass('carrier', 'Carrier', 'portrait/montagnard', 35),
+  trainerClass('sonneur', 'Sonneur', 'portrait/campeur', 20),
+  trainerClass('sonneuse', 'Sonneuse', 'portrait/campeuse', 20),
+  trainerClass('goemonier', 'Goémonier', 'portrait/pecheur', 35),
+  trainerClass('cheminot', 'Cheminot', 'portrait/ouvrier', 30),
+  trainerClass('mineur', 'Mineur', 'portrait/ouvrier', 30),
+  trainerClass('miquelot', 'Miquelot', 'portrait/mystique', 40),
+  trainerClass('jardinier', 'Jardinier', 'portrait/gentleman', 70),
+  trainerClass('jardiniere', 'Jardinière', 'portrait/dame', 70),
+  trainerClass('horloger', 'Horloger', 'portrait/scientifique', 50),
+  trainerClass('fruitier', 'Fruitier', 'portrait/montagnard', 35),
+  trainerClass('maraichin', 'Maraîchin', 'portrait/pecheur', 35),
+  trainerClass('maraichine', 'Maraîchine', 'portrait/nageuse', 35),
+  trainerClass('cataphile', 'Cataphile', 'portrait/dresseur', 40),
+  trainerClass('corailleur', 'Corailleur', 'portrait/pecheur', 35),
+  trainerClass('forgeron', 'Forgeron', 'portrait/ouvrier', 30),
+  trainerClass('gardian', 'Gardian', 'portrait/montagnard', 35),
   trainerClass('sbire_opale', 'Sbire Opale', 'portrait/sbire_opale', 30, 'villain'),
   trainerClass('sbire_opale_f', 'Sbire Opale', 'portrait/sbire_opale_f', 30, 'villain'),
   trainerClass('lieutenant_opale', 'Lieutenant', 'portrait/sbire_opale', 60, 'villain'),

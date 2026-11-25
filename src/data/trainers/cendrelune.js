@@ -12,15 +12,15 @@ export default [
   trainer('randonneuse_capucine', 'randonneuse', 'Capucine', ['bolegan:22', 'dracounet:23', 'lycastre:24']),
 
   // Tunnel Obscur (22-26)
-  trainer('montagnard_gilles', 'montagnard', 'Gilles', ['gargoulin:23', 'gargoulard:25']),
-  trainer('ouvrier_firmin', 'ouvrier', 'Firmin', ['servan:24', 'gobelinet:24', 'veluchon:25']),
+  trainer('montagnard_gilles', 'mineur', 'Gilles', ['gargoulin:23', 'gargoulard:25'], { moneyBase: 35 }),
+  trainer('ouvrier_firmin', 'mineur', 'Firmin', ['servan:24', 'gobelinet:24', 'veluchon:25']),
   trainer('mystique_ophelie', 'mystique', 'Ophélie', ['croquemine:24', 'chauchemor:24', 'hadalune:26']),
-  trainer('montagnard_hector', 'montagnard', 'Hector', ['lycastre:24', 'dame_noire:24', 'gargoulin:25']),
-  trainer('ouvrier_lucien', 'ouvrier', 'Lucien', ['bolegan:25', 'lycastre:26']),
+  trainer('montagnard_hector', 'mineur', 'Hector', ['lycastre:24', 'dame_noire:24', 'gargoulin:25'], { moneyBase: 35 }),
+  trainer('ouvrier_lucien', 'mineur', 'Lucien', ['bolegan:25', 'lycastre:26']),
 
   // Arène Flore (26-31)
-  trainer('dame_hortense', 'dame', 'Hortense', ['margelle:27', 'dame_verte:27', 'bugulin:28']),
-  trainer('gentleman_achille', 'gentleman', 'Achille', ['fadebois:28', 'mandragoul:28']),
+  trainer('dame_hortense', 'jardiniere', 'Hortense', ['margelle:27', 'dame_verte:27', 'bugulin:28']),
+  trainer('gentleman_achille', 'jardinier', 'Achille', ['fadebois:28', 'mandragoul:28']),
   trainer('campeuse_lison', 'campeuse', 'Lison', ['jetin:27', 'mandragoul:27', 'dame_verte:28']),
   trainer('aubin', 'champion', 'Aubin', ['bugulin:28', 'fadebois:29', 'mandragoul:29', 'roncefee:30'], {
     portrait: 'portrait/aubin', ai: 'smart', last: true,
@@ -36,9 +36,9 @@ export default [
   trainer('sbire_tour_rufin', 'sbire_opale', 'Rufin', ['veluchon:27', 'lubinou:28']),
   trainer('mystique_sidonie', 'mystique', 'Sidonie', ['ankoulet:28', 'revenant:28']),
   trainer('sbire_tour_josette', 'sbire_opale_f', 'Josette', ['basilic:28', 'croquemine:28', 'poulpifol:28']),
-  trainer('mystique_ernest', 'mystique', 'Ernest', ['hadalune:28', 'blanchin:29']),
+  trainer('mystique_ernest', 'miquelot', 'Ernest', ['hadalune:28', 'blanchin:29']),
   trainer('mystique_berenice', 'mystique', 'Bérénice', ['hadalune:29', 'blanchin:29', 'revenant:30']),
   trainer('sbire_tour_anatole', 'sbire_opale', 'Anatole', ['basilic:30', 'lubinou:30']),
-  trainer('mystique_honore', 'mystique', 'Honoré', ['croquemine:29', 'chauchemor:29', 'ankoulet:30']),
+  trainer('mystique_honore', 'miquelot', 'Honoré', ['croquemine:29', 'chauchemor:29', 'ankoulet:30']),
   trainer('lieutenant_gerfaut', 'lieutenant_opale', 'Gerfaut', ['lubinou:29', 'basilic:30', 'camecruse:31', 'croquefrou:32']),
 ];

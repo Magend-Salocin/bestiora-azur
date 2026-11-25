@@ -2,14 +2,14 @@
 import { trainer, rival } from './helpers.js';
 
 export default [
-  trainer('ouvrier_tiburce', 'ouvrier', 'Tiburce', ['goulinet:42', 'mallet:43']),
+  trainer('ouvrier_tiburce', 'forgeron', 'Tiburce', ['goulinet:42', 'mallet:43']),
   trainer('randonneur_isidore', 'randonneur', 'Isidore', ['taurnoir:43', 'leberombre:42']),
   trainer('gamin_eliott', 'gamin', 'Éliott', ['babauet:42', 'goulinet:42']),
   trainer('mystique_calixte', 'mystique', 'Calixte', ['blancome:43', 'mallet:44']),
-  trainer('forgeron_balthazar', 'ouvrier', 'Balthazar', ['mallet:44', 'goulinet:43']),
-  trainer('ouvrier_leandre', 'ouvrier', 'Léandre', ['taurnoir:44', 'babauet:43']),
+  trainer('forgeron_balthazar', 'forgeron', 'Balthazar', ['mallet:44', 'goulinet:43']),
+  trainer('ouvrier_leandre', 'forgeron', 'Léandre', ['taurnoir:44', 'babauet:43']),
   trainer('chercheuse_mireille', 'chercheuse', 'Mireille', ['babau:44', 'goulinet:44']),
-  trainer('dresseur_sylvain', 'randonneur', 'Sylvain', ['grangoule:45', 'leberombre:43']),
+  trainer('dresseur_sylvain', 'forgeron', 'Sylvain', ['grangoule:45', 'leberombre:43']),
   trainer('brune', 'champion', 'Brune', ['babauet:37', 'goulinet:39', 'taurnoir:40', 'grangoule:42'], { portrait: 'portrait/brune', ai: 'smart', last: true }),
   trainer('sbire_coeur_matthias', 'sbire_opale', 'Matthias', ['moinbourru:42', 'velucorne:42', 'galipote:43']),
   trainer('sbire_coeur_inaya', 'sbire_opale_f', 'Inaya', ['mallet:43', 'croquefrou:42']),

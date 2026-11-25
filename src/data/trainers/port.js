@@ -3,13 +3,13 @@ import { trainer } from './helpers.js';
 
 export default [
   // Port-Ondine and bateau-musée (13-18)
-  trainer('pecheur_gaston', 'pecheur', 'Gaston', ['laminak:14', 'laminak:15', 'tudgommon:16']),
+  trainer('pecheur_gaston', 'goemonier', 'Gaston', ['laminak:14', 'laminak:15', 'tudgommon:16']),
   trainer('marin_yves', 'marin', 'Yves', ['tudgommon:16', 'lougarou:16']),
   trainer('marin_hugo', 'marin', 'Hugo', ['coulobrin:15', 'dracounet:16', 'laminak:17']),
 
   // Arène Eau
   trainer('nageur_theo', 'nageur', 'Théo', ['laminak:16', 'morgann:17']),
-  trainer('pecheur_rene', 'pecheur', 'René', ['tudgommon:17', 'laminea:18']),
+  trainer('pecheur_rene', 'goemonier', 'René', ['tudgommon:17', 'laminea:18']),
   trainer('mael', 'champion', 'Maël', ['laminak:17', 'tudgommon:18', 'morgann:18', 'laminea:20'], {
     portrait: 'portrait/mael', ai: 'smart', last: true,
   }),
@@ -17,8 +17,8 @@ export default [
   // Route 4 (14-18)
   trainer('nageur_bastien', 'nageur', 'Bastien', ['laminak:15', 'morgann:16']),
   trainer('nageuse_clara', 'nageuse', 'Clara', ['morgann:16', 'tudgommon:17']),
-  trainer('pecheur_marcel', 'pecheur', 'Marcel', ['laminak:14', 'laminak:15', 'laminea:18']),
-  trainer('pecheur_alain', 'pecheur', 'Alain', ['tudgommon:16', 'coulobrin:17']),
+  trainer('pecheur_marcel', 'goemonier', 'Marcel', ['laminak:14', 'laminak:15', 'laminea:18']),
+  trainer('pecheur_alain', 'goemonier', 'Alain', ['tudgommon:16', 'coulobrin:17']),
   trainer('dresseuse_ines', 'dresseuse', 'Inès', ['truffandec:16', 'farfandole:17']),
   trainer('campeuse_julie', 'campeuse', 'Julie', ['chauchenid:14', 'chauchemor:16']),
   trainer('randonneur_gilles', 'randonneur', 'Gilles', ['gargoulin:15', 'dracounet:16', 'lougarou:16']),
@@ -42,7 +42,7 @@ export default [
   trainer('lieutenant_brisac', 'lieutenant_opale', 'Brisac', ['basilic:22', 'lubinou:23', 'veluchon:24']),
 
   // Arène Foudre (21-25)
-  trainer('ouvrier_remi', 'ouvrier', 'Rémi', ['follaton:22', 'follet:22', 'gobelinet:23']),
+  trainer('ouvrier_remi', 'cheminot', 'Rémi', ['follaton:22', 'follet:22', 'gobelinet:23']),
   trainer('scientifique_gaspard', 'scientifique', 'Gaspard', ['gobelinet:22', 'fouletot:23']),
   trainer('chercheuse_lea', 'chercheuse', 'Léa', ['follumine:24', 'follaton:25']),
   trainer('selene', 'championne', 'Sélène', ['fouletot:22', 'follumine:23', 'follaton:24', 'follaclair:26'], {

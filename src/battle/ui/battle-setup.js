@@ -21,7 +21,7 @@ export function trainerBattleConfig(trainer, state = getGameState()) {
     class: trainer.class,
     className: trainerClass?.name ?? '',
     name: trainer.class === 'rival' ? state.rival.name : trainer.name,
-    moneyBase: trainerClass?.moneyBase ?? 0,
+    moneyBase: trainer.moneyBase ?? trainerClass?.moneyBase ?? 0,
     ai: trainer.ai,
     portrait: trainer.portrait ?? trainerClass?.portrait ?? 'portrait/dresseur',
     defeat: trainer.defeat,

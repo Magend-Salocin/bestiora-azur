@@ -360,7 +360,7 @@ Chacune reprend la récompense de base et la musique de la classe qu'elle rempla
 | Forge-Ardente | Forgeron / Forgeronne | Ouvrier | Tiburce, Balthazar, Léandre |
 | Col des Échos, Citadelle | Gardian / Gardiane | Montagnard, Randonneur | Valentin, Éliacin |
 
-Tous les noms font 12 caractères au plus. Trois féminins sont à confirmer : « Carrière » et « Mineure » ont un autre sens courant, et « Miquelotte » est peu attesté. Si l'un d'eux ne passe pas, la classe reste épicène (« Mineur Odile ») ou garde son équivalent générique.
+Tous les noms font 12 caractères au plus. Décision du lot 1 : pas de féminin douteux (« Carrière », « Miquelotte », « Mineure »). Une dresseuse sans féminin attesté garde sa classe générique.
 
 Ces 14 classes ajoutent 14 portraits au prompt 2, en plus des féminins qui partagent une silhouette.
 
@@ -431,7 +431,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | Lot | Contenu | État |
 |---|---|---|
 | 0 | Ce référentiel | Validé |
-| 1 | Classes : 14 classes régionales, anomalies de la section 4.3, noms dans `trainer-classes.js` | À faire |
+| 1 | Classes : 17 classes ajoutées (14 régionales et 3 féminins), 46 dresseurs reclassés, anomalies de la section 4.3 corrigées, récompenses inchangées | Fait |
 | 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | À faire |
 | 3 | Zones bois et port | À faire |
 | 4 | Zones cendrelune (avec la Centrale) et bise | À faire |
@@ -439,6 +439,67 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 6 | Zones mer, forge et givremont | À faire |
 | 7 | Ligue, post-jeu, réactions, textes communs | À faire |
 | 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | À faire |
+
+## 8 bis. Lot 1 : contenu (fait)
+
+### Principe
+
+- 17 classes ajoutées dans `trainer-classes.js` : les 14 classes régionales, plus 3 féminins (Sonneuse, Jardinière, Maraîchine). « Carrière » et « Miquelotte » sont écartés (décision du lot 1) : Inès reste Randonneuse, Amandine, Sidonie et Bérénice restent Mystiques. Les autres classes n'ont que des dresseurs masculins.
+- Portrait provisoire : chaque nouvelle classe reprend le portrait de la classe qu'elle remplace, jusqu'au prompt 2.
+- Récompenses identiques : quand la récompense de base de la nouvelle classe diffère de l'ancienne, le dresseur reçoit un champ `moneyBase` qui garde l'ancienne valeur. `battle-setup.js` lit `trainer.moneyBase` avant celle de la classe (une ligne de code).
+- Seul le champ `class` des dresseurs change. Identifiants, noms, équipes et drapeaux restent identiques ; les prénoms changent aux lots de zone.
+
+### Nouvelles classes
+
+| Classe | Base | Portrait provisoire |
+|---|---:|---|
+| Carrier | 35 | montagnard |
+| Sonneur / Sonneuse | 20 | campeur / campeuse |
+| Goémonier | 35 | pecheur |
+| Cheminot | 30 | ouvrier |
+| Mineur | 30 | ouvrier |
+| Miquelot | 40 | mystique |
+| Jardinier / Jardinière | 70 | gentleman / dame |
+| Horloger | 50 | scientifique |
+| Fruitier | 35 | montagnard |
+| Maraîchin / Maraîchine | 35 | pecheur / nageuse |
+| Cataphile | 40 | dresseur |
+| Corailleur | 35 | pecheur |
+| Forgeron | 30 | ouvrier |
+| Gardian | 35 | montagnard |
+
+### Dresseurs reclassés
+
+| Dresseurs | Avant | Après | Récompense gardée par `moneyBase` |
+|---|---|---|---|
+| Basile, Gaspard (arène Roche) | Randonneur, Montagnard | Carrier | Basile : 30 |
+| Jules, Basile (Bois Murmurant) | Campeur | Sonneur | non |
+| Margot, Solène (Bois Murmurant) | Campeuse | Sonneuse | non |
+| Gaston, René, Marcel, Alain | Pêcheur | Goémonier | non |
+| Rémi (arène Foudre) | Ouvrier | Cheminot | non |
+| Firmin, Lucien, Gilles, Hector (Tunnel Obscur) | Ouvrier, Montagnard | Mineur | Gilles, Hector : 35 |
+| Ernest, Honoré (Tour) | Mystique | Miquelot | non |
+| Achille, Hortense (arène Flore) | Gentleman, Dame | Jardinier, Jardinière | non |
+| Octave (Falaises) | Scientifique | Horloger | non |
+| Lothaire, Ferdinand | Montagnard | Fruitier | non |
+| Odilon, Baltazar, Corentin | Pêcheur, Nageur | Maraîchin | Corentin : 25 |
+| Élodie | Nageuse | Maraîchine | 25 |
+| Ludovic, Barnabé | Dresseur | Cataphile | non |
+| Léopold, Gontran, Anselme, Tancrède | Pêcheur | Corailleur | non |
+| Tiburce, Balthazar, Léandre, Sylvain (forge) | Ouvrier, Randonneur | Forgeron | non |
+| Valentin, Éliacin (Col des Échos) | Montagnard, Randonneur | Gardian | Éliacin : 30 |
+
+### Anomalies corrigées
+
+| Dresseurs | Avant | Après | Récompense gardée |
+|---|---|---|---|
+| Maëlle, Pomme, Ysaline, Oriane | Nageur | Nageuse | non (même base) |
+| Clothilde, Ottilie | Campeuse | Randonneuse | 20 |
+| Aldric, Wolfram | Randonneur | Dresseur | 30 |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text`, `npm test`, puis une capture de l'intro d'un combat par nouvelle classe (nom de classe affiché).
 
 ## 9. Points ouverts
 

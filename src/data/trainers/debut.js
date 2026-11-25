@@ -16,8 +16,8 @@ export default [
   trainer('route_1_ecolier_marius', 'ecolier', 'Marius', ['faramin:5']),
 
   // Roche arena, Bourg-Sablon
-  trainer('arene_roche_randonneur_basile', 'randonneur', 'Basile', ['gargoulin:8', 'carcolh:9']),
-  trainer('arene_roche_montagnard_gaspard', 'montagnard', 'Gaspard', ['bolegan:10']),
+  trainer('arene_roche_randonneur_basile', 'carrier', 'Basile', ['gargoulin:8', 'carcolh:9'], { moneyBase: 30 }),
+  trainer('arene_roche_montagnard_gaspard', 'carrier', 'Gaspard', ['bolegan:10']),
   trainer('arene_roche_randonneuse_ines', 'randonneuse', 'Inès', ['gargoulin:10', 'houlin:11']),
   trainer('garance', 'championne', 'Garance', ['gargoulin:10', 'carcolh:10', 'houlin:10', 'gargoulin:12'], {
     ai: 'smart', last: true, portrait: 'portrait/garance',
