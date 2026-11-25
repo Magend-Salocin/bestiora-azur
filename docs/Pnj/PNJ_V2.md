@@ -432,7 +432,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 |---|---|---|
 | 0 | Ce référentiel | Validé |
 | 1 | Classes : 17 classes ajoutées (14 régionales et 3 féminins), 46 dresseurs reclassés, anomalies de la section 4.3 corrigées, récompenses inchangées | Fait |
-| 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | À faire |
+| 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | Fait |
 | 3 | Zones bois et port | À faire |
 | 4 | Zones cendrelune (avec la Centrale) et bise | À faire |
 | 5 | Zones marais et ombrecourt | À faire |
@@ -500,6 +500,52 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 ### Contrôles
 
 `npm run validate`, `npm run check-text`, `npm test`, puis une capture de l'intro d'un combat par nouvelle classe (nom de classe affiché).
+
+## 8 ter. Lot 2 : contenu (fait)
+
+Zone debut, 102 textes de `src/data/texts/debut.js`, 6 prénoms de dresseurs dans `src/data/trainers/debut.js`. Les clés, scripts et drapeaux ne changent pas.
+
+### Principes
+
+- **Textes de l'intrigue** (Maman, Pr Morvan, rivale, labo, premier combat) : même contenu, même déroulé. Seulement une touche locale, comme les jardins et la Loire.
+- **Textes de tutoriel** (capture, Haltes, terminal, dalles de l'arène) : la même information, reformulée dans la voix du personnage.
+- **Hameau-de-Lys et Route 1**, en Centre-Val de Loire :
+  - les lys et les potagers ;
+  - le pêcheur devient batelier de gabare ;
+  - la voisine devient la marraine jardinière aux citrouilles (clin d'œil à Cendrillon).
+- **Bourg-Sablon**, en Pays de la Loire :
+  - le tuffeau, les maisons troglodytes et les marais salants ;
+  - les anciens (garde, dame, vieux de la Halte, conteur) parlent de façon marquée (« Ma doué ») ;
+  - le conteur raconte le seigneur à la barbe bleue de Tiffauges, et garde en seconde page l'annonce de la bestiole du Pic d'Azur.
+- **Arène Roche :**
+  - les Carriers taillent le tuffeau ;
+  - Garance est carrière de métier ;
+  - la Pierre Lunaire vient toujours de sa carrière.
+
+### Prénoms
+
+| Dresseur | Avant | Après |
+|---|---|---|
+| Route 1, Gamin | Théo | Gatien |
+| Route 1, Fillette | Lise | Agnès |
+| Route 1, Écolier | Marius | Florent |
+| Arène Roche, Carrier | Basile | Mathurin |
+| Arène Roche, Carrier | Gaspard | Aimé |
+| Arène Roche, Randonneuse | Inès | Perrine |
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Voisine (Hameau) | « Ma citrouille grossit à vue d'œil. Avec un coup de baguette, on en ferait un carrosse ! » |
+| Batelier (Hameau) | « Ma gabare reste à quai aujourd'hui. Les bestioles de la mare se cachent. » |
+| Garde (Bourg-Sablon) | « Ma doué, petit ! Sans Bestiaire, tu vas te perdre dans le Bois Murmurant. » |
+| Conteur (Bourg-Sablon) | « Par-delà Tiffauges vivait un seigneur à la barbe bleue. Une clef tachée, une porte interdite… La suite à la prochaine veillée ! » |
+| Carrier Aimé | « Trente ans à tailler le tuffeau. Toi, tu ne passeras pas ! » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (voisine, conteur, Garance).
 
 ## 9. Points ouverts
 

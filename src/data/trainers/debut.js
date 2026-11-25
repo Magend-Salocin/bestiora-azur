@@ -11,14 +11,14 @@ export default [
   }),
 
   // Route 1
-  trainer('route_1_gamin_theo', 'gamin', 'Théo', ['farfadet:3']),
-  trainer('route_1_fillette_lise', 'fillette', 'Lise', ['poulpiquet:3', 'chauchet:3']),
-  trainer('route_1_ecolier_marius', 'ecolier', 'Marius', ['faramin:5']),
+  trainer('route_1_gamin_theo', 'gamin', 'Gatien', ['farfadet:3']),
+  trainer('route_1_fillette_lise', 'fillette', 'Agnès', ['poulpiquet:3', 'chauchet:3']),
+  trainer('route_1_ecolier_marius', 'ecolier', 'Florent', ['faramin:5']),
 
   // Roche arena, Bourg-Sablon
-  trainer('arene_roche_randonneur_basile', 'carrier', 'Basile', ['gargoulin:8', 'carcolh:9'], { moneyBase: 30 }),
-  trainer('arene_roche_montagnard_gaspard', 'carrier', 'Gaspard', ['bolegan:10']),
-  trainer('arene_roche_randonneuse_ines', 'randonneuse', 'Inès', ['gargoulin:10', 'houlin:11']),
+  trainer('arene_roche_randonneur_basile', 'carrier', 'Mathurin', ['gargoulin:8', 'carcolh:9'], { moneyBase: 30 }),
+  trainer('arene_roche_montagnard_gaspard', 'carrier', 'Aimé', ['bolegan:10']),
+  trainer('arene_roche_randonneuse_ines', 'randonneuse', 'Perrine', ['gargoulin:10', 'houlin:11']),
   trainer('garance', 'championne', 'Garance', ['gargoulin:10', 'carcolh:10', 'houlin:10', 'gargoulin:12'], {
     ai: 'smart', last: true, portrait: 'portrait/garance',
   }),
