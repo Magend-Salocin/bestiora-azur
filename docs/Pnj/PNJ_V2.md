@@ -434,7 +434,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 1 | Classes : 17 classes ajoutées (14 régionales et 3 féminins), 46 dresseurs reclassés, anomalies de la section 4.3 corrigées, récompenses inchangées | Fait |
 | 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | Fait |
 | 3 | Zones bois et port | Fait |
-| 4 | Zones cendrelune (avec la Centrale) et bise | À faire |
+| 4 | Zones cendrelune (avec la Centrale) et bise | Fait |
 | 5 | Zones marais et ombrecourt | À faire |
 | 6 | Zones mer, forge et givremont | À faire |
 | 7 | Ligue, post-jeu, réactions, textes communs | À faire |
@@ -598,6 +598,59 @@ Zones bois et port : 97 textes de `bois.js`, 166 de `port.js`, 46 prénoms de dr
 ### Contrôles
 
 `npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (phare, Perceval, contremaître).
+
+## 8 quinquies. Lot 4 : contenu (fait)
+
+Zones cendrelune (avec la Centrale) et bise :
+- textes : 134 de `cendrelune.js`, 100 de `bise.js`, 16 de `centrale.js` ;
+- 38 prénoms de dresseurs.
+
+Les clés, scripts et drapeaux ne changent pas. Deux régions sont concernées : la Normandie et la Bourgogne-Franche-Comté.
+
+### Principes
+
+- **Normandie** (Route 6, Tunnel Obscur, Cendrelune, Tour de la Mémoire, Centrale abandonnée) :
+  - vergers, cidre (« bère »), teurgoule, clos-masures, serres, abbayes et pèlerins du Mont ;
+  - les anciens parlent normand (« Boujou », « Ma fé », « P'têt ben qu'oui, p'têt ben qu'non »).
+  - Le Tunnel Obscur devient une ancienne mine de fer, où travaillent les mineurs.
+  - Clin d'œil : la Dame blanche, la dame recueillie au pied de la Tour.
+  - Aubin est pomiculteur et serriste.
+- **Bourgogne-Franche-Comté** (Route 7, Falaises de Bise, Haute-Bise, téléphérique) :
+  - la bise du Jura, les fruitières, les horlogers, la cancoillotte ;
+  - la Vouivre et son escarboucle, racontées par les anciens ;
+  - les anciens parlent franc-comtois (« ça me ferait mal », « y » pour « le », « cheni »).
+  - Clin d'œil : « maître Renart », le collectionneur d'échanges.
+  - Ysolde garde les crêtes, voix de la bise.
+- On n'emploie que les mots marqués ✓. « Beuiller » attend une confirmation.
+- Les textes de l'intrigue gardent leur contenu, avec une voix régionale. Ils concernent la Tour, Corvin et Gerfaut, la rivale 3 et 4, le Grappin, les Gants de Force et le téléphérique.
+
+### Prénoms
+
+| Lieu | Changements |
+|---|---|
+| Route 6 | Gaspard → Guillaume, Ninon → Emma, Tristan → Onfroy (Tristan reste à l'apprenti de Port-Ondine), Basile → Thibault, Margaux → Héloïse, Éloi → Richard, Capucine → Aelis |
+| Tunnel Obscur | Gilles → Robert, Firmin (inchangé), Ophélie → Gunnor, Hector → Raoul, Lucien → Gautier |
+| Arène Flore | Hortense (inchangée), Achille → Rollon, Lison → Bertrade |
+| Tour de la Mémoire | Amandine → Ermengarde, Sidonie → Sibylle, Bérénice → Odeline, Miquelot Ernest → Michel, Miquelot Honoré → Aubert (saint Aubert, fondateur du Mont) ; sbires et Gerfaut inchangés |
+| Centrale abandonnée | Gédéon, Baptistin, Léopoldine, Germain inchangés |
+| Route 7 | Ulysse → Claude, Baptiste → Désiré, Lothaire (inchangé), Perrine → Philiberte, Cyprien → Bénigne, Zélie → Bernadette |
+| Falaises de Bise | Romane → Colette, Aurélien → Gustave, Ferdinand, Clémence, Octave et Agathe inchangés, Léandre → Jules, Ambroise → Abel |
+| Arène Vent | Mirabelle et Hugues inchangés, Oscar → Félicien, Basile → Vivant |
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Dame recueillie (Tour) | « Je viens de l'abbaye de Mortemer, toute de blanc vêtue. Ma fé, on me croit fantôme. Je prie seulement pour ceux de la Tour. » |
+| Jardinier (Cendrelune) | « Boujou ! Mes pommiers donnent la meilleure bère du pays. P'têt ben qu'oui, p'têt ben qu'non : goûte, et tu diras. » |
+| Miquelot Aubert | « Je monte la Tour comme on monte au Mont : pas à pas, et en surveillant la marée. » |
+| Ancien (Haute-Bise) | « La bise souffle depuis toujours. Ça me ferait mal qu'elle s'arrête ! La Vouivre, elle, dort sous la crête avec son escarboucle. » |
+| Collectionneur (maître Renart) | « On m'appelle maître Renart. Trop poli pour être honnête, qu'ils disent. Mais mes échanges sont justes, foi de collectionneur. » |
+| Fruitier Lothaire | « Je monte le lait à la fruitière tous les matins. Un combat, c'est plus vite fait qu'une meule de fromage ! » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (Dame blanche, ancien de Haute-Bise, maître Renart).
 
 ## 9. Points ouverts
 
