@@ -21,7 +21,6 @@ import { chooseMoveSlot } from '../../ui/move-list-screen.js';
 import { enterName } from '../../ui/name-entry.js';
 import { choosePartyMember } from '../../ui/party-screen.js';
 import { applyVariables, layoutText } from '../../ui/text-layout.js';
-import { drawWindowFrame } from '../../ui/window-frame.js';
 import { getOptions } from '../../state/options.js';
 import { BATTLE_MUSIC, VICTORY_MUSIC, WILD_BATTLE_MUSIC } from '../../data/music.js';
 import { TRAINER_CLASSES_BY_ID } from '../../data/trainer-classes.js';
@@ -32,16 +31,19 @@ import {
 import { itemProblem } from '../logic/items.js';
 import { openBattleBag } from './bag-screen.js';
 import {
-  LAYOUT, battleUiStyle, createShownCreature, renderBattle, spriteCenter,
+  LAYOUT, battleUiStyle, createShownCreature, drawBattleWindow, renderBattle, spriteCenter,
 } from './battle-hud.js';
+import { fillArea } from './battle-pixels.js';
 import {
-  MAIN_MENU, drawActionMenu, menuColumns, menuShowsCreatureCard,
+  MAIN_MENU, drawActionMenu, menuColumns,
 } from './battle-menu.js';
 import { EventPlayer } from './event-player.js';
 
 const TEXT_SPEED_FACTOR = 1.5;
 const AUTO_ADVANCE = 0.6;
 const STAT_ROWS = [['hp', 'PV'], ['atk', 'ATT'], ['def', 'DÉF'], ['spa', 'A.SPÉ'], ['spd', 'D.SPÉ'], ['spe', 'VIT']];
+// The move info window is 8 characters wide.
+const MOVE_MENU_MESSAGE_LINES = { no_pp: ['Plus de', 'PP !'] };
 const ITEM_PROBLEMS = { fainted: 'Elle est K.O. !', not_fainted: 'Elle va bien.', default: 'Aucun effet.' };
 
 /** Text box: types the pages, then waits for A (wait) or advances alone after a short pause. */
@@ -80,7 +82,7 @@ class MessageBox {
 
   render(ctx) {
     const { x, y, width, height } = LAYOUT.textBox;
-    drawWindowFrame(ctx, x, y, width, height);
+    drawBattleWindow(ctx, x, y, width, height);
     let remaining = Math.floor(this.visible);
     this.pages[this.page].forEach((line, index) => {
       drawText(ctx, line, 8, 108 + index * 16, undefined, remaining);
@@ -122,23 +124,30 @@ class MoveMenu {
     if (previous !== this.index) this.message = null;
     if (input.justPressed('a')) {
       if (this.creature.moves[this.index].pp > 0) this.resolve(this.index);
-      else this.message = 'Plus de PP !';
+      else this.message = 'no_pp';
     } else if (input.justPressed('b')) {
       this.resolve(null);
     }
   }
 
   render(ctx) {
-    drawWindowFrame(ctx, 0, 96, 160, 48);
+    drawBattleWindow(ctx, 0, 96, 160, 48);
+    // Classique: rows of 10 pixels separated by thin lines, like the action list.
+    const ruled = battleUiStyle() === 'classique';
     this.creature.moves.forEach((slot, index) => {
-      const y = 104 + index * 8;
-      if (index === this.index) drawText(ctx, '▶', 8, y);
-      drawText(ctx, MOVES_BY_ID[slot.id].name, 16, y);
+      const y = ruled ? 101 + index * 10 : 104 + index * 8;
+      if (ruled && index > 0) fillArea(ctx, 2, 3, y - 2, 154, 1);
+      if (index === this.index) drawText(ctx, '▶', ruled ? 4 : 8, y);
+      drawText(ctx, MOVES_BY_ID[slot.id].name, ruled ? 12 : 16, y);
     });
     const slot = this.creature.moves[this.index];
-    drawWindowFrame(ctx, 80, 56, 80, 40);
+    drawBattleWindow(ctx, 80, 56, 80, 40);
+    if (this.message) {
+      MOVE_MENU_MESSAGE_LINES[this.message].forEach((line, index) => drawText(ctx, line, 88, 64 + index * 12));
+      return;
+    }
     drawSprite(ctx, 'ui', `type/${MOVES_BY_ID[slot.id].type}`, 88, 64);
-    drawText(ctx, this.message ?? `PP ${slot.pp}/${slot.maxPp}`, 88, 76);
+    drawText(ctx, `PP ${slot.pp}/${slot.maxPp}`, 88, 76);
   }
 }
 
@@ -158,7 +167,7 @@ class StatGainsWindow {
   }
 
   render(ctx) {
-    drawWindowFrame(ctx, 72, 0, 88, 96);
+    drawBattleWindow(ctx, 72, 0, 88, 96);
     STAT_ROWS.forEach(([key, label], index) => {
       const y = 10 + index * 13;
       drawText(ctx, label, 80, y);
@@ -198,7 +207,6 @@ export class BattleScene {
       indicators: [],
       shake: 0,
       hidePlayerHud: false,
-      compactPlayerHud: false,
       time: 0,
       idle: false,
     };
@@ -342,7 +350,7 @@ export class BattleScene {
     if (player.hp <= 0 || !getAvailableActions(this.battle, 0).canSwitch) return;
     const next = creatureName(this.battle.sides[1].party[event.index]);
     await this.say('trainer_will_send', { TRAINER: this.trainerTitle, CREATURE: next }, { wait: false });
-    if (!(await askBattle(this.manager, 'ask_switch'))) return;
+    if (!(await askBattle(this.manager, 'ask_switch', {}, { frame: drawBattleWindow }))) return;
     const index = await this.choosePartyIndex(false);
     if (index === null) return;
     const result = freeSwitch(this.battle, index);
@@ -436,10 +444,8 @@ export class BattleScene {
     for (;;) {
       const menu = new MainMenu(this.menuIndex, this.shown[0]);
       this.view.idle = true;
-      this.view.compactPlayerHud = menuShowsCreatureCard(battleUiStyle());
       const choice = await this.runWidget(menu);
       this.view.idle = false;
-      this.view.compactPlayerHud = false;
       this.menuIndex = menu.index;
       const action = await this.handleMenuChoice(choice, available);
       if (action) return action;
@@ -532,7 +538,7 @@ export class BattleScene {
     const caught = structuredClone(this.battle.sides[1].party[this.battle.sides[1].active]);
     caught.originalTrainer = this.playerName;
     const name = CREATURES_BY_ID[caught.species].name;
-    if (await askBattle(this.manager, 'ask_nickname', { CREATURE: name })) {
+    if (await askBattle(this.manager, 'ask_nickname', { CREATURE: name }, { frame: drawBattleWindow })) {
       const nickname = await enterName(this.manager, { title: `Surnom de ${name} ?`, defaultName: name });
       if (nickname !== name) caught.nickname = nickname;
     }
@@ -568,7 +574,7 @@ export class BattleScene {
 
   render(ctx) {
     renderBattle(ctx, this.view);
-    drawWindowFrame(ctx, 0, 96, 160, 48);
+    drawBattleWindow(ctx, 0, 96, 160, 48);
     this.widget?.render(ctx);
   }
 }

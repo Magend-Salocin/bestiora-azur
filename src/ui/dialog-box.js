@@ -40,9 +40,15 @@ export class DialogScene {
   transparent = true;
   blocksInput = true;
 
-  /** hold: the text stays on screen without waiting for A; the caller closes it with close(). */
-  constructor(text, { context = {}, question = false, hold = false, speed = textSpeed } = {}) {
+  /**
+   * hold: the text stays on screen without waiting for A; the caller closes it with close().
+   * frame: draws the windows, (ctx, x, y, width, height); the battle passes the frame of its style.
+   */
+  constructor(text, {
+    context = {}, question = false, hold = false, speed = textSpeed, frame = drawWindowFrame,
+  } = {}) {
     this.pages = layoutText(applyVariables(text, context));
+    this.drawFrame = frame;
     this.question = question;
     this.hold = hold;
     this.charactersPerSecond = TEXT_SPEEDS[speed];
@@ -118,7 +124,7 @@ export class DialogScene {
   }
 
   render(ctx) {
-    drawWindowFrame(ctx, BOX.x, BOX.y, BOX.width, BOX.height);
+    this.drawFrame(ctx, BOX.x, BOX.y, BOX.width, BOX.height);
 
     let remaining = Math.floor(this.visibleCharacters);
     this.page.forEach((line, index) => {
@@ -135,7 +141,7 @@ export class DialogScene {
 
   renderChoices(ctx) {
     const { x, y, width, height } = CHOICE_BOX;
-    drawWindowFrame(ctx, x, y, width, height);
+    this.drawFrame(ctx, x, y, width, height);
     CHOICES.forEach((label, index) => {
       const lineY = y + TILE + index * 16;
       if (index === this.choiceIndex) drawText(ctx, '▶', x + TILE, lineY);

@@ -10,7 +10,7 @@ import { creatureVars } from '../../ui/creature-widgets.js';
 import { chooseMoveToForget } from '../../ui/learn-move.js';
 import { answerLearnMove } from '../logic/engine.js';
 import { CAPTURE_STARS, STAT_ANIMATIONS, TYPE_ANIMATIONS } from './move-animations.js';
-import { spriteCenter } from './battle-hud.js';
+import { drawBattleWindow, spriteCenter } from './battle-hud.js';
 
 const HP_SECONDS_PER_BAR = 1;
 const MIN_HP_ANIMATION = 0.25;
@@ -292,7 +292,7 @@ export class EventPlayer {
   async learn_move_prompt(event) {
     const { scene } = this;
     const creature = this.creatureAt(0, event.index);
-    const slot = await chooseMoveToForget(scene.manager, creature, event.move);
+    const slot = await chooseMoveToForget(scene.manager, creature, event.move, { frame: drawBattleWindow });
     const result = answerLearnMove(scene.battle, slot);
     scene.battle = result.state;
   }

@@ -58,20 +58,11 @@ function roundedFill(ctx, colorIndex, x, y, width, height, radius) {
   }
 }
 
-// Speech bubble tail on the left side: the border opens and points to the player's creature.
-// Columns 0-3 stick out of the box, 4-6 cover its border (outer line 3, 3, light line 1).
-const LEFT_TAIL = ['...3310', '..33000', '.330000', '3300000', '3333310'];
-const LEFT_TAIL_FROM_BOTTOM = 11;
-
-/**
- * Classique info frame: thick dark rounded border, light inner line, plain background.
- * tail: true adds a speech bubble tail on the left side.
- */
-export function drawRoundFrame(ctx, { x, y, width, height }, { tail = false } = {}) {
+/** Classique frame: thick dark rounded border, light inner line, plain background. */
+export function drawRoundFrame(ctx, { x, y, width, height }) {
   roundedFill(ctx, 3, x, y, width, height, 2);
   roundedFill(ctx, 1, x + 2, y + 2, width - 4, height - 4, 1);
   fillArea(ctx, 0, x + 3, y + 3, width - 6, height - 6);
-  if (tail) drawPixels(ctx, LEFT_TAIL, x - 4, y + height - LEFT_TAIL_FROM_BOTTOM);
 }
 
 /** 8 × 8 menu icons of the moderne style: sword, crescent creature, bag, runner. */

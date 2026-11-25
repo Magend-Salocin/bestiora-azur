@@ -8,6 +8,7 @@ import { evolveCreature, getSpecies, movesLearnedAt } from '../battle/logic/crea
 import { hooks } from '../overworld/hooks.js';
 import { getGameState, markCaught } from '../state/game-state.js';
 import { creatureName } from './creature-widgets.js';
+import { drawBattleWindow } from '../battle/ui/battle-hud.js';
 import { learnMoveOutsideBattle, sayBattle } from './learn-move.js';
 import { PromiseScene } from './menu-cursor.js';
 
@@ -56,14 +57,16 @@ export class EvolutionScene extends PromiseScene {
 
   async run() {
     const name = creatureName(this.creature);
-    await sayBattle(this.manager, 'evolution_start', { CREATURE: name });
+    // Evolutions follow battles: their texts use the windows of the battle style.
+    const look = { frame: drawBattleWindow };
+    await sayBattle(this.manager, 'evolution_start', { CREATURE: name }, look);
     this.phase = 'morphing';
     const cancelled = await new Promise((resolve) => {
       this.finishMorph = resolve;
     });
     if (cancelled) {
       this.phase = 'cancelled';
-      await sayBattle(this.manager, 'evolution_cancel', { CREATURE: name });
+      await sayBattle(this.manager, 'evolution_cancel', { CREATURE: name }, look);
       this.done(false);
       return;
     }
@@ -71,9 +74,9 @@ export class EvolutionScene extends PromiseScene {
     markCaught(getGameState(), this.targetId);
     this.phase = 'done';
     hooks.playSfx('jingle_evolution');
-    await sayBattle(this.manager, 'evolution_done', { CREATURE: name, TARGET: getSpecies(this.targetId).name });
+    await sayBattle(this.manager, 'evolution_done', { CREATURE: name, TARGET: getSpecies(this.targetId).name }, look);
     for (const moveId of movesLearnedAt(this.targetId, this.creature.level)) {
-      await learnMoveOutsideBattle(this.manager, this.creature, moveId);
+      await learnMoveOutsideBattle(this.manager, this.creature, moveId, look);
     }
     this.done(true);
   }

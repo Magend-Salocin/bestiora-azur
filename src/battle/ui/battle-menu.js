@@ -58,9 +58,9 @@ function drawCardAndList(ctx, index, shown) {
   drawRoundFrame(ctx, LIST);
   MAIN_MENU.forEach((entry, i) => {
     const y = LIST_ROW_Y + i * LIST_ROW_HEIGHT;
-    if (i > 0) fillArea(ctx, 2, LIST.x + 3, y - 1, LIST.width - 6, 1);
+    if (i > 0) fillArea(ctx, 2, LIST.x + 3, y - 2, LIST.width - 6, 1); // clear of the accents (row 0)
     if (i === index) drawText(ctx, '▶', LIST.x + 2, y);
-    drawText(ctx, entry.label, LIST.x + 6, y);
+    drawText(ctx, entry.label, LIST.x + 7, y);
   });
 }
 
@@ -117,9 +117,6 @@ function drawEpuree(ctx, index) {
   fillArea(ctx, 2, 80, MENU_Y + 3, 1, MENU_HEIGHT - 6);
   fillArea(ctx, 2, 3, MENU_Y + 24, 154, 1);
 }
-
-/** The player's box on the field turns compact while the menu shows its card. */
-export const menuShowsCreatureCard = (style) => style === 'classique';
 
 /** Draws the action menu; `shown` is the player's displayed creature (card, dynamique prompt). */
 export function drawActionMenu(ctx, style, index, shown) {

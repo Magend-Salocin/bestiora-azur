@@ -7,6 +7,7 @@ import { drawSprite } from '../../gfx/draw.js';
 import { GLYPH_HP, drawText } from '../../gfx/font.js';
 import { getColor } from '../../gfx/palette.js';
 import { getOptions } from '../../state/options.js';
+import { drawWindowFrame } from '../../ui/window-frame.js';
 import {
   HP_BAR_WIDTH, barFill, drawHpBar, drawLevel, drawStatus, drawXpBar, hpColor, hpText,
 } from '../../ui/creature-widgets.js';
@@ -38,14 +39,13 @@ export function createShownCreature() {
 // Dynamique and Épurée keep the original three-line layout; Dynamique adds a thin enemy panel.
 const ENEMY_PANEL = { x: 4, y: 3, width: 86, height: 32 };
 
-// Boxed layouts (classique, moderne): name and level on one line (the level drops next to the
-// bar when a long name leaves no room), HP bar below; the player's box is a speech bubble.
+// Moderne: name and level on one line (the level drops next to the bar when a long name leaves
+// no room), HP bar below; the player's box is a speech bubble.
 const BOXED_ENEMY = { x: 1, y: 2, width: 103, height: 30 };
 const BOXED_PLAYER = { x: 57, y: 50, width: 103, height: 44 };
 const BOXED_PADDING = 6;
 const GLYPH = 8;
 const BOXED_STYLES = {
-  classique: { frame: drawRoundFrame, hpBar: drawHpBar },
   moderne: { frame: drawBevelPanel, hpBar: drawGlossyHpBar },
 };
 // Classique enemy box: sized to its content, a shorter HP bar with the level on its right.
@@ -70,6 +70,15 @@ const ENEMY_GRASS = { x: 92, y: 46, count: 8 };
 const PLAYER_GRASS = { x: 0, y: 86, count: 9 };
 
 export const battleUiStyle = () => getOptions().battleUi;
+
+const STYLE_FRAMES = { classique: drawRoundFrame, moderne: drawBevelPanel };
+
+/** Window of the battle screen (messages, move list, stat gains) in the frame of the style. */
+export function drawBattleWindow(ctx, x, y, width, height) {
+  const frame = STYLE_FRAMES[battleUiStyle()];
+  if (frame) frame(ctx, { x, y, width, height });
+  else drawWindowFrame(ctx, x, y, width, height);
+}
 
 function drawCreatureSprite(ctx, shown, side, bob = 0) {
   if (!shown.visible || shown.blink || !shown.species) return;
@@ -184,8 +193,8 @@ function drawEnemyHud(ctx, shown, style) {
   drawHpBar(ctx, x + 8, y + 20, shown.hp, shown.maxHp);
 }
 
-// While the menu card shows level, numbers and XP: the name and the HP bar only, both right
-// aligned just above the menu, the status left of the bar.
+// Classique player: the name and the HP bar only, both right aligned just above the bottom
+// window, the status left of the bar (the menu card shows the level, the numbers and the XP).
 const COMPACT_RIGHT = 158;
 const COMPACT_NAME_Y = 72;
 const COMPACT_BAR_Y = 86;
@@ -198,8 +207,8 @@ function drawCompactPlayerHud(ctx, shown) {
   drawStatus(ctx, shown.status, barX - 18, COMPACT_BAR_Y - 1);
 }
 
-function drawPlayerHud(ctx, shown, style, compact) {
-  if (compact) {
+function drawPlayerHud(ctx, shown, style) {
+  if (style === 'classique') {
     drawCompactPlayerHud(ctx, shown);
     return;
   }
@@ -236,8 +245,7 @@ function drawPartyIndicator(ctx, indicator) {
 
 /**
  * view: { shown: [player, enemy], portraits: { player, trainer }, capsule, effect, indicators, shake,
- *   time (seconds, drives the lively motion), idle (true while the action menu waits),
- *   compactPlayerHud (the player's box without its bubble, numbers and XP bar) }
+ *   time (seconds, drives the lively motion), idle (true while the action menu waits) }
  */
 export function renderBattle(ctx, view) {
   const style = battleUiStyle();
@@ -264,7 +272,7 @@ export function renderBattle(ctx, view) {
   if (view.effect) view.effect.animation.draw(ctx, view.effect.t, view.effect.from, view.effect.to);
 
   if (view.shown[1].hudVisible) drawEnemyHud(ctx, view.shown[1], style);
-  if (view.shown[0].hudVisible && !view.hidePlayerHud) drawPlayerHud(ctx, view.shown[0], style, view.compactPlayerHud);
+  if (view.shown[0].hudVisible && !view.hidePlayerHud) drawPlayerHud(ctx, view.shown[0], style);
   for (const indicator of view.indicators) drawPartyIndicator(ctx, indicator);
   ctx.restore();
 }
