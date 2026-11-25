@@ -3,13 +3,13 @@ import { trainer, rival } from './helpers.js';
 
 export default [
   trainer('danseuse_colombe', 'danseuse', 'Colombe', ['matagri:36', 'sotrin:37', 'birette:38']),
-  trainer('gentleman_romuald', 'gentleman', 'Romuald', ['drapet:37', 'matagot:38']),
+  trainer('gentleman_romuald', 'gentleman', 'Victor', ['drapet:37', 'matagot:38']),
   trainer('dresseur_ludovic', 'cataphile', 'Ludovic', ['moinbourru:36', 'ankou:37', 'lubinou:36']),
-  trainer('gentleman_valentin', 'gentleman', 'Valentin', ['sotremage:40', 'drapet:38']),
-  trainer('dame_victoire', 'dame', 'Victoire', ['ankou:38', 'sotrin:38', 'matagot:39']),
-  trainer('mystique_celeste', 'mystique', 'Céleste', ['croquefrou:36', 'blancome:37', 'revenant:37']),
+  trainer('gentleman_valentin', 'gentleman', 'Lucien', ['sotremage:40', 'drapet:38']),
+  trainer('dame_victoire', 'dame', 'Ginette', ['ankou:38', 'sotrin:38', 'matagot:39']),
+  trainer('mystique_celeste', 'mystique', 'Paulette', ['croquefrou:36', 'blancome:37', 'revenant:37']),
   trainer('dresseur_barnabe', 'cataphile', 'Barnabé', ['dame_noire:37', 'camecruse:37', 'matagri:37']),
-  trainer('chercheuse_morgane', 'chercheuse', 'Morgane', ['birette:38', 'ankou:38']),
+  trainer('chercheuse_morgane', 'chercheuse', 'Mimi', ['birette:38', 'ankou:38']),
   trainer('lazare', 'champion', 'Lazare', ['lubinou:33', 'camecruse:34', 'ankou:36', 'matagot:38']),
   trainer('sbire_qg_alban', 'sbire_opale', 'Alban', ['velucorne:37', 'gobelin:37']),
   trainer('sbire_qg_roxane', 'sbire_opale_f', 'Roxane', ['galipotin:37', 'moinillon:36']),

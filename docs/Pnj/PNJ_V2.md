@@ -435,7 +435,7 @@ Ces rôles reviennent dans chaque ville : on les décline par région, sans chan
 | 2 | Zone debut (Hameau-de-Lys, Route 1, Bourg-Sablon) | Fait |
 | 3 | Zones bois et port | Fait |
 | 4 | Zones cendrelune (avec la Centrale) et bise | Fait |
-| 5 | Zones marais et ombrecourt | À faire |
+| 5 | Zones marais et ombrecourt | Fait |
 | 6 | Zones mer, forge et givremont | À faire |
 | 7 | Ligue, post-jeu, réactions, textes communs | À faire |
 | 8 | Relecture, `WORLD_MAP.md`, `PROGRESS.md` | À faire |
@@ -651,6 +651,55 @@ Les clés, scripts et drapeaux ne changent pas. Deux régions sont concernées :
 ### Contrôles
 
 `npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (Dame blanche, ancien de Haute-Bise, maître Renart).
+
+## 8 sexies. Lot 5 : contenu (fait)
+
+Zones marais et ombrecourt :
+- textes : 55 de `marais.js`, 120 de `ombrecourt.js` ;
+- 21 prénoms de dresseurs.
+
+Les clés, scripts et drapeaux ne changent pas. Deux régions sont concernées : la Nouvelle-Aquitaine et l'Île-de-France.
+
+### Principes
+
+- **Nouvelle-Aquitaine** (Route 8, Marais Gris) :
+  - Venise verte, plates et pigouilles, cagouilles et mojhettes, Mélusine de Lusignan ;
+  - la Galipote rôde la nuit ;
+  - les anciens parlent poitevin-saintongeais (« drôle », « cagouille ») ; un voyageur gascon salue d'un « Adishatz ».
+  - Clin d'œil : le Petit Chaperon rouge, la fillette de la cabane.
+  - Le pêcheur qui donne la Bouée devient batelier maraîchin.
+- **Île-de-France** (Ombrecourt, casino, QG Opale) :
+  - pavés, guinguettes, catacombes, bouquinistes, Moine bourru ;
+  - gouaille parisienne et argot ancien sans vulgarité (« môme », « bath », « le zinc »).
+  - Clins d'œil : le Chat botté (la « chatte » de la maison 1) et le marquis de Carabas (le noctambule).
+  - Lazare, cataphile, connaît chaque galerie sous la ville.
+- On n'emploie que les mots marqués ✓.
+- Les textes de l'intrigue gardent leur contenu, avec une voix régionale. Ils concernent la Bouée, Lazare et la Clé Sous-Sol, le casino, le QG Opale, la rivale 5, Corvin, le Cerf-volant et le port.
+
+### Prénoms
+
+| Lieu | Changements |
+|---|---|
+| Route 8 | Léon → Arnaud, Aurélie → Aliénor, Hector → Bertrand, Fulbert (inchangé), Joëlle → Mariette, Marius → Peyo, Philomène → Radegonde |
+| Marais Gris | Odilon et Prosper inchangés, Baltazar → Aimeric, Corentin → Jean-Pierre, Élodie → Nadine, Adèle → Lucette, Viviane → Solange (Viviane évoquait la fée sans le vouloir) |
+| Ombrecourt, casino | Colombe et Ludovic inchangés, Romuald → Victor, Valentin → Lucien (un Gardian Valentin existe au Col des Échos), Victoire → Ginette |
+| Arène Ombre | Barnabé inchangé, Céleste → Paulette, Morgane → Mimi (Morgane évoquait la fée sans le vouloir) |
+| QG Opale | sbires, Sorel et Corvin inchangés |
+
+### Exemples de répliques
+
+| PNJ | Proposition |
+|---|---|
+| Fillette de la cabane (Chaperon rouge) | « Je porte une galette à ma mère-grand, de l'autre côté du marais. Les loups, je m'en méfie. Les loups-garous, encore plus ! » |
+| Batelier de la cabane | « Avec ma plate et ma pigouille, je passe partout dans le marais. Pour toi, drôle, ce sera la Bouée. » |
+| Vieil homme du Marais Gris | « Les cagouilles sortent après la pluie, et les Galipotes après minuit. Ferme bien ta porte, drôle ! » |
+| Noctambule (Carabas) | « Tout ce quartier appartient à Monsieur le marquis ! Les pavés, les lanternes, même la lune. Enfin, c'est ce qu'il dit. » |
+| La « chatte » (Chat botté) | « Avec mes bottes, je cours sur les toits. Et je trouve toujours de quoi faire la fortune de mon maître. Miaou… pardon. » |
+| Gamin d'Ombrecourt | « T'es pas d'ici, toi ! T'as une bath bestiole, mais t'as pas la gouaille. » |
+
+### Contrôles
+
+`npm run validate`, `npm run check-text` et `npm test`, puis captures de quelques dialogues (fillette au capuchon rouge, noctambule, gamin).
 
 ## 9. Points ouverts
 
