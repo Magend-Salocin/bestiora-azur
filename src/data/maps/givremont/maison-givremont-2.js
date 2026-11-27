@@ -2,7 +2,7 @@ export default {
   id: 'maison_givremont_2',
   name: 'Maison de Givremont',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '##w##w##',

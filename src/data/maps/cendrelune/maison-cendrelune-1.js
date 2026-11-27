@@ -4,7 +4,7 @@ import { house } from '../interiors.js';
 export default house({
   id: 'maison_cendrelune_1',
   name: 'Cendrelune',
-  music: 'town_2',
+  music: 'house',
   layout: 'a',
   exit: { map: 'cendrelune', x: 18, y: 4 },
   npcs: [

@@ -10,7 +10,7 @@ export default {
   id: 'arene_foudre',
   name: 'Arène de Vireval',
   tileset: 'indoor',
-  music: 'town_2',
+  music: 'gym',
   layers: {
     ground: [
       '#ww######ww#',

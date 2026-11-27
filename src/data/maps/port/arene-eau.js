@@ -6,7 +6,7 @@ export default {
   id: 'arene_eau',
   name: 'Arène de Port-Ondine',
   tileset: 'cave',
-  music: 'town_2',
+  music: 'gym',
   layers: {
     ground: [
       '#############',

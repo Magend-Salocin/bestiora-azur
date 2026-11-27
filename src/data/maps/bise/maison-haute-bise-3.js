@@ -2,7 +2,7 @@ export default {
   id: 'maison_haute_bise_3',
   name: 'Maison de Haute-Bise',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '#w#w##w#',

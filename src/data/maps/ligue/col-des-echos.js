@@ -3,7 +3,7 @@ export default {
   id: 'col_des_echos',
   name: 'Col des Échos',
   tileset: 'outdoor',
-  music: 'route_2',
+  music: 'route_ligue',
   border: 'T',
   layers: {
     ground: [

@@ -4,7 +4,7 @@ import { house } from '../interiors.js';
 export default house({
   id: 'maison_vireval_1',
   name: 'Vireval',
-  music: 'town_1',
+  music: 'house',
   layout: 'a',
   exit: { map: 'vireval', x: 6, y: 7 },
   npcs: [

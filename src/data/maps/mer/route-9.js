@@ -3,7 +3,7 @@ export default {
   id: 'route_9',
   name: 'Route 9',
   tileset: 'outdoor',
-  music: 'route_1',
+  music: 'sea_corse',
   border: '~',
   layers: {
     ground: [

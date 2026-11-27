@@ -2,7 +2,7 @@ export default {
   id: 'maison_route_8',
   name: 'Maison de repos',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '#w##w###',

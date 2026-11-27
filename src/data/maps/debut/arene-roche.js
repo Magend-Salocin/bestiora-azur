@@ -15,7 +15,7 @@ export default {
   id: 'arene_roche',
   name: 'Arène de Bourg-Sablon',
   tileset: 'indoor',
-  music: 'town_2',
+  music: 'gym',
   layers: {
     ground: [
       '#ww#####ww#',

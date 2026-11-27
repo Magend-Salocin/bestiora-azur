@@ -2,7 +2,7 @@ export default {
   id: 'maison_marais_gris',
   name: 'Cabane du pêcheur',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '##w##w##',

@@ -4,7 +4,7 @@ export default {
   id: 'arene_flore',
   name: 'Arène de Cendrelune',
   tileset: 'outdoor',
-  music: 'town_2',
+  music: 'gym',
   border: 'T',
   layers: {
     ground: [

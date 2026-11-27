@@ -2,7 +2,7 @@ export default {
   id: 'maison_ombrecourt_2',
   name: 'Maison d’Ombrecourt',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '##w##w##',

@@ -2,7 +2,7 @@ export default {
   id: 'maison_ilots',
   name: 'Maison de repos',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '##w##w##',

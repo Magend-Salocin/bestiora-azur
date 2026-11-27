@@ -20,16 +20,22 @@ import title from './title.js';
 import town1 from './town-1.js';
 import town2 from './town-2.js';
 import townPortOndine from './town-port-ondine.js';
+import gym from './gym.js';
+import house from './house.js';
+import townOmbrecourt from './town-ombrecourt.js';
+import townGivremont from './town-givremont.js';
+import routeLigue from './route-ligue.js';
+import seaCorse from './sea-corse.js';
 import { victoryTrainer, victoryWild } from './victory.js';
 
-/** The 21 themes of the game (map, battle and story music). */
+/** The 27 themes of the game (map, battle and story music). */
 export const THEMES = [
-  title, introProfessor, hometown, route1, route2, town1, town2, townPortOndine, halte, cave, forest, memoryTower,
+  title, introProfessor, hometown, route1, route2, town1, town2, townPortOndine, townOmbrecourt, townGivremont, routeLigue, seaCorse, gym, house, halte, cave, forest, memoryTower,
   opalSyndicate, battleWild, battleTrainer, battleLeader, battleRival, battleFinal, victoryWild, victoryTrainer, ending,
 ];
 
 /** Map tracks must last at least 30 s before looping, battle themes at least 45 s. */
-export const MAP_TRACKS = ['hometown', 'route_1', 'route_2', 'town_1', 'town_2', 'town_port_ondine', 'halte', 'cave', 'forest', 'memory_tower', 'opal_syndicate'];
+export const MAP_TRACKS = ['hometown', 'route_1', 'route_2', 'town_1', 'town_2', 'town_port_ondine', 'town_ombrecourt', 'town_givremont', 'route_ligue', 'sea_corse', 'gym', 'house', 'halte', 'cave', 'forest', 'memory_tower', 'opal_syndicate'];
 export const BATTLE_TRACKS = ['battle_wild', 'battle_trainer', 'battle_leader', 'battle_rival', 'battle_final'];
 /** Tracks that restate the game motif. */
 export const MOTIF_TRACKS = ['title', 'hometown', 'ending'];

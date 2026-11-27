@@ -4,7 +4,7 @@ import { house } from '../interiors.js';
 export default house({
   id: 'maison_route_3',
   name: 'Maison de repos',
-  music: 'route_2',
+  music: 'house',
   layout: 'b',
   exit: { map: 'route_3', x: 15, y: 5 },
   npcs: [

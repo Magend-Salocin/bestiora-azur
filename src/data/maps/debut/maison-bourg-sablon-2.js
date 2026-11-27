@@ -3,7 +3,7 @@ import { house } from '../interiors.js';
 export default house({
   id: 'maison_bourg_sablon_2',
   name: 'Maison',
-  music: 'town_1',
+  music: 'house',
   layout: 'a',
   exit: { map: 'bourg_sablon', x: 4, y: 12 },
   npcs: [

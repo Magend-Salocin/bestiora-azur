@@ -635,3 +635,16 @@ Vérifié
 
 Décisions
 - 48 × 48 remplace 64 × 64 dans la charte du prompt 2 (choix de Nicolas après essai en combat).
+
+### 2026-11-27 : prompt 4 (musiques régionales), premières pistes
+
+Fait
+- 7 nouvelles pistes, composées pour le jeu sur des formes traditionnelles : `town_port_ondine` (an dro, couple biniou et bombarde), `town_ombrecourt` (valse musette), `town_givremont` (bourrée en 3/8, bourdon de cabrette), `route_ligue` (farandole, galoubet et tambourin), `sea_corse` (chant à trois voix façon paghjella), `gym` (arènes), `house` (maisons).
+- Cartes : Port-Ondine et bateau-musée, Ombrecourt et casino, Givremont, Col des Échos, Routes 9 et 10 et Ilots, les 5 arènes qui jouaient `town_2`, et les 28 maisons hors maison du joueur et de la rivale.
+- Juke-box F2 (dev) pour écouter toutes les pistes.
+
+Vérifié
+- `npm run validate` (durées de 31 à 34 s, voies alignées), `npm test`. Écoute à faire par Nicolas (F2).
+
+Reste
+- Lot 0 du prompt 4 (`docs/audio/MUSIQUES_V2.md`) et les autres pistes. Les arènes Feu, Arcane et Ombre gardent leur musique d'ambiance.

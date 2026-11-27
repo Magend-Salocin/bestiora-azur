@@ -3,7 +3,7 @@ export default {
   id: 'casino_ombrecourt',
   name: 'Casino d’Ombrecourt',
   tileset: 'indoor',
-  music: 'town_2',
+  music: 'town_ombrecourt',
   layers: {
     ground: [
       '#w##w##w##w#',

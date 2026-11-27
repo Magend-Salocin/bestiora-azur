@@ -4,7 +4,7 @@ export default {
   name: 'Ombrecourt',
   tileset: 'town',
   clearTile: 'grass',
-  music: 'town_2',
+  music: 'town_ombrecourt',
   border: 'T',
   flyPoint: { x: 3, y: 6 },
   layers: {

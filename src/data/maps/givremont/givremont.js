@@ -4,7 +4,7 @@ export default {
   name: 'Givremont',
   tileset: 'town',
   clearTile: 'ground',
-  music: 'town_1',
+  music: 'town_givremont',
   border: 'T',
   flyPoint: { x: 3, y: 6 },
   layers: {

@@ -2,7 +2,7 @@ export default {
   id: 'maison_forge_ardente_2',
   name: 'Maison de Forge-Ardente',
   tileset: 'indoor',
-  music: 'hometown',
+  music: 'house',
   layers: {
     ground: [
       '#w#w##w#',

@@ -3,7 +3,7 @@ export default {
   id: 'arene_vent',
   name: 'Arène de Haute-Bise',
   tileset: 'special',
-  music: 'town_2',
+  music: 'gym',
   layers: {
     ground: [
       '############',

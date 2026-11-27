@@ -4,7 +4,7 @@ import { house } from '../interiors.js';
 export default house({
   id: 'maison_port_ondine_2',
   name: 'Port-Ondine',
-  music: 'town_1',
+  music: 'house',
   layout: 'b',
   exit: { map: 'port_ondine', x: 9, y: 11 },
   npcs: [

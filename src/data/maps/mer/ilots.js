@@ -4,7 +4,7 @@ export default {
   name: 'Ilots',
   tileset: 'town',
   clearTile: 'grass',
-  music: 'route_1',
+  music: 'sea_corse',
   border: '~',
   layers: {
     ground: [
