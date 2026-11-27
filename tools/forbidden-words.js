@@ -18,6 +18,7 @@ export const FORBIDDEN_WORDS = [
   'eboulement', 'flammeche', 'cru ailes', 'dard venin', 'choc mental',
   'onde folie', 'ombre portee', 'coup bas', 'vent arriere',
   'feu follet', 'crocs feu', 'crocs givre', 'poing eclair', 'poing feu', 'poing glace',
+  'riposte', 'abime', 'roue de feu', 'brouillard', 'bourdon', 'devoreve', 'gonflette', 'repli',
   // Regions, towns and characters
   'kanto', 'johto', 'hoenn', 'sinnoh', 'unys', 'kalos', 'alola', 'galar', 'paldea', 'bourg palette',
   'jadielle', 'argenta', 'azuria', 'carmin sur mer', 'lavanville', 'celadopole', 'safrania', 'parmanie',

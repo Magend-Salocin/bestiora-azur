@@ -28,7 +28,7 @@ Les descriptions en jeu sont dans `src/data/moves.js`. Elles tiennent sur 2 lign
 | `frenesie` | Frénésie | Ribote | Normal | Phys. 120, 2 ou 3 tours puis confusion | Ribote, fête trop arrosée | A |
 | `onde_brute` | Onde Brute | Huchée | Normal | Spé. 120, repos au tour suivant | Huchée, appel crié d’une vallée à l’autre | A |
 | `implosion` | Implosion | Flambée | Normal | Phys. 200, lanceur K.O. | Expression « feu de paille » | J |
-| `mine_severe` | Mine Sévère | Mauvais Œil | Normal | Statut, cible Att. -1 | Mauvais œil des croyances rurales | F |
+| `mine_severe` | Mine Sévère | Mauvais œil | Normal | Statut, cible Att. -1 | Mauvais œil des croyances rurales | F |
 | `regard_dur` | Regard Dur | Toise | Normal | Statut, cible Déf. -1 | Regard qui toise | J |
 | `bombe_torse` | Bombe Torse | Garbure | Normal | Statut, lanceur Att. +1, Déf. +1 | Garbure, soupe béarnaise du Truffandec | A |
 | `point_focal` | Point Focal | Affût | Normal | Statut, critiques + | Affût du chasseur | A |
