@@ -1,9 +1,10 @@
-// Dev only (npm run dev): F1 debug menu and window.debugGame. Loaded with a dynamic import by
+// Dev only (npm run dev): F1 debug menu, F2 jukebox and window.debugGame. Loaded with a dynamic import by
 // src/main.js, and left out of the packaged game (build.files in package.json).
 import { getMapDefinition } from '../data/maps/index.js';
 import { getGameState } from '../state/game-state.js';
 import { MOVE_STEPS, runCaptureStep } from './capture-scenes.js';
 import { DebugMenuScene } from './debug-menu.js';
+import { JukeboxScene } from './jukebox-scene.js';
 import { runPerfProbe } from './perf-probe.js';
 
 /**
@@ -25,10 +26,11 @@ export function attachDebugTools({ scenes, getOverworld, startGame, screen, getT
     const target = definition.flyPoint ?? definition.warps?.[0] ?? { x: 1, y: 1 };
     overworld.runBusy(() => overworld.doWarp(mapId, target.x, target.y, 'down'));
   };
+  // F1: debug menu. F2: jukebox. Both open from the map only.
   window.addEventListener('keydown', (event) => {
     const overworld = getOverworld();
-    if (event.code !== 'F1' || !overworld || scenes.top !== overworld || overworld.busy) return;
+    if (!['F1', 'F2'].includes(event.code) || !overworld || scenes.top !== overworld || overworld.busy) return;
     event.preventDefault();
-    scenes.push(new DebugMenuScene(getGameState(), { warp }));
+    scenes.push(event.code === 'F1' ? new DebugMenuScene(getGameState(), { warp }) : new JukeboxScene());
   });
 }

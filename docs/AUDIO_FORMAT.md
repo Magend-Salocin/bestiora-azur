@@ -1,6 +1,6 @@
 # Format des pistes audio
 
-Toutes les mélodies sont composées pour Bestiora Azur (section 1 du game design). Une piste est un module de `src/audio/tracks/`, enregistré dans `src/audio/tracks/index.js`. Les effets sonores (`src/audio/sfx.js`) et les jingles utilisent le même format. `npm run validate` analyse toutes les pistes ; le menu F1 (mode dev) les fait écouter.
+Toutes les mélodies sont composées pour Bestiora Azur (section 1 du game design). Une piste est un module de `src/audio/tracks/`, enregistré dans `src/audio/tracks/index.js`. Les effets sonores (`src/audio/sfx.js`) et les jingles utilisent le même format. `npm run validate` analyse toutes les pistes ; le juke-box F2 (mode dev, depuis la carte) liste toutes les pistes : A joue, B ferme et laisse la piste jouer.
 
 ## Piste
 

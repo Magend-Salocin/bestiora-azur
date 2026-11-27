@@ -15,7 +15,7 @@ Donner à chaque région sa couleur musicale. Aujourd'hui, 10 musiques de carte 
 | Pistes conservées | `title`, `intro_professor`, `hometown` (Hameau-de-Lys), `ending`, les jingles et les rencontres. Les autres restent comme repli et peuvent être réattribuées. |
 | Motif du jeu | Les pistes de `MOTIF_TRACKS` gardent le motif sur la voie 1 (contrôlé par `npm run validate`). Les nouvelles pistes peuvent le citer, sans obligation. |
 | Identifiants | Une nouvelle piste a un nouvel id (`town_port_ondine`, `route_bretagne`…). Les cartes changent seulement leur champ `music`. Les sauvegardes ne stockent pas la musique. |
-| Écoute | Claude ne peut pas écouter. Chaque lot se termine par une écoute de Nicolas dans le menu F1 (`npm run dev`), avec la liste des pistes à juger. |
+| Écoute | Claude ne peut pas écouter. Chaque lot se termine par une écoute de Nicolas dans le juke-box F2 (`npm run dev`, depuis la carte), avec la liste des pistes à juger. |
 
 ## Sources
 
@@ -86,4 +86,4 @@ Avant chaque lot, présenter les pistes prévues et attendre mon feu vert ; apr�
 | 6 | Combats : `battle_legendary`, `battle_gardien`, branchement dans `src/data/music.js` et les dresseurs concernés. |
 | 7 | Nettoyage : pistes devenues inutiles retirées, `docs/GAME_DESIGN.md` (nombre de pistes), `docs/AUDIO_FORMAT.md` si le format évolue. |
 
-Chaque lot se termine par `npm run validate` et `npm test`, puis l'écoute dans le menu F1.
+Chaque lot se termine par `npm run validate` et `npm test`, puis l'écoute dans le juke-box F2.

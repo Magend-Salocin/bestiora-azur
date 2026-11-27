@@ -32,7 +32,7 @@ src/
   ui/                  Boîte de dialogue, menus, écrans (équipe, sac, Bestiaire, stockage…)
   audio/               Synthé 4 voies, séquenceur, pistes, effets
   save/                Format versionné, migrations, choix de la copie (pur) ; envoi au processus principal
-  debug/               Dev uniquement (import dynamique, absent du paquet) : menu F1, captures, sonde de perf
+  debug/               Dev uniquement (import dynamique, absent du paquet) : menu F1, juke-box F2, captures, sonde de perf
   state/               État global du jeu (équipe, sac, drapeaux, position)
 assets/atlas/          PNG + JSON générés (versionnés)
 tools/                 Scripts Node : build-atlas, validate-data, check-text-fit, build-icon, map-preview…

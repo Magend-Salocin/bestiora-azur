@@ -25,7 +25,7 @@ Prérequis : Node.js 20 ou plus récent, puis `npm install`.
 | Commande | Rôle |
 |---|---|
 | `npm start` | Lance le jeu |
-| `npm run dev` | Lance avec DevTools et menu debug (`F1`) ; `npm run dev -- --newgame` part de l'écran titre |
+| `npm run dev` | Lance avec DevTools, menu debug (`F1`) et juke-box des musiques (`F2`) ; `npm run dev -- --newgame` part de l'écran titre |
 | `npm test` | Tests unitaires |
 | `npm run validate` | Valide les données (références, textes dans leur fenêtre, 150 espèces obtenables) |
 | `npm run atlas` | Régénère les atlas PNG depuis les sources |
