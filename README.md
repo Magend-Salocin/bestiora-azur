@@ -45,7 +45,7 @@ Prérequis : Node.js 20 ou plus récent, puis `npm install`.
 | Valider (A) | `X` | Bouton bas (A / Croix) |
 | Annuler, courir (B) | `Z` (`W` sur AZERTY) | Bouton droit (B / Rond) |
 | Menu (START) | `Entrée` | Start |
-| SELECT | `Shift` droit | Select |
+| SELECT (en combat, dans ATTAQUE : description de l'attaque) | `Shift` droit | Select |
 | Changer de palette | SELECT + START | SELECT + START |
 | Plein écran | `F11` | |
 

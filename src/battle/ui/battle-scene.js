@@ -20,7 +20,7 @@ import { moveCursor } from '../../ui/menu-cursor.js';
 import { chooseMoveSlot } from '../../ui/move-list-screen.js';
 import { enterName } from '../../ui/name-entry.js';
 import { choosePartyMember } from '../../ui/party-screen.js';
-import { applyVariables, layoutText } from '../../ui/text-layout.js';
+import { applyVariables, layoutText, wrapParagraph } from '../../ui/text-layout.js';
 import { getOptions } from '../../state/options.js';
 import { BATTLE_MUSIC, VICTORY_MUSIC, WILD_BATTLE_MUSIC } from '../../data/music.js';
 import { TRAINER_CLASSES_BY_ID } from '../../data/trainer-classes.js';
@@ -125,6 +125,7 @@ class MoveMenu {
     this.creature = creature;
     this.index = Math.min(index, creature.moves.length - 1);
     this.message = null;
+    this.showDescription = false;
     this.time = 0;
     this.glide = new CursorGlide(this.index);
     this.promise = new Promise((resolve) => { this.resolve = resolve; });
@@ -132,6 +133,17 @@ class MoveMenu {
 
   update(dt, input) {
     this.time += dt;
+    // Select shows the description of the move under the cursor; Select or B goes back.
+    // Select with Start held changes the palette (src/main.js).
+    const select = input.justPressed('select') && !input.isDown('start');
+    if (this.showDescription) {
+      if (select || input.justPressed('b')) this.showDescription = false;
+      return;
+    }
+    if (select) {
+      this.showDescription = true;
+      return;
+    }
     const previous = this.index;
     this.index = moveCursor(this.index, this.creature.moves.length, input);
     this.glide.update(dt, this.index);
@@ -146,8 +158,13 @@ class MoveMenu {
 
   render(ctx) {
     const names = this.creature.moves.map((slot) => MOVES_BY_ID[slot.id].name);
-    drawMoveList(ctx, battleUiStyle(), names, { time: this.time, glide: this.glide });
     const slot = this.creature.moves[this.index];
+    if (this.showDescription) {
+      drawBattleWindow(ctx, 0, 96, 160, 48);
+      drawText(ctx, wrapParagraph(MOVES_BY_ID[slot.id].description).join('\n'), 8, 104);
+    } else {
+      drawMoveList(ctx, battleUiStyle(), names, { time: this.time, glide: this.glide });
+    }
     drawBattleWindow(ctx, 80, 56, 80, 40);
     if (this.message) {
       MOVE_MENU_MESSAGE_LINES[this.message].forEach((line, index) => drawText(ctx, line, 88, 64 + index * 12));

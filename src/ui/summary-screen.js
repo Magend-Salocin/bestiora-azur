@@ -1,5 +1,5 @@
-// Creature summary, 3 pages: (1) identity and XP, (2) stats, (3) moves.
-// Left/right: page. Up/down: previous/next creature. On page 3, A selects a move to read its
+// Creature summary, 4 pages: (1) identity and XP, (2) description, (3) stats, (4) moves.
+// Left/right: page. Up/down: previous/next creature. On page 4, A selects a move to read its
 // description (up/down then browse the moves, B goes back). B closes.
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../engine/constants.js';
 import { CREATURES_BY_ID } from '../data/creatures.js';
@@ -13,7 +13,8 @@ import { PromiseScene } from './menu-cursor.js';
 import { wrapParagraph } from './text-layout.js';
 import { drawWindowFrame } from './window-frame.js';
 
-const PAGES = 3;
+const PAGES = 4;
+const MOVES_PAGE = 3;
 const STATS = [['atk', 'ATTAQUE'], ['def', 'DÉFENSE'], ['spa', 'ATT. SPÉ.'], ['spd', 'DÉF. SPÉ.'], ['spe', 'VITESSE']];
 
 export class SummaryScreen extends PromiseScene {
@@ -41,7 +42,7 @@ export class SummaryScreen extends PromiseScene {
     if (input.repeat('right')) this.page = (this.page + 1) % PAGES;
     if (input.repeat('up')) this.index = (this.index + this.creatures.length - 1) % this.creatures.length;
     if (input.repeat('down')) this.index = (this.index + 1) % this.creatures.length;
-    if (input.justPressed('a') && this.page === 2) this.moveCursor = 0;
+    if (input.justPressed('a') && this.page === MOVES_PAGE) this.moveCursor = 0;
     if (input.justPressed('b')) this.done(null);
   }
 
@@ -52,7 +53,8 @@ export class SummaryScreen extends PromiseScene {
     ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     drawText(ctx, `${this.page + 1}/${PAGES}`, 128, 0);
     if (this.page === 0) this.renderIdentity(ctx, creature, species);
-    else if (this.page === 1) this.renderStats(ctx, creature);
+    else if (this.page === 1) this.renderDescription(ctx, creature, species);
+    else if (this.page === 2) this.renderStats(ctx, creature);
     else this.renderMoves(ctx, creature);
   }
 
@@ -70,6 +72,12 @@ export class SummaryScreen extends PromiseScene {
     drawText(ctx, `XP ${creature.exp}`, 8, 104);
     const next = creature.level >= 100 ? 0 : expForLevel(species.growth, creature.level + 1) - creature.exp;
     drawText(ctx, `Niv. suivant ${next}`, 8, 120);
+  }
+
+  renderDescription(ctx, creature, species) {
+    drawWindowFrame(ctx, 0, 8, SCREEN_WIDTH, 136);
+    drawText(ctx, creatureName(creature), 8, 16);
+    drawText(ctx, wrapParagraph(species.description).join('\n'), 8, 40);
   }
 
   renderStats(ctx, creature) {

@@ -599,3 +599,12 @@ Décisions
 
 Problèmes connus
 - La capture `--moves` a une fois manqué le départ d'un combat (le message d'erreur indique maintenant la scène affichée) ; relancer suffit.
+
+### 2026-11-27 : descriptions en jeu des bestioles et des attaques
+
+Fait
+- Résumé de l'équipe : nouvelle page 2/4 avec la description de la bestiole (statistiques en 3/4, attaques en 4/4).
+- Combat, menu ATTAQUE : SELECT affiche la description de l'attaque sous le curseur à la place de la liste ; SELECT ou B revient. SELECT avec START maintenu change toujours la palette.
+
+Vérifié
+- `npm run validate`, `npm test`, captures des deux écrans (description de 5 lignes, attaque Tilleul).
