@@ -14,4 +14,4 @@ Ancrage des personnages humains et des attaques dans le folklore des régions fr
 
 Ordre conseillé : 1, puis 2. Le 3 peut se faire à tout moment.
 
-État : prompt 1 terminé (lots 0 à 8). Prompt 2 en cours (lots 0, 1 et 2 faits, lots 1 et 2 en v3 64 × 64). Prompt 3 terminé (lots 0 à 6), lot 7 optionnel non lancé.
+État : prompt 1 terminé (lots 0 à 8). Prompt 2 en cours (lots 0, 1 et 2 faits, lots 1 et 2 en v3 48 × 48). Prompt 3 terminé (lots 0 à 6), lot 7 optionnel non lancé.

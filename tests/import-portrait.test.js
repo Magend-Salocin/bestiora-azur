@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { gridCell, outlineLightEdges, quantize, removeIsolated, removeStrayIslands } from '../tools/import-portrait.js';
+import { figureColumns, gridCell, outlineLightEdges, quantize, removeIsolated, removeStrayIslands } from '../tools/import-portrait.js';
 
 const cells = (rows) => rows.map((row) => [...row]);
 const text = (grid) => grid.map((row) => row.join(''));
@@ -44,4 +44,11 @@ test('gridCell: square from the top of the figure, the neighbouring cell filled 
   assert.equal(cell.height, 14);
   assert.equal(cell.data[(3 * 14 + 7) * 4], 0, 'the bust starts 3 px below the top');
   assert.deepEqual([...darkColumns].sort((a, b) => a - b), [4, 5, 6, 7, 8, 9], 'the neighbour is background');
+});
+
+test('figureColumns cuts an uneven row at the valleys between the figures', () => {
+  // Three figures on a 30 px row: x 1-6, 9-19 (wide), 22-28; x 20-21 is a thin touching bridge.
+  const figure = (x) => (x >= 1 && x < 7) || (x >= 9 && x < 20) || (x >= 22 && x < 29);
+  const isFigure = (x, y) => figure(x) || ((x === 20 || x === 21) && y === 0);
+  assert.deepEqual(figureColumns(30, 0, 10, 3, isFigure), [[1, 7], [7, 20], [20, 29]]);
 });

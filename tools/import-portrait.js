@@ -3,7 +3,7 @@
 // luminance, isolated pixels removed. The module is then retouched by hand and exported with
 // npm run trainer-design. Docs: docs/Pnj/references-portraits.md.
 //
-// Usage: npm run trainer-import -- <image> --id <id> [--panel <i>/<n> [--grid <C>x<R>]] [--size 64] [--force]
+// Usage: npm run trainer-import -- <image> --id <id> [--panel <i>/<n> [--grid <C>x<R>]] [--size 48] [--force]
 //   --panel i/n  the image is a vertical strip of n portraits; take the i-th (1 = top).
 //   --grid CxR   with --panel: the n portraits are a grid of C columns and R rows (reading order).
 //   --force      overwrite an existing design module (hand retouches are lost).
@@ -51,9 +51,38 @@ export function panelRanges(image, count) {
 const GRID_SQUARE_SHARE = 1.4;
 
 /**
- * Square image of cell i of a grid (reading order, `columns` per row, even cells). Busts are
- * taller than wide: the square starts just above the figure and is wider than the cell, so that
- * it keeps the hands and the tool of the trade. Outside the cell it is filled with the
+ * Horizontal ranges [x0, x1) of the n figures of a grid row (rows y0 to y1). Generated grids are
+ * not even: the figures are cut at the n - 1 deepest valleys of the column profile (the columns
+ * with the fewest figure pixels), at least half a nominal figure width apart.
+ */
+export function figureColumns(width, y0, y1, n, isFigure) {
+  const profile = [];
+  for (let x = 0; x < width; x += 1) {
+    let count = 0;
+    for (let y = y0; y < y1; y += 1) if (isFigure(x, y)) count += 1;
+    profile.push(count);
+  }
+  const first = profile.findIndex((count) => count > 0);
+  const last = profile.findLastIndex((count) => count > 0) + 1;
+  const gap = (last - first) / n / 2;
+  const cuts = [];
+  for (let i = 1; i < n; i += 1) {
+    let best = null;
+    for (let x = Math.ceil(first + gap); x < last - gap; x += 1) {
+      if (cuts.some((cut) => Math.abs(cut - x) < gap)) continue;
+      if (best === null || profile[x] < profile[best]) best = x;
+    }
+    if (best !== null) cuts.push(best);
+  }
+  const edges = [first, ...cuts.sort((a, b) => a - b), last];
+  return edges.slice(0, -1).map((x0, i) => [x0, edges[i + 1]]);
+}
+
+/**
+ * Square image of cell i of a grid (reading order, `columns` per row; the figures of a row are
+ * separated by figureColumns). Busts are taller than wide: the square starts just above the
+ * figure and is 1.4 nominal cell widths wide, the same scale for every portrait, so that it
+ * keeps the hands and the tool of the trade. Outside the figure's range it is filled with the
  * background, so that the neighbouring portraits do not leak in.
  */
 export function gridCell(image, { index, count, columns }) {
@@ -61,8 +90,6 @@ export function gridCell(image, { index, count, columns }) {
   const rows = Math.ceil(count / columns);
   const column = (index - 1) % columns;
   const row = Math.floor((index - 1) / columns);
-  const x0 = Math.round((column * width) / columns);
-  const x1 = Math.round(((column + 1) * width) / columns);
   const y0 = Math.round((row * height) / rows);
   const y1 = Math.round(((row + 1) * height) / rows);
   const background = [data[0], data[1], data[2]];
@@ -70,6 +97,8 @@ export function gridCell(image, { index, count, columns }) {
     const o = (y * width + x) * 4;
     return Math.hypot(data[o] - background[0], data[o + 1] - background[1], data[o + 2] - background[2]) > BACKGROUND_TOLERANCE;
   };
+  const inRow = Math.min(columns, count - row * columns);
+  const [x0, x1] = figureColumns(width, y0, y1, inRow, isFigure)[column];
   let top = y1;
   let left = x1;
   let right = x0;
@@ -83,7 +112,7 @@ export function gridCell(image, { index, count, columns }) {
   }
   if (top === y1) throw new Error(`Case ${index} vide`);
   top = Math.max(y0, top - PANEL_INSET);
-  const size = Math.min(y1 - top, Math.round((x1 - x0) * GRID_SQUARE_SHARE));
+  const size = Math.min(y1 - top, Math.round((width / columns) * GRID_SQUARE_SHARE));
   const offsetX = Math.round((left + right) / 2 - size / 2);
   const cell = { width: size, height: size, data: Buffer.alloc(size * size * 4) };
   for (let y = 0; y < size; y += 1) {
@@ -265,7 +294,7 @@ function panelGrid(image, panel, size) {
  * In a strip or a grid, the four tones come from all its panels together, so that skin, cloth
  * and hair get the same tones from one portrait to the next.
  */
-export function importPortrait(image, { size = 64, panel = null } = {}) {
+export function importPortrait(image, { size = 48, panel = null } = {}) {
   let centers;
   if (panel) {
     const values = [];
@@ -295,7 +324,7 @@ function option(args, name) {
 function main(args) {
   const file = args[0];
   const id = option(args, '--id');
-  if (!file || !id) throw new Error('Usage: npm run trainer-import -- <image> --id <id> [--panel i/n [--grid CxR]] [--size 64] [--force]');
+  if (!file || !id) throw new Error('Usage: npm run trainer-import -- <image> --id <id> [--panel i/n [--grid CxR]] [--size 48] [--force]');
   const panelArgument = option(args, '--panel');
   const gridArgument = option(args, '--grid');
   const panel = panelArgument ? {
@@ -303,7 +332,7 @@ function main(args) {
     count: Number(panelArgument.split('/')[1]),
     columns: gridArgument ? Number(gridArgument.split('x')[0]) : 1,
   } : null;
-  const size = Number(option(args, '--size') ?? 64);
+  const size = Number(option(args, '--size') ?? 48);
   const target = path.join(DESIGNS, `${id}.js`);
   if (fs.existsSync(target) && !args.includes('--force')) throw new Error(`${path.relative(ROOT, target)} existe déjà (--force pour l'écraser)`);
   const rows = importPortrait(PNG.sync.read(fs.readFileSync(file)), { size, panel });

@@ -15,7 +15,7 @@ Remplacer les portraits de combat assemblés par des portraits dessinés à la m
 | Sujet | Décision |
 |---|---|
 | Méthode | Depuis la v3 (2026-11-25) : une image de référence par portrait ([references-portraits.md](references-portraits.md)), convertie par `npm run trainer-import` en base modifiable `tools/trainer-designs/<id>.js`, retouchée à la main si besoin, puis exportée. Les pilotes du lot 0, dessinés aux formes de `tools/creature-painter.js`, seront refaits ainsi. Le générateur de pièces est retiré à la fin. |
-| Charte | 64 × 64 et 4 teintes (48 × 48 accepté pendant la transition), lumière en haut à gauche, visage lisible. Les 4 teintes d'une planche de références sont communes à tous ses portraits. |
+| Charte | 48 × 48 (la taille de l'emplacement adverse, comme les bestioles ; décision du 2026-11-27, les 64 × 64 débordaient) et 4 teintes, lumière en haut à gauche, visage lisible. Les 4 teintes d'une planche de références sont communes à tous ses portraits. |
 | Cadrage | Buste, de la tête à la taille, avec les mains quand elles tiennent l'outil du métier (filet, lanterne, houlette, marteau). |
 | Variété | Formes de tête, âges, carrures et postures différents d'une classe à l'autre. Asymétrie autorisée (tête penchée, épaule relevée). Les plis des vêtements et les textures des cheveux sont dessinés. |
 | Identifiants | Les cadres d'atlas `portrait/<id>` et `back/<id>` gardent leur nom : `trainer-classes.js` et les dresseurs n'ont pas à changer. |
@@ -109,7 +109,7 @@ Conversion (`tools/import-portrait.js`) :
 - 4 teintes par regroupement des luminosités de toute la bande, pixels isolés retirés ;
 - pixels clairs du bord de silhouette passés en teinte 1 (côté lumière) ou 2 (côté ombre), sinon ils se fondent dans le fond du combat.
 
-Combat : un portrait de 64 px garde le bord droit de l'emplacement adverse et le haut de l'écran ; une vue de dos de 64 px garde le bas de l'emplacement du joueur (`portraitPosition` dans `battle-hud.js`). À la défaite du dresseur, le cadre de PV du joueur s'efface : le combat est fini, et le portrait le recouvrirait.
+Combat : un portrait de 48 px occupe exactement l'emplacement adverse. Un ancien portrait de 64 px garde le bord droit de l'emplacement adverse et le haut de l'écran ; une vue de dos de 64 px garde le bas de l'emplacement du joueur (`portraitPosition` dans `battle-hud.js`). À la défaite du dresseur, le cadre de PV du joueur s'efface : le combat est fini, et le portrait le recouvrirait.
 
 ## Contrôles
 

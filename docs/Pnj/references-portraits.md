@@ -1,6 +1,6 @@
 # Images de référence des portraits
 
-Prompts pour générer une image de référence par portrait de combat. Chaque image est ensuite convertie en 64 × 64, 4 teintes (`npm run trainer-import`), puis nettoyée à la main. Le style suit la planche du lot 1 validée le 2026-11-25.
+Prompts pour générer une image de référence par portrait de combat. Chaque image est ensuite convertie en 48 × 48, 4 teintes (`npm run trainer-import`), puis nettoyée à la main. Le style suit la planche du lot 1 validée le 2026-11-25.
 
 ## Règles pour que la conversion fonctionne
 
@@ -12,8 +12,8 @@ Prompts pour générer une image de référence par portrait de combat. Chaque i
 | Camaïeu de vert, 4 à 5 valeurs bien séparées, aplats, pas de dégradé doux. | La conversion répartit la luminosité en 4 teintes. |
 | Lumière en haut à gauche. | Charte des bestioles et des portraits. |
 | Personnage tourné de trois quarts vers la gauche de l'image. | En combat, le dresseur fait face au joueur, placé à gauche. |
-| Accessoire du métier tenu en main, gros et lisible. | Il doit survivre à la réduction en 64 px. |
-| Aucun texte, logo ni lettrage (sauf l'ardoise de l'Écolier). | Illisible à 64 px, et pas de marque. |
+| Accessoire du métier tenu en main, gros et lisible. | Il doit survivre à la réduction en 48 px. |
+| Aucun texte, logo ni lettrage (sauf l'ardoise de l'Écolier). | Illisible à 48 px, et pas de marque. |
 
 Astuce : donner la planche du lot 1 comme image de style, quand l'outil le permet, et garder le même modèle et les mêmes réglages pour toute la série. Générer 4 variantes et garder celle dont la silhouette se lit le mieux en vignette.
 
@@ -569,7 +569,7 @@ Plain uniform very light green background, no scenery, no ground shadow, no text
 
 ## Contrôle d'une image avant import
 
-- Le personnage se reconnaît en vignette de 64 px.
+- Le personnage se reconnaît en vignette de 48 px.
 - Le fond est uni d'un bord à l'autre.
 - L'accessoire est entier et ne sort pas du cadre.
 - Mains correctes : cinq doigts, aucune main en trop.

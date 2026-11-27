@@ -622,3 +622,16 @@ Vérifié
 
 Reste
 - Lots 3 à 7 et pilotes du lot 0 en v3.
+
+### 2026-11-27 : PNJ, prompt 2, portraits en 48 × 48 et lot 1 refait
+
+Fait
+- Les portraits de dresseur passent de 64 × 64 à 48 × 48 : en 64, ils débordaient de l'emplacement adverse vers la gauche et le haut. `npm run trainer-import` produit du 48 par défaut ; le code du combat acceptait déjà cette taille.
+- Lot 1 refait depuis une nouvelle grille en camaïeu de vert (`docs/Pnj/references/lot-1-vert.png`, 7 portraits) ; lot 2 réimporté depuis `lot-2.png`. Plus aucune retouche à la main.
+- Import des grilles : les colonnes sont coupées aux creux entre les personnages (`figureColumns`), plus en cases égales, car les grilles générées ne sont pas régulières. Le carré garde la même échelle pour tous les portraits.
+
+Vérifié
+- `npm run validate`, `npm test` (259 tests), planches des lots 1 et 2 dans les 6 palettes, captures d'apparition et de défaite des 15 portraits.
+
+Décisions
+- 48 × 48 remplace 64 × 64 dans la charte du prompt 2 (choix de Nicolas après essai en combat).
