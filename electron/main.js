@@ -18,6 +18,8 @@ const previewSpecies = captureDirectory && previewArgument ? previewArgument.sli
 // --trainer=<trainer id> (with --capture): battle portrait steps of that trainer.
 const trainerArgument = process.argv.find((argument) => argument.startsWith('--trainer='));
 const previewTrainer = captureDirectory && trainerArgument ? trainerArgument.slice('--trainer='.length) : null;
+// --moves (with --capture): battle move menu steps, four moves at a time.
+const previewMoves = Boolean(captureDirectory) && process.argv.includes('--moves');
 const devTask = captureDirectory || measurePerf;
 
 const WINDOW_WIDTH = 640;
@@ -80,6 +82,7 @@ function createWindow() {
     query.devtask = '1';
     if (previewSpecies) query.preview = previewSpecies;
     if (previewTrainer) query.trainer = previewTrainer;
+    if (previewMoves) query.moves = '1';
     win.webContents.setAudioMuted(true);
     win.webContents.once('did-finish-load', () => runDevTask(win));
   }
@@ -94,7 +97,7 @@ function createWindow() {
 async function runDevTask(win) {
   const { captureScreens, measurePerformance } = require('./dev-tasks.js');
   try {
-    if (captureDirectory) await captureScreens(win, captureDirectory, { preview: Boolean(previewSpecies), trainer: Boolean(previewTrainer) });
+    if (captureDirectory) await captureScreens(win, captureDirectory, { preview: Boolean(previewSpecies), trainer: Boolean(previewTrainer), moves: previewMoves });
     else await measurePerformance(win);
     app.exit(0);
   } catch (error) {

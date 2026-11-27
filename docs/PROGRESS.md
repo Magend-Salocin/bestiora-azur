@@ -21,7 +21,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | Micro-animations et styles de combat | fait |
 | PNJ 1 Villes, PNJ et dialogues régionaux | fait |
 | PNJ 2 Portraits de combat dessinés | en cours |
-| PNJ 3 Attaques | à faire |
+| PNJ 3 Attaques | fait (lot 7 optionnel non lancé) |
 
 ## Journal
 
@@ -576,3 +576,26 @@ Reste
 Décisions
 - 64 × 64, toujours 4 teintes par palette : plus de teintes casserait les 6 palettes.
 - Les teintes d'une bande de références sont communes à ses portraits, pour une série homogène.
+
+### 2026-11-27 : PNJ, prompt 3, lots 0 à 6 (attaques ancrées dans le folklore)
+
+Fait
+- `docs/attaques/ATTAQUES_V2.md` : les 166 attaques avec ancien et nouveau nom, effet, motif et statut (35 F, 107 A, 24 J).
+- `src/data/moves.js` : noms et descriptions réécrits, type par type (lots 1 à 5). Identifiants, effets, valeurs et apprentissages inchangés. Signatures des légendaires : Aile Vouivre, Escarboucle, Roc Gaussier, Drac du Var, Grand Veneur, Mille Songes.
+- Mots interdits : riposte, abime, roue de feu, brouillard, bourdon, devoreve, gonflette, repli, essaim. Repli et Gonflette étaient des noms d'une franchise.
+- Lot 6 : message de Gui (`leech_damage`), titre du test de Va-Tout (ex-Baroud). « Glaçons ! » du Gardien Florimond reste : c'est une exclamation, pas une attaque.
+- `npm run screenshots -- --moves` : menu des attaques en combat, quatre attaques par capture, dans `docs/attaques/rendus/` (49 captures).
+- Correctif audio : le séquenceur plantait quand une piste reprenait après la dernière note d'une voie (retour de combat). Test ajouté (256 tests).
+
+Vérifié
+- `npm run validate`, `npm run check-text`, `npm test` à chaque lot ; les 49 captures relues, tous les noms tiennent dans le menu.
+
+Reste
+- Lot 7 (optionnel, à confirmer) : animations de type retravaillées dans `move-animations.js`.
+
+Décisions
+- La police n'a pas de « Œ » majuscule : l'attaque s'écrit « Mauvais œil ».
+- Avalanche et Fléau sont écartés comme noms d'attaque mais pas ajoutés aux mots interdits : ils apparaissent déjà dans des textes courants (description de Barbegazi, catégorie « Bestiole Fléau »).
+
+Problèmes connus
+- La capture `--moves` a une fois manqué le départ d'un combat (le message d'erreur indique maintenant la scène affichée) ; relancer suffit.

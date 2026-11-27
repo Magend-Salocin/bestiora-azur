@@ -25,7 +25,7 @@ export const BATTLE_TEXTS = {
   ohko: 'K.O. en un coup !',
   recoil: '{CREATURE} subit le contrecoup !',
   drain: '{CREATURE} récupère de l’énergie !',
-  leech_damage: 'Germe Voleur draine {CREATURE} !',
+  leech_damage: 'Le gui draine {CREATURE} !',
   trap_damage: '{CREATURE} est blessé{CREATURE:|e} par le piège !',
   heal: '{CREATURE} récupère des PV !',
 

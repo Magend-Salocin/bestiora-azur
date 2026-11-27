@@ -255,7 +255,7 @@ test('rampage locks the move for 2-3 turns, then confuses the user', () => {
   assert.equal(current.sides[0].volatile.rampage, null);
 });
 
-test('struggle (Baroud) when no PP left, with recoil', () => {
+test('struggle (Va-Tout) when no PP left, with recoil', () => {
   const state = setup('egratignure');
   state.sides[0].party[0].moves.forEach((slot) => { slot.pp = 0; });
   assert.deepEqual(getAvailableActions(state, 0).forced, { type: 'struggle' });

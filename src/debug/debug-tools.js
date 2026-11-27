@@ -2,7 +2,7 @@
 // src/main.js, and left out of the packaged game (build.files in package.json).
 import { getMapDefinition } from '../data/maps/index.js';
 import { getGameState } from '../state/game-state.js';
-import { runCaptureStep } from './capture-scenes.js';
+import { MOVE_STEPS, runCaptureStep } from './capture-scenes.js';
 import { DebugMenuScene } from './debug-menu.js';
 import { runPerfProbe } from './perf-probe.js';
 
@@ -18,6 +18,7 @@ export function attachDebugTools({ scenes, getOverworld, startGame, screen, getT
     await runCaptureStep(step, { scenes, getOverworld, startGame });
     return screen.toDataURL('image/png');
   };
+  window.debugMoveSteps = () => Object.keys(MOVE_STEPS);
   const warp = (mapId) => {
     const overworld = getOverworld();
     const definition = getMapDefinition(mapId);

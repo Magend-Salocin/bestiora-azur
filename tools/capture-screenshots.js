@@ -44,6 +44,9 @@ if (trainerArgument !== null && !previewTrainer) {
 let OUTPUT_DIR = path.join(ROOT, 'docs', 'screenshots');
 if (previewSpecies) OUTPUT_DIR = path.join(ROOT, 'docs', 'bestiaire-folklorique', 'rendus', previewFolder(previewSpecies));
 if (previewTrainer) OUTPUT_DIR = path.join(ROOT, 'docs', 'Pnj', 'rendus', trainerPortrait(previewTrainer));
+// --moves: battle move menu captures, four moves at a time, in docs/attaques/rendus/.
+const previewMoves = process.argv.includes('--moves');
+if (previewMoves) OUTPUT_DIR = path.join(ROOT, 'docs', 'attaques', 'rendus');
 const SCALE = 4;
 
 /** Nearest neighbor enlargement of a PNG buffer. */
@@ -59,7 +62,7 @@ export function enlargePng(buffer, scale) {
   return PNG.sync.write(target);
 }
 
-const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies.id}`] : []), ...(previewTrainer ? [`--trainer=${previewTrainer.id}`] : [])]);
+const result = runElectron(['--dev', `--capture=${OUTPUT_DIR}`, ...(previewSpecies ? [`--preview=${previewSpecies.id}`] : []), ...(previewTrainer ? [`--trainer=${previewTrainer.id}`] : []), ...(previewMoves ? ['--moves'] : [])], { timeout: previewMoves ? 600000 : undefined });
 if (result.status !== 0) {
   process.stderr.write(`La capture a échoué (code ${result.status ?? result.signal}).\n`);
   process.exit(1);

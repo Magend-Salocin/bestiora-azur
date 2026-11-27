@@ -3,6 +3,8 @@
 // captures the window.
 import { createCreature } from '../battle/logic/creature.js';
 import { CREATURES } from '../data/creatures.js';
+import { MOVES } from '../data/moves.js';
+import { TYPE_IDS } from '../data/types.js';
 import { TRAINERS_BY_ID } from '../data/trainers.js';
 import { createRng } from '../engine/rng.js';
 import { hooks } from '../overworld/hooks.js';
@@ -44,6 +46,7 @@ export async function runCaptureStep(step, { scenes, getOverworld, startGame }) 
   }
   if (PREVIEW_STEPS.includes(step)) return runPreviewStep(step, { scenes, startGame });
   if (TRAINER_STEPS.includes(step)) return runTrainerStep(step, { scenes, startGame });
+  if (Object.hasOwn(MOVE_STEPS, step)) return runMoveStep(step, { scenes, startGame });
   throw new Error(`Unknown capture step: ${step}`);
 }
 
@@ -145,6 +148,40 @@ async function runTrainerStep(step, { scenes, startGame }) {
   }
   await waitUntil(() => portrait().dx === 0, 2);
   return wait(1.2);
+}
+
+// Battle move menu (npm run screenshots -- --moves): every move, four at a time, grouped by type
+// (« feu-1 », « feu-2 »…), then the legendary signatures, written to docs/attaques/rendus/.
+export const MOVE_STEPS = (() => {
+  const groups = TYPE_IDS.map((type) => [type, MOVES.filter((entry) => entry.type === type && !entry.exclusiveTo)]);
+  groups.push(['exclusives', MOVES.filter((entry) => entry.exclusiveTo)]);
+  const steps = {};
+  for (const [name, moves] of groups) {
+    for (let start = 0; start < moves.length; start += 4) {
+      steps[`${name}-${start / 4 + 1}`] = moves.slice(start, start + 4).map((entry) => entry.id);
+    }
+  }
+  return steps;
+})();
+
+async function runMoveStep(step, { scenes, startGame }) {
+  while (scenes.size > 1) scenes.pop();
+  const state = createGameState({ player: { name: 'Elio', gender: 'boy' }, flags: { has_bestiary: true } });
+  addCreature(state, createCreature('korrigan', 50, createRng(7), { moves: MOVE_STEPS[step] }));
+  startGame(state, { map: 'cendrelune', x: 3, y: 9, facing: 'down' });
+  await wait(0.5);
+  hooks.startWildBattle({ creature: 'farfadet', level: 2 });
+  const battle = () => (scenes.top?.view?.portraits ? scenes.top : null);
+  // A through the intro messages, then on « ATTAQUE », until the move menu hides the player HUD.
+  await waitUntil(() => battle(), 8).catch(() => {
+    throw new Error(`Capture ${step}: no battle, top scene ${scenes.top?.constructor.name}, ${scenes.size} scenes`);
+  });
+  for (let presses = 0; !battle().view.hidePlayerHud; presses += 1) {
+    if (presses > 20) throw new Error('Capture: the move menu did not open');
+    await pressA();
+    await wait(0.5);
+  }
+  return wait(0.8);
 }
 
 /** Taps the A key (X), as the player would. */

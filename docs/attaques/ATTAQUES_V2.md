@@ -6,6 +6,8 @@ Statut : F (folklore attesté), A (archétype traditionnel), J (création du jeu
 
 Les descriptions en jeu sont dans `src/data/moves.js`. Elles tiennent sur 2 lignes de 18 caractères (`npm run validate`).
 
+Captures du menu des attaques en combat, quatre attaques par image : `npm run screenshots -- --moves`, dans [rendus/](rendus/) (`<type>-<n>.png`, puis `exclusives-<n>.png`).
+
 ## Règles de nommage
 
 - 12 caractères au plus. Le nom décrit l'effet : une attaque qui aveugle évoque la vue (Crachin, Fange, Suaire), une attaque qui protège évoque un abri (Contrevent, Névé).

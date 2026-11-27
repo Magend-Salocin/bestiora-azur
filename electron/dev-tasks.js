@@ -4,6 +4,7 @@
 //                    (tools/capture-screenshots.js enlarges them afterwards).
 //   --preview=<species>  with --capture: the bestiary V2 preview steps for that species.
 //   --trainer=<trainer>  with --capture: the battle portrait steps for that trainer.
+//   --moves          with --capture: the battle move menu, four moves at a time.
 //   --perf           frame time measures of src/debug/perf-probe.js, printed as JSON on stdout.
 const fs = require('node:fs');
 const path = require('node:path');
@@ -24,10 +25,12 @@ async function waitForDebugTools(win) {
   throw new Error('Debug tools are missing (is the game running with --dev?)');
 }
 
-async function captureScreens(win, directory, { preview = false, trainer = false } = {}) {
+async function captureScreens(win, directory, { preview = false, trainer = false, moves = false } = {}) {
   fs.mkdirSync(directory, { recursive: true });
   await waitForDebugTools(win);
-  const steps = trainer ? TRAINER_STEPS : preview ? PREVIEW_STEPS : CAPTURE_STEPS;
+  // The move steps depend on the move data: the game window lists them.
+  const steps = moves ? await win.webContents.executeJavaScript('window.debugMoveSteps()')
+    : trainer ? TRAINER_STEPS : preview ? PREVIEW_STEPS : CAPTURE_STEPS;
   for (const step of steps) {
     const dataUrl = await win.webContents.executeJavaScript(`window.debugCapture(${JSON.stringify(step)})`);
     fs.writeFileSync(path.join(directory, `${step}.png`), Buffer.from(dataUrl.split(',')[1], 'base64'));
