@@ -23,7 +23,7 @@ Remplacer les portraits de combat assemblés par des portraits dessinés à la m
 ## Production d'un portrait
 
 1. Générer l'image de référence avec le prompt du portrait ([references-portraits.md](references-portraits.md)) et la déposer dans `docs/Pnj/references/`.
-2. `npm run trainer-import -- docs/Pnj/references/<image> --id <id> [--panel i/n]` : écrit `tools/trainer-designs/<id>.js` (`--force` pour écraser une base existante, retouches comprises).
+2. `npm run trainer-import -- docs/Pnj/references/<image> --id <id> [--panel i/n [--grid CxR]]` : écrit `tools/trainer-designs/<id>.js` (`--force` pour écraser une base existante, retouches comprises). `--panel i/n` seul lit une bande verticale ; avec `--grid 4x2`, une grille lue dans l'ordre de lecture (carré plus large que la case pour garder les mains, cases voisines effacées).
 3. Retoucher les lignes du module si besoin (pixels isolés, yeux, mains), puis `npm run trainer-design -- tools/trainer-designs/<id>.js` et ajouter le portrait à `HAND_DRAWN_PORTRAITS` à sa première exportation.
 4. `npm run atlas`, `npm run validate`, `npm test`.
 5. Ajouter le portrait à une planche `docs/Pnj/rendus/planche-portraits-<lot>.png`.

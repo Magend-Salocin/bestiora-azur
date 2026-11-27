@@ -33,8 +33,9 @@ export const TRAINER_CLASSES = [
   trainerClass('mystique', 'Mystique', 'portrait/mystique', 40),
   trainerClass('danseuse', 'Danseuse', 'portrait/danseuse', 30),
   // Regional classes (docs/Pnj/PNJ_V2.md, section 4.2): same reward base and music as the
-  // generic class they replace; portraits borrowed from it until the hand-drawn ones (prompt 2).
-  trainerClass('carrier', 'Carrier', 'portrait/montagnard', 35),
+  // generic class they replace. Until their hand-drawn portrait exists (prompt 2,
+  // docs/Pnj/TODO-portraits.md), they borrow the portrait of that class.
+  trainerClass('carrier', 'Carrier', 'portrait/carrier', 35),
   trainerClass('sonneur', 'Sonneur', 'portrait/sonneur', 20),
   trainerClass('sonneuse', 'Sonneuse', 'portrait/sonneuse', 20),
   trainerClass('goemonier', 'Goémonier', 'portrait/goemonier', 35),
@@ -44,13 +45,13 @@ export const TRAINER_CLASSES = [
   trainerClass('jardinier', 'Jardinier', 'portrait/gentleman', 70),
   trainerClass('jardiniere', 'Jardinière', 'portrait/dame', 70),
   trainerClass('horloger', 'Horloger', 'portrait/scientifique', 50),
-  trainerClass('fruitier', 'Fruitier', 'portrait/montagnard', 35),
+  trainerClass('fruitier', 'Fruitier', 'portrait/fruitier', 35),
   trainerClass('maraichin', 'Maraîchin', 'portrait/pecheur', 35),
   trainerClass('maraichine', 'Maraîchine', 'portrait/nageuse', 35),
   trainerClass('cataphile', 'Cataphile', 'portrait/dresseur', 40),
   trainerClass('corailleur', 'Corailleur', 'portrait/pecheur', 35),
   trainerClass('forgeron', 'Forgeron', 'portrait/ouvrier', 30),
-  trainerClass('gardian', 'Gardian', 'portrait/montagnard', 35),
+  trainerClass('gardian', 'Gardian', 'portrait/gardian', 35),
   trainerClass('sbire_opale', 'Sbire Opale', 'portrait/sbire_opale', 30, 'villain'),
   trainerClass('sbire_opale_f', 'Sbire Opale', 'portrait/sbire_opale_f', 30, 'villain'),
   trainerClass('lieutenant_opale', 'Lieutenant', 'portrait/sbire_opale', 60, 'villain'),

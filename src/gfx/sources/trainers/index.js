@@ -2,17 +2,25 @@ import { buildBackPortrait, buildPortrait } from './portrait-builder.js';
 import brune from './brune.js';
 import campeur from './campeur.js';
 import campeuse from './campeuse.js';
+import carrier from './carrier.js';
 import ecolier from './ecolier.js';
 import fillette from './fillette.js';
+import fruitier from './fruitier.js';
 import gamin from './gamin.js';
+import gardian from './gardian.js';
 import goemonier from './goemonier.js';
+import montagnard from './montagnard.js';
+import nageur from './nageur.js';
+import nageuse from './nageuse.js';
+import randonneur from './randonneur.js';
+import randonneuse from './randonneuse.js';
 import sonneur from './sonneur.js';
 import sonneuse from './sonneuse.js';
 
 // Hand-drawn portraits (prompt 2, tools/trainer-designs/): they replace the assembled ones below.
 // Each file exports { portrait } or { back } as 48 × 48 text rows.
 export const HAND_DRAWN_PORTRAITS = {
-  brune, campeur, campeuse, ecolier, fillette, gamin, goemonier, sonneur, sonneuse,
+  brune, campeur, campeuse, carrier, ecolier, fillette, fruitier, gamin, gardian, goemonier, montagnard, nageur, nageuse, randonneur, randonneuse, sonneur, sonneuse,
 };
 
 // One portrait per trainer class (ids reused by src/data/trainer-classes.js), plus story characters.

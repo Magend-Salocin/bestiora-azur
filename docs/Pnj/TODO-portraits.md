@@ -39,14 +39,14 @@ Valeurs : « fait », « à faire », « — » (étape inutile).
 
 | Id | Personnage | Référence | Conversion | Branchement |
 |---|---|---|---|---|
-| `randonneur` | Randonneur | à faire | à faire | — |
-| `randonneuse` | Randonneuse | à faire | à faire | — |
-| `montagnard` | Montagnard | à faire | à faire | — |
-| `nageur` | Nageur | à faire | à faire | — |
-| `nageuse` | Nageuse | à faire | à faire | — |
-| `carrier` | Carrier (Bourg-Sablon) | à faire | à faire | à faire |
-| `fruitier` | Fruitier (Haute-Bise) | à faire | à faire | à faire |
-| `gardian` | Gardian (Col des Échos) | à faire | à faire | à faire |
+| `randonneur` | Randonneur | fait | fait | — |
+| `randonneuse` | Randonneuse | fait | fait | — |
+| `montagnard` | Montagnard | fait | fait | — |
+| `nageur` | Nageur | fait | fait | — |
+| `nageuse` | Nageuse | fait | fait | — |
+| `carrier` | Carrier (Bourg-Sablon) | fait | fait | fait |
+| `fruitier` | Fruitier (Haute-Bise) | fait | fait | fait |
+| `gardian` | Gardian (Col des Échos) | fait | fait | fait |
 
 ## Lot 3 : métiers
 

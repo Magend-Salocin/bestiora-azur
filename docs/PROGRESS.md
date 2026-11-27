@@ -608,3 +608,17 @@ Fait
 
 Vérifié
 - `npm run validate`, `npm test`, captures des deux écrans (description de 5 lignes, attaque Tilleul).
+
+### 2026-11-27 : PNJ, prompt 2, lot 2 (plein air)
+
+Fait
+- Référence `docs/Pnj/references/lot-2.png` (grille 4 × 2) convertie en 8 portraits 64 × 64 : Randonneur, Randonneuse, Montagnard, Nageur, Nageuse, Carrier, Fruitier, Gardian.
+- `npm run trainer-import` lit les grilles (`--panel i/8 --grid 4x2`) : carré 1,4 fois plus large que la case à partir du haut du personnage, pour garder les mains et l'outil ; l'extérieur de la case devient du fond et les petits îlots détachés sont effacés. Tests ajoutés (258 tests).
+- Retouche : un morceau du sac du Randonneur, collé à la carte de la Randonneuse, effacé à la main.
+- Carrier, Fruitier et Gardian ont leur propre cadre (ils empruntaient celui du Montagnard).
+
+Vérifié
+- `npm run validate`, `npm test`, planche `docs/Pnj/rendus/planche-portraits-2.png` dans les 6 palettes, captures d'apparition et de défaite des 8 portraits.
+
+Reste
+- Lots 3 à 7 et pilotes du lot 0 en v3.

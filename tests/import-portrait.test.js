@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { outlineLightEdges, quantize, removeIsolated } from '../tools/import-portrait.js';
+import { gridCell, outlineLightEdges, quantize, removeIsolated, removeStrayIslands } from '../tools/import-portrait.js';
 
 const cells = (rows) => rows.map((row) => [...row]);
 const text = (grid) => grid.map((row) => row.join(''));
@@ -18,4 +18,30 @@ test('removeIsolated replaces a lone pixel by the tone of its neighbours', () =>
 test('outlineLightEdges darkens light pixels on the silhouette edge, softer on the lit side', () => {
   assert.deepEqual(text(outlineLightEdges(cells(['....', '.00.', '.00.', '....']))), ['....', '.12.', '.22.', '....']);
   assert.deepEqual(text(outlineLightEdges(cells(['333', '303', '333']))), ['333', '303', '333']);
+});
+
+test('removeStrayIslands clears the small islands away from the figure', () => {
+  const grid = cells(['2.....', '2..33.', '...33.', '...33.', '...33.', '......']);
+  assert.deepEqual(text(removeStrayIslands(grid, 0.5)), ['......', '...33.', '...33.', '...33.', '...33.', '......']);
+});
+
+test('gridCell: square from the top of the figure, the neighbouring cell filled with background', () => {
+  // Two cells of 10 × 30 px: a dark bust x 2-7, y 10-29 in cell 1; the neighbour starts at x 10.
+  const width = 20;
+  const height = 30;
+  const data = Buffer.alloc(width * height * 4, 255);
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      if ((x >= 2 && x < 8 && y >= 10) || (x >= 10 && x < 14)) data.set([0, 0, 0, 255], (y * width + x) * 4);
+    }
+  }
+  const cell = gridCell({ width, height, data }, { index: 1, count: 2, columns: 2 });
+  const darkColumns = new Set();
+  for (let y = 0; y < cell.height; y += 1) {
+    for (let x = 0; x < cell.width; x += 1) if (cell.data[(y * cell.width + x) * 4] === 0) darkColumns.add(x);
+  }
+  assert.equal(cell.width, 14); // 1.4 × the cell width, wider than the cell
+  assert.equal(cell.height, 14);
+  assert.equal(cell.data[(3 * 14 + 7) * 4], 0, 'the bust starts 3 px below the top');
+  assert.deepEqual([...darkColumns].sort((a, b) => a - b), [4, 5, 6, 7, 8, 9], 'the neighbour is background');
 });

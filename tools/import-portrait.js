@@ -3,8 +3,9 @@
 // luminance, isolated pixels removed. The module is then retouched by hand and exported with
 // npm run trainer-design. Docs: docs/Pnj/references-portraits.md.
 //
-// Usage: npm run trainer-import -- <image> --id <id> [--panel <i>/<n>] [--size 64] [--force]
+// Usage: npm run trainer-import -- <image> --id <id> [--panel <i>/<n> [--grid <C>x<R>]] [--size 64] [--force]
 //   --panel i/n  the image is a vertical strip of n portraits; take the i-th (1 = top).
+//   --grid CxR   with --panel: the n portraits are a grid of C columns and R rows (reading order).
 //   --force      overwrite an existing design module (hand retouches are lost).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -44,6 +45,57 @@ export function panelRanges(image, count) {
   }
   if (ranges.length === count) return ranges;
   return Array.from({ length: count }, (_, i) => [Math.round((i * height) / count), Math.round(((i + 1) * height) / count)]);
+}
+
+/** Share of the cell width that the square around a grid portrait spans (head to hands). */
+const GRID_SQUARE_SHARE = 1.4;
+
+/**
+ * Square image of cell i of a grid (reading order, `columns` per row, even cells). Busts are
+ * taller than wide: the square starts just above the figure and is wider than the cell, so that
+ * it keeps the hands and the tool of the trade. Outside the cell it is filled with the
+ * background, so that the neighbouring portraits do not leak in.
+ */
+export function gridCell(image, { index, count, columns }) {
+  const { width, height, data } = image;
+  const rows = Math.ceil(count / columns);
+  const column = (index - 1) % columns;
+  const row = Math.floor((index - 1) / columns);
+  const x0 = Math.round((column * width) / columns);
+  const x1 = Math.round(((column + 1) * width) / columns);
+  const y0 = Math.round((row * height) / rows);
+  const y1 = Math.round(((row + 1) * height) / rows);
+  const background = [data[0], data[1], data[2]];
+  const isFigure = (x, y) => {
+    const o = (y * width + x) * 4;
+    return Math.hypot(data[o] - background[0], data[o + 1] - background[1], data[o + 2] - background[2]) > BACKGROUND_TOLERANCE;
+  };
+  let top = y1;
+  let left = x1;
+  let right = x0;
+  for (let y = y0; y < y1; y += 1) {
+    for (let x = x0; x < x1; x += 1) {
+      if (!isFigure(x, y)) continue;
+      top = Math.min(top, y);
+      left = Math.min(left, x);
+      right = Math.max(right, x);
+    }
+  }
+  if (top === y1) throw new Error(`Case ${index} vide`);
+  top = Math.max(y0, top - PANEL_INSET);
+  const size = Math.min(y1 - top, Math.round((x1 - x0) * GRID_SQUARE_SHARE));
+  const offsetX = Math.round((left + right) / 2 - size / 2);
+  const cell = { width: size, height: size, data: Buffer.alloc(size * size * 4) };
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      const [sx, sy] = [offsetX + x, top + y];
+      const inside = sx >= x0 && sx < x1 && sy < y1;
+      const o = (y * size + x) * 4;
+      if (inside) data.copy(cell.data, o, (sy * width + sx) * 4, (sy * width + sx) * 4 + 4);
+      else cell.data.set([...background, 255], o);
+    }
+  }
+  return cell;
 }
 
 /** Square crop { left, top, size } of the image, or of panel i of a vertical strip of n. */
@@ -167,24 +219,69 @@ export function outlineLightEdges(cells) {
 }
 
 /**
- * In a strip, the four tones come from all its panels together, so that skin, cloth and hair get
- * the same tones from one portrait to the next.
+ * Clears the opaque islands much smaller than the figure: in a grid, the edge of a neighbouring
+ * portrait that crosses the cell boundary. A held tool touches the hand, so it stays.
+ */
+export function removeStrayIslands(cells, minShare = 0.25) {
+  const size = cells.length;
+  const label = cells.map((row) => row.map(() => -1));
+  const islands = [];
+  for (let y = 0; y < size; y += 1) {
+    for (let x = 0; x < size; x += 1) {
+      if (cells[y][x] === '.' || label[y][x] >= 0) continue;
+      const pixels = [];
+      const stack = [[x, y]];
+      label[y][x] = islands.length;
+      while (stack.length > 0) {
+        const [px, py] = stack.pop();
+        pixels.push([px, py]);
+        for (const [nx, ny] of [[px + 1, py], [px - 1, py], [px, py + 1], [px, py - 1]]) {
+          if (nx < 0 || ny < 0 || nx >= size || ny >= size || cells[ny][nx] === '.' || label[ny][nx] >= 0) continue;
+          label[ny][nx] = islands.length;
+          stack.push([nx, ny]);
+        }
+      }
+      islands.push(pixels);
+    }
+  }
+  const largest = Math.max(0, ...islands.map((pixels) => pixels.length));
+  const result = cells.map((row) => [...row]);
+  for (const pixels of islands) {
+    if (pixels.length < largest * minShare) for (const [x, y] of pixels) result[y][x] = '.';
+  }
+  return result;
+}
+
+/** Luminance grid of a panel: a cell of a grid, a panel of a strip, or the whole image. */
+function panelGrid(image, panel, size) {
+  if (panel?.columns > 1) {
+    const cell = gridCell(image, panel);
+    return sampleGrid(cell, cropBox(cell), size);
+  }
+  return sampleGrid(image, cropBox(image, panel), size);
+}
+
+/**
+ * In a strip or a grid, the four tones come from all its panels together, so that skin, cloth
+ * and hair get the same tones from one portrait to the next.
  */
 export function importPortrait(image, { size = 64, panel = null } = {}) {
   let centers;
   if (panel) {
     const values = [];
     for (let index = 1; index <= panel.count; index += 1) {
-      for (const v of sampleGrid(image, cropBox(image, { index, count: panel.count }), size).flat()) if (v !== null) values.push(v);
+      for (const v of panelGrid(image, { ...panel, index }, size).flat()) if (v !== null) values.push(v);
     }
     centers = toneCenters(values);
   }
-  const cells = quantize(sampleGrid(image, cropBox(image, panel), size), centers);
+  let cells = quantize(panelGrid(image, panel, size), centers);
+  if (panel?.columns > 1) cells = removeStrayIslands(cells);
   return outlineLightEdges(removeIsolated(cells)).map((row) => row.join(''));
 }
 
 function designSource(id, rows, reference, panel) {
-  const origin = `${reference}${panel ? ` (panel ${panel.index}/${panel.count})` : ''}`;
+  const grid = panel?.columns > 1 ? `, grid ${panel.columns}x${Math.ceil(panel.count / panel.columns)}` : '';
+  const origin = `${reference}${panel ? ` (panel ${panel.index}/${panel.count}${grid})` : ''}`;
   return `// ${id}: imported by npm run trainer-import from ${origin}, then retouched by hand.\n`
     + "// Edit the rows directly ('0'-'3' = tone, '.' = transparent), then npm run trainer-design.\n"
     + `export const portraits = [{\n  id: '${id}',\n  portrait: [\n${rows.map((row) => `    '${row}',`).join('\n')}\n  ],\n}];\n`;
@@ -198,9 +295,14 @@ function option(args, name) {
 function main(args) {
   const file = args[0];
   const id = option(args, '--id');
-  if (!file || !id) throw new Error('Usage: npm run trainer-import -- <image> --id <id> [--panel i/n] [--size 64] [--force]');
+  if (!file || !id) throw new Error('Usage: npm run trainer-import -- <image> --id <id> [--panel i/n [--grid CxR]] [--size 64] [--force]');
   const panelArgument = option(args, '--panel');
-  const panel = panelArgument ? { index: Number(panelArgument.split('/')[0]), count: Number(panelArgument.split('/')[1]) } : null;
+  const gridArgument = option(args, '--grid');
+  const panel = panelArgument ? {
+    index: Number(panelArgument.split('/')[0]),
+    count: Number(panelArgument.split('/')[1]),
+    columns: gridArgument ? Number(gridArgument.split('x')[0]) : 1,
+  } : null;
   const size = Number(option(args, '--size') ?? 64);
   const target = path.join(DESIGNS, `${id}.js`);
   if (fs.existsSync(target) && !args.includes('--force')) throw new Error(`${path.relative(ROOT, target)} existe déjà (--force pour l'écraser)`);
