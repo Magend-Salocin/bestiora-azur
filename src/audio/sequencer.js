@@ -10,6 +10,16 @@ function firstIndexAt(events, tick) {
   return index < 0 ? events.length : index;
 }
 
+/** At the end of a channel: back to the loop point one loop later, or done. */
+function wrapCursor(cursor, track) {
+  if (track.loop && cursor.loopIndex < cursor.events.length) {
+    cursor.index = cursor.loopIndex;
+    cursor.offset += (track.lengthTicks - track.loopTick) * track.secondsPerTick;
+  } else {
+    cursor.done = true;
+  }
+}
+
 export function createSequencer(synth) {
   const { ctx } = synth;
   let current = null;
@@ -42,6 +52,11 @@ export function createSequencer(synth) {
     const spt = track.secondsPerTick;
     for (const cursor of current.cursors) {
       while (!cursor.done) {
+        // A track resumed after the last event of a channel starts at the end of that channel.
+        if (cursor.index >= cursor.events.length) {
+          wrapCursor(cursor, track);
+          continue;
+        }
         const event = cursor.events[cursor.index];
         const time = startTime + cursor.offset + event.tick * spt;
         if (time >= horizon) break;
@@ -49,13 +64,6 @@ export function createSequencer(synth) {
           active.push(synth.scheduleNote(cursor.channel, event, time, time + event.ticks * spt, 'music'));
         }
         cursor.index += 1;
-        if (cursor.index < cursor.events.length) continue;
-        if (track.loop && cursor.loopIndex < cursor.events.length) {
-          cursor.index = cursor.loopIndex;
-          cursor.offset += (track.lengthTicks - track.loopTick) * spt;
-        } else {
-          cursor.done = true;
-        }
       }
     }
     active = active.filter((note) => note.end > ctx.currentTime);

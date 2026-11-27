@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { CREATURES } from '../src/data/creatures.js';
 import { cryPitch, generateCry, lineRoot } from '../src/audio/cries.js';
+import { createSequencer } from '../src/audio/sequencer.js';
 import { envelopeSteps } from '../src/audio/synth.js';
 import { TrackError, midiToFrequency, parseChannel, parseTrack } from '../src/audio/track-parser.js';
 import { lfsrSamples, noiseClock } from '../src/audio/waves.js';
@@ -52,6 +53,27 @@ test('track timing: seconds per tick and duration', () => {
   const track = parseTrack({ id: 'x', tempo: 120, channels: { 1: 'C4:1 C4:1' } });
   assert.equal(track.secondsPerTick, 0.5 / 24);
   assert.equal(track.duration, 4);
+});
+
+test('sequencer: resuming after the last event of a channel waits for the next loop', () => {
+  const notes = [];
+  const synth = {
+    ctx: { currentTime: 0 },
+    scheduleNote: (channel, event, time) => { notes.push({ channel, tick: event.tick, time }); return { end: time }; },
+    cut() {},
+    musicFade: { gain: { cancelScheduledValues() {}, setValueAtTime() {}, value: 1 } },
+  };
+  // Two half notes per loop (96 ticks); the last event of both channels is before tick 95.
+  const track = parseTrack({ id: 'x', tempo: 120, channels: { 1: '@ C4:2 C4:2', 2: '@ C4:2 R:2' } });
+  const realSetInterval = globalThis.setInterval;
+  globalThis.setInterval = () => 0; // schedule() runs once, from play()
+  try {
+    createSequencer(synth).play(track, { startTick: 95 });
+  } finally {
+    globalThis.setInterval = realSetInterval;
+  }
+  assert.deepEqual(notes.map((note) => [note.channel, note.tick]), [[1, 0], [2, 0]]);
+  assert.ok(notes.every((note) => note.time > 0.05));
 });
 
 test('envelope steps and noise generator', () => {
