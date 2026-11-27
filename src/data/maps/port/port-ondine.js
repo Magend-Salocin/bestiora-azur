@@ -3,7 +3,7 @@ export default {
   id: 'port_ondine',
   name: 'Port-Ondine',
   tileset: 'town',
-  music: 'town_1',
+  music: 'town_port_ondine',
   border: 'T',
   flyPoint: { x: 4, y: 5 },
   layers: {

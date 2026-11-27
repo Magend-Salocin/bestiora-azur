@@ -4,7 +4,7 @@ export default {
   id: 'bateau_musee',
   name: 'Bateau-musée',
   tileset: 'indoor',
-  music: 'town_1',
+  music: 'town_port_ondine',
   layers: {
     ground: [
       '#w##w##w##w#',
