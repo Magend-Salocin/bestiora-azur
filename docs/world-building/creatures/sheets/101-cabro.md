@@ -14,4 +14,4 @@ Emplacements `cabrillon`, `cabridor`, `cabro_dor`. Type Combat, Roche au stade 3
 
 Origines : Cabro d'Or, figure attestée (Les Baux-de-Provence). Cabrillon et Cabridor : créations du jeu. Le nom « Cabro d'Or » fait 10 caractères, la limite du jeu, et la police a l'apostrophe.
 
-Sprites : [rendus/planche-101-114.png](../rendus/planche-101-114.png).
+Sprites : [renders/planche-101-114.png](../renders/planche-101-114.png).

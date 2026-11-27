@@ -28,4 +28,4 @@ Emplacement `gevaudan`. Types Combat et Arcane. Pas d'évolution.
 
 Origines : bête du Gévaudan, figure attestée (Lozère).
 
-Sprites : [rendus/planche-142-150.png](../rendus/planche-142-150.png).
+Sprites : [renders/planche-142-150.png](../renders/planche-142-150.png).

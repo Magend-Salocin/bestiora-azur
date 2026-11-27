@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md` (notamment le contrat des événements de combat du prompt 05). Moteur (01), atlas (02), carte (04) et logique de combat (05) existent.
+Lis d'abord `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md` (notamment le contrat des événements de combat du prompt 05). Moteur (01), atlas (02), carte (04) et logique de combat (05) existent.
 
 ## Objectif
 
@@ -74,4 +74,4 @@ Menus hors combat complets (07), musique (08, brancher seulement les hooks).
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: interface et animations de combat`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: interface et animations de combat`.

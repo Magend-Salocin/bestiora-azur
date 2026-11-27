@@ -13,4 +13,4 @@ Emplacements `sirenea`, `sirenor`. Types Eau et Vent. Évolution au niveau 40. S
 
 Origines : sirène, archétype traditionnel ; rattachement à la Garonne à vérifier. Sirénéa et Sirénor : créations du jeu.
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

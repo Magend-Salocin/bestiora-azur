@@ -1,6 +1,6 @@
 # Prompt 4 : musiques régionales
 
-Indépendant des prompts 2 et 3. S'appuie sur les régions du prompt 1 ([PNJ_V2.md](PNJ_V2.md), section 2).
+Indépendant des prompts 2 et 3. S'appuie sur les régions du prompt 1 ([PNJ_V2.md](../../world-building/characters/PNJ_V2.md), section 2).
 
 ## Objectif
 
@@ -10,8 +10,8 @@ Donner à chaque région sa couleur musicale. Aujourd'hui, 10 musiques de carte 
 
 | Sujet | Décision |
 |---|---|
-| Originalité | Toutes les mélodies sont composées pour le jeu ([GAME_DESIGN.md](../conception/GAME_DESIGN.md), section 1). On ne transcrit jamais un air existant, même traditionnel ou du domaine public. On reprend seulement la forme : mesure, rythme de danse, mode, carrure des phrases, timbre imité. |
-| Format | Celui de [AUDIO_FORMAT.md](../audio/AUDIO_FORMAT.md) : 4 voies (2 carrés, table d'onde, bruit), un module par piste dans `src/audio/tracks/`, enregistré dans `tracks/index.js`. `patterns.js` fournit basses, arpèges et batteries. |
+| Originalité | Toutes les mélodies sont composées pour le jeu ([ORIGINALITY.md](../../design/ORIGINALITY.md)). On ne transcrit jamais un air existant, même traditionnel ou du domaine public. On reprend seulement la forme : mesure, rythme de danse, mode, carrure des phrases, timbre imité. |
+| Format | Celui de [AUDIO_FORMAT.md](../../world-building/audio/AUDIO_FORMAT.md) : 4 voies (2 carrés, table d'onde, bruit), un module par piste dans `src/audio/tracks/`, enregistré dans `tracks/index.js`. `patterns.js` fournit basses, arpèges et batteries. |
 | Pistes conservées | `title`, `intro_professor`, `hometown` (Hameau-de-Lys), `ending`, les jingles et les rencontres. Les autres restent comme repli et peuvent être réattribuées. |
 | Motif du jeu | Les pistes de `MOTIF_TRACKS` gardent le motif sur la voie 1 (contrôlé par `npm run validate`). Les nouvelles pistes peuvent le citer, sans obligation. |
 | Identifiants | Une nouvelle piste a un nouvel id (`town_port_ondine`, `route_bretagne`…). Les cartes changent seulement leur champ `music`. Les sauvegardes ne stockent pas la musique. |
@@ -23,7 +23,7 @@ Donner à chaque région sa couleur musicale. Aujourd'hui, 10 musiques de carte 
 - `src/data/music.js` : musiques de rencontre, de combat et de victoire.
 - `src/data/maps/<zone>/` : champ `music` de chaque carte.
 - `tools/validators/audio.js` : durée minimale (30 s pour une carte, 45 s pour un combat), voies de même longueur et même bouclage.
-- [PNJ_V2.md](PNJ_V2.md) : fiches de zone, fil conducteur de chaque région.
+- [PNJ_V2.md](../../world-building/characters/PNJ_V2.md) : fiches de zone, fil conducteur de chaque région.
 
 ## Pistes à créer
 
@@ -84,6 +84,6 @@ Avant chaque lot, présenter les pistes prévues et attendre mon feu vert ; apr�
 | 4 | Marais, Île-de-France et Corse : `marsh`, `town_ombrecourt`, `catacombs`, `sea_corse`, `sunken_library`. |
 | 5 | Occitanie, Alpes et Provence : `town_forge`, `volcano`, `town_givremont`, `ice_cave`, `route_ligue`, `league`. |
 | 6 | Combats : `battle_legendary`, `battle_gardien`, branchement dans `src/data/music.js` et les dresseurs concernés. |
-| 7 | Nettoyage : pistes devenues inutiles retirées, `docs/conception/GAME_DESIGN.md` (nombre de pistes), `docs/audio/AUDIO_FORMAT.md` si le format évolue. |
+| 7 | Nettoyage : pistes devenues inutiles retirées, `docs/design/GAME_DESIGN.md` (nombre de pistes), `docs/audio/AUDIO_FORMAT.md` si le format évolue. |
 
 Chaque lot se termine par `npm run validate` et `npm test`, puis l'écoute dans le juke-box F2.

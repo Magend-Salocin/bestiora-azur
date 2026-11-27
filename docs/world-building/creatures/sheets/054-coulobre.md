@@ -14,4 +14,4 @@ Emplacements `coulobrin`, `coulobron`, `coulobre`. Types Eau et Foudre. Évoluti
 
 Origines : Coulobre, figure attestée (Vaucluse). Coulobrin et Coulobron : créations du jeu.
 
-Sprites : [rendus/planche-050-061.png](../rendus/planche-050-061.png).
+Sprites : [renders/planche-050-061.png](../renders/planche-050-061.png).

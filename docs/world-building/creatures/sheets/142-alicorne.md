@@ -13,4 +13,4 @@ Emplacements `alicornet`, `alicorne`. Types Givre et Arcane. Évolution au nivea
 
 Origines : alicorne, archétype traditionnel ; alicorne d'Avignon, Provence, à vérifier. Alicornet : création du jeu.
 
-Sprites : [rendus/planche-142-150.png](../rendus/planche-142-150.png).
+Sprites : [renders/planche-142-150.png](../renders/planche-142-150.png).

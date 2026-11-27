@@ -13,4 +13,4 @@ Emplacements `jetin`, `jetinelle`. Types Insecte et Vent. Évolution au niveau 3
 
 Origines : jetins, figure attestée (Haute-Bretagne). Jetinelle : création du jeu.
 
-Sprites : [rendus/planche-088-100.png](../rendus/planche-088-100.png).
+Sprites : [renders/planche-088-100.png](../renders/planche-088-100.png).

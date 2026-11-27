@@ -31,4 +31,4 @@ Emplacements `blanchin`, `blancome`, `blancelune`. Types Ombre et Arcane. Évolu
 
 Origines : dame blanche, figure répandue en France. Blanchin, Blancôme et Blancélune : créations du jeu.
 
-Sprites : [rendus/planche-088-100.png](../rendus/planche-088-100.png).
+Sprites : [renders/planche-088-100.png](../renders/planche-088-100.png).

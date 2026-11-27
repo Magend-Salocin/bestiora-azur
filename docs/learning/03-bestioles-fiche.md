@@ -202,7 +202,7 @@ Les 45 objets (potions, capsules, pierres d'évolution, objets de terrain) sont 
 
 ## Petit défi
 
-Ouvre [docs/bestiaire/BESTIAIRE.md](../bestiaire/BESTIAIRE.md). Trouve une bestiole qui évolue avec une pierre, puis retrouve sa fiche dans [src/data/creatures.js](../../src/data/creatures.js) en cherchant son `id`. Calcule ses PV au niveau 20 avec un gène de 10 et sans entraînement.
+Ouvre [docs/world-building/creatures/BESTIAIRE.md](../world-building/creatures/BESTIAIRE.md). Trouve une bestiole qui évolue avec une pierre, puis retrouve sa fiche dans [src/data/creatures.js](../../src/data/creatures.js) en cherchant son `id`. Calcule ses PV au niveau 20 avec un gène de 10 et sans entraînement.
 
 ## À retenir
 

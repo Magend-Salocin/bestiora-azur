@@ -16,4 +16,4 @@ Origines : Fadet, archétype attesté (Poitou, Vendée). Fadebois et Fadéon : c
 
 Dialogue mis à jour : `bise` (le scientifique parle d'un Fadéon).
 
-Sprites : [rendus/planche-025-037.png](../rendus/planche-025-037.png).
+Sprites : [renders/planche-025-037.png](../renders/planche-025-037.png).

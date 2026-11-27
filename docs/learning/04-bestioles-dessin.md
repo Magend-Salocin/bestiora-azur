@@ -131,7 +131,7 @@ Le jeu ne dessine donc rien pendant que tu joues : tout est préparé à l'avanc
 
 ## Vérifier son dessin
 
-Avant de lancer le jeu, on regarde le résultat sur une planche : `npm run planche -- 067-069` ([tools/creature-sheet.js](../../tools/creature-sheet.js)) crée une image avec, pour chaque espèce, la face, le dos et l'icône, agrandis trois fois. Les planches de tout le bestiaire sont rangées dans [docs/bestiaire-folklorique/rendus/](../../docs/bestiaire-folklorique/rendus/).
+Avant de lancer le jeu, on regarde le résultat sur une planche : `npm run planche -- 067-069` ([tools/creature-sheet.js](../../tools/creature-sheet.js)) crée une image avec, pour chaque espèce, la face, le dos et l'icône, agrandis trois fois. Les planches de tout le bestiaire sont rangées dans [docs/world-building/creatures/renders/](../../docs/world-building/creatures/renders/).
 
 Deux gardiens surveillent aussi les dessins :
 
@@ -147,7 +147,7 @@ Avec un adulte, et une copie du projet que tu as le droit de modifier :
 1. Ouvre [tools/creature-designs/05-fullettu.js](../../tools/creature-designs/05-fullettu.js) et trouve la ligne `horns` du Fullettu.
 2. Agrandis ses cornes : remplace `[19, 27]` par `[18, 23]`. Le sommet de la corne monte de 4 pixels et s'écarte d'un pixel.
 3. Lance `npm run creature-design -- tools/creature-designs/05-fullettu.js`, puis `npm run planche -- 067-069`.
-4. Ouvre la planche `planche-067-069.png` dans [docs/bestiaire-folklorique/rendus/](../../docs/bestiaire-folklorique/rendus/). Les deux cornes ont-elles changé, ou une seule ? Pourquoi ?
+4. Ouvre la planche `planche-067-069.png` dans [docs/world-building/creatures/renders/](../../docs/world-building/creatures/renders/). Les deux cornes ont-elles changé, ou une seule ? Pourquoi ?
 
 (Réponse : les deux, parce que la corne est dessinée une fois puis copiée en miroir par `mirrorX`. Pour revenir en arrière, remets `[19, 27]` et relance les deux commandes.)
 

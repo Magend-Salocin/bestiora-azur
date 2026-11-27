@@ -14,4 +14,4 @@ Emplacements `fullettu`, `fullemarin`, `fulletonne`. Fullettu est de type Normal
 
 Origines : fullettu, figure attestée (Corse). Fullemarin et Fulletonne : créations du jeu.
 
-Sprites : [rendus/planche-062-074.png](../rendus/planche-062-074.png).
+Sprites : [renders/planche-062-074.png](../renders/planche-062-074.png).

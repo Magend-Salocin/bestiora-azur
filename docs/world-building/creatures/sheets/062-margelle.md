@@ -44,4 +44,4 @@ Emplacement `gonfaron`. Type Normal. Pas d'évolution.
 
 Origines : âne de Gonfaron, figure attestée (Var). La catégorie est « Baudet » parce que la police du jeu n'a pas de « Â » majuscule.
 
-Sprites : [rendus/planche-062-074.png](../rendus/planche-062-074.png).
+Sprites : [renders/planche-062-074.png](../renders/planche-062-074.png).

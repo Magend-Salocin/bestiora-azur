@@ -29,4 +29,4 @@ Emplacement `dame_noire`. Types Roche et Ombre. Pas d'évolution. Nom féminin.
 
 Origines : dames noires des grottes, à vérifier.
 
-Sprites : [rendus/planche-075-087.png](../rendus/planche-075-087.png).
+Sprites : [renders/planche-075-087.png](../renders/planche-075-087.png).

@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` (formats Carte et Script d'événement) et `docs/avancement/PROGRESS.md`. Le socle (01) et les atlas (02) existent.
+Lis d'abord `docs/design/GAME_DESIGN.md`, `docs/technical/DATA_FORMATS.md` (formats Carte et Script d'événement) et `docs/progress/PROGRESS.md`. Le socle (01) et les atlas (02) existent.
 
 ## Objectif
 
@@ -11,8 +11,8 @@ Rendre l'exploration complète et data-driven : cartes, déplacements case par c
 ## À réaliser
 
 1. **Format et chargement des cartes** (`src/data/maps/`, `src/overworld/map-loader.js`)
-   - Format de `docs/technique/ARCHITECTURE.md`. Index des cartes `src/data/maps/index.js`.
-   - Les couches `ground` et `collision` peuvent être écrites en chaînes lisibles avec une légende de caractères propre à chaque carte (ex. `'T'` arbre, `'g'` herbe haute, `'~'` eau), convertie en id de métatuile au chargement. C'est le format que les prompts de contenu utiliseront ; documente-le dans `docs/carte/MAP_FORMAT.md` avec un exemple complet.
+   - Format de `docs/technical/DATA_FORMATS.md`. Index des cartes `src/data/maps/index.js`.
+   - Les couches `ground` et `collision` peuvent être écrites en chaînes lisibles avec une légende de caractères propre à chaque carte (ex. `'T'` arbre, `'g'` herbe haute, `'~'` eau), convertie en id de métatuile au chargement. C'est le format que les prompts de contenu utiliseront ; documente-le dans `docs/world-building/maps/MAP_FORMAT.md` avec un exemple complet.
    - Connexions entre cartes extérieures sans écran de transition (on voit la carte voisine en bordure ; défilement continu).
 
 2. **Caméra et rendu**
@@ -79,4 +79,4 @@ Vrai combat, menus (équipe, sac…), musique.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: moteur de carte, PNJ, dresseurs et scripts`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: moteur de carte, PNJ, dresseurs et scripts`.

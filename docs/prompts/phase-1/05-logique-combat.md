@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md` (section 5), `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`. Les données (03) existent.
+Lis d'abord `docs/design/MECHANICS.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`. Les données (03) existent.
 
 ## Objectif
 
@@ -52,4 +52,4 @@ Interface, animations, textes formatés.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md` (liste des événements et leur contrat), puis commit `feat: moteur de combat pur et IA`.
+Mets à jour `docs/progress/PROGRESS.md` (liste des événements et leur contrat), puis commit `feat: moteur de combat pur et IA`.

@@ -29,4 +29,4 @@ Emplacement `fouletot`. Type Foudre. Pas d'évolution.
 
 Origines : fouletot, figure attestée (Franche-Comté).
 
-Sprites : [rendus/planche-075-087.png](../rendus/planche-075-087.png).
+Sprites : [renders/planche-075-087.png](../renders/planche-075-087.png).

@@ -12,10 +12,10 @@ Source de vérité unique pour la refonte des bestioles. Les fichiers de `archiv
 | Types | Les types de l'emplacement font foi. La créature est adaptée à ses types, pas l'inverse. | Les arènes, les attaques et l'équilibrage reposent sur ces types. |
 | Structure des lignées | Celle du jeu (1, 2 ou 3 formes, branches, pierres, amitié). | Les brouillons imposaient 50 lignées de 3, incompatible avec le jeu. |
 | Identifiants | Les identifiants internes reprennent le nom affiché en `snake_case` ASCII (`korrigan`, `dame_noire`, `cabro_dor`). Renommés au lot 12, sans migration : les sauvegardes antérieures ne sont plus compatibles. Les clés de drapeaux et de textes des légendaires (`azurel_ko`, `mirelle_gone`, Pic d'Azur) gardent leur nom. | Fait. |
-| Vocabulaire | « bestiole », « Bestiaire ». Le mot « Folklomon » est abandonné. | Le suffixe « -mon » évoque une franchise ([GAME_DESIGN.md](../conception/GAME_DESIGN.md), section 1). |
+| Vocabulaire | « bestiole », « Bestiaire ». Le mot « Folklomon » est abandonné. | Le suffixe « -mon » évoque une franchise ([ORIGINALITY.md](../../design/ORIGINALITY.md)). |
 | Noms | 10 caractères maximum, sans espace de préférence. Les noms longs restent dans la légende. | Limite d'affichage vérifiée par `npm run validate`. |
 | Genre | Chaque espèce a un genre grammatical : masculin par défaut, `gender: 'f'` pour un nom féminin (Tarasque, Dame verte…). Les textes s'accordent : « Une Tarasque sauvage », « Tarasque ennemie », « est brûlée ». | Un nom féminin précédé de « Un » sonne faux. |
-| Description en jeu | 6 lignes de 18 caractères, sur deux pages de bestiaire (A tourne la page). Couper de préférence entre deux phrases à la 3e ligne. | La fiche complète est dans `fiches/`, la description en jeu en est le résumé. |
+| Description en jeu | 6 lignes de 18 caractères, sur deux pages de bestiaire (A tourne la page). Couper de préférence entre deux phrases à la 3e ligne. | La fiche complète est dans `sheets/`, la description en jeu en est le résumé. |
 | Exclusions | Pas d'humains, de saints, de chevaliers ni de personnages littéraires (Gargantua, Merlin, Viviane, Morgane retirés). | Règle des brouillons, conservée. |
 | Concepts | Les images de `concepts/` inspirent l'ambiance uniquement. Elles portent des logos et un style de la franchise : rien n'est repris tel quel. | Règles d'originalité. |
 
@@ -36,7 +36,7 @@ Pour lire les fiches archivées :
 
 ## Charte graphique
 
-Établie sur les trois lignées de starters ([rendus/planche-001-009.png](rendus/planche-001-009.png)).
+Établie sur les trois lignées de starters ([renders/planche-001-009.png](renders/planche-001-009.png)).
 
 - Sprite 48 × 48, 4 teintes, sol à la ligne 46, axe vertical au centre.
 - Taille selon le stade : stade 1 compact (corps d'environ 30 px, accessoires en plus), stade 2 plus haut et plus large, stade final occupe presque tout le cadre.
@@ -50,13 +50,13 @@ Pour lire les fiches archivées :
 
 ## Production d'une espèce
 
-1. Rédiger la fiche de la lignée dans `fiches/` (modèle : [fiches/001-korrigan.md](fiches/001-korrigan.md)).
+1. Rédiger la fiche de la lignée dans `sheets/` (modèle : [sheets/001-korrigan.md](sheets/001-korrigan.md)).
 2. Dessiner face, dos et icône dans un module de `tools/creature-designs/` (modèle : `00-korrigan.js`), avec les formes de `tools/creature-painter.js`.
 3. `npm run creature-design -- tools/creature-designs/<fichier>.js` écrit `src/gfx/sources/creatures/<id>.js` ; ajouter l'espèce à `index.js` à sa première exportation.
 4. Mettre à jour l'espèce dans `src/data/creatures.js` : nom, genre, catégorie, taille, poids, description, et `sprite: 'handmade'`.
 5. Remplacer les anciens noms cités dans les dialogues (`src/data/texts/`), puis `npm run atlas`, `npm run validate`, `npm test`.
-6. `npm run planche -- <de>-<à>` : planche du lot dans `rendus/planche-<de>-<à>.png` (face, dos, icône).
-7. `npm run screenshots -- --preview <id, nom ou numéro>` : captures dans `rendus/<numéro>-<nom>/`, par exemple `rendus/022-dame-verte/` (starter, bestiaire, équipe, combat de face et de dos).
+6. `npm run planche -- <de>-<à>` : planche du lot dans `renders/planche-<de>-<à>.png` (face, dos, icône).
+7. `npm run screenshots -- --preview <id, nom ou numéro>` : captures dans `renders/<numéro>-<nom>/`, par exemple `renders/022-dame-verte/` (starter, bestiaire, équipe, combat de face et de dos).
 
 ## Plan de production
 

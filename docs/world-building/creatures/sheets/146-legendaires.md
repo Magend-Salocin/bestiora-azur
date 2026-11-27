@@ -52,4 +52,4 @@ Types Foudre et Vent.
 
 Origines : vouivre, figure attestée (Franche-Comté) ; lion de pierre du mont Gaussier, Alpilles, à vérifier ; dragon de Draguignan, figure attestée (Var) ; Grand Veneur, figure attestée (Fontainebleau).
 
-Sprites : [rendus/planche-142-150.png](../rendus/planche-142-150.png).
+Sprites : [renders/planche-142-150.png](../renders/planche-142-150.png).

@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md` (section 1 : musiques originales uniquement), `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`.
+Lis d'abord `docs/design/ORIGINALITY.md` (musiques originales uniquement), `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`.
 
 Toutes les mélodies sont composées pour Bestiora Azur. Ne transcris, n'imite et ne paraphrase aucune mélodie existante, de jeu vidéo ou autre.
 
@@ -54,4 +54,4 @@ Un synthétiseur 4 voies dans l'esprit des consoles portables 8 bits, un séquen
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: synthé chiptune, pistes originales et effets`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: synthé chiptune, pistes originales et effets`.

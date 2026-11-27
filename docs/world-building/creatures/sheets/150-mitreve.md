@@ -12,4 +12,4 @@ Emplacement `mitreve`. Type Arcane. Mythique, pas d'évolution. Nom féminin.
 
 Origines : création du jeu.
 
-Sprites : [rendus/planche-142-150.png](../rendus/planche-142-150.png).
+Sprites : [renders/planche-142-150.png](../renders/planche-142-150.png).

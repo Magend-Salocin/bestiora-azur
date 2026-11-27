@@ -30,4 +30,4 @@ Emplacements `matagri`, `matagot`. Type Ombre. Évolution au niveau 38.
 
 Origines : matagot, figure attestée (Provence, Gascogne). Matagri : création du jeu.
 
-Sprites : [rendus/planche-115-128.png](../rendus/planche-115-128.png).
+Sprites : [renders/planche-115-128.png](../renders/planche-115-128.png).

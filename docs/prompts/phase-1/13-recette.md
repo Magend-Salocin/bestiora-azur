@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md` en entier, y compris les problèmes connus notés par les sessions précédentes. Le jeu est complet et packagé.
+Lis d'abord `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md` en entier, y compris les problèmes connus notés par les sessions précédentes. Le jeu est complet et packagé.
 
 ## Objectif
 
@@ -24,7 +24,7 @@ Trouver et corriger les bugs bloquants et les incohérences avant la version 1.0
    Rédige `docs/RECETTE.md` : une checklist par zone (entrée, PNJ, dresseurs, objets, scénario, sortie) et par système (combat, menus, sauvegarde, audio, options). Coche ce que les outils automatiques ont validé ; laisse le reste pour un testeur humain avec des instructions précises.
 
 4. **Corrections**
-   Corrige tous les problèmes trouvés par 1 et 2, en ajoutant un test de non-régression quand c'est un bug de logique. Pour chaque correction : une ligne dans `docs/avancement/PROGRESS.md`.
+   Corrige tous les problèmes trouvés par 1 et 2, en ajoutant un test de non-régression quand c'est un bug de logique. Pour chaque correction : une ligne dans `docs/progress/PROGRESS.md`.
 
 5. **Équilibrage final**
    Relance `tools/balance-check.js` sur tous les combats importants, et le pilote automatique avec une équipe sans farm : il doit terminer le jeu avec des niveaux cohérents (≈ 55 à la Ligue). Ajuste si besoin.
@@ -40,4 +40,4 @@ Trouver et corriger les bugs bloquants et les incohérences avant la version 1.0
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md` (statut final, problèmes connus restants), puis commit `chore: recette 1.0 et corrections`.
+Mets à jour `docs/progress/PROGRESS.md` (statut final, problèmes connus restants), puis commit `chore: recette 1.0 et corrections`.

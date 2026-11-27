@@ -76,7 +76,7 @@ Do, mi, sol : c'est un accord joyeux de do majeur, joué note par note. Le comme
 | `H-12` | glissando : la note glisse vers le grave pendant qu'elle joue |
 | `O4`, `>`, `<` | changer d'octave |
 
-La liste complète est dans [docs/audio/AUDIO_FORMAT.md](../audio/AUDIO_FORMAT.md).
+La liste complète est dans [docs/world-building/audio/AUDIO_FORMAT.md](../world-building/audio/AUDIO_FORMAT.md).
 
 Pour ne pas tout réécrire, [src/audio/tracks/patterns.js](../../src/audio/tracks/patterns.js) fournit des morceaux prêts à l'emploi : des basses (`bass`), des arpèges (`arp`), des rythmes de batterie (`DRUMS.march`).
 

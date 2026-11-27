@@ -28,4 +28,4 @@ Emplacement `mallet`. Types Métal et Feu. Pas d'évolution.
 
 Origines : cheval Mallet, figure attestée (Poitou, Vendée).
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

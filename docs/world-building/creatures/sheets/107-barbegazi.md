@@ -13,4 +13,4 @@ Emplacements `barbegel`, `barbegazi`. Type Givre, Vent au stade 2. Évolution au
 
 Origines : barbegazi, figure attestée (Savoie). Barbegel : création du jeu.
 
-Sprites : [rendus/planche-101-114.png](../rendus/planche-101-114.png).
+Sprites : [renders/planche-101-114.png](../renders/planche-101-114.png).

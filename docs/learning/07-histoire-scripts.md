@@ -81,7 +81,7 @@ Pas besoin d'être programmeur pour lire ou écrire ça : c'est une suite d'acti
 | `call` | lance un autre script par son nom |
 | `end` | arrête le script |
 
-La liste complète, avec les champs de chaque commande, est dans [docs/carte/MAP_FORMAT.md](../carte/MAP_FORMAT.md).
+La liste complète, avec les champs de chaque commande, est dans [docs/world-building/maps/MAP_FORMAT.md](../world-building/maps/MAP_FORMAT.md).
 
 ### Le lecteur de scripts
 
@@ -173,7 +173,7 @@ L'histoire suit un ordre précis : 8 arènes, puis la Ligue. Plusieurs mécanism
 | Une case piégée ramène en arrière | la professeure qui t'arrête si tu n'as pas de bestiole |
 | Un contrôle des badges | au Col des Échos, il faut les 8 badges pour atteindre la Ligue |
 
-Les niveaux des dresseurs et des bestioles sauvages augmentent aussi au fil de la route (de 2 sur la Route 1 à plus de 60 à la Ligue). Le tableau complet est dans la section 4 de [docs/conception/GAME_DESIGN.md](../conception/GAME_DESIGN.md).
+Les niveaux des dresseurs et des bestioles sauvages augmentent aussi au fil de la route (de 2 sur la Route 1 à plus de 60 à la Ligue). Le tableau complet est dans [docs/design/WORLD_PROGRESSION.md](../design/WORLD_PROGRESSION.md).
 
 ## Les grandes étapes de l'histoire
 

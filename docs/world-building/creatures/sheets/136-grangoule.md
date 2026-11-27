@@ -13,4 +13,4 @@ Emplacements `goulinet`, `grangoule`. Types Feu et Roche. Évolution au niveau 4
 
 Origines : Grand'Goule, figure attestée (Poitiers). Goulinet : création du jeu.
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

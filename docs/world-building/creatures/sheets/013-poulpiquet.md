@@ -13,4 +13,4 @@ Emplacements `poulpiquet`, `poulpifol`. Type Normal. Évolution au niveau 20.
 
 Origines : Poulpiquet, archétype attesté (Bretagne). Poulpifol : création du jeu.
 
-Sprites : [rendus/planche-010-024.png](../rendus/planche-010-024.png).
+Sprites : [renders/planche-010-024.png](../renders/planche-010-024.png).

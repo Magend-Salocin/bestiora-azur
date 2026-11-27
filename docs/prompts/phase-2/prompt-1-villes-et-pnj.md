@@ -16,10 +16,10 @@ Donner à chaque zone de Brumeval l'identité d'une région française, puis ré
 
 ## Sources à lire avant de commencer
 
-- [base.md](base.md) : régions, métiers, catégories, fiche standard et règles de cohérence (section 7). La seconde moitié (151 figures) sert seulement de réservoir pour les clins d'œil.
-- [BESTIAIRE_V2.md](../bestiaire-folklorique/BESTIAIRE_V2.md) : région de chaque bestiole. Les PNJ d'une zone parlent des bestioles qu'on y rencontre.
-- [WORLD_MAP.md](../carte/WORLD_MAP.md) : cartes, zones, champions, scénario.
-- [GAME_DESIGN.md](../conception/GAME_DESIGN.md) : ton du jeu, vocabulaire (« bestiole »).
+- [base.md](../../world-building/characters/base.md) : régions, métiers, catégories, fiche standard et règles de cohérence (section 7). La seconde moitié (151 figures) sert seulement de réservoir pour les clins d'œil.
+- [BESTIAIRE_V2.md](../../world-building/creatures/BESTIAIRE_V2.md) : région de chaque bestiole. Les PNJ d'une zone parlent des bestioles qu'on y rencontre.
+- [WORLD_MAP.md](../../world-building/maps/WORLD_MAP.md) : cartes, zones, champions, scénario.
+- [ORIGINALITY.md](../../design/ORIGINALITY.md) : ton du jeu, originalité et vocabulaire (« bestiole »).
 - Code :
   - `src/data/texts/<zone>.js` : dialogues ; `\f` change de page, `\n` change de ligne.
   - `src/data/maps/` : les PNJ et dresseurs de chaque carte.
@@ -43,7 +43,7 @@ Donner à chaque zone de Brumeval l'identité d'une région française, puis ré
 | givremont | Givremont, Col des Échos, Grotte Boréale | Auvergne-Rhône-Alpes |
 | ligue | Citadelle d'Azur, Pic d'Azur | Provence-Alpes-Côte d'Azur |
 
-## Livrable de référence : `docs/Pnj/PNJ_V2.md`
+## Livrable de référence : `docs/world-building/characters/PNJ_V2.md`
 
 Le lot 0 le crée, sur le modèle de `BESTIAIRE_V2.md`. Il contient :
 

@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord en entier `docs/conception/GAME_DESIGN.md` (sections 3 et 4 surtout), `docs/technique/ARCHITECTURE.md`, `docs/carte/MAP_FORMAT.md`, `docs/bestiaire/BESTIAIRE.md` et `docs/avancement/PROGRESS.md`. Tous les systèmes sont en place (01 à 08). Cette étape est uniquement du contenu, écrit en données.
+Lis d'abord en entier `docs/design/UNIVERSE.md`, `docs/design/WORLD_PROGRESSION.md`, `docs/technical/ARCHITECTURE.md`, `docs/world-building/maps/MAP_FORMAT.md`, `docs/world-building/creatures/BESTIAIRE.md` et `docs/progress/PROGRESS.md`. Tous les systèmes sont en place (01 à 08). Cette étape est uniquement du contenu, écrit en données.
 
 Tout le contenu est original : noms de PNJ, dialogues, agencement des cartes.
 
@@ -21,7 +21,7 @@ Rendre jouable le début du jeu, de l'écran titre jusqu'au badge de l'arène 4 
 
 3. **Cartes à produire**, avec intérieurs (Haltes, Comptoirs, maisons, arènes) :
    Hameau-de-Lys, Route 1, Bourg-Sablon, Route 2, Bois Murmurant, Route 3, Grotte des Cascades (2 niveaux), Port-Ondine (bateau-musée inclus), Route 4 (pension), Route 5, Vireval, usine Opale (petit donjon), Route 6, Tunnel Obscur, Cendrelune, Tour de la Mémoire (5 étages), et l'accès extérieur à la Centrale abandonnée (bloquée pour l'instant).
-   Contraintes : chaque route a au moins un raccourci ou une zone secrète ; les objets de terrain bloquent proprement l'accès aux zones ultérieures ; les connexions sont cohérentes avec une carte de région globale dessinée dans `docs/carte/WORLD_MAP.md` (schéma ASCII) que tu crées et que le prompt 10 étendra.
+   Contraintes : chaque route a au moins un raccourci ou une zone secrète ; les objets de terrain bloquent proprement l'accès aux zones ultérieures ; les connexions sont cohérentes avec une carte de région globale dessinée dans `docs/world-building/maps/WORLD_MAP.md` (schéma ASCII) que tu crées et que le prompt 10 étendra.
 
 4. **Arènes 1 à 4**
    Chacune avec une énigme de déplacement originale et simple (rochers de Roche, plateformes d'eau, interrupteurs électriques, labyrinthe de haies coupables), 2 à 4 dresseurs, le champion (équipe de 3 à 4 bestioles du type, IA `smart`), badge, objet récompense (une attaque n'est pas enseignable : donner une pierre d'évolution ou un objet utile), dialogues avant, pendant (« dernière bestiole ») et après.
@@ -57,8 +57,8 @@ Rendre jouable le début du jeu, de l'écran titre jusqu'au badge de l'arène 4 
 
 ## Reprise
 
-Cette étape est longue. Si tu dois t'arrêter, laisse le jeu dans un état jouable, note dans `docs/avancement/PROGRESS.md` la dernière zone terminée et la suivante, et commite.
+Cette étape est longue. Si tu dois t'arrêter, laisse le jeu dans un état jouable, note dans `docs/progress/PROGRESS.md` la dernière zone terminée et la suivante, et commite.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat(monde): introduction à l'arène 4`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat(monde): introduction à l'arène 4`.

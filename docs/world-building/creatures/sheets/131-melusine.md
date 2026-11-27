@@ -29,4 +29,4 @@ Emplacement `nainmarin`. Types Eau et Combat. Pas d'évolution.
 
 Origines : nain de mer, archétype traditionnel (Bretagne).
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

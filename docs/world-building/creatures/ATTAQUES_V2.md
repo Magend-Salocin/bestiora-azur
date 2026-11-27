@@ -1,12 +1,12 @@
 # Attaques V2 : noms ancrés dans le folklore
 
-Table de référence du [prompt 3](../Pnj/prompt-3-attaques.md). Seuls le nom et la description changent : identifiant, type, catégorie, puissance, précision, PP, priorité, effet et apprentissages restent ceux de `src/data/moves.js`.
+Table de référence du [prompt 3](../../prompts/phase-2/prompt-3-attaques.md). Seuls le nom et la description changent : identifiant, type, catégorie, puissance, précision, PP, priorité, effet et apprentissages restent ceux de `src/data/moves.js`.
 
 Statut : F (folklore attesté), A (archétype traditionnel), J (création du jeu). Répartition : 35 F, 107 A, 24 J.
 
 Les descriptions en jeu sont dans `src/data/moves.js`. Elles tiennent sur 2 lignes de 18 caractères (`npm run validate`).
 
-Captures du menu des attaques en combat, quatre attaques par image : `npm run screenshots -- --moves`, dans [rendus/](rendus/) (`<type>-<n>.png`, puis `exclusives-<n>.png`).
+Captures du menu des attaques en combat, quatre attaques par image : `npm run screenshots -- --moves`, dans [renders/](renders/) (`<type>-<n>.png`, puis `exclusives-<n>.png`).
 
 ## Règles de nommage
 

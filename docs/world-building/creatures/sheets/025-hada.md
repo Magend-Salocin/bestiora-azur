@@ -33,4 +33,4 @@ Origines : bête faramine, figure attestée (Poitou, Vendée). Faramin : créati
 
 Dialogues mis à jour : `bise`, `cendrelune` (la Faramine de la vieille dame et sa stèle), `debut`, `port`.
 
-Sprites : [rendus/planche-025-037.png](../rendus/planche-025-037.png).
+Sprites : [renders/planche-025-037.png](../renders/planche-025-037.png).

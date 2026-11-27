@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` (section Sauvegarde) et `docs/avancement/PROGRESS.md`. Le jeu est complet en contenu.
+Lis d'abord `docs/design/GAME_DESIGN.md`, `docs/technical/SAVE_FORMAT.md` et `docs/progress/PROGRESS.md`. Le jeu est complet en contenu.
 
 ## Objectif
 
@@ -11,7 +11,7 @@ Rendre le jeu fiable et distribuable : sauvegarde robuste, finitions visuelles e
 ## À réaliser
 
 1. **Sauvegarde** (`src/save/`, `electron/main.js`)
-   - Format versionné décrit dans `docs/technique/ARCHITECTURE.md`, sérialisation et désérialisation pures et testées (aller-retour identique sur un état complet).
+   - Format versionné décrit dans `docs/technical/SAVE_FORMAT.md`, sérialisation et désérialisation pures et testées (aller-retour identique sur un état complet).
    - Écriture atomique dans `userData` (fichier temporaire + renommage), copie de secours `save.bak.json`, chargement de la copie si le principal est corrompu, message clair si les deux le sont.
    - Migration : table de fonctions `migrations[version]`, test avec une sauvegarde v1 fictive.
    - SAUVER dans le menu : résumé (nom, badges, Bestiaire, temps de jeu), confirmation, « Sauvegarde en cours… ne pas éteindre », son.
@@ -49,4 +49,4 @@ Rendre le jeu fiable et distribuable : sauvegarde robuste, finitions visuelles e
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: sauvegarde robuste, finitions et packaging`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: sauvegarde robuste, finitions et packaging`.

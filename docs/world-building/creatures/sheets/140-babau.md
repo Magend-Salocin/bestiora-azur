@@ -13,4 +13,4 @@ Emplacements `babauet`, `babau`. Types Feu et Insecte. Évolution au niveau 44.
 
 Origines : babau, figure attestée (Languedoc). Babauet : création du jeu.
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

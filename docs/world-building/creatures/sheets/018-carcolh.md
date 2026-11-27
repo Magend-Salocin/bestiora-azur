@@ -13,4 +13,4 @@ Emplacements `carcolh`, `carcolosse`. Types Insecte et Terre. Évolution au nive
 
 Origines : Lou Carcolh, figure attestée (Gascogne). Carcolosse : création du jeu.
 
-Sprites : [rendus/planche-010-024.png](../rendus/planche-010-024.png).
+Sprites : [renders/planche-010-024.png](../renders/planche-010-024.png).

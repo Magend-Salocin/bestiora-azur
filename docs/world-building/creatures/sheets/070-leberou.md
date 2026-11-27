@@ -31,4 +31,4 @@ Emplacements `gobelinet`, `gobelin`. Types Métal et Foudre. Évolution au nivea
 
 Origines : gobelin, archétype traditionnel (Normandie). Gobelinet : création du jeu.
 
-Sprites : [rendus/planche-062-074.png](../rendus/planche-062-074.png).
+Sprites : [renders/planche-062-074.png](../renders/planche-062-074.png).

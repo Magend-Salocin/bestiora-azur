@@ -14,4 +14,4 @@ Emplacements `follaton`, `follaclair`, `follorage`. Type Foudre, Métal au stade
 
 Origines : follaton, figure attestée (Savoie). Follaclair et Follorage : créations du jeu.
 
-Sprites : [rendus/planche-075-087.png](../rendus/planche-075-087.png).
+Sprites : [renders/planche-075-087.png](../renders/planche-075-087.png).

@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`. Exploration (04) et combat (06) fonctionnent.
+Lis d'abord `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`. Exploration (04) et combat (06) fonctionnent.
 
 ## Objectif
 
@@ -71,4 +71,4 @@ Sauvegarde sur disque réelle (12), contenu du monde.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: menus, sac, bestiaire, halte, comptoir et stockage`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: menus, sac, bestiaire, halte, comptoir et stockage`.

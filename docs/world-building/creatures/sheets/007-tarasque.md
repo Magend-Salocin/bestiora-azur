@@ -50,4 +50,4 @@ Monstre complet de la légende : crinière de lion, cornes de taureau, carapace 
 
 ## Sprites
 
-Face, dos et icône pour les trois stades : [rendus/planche-001-009.png](../rendus/planche-001-009.png), captures en jeu dans `rendus/007-tarasquin/`, `rendus/008-taraskor/`, `rendus/009-tarasque/`.
+Face, dos et icône pour les trois stades : [renders/planche-001-009.png](../renders/planche-001-009.png), captures en jeu dans `renders/007-tarasquin/`, `renders/008-taraskor/`, `renders/009-tarasque/`.

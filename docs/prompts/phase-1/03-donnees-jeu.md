@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md` (sections 1, 3, 5 et 6), `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`.
+Lis d'abord `docs/design/ORIGINALITY.md`, `docs/design/UNIVERSE.md`, `docs/design/MECHANICS.md`, `docs/design/CONTENT.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`.
 
 Toutes les données sont originales : noms, descriptions du Bestiaire, attaques. Avant de valider chaque nom, vérifie qu'il ne ressemble pas à un nom d'une franchise existante (section 1). Les 9 starters et les légendaires ont déjà leurs noms dans le game design.
 
@@ -65,4 +65,4 @@ Dresseurs individuels et tables de rencontres (prompts 09 à 11), logique de com
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat: données de types, attaques, bestioles et objets`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat: données de types, attaques, bestioles et objets`.

@@ -30,4 +30,4 @@ Emplacement `bolegan`. Type Terre. Pas d'évolution.
 
 Origines : petit peuple souterrain de Bretagne, à vérifier.
 
-Sprites : [rendus/planche-038-049.png](../rendus/planche-038-049.png).
+Sprites : [renders/planche-038-049.png](../renders/planche-038-049.png).

@@ -43,4 +43,4 @@ Emplacement `drapet`. Types Normal et Ombre. Pas d'évolution.
 
 Origines : Drapet, à vérifier.
 
-Sprites : [rendus/planche-115-128.png](../rendus/planche-115-128.png).
+Sprites : [renders/planche-115-128.png](../renders/planche-115-128.png).

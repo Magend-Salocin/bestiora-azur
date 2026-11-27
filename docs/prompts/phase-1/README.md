@@ -39,7 +39,7 @@ Exception : le prompt 10 a été exécuté avec le modèle Sonnet 5.5 (`claude -
 
 02, 03 et 08 sont indépendants entre eux et peuvent tourner en parallèle dans des worktrees séparés si besoin.
 
-Les prompts marqués XL peuvent dépasser une session. Dans ce cas, relancer avec : `Reprends le prompt prompts/09-monde-partie-1.md là où docs/avancement/PROGRESS.md indique que tu t'es arrêté.`
+Les prompts marqués XL peuvent dépasser une session. Dans ce cas, relancer avec : `Reprends le prompt prompts/09-monde-partie-1.md là où docs/progress/PROGRESS.md indique que tu t'es arrêté.`
 
 ## Vérifier entre deux étapes
 
@@ -47,15 +47,15 @@ Après chaque prompt :
 
 1. `npm test` et `npm run validate` passent.
 2. `npm run dev` lance le jeu et la fonctionnalité de l'étape est visible.
-3. `docs/avancement/PROGRESS.md` contient l'entrée de la session.
+3. `docs/progress/PROGRESS.md` contient l'entrée de la session.
 4. Un commit a été créé.
 
 Si une étape est ratée, `git reset --hard HEAD~1` puis relancer le même prompt.
 
 ## Règles communes (rappelées dans chaque prompt)
 
-- Lire `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md` avant toute chose.
+- Lire `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md` avant toute chose.
 - Respecter les règles d'originalité (section 1 du game design).
 - Ne pas réécrire ce qui existe sans raison ; étendre.
 - Tests verts, données valides, jeu lançable en fin de session.
-- Mettre à jour `docs/avancement/PROGRESS.md` et créer un commit.
+- Mettre à jour `docs/progress/PROGRESS.md` et créer un commit.

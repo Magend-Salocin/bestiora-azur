@@ -27,7 +27,7 @@ multiple characters, full body, cropped head, background scenery, gradient backg
 
 ## Prompts complets
 
-Un bloc par image, à coller tel quel. Nom du fichier attendu : `docs/Pnj/references/<id>.png`.
+Un bloc par image, à coller tel quel. Nom du fichier attendu : `docs/world-building/characters/references/<id>.png`.
 
 ### Lot 1 (référence déjà fournie)
 

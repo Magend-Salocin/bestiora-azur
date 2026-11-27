@@ -14,4 +14,4 @@ Emplacements `farfadet`, `farfandole`, `farfator`. Types Normal et Vent. Évolut
 
 Origines : Farfadet, archétype attesté (Poitou, Vendée). Farfandole et Farfator : créations du jeu.
 
-Sprites : [rendus/planche-010-024.png](../rendus/planche-010-024.png).
+Sprites : [renders/planche-010-024.png](../renders/planche-010-024.png).

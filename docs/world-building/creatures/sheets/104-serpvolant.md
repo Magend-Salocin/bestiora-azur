@@ -29,4 +29,4 @@ Emplacement `koril`. Types Roche et Vent. Pas d'évolution.
 
 Origines : korils, figure attestée (Bretagne).
 
-Sprites : [rendus/planche-101-114.png](../rendus/planche-101-114.png).
+Sprites : [renders/planche-101-114.png](../renders/planche-101-114.png).

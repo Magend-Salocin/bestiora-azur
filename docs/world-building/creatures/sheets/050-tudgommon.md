@@ -30,4 +30,4 @@ Emplacements `morgann`, `morgavague`. Types Eau et Toxique. Évolution au niveau
 
 Origines : marie-morgane, figure attestée (Basse-Bretagne). Morgann et Morgavague : noms créés pour le jeu (Margot la fée a été écartée, un dresseur s'appelle Margot).
 
-Sprites : [rendus/planche-050-061.png](../rendus/planche-050-061.png).
+Sprites : [renders/planche-050-061.png](../renders/planche-050-061.png).

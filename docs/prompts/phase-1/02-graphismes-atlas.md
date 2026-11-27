@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord `docs/conception/GAME_DESIGN.md` (sections 1 et 7 en priorité), `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`. Le socle Electron existe (prompt 01).
+Lis d'abord `docs/design/ORIGINALITY.md`, `docs/design/ART_DIRECTION.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`. Le socle Electron existe (prompt 01).
 
 Tous les visuels sont originaux et créés en code. Ne reproduis aucun sprite, personnage ou tuile d'un jeu existant.
 
@@ -13,7 +13,7 @@ Créer toute la chaîne graphique : sources de sprites en texte, générateur pr
 ## À réaliser
 
 1. **Format source et utilitaires** (`src/gfx/sources/`, `src/gfx/sprite-utils.js`)
-   - Format de `docs/technique/ARCHITECTURE.md` (tableaux de chaînes, `'0'-'3'`, `'.'`).
+   - Format de `docs/technical/DATA_FORMATS.md` (tableaux de chaînes, `'0'-'3'`, `'.'`).
    - Fonctions pures : `parseSprite`, `flipHorizontal`, `validateSprite` (dimensions, caractères).
    - Aucune dépendance au DOM : ces modules sont utilisés par Node et par le navigateur.
 
@@ -81,4 +81,4 @@ Cartes complètes, logique de déplacement, données des 150 bestioles.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md` (liste des `id` d'atlas créés, conventions de nommage), puis commit `feat: chaîne graphique, générateur de bestioles et atlas PNG`.
+Mets à jour `docs/progress/PROGRESS.md` (liste des `id` d'atlas créés, conventions de nommage), puis commit `feat: chaîne graphique, générateur de bestioles et atlas PNG`.

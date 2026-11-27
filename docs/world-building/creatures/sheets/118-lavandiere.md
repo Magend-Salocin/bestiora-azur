@@ -29,4 +29,4 @@ Emplacement `magou`. Types Terre et Eau. Pas d'évolution.
 
 Origines : Magou, à vérifier.
 
-Sprites : [rendus/planche-115-128.png](../rendus/planche-115-128.png).
+Sprites : [renders/planche-115-128.png](../renders/planche-115-128.png).

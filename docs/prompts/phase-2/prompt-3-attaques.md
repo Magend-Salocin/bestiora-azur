@@ -19,7 +19,7 @@ Renommer et réécrire les 166 attaques pour qu'elles évoquent le folklore des 
 
 - `src/data/moves.js` : les attaques, sous la forme `move(id, name, type, category, power, accuracy, pp, description, options)`.
 - `src/data/creatures.js` : apprentissages, pour savoir qui apprend quoi.
-- [BESTIAIRE_V2.md](../bestiaire-folklorique/BESTIAIRE_V2.md) et `fiches/` : légendes et régions des bestioles.
+- [BESTIAIRE_V2.md](../../world-building/creatures/BESTIAIRE_V2.md) et `sheets/` : légendes et régions des bestioles.
 - `src/battle/ui/move-animations.js` : une animation par type (`TYPE_ANIMATIONS`).
 - `tools/validators/texts.js` : limites d'affichage ; `tools/forbidden-words.js` : mots interdits.
 

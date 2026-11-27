@@ -14,4 +14,4 @@ Emplacements `chauchet`, `chauchenid`, `chauchemor`. Type Insecte, Ombre au stad
 
 Origines : Chauche-vieille, figure attestée (Languedoc, Provence). Les trois formes sont des créations du jeu.
 
-Sprites : [rendus/planche-010-024.png](../rendus/planche-010-024.png).
+Sprites : [renders/planche-010-024.png](../renders/planche-010-024.png).

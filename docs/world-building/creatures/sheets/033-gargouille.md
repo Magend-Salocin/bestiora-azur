@@ -31,4 +31,4 @@ Emplacements `lubin`, `lubinou`. Types Ombre et Vent. Évolution au niveau 22.
 
 Origines : Lubins, figure attestée (Normandie, Berry). Lubinou : création du jeu.
 
-Sprites : [rendus/planche-025-037.png](../rendus/planche-025-037.png).
+Sprites : [renders/planche-025-037.png](../renders/planche-025-037.png).

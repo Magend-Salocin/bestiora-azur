@@ -1,7 +1,7 @@
 # Statut des musiques régionales
 
 État au 27 novembre 2026. Ce document suit le chantier décrit dans
-[`Pnj/prompt-4-musiques.md`](../Pnj/prompt-4-musiques.md).
+[`prompts-v2/prompt-4-musiques.md`](../../prompts/phase-2/prompt-4-musiques.md).
 
 ## Résumé
 
@@ -28,7 +28,7 @@ puis fournir la liste d'écoute pour le juke-box F2.
 | 4 | Lot 4 — Marais, Île-de-France, Corse | Créer `marsh`, `catacombs` et `sunken_library`. `town_ombrecourt` et `sea_corse` sont déjà faits. |
 | 5 | Lot 5 — Occitanie, Alpes, Provence | Créer `town_forge`, `volcano`, `ice_cave` et `league`. `town_givremont` et `route_ligue` sont déjà faits. |
 | 6 | Lot 6 — combats | Créer `battle_legendary` et `battle_gardien`, puis les brancher aux combats concernés. |
-| 7 | Lot 7 — nettoyage | Retirer les pistes devenues inutiles ; mettre à jour le nombre de pistes dans `docs/conception/GAME_DESIGN.md` et `docs/audio/AUDIO_FORMAT.md` si nécessaire. |
+| 7 | Lot 7 — nettoyage | Retirer les pistes devenues inutiles ; mettre à jour le nombre de pistes dans `docs/design/GAME_DESIGN.md` et `docs/audio/AUDIO_FORMAT.md` si nécessaire. |
 
 Le lot 1 (`gym`, `house`) est déjà réalisé.
 

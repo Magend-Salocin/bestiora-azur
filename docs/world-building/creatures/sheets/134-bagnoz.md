@@ -28,4 +28,4 @@ Emplacement `goelame`. Types Vent et Normal. Pas d'évolution.
 
 Origines : âmes des noyés en oiseaux de mer, archétype traditionnel (Bretagne).
 
-Sprites : [rendus/planche-129-141.png](../rendus/planche-129-141.png).
+Sprites : [renders/planche-129-141.png](../renders/planche-129-141.png).

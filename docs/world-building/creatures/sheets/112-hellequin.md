@@ -29,4 +29,4 @@ Emplacement `bayard`. Types Vent et Métal. Pas d'évolution.
 
 Origines : cheval Bayard, figure attestée (Ardennes).
 
-Sprites : [rendus/planche-101-114.png](../rendus/planche-101-114.png).
+Sprites : [renders/planche-101-114.png](../renders/planche-101-114.png).

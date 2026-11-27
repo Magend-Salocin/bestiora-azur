@@ -16,4 +16,4 @@ Emplacements `laminak`, `laminea`, `laminara`. Type Eau. Évolutions aux niveaux
 
 Origines : laminak, figure attestée (Pays basque). Laminéa et Laminara : créations du jeu. Le nom du premier stade reprend le pluriel basque, employé en français comme nom de l'espèce.
 
-Sprites : [rendus/planche-038-049.png](../rendus/planche-038-049.png).
+Sprites : [renders/planche-038-049.png](../renders/planche-038-049.png).

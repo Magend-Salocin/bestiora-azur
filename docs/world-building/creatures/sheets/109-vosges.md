@@ -14,4 +14,4 @@ Emplacements `vosgoup`, `vosgar`, `vosgarde`. Type Givre, Combat au stade 3. Év
 
 Origines : Bête des Vosges, inspiration (Vosges). Vosgoup, Vosgar et Vosgarde : créations du jeu. Vosgarde est masculin (« un Vosgarde »).
 
-Sprites : [rendus/planche-101-114.png](../rendus/planche-101-114.png).
+Sprites : [renders/planche-101-114.png](../renders/planche-101-114.png).

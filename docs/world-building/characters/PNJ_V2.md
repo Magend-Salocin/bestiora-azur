@@ -1,6 +1,6 @@
 # PNJ V2 : référentiel
 
-Source de vérité du chantier « identité régionale des villes et des PNJ » ([prompt 1](prompt-1-villes-et-pnj.md)). [base.md](base.md) reste le document de conception d'origine : ce référentiel tranche ce qu'il laisse ouvert.
+Source de vérité du chantier « identité régionale des villes et des PNJ » ([prompt 1](../../prompts/phase-2/prompt-1-villes-et-pnj.md)). [base.md](base.md) reste le document de conception d'origine : ce référentiel tranche ce qu'il laisse ouvert.
 
 Statut : lot 0 validé (correspondance des zones, 14 classes régionales, Oswin renommé Anselme). Rien n'est encore modifié dans le jeu.
 
@@ -843,12 +843,12 @@ Balayage scripté de `src/data/texts/` et `src/data/trainers/`, puis correction 
 
 ### Documentation
 
-- `docs/carte/WORLD_MAP.md` :
+- `docs/world-building/maps/WORLD_MAP.md` :
   - Oswin devient Anselme (arène Arcane, récompenses, scénario), avec la mention « identifiant `oswin` conservé » ;
   - nouvelle section courte « Identité régionale » : le tableau zone → région, avec un renvoi vers ce référentiel.
-- `docs/conception/GAME_DESIGN.md` : « champion Oswin » devient « champion Anselme » (tableau des lieux).
-- `docs/avancement/PROGRESS.md` : une entrée datée pour le prompt 1 (lots 0 à 8), au format des entrées existantes (Fait, Vérifié, Reste, Décisions). Les entrées passées gardent « Oswin » : c'est un journal.
-- `docs/Pnj/README.md` : le prompt 1 est marqué terminé.
+- `docs/design/GAME_DESIGN.md` : « champion Oswin » devient « champion Anselme » (tableau des lieux).
+- `docs/progress/PROGRESS.md` : une entrée datée pour le prompt 1 (lots 0 à 8), au format des entrées existantes (Fait, Vérifié, Reste, Décisions). Les entrées passées gardent « Oswin » : c'est un journal.
+- `docs/world-building/characters/README.md` : le prompt 1 est marqué terminé.
 - Ce référentiel : lot 8 marqué « Fait », points ouverts de la section 9 mis à jour.
 
 ### Hors périmètre

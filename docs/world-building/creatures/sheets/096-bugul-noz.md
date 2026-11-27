@@ -29,4 +29,4 @@ Emplacement `roncefee`. Types Flore et Roche. Pas d'évolution. Nom féminin.
 
 Origines : création du jeu.
 
-Sprites : [rendus/planche-088-100.png](../rendus/planche-088-100.png).
+Sprites : [renders/planche-088-100.png](../renders/planche-088-100.png).

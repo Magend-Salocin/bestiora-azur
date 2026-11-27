@@ -29,4 +29,4 @@ Emplacement `revenant`. Type Ombre. Pas d'évolution.
 
 Origines : revenant, archétype traditionnel.
 
-Sprites : [rendus/planche-088-100.png](../rendus/planche-088-100.png).
+Sprites : [renders/planche-088-100.png](../renders/planche-088-100.png).

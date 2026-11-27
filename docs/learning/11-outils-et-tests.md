@@ -127,7 +127,7 @@ Dans [tools/](../../tools/) :
 | `npm run creature-design -- <module>` | `export-creature-design.js` | écrit les dessins d'une famille de bestioles à partir de son module (chapitre [04](04-bestioles-dessin.md)) |
 | `npm run planche -- 067-069` | `creature-sheet.js` | dessine une planche des bestioles choisies (face, dos, icône), pour vérifier les dessins |
 | `npm run map-preview -- route_1` | `map-preview.js` | dessine une carte en image, sans lancer le jeu |
-| `npm run bestiary` | `export-bestiary-md.js` | réécrit [docs/bestiaire/BESTIAIRE.md](../bestiaire/BESTIAIRE.md) à partir des fiches |
+| `npm run bestiary` | `export-bestiary-md.js` | réécrit [docs/world-building/creatures/BESTIAIRE.md](../world-building/creatures/BESTIAIRE.md) à partir des fiches |
 | `npm run check-text` | `check-text-fit.js` | vérifie seulement que les textes tiennent dans leur fenêtre |
 | `npm run icon` | `build-icon.js` | fabrique l'icône du jeu à partir du dessin de la Vouivre |
 | `npm run screenshots` | `capture-screenshots.js` | prend les captures d'écran du README |

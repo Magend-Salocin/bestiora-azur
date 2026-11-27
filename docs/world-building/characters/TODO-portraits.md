@@ -1,12 +1,12 @@
 # Portraits de combat : reste à faire
 
-Suivi du prompt 2 en v3 (portraits 48 × 48 convertis depuis une image de référence). Méthode : [prompt-2-portraits.md](prompt-2-portraits.md), section « Production d'un portrait ». Prompts : [references-portraits.md](references-portraits.md).
+Suivi du prompt 2 en v3 (portraits 48 × 48 convertis depuis une image de référence). Méthode : [prompt-2-portraits.md](../../prompts/phase-2/prompt-2-portraits.md), section « Production d'un portrait ». Prompts : [references-portraits.md](references-portraits.md).
 
 Chaque portrait passe par trois étapes :
 
 | Étape | Qui | Résultat |
 |---|---|---|
-| Référence | Nicolas | Image générée avec le prompt du portrait, déposée dans `docs/Pnj/references/` : une image par portrait, une bande verticale ou une grille (lot 1 : `lot-1-vert.png`, lot 2 : `lot-2.png`). |
+| Référence | Nicolas | Image générée avec le prompt du portrait, déposée dans `docs/world-building/characters/references/` : une image par portrait, une bande verticale ou une grille (lot 1 : `lot-1-vert.png`, lot 2 : `lot-2.png`). |
 | Conversion | Claude | `npm run trainer-import`, retouches, `npm run trainer-design`, atlas, planche et captures. |
 | Branchement | Claude | Classe ou dresseur qui affiche le portrait (`src/data/trainer-classes.js`, `src/data/trainers/`). Seulement pour les nouveaux cadres. |
 
@@ -123,7 +123,7 @@ Brune, qui appartient à ce lot, est suivie au lot 0.
 - [ ] Retirer `src/gfx/sources/trainers/portrait-builder.js`, `PORTRAIT_CONFIGS` et `BACK_CONFIGS` une fois tous les portraits convertis.
 - [ ] N'accepter que des portraits de 48 px dans l'export et les tests.
 - [ ] Planche complète de tous les portraits : aucune paire ne doit se confondre en silhouette.
-- [ ] Mettre à jour `docs/apprendre/05-personnages.md`, section « Les portraits de combat » (méthode par référence, 48 × 48).
+- [ ] Mettre à jour `docs/learning/05-personnages.md`, section « Les portraits de combat » (méthode par référence, 48 × 48).
 - [ ] Mettre à jour le commentaire des classes régionales dans `src/data/trainer-classes.js` (« portraits borrowed… »).
 
 ## Lot 8 (optionnel, à confirmer)

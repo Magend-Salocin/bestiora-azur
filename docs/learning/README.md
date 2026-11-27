@@ -33,9 +33,9 @@ Les liens vers les fichiers s'ouvrent directement dans l'éditeur. Par exemple :
 
 Ce dossier ne remplace pas les documents de référence, plus techniques :
 
-- [docs/conception/GAME_DESIGN.md](../conception/GAME_DESIGN.md) : les règles du jeu et tout son contenu.
-- [docs/technique/ARCHITECTURE.md](../technique/ARCHITECTURE.md) : l'organisation du code, pour les développeurs.
-- [docs/carte/MAP_FORMAT.md](../carte/MAP_FORMAT.md) : le format exact des cartes.
-- [docs/audio/AUDIO_FORMAT.md](../audio/AUDIO_FORMAT.md) : le format exact des musiques.
-- [docs/carte/WORLD_MAP.md](../carte/WORLD_MAP.md) : toutes les cartes et leurs liaisons.
-- [docs/bestiaire/BESTIAIRE.md](../bestiaire/BESTIAIRE.md) : la liste des 150 bestioles.
+- [docs/design/GAME_DESIGN.md](../design/GAME_DESIGN.md) : les règles du jeu et tout son contenu.
+- [docs/technical/ARCHITECTURE.md](../technical/ARCHITECTURE.md) : l'organisation du code, pour les développeurs.
+- [docs/world-building/maps/MAP_FORMAT.md](../world-building/maps/MAP_FORMAT.md) : le format exact des cartes.
+- [docs/world-building/audio/AUDIO_FORMAT.md](../world-building/audio/AUDIO_FORMAT.md) : le format exact des musiques.
+- [docs/world-building/maps/WORLD_MAP.md](../world-building/maps/WORLD_MAP.md) : toutes les cartes et leurs liaisons.
+- [docs/world-building/creatures/BESTIAIRE.md](../world-building/creatures/BESTIAIRE.md) : la liste des 150 bestioles.

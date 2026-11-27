@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord en entier `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md`, `docs/carte/MAP_FORMAT.md`, `docs/carte/WORLD_MAP.md`, `docs/bestiaire/BESTIAIRE.md` et `docs/avancement/PROGRESS.md`. La partie 1 du monde (prompt 09) est jouable jusqu'au 4e badge. Respecte le style, les conventions et le niveau de qualité de la partie 1 : relis 2 ou 3 cartes et fichiers de texte existants avant d'écrire.
+Lis d'abord en entier `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md`, `docs/world-building/maps/MAP_FORMAT.md`, `docs/world-building/maps/WORLD_MAP.md`, `docs/bestiaire/BESTIAIRE.md` et `docs/progress/PROGRESS.md`. La partie 1 du monde (prompt 09) est jouable jusqu'au 4e badge. Respecte le style, les conventions et le niveau de qualité de la partie 1 : relis 2 ou 3 cartes et fichiers de texte existants avant d'écrire.
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Rendre jouable la suite, du 4e badge jusqu'au 8e badge (zones 13 à 21 du tablea
 
 1. **Cartes** (extérieurs et intérieurs) :
    Route 7, Falaises de Bise, Haute-Bise, Route 8, Marais Gris, Ombrecourt (casino et QG Opale à plusieurs niveaux avec téléporteurs), Routes maritimes 9 et 10, Îlots, Bibliothèque Engloutie, Forge-Ardente, Cœur de la Forge, Givremont, Centrale abandonnée (désormais accessible avec la Lanterne, optionnelle, contient Fulgorine).
-   Étends `docs/carte/WORLD_MAP.md`.
+   Étends `docs/world-building/maps/WORLD_MAP.md`.
 
 2. **Arènes 5 à 8** (Vent, Ombre, Feu, Arcane)
    Énigmes originales (courants d'air qui poussent le joueur, salle obscure avec torches, sol de lave à éviter, téléporteurs à symboles), 3 à 5 dresseurs chacune, champions avec 4 à 5 bestioles et IA `smart`.
@@ -47,8 +47,8 @@ Rendre jouable la suite, du 4e badge jusqu'au 8e badge (zones 13 à 21 du tablea
 
 ## Reprise
 
-Si tu dois t'arrêter, laisse le jeu jouable, note dans `docs/avancement/PROGRESS.md` la dernière zone terminée et la suivante, et commite.
+Si tu dois t'arrêter, laisse le jeu jouable, note dans `docs/progress/PROGRESS.md` la dernière zone terminée et la suivante, et commite.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md`, puis commit `feat(monde): arènes 5 à 8 et fin du Syndicat Opale`.
+Mets à jour `docs/progress/PROGRESS.md`, puis commit `feat(monde): arènes 5 à 8 et fin du Syndicat Opale`.

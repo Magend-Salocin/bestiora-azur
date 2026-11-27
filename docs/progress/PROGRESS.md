@@ -127,7 +127,7 @@ Problèmes connus
 ### 2026-11-12 : prompt 04, moteur de carte, PNJ, dresseurs et scripts
 
 Fait
-- Format de carte documenté dans `docs/carte/MAP_FORMAT.md` : couches en chaînes avec légende par tileset (complétée par carte), motifs 2 × 2 (arbres, tables), `structures` pour les bâtiments, couche `collision` optionnelle (`.` `#` `_`), entités, connexions, rencontres, scripts.
+- Format de carte documenté dans `docs/world-building/maps/MAP_FORMAT.md` : couches en chaînes avec légende par tileset (complétée par carte), motifs 2 × 2 (arbres, tables), `structures` pour les bâtiments, couche `collision` optionnelle (`.` `#` `_`), entités, connexions, rencontres, scripts.
 - Modules purs (`src/overworld/`) : `map-loader.js` (légende → métatuiles, drapeaux résolus depuis `tiles.json`), `collision.js` (pas, corniches, eau, bords, ligne de vue), `world.js` (cartes connectées, caméra), `encounters.js`, `actor.js`, `npc.js`, `script-runner.js` (31 commandes, dont `give_badge` en plus de la liste du prompt). `src/state/game-state.js` : drapeaux, sac, équipe, argent, badges, position, Répulsif.
 - Scène `OverworldScene` : déplacement case par case (16 frames, course ×2 avec B et les Chaussures), pivot sur appui bref, glace, corniches avec arc et ombre, herbe haute sur les pieds, tuiles animées, grottes sombres, connexions sans transition, warps avec fondu et pas de sortie, PNJ (4 mouvements), panneaux, objets visibles et cachés, déclencheurs, objets de terrain (coupe, poussée, Grappin, surf), dresseurs (« ! », approche, dialogue, combat, drapeau `trainer_<id>`), rencontres sauvages avec Répulsif, transition de combat (3 flashs puis bandes alternées), écran de combat provisoire qui renvoie une victoire.
 - Hooks (`src/overworld/hooks.js`) pour l'audio, les combats, les menus, le nom du rival et le choix du starter.
@@ -333,7 +333,7 @@ Fait
   - sprite d'objet `barriere` ; les objets (`rocher`, `barriere`) peuvent servir de PNJ immobiles (obstacles d'énigme) ;
   - menu F1 : téléportation vers n'importe quelle carte, badge suivant avec son objet de terrain ; `npm run dev -- --newgame` démarre sur l'écran titre.
 - Données par zone : `src/data/maps/<zone>/`, `src/data/trainers/<zone>.js`, `src/data/texts/<zone>.js` (zones `debut`, `bois`, `port`, `cendrelune`), gabarits `halte`, `comptoir`, `house` (`src/data/maps/interiors.js`), aides `trainer` et `rival` (`src/data/trainers/helpers.js`).
-- Contenu : 50 cartes (Hameau-de-Lys à la Tour de la Mémoire, intérieurs, 4 arènes, usine Opale, 5 étages de la Tour, cour de la Centrale fermée), 92 dresseurs, 63 objets au sol (dont 23 cachés), 71 espèces capturables, 2 échanges PNJ, pension. Scénario complet : professeure, starter, rivale 1, colis, Bestiaire, Syndicat dans le Bois, rivale 2, usine Opale, Lanterne, rivale 3, lieutenant Gerfaut, apparition de Corvin Halvard, Grappin. Détails, verrous et drapeaux dans `docs/carte/WORLD_MAP.md`.
+- Contenu : 50 cartes (Hameau-de-Lys à la Tour de la Mémoire, intérieurs, 4 arènes, usine Opale, 5 étages de la Tour, cour de la Centrale fermée), 92 dresseurs, 63 objets au sol (dont 23 cachés), 71 espèces capturables, 2 échanges PNJ, pension. Scénario complet : professeure, starter, rivale 1, colis, Bestiaire, Syndicat dans le Bois, rivale 2, usine Opale, Lanterne, rivale 3, lieutenant Gerfaut, apparition de Corvin Halvard, Grappin. Détails, verrous et drapeaux dans `docs/world-building/maps/WORLD_MAP.md`.
 - Énigmes d'arène : plaques qui écartent des rochers (Roche), dalles glissantes entre des bassins (Eau), interrupteurs qui coupent des barrières (Foudre), labyrinthe de haies à couper (Flore).
 - Validateur : drapeaux lus mais jamais posés (`tools/validators/flags.js`), dresseurs utilisés par aucune carte ni aucun script, équipes par starter, attaques imposées, texte `lastText`.
 - `npm run balance` (`tools/balance-check.js`) : 200 combats par starter et par champion ou rival, équipe « joueur attendu » = starter + 2 captures des zones traversées. Résultats (moyenne, puis Fenouillot / Braisille / Flaquin) : rivale 1 69 % (72/66/69), Garance 73 % (77/45/98), rivale 2 75 % (39/97/90), Maël 72 % (91/25/99), Sélène 73 % (62/73/83), Aubin 68 % (71/100/33), rivale 3 78 % (63/72/100).
@@ -346,7 +346,7 @@ Reste
 - L'équilibrage reste sensible au starter (Braisille face à la Roche et à l'Eau, Flaquin face à la Flore), comme attendu avec la table des types ; la moyenne est dans la cible.
 
 Décisions
-- Production des 4 zones en parallèle, à partir d'un contrat commun (`docs/carte/WORLD_MAP.md` : tailles, passages des connexions, coordonnées des liaisons entre zones).
+- Production des 4 zones en parallèle, à partir d'un contrat commun (`docs/world-building/maps/WORLD_MAP.md` : tailles, passages des connexions, coordonnées des liaisons entre zones).
 - Textes dans `src/data/texts/<zone>.js` (dossier existant) au lieu de `src/data/text/fr/`. Format des dresseurs existant gardé (`creature`, `intro`, `defeat`, `after`), produit par `trainer()`.
 - Les routes avec bâtiment utilisent le tileset `town` (`clearTile: 'grass'`), `outdoor` n'ayant pas les tuiles de bâtiments. L'arène Eau utilise le tileset `cave` (eau et glace), l'arène Flore `outdoor`.
 - La Tour n'a pas d'escalier : dalles `X` entre les étages.
@@ -448,12 +448,12 @@ Problèmes connus
 ### 2026-11-24 : Bestiaire V2, 150 bestioles folkloriques dessinées à la main
 
 Fait
-- Référentiel `docs/bestiaire-folklorique/BESTIAIRE_V2.md` : décisions, charte graphique, correspondance des 150 emplacements, plan en 14 lots (0, starters, 1 à 12). Brouillons rangés dans `archives/`, concepts dans `concepts/`, 47 fiches de lignée dans `fiches/`.
+- Référentiel `docs/world-building/creatures/BESTIAIRE_V2.md` : décisions, charte graphique, correspondance des 150 emplacements, plan en 14 lots (0, starters, 1 à 12). Brouillons rangés dans `archives/`, concepts dans `concepts/`, 47 fiches de lignée dans `sheets/`.
 - Chaque emplacement 001 à 150 reçoit une créature du folklore français : nom (10 caractères max), légende, description sur deux pages de bestiaire, sprites de face et de dos, icône d'équipe propre. Stats, attaques, évolutions, rencontres et dresseurs inchangés.
 - Genre grammatical : `gender: 'f'` dans `creatures.js`, marqueurs `{CREATURE:Un|Une}` dans les textes de combat et des menus, surnoms compris (`src/data/grammar.js`).
-- Outils : `tools/creature-painter.js` (formes, `iconFrom`), modules `tools/creature-designs/`, `npm run creature-design` (export vers `src/gfx/sources/creatures/`), `npm run planche` (planches `rendus/planche-<de>-<à>.png`), `npm run screenshots -- --preview <id, nom ou numéro>` (captures par espèce dans `rendus/<numéro>-<nom>/`).
+- Outils : `tools/creature-painter.js` (formes, `iconFrom`), modules `tools/creature-designs/`, `npm run creature-design` (export vers `src/gfx/sources/creatures/`), `npm run planche` (planches `renders/planche-<de>-<à>.png`), `npm run screenshots -- --preview <id, nom ou numéro>` (captures par espèce dans `renders/<numéro>-<nom>/`).
 - Dialogues citant les anciens noms mis à jour à chaque lot.
-- Lot 12 : identifiants internes alignés sur les noms V2 (`korrigan`, `dame_noire`…), générateur de sprites et ses tests retirés, le validateur exige une source dessinée par espèce, icône de l'application régénérée avec la Vouivre, captures du README régénérées, `docs/apprendre/` à jour.
+- Lot 12 : identifiants internes alignés sur les noms V2 (`korrigan`, `dame_noire`…), générateur de sprites et ses tests retirés, le validateur exige une source dessinée par espèce, icône de l'application régénérée avec la Vouivre, captures du README régénérées, `docs/learning/` à jour.
 - Retouches après relecture : Basilin, Poulpifol, catégorie du Drapet (18 caractères), Ankou en corbeau, Vouivre dégagée du défilé de l'écran titre, textes de Mitrêve.
 
 Vérifié
@@ -499,13 +499,13 @@ Problèmes connus
 ### 2026-11-25 : PNJ, prompt 1, identité régionale des villes et des PNJ
 
 Fait
-- Référentiel `docs/Pnj/PNJ_V2.md` : région de chaque zone, fiches et glossaires, classes, réserves de prénoms, plan en 9 lots (0 à 8).
+- Référentiel `docs/world-building/characters/PNJ_V2.md` : région de chaque zone, fiches et glossaires, classes, réserves de prénoms, plan en 9 lots (0 à 8).
 - Classes : 17 classes régionales ou féminines (`carrier`, `goemonier`, `cheminot`, `cataphile`, `gardian`…), 46 dresseurs reclassés. Le `moneyBase` propre au dresseur prime sur celui de la classe (`battle-setup.js`), donc les récompenses sont inchangées ; le validateur rejette un `moneyBase` invalide.
 - Textes réécrits zone par zone (`src/data/texts/`), mêmes clés : parler marqué pour les anciens et les conteurs, touche légère pour les jeunes et les commerçants, un ou deux clins d'œil incarnés par zone (Gargantua, Roland, la mazzera, Guillaume au court nez…). Les messages système (`common.js`) et les scènes de l'intrigue gardent leur contenu.
 - Prénoms des dresseurs tirés des réserves régionales ; trois doublons de sbires corrigés (Azalaïs, Émile, Fernande).
 - Corrections : Brune en classe `championne` ; dresseuses sorties des classes masculines ; Oswin s'affiche « Anselme » partout (identifiants conservés).
 - Police : caractères « ò » (« Aiò ! ») et « Ô » (« Ô bonne mère ! »).
-- `docs/carte/WORLD_MAP.md` : section « Identité régionale ».
+- `docs/world-building/maps/WORLD_MAP.md` : section « Identité régionale ».
 
 Vérifié
 - `npm run validate`, `npm run check-text` et `npm test` (251 tests) à chaque lot.
@@ -525,15 +525,15 @@ Décisions
 ### 2026-11-25 : PNJ, prompt 2, lot 0 (outils et portraits pilotes)
 
 Fait
-- Outils : `tools/trainer-designs/`, `npm run trainer-design` (`tools/export-trainer-design.js`), `HAND_DRAWN_PORTRAITS` dans `src/gfx/sources/trainers/index.js` (le portrait dessiné remplace l'assemblé sous le même cadre), `npm run planche -- --portraits` (`tools/portrait-sheet.js`, 6 palettes), `npm run screenshots -- --trainer` (apparition et défaite dans `docs/Pnj/rendus/<portrait>/`).
+- Outils : `tools/trainer-designs/`, `npm run trainer-design` (`tools/export-trainer-design.js`), `HAND_DRAWN_PORTRAITS` dans `src/gfx/sources/trainers/index.js` (le portrait dessiné remplace l'assemblé sous le même cadre), `npm run planche -- --portraits` (`tools/portrait-sheet.js`, 6 palettes), `npm run screenshots -- --trainer` (apparition et défaite dans `docs/world-building/characters/renders/<portrait>/`).
 - Pilotes dessinés : `portrait/goemonier` (nouveau cadre, classe Goémonier) et `portrait/brune`.
 - Test : les portraits dessinés remplacent bien les assemblés dans l'atlas (252 tests).
 
 Vérifié
-- `npm run validate`, `npm test`, planche `docs/Pnj/rendus/planche-portraits-0.png`, captures en combat des deux pilotes.
+- `npm run validate`, `npm test`, planche `docs/world-building/characters/renders/planche-portraits-0.png`, captures en combat des deux pilotes.
 
 Reste
-- Lots 1 à 7 ; répartition des classes régionales et du Lieutenant dans `docs/Pnj/prompt-2-portraits.md`.
+- Lots 1 à 7 ; répartition des classes régionales et du Lieutenant dans `docs/world-building/characters/prompt-2-portraits.md`.
 
 Décisions
 - Script d'export à part plutôt qu'une extension de `creature-design`.
@@ -550,7 +550,7 @@ Fait
 - `tools/trainer-designs/face.js` : yeux et lignes partagés par les dessins.
 
 Vérifié
-- `npm run validate`, `npm test` (252 tests), planche `docs/Pnj/rendus/planche-portraits-1.png` dans les 6 palettes, captures d'apparition des 7 portraits et de défaite du Sonneur.
+- `npm run validate`, `npm test` (252 tests), planche `docs/world-building/characters/renders/planche-portraits-1.png` dans les 6 palettes, captures d'apparition des 7 portraits et de défaite du Sonneur.
 
 Reste
 - Lots 2 à 7.
@@ -561,7 +561,7 @@ Problèmes connus
 ### 2026-11-25 : PNJ, prompt 2, lot 1 v3 (portraits 64 × 64 depuis des références)
 
 Fait
-- Nouvelle méthode : images de référence générées (prompts dans `docs/Pnj/references-portraits.md`), converties par `npm run trainer-import` (`tools/import-portrait.js`) en base modifiable, puis exportées. Référence du lot 1 : `docs/Pnj/references/lot-1.png`.
+- Nouvelle méthode : images de référence générées (prompts dans `docs/world-building/characters/references-portraits.md`), converties par `npm run trainer-import` (`tools/import-portrait.js`) en base modifiable, puis exportées. Référence du lot 1 : `docs/world-building/characters/references/lot-1.png`.
 - Les 7 portraits du lot 1 refaits en 64 × 64 à partir de cette référence ; v1 et prototypes v2 abandonnés.
 - Portraits de 48 ou 64 px acceptés par l'export, la planche, le test et le combat (`portraitPosition` dans `battle-hud.js`). Le cadre de PV du joueur s'efface pendant la réplique de défaite du dresseur.
 - Peintre : contour sélectif optionnel (`litOutline`, `outlineTone`), sans effet sur les sprites existants. `tools/trainer-designs/face.js` retiré (plus utilisé).
@@ -584,7 +584,7 @@ Fait
 - `src/data/moves.js` : noms et descriptions réécrits, type par type (lots 1 à 5). Identifiants, effets, valeurs et apprentissages inchangés. Signatures des légendaires : Aile Vouivre, Escarboucle, Roc Gaussier, Drac du Var, Grand Veneur, Mille Songes.
 - Mots interdits : riposte, abime, roue de feu, brouillard, bourdon, devoreve, gonflette, repli, essaim. Repli et Gonflette étaient des noms d'une franchise.
 - Lot 6 : message de Gui (`leech_damage`), titre du test de Va-Tout (ex-Baroud). « Glaçons ! » du Gardien Florimond reste : c'est une exclamation, pas une attaque.
-- `npm run screenshots -- --moves` : menu des attaques en combat, quatre attaques par capture, dans `docs/attaques/rendus/` (49 captures).
+- `npm run screenshots -- --moves` : menu des attaques en combat, quatre attaques par capture, dans `docs/attaques/renders/` (49 captures).
 - Correctif audio : le séquenceur plantait quand une piste reprenait après la dernière note d'une voie (retour de combat). Test ajouté (256 tests).
 
 Vérifié
@@ -612,13 +612,13 @@ Vérifié
 ### 2026-11-27 : PNJ, prompt 2, lot 2 (plein air)
 
 Fait
-- Référence `docs/Pnj/references/lot-2.png` (grille 4 × 2) convertie en 8 portraits 64 × 64 : Randonneur, Randonneuse, Montagnard, Nageur, Nageuse, Carrier, Fruitier, Gardian.
+- Référence `docs/world-building/characters/references/lot-2.png` (grille 4 × 2) convertie en 8 portraits 64 × 64 : Randonneur, Randonneuse, Montagnard, Nageur, Nageuse, Carrier, Fruitier, Gardian.
 - `npm run trainer-import` lit les grilles (`--panel i/8 --grid 4x2`) : carré 1,4 fois plus large que la case à partir du haut du personnage, pour garder les mains et l'outil ; l'extérieur de la case devient du fond et les petits îlots détachés sont effacés. Tests ajoutés (258 tests).
 - Retouche : un morceau du sac du Randonneur, collé à la carte de la Randonneuse, effacé à la main.
 - Carrier, Fruitier et Gardian ont leur propre cadre (ils empruntaient celui du Montagnard).
 
 Vérifié
-- `npm run validate`, `npm test`, planche `docs/Pnj/rendus/planche-portraits-2.png` dans les 6 palettes, captures d'apparition et de défaite des 8 portraits.
+- `npm run validate`, `npm test`, planche `docs/world-building/characters/renders/planche-portraits-2.png` dans les 6 palettes, captures d'apparition et de défaite des 8 portraits.
 
 Reste
 - Lots 3 à 7 et pilotes du lot 0 en v3.
@@ -627,7 +627,7 @@ Reste
 
 Fait
 - Les portraits de dresseur passent de 64 × 64 à 48 × 48 : en 64, ils débordaient de l'emplacement adverse vers la gauche et le haut. `npm run trainer-import` produit du 48 par défaut ; le code du combat acceptait déjà cette taille.
-- Lot 1 refait depuis une nouvelle grille en camaïeu de vert (`docs/Pnj/references/lot-1-vert.png`, 7 portraits) ; lot 2 réimporté depuis `lot-2.png`. Plus aucune retouche à la main.
+- Lot 1 refait depuis une nouvelle grille en camaïeu de vert (`docs/world-building/characters/references/lot-1-vert.png`, 7 portraits) ; lot 2 réimporté depuis `lot-2.png`. Plus aucune retouche à la main.
 - Import des grilles : les colonnes sont coupées aux creux entre les personnages (`figureColumns`), plus en cases égales, car les grilles générées ne sont pas régulières. Le carré garde la même échelle pour tous les portraits.
 
 Vérifié

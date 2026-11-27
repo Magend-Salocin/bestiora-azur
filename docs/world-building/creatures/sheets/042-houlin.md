@@ -31,4 +31,4 @@ Emplacements `servan`, `servarmure`, `servargent`. Type Métal, Combat au stade 
 
 Origines : Servan, figure attestée (Savoie). Servarmure et Servargent : créations du jeu.
 
-Sprites : [rendus/planche-038-049.png](../rendus/planche-038-049.png).
+Sprites : [renders/planche-038-049.png](../renders/planche-038-049.png).

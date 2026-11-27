@@ -1,6 +1,6 @@
 # Prompt 2 : portraits de combat dessinés
 
-Prérequis : prompt 1 terminé. Les tenues, couleurs et classes de `docs/Pnj/PNJ_V2.md` font foi.
+Prérequis : prompt 1 terminé. Les tenues, couleurs et classes de `docs/world-building/characters/PNJ_V2.md` font foi.
 
 ## Objectif
 
@@ -14,7 +14,7 @@ Remplacer les portraits de combat assemblés par des portraits dessinés à la m
 
 | Sujet | Décision |
 |---|---|
-| Méthode | Depuis la v3 (2026-11-25) : une image de référence par portrait ([references-portraits.md](references-portraits.md)), convertie par `npm run trainer-import` en base modifiable `tools/trainer-designs/<id>.js`, retouchée à la main si besoin, puis exportée. Les pilotes du lot 0, dessinés aux formes de `tools/creature-painter.js`, seront refaits ainsi. Le générateur de pièces est retiré à la fin. |
+| Méthode | Depuis la v3 (2026-11-25) : une image de référence par portrait ([references-portraits.md](../../world-building/characters/references-portraits.md)), convertie par `npm run trainer-import` en base modifiable `tools/trainer-designs/<id>.js`, retouchée à la main si besoin, puis exportée. Les pilotes du lot 0, dessinés aux formes de `tools/creature-painter.js`, seront refaits ainsi. Le générateur de pièces est retiré à la fin. |
 | Charte | 48 × 48 (la taille de l'emplacement adverse, comme les bestioles ; décision du 2026-11-27, les 64 × 64 débordaient) et 4 teintes, lumière en haut à gauche, visage lisible. Les 4 teintes d'une planche de références sont communes à tous ses portraits. |
 | Cadrage | Buste, de la tête à la taille, avec les mains quand elles tiennent l'outil du métier (filet, lanterne, houlette, marteau). |
 | Variété | Formes de tête, âges, carrures et postures différents d'une classe à l'autre. Asymétrie autorisée (tête penchée, épaule relevée). Les plis des vêtements et les textures des cheveux sont dessinés. |
@@ -22,11 +22,11 @@ Remplacer les portraits de combat assemblés par des portraits dessinés à la m
 
 ## Production d'un portrait
 
-1. Générer l'image de référence avec le prompt du portrait ([references-portraits.md](references-portraits.md)) et la déposer dans `docs/Pnj/references/`.
-2. `npm run trainer-import -- docs/Pnj/references/<image> --id <id> [--panel i/n [--grid CxR]]` : écrit `tools/trainer-designs/<id>.js` (`--force` pour écraser une base existante, retouches comprises). `--panel i/n` seul lit une bande verticale ; avec `--grid 4x2`, une grille lue dans l'ordre de lecture (carré plus large que la case pour garder les mains, cases voisines effacées).
+1. Générer l'image de référence avec le prompt du portrait ([references-portraits.md](../../world-building/characters/references-portraits.md)) et la déposer dans `docs/world-building/characters/references/`.
+2. `npm run trainer-import -- docs/world-building/characters/references/<image> --id <id> [--panel i/n [--grid CxR]]` : écrit `tools/trainer-designs/<id>.js` (`--force` pour écraser une base existante, retouches comprises). `--panel i/n` seul lit une bande verticale ; avec `--grid 4x2`, une grille lue dans l'ordre de lecture (carré plus large que la case pour garder les mains, cases voisines effacées).
 3. Retoucher les lignes du module si besoin (pixels isolés, yeux, mains), puis `npm run trainer-design -- tools/trainer-designs/<id>.js` et ajouter le portrait à `HAND_DRAWN_PORTRAITS` à sa première exportation.
 4. `npm run atlas`, `npm run validate`, `npm test`.
-5. Ajouter le portrait à une planche `docs/Pnj/rendus/planche-portraits-<lot>.png`.
+5. Ajouter le portrait à une planche `docs/world-building/characters/renders/planche-portraits-<lot>.png`.
 6. Prendre des captures en combat : apparition du dresseur, et `trainer_defeated` à la fin du combat.
 
 ## Déroulé par lots
@@ -54,8 +54,8 @@ Avant chaque lot, présenter les portraits prévus et attendre mon feu vert ; ap
 | Dessin | `tools/trainer-designs/<id>.js` | Exporte `portraits: [{ id, portrait }]` et, au lot 7, `backs: [{ id, back }]`. Formes de `tools/creature-painter.js`. |
 | Export | `npm run trainer-design -- tools/trainer-designs/<id>.js` | Écrit `src/gfx/sources/trainers/<id>.js`. Ajouter le portrait à `HAND_DRAWN_PORTRAITS` dans `trainers/index.js` à sa première exportation. |
 | Atlas | `npm run atlas` | Le portrait dessiné remplace celui de `PORTRAIT_CONFIGS` sous le même cadre `portrait/<id>`. |
-| Planche | `npm run planche -- --portraits <lot> <id> [...]` | `docs/Pnj/rendus/planche-portraits-<lot>.png` : une ligne par portrait, dans les 6 palettes. `back/<id>` pour une vue de dos. |
-| Captures | `npm run screenshots -- --trainer <dresseur ou portrait>` | `docs/Pnj/rendus/<portrait>/` : `trainer-intro.png` (apparition) et `trainer-defeated.png` (fin du combat). Un identifiant de portrait prend le premier dresseur qui l'affiche. |
+| Planche | `npm run planche -- --portraits <lot> <id> [...]` | `docs/world-building/characters/renders/planche-portraits-<lot>.png` : une ligne par portrait, dans les 6 palettes. `back/<id>` pour une vue de dos. |
+| Captures | `npm run screenshots -- --trainer <dresseur ou portrait>` | `docs/world-building/characters/renders/<portrait>/` : `trainer-intro.png` (apparition) et `trainer-defeated.png` (fin du combat). Un identifiant de portrait prend le premier dresseur qui l'affiche. |
 
 Un script frère a été préféré à une extension de `npm run creature-design`, lié aux espèces et aux trois vues face, dos, icône.
 
@@ -66,7 +66,7 @@ Un script frère a été préféré à une extension de `npm run creature-design
 | Goémonier (Pêcheur de Bretagne littorale) | `portrait/goemonier`, nouveau | Les pêcheurs de Port-Ondine sont goémoniers depuis le prompt 1. Ancien au bonnet, barbe grise, ciré clair ouvert sur une marinière, fourche à goémon. Le `pecheur` générique reste pour les autres zones. |
 | Brune | `portrait/brune` | Région, sexe et carrure opposés au goémonier. Béret, tresse, chemise grise aux manches retroussées, tablier de cuir, taillole, masse sur l'épaule. |
 
-Planche : [rendus/planche-portraits-0.png](rendus/planche-portraits-0.png).
+Planche : [renders/planche-portraits-0.png](renders/planche-portraits-0.png).
 
 Repères de dessin tirés des pilotes :
 - tête de 14 à 15 px de large, sommet du crâne vers la ligne 10, menton vers la ligne 27 ;
@@ -89,7 +89,7 @@ Décision : chaque classe régionale du prompt 1 reçoit son propre portrait, ai
 
 ## Lot 1 : classes jeunes et génériques (fait, v3)
 
-Planche : [rendus/planche-portraits-1.png](rendus/planche-portraits-1.png). Référence : [references/lot-1.png](references/lot-1.png), une bande de 7 portraits.
+Planche : [renders/planche-portraits-1.png](renders/planche-portraits-1.png). Référence : [references/lot-1.png](references/lot-1.png), une bande de 7 portraits.
 
 Historique : une v1 dessinée aux formes (têtes trop grosses, aspect jouet), puis des prototypes v2 dessinés au pixel (Gamin, Campeur) abandonnés au profit de la v3, convertie depuis la référence.
 

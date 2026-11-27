@@ -4,7 +4,7 @@
 
 Tu construis Bestiora Azur, un RPG original de capture de créatures en pixel art 4 teintes, sous Electron. Le dépôt ne contient que la documentation.
 
-Lis d'abord en entier `docs/conception/GAME_DESIGN.md`, `docs/technique/ARCHITECTURE.md` et `docs/avancement/PROGRESS.md`. Ils font foi. Respecte la section 1 du game design (originalité).
+Lis d'abord en entier `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md` et `docs/progress/PROGRESS.md`. Ils font foi. Respecte la section 1 du game design (originalité).
 
 ## Objectif
 
@@ -13,7 +13,7 @@ Poser le socle technique sur lequel toutes les étapes suivantes s'appuieront : 
 ## À réaliser
 
 1. **Projet**
-   - `package.json` avec les scripts de `docs/technique/ARCHITECTURE.md` (`start`, `dev`, `test`, `atlas`, `validate`, `dist` ; ceux sans contenu affichent un message « non implémenté » pour l'instant).
+   - `package.json` avec les scripts de `docs/technical/ARCHITECTURE.md` (`start`, `dev`, `test`, `atlas`, `validate`, `dist` ; ceux sans contenu affichent un message « non implémenté » pour l'instant).
    - `.gitignore` (node_modules, dist, out).
    - Dépendances de dev : `electron`, `electron-builder`, `pngjs`.
 
@@ -68,4 +68,4 @@ Sprites, cartes, combat, audio, sauvegarde réelle.
 
 ## Fin de session
 
-Mets à jour `docs/avancement/PROGRESS.md` (statut + entrée de journal : fait, reste, décisions), puis crée un commit `feat: socle Electron, moteur et boîte de dialogue`.
+Mets à jour `docs/progress/PROGRESS.md` (statut + entrée de journal : fait, reste, décisions), puis crée un commit `feat: socle Electron, moteur et boîte de dialogue`.

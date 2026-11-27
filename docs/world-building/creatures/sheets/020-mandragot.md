@@ -40,4 +40,4 @@ Emplacements `basilin`, `basilic`. Type Toxique. Évolution au niveau 22.
 
 Origines : mandragore et Mandragot, Dames vertes et Basilic sont attestés. Mandragoul et Basilin sont des créations du jeu.
 
-Sprites : [rendus/planche-010-024.png](../rendus/planche-010-024.png).
+Sprites : [renders/planche-010-024.png](../renders/planche-010-024.png).
