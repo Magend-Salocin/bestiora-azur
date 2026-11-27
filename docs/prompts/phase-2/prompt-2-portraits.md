@@ -66,7 +66,7 @@ Un script frère a été préféré à une extension de `npm run creature-design
 | Goémonier (Pêcheur de Bretagne littorale) | `portrait/goemonier`, nouveau | Les pêcheurs de Port-Ondine sont goémoniers depuis le prompt 1. Ancien au bonnet, barbe grise, ciré clair ouvert sur une marinière, fourche à goémon. Le `pecheur` générique reste pour les autres zones. |
 | Brune | `portrait/brune` | Région, sexe et carrure opposés au goémonier. Béret, tresse, chemise grise aux manches retroussées, tablier de cuir, taillole, masse sur l'épaule. |
 
-Planche : [renders/planche-portraits-0.png](renders/planche-portraits-0.png).
+Planche : [renders/planche-portraits-0.png](../../world-building/characters/renders/planche-portraits-0.png).
 
 Repères de dessin tirés des pilotes :
 - tête de 14 à 15 px de large, sommet du crâne vers la ligne 10, menton vers la ligne 27 ;
@@ -89,7 +89,7 @@ Décision : chaque classe régionale du prompt 1 reçoit son propre portrait, ai
 
 ## Lot 1 : classes jeunes et génériques (fait, v3)
 
-Planche : [renders/planche-portraits-1.png](renders/planche-portraits-1.png). Référence : [references/lot-1.png](references/lot-1.png), une bande de 7 portraits.
+Planche : [renders/planche-portraits-1.png](../../world-building/characters/renders/planche-portraits-1.png). Référence : [references/lot-1.png](../../world-building/characters/references/lot-1.png), une bande de 7 portraits.
 
 Historique : une v1 dessinée aux formes (têtes trop grosses, aspect jouet), puis des prototypes v2 dessinés au pixel (Gamin, Campeur) abandonnés au profit de la v3, convertie depuis la référence.
 

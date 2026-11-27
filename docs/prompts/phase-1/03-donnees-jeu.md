@@ -49,14 +49,14 @@ Produire toutes les données statiques du jeu, cohérentes et équilibrées, ave
 9. **Tests**
    Table de types (cas connus et contraintes d'équilibre de la section 5), formules de stats et d'XP (valeurs calculées à la main), cohérence des évolutions (pas de cycle, niveau d'évolution croissant dans la lignée).
 
-10. **Document** `docs/bestiaire/BESTIAIRE.md`
+10. **Document** `docs/world-building/creatures/BESTIAIRE.md`
     Tableau généré par un script (`tools/export-bestiary-md.js`) : numéro, nom, types, total de stats, évolution, habitat. Sert de référence pour les prompts de contenu suivants.
 
 ## Critères d'acceptation
 
 - `npm run validate` et `npm test` passent.
 - 150 bestioles, environ 165 attaques, environ 45 objets.
-- `docs/bestiaire/BESTIAIRE.md` existe et est à jour.
+- `docs/world-building/creatures/BESTIAIRE.md` existe et est à jour.
 - La planche de 150 sprites dans la visionneuse est variée et sans sprite vide ou cassé.
 
 ## Hors périmètre

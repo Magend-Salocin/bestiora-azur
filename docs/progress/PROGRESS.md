@@ -101,7 +101,7 @@ Fait
 - `src/data/creatures.js` : 150 bestioles, `HABITATS`, `CREATURES_BY_ID`. 18 lignées à 3 stades (dont les starters), 34 à 2 stades, 1 lignée à embranchement (Cocolet → Cocomarin / Cocorage par pierre), 20 bestioles sans évolution, 4 légendaires et 1 mythique. Les 5 pierres et 1 évolution par amitié (Toisonnet) sont utilisées.
 - `src/data/items.js` (44 objets, effets fermés `ITEM_EFFECTS`), `src/data/trainer-classes.js` (30 classes), `src/data/formulas.js` (stats, `expForLevel`, `levelForExp`).
 - `npm run validate` (`tools/validate-data.js`) : vérificateurs indépendants dans `tools/validators/` (ids, types, attaques, bestioles, évolutions, objets, classes, textes), enregistrés dans `tools/validators/index.js`. `tools/forbidden-words.js` : comparaison sans casse ni accents, par mot ou expression entière.
-- `npm run bestiary` (`tools/export-bestiary-md.js`) génère `docs/bestiaire/BESTIAIRE.md`.
+- `npm run bestiary` (`tools/export-bestiary-md.js`) génère `docs/world-building/creatures/BESTIAIRE.md`.
 - Atlas régénéré depuis `src/data/creatures.js` : 136 bestioles générées, 14 dessinées. Planche relue face et dos dans l'ordre des numéros : aucun sprite vide ni cassé. Graines de Cristelan et Névéon changées (corps trop sombre pour des bestioles de neige).
 - Tests : types (relations connues, contraintes de la section 5), formules de stats et d'XP calculées à la main, évolutions (cycle, niveau décroissant), validateur complet. 77 tests.
 
@@ -300,7 +300,7 @@ Problèmes connus
 Fait
 - `src/audio/` : `synth.js` (Web Audio : 2 carrés à 12,5 / 25 / 50 / 75 %, table d’onde 32 × 4 bits, bruit LFSR 15 et 7 bits, enveloppes, glissando sur la voie 1, bus musique et effets, emprunt de voie par les effets), `sequencer.js` (ordonnancement 100 ms en avance sur l’horloge audio, bouclage, fondu, position pour reprendre), `track-parser.js` (format texte pur et testé, erreurs avec le symbole fautif, barres de mesure vérifiées), `cries.js` (cris procéduraux), `sfx.js` (28 effets), `audio-system.js` (musique, reprise de la piste de carte après un combat, jingles qui interrompent puis rendent la musique, volumes, démarrage au premier input, pause hors focus).
 - 30 pistes originales dans `src/audio/tracks/` : 20 thèmes (pistes de carte de 31 à 46 s, combats de 48 à 51 s, `ending` de 50 s), 7 jingles (objet, objet clé, badge, Halte, capture, évolution, niveau), 3 boucles de repérage par un dresseur. Le motif du jeu (ré, la, sol, si, la) ouvre `title`, revient plus lent dans `hometown` et encadre `ending`.
-- Format documenté dans `docs/audio/AUDIO_FORMAT.md`.
+- Format documenté dans `docs/world-building/audio/AUDIO_FORMAT.md`.
 - Branchements : musique par carte, repérage (« ! » puis boucle selon `musicIntro`), thème de combat selon la classe (ou `trainer.music`), fanfare de victoire, sons de menus (curseur, validation, annulation), portes, escaliers, téléporteurs, herbe, saut, surf, coupe, rocher, achat, sauvegarde, coups (normal, super efficace, peu efficace), boost, baisse, K.O., capsule, fuite, XP, cris en combat et dans le Bestiaire, jingles d’objet, de badge, de soin, de capture, d’évolution et de niveau. Volumes des options appliqués aux bus.
 - `src/data/music.js` : musiques de repérage, de combat et de victoire.
 - Menu F1 : jukebox (pistes, effets, cri de l’espèce choisie).
@@ -580,11 +580,11 @@ Décisions
 ### 2026-11-27 : PNJ, prompt 3, lots 0 à 6 (attaques ancrées dans le folklore)
 
 Fait
-- `docs/attaques/ATTAQUES_V2.md` : les 166 attaques avec ancien et nouveau nom, effet, motif et statut (35 F, 107 A, 24 J).
+- `docs/world-building/creatures/ATTAQUES_V2.md` : les 166 attaques avec ancien et nouveau nom, effet, motif et statut (35 F, 107 A, 24 J).
 - `src/data/moves.js` : noms et descriptions réécrits, type par type (lots 1 à 5). Identifiants, effets, valeurs et apprentissages inchangés. Signatures des légendaires : Aile Vouivre, Escarboucle, Roc Gaussier, Drac du Var, Grand Veneur, Mille Songes.
 - Mots interdits : riposte, abime, roue de feu, brouillard, bourdon, devoreve, gonflette, repli, essaim. Repli et Gonflette étaient des noms d'une franchise.
 - Lot 6 : message de Gui (`leech_damage`), titre du test de Va-Tout (ex-Baroud). « Glaçons ! » du Gardien Florimond reste : c'est une exclamation, pas une attaque.
-- `npm run screenshots -- --moves` : menu des attaques en combat, quatre attaques par capture, dans `docs/attaques/renders/` (49 captures).
+- `npm run screenshots -- --moves` : menu des attaques en combat, quatre attaques par capture, dans `docs/world-building/creatures/renders/` (49 captures).
 - Correctif audio : le séquenceur plantait quand une piste reprenait après la dernière note d'une voie (retour de combat). Test ajouté (256 tests).
 
 Vérifié
@@ -647,4 +647,4 @@ Vérifié
 - `npm run validate` (durées de 31 à 34 s, voies alignées), `npm test`. Écoute à faire par Nicolas (F2).
 
 Reste
-- Lot 0 du prompt 4 (`docs/audio/MUSIQUES_V2.md`) et les autres pistes. Les arènes Feu, Arcane et Ombre gardent leur musique d'ambiance.
+- Lot 0 du prompt 4 (`docs/world-building/audio/MUSIQUES_V2.md`) et les autres pistes. Les arènes Feu, Arcane et Ombre gardent leur musique d'ambiance.

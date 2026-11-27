@@ -7,3 +7,5 @@ Index des documents décrivant le monde, sa progression et ses espèces particul
 - [WORLD_PHASE_2.md](WORLD_PHASE_2.md) : arènes 5 à 8, Syndicat Opale et légendaires.
 - [WORLD_LEAGUE_POSTGAME.md](WORLD_LEAGUE_POSTGAME.md) : Col des Échos, Ligue, fin et post-jeu.
 - [WORLD_LEGENDARIES.md](WORLD_LEGENDARIES.md) : légendaires, échanges et identité régionale.
+
+Voir aussi [MAP_FORMAT.md](MAP_FORMAT.md) pour le format technique des cartes.

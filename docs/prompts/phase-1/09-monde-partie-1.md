@@ -35,7 +35,7 @@ Rendre jouable le début du jeu, de l'écran titre jusqu'au badge de l'arène 4 
 7. **Dresseurs** (`src/data/trainers.js`), environ 90 pour cette partie
    `{ id, class, name, party: [{ species, level, moves? }], ai, introText, defeatText, afterText, reward? }`. Niveaux dans les plages de la section 4. Variété des classes et des espèces, équipes thématiques par classe (les pêcheurs ont des bestioles Eau, etc.).
 
-8. **Rencontres sauvages** : tables par zone (herbes, grotte, eau au besoin), en utilisant les espèces dont `habitat` correspond. Au moins 70 espèces différentes capturables dans cette partie. Mets à jour `habitat` dans `creatures.js` si nécessaire et régénère `docs/bestiaire/BESTIAIRE.md`.
+8. **Rencontres sauvages** : tables par zone (herbes, grotte, eau au besoin), en utilisant les espèces dont `habitat` correspond. Au moins 70 espèces différentes capturables dans cette partie. Mets à jour `habitat` dans `creatures.js` si nécessaire et régénère `docs/world-building/creatures/BESTIAIRE.md`.
 
 9. **Économie et objets**
    Objets au sol et cachés (environ 60), inventaire des Comptoirs par ville, argent des dresseurs. Le joueur doit pouvoir acheter des capsules et potions régulièrement sans farmer.

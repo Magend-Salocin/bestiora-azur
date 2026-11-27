@@ -64,7 +64,7 @@ Piste de départ, à vérifier et compléter au lot 0. Les formes citées sont d
 - Aucune piste n'imite un thème de jeu existant, même transposé.
 - La table de référence indique pour chaque piste la forme d'origine et si elle est attestée (F), traditionnelle au sens large (A) ou inventée (J), comme au prompt 3.
 
-## Livrable de référence : `docs/audio/MUSIQUES_V2.md`
+## Livrable de référence : `docs/world-building/audio/MUSIQUES_V2.md`
 
 Créé au lot 0. Une ligne par piste :
 
@@ -84,6 +84,6 @@ Avant chaque lot, présenter les pistes prévues et attendre mon feu vert ; apr�
 | 4 | Marais, Île-de-France et Corse : `marsh`, `town_ombrecourt`, `catacombs`, `sea_corse`, `sunken_library`. |
 | 5 | Occitanie, Alpes et Provence : `town_forge`, `volcano`, `town_givremont`, `ice_cave`, `route_ligue`, `league`. |
 | 6 | Combats : `battle_legendary`, `battle_gardien`, branchement dans `src/data/music.js` et les dresseurs concernés. |
-| 7 | Nettoyage : pistes devenues inutiles retirées, `docs/design/GAME_DESIGN.md` (nombre de pistes), `docs/audio/AUDIO_FORMAT.md` si le format évolue. |
+| 7 | Nettoyage : pistes devenues inutiles retirées, `docs/design/GAME_DESIGN.md` (nombre de pistes), `docs/world-building/audio/AUDIO_FORMAT.md` si le format évolue. |
 
 Chaque lot se termine par `npm run validate` et `npm test`, puis l'écoute dans le juke-box F2.

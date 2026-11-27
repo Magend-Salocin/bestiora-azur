@@ -16,6 +16,16 @@ Les combats légendaires utilisent `wild_battle` avec fuite impossible.
 
 Deux échanges PNJ offrent les starters non choisis. Fonderion et Fangeroi apparaissent au Pic d'Azur, Frimastoc au Col, au Pic et dans la Grotte Boréale.
 
+## Obtention des 150 espèces
+
+L'obtention complète est vérifiée par `tools/check-obtainability.js` et la validation `npm run validate` :
+
+- 140 espèces sont obtenables par capture ;
+- 8 espèces sont obtenables par évolution ;
+- 2 espèces sont obtenables par échange PNJ ;
+- Mirelle est la seule espèce mythique et apparaît après `bestiary_149` ;
+- les légendaires ne sont pas placés dans les tables normales de rencontres.
+
 ## Identité régionale
 
 | Zone | Lieux | Région |

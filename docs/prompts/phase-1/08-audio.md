@@ -20,7 +20,7 @@ Un synthétiseur 4 voies dans l'esprit des consoles portables 8 bits, un séquen
    - Démarrage de l'`AudioContext` au premier input utilisateur.
 
 2. **Format de piste** (`src/audio/tracks/*.js`)
-   Format texte compact par voie, documenté dans `docs/audio/AUDIO_FORMAT.md` : tempo, notes (`C4`, `D#5`), durées, silences, octave, volume, enveloppe, rapport cyclique, boucles (`[ ... ]x2`), point de bouclage de la piste. Parser pur testé.
+   Format texte compact par voie, documenté dans `docs/world-building/audio/AUDIO_FORMAT.md` : tempo, notes (`C4`, `D#5`), durées, silences, octave, volume, enveloppe, rapport cyclique, boucles (`[ ... ]x2`), point de bouclage de la piste. Parser pur testé.
 
 3. **Séquenceur** (`src/audio/sequencer.js`)
    Ordonnancement en avance (lookahead 100 ms) pour un tempo stable, bouclage, fondu de sortie, changement de piste avec ou sans fondu, reprise de la piste de carte après un combat.

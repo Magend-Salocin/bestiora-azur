@@ -53,7 +53,7 @@ Ce sont des pistes à vérifier et compléter au lot 0, pas une liste figée.
 - Pas de doublon de nom avec une bestiole, un objet, une classe ou un lieu.
 - Les motifs restent attestés. Une invention du jeu est assumée comme telle dans la table de référence.
 
-## Livrable de référence : `docs/attaques/ATTAQUES_V2.md`
+## Livrable de référence : `docs/world-building/creatures/ATTAQUES_V2.md`
 
 Créé au lot 0. Pour chaque attaque, une ligne :
 

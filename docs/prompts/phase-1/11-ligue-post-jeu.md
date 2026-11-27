@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Lis d'abord en entier `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md`, `docs/world-building/maps/MAP_FORMAT.md`, `docs/world-building/maps/WORLD_MAP.md`, `docs/bestiaire/BESTIAIRE.md` et `docs/progress/PROGRESS.md`. Le monde est jouable jusqu'au 8e badge.
+Lis d'abord en entier `docs/design/GAME_DESIGN.md`, `docs/technical/ARCHITECTURE.md`, `docs/world-building/maps/MAP_FORMAT.md`, `docs/world-building/maps/WORLD_MAP.md`, `docs/world-building/creatures/BESTIAIRE.md` et `docs/progress/PROGRESS.md`. Le monde est jouable jusqu'au 8e badge.
 
 ## Objectif
 

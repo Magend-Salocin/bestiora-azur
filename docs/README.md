@@ -11,6 +11,7 @@ Cette page rassemble les documents par ensemble pour retrouver rapidement la bon
 
 ## Formats et données
 
+- [world-building/README.md](world-building/README.md) : index des cartes, personnages, créatures et audio.
 - [world-building/maps/MAP_FORMAT.md](world-building/maps/MAP_FORMAT.md) : index du format des cartes.
 - [world-building/maps/WORLD_MAP.md](world-building/maps/WORLD_MAP.md) : index des cartes, régions et progression.
 - [world-building/audio/AUDIO_FORMAT.md](world-building/audio/AUDIO_FORMAT.md) : format des pistes, instruments et effets.
@@ -25,7 +26,9 @@ Cette page rassemble les documents par ensemble pour retrouver rapidement la bon
 
 ## Recettes d'implémentation
 
+- [prompts/README.md](prompts/README.md) : vue d'ensemble des deux phases.
 - [prompts/phase-1/README.md](prompts/phase-1/README.md) : index des 13 prompts initiaux, dépendances et ordre d'exécution.
+- [prompts/phase-2/README.md](prompts/phase-2/README.md) : PNJ, portraits, attaques et musiques régionales.
 
 ## Déploiement
 

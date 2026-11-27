@@ -141,7 +141,7 @@ Après tout changement : `npm test` et `npm run validate`.
 | [tools/](../../tools/) | les outils des développeurs (chapitre [11](11-outils-et-tests.md)) |
 | [tests/](../../tests/) | les 252 tests |
 | [build/](../../build/) | les icônes du programme |
-| [prompts/](../../prompts/) | les 13 recettes qui ont servi à construire le jeu |
+| [prompts/](../prompts/phase-1/) | les 13 recettes qui ont servi à construire le jeu |
 | [docs/](../) | les documents, dont ce dossier |
 
 ## Le chemin d'une bestiole, de la fiche à l'écran
