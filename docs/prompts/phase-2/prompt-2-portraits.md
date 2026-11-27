@@ -1,5 +1,9 @@
 # Prompt 2 : portraits de combat dessinés
 
+**Statut : en cours ; lots 0 à 2 réalisés en version 48 × 48.**
+**Suivi détaillé :** [TODO-portraits.md](../../world-building/characters/TODO-portraits.md)
+**Référence générale :** [references-portraits.md](../../world-building/characters/references-portraits.md)
+
 Prérequis : prompt 1 terminé. Les tenues, couleurs et classes de `docs/world-building/characters/PNJ_V2.md` font foi.
 
 ## Objectif
@@ -117,3 +121,11 @@ Combat : un portrait de 48 px occupe exactement l'emplacement adverse. Un ancien
 - Portraits lisibles avec les 6 palettes du jeu, dont Contraste.
 - Les portraits glissent bien à l'entrée et à la sortie du combat (`battle-scene.js`) et ne débordent pas du cadre de 48 × 48.
 - Rien ne reprend un design de franchise existante. Les concepts ne servent que d'ambiance.
+
+## Conditions de reprise
+
+1. Lire `TODO-portraits.md` et reprendre uniquement les entrées marquées « à faire ».
+2. Préserver les identifiants `portrait/<id>` et `back/<id>`.
+3. Utiliser des exports 48 × 48 en 4 teintes.
+4. Produire la planche du lot et deux captures de combat lorsque nécessaire.
+5. Exécuter `npm run atlas`, `npm run validate`, `npm test` et `npm run check-docs`.

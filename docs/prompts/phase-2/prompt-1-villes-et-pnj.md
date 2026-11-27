@@ -1,5 +1,9 @@
 # Prompt 1 : identité régionale des villes et des PNJ
 
+**Statut : lot 0 validé ; réhabillage du code encore à terminer.**
+**Référentiel :** [PNJ_V2.md](../../world-building/characters/PNJ_V2.md)
+**Suivi :** [STATUS.md](STATUS.md)
+
 ## Objectif
 
 Donner à chaque zone de Brumeval l'identité d'une région française, puis réhabiller tous les PNJ et dresseurs existants : métiers, tenues, noms, classes de dresseurs, dialogues et panneaux. Le monde doit se lire comme le Bestiaire V2 : du folklore français local, région par région.
@@ -25,7 +29,7 @@ Donner à chaque zone de Brumeval l'identité d'une région française, puis ré
   - `src/data/maps/` : les PNJ et dresseurs de chaque carte.
   - `src/data/trainer-classes.js` et `src/data/trainers.js`.
 
-## Correspondance zones et régions (proposition à valider au lot 0)
+## Correspondance zones et régions
 
 | Zone | Lieux | Région |
 |---|---|---|
@@ -93,3 +97,11 @@ Chaque lot se termine par `npm run validate`, `npm run check-text`, `npm test` e
 - Portraits de combat et sprites de carte : prompt 2, à partir des tenues de `PNJ_V2.md`.
 - Attaques : prompt 3.
 - Nouvelles quêtes, nouveaux PNJ, cartes modifiées.
+
+## Conditions de reprise
+
+1. Lire `PNJ_V2.md` avant toute modification.
+2. Conserver les identifiants, drapeaux, scripts, niveaux et équipes existants.
+3. Modifier les noms affichés et les textes sans changer les structures de données.
+4. Vérifier chaque zone après son lot avec `npm run validate`, `npm run check-text`, `npm test` et `npm run check-docs`.
+5. Fournir avant chaque lot la liste des fichiers de données, textes et captures concernés.

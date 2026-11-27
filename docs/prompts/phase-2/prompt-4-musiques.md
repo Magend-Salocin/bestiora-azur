@@ -1,5 +1,9 @@
 # Prompt 4 : musiques régionales
 
+**Statut : en cours ; 7 pistes sont réalisées.**
+**Référentiel :** [AUDIO_STATUS.md](../../world-building/audio/AUDIO_STATUS.md)
+**Format :** [AUDIO_FORMAT.md](../../world-building/audio/AUDIO_FORMAT.md)
+
 Indépendant des prompts 2 et 3. S'appuie sur les régions du prompt 1 ([PNJ_V2.md](../../world-building/characters/PNJ_V2.md), section 2).
 
 ## Objectif
@@ -87,3 +91,12 @@ Avant chaque lot, présenter les pistes prévues et attendre mon feu vert ; apr�
 | 7 | Nettoyage : pistes devenues inutiles retirées, `docs/design/GAME_DESIGN.md` (nombre de pistes), `docs/world-building/audio/AUDIO_FORMAT.md` si le format évolue. |
 
 Chaque lot se termine par `npm run validate` et `npm test`, puis l'écoute dans le juke-box F2.
+
+## Conditions de reprise
+
+1. Lire `AUDIO_STATUS.md` pour reprendre exactement au prochain lot.
+2. Ajouter les pistes au module `src/audio/tracks/` et à son index.
+3. Brancher uniquement les cartes ou combats concernés.
+4. Vérifier durée, boucle, longueur des voies, motif du jeu et validation audio.
+5. Fournir la liste d'écoute du juke-box F2 après chaque lot.
+6. Exécuter `npm run validate`, `npm test` et `npm run check-docs`.

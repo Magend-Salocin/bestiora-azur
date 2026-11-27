@@ -22,6 +22,7 @@ Chaque session d'implémentation ajoute une entrée en bas de ce fichier : promp
 | PNJ 1 Villes, PNJ et dialogues régionaux | fait |
 | PNJ 2 Portraits de combat dessinés | en cours |
 | PNJ 3 Attaques | fait (lot 7 optionnel non lancé) |
+| PNJ 4 Musiques régionales | en cours |
 
 ## Journal
 

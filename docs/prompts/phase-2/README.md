@@ -2,6 +2,8 @@
 
 Cette phase ajoute les identités régionales, les portraits, les attaques et les musiques au socle complet de la phase 1.
 
+Voir [STATUS.md](STATUS.md) pour l'état consolidé, les prérequis et la procédure commune de fin de lot.
+
 | Prompt | Sujet | Référence principale |
 |---|---|---|
 | [prompt-1-villes-et-pnj.md](prompt-1-villes-et-pnj.md) | Villes, PNJ, dresseurs et dialogues | [characters/](../../world-building/characters/) |

@@ -1,5 +1,9 @@
 # Prompt 3 : attaques ancrées dans le folklore
 
+**Statut : fait ; le lot 7 optionnel n'a pas été lancé.**
+**Référence :** [ATTAQUES_V2.md](../../world-building/creatures/ATTAQUES_V2.md)
+**Suivi :** [STATUS.md](STATUS.md)
+
 Indépendant des prompts 1 et 2 : peut être lancé à tout moment.
 
 ## Objectif
@@ -79,3 +83,11 @@ Avant chaque lot, présenter la table du lot et attendre mon feu vert ; après, 
 | 7 (optionnel, à confirmer) | Animations de type retravaillées dans `move-animations.js` (lame de faux pour Ombre, éclat de menhir pour Roche…), mêmes durées. |
 
 Chaque lot se termine par `npm run validate`, `npm run check-text` et `npm test`.
+
+## Conditions de reprise
+
+1. Ne modifier ni `id`, ni type, ni puissance, ni précision, ni effets, ni apprentissages.
+2. Vérifier les noms exclusifs et les mots interdits avant toute modification.
+3. Limiter les noms à 12 caractères et les descriptions à 2 lignes de 18 caractères.
+4. Mettre à jour `forbidden-words.js` pour tout nom écarté à cause d'une franchise.
+5. Exécuter `npm run validate`, `npm run check-text`, `npm test` et `npm run check-docs`.

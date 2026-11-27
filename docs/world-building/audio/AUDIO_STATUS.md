@@ -1,7 +1,7 @@
 # Statut des musiques régionales
 
 État au 27 novembre 2026. Ce document suit le chantier décrit dans
-[`prompts-v2/prompt-4-musiques.md`](../../prompts/phase-2/prompt-4-musiques.md).
+[`prompt-4-musiques.md`](../../prompts/phase-2/prompt-4-musiques.md).
 
 ## Résumé
 
