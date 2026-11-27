@@ -11,21 +11,21 @@ Ce que tu vas apprendre :
 
 Bestiora Azur est un jeu d'aventure où l'on capture des créatures, les **bestioles**, et où on les fait combattre. Tout est inventé : les bestioles, la région de Brumeval, les personnages, les musiques.
 
-Le code a été écrit par une intelligence artificielle (Claude), guidée par 13 « recettes » écrites à l'avance, rangées dans le dossier [prompts/](../../prompts/). Comme pour construire une maison, chaque recette s'appuie sur la précédente :
+Le code a été écrit par une intelligence artificielle (Claude), guidée par 13 « recettes » écrites à l'avance, rangées dans le dossier [prompts/](../prompts/). Comme pour construire une maison, chaque recette s'appuie sur la précédente :
 
 | Étape | Recette | Ce qui a été construit |
 | --- | --- | --- |
-| 1 | [01-socle-electron.md](../../prompts/01-socle-electron.md) | La fenêtre du jeu, la boucle, le clavier |
-| 2 | [02-graphismes-atlas.md](../../prompts/02-graphismes-atlas.md) | Les dessins : tuiles, personnages, bestioles |
-| 3 | [03-donnees-jeu.md](../../prompts/03-donnees-jeu.md) | Les fiches des 150 bestioles, attaques, objets |
-| 4 | [04-moteur-carte.md](../../prompts/04-moteur-carte.md) | Se déplacer sur une carte |
-| 5 | [05-logique-combat.md](../../prompts/05-logique-combat.md) | Les règles du combat |
-| 6 | [06-interface-combat.md](../../prompts/06-interface-combat.md) | L'écran de combat |
-| 7 | [07-menus-systemes.md](../../prompts/07-menus-systemes.md) | Les menus, le sac, l'équipe |
-| 8 | [08-audio.md](../../prompts/08-audio.md) | La musique et les sons |
-| 9 à 11 | [09](../../prompts/09-monde-partie-1.md), [10](../../prompts/10-monde-partie-2.md), [11](../../prompts/11-ligue-post-jeu.md) | Tout le monde, de la première maison jusqu'à la Ligue |
-| 12 | [12-sauvegarde-finition.md](../../prompts/12-sauvegarde-finition.md) | La sauvegarde et les finitions |
-| 13 | [13-recette.md](../../prompts/13-recette.md) | Les vérifications finales |
+| 1 | [01-socle-electron.md](../prompts/01-socle-electron.md) | La fenêtre du jeu, la boucle, le clavier |
+| 2 | [02-graphismes-atlas.md](../prompts/02-graphismes-atlas.md) | Les dessins : tuiles, personnages, bestioles |
+| 3 | [03-donnees-jeu.md](../prompts/03-donnees-jeu.md) | Les fiches des 150 bestioles, attaques, objets |
+| 4 | [04-moteur-carte.md](../prompts/04-moteur-carte.md) | Se déplacer sur une carte |
+| 5 | [05-logique-combat.md](../prompts/05-logique-combat.md) | Les règles du combat |
+| 6 | [06-interface-combat.md](../prompts/06-interface-combat.md) | L'écran de combat |
+| 7 | [07-menus-systemes.md](../prompts/07-menus-systemes.md) | Les menus, le sac, l'équipe |
+| 8 | [08-audio.md](../prompts/08-audio.md) | La musique et les sons |
+| 9 à 11 | [09](../prompts/09-monde-partie-1.md), [10](../prompts/10-monde-partie-2.md), [11](../prompts/11-ligue-post-jeu.md) | Tout le monde, de la première maison jusqu'à la Ligue |
+| 12 | [12-sauvegarde-finition.md](../prompts/12-sauvegarde-finition.md) | La sauvegarde et les finitions |
+| 13 | [13-recette.md](../prompts/13-recette.md) | Les vérifications finales |
 
 Après chaque étape, une note a été ajoutée dans [docs/PROGRESS.md](../PROGRESS.md), le journal de bord du chantier.
 
