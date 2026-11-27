@@ -96,7 +96,7 @@ La partie se sauvegarde depuis le menu START (SAUVER), sauf dans la Ligue une fo
 | macOS | `~/Library/Application Support/Bestiora Azur/` |
 | Linux | `~/.config/Bestiora Azur/` |
 
-- `save.json` : la sauvegarde, en JSON versionné (format dans [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
+- `save.json` : la sauvegarde, en JSON versionné (format dans [docs/technique/ARCHITECTURE.md](docs/technique/ARCHITECTURE.md)).
 - `save.bak.json` : la sauvegarde précédente. Elle est chargée automatiquement si `save.json` est illisible.
 - `options.json` : les options, indépendantes de la partie.
 - `logs/` : un journal par jour des erreurs rencontrées.
@@ -117,16 +117,16 @@ Les sprites sont décrits en texte dans `src/gfx/sources/` et assemblés en atla
 ## Documentation
 
 - [docs/README.md](docs/README.md) : index thématique de toute la documentation.
-- [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) : univers, mécaniques, contenu.
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) : organisation du code et formats.
-- [docs/PROGRESS.md](docs/PROGRESS.md) : journal de développement.
-- [docs/WEB_DEPLOIEMENT.md](docs/WEB_DEPLOIEMENT.md) : version web, iPhone, hors ligne et clés d'activation, à reprendre dans un autre jeu.
+- [docs/conception/GAME_DESIGN.md](docs/conception/GAME_DESIGN.md) : univers, mécaniques, contenu.
+- [docs/technique/ARCHITECTURE.md](docs/technique/ARCHITECTURE.md) : organisation du code et formats.
+- [docs/avancement/PROGRESS.md](docs/avancement/PROGRESS.md) : journal de développement.
+- [docs/deploiement/WEB_DEPLOIEMENT.md](docs/deploiement/WEB_DEPLOIEMENT.md) : version web, iPhone, hors ligne et clés d'activation, à reprendre dans un autre jeu.
 - [docs/apprendre/](docs/apprendre/README.md) : le code expliqué simplement, chapitre par chapitre (niveau CM2).
 
 ## Statut et licence
 
 Projet personnel, non commercial, réalisé pour mon usage propre et à des fins de découverte. Il n'est ni vendu ni distribué publiquement : la version web est réservée à quelques testeurs munis d'une clé.
 
-Le jeu ne reprend aucun contenu d'un jeu existant : personnages, créatures, lieux, textes, graphismes et musiques sont originaux (voir les règles d'originalité de [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md)). Il n'est affilié à aucun éditeur de jeux vidéo.
+Le jeu ne reprend aucun contenu d'un jeu existant : personnages, créatures, lieux, textes, graphismes et musiques sont originaux (voir les règles d'originalité de [docs/conception/GAME_DESIGN.md](docs/conception/GAME_DESIGN.md)). Il n'est affilié à aucun éditeur de jeux vidéo.
 
 Aucune licence de réutilisation n'est accordée : tous droits réservés.

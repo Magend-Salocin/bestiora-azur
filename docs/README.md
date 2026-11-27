@@ -4,24 +4,24 @@ Cette page rassemble les documents par ensemble pour retrouver rapidement la bon
 
 ## Comprendre le projet
 
-- [GAME_DESIGN.md](GAME_DESIGN.md) : univers, mécaniques et contenu du jeu.
-- [ARCHITECTURE.md](ARCHITECTURE.md) : organisation du code et principes techniques.
-- [PROGRESS.md](PROGRESS.md) : journal chronologique du chantier.
+- [conception/GAME_DESIGN.md](conception/GAME_DESIGN.md) : univers, mécaniques et contenu du jeu.
+- [technique/ARCHITECTURE.md](technique/ARCHITECTURE.md) : organisation du code et principes techniques.
+- [avancement/PROGRESS.md](avancement/PROGRESS.md) : journal chronologique du chantier.
 - [apprendre/README.md](apprendre/README.md) : cours progressif en français simple, niveau CM2.
 
 ## Formats et données
 
-- [MAP_FORMAT.md](MAP_FORMAT.md) : structure des cartes, couches, objets et scripts.
-- [WORLD_MAP.md](WORLD_MAP.md) : régions, cartes et connexions.
-- [AUDIO_FORMAT.md](AUDIO_FORMAT.md) : format des pistes, instruments et effets.
-- [AUDIO_STATUS.md](AUDIO_STATUS.md) : état des musiques prévues et réalisées.
-- [BESTIAIRE.md](BESTIAIRE.md) : liste du contenu des 150 bestioles.
+- [carte/MAP_FORMAT.md](carte/MAP_FORMAT.md) : structure des cartes, couches, objets et scripts.
+- [carte/WORLD_MAP.md](carte/WORLD_MAP.md) : régions, cartes et connexions.
+- [audio/AUDIO_FORMAT.md](audio/AUDIO_FORMAT.md) : format des pistes, instruments et effets.
+- [audio/AUDIO_STATUS.md](audio/AUDIO_STATUS.md) : état des musiques prévues et réalisées.
+- [bestiaire/BESTIAIRE.md](bestiaire/BESTIAIRE.md) : liste du contenu des 150 bestioles.
 
 ## Production du contenu
 
 - [bestiaire-folklorique/README.md](bestiaire-folklorique/README.md) : référentiel, fiches, archives et concepts du bestiaire.
 - [Pnj/README.md](Pnj/README.md) : document maître, PNJ, portraits, références et suivi.
-- [attaques/ATTAQUES_V2.md](attaques/ATTAQUES_V2.md) : référentiel des attaques.
+- [bestiaire-folklorique/ATTAQUES_V2.md](bestiaire-folklorique/ATTAQUES_V2.md) : référentiel des attaques.
 
 ## Recettes d'implémentation
 
@@ -29,4 +29,4 @@ Cette page rassemble les documents par ensemble pour retrouver rapidement la bon
 
 ## Déploiement
 
-- [WEB_DEPLOIEMENT.md](WEB_DEPLOIEMENT.md) : publication web, iPhone, hors ligne et clés d'activation.
+- [deploiement/WEB_DEPLOIEMENT.md](deploiement/WEB_DEPLOIEMENT.md) : publication web, iPhone, hors ligne et clés d'activation.

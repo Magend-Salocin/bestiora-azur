@@ -12,7 +12,7 @@ Ce que tu vas apprendre :
 
 L'aventure se passe à Brumeval, une péninsule inventée : des marais au sud, des falaises venteuses à l'est, des montagnes enneigées au nord. Elle compte 113 cartes : villes, routes, grottes, maisons, arènes, jusqu'à la Ligue tout au nord.
 
-Le plan général, avec l'ordre de l'aventure, est dans [docs/WORLD_MAP.md](../WORLD_MAP.md). La petite carte de la région affichée dans le Bestiaire est décrite dans [src/data/region.js](../../src/data/region.js).
+Le plan général, avec l'ordre de l'aventure, est dans [docs/carte/WORLD_MAP.md](../carte/WORLD_MAP.md). La petite carte de la région affichée dans le Bestiaire est décrite dans [src/data/region.js](../../src/data/region.js).
 
 ## Des cases, comme des carreaux de mosaïque
 
@@ -196,7 +196,7 @@ export default {
 };
 ```
 
-Le format complet est dans [docs/MAP_FORMAT.md](../MAP_FORMAT.md). Voici les éléments principaux.
+Le format complet est dans [docs/carte/MAP_FORMAT.md](../carte/MAP_FORMAT.md). Voici les éléments principaux.
 
 ### Les portes (warps)
 

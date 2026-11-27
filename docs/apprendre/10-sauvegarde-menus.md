@@ -152,7 +152,7 @@ Sur un téléphone ou une tablette, [src/ui/touch-controls.js](../../src/ui/touc
 | Hors ligne | toujours | après une première ouverture en ligne |
 | Clé d'activation | non | oui, pour la version en ligne |
 
-La version en ligne est gardée sur l'appareil par un petit programme, le **service worker** ([src/sw.js](../../src/sw.js)), qui permet de jouer sans réseau. Elle demande une clé d'activation liée à l'appareil, pour la réserver à quelques testeurs ([src/access/](../../src/access/)). Les détails sont dans [docs/WEB_DEPLOIEMENT.md](../WEB_DEPLOIEMENT.md) et le [README](../../README.md) principal.
+La version en ligne est gardée sur l'appareil par un petit programme, le **service worker** ([src/sw.js](../../src/sw.js)), qui permet de jouer sans réseau. Elle demande une clé d'activation liée à l'appareil, pour la réserver à quelques testeurs ([src/access/](../../src/access/)). Les détails sont dans [docs/deploiement/WEB_DEPLOIEMENT.md](../deploiement/WEB_DEPLOIEMENT.md) et le [README](../../README.md) principal.
 
 ## Les erreurs
 

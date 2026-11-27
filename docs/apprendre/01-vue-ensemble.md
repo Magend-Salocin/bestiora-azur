@@ -27,7 +27,7 @@ Le code a été écrit par une intelligence artificielle (Claude), guidée par 1
 | 12 | [12-sauvegarde-finition.md](../prompts/12-sauvegarde-finition.md) | La sauvegarde et les finitions |
 | 13 | [13-recette.md](../prompts/13-recette.md) | Les vérifications finales |
 
-Après chaque étape, une note a été ajoutée dans [docs/PROGRESS.md](../PROGRESS.md), le journal de bord du chantier.
+Après chaque étape, une note a été ajoutée dans [docs/avancement/PROGRESS.md](../avancement/PROGRESS.md), le journal de bord du chantier.
 
 ## Le rangement : une maison avec des pièces
 

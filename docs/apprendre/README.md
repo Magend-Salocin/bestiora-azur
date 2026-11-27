@@ -33,9 +33,9 @@ Les liens vers les fichiers s'ouvrent directement dans l'éditeur. Par exemple :
 
 Ce dossier ne remplace pas les documents de référence, plus techniques :
 
-- [docs/GAME_DESIGN.md](../GAME_DESIGN.md) : les règles du jeu et tout son contenu.
-- [docs/ARCHITECTURE.md](../ARCHITECTURE.md) : l'organisation du code, pour les développeurs.
-- [docs/MAP_FORMAT.md](../MAP_FORMAT.md) : le format exact des cartes.
-- [docs/AUDIO_FORMAT.md](../AUDIO_FORMAT.md) : le format exact des musiques.
-- [docs/WORLD_MAP.md](../WORLD_MAP.md) : toutes les cartes et leurs liaisons.
-- [docs/BESTIAIRE.md](../BESTIAIRE.md) : la liste des 150 bestioles.
+- [docs/conception/GAME_DESIGN.md](../conception/GAME_DESIGN.md) : les règles du jeu et tout son contenu.
+- [docs/technique/ARCHITECTURE.md](../technique/ARCHITECTURE.md) : l'organisation du code, pour les développeurs.
+- [docs/carte/MAP_FORMAT.md](../carte/MAP_FORMAT.md) : le format exact des cartes.
+- [docs/audio/AUDIO_FORMAT.md](../audio/AUDIO_FORMAT.md) : le format exact des musiques.
+- [docs/carte/WORLD_MAP.md](../carte/WORLD_MAP.md) : toutes les cartes et leurs liaisons.
+- [docs/bestiaire/BESTIAIRE.md](../bestiaire/BESTIAIRE.md) : la liste des 150 bestioles.
